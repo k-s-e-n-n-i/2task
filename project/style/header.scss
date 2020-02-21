@@ -1,0 +1,53 @@
+.header{
+	display: flex;
+	justify-content: space-between;
+	//flex-wrap: wrap;
+	min-height: 70px;
+		
+
+	.menu{
+		display: flex;
+		//justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+		
+		margin: 0;
+		padding: 0;
+
+		.menu_item{
+			display: block;
+			padding: 0 20px;
+			color: rgba(31, 32, 65, 0.5);
+			text-align: center;
+			border-radius: 22px;
+			height: 18px;
+			padding: 10px 0;
+			margin: 5px 0 5px 20px;	
+			font-size: 14px;
+
+			//min-width: 260px;
+			//max-width: min-content;
+
+			&.btn{
+				text-transform: uppercase;
+				font-size: 12px;
+				height: 15px;
+
+				&.login{
+					background-color: #fff;
+					color: #BC9CFF;
+					border: 1px #BC9CFF solid;
+					width: 85px;
+					padding: 9px 0 10px;	
+				}
+
+				&.reg{
+					background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+					width: 196px;
+					color: #fff;
+				
+				}
+			}
+		}
+	}
+}
