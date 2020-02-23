@@ -27,11 +27,19 @@
     src: local('Montserrat Black'), local('Montserrat-Black'), url('montserratblack.woff2') format('woff2'), url('montserratblack.woff') format('woff'), url('montserratblack.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
-}*/
+}
 
 @font-face {
     font-family: "Montserrat";
     src: url("../font/montserrat.ttf");
     font-weight: 100;
+    font-style: normal;
+}*/
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/montserrat.ttf');
+    src: url('../font/montserrat.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
