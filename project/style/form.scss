@@ -1,5 +1,6 @@
 .content{
 	width: 100%;
+	position:relative;
 
 	.image{
 			//height: vw100;
@@ -20,6 +21,7 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		z-index: 1;
 
 		p{
 			padding: 0;
@@ -41,26 +43,48 @@
 		}
 
 		
+		.select_item{
+			position: relative;
 
-		.input{
-			padding: 10px 15px;
-			
-			&.date{//input
-				width: 150px;
-			}
-			&.num{//input
-				width: 320px;
+			.input{
+						
+				&.date{//input
+					width: 150px;
+					-webkit-appearance: none;
+				}
+				&.num{//input
+					width: 320px;
+
+					-webkit-appearance: none;
+				}
+
+				option:first-child{
+					display: none;
+				}
 			}
 
-			option:first-child{
-				display: none;
+			.send{
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				bottom: 35px;
+				right: 15px;
+				cursor: pointer;
 			}
 		}
-
 		
 
 		.btn{
 			width: 320px;
 		}
+	}
+
+	.label{
+		position:absolute;
+		bottom: 18px;
+		width: 297px;
+		height: 48px;
+		text-align: right;
+		color: rgba(31, 32, 65, 0.75);
 	}
 }

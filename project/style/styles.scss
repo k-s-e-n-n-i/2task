@@ -7,9 +7,18 @@ body{
 }
 
 .content_width{
-	max-width: 900px;//1150px;
+	max-width: 1150px;
 	min-width: 320px;
 	margin: 0 auto;
+
+	&.flexend{
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+img{
+	user-select: none;
 }
 
 
@@ -42,6 +51,11 @@ body{
 	border-radius: 4px;
 	height: 44px;
 	color: rgba(31, 32, 65, 0.75);
+	padding: 10px 15px;
+
+	font-family: 'Montserrat';
+	font-weight: normal;
+    font-style: normal;
 }
 
 
