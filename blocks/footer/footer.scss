@@ -1,9 +1,7 @@
 .bottom_menu{
 	display: flex;
-	//background-color: blue;//
 	justify-content: space-between;
 	flex-wrap: wrap;
-	//align-items: center;
 	margin: 0;
 	padding: 104px 0 100px 0;
 	font-size: 14px;
@@ -11,11 +9,8 @@
 
 	.column{
 		display: block;
-		//width: 20%;
 		margin: 0 5px;
-		//min-width: 200px;
 		max-width: min-content;
-
 
 		.submenu{
 			padding: 0;
@@ -36,20 +31,6 @@
 					text-transform: uppercase;
 					cursor: inherit;
 				}
-
-				.input{
-					width: 260px;
-					color: rgba(31, 32, 65, 0.25)!important;
-				}
-
-				.send{
-					width: 24px;
-					height: 24px;
-					position: absolute;
-					top: 10px;
-					right: 10px;
-					cursor: pointer;
-				}
 			}
 		}
 
@@ -67,9 +48,6 @@
 			min-width: 150px;
 		}
 	}
-
-
-	
 }
 
 

@@ -1,6 +1,6 @@
-import '/project/style/styles.scss';
-import '/project/style/header.scss';
-import '/project/style/footer.scss';
-import '/project/style/form.scss';
+//import '/project/style/styles.scss';
+//import '/blocks/header/header.scss';
+//import '/blocks/footer/footer.scss';
+//import '/blocks/form_search_num/form.scss';
 import '/project/style/fonts.css';
-import '/project/style/calendar.scss';
+//import '/blocks/calendar/calendar.scss';

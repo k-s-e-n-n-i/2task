@@ -8,8 +8,7 @@ $(document).ready(function() {
 	$('.calendar').pignoseCalendar({
 	  week: 1,
 	  lang: 'ru',
-	  multiple: true,
-	  date: moment('2020-03-05')
+	  multiple: true
 	});
 
 	

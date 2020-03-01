@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="blocks/form_registration/form.scss">
+<div class="form">
+	<p class="title">Найдём номера под ваши пожелания</p>
+	<div class="select_item">
+		<p class="title_2">Прибытие</p>
+		<div class="input date">ДД.ММ.ГГГГ</div>
+		<img src="project/img/expand_more.svg" class="expand">
+	</div>
+	<div class="select_item">
+		<p class="title_2">Выезд</p>
+		<div class="input date">ДД.ММ.ГГГГ</div>
+		<img src="project/img/expand_more.svg" class="expand">
+	</div>
+
+	<include src="blocks/calendar/calendar.html"></include>
+	
+	<div class="select_item">
+		<p class="title_2">Гости</p>
+		<select class="input num">
+			<option selected>Сколько гостей</option>
+			<option>1</option>
+			<option>2</option>
+		</select>
+		<img src="project/img/expand_more.svg" class="expand">
+	</div>
+	<div class="btn gradient">Подобрать номер</div>
+</div>

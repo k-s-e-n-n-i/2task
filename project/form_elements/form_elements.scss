@@ -1,0 +1,138 @@
+.example{
+
+	.item_text,.item_dropdown,.block_subscription{
+		margin: 20px;
+		display: block;
+	}
+				
+}
+
+
+.input,.dropdown,.subscription{
+	width: 318px;
+
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	border-radius: 4px;
+	height: 44px;
+	color: rgba(31, 32, 65, 0.25);
+
+	padding: 10px 15px;
+	margin-top: 5px;
+
+	font-family: 'Montserrat';
+	font-weight: normal;
+    font-style: normal;    
+
+	&:hover{
+		color: rgba(31, 32, 65, 0.75);
+		border: 1px solid rgba(31, 32, 65, 0.5);
+	}
+}
+
+//Тектовое поле
+.item_text{
+	.input{
+		color: rgba(31, 32, 65, 0.25)!important;
+
+		::-webkit-input-placeholder { /* Chrome */
+			color: rgba(31, 32, 65, 0.25);
+		}
+		:-ms-input-placeholder { /* IE 10+ */
+			color: rgba(31, 32, 65, 0.25);
+		}
+		::-moz-placeholder { /* Firefox 19+ */
+			color: rgba(31, 32, 65, 0.25);
+		}
+		:-moz-placeholder { /* Firefox 4 - 18 */
+			color: rgba(31, 32, 65, 0.25);
+		}
+	}
+}
+
+
+
+//Выпадающий список
+.item_dropdown{
+
+	.dropdown{
+		position: relative;
+		color: rgba(31, 32, 65, 0.75);
+
+		&.date{
+			width: 150px;
+			-webkit-appearance: none;
+			font-size: 14px;
+		}
+
+		.expand{
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			bottom: 16px;
+			right: 15px;
+			cursor: pointer;
+		}
+	}
+}
+
+
+//Подписка
+.block_subscription{
+
+	.item_subscription{
+		display: block;
+		max-width: min-content;
+	
+		position: relative;
+		cursor: pointer;
+		
+		font-size: 14px;
+		line-height: 17px;
+		padding-bottom: 24px;
+
+		.subscription{
+			width: 260px;
+			color: rgba(31, 32, 65, 0.25)!important;
+		}
+
+		.send{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 15px;
+			right: 10px;
+			cursor: pointer;
+		}
+			
+	}	
+}
+
+
+//Кнопки
+.btn{
+	border-radius: 22px;
+	height: 24px;
+	padding: 10px 0;
+	color: #ffffff;
+	cursor: pointer;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+	text-transform: uppercase;
+
+	&.border{
+		background-color: #fff;
+		color: #BC9CFF;
+		border: 1px #BC9CFF solid;
+		padding: 9px 0 10px;	
+	}
+
+	&.gradient{
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		color: #ffffff;	
+	}
+}

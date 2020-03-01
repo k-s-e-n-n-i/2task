@@ -3,20 +3,27 @@
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<link rel="stylesheet" href="node_modules/pg-calendar/dist/css/pignose.calendar.min.css">
 	<script src="node_modules/pg-calendar/dist/js/pignose.calendar.min.js"></script>
-	<script src="project/js/main.js"></script>
+	<script src="blocks/calendar/main.js"></script>
+	<script src="./index.js"></script>
+	<link rel="stylesheet" type="text/css" href="project/style/styles.scss">
 </head>
 
 <body>
-	<script src="./index.js"></script>
+<include src="../project/form_elements/form_elements.html"></include>	
 
-  	<include src="../project/include/header.html"></include>
+  	<include src="../blocks/header/header.html"></include>
 
+	<div class="content">
+		<div class="content_width">	
+			<include src="../blocks/form_search_num/form.html"></include>
+		</div>		
+		<div class="content_width flexend">
+			<p class="label">Лучшие номера для вашей работы, отдыха и просто вдохновения</p>
+		</div>
+		<img src="project/img/image3.png" class="image">
+	</div>
 
-	<include src="../project/include/form.html"></include>
-
-
-	
-	<include src="../project/include/footer.html"></include>
+	<include src="../blocks/footer/footer.html"></include>
 
 </body>
 </html>
