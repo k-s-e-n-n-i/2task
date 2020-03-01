@@ -23,56 +23,55 @@
 		flex-wrap: wrap;
 		z-index: 1;
 
-		p{
+		/*p{
 			padding: 0;
 			margin: 0;
 			//font-family: 'Quicksand';
-		}
+		}*/
 
 		.title{
 			font-size: 24px;
 			line-height: 30px;
 			font-weight: bold;
 		}
-		.title_2{
-			font-weight: bold;
-			font-size: 12px;
-			line-height: 15px;
-			text-transform: uppercase;
-			margin-bottom: 5px;
-		}
-
 		
 		.select_item{
 			position: relative;
+
+			.title_2{
+				font-weight: bold;
+				font-size: 12px;
+				line-height: 15px;
+				text-transform: uppercase;
+				margin-bottom: 5px;
+			}
 
 			.input{
 						
 				&.date{//input
 					width: 150px;
 					-webkit-appearance: none;
+					font-size: 14px;
 				}
 				&.num{//input
-					width: 320px;
-
+					width: 318px;
 					-webkit-appearance: none;
 				}
 
 				option:first-child{
 					display: none;
-				}
+				}				
 			}
 
-			.send{
+			.expand{
 				width: 10px;
 				height: 10px;
 				position: absolute;
-				bottom: 35px;
+				bottom: 20px;
 				right: 15px;
 				cursor: pointer;
 			}
 		}
-		
 
 		.btn{
 			width: 320px;
