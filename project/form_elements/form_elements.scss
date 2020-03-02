@@ -1,6 +1,6 @@
 .example{
 
-	.item_text,.item_dropdown,.block_subscription{
+	.item_text,.item_dropdown,.block_subscription,.form_reg{
 		margin: 20px;
 		display: block;
 	}
@@ -134,5 +134,14 @@
 	&.gradient{
 		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 		color: #ffffff;	
+	}
+}
+
+.radio{
+	vertical-align: center;
+	.radiobutton{
+		margin: auto 10px auto 0;
+		width: 20px;
+		height: 20px;
 	}
 }
