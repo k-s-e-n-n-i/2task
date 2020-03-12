@@ -137,6 +137,7 @@
 	}
 }
 
+//Радиокнопки
 .block_radio{
 	vertical-align: center;
 	.radiobutton{
@@ -145,7 +146,21 @@
 		height: 20px;
 		display: none;
 
-		
+		&:checked{
+			+ .radiobtn{
+				&:after{
+					content: "";
+					background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+					display: inline-block;
+					width: 12px;
+					height: 12px;
+					border-radius: 50%;
+					position: absolute;
+					left: 4px;
+					top: 4px;
+				}
+			}
+		}		
 	}
 
 	.radiobtn{
@@ -156,7 +171,7 @@
 		margin-right: 0;
 		line-height: 18px;
 		user-select: none;
-		margin: 10px 20px;
+		margin: 10px 20px 10px 0;
 
 		&:before{
 			content: "";
@@ -170,20 +185,5 @@
 			position: absolute;
 			left: 0;		
 		}
-
-		&.active{
-			&:after{
-			content: "";
-			background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-			display: inline-block;
-			width: 12px;
-			height: 12px;
-			border-radius: 50%;
-			position: absolute;
-			left: 4px;
-			top: 4px;
-		}
-		}
 	}
-
 }
