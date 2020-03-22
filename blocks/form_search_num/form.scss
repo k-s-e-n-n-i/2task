@@ -13,40 +13,6 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	z-index: 1;
-	
-	/*.select_item{
-		position: relative;
-
-		.title_2{
-			margin-bottom: 5px;
-		}
-
-		.dropdown{
-					
-			&.date{//input
-				width: 150px;
-				-webkit-appearance: none;
-				font-size: 14px;
-			}
-			&.num{//input
-				width: 318px;
-				-webkit-appearance: none;
-			}
-
-			option:first-child{
-				display: none;
-			}				
-		}
-
-		.expand{
-			width: 10px;
-			height: 10px;
-			position: absolute;
-			bottom: 20px;
-			right: 15px;
-			cursor: pointer;
-		}
-	}*/
 
 	.btn{
 		width: 320px;

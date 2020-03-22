@@ -1,4 +1,4 @@
-.form_reg{
+.form_sign_in{
 	background: #FFFFFF;
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
@@ -6,36 +6,23 @@
 	border-radius: 4px;
 
 	width: 380px;
-	height: 646px;//576px;
+	height: 358px;
 	padding: 40px 30px 30px 30px;
 	
 	display: flex;
-	//flex-direction: column;
 	flex-wrap: wrap;
 	z-index: 1;
 	
 	h1{
-		margin-bottom: 10px;
-	}
-	h3{
-		margin-top: 15px;
-	}
-
-	.item_text{
-		display: flex;
-		flex-wrap: wrap;
+		margin-bottom: 15px;
 	}
 
 	.input{
 		margin: 5px 0;
 	}
 
-	.block_radio{
-		display: flex;
-	}	
-
 	.btn{
-		width: 320px;
+		width: 100%;
 		margin-top: 20px;
 
 		&.border{
@@ -50,10 +37,5 @@
 		justify-content: space-between;
 		padding-top: 30px;
 		width: 100%;
-
-		p{
-
-		}
 	}
-
 }
