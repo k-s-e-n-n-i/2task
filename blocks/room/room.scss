@@ -1,0 +1,74 @@
+.room{
+
+	.block_images{
+		//width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		margin: 0;
+		padding: 0;
+
+		img,
+		.col1,
+		.col2{
+			margin: 0;
+			padding: 0;
+		}
+
+		.col1{
+			width: 68.2%;	
+		}
+		
+		.col2{
+			width: 31.8%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			img{
+				margin: 0;
+				padding: 0;
+				height: 50%;	
+			}
+		}
+	}
+
+	.content_width{
+		display: flex;
+
+		.column1{
+			width: 67%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			.info{
+				width: 340px;
+				border: 1px solid red;
+			}
+			.impression{
+				width: 340px;
+				border: 1px solid red;
+			}
+			.comment{
+				width: 100%;
+				border: 1px solid red;
+			}
+			.rules{
+				width: 340px;
+				border: 1px solid red;
+			}
+			.cancel{
+				width: 340px;
+				border: 1px solid red;
+			}
+		}
+		.column2{
+			width: 33%;
+			border: 1px solid red;
+		}
+	}
+}
+

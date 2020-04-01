@@ -1,7 +1,29 @@
 .block_calendar{
 	position: relative;
-	width: 100px;
-	height: 0;
+	//width: 500px;
+	//height: 500px;
+	background: #fff;
+	/*display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+
+	.block_links{
+		//display: flex;
+
+		.links{
+			cursor: pointer;
+			//display: flex;
+			//justify-content: flex-end;
+
+			&.clean{
+				color: rgba(31, 32, 65, 0.5);
+			}
+
+			&	.ok{
+				color: #BC9CFF;
+			}
+		}
+	}*/
 
 	.calendar{
 		width: 320px;

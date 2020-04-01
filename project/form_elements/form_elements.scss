@@ -132,6 +132,17 @@
 				}
 				
 			}
+			.links{
+				cursor: pointer;
+
+				&.clean{
+					color: rgba(31, 32, 65, 0.5);
+				}
+
+				&.ok{
+					color: #BC9CFF;
+				}
+			}
 		}
 	}
 }
@@ -317,5 +328,5 @@
 			}
 		}
 	}
-	
 }
+
