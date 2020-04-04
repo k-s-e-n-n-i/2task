@@ -20,12 +20,14 @@ h1,h2,h3{
 
 h1{
 	//font-family: Quicksand;
+	font-family: Montserrat;
 	font-size: 24px;
 	line-height: 30px;
 }
 
 h2{
-	font-family: Quicksand;
+	//font-family: Quicksand;
+	font-family: Montserrat;
 	font-size: 19px;
 	line-height: 24px;
 }
@@ -44,7 +46,13 @@ p{
 	font-weight: normal;
 	font-size: 14px;
 	//line-height: 18px;
+	margin: 0;
+
+	/*&.text{
+		margin: 0;
+	}*/
 }
+
 
 
 .content_width{

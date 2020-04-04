@@ -330,3 +330,27 @@
 	}
 }
 
+//list - списки
+.list{
+	margin: 0;
+	padding: 0;
+
+	.list_item{
+		position: relative;
+		margin: 5px 0;
+		display: flex;
+
+		&:before{
+			content: "";
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			margin: 7px 10px;
+			background: rgba(31, 32, 65, 0.25);
+		}
+
+		p{
+			width: 270px;
+		}
+	}
+}

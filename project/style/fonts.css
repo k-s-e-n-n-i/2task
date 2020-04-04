@@ -6,3 +6,10 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Quicksand';
+    src: local('quicksandregular'), 
+    local('quicksandregular'), 
+    url('../font/quicksand/quicksandregular.ttf') format('truetype');
+    font-style: normal;
+}
