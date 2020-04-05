@@ -6,43 +6,52 @@
 
 <link rel="stylesheet" type="text/css" href="/blocks/form_room/form_room.scss">
 <div class="form_room">
-	<h1>Регистрация аккаунта</h1>
-	<div class="item_text">
-		<input type="" name="" class="input" placeholder="Имя"></input>
-		<input type="" name="" class="input" placeholder="Фамилия"></input>
+	<div class="form_room_flex">
+		<p>№ <span>888</span></p>
+		<p><span>9 990</span> в сутки</p>
 	</div>
-	
-	<div class="block_radio">
-		<input id="rb1_reg" type="radio" name="radiogroup" class="radiobutton" checked=""></input>
-		<label for="rb1_reg" class="radiobtn">Мужчина</label>
-	</div>
-	<div class="block_radio">
-		<input id="rb2_reg" type="radio" name="radiogroup" class="radiobutton"></input>
-		<label for="rb2_reg" class="radiobtn">Женщина</label>
-	</div>
-
-	<h3>Дата рождения</h3>
-	<input type="" name="" class="input" placeholder="ДД.ММ.ГГГГ"></input>
-	<h3>данные для входа в сервис</h3>
-	<input type="" name="" class="input" placeholder="Email"></input>
-	<input type="" name="" class="input" placeholder="Пароль"></input>
-
-	<div class="selector">
-		<div class="block_toggle">
-			<input id="rb1_reg6" type="radio" name="radiogroup6" class="radiobutton" checked=""></input>
-			<label for="rb1_reg6" class="radiobtn rad1"></label>
+	<div class="form_room_flex">
+		<div class="block_dropdown">
+			<h3>Прибытие</h3>
+			<div class="dropdown date">
+				<span>ДД.ММ.ГГГГ</span>
+				<img src="project/img/expand_more.svg" class="expand">
+			</div>
 		</div>
-		<div class="block_toggle">
-			<input id="rb2_reg6" type="radio" name="radiogroup6" class="radiobutton"></input>
-			<label for="rb2_reg6" class="radiobtn rad2"></label>
+		<div class="block_dropdown">
+			<h3>Выезд</h3>
+			<div class="dropdown date">
+				<span>ДД.ММ.ГГГГ</span>
+				<img src="project/img/expand_more.svg" class="expand">
+			</div>
+		</div>
+		<!--<include src="../blocks/calendar/calendar.html"></include>-->
+	</div>
+	<div class="block_dropdown">
+		<h3>Гости</h3>
+		<div class="dropdown">Сколько гостей
+			<img src="project/img/expand_more.svg" class="expand">
 		</div>
 	</div>
+	<div class="prices">
+		<div class="form_room_flex">
+			<p class="text"><span>9 990</span>₽ х <span>4</span> суток</p>
+			<p><span>39 960</span>₽</p>
+		</div>
+		<div class="form_room_flex">
+			<p class="text info_mark">Сбор за услуги: скидка <span>2 179</span>₽</p>
+			<p><span>0</span>₽</p>
+		</div>
+		<div class="form_room_flex">
+			<p class="text info_mark"><span>Сбор за дополнительные услуги</span></p>
+			<p><span>300</span>₽</p>
+		</div>
 
-	<div class="btn gradient">Перейти к оплате</div>
-
-	<div class="login">
-		<p>Уже есть аккаунт на Toxin</p>
-		<div class="btn border">Войти</div>
+		<div class="form_room_flex">
+			<h2>Итого</h2>
+			<h2><span>38 081</span>₽</h2>
+		</div>
 	</div>
 
+	<div class="btn gradient">Забронировать</div>
 </div>
