@@ -12,13 +12,6 @@
 	display: flex;	
 	flex-wrap: wrap;
 
-	.form_room_flex{
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		position: relative;
-	}
-
 	.prices{
 		margin: 20px 0;
 		width: 100%;
@@ -67,4 +60,11 @@
 
 .line_footer{
 	margin: 70px 0 0 0;
+}
+
+.form_room_flex{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	position: relative;
 }

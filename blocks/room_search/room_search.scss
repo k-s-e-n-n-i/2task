@@ -1,0 +1,38 @@
+.content_width{
+	margin-top: 30px;
+
+	&.room_search{
+		display: flex;
+		justify-content: space-between;
+	
+		.column1{
+			width: 267px;
+			display: flex;
+			//flex-wrap: wrap;
+			flex-direction: column;
+			//justify-content: space-between;
+			margin-right: 35px;
+
+			.block_dropdown{
+				width: 267px;
+				.dropdown{
+					width: 267px;
+				}
+			}
+
+			
+		}
+		.column2{
+			//width: 33%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			h1{
+				width: 100%;
+				margin-bottom: 10px; 
+			}
+		}
+	}
+}
+
