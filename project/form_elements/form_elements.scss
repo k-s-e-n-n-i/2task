@@ -65,7 +65,7 @@
 			font-size: 14px;
 		}
 
-		&.numbers{
+		&.items_show{
 			//width: 100%;//264px;
 			border-radius: 4px 4px 0 0;
 			border: 1px solid rgba(31, 32, 65, 0.5);
@@ -89,6 +89,11 @@
 		border-radius: 0 0 4px 4px;
 		border: 1px solid rgba(31, 32, 65, 0.5);
 		margin-top: -1px;
+		z-index: 1;
+
+		&.hide{
+			display: none;
+		}
 
 		.dropdown_item_line{
 			display: flex;
@@ -261,6 +266,7 @@
 
 //чекбоксы
 .checkbox{
+	margin-top: 18px;
 
 	.checkbox_block{
 
@@ -298,7 +304,7 @@
 			padding: 0 0 5px 30px;
 			
 			font-size: 14px;
-			line-height: 28px;
+			line-height: 20px;
 			color: rgba(31, 32, 65, 0.5);
 			width: 192px;
 

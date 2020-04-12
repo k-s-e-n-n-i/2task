@@ -1,4 +1,4 @@
-.form{
+.form_search_num{
 	width: 380px;
 	height: 374px;
 	background: #fff;
@@ -16,14 +16,20 @@
 
 	.btn{
 		width: 320px;
+		margin-top: 30px;
 	}
-
 
 	.dropdown_items{
 		width: 316px;
 		position: absolute;
 	}
-	.numbers{
-		//width: 100%;
+
+	.dropdown_calendar{
+		display: block;
+		width: 200px;
+	}
+
+	.flex{
+		width: 100%;
 	}
 }
