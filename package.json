@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.pug --open",
+    "build": "parcel build index.pug -d docs --public-url ./"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "posthtml-include": "^1.3.3",
+    "pug": "^2.0.4",
     "sass": "^1.25.0"
   },
   "dependencies": {

@@ -1,0 +1,102 @@
+//Выпадающий список
+.blockDropdown{
+
+	.blockDropdown_dropdown{
+		position: relative;
+		color: rgba(31, 32, 65, 0.75);
+
+		&.blockDropdown_dropdown__date{
+			width: 148px;
+			-webkit-appearance: none;
+			font-size: 14px;
+		}
+
+		&.blockDropdown_dropdown__itemsShow{
+			border-radius: 4px 4px 0 0;
+			border: 1px solid rgba(31, 32, 65, 0.5);
+		}
+
+		&.blockDropdown_dropdown__filter{
+			width: 267px;
+		}
+
+		.blockDropdown_dropdown_expand{
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			bottom: 16px;
+			right: 15px;
+			cursor: pointer;
+		}
+	}
+
+	.blockDropdown_dropdown_items{
+		display: flex;
+		flex-wrap: wrap;
+		//width: 260px;
+		background: #fff;
+		border-radius: 0 0 4px 4px;
+		border: 1px solid rgba(31, 32, 65, 0.5);
+		margin-top: -1px;
+		z-index: 1;
+
+		&.blockDropdown_dropdown_items__hide{
+			display: none;
+		}
+
+		.blockDropdown_dropdown_items_line{
+			display: flex;
+    		justify-content: space-between;
+			color: rgba(31, 32, 65, 0.5);
+			//border: 1px solid rgba(31, 32, 65, 0.5);
+			margin-top: -1px;
+			width: 100%;
+			height: 40px;
+
+			h3{
+				padding: 13px 15px;
+				margin: 0;
+			}
+
+			.blockDropdown_dropdown_items_line_incBlock{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 92px;
+				margin-right: 7px;
+
+
+				.blockDropdown_dropdown_items_line_incBlock_inc{
+					border: 1px solid rgba(31, 32, 65, 0.25);
+					border-radius: 50%;
+					width: 30px;
+					height: 30px;
+					font-size: 20px;
+					display: flex;
+					justify-content: center;
+					box-sizing: border-box;
+					padding-top: 2px;
+					cursor: pointer;
+
+					&.blockDropdown_dropdown_items_line_incBlock_inc__disable{
+						cursor: default;
+						border-color: rgba(31, 32, 65, 0.15);
+						color: rgba(31, 32, 65, 0.15);
+					}
+				}
+				
+			}
+			.blockDropdown_dropdown_items_line_links{
+				cursor: pointer;
+
+				&.blockDropdown_dropdown_items_line_links__clean{
+					color: rgba(31, 32, 65, 0.5);
+				}
+
+				&.blockDropdown_dropdown_items_line_links__ok{
+					color: #BC9CFF;
+				}
+			}
+		}
+	}
+}
