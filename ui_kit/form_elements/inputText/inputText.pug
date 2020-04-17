@@ -4,4 +4,12 @@ mixin inputText(text,dopclass)
 	div.inputText
 		h3= text
 		input(class='inputText_input '+ dopclass)
+		if dopclass == 'inputText_input__subscription'
+			+arrow
+		else
 
+
+mixin arrow
+	div.arrow
+		div.arrow_line
+		div.arrow_next

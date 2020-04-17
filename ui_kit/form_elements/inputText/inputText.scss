@@ -1,5 +1,7 @@
 //Тектовое поле
 .inputText{
+	position: relative;
+
 	.inputText_input{
 		color: rgba(31, 32, 65, 0.25)!important;
 
@@ -19,6 +21,17 @@
 
 	.inputText_input__masked{
 		background: yellow;//дописать маску
+	}
+
+	.inputText_input__subscription{
+		width: 267px;
+		position: relative;
+	}
+
+	.arrow{
+		position: absolute;
+		bottom: 12px;
+	    left: 235px;
 	}
 }
 

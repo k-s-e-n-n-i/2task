@@ -47,10 +47,35 @@
 	}
 }
 
+.arrow{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
 
+	.arrow_line{
+		width: 15px;
+		height: 2px;
+		background: #BC9CFF;
+	}
+	
+	
+	.arrow_next{
+		width: 10px;
+		height: 10px;
+		border-style: solid;
+		border-width: 0 2px 2px 0;
+		border-color: #BC9CFF;
+		transform: rotate(-45deg);
+		position: absolute;
+		top: 4;
+		left: 4;
+	}
+}
 
 //Выпадающий список
-.block_dropdown{
+/*.block_dropdown{
 
 	.dropdown{
 		position: relative;
@@ -147,11 +172,11 @@
 			}
 		}
 	}
-}
+}*/
 
 
 //Подписка
-.block_subscription{
+/*.block_subscription{
 
 	.item_subscription{
 		display: block;
@@ -179,36 +204,10 @@
 		}
 			
 	}	
-}
+}*/
 
 
-//Кнопки
-.btn{
-	border-radius: 22px;
-	height: 24px;
-	padding: 10px 0;
-	color: #ffffff;
-	cursor: pointer;
 
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	text-align: center;
-	text-transform: uppercase;
-
-	&.border{
-		background-color: #fff;
-		color: #BC9CFF;
-		border: 1px #BC9CFF solid;
-		padding: 9px 0 10px;	
-	}
-
-	&.gradient{
-		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-		color: #ffffff;	
-	}
-}
 
 //Радиокнопки
 .block_radio{
@@ -499,30 +498,3 @@
 	}
 }*/
 
-.arrow{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 20px;
-	height: 20px;
-	position: relative;
-
-	.arrow_line{
-		width: 15px;
-		height: 2px;
-		background: #BC9CFF;
-	}
-	
-	
-	.arrow_next{
-		width: 10px;
-		height: 10px;
-		border-style: solid;
-		border-width: 0 2px 2px 0;
-		border-color: #BC9CFF;
-		transform: rotate(-45deg);
-		position: absolute;
-		top: 4;
-		left: 4;
-	}
-}

@@ -1,0 +1,27 @@
+//Кнопки
+.btn{
+	border-radius: 22px;
+	height: 24px;
+	padding: 10px 0;
+	color: #ffffff;
+	cursor: pointer;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+	text-transform: uppercase;
+
+	&.btn__border{
+		background-color: #fff;
+		color: #BC9CFF;
+		border: 1px #BC9CFF solid;
+		padding: 9px 0 10px;	
+	}
+
+	&.btn__gradient{
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		color: #ffffff;	
+	}
+}

@@ -1,5 +1,5 @@
 import '/project/style/styles.scss';
-//import '/blocks/header/header.scss';
+
 //import '/blocks/footer/footer.scss';
 //import '/blocks/form_search_num/form.scss';
 import '/project/style/fonts.css';
@@ -8,4 +8,8 @@ import '/project/style/fonts.css';
 import '/ui_kit/form_elements/form_elements.scss'
 import '/ui_kit/form_elements/inputText/inputText.scss'
 import '/ui_kit/form_elements/dropdown/dropdown.scss'
+import '/ui_kit/form_elements/btn/btn.scss'
+
+import '/blocks/header/header.scss';
+import '/blocks/landing_page/landing_page.scss'
 
