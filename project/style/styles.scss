@@ -52,6 +52,13 @@ p{
 .flex{
 	display: flex;
 	justify-content: space-between;
+
+	&.start{
+		justify-content: flex-start;
+	}
+	&.end{
+		justify-content:flex-end;
+	}
 }
 
 .content{

@@ -1,5 +1,9 @@
 include inputText/inputText.pug
 include dropdown/dropdown.pug
+include checkbox/checkbox.pug
+include radiobutton/radiobutton.pug
+include toggle/toggle.pug
+include like/like.pug
 
 
 div.blk1
@@ -20,3 +24,25 @@ div.blk1
 		div.arrow
 			div.arrow_line
 			div.arrow_next
+
+div.blk1
+	h3 Checkbox Buttons
+	div.checkbox
+		+checkbox_item("Можно курить", 10)
+		+checkbox_item("Можно с питомцами", 20)
+		+checkbox_item("Можно пригласить гостей (до 10 человек)", 30)
+
+	h3 Radio Buttons
+	div.flex.start
+		+radio(1,"rbGroop1","Мужчина")
+		+radio(2,"rbGroop1","Женщина")
+
+	h3 Toggle
+	+toggle("toggleGrooup1","Получать спецпредложения")
+	+toggle("toggleGrooup2","Получать спецпредложения")
+
+
+	+like('5')
+
+//include /blocks/room_search/room_search.html
+//include /blocks/form_registration/form.html

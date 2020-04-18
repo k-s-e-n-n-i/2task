@@ -1,0 +1,13 @@
+script(src='/ui_kit/form_elements/toggle/toggle.js')
+
+
+mixin toggle(name,text)
+	div.toggle__flex
+		div.toggle
+			div.toggle_item
+				input.toggle_item_input(id=name+"1" type="radio" name=name checked)
+				label.toggle_item_label.off(for=name+"1")
+			div.toggle_item
+				input.toggle_item_input(id=name+"2" type="radio" name=name)
+				label.toggle_item_label.on(for=name+"2")
+		p= text
