@@ -59,6 +59,56 @@
 	
 				//margin-right: 5px;
 			}
+
+			&.checkbox_item_label__bold{			
+				color: rgba(31, 32, 65, 0.75);
+				font-weight: bold;
+				font-size: 14px;
+				line-height: 18px;
+			}
+		}
+
+		p{
+			padding-left: 30px;
+			color: rgba(31, 32, 65, 0.5);
+			font-size: 12px;
+			line-height: 14px;
+			margin-bottom: 10px;
 		}
 	}
 }
+
+
+
+.checkboxList{
+	margin: 50px 0 17px 0;
+
+	.flex{
+		position: relative;
+		.checkboxList_expand{
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			bottom: 2px;
+			right: 15px;
+			cursor: pointer;
+		}
+
+		h3{
+			margin: 0;
+		}
+	}
+
+	.checkbox{
+		&.checkbox__hide{
+			display: none;
+		}
+	}
+}
+
+
+.checkboxRich{
+
+}
+
+			

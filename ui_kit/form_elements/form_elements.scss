@@ -1,13 +1,27 @@
-.blk1{
-	border-bottom: 1px solid red;
-	margin: 20px;
-	width: 320px;
-	display: inline-block;
+.formElements{
+	display: flex;
+	flex-wrap: wrap;
 
-	.flex{
-		width: 100%;
+	.blk{
+		border-bottom: 1px solid red;
+		margin: 20px;
+		width: 320px;
+		
+
+		.flex{
+			width: 100%;
+		}
+
+		&:nth-child(3n+1){
+			margin-right: 126px;
+		}
+		&:nth-child(3n+2){
+			margin-right: 72px;
+		}
 	}
 }
+
+
 
 /*.blk2{
 	.block_dropdown{
@@ -60,6 +74,10 @@
 		width: 15px;
 		height: 2px;
 		background: #BC9CFF;
+
+		&.arrow__white{
+			background: #fff;
+		}
 	}
 	
 	
@@ -73,73 +91,22 @@
 		position: absolute;
 		top: 4;
 		left: 4;
-	}
-}
 
-/*.heart{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 7px;
-	height: 7px;
-	cursor: pointer;
-	position: relative;
-	transform: rotate(45deg);
-
-	.heart_line{
-		width: 7px;
-		height: 4.5px;
-		background: #BC9CFF;
-		position: absolute;
-		bottom: 0;
-		border-radius: 100px 0 0 150px;
-	}
-	
-	
-	.heart_next{
-		width: 4.5px;
-		height: 7px;
-		background: #BC9CFF;
-		position: absolute;
-		right: 0;
-		border-radius: 100px 150px 0 0;
-	}
-}*/
-
-///////////////
-
-
-
-
-
-
-
-
-
-//list - списки
-.list{
-	margin: 0;
-	padding: 0;
-
-	.list_item{
-		position: relative;
-		margin: 5px 0;
-		display: flex;
-
-		&:before{
-			content: "";
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			margin: 7px 10px;
-			background: rgba(31, 32, 65, 0.25);
-		}
-
-		p{
-			width: 270px;
+		&.arrow__white{
+			border-color: #fff;
 		}
 	}
 }
+
+///////////////////
+
+
+
+
+
+
+
+
 
 //
 /*.room_number{

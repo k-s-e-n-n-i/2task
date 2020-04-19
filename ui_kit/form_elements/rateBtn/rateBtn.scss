@@ -1,0 +1,21 @@
+.rate{
+	display: flex;
+	justify-content: flex-start;
+	margin: 15px 20px 0 0;
+
+	.rate_star{
+		width: 24px;
+		height: 24px;
+		margin: 0 2px;
+		cursor: pointer;
+
+		background-image: url(/ui_kit/form_elements/rateBtn/star_border.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		background-size: contain;
+
+		&.rate_star__active{
+			background-image: url("/ui_kit/form_elements/rateBtn/star.svg");
+		}
+	}
+}

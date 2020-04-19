@@ -11,8 +11,12 @@
 			font-size: 14px;
 		}
 
-		&.blockDropdown_dropdown__itemsShow{
+		&.blockDropdown_dropdown__whisItems{
 			border-radius: 4px 4px 0 0;
+			border: 1px solid rgba(31, 32, 65, 0.25);
+		}
+
+		&.blockDropdown_dropdown__itemsShow{
 			border: 1px solid rgba(31, 32, 65, 0.5);
 		}
 
@@ -86,7 +90,18 @@
 				}
 				
 			}
-			.blockDropdown_dropdown_items_line_links{
+
+			.link{
+				&.link__clean{
+					margin: auto 15px;
+				}
+
+				&.link__ok{
+					margin: auto 7px;
+				}
+			}
+
+			/*.blockDropdown_dropdown_items_line_links{
 				cursor: pointer;
 
 				&.blockDropdown_dropdown_items_line_links__clean{
@@ -96,7 +111,7 @@
 				&.blockDropdown_dropdown_items_line_links__ok{
 					color: #BC9CFF;
 				}
-			}
+			}*/
 		}
 	}
 }

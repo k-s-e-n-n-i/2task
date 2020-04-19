@@ -1,12 +1,6 @@
-
-
-
-
 script(src='/ui_kit/form_elements/like/like.js')
-
 
 mixin like(text)
 		div.like
-			img.like_ico.hide(src="/ui_kit/form_elements/like/favorite.svg")
-			img.like_ico(src="/ui_kit/form_elements/like/favorite_border.svg")
+			div.like_ico
 			div.like_sum= text

@@ -14,6 +14,12 @@ import '/ui_kit/form_elements/checkbox/checkbox.scss'
 import '/ui_kit/form_elements/radiobutton/radiobutton.scss'
 import '/ui_kit/form_elements/toggle/toggle.scss'
 import '/ui_kit/form_elements/like/like.scss'
+import '/ui_kit/form_elements/rateBtn/rateBtn.scss'
+import '/ui_kit/form_elements/rangeSlider/rangeSlider.scss'
+import '/ui_kit/form_elements/link/link.scss'
+import '/ui_kit/form_elements/pagination/pagination.scss'
+import '/ui_kit/form_elements/list/list.scss'
+
 
 import '/blocks/header/header.scss';
 import '/blocks/landing_page/landing_page.scss'

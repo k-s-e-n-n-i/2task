@@ -5,11 +5,11 @@ mixin inputText(text,dopclass)
 		h3= text
 		input(class='inputText_input '+ dopclass)
 		if dopclass == 'inputText_input__subscription'
-			+arrow
+			+arrow('')
 		else
 
 
-mixin arrow
+mixin arrow(dopclass)
 	div.arrow
-		div.arrow_line
-		div.arrow_next
+		div(class='arrow_line' +dopclass)
+		div(class='arrow_next' +dopclass)

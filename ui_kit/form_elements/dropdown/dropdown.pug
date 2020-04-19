@@ -1,13 +1,30 @@
-
+script(src='/ui_kit/form_elements/dropdown/dropdown.js')
 
 mixin dropdown(label,text,dopclass)
 	div.blockDropdown
 		h3= label
 		div(class='blockDropdown_dropdown '+ dopclass)= text
 			img.blockDropdown_dropdown_expand(src="project/img/expand_more.svg")
-					
+				
 
+mixin dropdownEx(label,text,dopclass)
+	h3= label
+	div(class='blockDropdown_dropdown blockDropdown_dropdown__whisItems '+ dopclass)= text
+		img.blockDropdown_dropdown_expand(src="project/img/expand_more.svg")
 
+mixin dropdownItems(text,num,dopclass1,dopclass2)
+	div.blockDropdown_dropdown_items_line
+		h3= text
+		div.blockDropdown_dropdown_items_line_incBlock
+			div(class='blockDropdown_dropdown_items_line_incBlock_inc '+ dopclass1)= '-'
+			span= num
+			div(class='blockDropdown_dropdown_items_line_incBlock_inc '+ dopclass2)= '+'
 
-
-
+mixin dropdownItemsLink(num)
+	div.blockDropdown_dropdown_items_line
+		if num > 0
+			+link('Очистить','link__clean link__grey')
+			+link('Применить','link__ok')
+		else
+			div.flex.end
+				+link('Применить','link__ok')
