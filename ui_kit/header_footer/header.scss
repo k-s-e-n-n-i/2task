@@ -1,9 +1,9 @@
-/*.header{
+.header{
 	display: flex;
 	justify-content: space-between;
 	min-height: 70px;
 
-	.header_menu{
+	.header_nav{
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -11,27 +11,40 @@
 		margin: 0;
 		padding: 0;
 
-		.header_menu_li{
-			display: block;
-			padding: 0 20px;
-			color: rgba(31, 32, 65, 0.5);
-			padding: 10px 0;
-			margin: 5px 0 5px 20px;	
-			font-size: 14px;
-			cursor: pointer;
-		}
-	}
+		.header_nav_menu{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			
+			margin: 0;
+			padding: 0;
 
-	.btn__gradient{
-		width: 196px;
-	}
-	.btn__border{
-		width: 85px;
-	}
-	.btn__header{
-		height: 17px;
-		line-height: 15px;
-		margin-left: 20px;
+			.header_menu_li{
+				display: block;
+				padding: 0 20px;
+				color: rgba(31, 32, 65, 0.5);
+				padding: 10px 0;
+				margin: 5px 0 5px 20px;	
+				//font-size: 14px;
+				cursor: pointer;
+
+				&.header_menu_li__active{
+					font-weight: bold;
+				}
+			}
+		}
+
+		.btn__gradient{
+			width: 196px;
+		}
+		.btn__border{
+			width: 85px;
+		}
+		.btn__header{
+			height: 17px;
+			line-height: 15px;
+			margin: 15px 0 15px 20px;
+		}
 	}
 }
 
@@ -45,10 +58,12 @@
 	}
 }
 
-.header{
+/*.header{
 	display: flex;
 	justify-content: space-between;
 	min-height: 70px;
+
+	background: red;
 
 	.menu{
 		display: flex;

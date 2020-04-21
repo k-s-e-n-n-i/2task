@@ -10,6 +10,8 @@ include rangeSlider/rangeSlider.pug
 include link/link.pug
 include pagination/pagination.pug
 include list/list.pug
+include info/info.pug
+include comment/comment.pug
 
 
 div.formElements
@@ -131,8 +133,8 @@ div.formElements
 	div.blk
 		h3 Rich Checkbox Buttons
 		div.checkbox
-			+checkbox_item("Широкий коридор", 31,'Ширина коридоров в номере не менее 91 см.')
-			+checkbox_item("Помощник для инвалидов", 32,'На 1 этаже вас встретит специалист и проводит до номера.')
+			+checkbox_item("Широкий коридор", 31, 'Ширина коридоров в номере не менее 91 см.')
+			+checkbox_item("Помощник для инвалидов", 32, 'На 1 этаже вас встретит специалист и проводит до номера.')
 	
 	div.blk
 		h3 bullet list
@@ -141,6 +143,13 @@ div.formElements
 			+listItem('Без вечеринок и мероприятий')
 			+listItem('Время прибытия — после 13:00, а выезд до 12:00')
 
-//include /blocks/room_search/room_search.html
-//include /blocks/room_details/room_details.html
-//include /blocks/form_registration/form.html
+	div.blk
+		div.info
+			+infoItem('Комфорт', 'Шумопоглощающие стены','ui_kit/form_elements/info/insert_emoticon.svg')
+			hr.info_hr
+			+infoItem('Удобство', 'Окно в каждой из спален','ui_kit/form_elements/info/location_city.svg')
+
+	div.blk.width
+		div.comment
+			h2 
+			+comment_item('ui_kit/form_elements/comment/photo1.svg',12,'Мурад Сарафанов','5 дней назад','Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')

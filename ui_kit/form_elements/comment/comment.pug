@@ -1,0 +1,11 @@
+mixin comment_item(url,num,name,time,text)
+	div.comment_block
+		div.comment_col1
+			img.comment_col1_photo(src=url)
+			+like(num)
+		div.comment_col2
+			p.comment_col2_name= name
+			p.comment_col2_time= time
+			p= text
+						
+				

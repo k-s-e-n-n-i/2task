@@ -19,8 +19,14 @@ import '/ui_kit/form_elements/rangeSlider/rangeSlider.scss'
 import '/ui_kit/form_elements/link/link.scss'
 import '/ui_kit/form_elements/pagination/pagination.scss'
 import '/ui_kit/form_elements/list/list.scss'
+import '/ui_kit/form_elements/info/info.scss'
+import '/ui_kit/form_elements/comment/comment.scss'
+
+import '/ui_kit/color_type/color_type.scss'
 
 
-import '/blocks/header/header.scss';
+
+import '/ui_kit/header_footer/header.scss';
+
 import '/blocks/landing_page/landing_page.scss'
 

@@ -9,13 +9,15 @@ html(lang="ru")
 		script(src='./index.js')
 		link(href='ui_kit/form_elements/inputText/inputText.scss')
 	body
-		include ui_kit/form_elements/form_elements.pug
+		//include ui_kit/form_elements/form_elements.pug
+		//include ui_kit/color_type/color_type.pug
+		include ui_kit/header_footer/header.pug
 
 		//include blocks/landing_page/landing_page.pug
 		
 		
 		
-		
+			
 
 
 
@@ -23,8 +25,3 @@ mixin arrow(dopclass)
 	div.arrow
 		div(class='arrow_line' +dopclass)
 		div(class='arrow_next' +dopclass)
-		
-        
-        
-
-

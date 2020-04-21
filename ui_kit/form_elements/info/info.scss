@@ -1,0 +1,27 @@
+.info{
+	width: 340px;
+
+	.info_item{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 20px 0;
+
+		.info_item_icon{
+			width: 48px;
+			height: 48px;
+			margin: 2px 12px 2px 2px;
+		}
+
+		.info_item_text{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
+
+	.info_hr{
+		width: 280px;
+		margin: 0;
+		border: 0.5px solid rgba(31, 32, 65, 0.1);
+	}
+}

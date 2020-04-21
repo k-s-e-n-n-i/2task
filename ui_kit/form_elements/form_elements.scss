@@ -18,25 +18,12 @@
 		&:nth-child(3n+2){
 			margin-right: 72px;
 		}
+
+		&.width{
+			width: 717px;
+		}
 	}
 }
-
-
-
-/*.blk2{
-	.block_dropdown{
-		width: 267px;
-		.dropdown{
-			width: 267px;
-		}
-
-		&:nth-child(1){
-			h3{
-				margin-top: 0;
-			}	
-		}		
-	}	
-}*/
 	
 
 .inputText_input,
@@ -79,8 +66,7 @@
 			background: #fff;
 		}
 	}
-	
-	
+		
 	.arrow_next{
 		width: 10px;
 		height: 10px;
@@ -97,91 +83,3 @@
 		}
 	}
 }
-
-///////////////////
-
-
-
-
-
-
-
-
-
-//
-/*.room_number{
-	width: 270px;
-	height: 257px;
-	background: #FFFFFF;
-	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-	border-radius: 4px;
-
-	.image{
-		width: 270px;
-		height: 150px;
-		border-radius: 4px 4px 0 0;	
-		background-image: url("image.png");
-		background-size: cover;	
-	}
-
-	.content_info{
-		margin: 20px;
-
-		.form_room_flex{
-			width: auto;
-			align-items: flex-end;
-
-			p{
-				font-weight: bold;
-
-				&.num{
-					color: #1F2041;
-
-					span{
-						font-size: 20px;
-					}
-
-					&.lux{
-						&:after{
-							content: "люкс";
-							color: #BC9CFF;
-							font-size: 15px;
-							font-weight: bold;
-							margin-left: 5px;
-						}
-					}
-				}
-				&.sum{
-					color: rgba(31, 32, 65, 0.5);
-
-					span{
-						font-size: 16px;
-					}
-				}
-
-
-			}
-		}
-
-		hr{
-			background: rgba(31, 32, 65, 0.1);
-		}
-	}
-
-	
-}
-
-
-.star{
-	width: 24px;
-	height: 24px;
-
-	&.star_active{
-		background: url("star.svg") no-repeat;
-	}
-
-	&.star_none{
-		background: url("star_border.svg") no-repeat;
-	}
-}*/
-

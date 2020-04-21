@@ -1,0 +1,17 @@
+include /ui_kit/form_elements/btn/btn.pug
+
+mixin menu_li(text,dopclass)
+	li(class='header_menu_li ' +dopclass)= text
+	
+
+div.header
+	img(src="project/img/logo.svg")
+	div.header_nav
+		ul.header_nav_menu
+			+menu_li('О нас','header_menu_li__active')
+			+menu_li('Услуги','')
+			+menu_li('Вакансии','')
+			+menu_li('Новости','')
+			+menu_li('Соглашения','')
+		+btn('Войти','btn__border btn__header')
+		+btn('Зарегистрироваться','btn__gradient btn__header')

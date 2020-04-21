@@ -1,0 +1,41 @@
+.comment{
+	width: 100%;
+
+	.comment_block{
+		display: flex;
+		margin: 23px 0 25px;
+
+		.comment_col1{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 2px;
+
+			.comment_col1_photo{
+				width: 48px;
+				height: 48px;
+				margin-bottom: 12px;
+				background: yellow;
+			}
+
+			.like{
+				margin: 0;
+			}
+		}
+
+		.comment_col2{
+			margin-left: 10px;
+			width: 100%;
+
+			.comment_col2_name{
+				font-weight: bold;
+			}
+			.comment_col2_time{
+				margin-bottom: 12px;
+			}
+			p{
+				width: 100%;
+			}
+		}
+	}
+}
