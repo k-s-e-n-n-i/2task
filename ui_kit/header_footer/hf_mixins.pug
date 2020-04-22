@@ -1,0 +1,32 @@
+include /ui_kit/form_elements/btn/btn.pug
+include /ui_kit/form_elements/inputText/inputText.pug
+
+mixin menu_li(text,dopclass)
+	li(class='menu_li ' +dopclass)= text
+	if dopclass == 'menu_li__expand'
+			div.menu_li_expand
+	else
+
+mixin header_nav_login(auth,name)
+	div.header_nav_login
+		if auth == 0
+			+btn('Войти','btn__border btn__header')
+			+btn('Зарегистрироваться','btn__gradient btn__header')
+		else
+			div.header_nav_login_hr
+			p= name
+
+mixin footerMenu_item(...items)
+	li.bottomMenu_column
+		ul.bottomMenu_column_list
+			each item in items
+				if item == 's'
+					+inputText('subscription text field','inputText_input__subscription')
+						div.arrow
+							div.arrow_line
+							div.arrow_next
+				else
+					if item == 'logo'
+						img
+					else
+						+menu_li(item,'')

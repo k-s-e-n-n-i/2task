@@ -24,9 +24,9 @@ import '/ui_kit/form_elements/comment/comment.scss'
 
 import '/ui_kit/color_type/color_type.scss'
 
-
-
 import '/ui_kit/header_footer/header.scss';
+import '/ui_kit/header_footer/footer.scss';
+
 
 import '/blocks/landing_page/landing_page.scss'
 

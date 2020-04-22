@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	min-height: 70px;
+	color: rgba(31, 32, 65, 0.5);
 
 	.header_nav{
 		display: flex;
@@ -19,82 +20,84 @@
 			margin: 0;
 			padding: 0;
 
-			.header_menu_li{
-				display: block;
-				padding: 0 20px;
-				color: rgba(31, 32, 65, 0.5);
+			.menu_li{
 				padding: 10px 0;
 				margin: 5px 0 5px 20px;	
-				//font-size: 14px;
-				cursor: pointer;
+			}
 
-				&.header_menu_li__active{
-					font-weight: bold;
-				}
+			.menu_li_expand{
+				width: 24px;
+				height: 21px;
+				background-image: url('/project/img/expand_more.svg');
+				background-repeat: no-repeat;
+				background-position: 50%;
+				cursor: pointer;
 			}
 		}
 
-		.btn__gradient{
-			width: 196px;
-		}
-		.btn__border{
-			width: 85px;
-		}
-		.btn__header{
-			height: 17px;
-			line-height: 15px;
-			margin: 15px 0 15px 20px;
-		}
+		.header_nav_login{
+			display: flex;
+			align-items: center;
+
+			.btn__gradient{
+				width: 196px;
+			}
+			.btn__border{
+				width: 85px;
+			}
+			.btn__header{
+				height: 17px;
+				line-height: 15px;
+				margin: 15px 0 15px 20px;
+			}
+
+			.header_nav_login_hr{
+				width: 1px;
+				height: 30px;
+				background: rgba(31, 32, 65, 0.1);
+				margin: 0 30px;
+			}
+
+			p{
+				
+			}
+		}		
+	}
+}
+
+.menu_li{
+	display: block;
+	color: rgba(31, 32, 65, 0.5);
+	cursor: pointer;
+
+	&.menu_li__active{
+		font-weight: bold;
+		color: rgba(31, 32, 65, 0.75);
+	}
+
+	&.menu_li__expand{
+		
 	}
 }
 
 
-
-////////////////////////////////////////////////////////////////////
-
 .content{
+	display: flex;
+	justify-content: center;
+
 	&.header_shadow{
 		box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 	}
-}
 
-/*.header{
-	display: flex;
-	justify-content: space-between;
-	min-height: 70px;
+	.content_container{
+		max-width: 1150px;//1920px;
+		min-width: 320px;
+		width: 1150px;
+		//margin: 0 20px;
 
-	background: red;
-
-	.menu{
-		display: flex;
-		//justify-content: space-between;
-		flex-wrap: wrap;
-		align-items: center;
-		
-		margin: 0;
-		padding: 0;
-
-		.menu_item{
-			display: block;
-			padding: 0 20px;
-			color: rgba(31, 32, 65, 0.5);
-			padding: 10px 0;
-			margin: 5px 0 5px 20px;	
-			font-size: 14px;
-			cursor: pointer;
-
-			.gradient{
-				width: 196px;
-			}
-			.border{
-				width: 85px;
-			}
-			.btn_header{
-				height: 17px;
-				line-height: 15px;
-			}
-
+		&.content_container__flexend{
+			display: flex;
+			justify-content: flex-end;
 		}
 	}
 }
-*/
