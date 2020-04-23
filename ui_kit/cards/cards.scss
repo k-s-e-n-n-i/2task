@@ -1,0 +1,15 @@
+.forms{
+	display: flex;
+	flex-wrap: wrap;
+
+	.blk{
+		border-bottom: 1px solid red;
+		margin: 20px;
+		width: 320px;
+
+		.formSearchNum{
+			position: relative;
+			margin-bottom: 40px;
+		}
+	}
+}

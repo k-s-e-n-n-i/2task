@@ -1,7 +1,7 @@
 
 
 
-mixin radio(id,name,text)
+mixin radio(id,name,text,check)
 	div.radio
-		input.radio_input(id="rb"+id type="radio" name=name)
+		input.radio_input(id="rb"+id type="radio" name=name checked=check)
 		label.radio_label(for="rb"+id)= text

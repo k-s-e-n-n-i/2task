@@ -9,7 +9,7 @@
 
 	.bottomMenu_column{
 		display: block;
-		margin: 0 5px;
+		//margin: 0 5px;
 		max-width: min-content;
 
 		.bottomMenu_column_list{
@@ -20,6 +20,7 @@
 				font-size: 14px;
 				line-height: 17px;
 				padding: 10px 0;
+				line-height: 24px;
 
 				&:first-child{
 					font-weight: bold;
@@ -27,16 +28,22 @@
 					font-size: 12px;
 					text-transform: uppercase;
 					cursor: inherit;
-
+					white-space: nowrap;
 				}
 			}
 		}
 
 		&:last-child,&:first-child{
 			min-width: 200px;
-			line-height: 24px;
-			.menu_item{
+			.menu_li{
 				cursor: inherit;
+				color: rgba(31, 32, 65, 0.75);
+				//line-height: 24px;
+			}
+		}
+		&:last-child{
+			.menu_li{
+				//padding: 2px 0 15px 0;
 			}
 		}
 		&:nth-child(3){
@@ -45,6 +52,10 @@
 		&:nth-child(2),&:nth-child(4){
 			min-width: 150px;
 		}
+	}
+
+	.logo{
+		margin: 10px 0;
 	}
 }
 
@@ -56,13 +67,22 @@
 	color: rgba(31, 32, 65, 0.5);
 	margin: 26px 0;
 
-	.soc_block{
+	.footer_socBlock{
 		display: flex;
 	
-		.soc_network{
+		.footer_socBlock_network{
 			height: 24px;
 			width: 24px;
 			padding-left: 23px;
+		}
+	}
+
+	&.footer__column{
+		flex-direction: column;
+		box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+		padding: 100px 0 110px 0;
+		p{
+			margin: 20px 0 25px 0;
 		}
 	}	
 }

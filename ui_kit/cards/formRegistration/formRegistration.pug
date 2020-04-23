@@ -1,0 +1,23 @@
+include /ui_kit/form_elements/inputText/inputText.pug
+include /ui_kit/form_elements/radiobutton/radiobutton.pug
+include /ui_kit/form_elements/toggle/toggle.pug
+include /ui_kit/form_elements/btn/btn.pug
+
+mixin formRegistration
+	div.formRegistration
+		h1 Регистрация аккаунта
+		div.formRegistration_itemText
+			+inputText('','','Имя')
+			+inputText('','','Фамилия')
+			
+		div.formRegistration_blockRadio
+			+radio(1,"rbGroop1","Мужчина",'checked')
+			+radio(2,"rbGroop1","Женщина")
+		+inputText('Дата рождения','','ДД.ММ.ГГГГ')
+		+inputText('данные для входа в сервис','','Email')
+		+inputText('','','Пароль')
+		+toggle("toggleGrooup1","Получать спецпредложения")
+		+btn('Перейти к оплате','btn__gradient btn__gradient__pay')
+		div.formRegistration_login
+			p Уже есть аккаунт на Toxin
+			+btn('Войти','btn__border')

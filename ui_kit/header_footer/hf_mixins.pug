@@ -21,12 +21,12 @@ mixin footerMenu_item(...items)
 		ul.bottomMenu_column_list
 			each item in items
 				if item == 's'
-					+inputText('subscription text field','inputText_input__subscription')
+					+inputText('','inputText_input__subscription','Email')
 						div.arrow
 							div.arrow_line
 							div.arrow_next
 				else
 					if item == 'logo'
-						img
+						img.logo(src='project/img/logo.svg')
 					else
 						+menu_li(item,'')

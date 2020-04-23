@@ -1,0 +1,66 @@
+.formRegistration{
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+
+	width: 380px;
+	height: 646px;//576px;
+	padding: 40px 30px 30px 30px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	//flex-wrap: wrap;
+	z-index: 1;
+	
+	h1{
+		margin-bottom: 15px;
+	}
+	h3{
+		margin-top: 20px;
+	}
+
+	.formRegistration_itemText{
+		display: flex;
+		flex-direction: column;
+		//flex-wrap: wrap;
+		justify-content: flex-start;
+		width: 100%;
+		h3{
+			margin: 0;
+		}
+	}
+
+	.formRegistration_blockRadio{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+
+		.radio_label{
+			margin: 10px 20px 3px 0;
+		}
+	}	
+
+	.btn{
+		&.btn__gradient{
+			width: 100%;
+			margin: 20px 0 30px 0;
+		}
+
+		&.btn__border{
+			width: 99px;
+			margin: 0;
+			
+		}
+	}
+
+	.formRegistration_login{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		//margin-top: 30px;
+		width: 100%;
+	}
+}

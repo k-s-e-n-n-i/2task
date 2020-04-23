@@ -1,12 +1,12 @@
 
 
-mixin inputText(text,dopclass)
+mixin inputText(text,dopclass,placeholder)
 	div.inputText
-		h3= text
-		input(class='inputText_input '+ dopclass)
+		if text != ''
+			h3= text
+		input(class='inputText_input '+ dopclass placeholder=placeholder)
 		if dopclass == 'inputText_input__subscription'
 			+arrow('')
-		else
 
 
 mixin arrow(dopclass)

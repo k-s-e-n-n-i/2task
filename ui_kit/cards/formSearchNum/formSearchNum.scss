@@ -1,0 +1,75 @@
+.formSearchNum{
+	width: 380px;
+	height: 374px;
+	background: #fff;
+	margin-top: 70px;
+	position: absolute;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	padding: 40px 30px 30px 30px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	z-index: 1;
+
+	.formSearchNum_choiceDate{
+		width: 100%;
+		
+		.formSearchNum_choiceDate_flex{
+			display: flex;
+			justify-content: space-between;
+
+			.blockDropdown_dropdown__date{
+				margin: 5px 0 0 0;
+			}
+		}
+	}
+
+	.dropdownItemCalendar{
+		display: block;
+		width: 200px;
+	}
+
+	h3{
+		margin-top: 20px;
+	}
+
+	.link{
+		margin: 15px 7px 15px 14px;
+	}
+
+	.btn{
+		width: 100%;
+		margin: 30px 0 0 0;
+	}
+
+	/*.dropdown_items{
+		width: 316px;
+		position: absolute;
+	}*/
+
+	.blockDropdown{
+		
+		.blockDropdown_dropdown__whisItems{
+			+ .blockDropdown{
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+/*
+	<div class="dropdown_calendar">
+		<include src="../blocks/calendar/calendar.html"></include>
+	</div>
+	
+	<div class="filter_guest">
+		<include src="../blocks/input_guest/input_guest.html"></include>
+	</div>
+	
+	<div class="btn gradient">Подобрать номер</div>
+
+*/

@@ -1,0 +1,13 @@
+include formSearchNum/formSearchNum.pug
+include formRegistration/formRegistration.pug
+
+div.forms
+	div.blk
+		+formSearchNum
+		+formRegistration
+	div.blk
+		include /blocks/form_room/form_room.html
+		include /blocks/form_sign_in/form_sign_in.html
+	div.blk
+		+calendar
+		include /blocks/catalog_room_num/catalog_room_num.html

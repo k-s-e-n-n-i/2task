@@ -1,0 +1,331 @@
+.dropdownItemCalendar{
+	
+		
+	.dropdownItemCalendar_block{
+		position: relative;
+		background: #fff;
+		left: -1px;
+
+		&.hide{
+			display: none;
+		}
+
+		.calendar{
+			width: 320px;
+			//height: 369px;
+			margin-top: 5px;
+			position:absolute;
+			z-index: 5;
+			border: 1px solid rgba(31, 32, 65, 0.25);
+			box-sizing: border-box;
+			box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+			border-radius: 4px;
+			background: #fff;
+
+			.pignose-calendar {
+			    width: 100%;
+				border: none;
+				box-shadow: none;
+				background: #fff;
+
+			    /*&.pignose-calendar-{light | dark | blue} {
+			        
+			    }
+
+			    &.pignose-calendar-{default | reverse} {
+			       
+			    }*/
+
+			    .pignose-calendar-top {
+			    	border: none;
+					box-shadow: none;
+					background: #fff;
+					padding: 20px 0 30px 0;
+					height: 20px;
+
+			        .pignose-calendar-top-nav {
+			        	width: 24px;
+						height: 24px;
+
+			            &.pignose-calendar-top-prev,
+			            &.pignose-calendar-top-next {
+			               
+			            }
+
+			            .pignose-calendar-top-icon {
+			                width: 24px;
+							height: 24px;
+
+			                &.icon-arrow-left,
+			                &.icon-arrow-right {
+			                    background: url('../calendar/arrow_forward.svg') no-repeat center;
+			                    width: 24px;
+								height: 24px;
+								font-size: 1;
+
+			                    &::before{
+									//content: '';
+								}
+			                }
+
+			                &.icon-arrow-left{
+			                	transform: rotate(180deg);
+			                }
+			            }
+			        }
+
+			        .pignose-calendar-top-date {
+			        	padding: 20px 0 30px 0;
+			        	display: flex;
+	    				justify-content: center;
+
+			            .pignose-calendar-top-month {
+			            	font-size: 19px;
+			            	padding-right: 5px;
+			            	text-transform: none;
+			            	color: #1F2041;
+			            }
+
+			            .pignose-calendar-top-year {
+			            	//display: none;
+			            	font-weight: bold;
+			            	color: #1F2041;
+			            }
+			        }
+			    }
+
+			    .pignose-calendar-header {
+			    	margin: 0;
+			    	display: flex;
+					justify-content: space-between;
+					margin: 0 20px 20px 20px;
+
+			        .pignose-calendar-week {
+			            font-size: 12px;
+			            width: 38px;
+			            height: 40px;
+			            color: #BC9CFF;
+			            text-transform: none;
+			            display: flex;
+			            justify-content: center;
+			            align-items: center;
+
+			            /*&.pignose-calendar-week-{sun|mon|tue|wed|thu|fri|sat} {
+			                
+			            }*/
+			        }
+			    }
+
+			    .pignose-calendar-body {
+			        padding-top: 0;
+			        margin: 0 20px 20px 20px;
+
+			        .pignose-calendar-row {
+			        	display: flex;
+						justify-content: space-between;
+
+			            .pignose-calendar-unit {
+			            	height: 40px;
+			            	width: 40px;
+			            	
+			                /*&.pignose-calendar-unit-{sun|Пн|tue|wed|thu|fri|sat} {
+			                 
+			                }*/
+
+			                &.pignose-calendar-unit-date {
+
+			                    a {
+			                    	font-size: 12px;
+			                    	//width: 40px;
+			            			height: 40px;
+			            			color: rgba(31, 32, 65, 0.5);
+			            			display: flex;
+						            justify-content: center;
+						            align-items: center;
+			                    }
+
+			                    .pignose-calendar-button-schedule-container {
+			                       
+
+			                        .pignose-calendar-button-schedule-pin {
+			                            
+
+			                            /*&.pignose-calendar-button-schedule-pin-{:eventname} {
+			                               
+			                            }*/
+			                        }
+			                    }
+			                }
+
+			                &.pignose-calendar-unit-active {
+
+								a{
+			                    	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+			                    	color: #fff;
+			                    	//z-index: 2;
+			                    }
+
+			                    &.pignose-calendar-unit-first-active,
+			                    &.pignose-calendar-unit-last-active {
+			                    	/*position: relative;
+			                    	z-index: 10;
+
+			                    	 &::before{
+										//content: '.';
+										z-index: 0;
+										width: 20px;
+										position: absolute;
+										background: red;
+										right: 0;
+										margin: 0 0 0 auto;
+										z-index: 1;
+									}*/
+			                    }
+
+			                    &.pignose-calendar-unit-first-active{
+			                    	background: linear-gradient(180deg, #EEE6FF 0%, #E6EAFE 100%); 
+									border-radius: 50% 0 0 50%;
+									a{
+			                    		border-radius: 50%;
+			                    	}
+			                    }
+			                    /*&.pignose-calendar-unit-last-active{
+			                    	//background: linear-gradient(180deg, #EEE6FF 0%, #E6EAFE 100%); 
+									//border-radius: 0 50% 50% 0;
+			                    }*/
+			                    &.pignose-calendar-unit-second-active{
+			                    	background: linear-gradient(180deg, #EEE6FF 0%, #E6EAFE 100%); 
+									border-radius: 0 50% 50% 0;
+
+									a{
+			                    		border-radius: 50%;
+			                    	}
+			                    }
+
+			                }
+
+			                &.pignose-calendar-unit-range {
+			                	
+			                	a{
+		                    		background: linear-gradient(180deg, #EEE6FF 0%, #E6EAFE 100%); 
+		                    		color: rgba(31, 32, 65, 0.5);
+		                    		border-radius: 0;
+		                    	}
+
+			                    &.pignose-calendar-unit-range-first,
+			                    &.pignose-calendar-unit-range-last {
+			                    	
+			                    }
+			                }
+
+			                &.pignose-calendar-unit-toggle-active {
+			                   
+			                }
+
+			                &.pignose-calendar-unit-toggle-inactive {
+			                  
+			                }
+			            }
+
+			            &.pignose-calendar-unit-disabled {
+			                
+
+			                &.pignose-calendar-unit-disabled-weekdays {
+			                   
+			                }
+
+			                &.pignose-calendar-unit-disabled-range {
+			                    
+			                    &.pignose-calendar-unit-disabled-multiple-range {
+			                        
+			                    }
+			                }
+			            }
+			        }
+			    }
+			}
+
+			.pignose-calendar-wrapper {
+			    
+			    &.pignose-calendar-wrapper-active {
+			        
+			    }
+
+			    .pignose-calendar-button-group {
+			        
+
+			        .pignose-calendar-button {
+			            
+
+			            &.pignose-calendar-button-cancel {
+			                
+			            }
+
+			            &.pignose-calendar-button-apply {
+			                
+			            }
+			        }
+			    }
+			}
+
+			.pignose-calendar-wrapper-overlay {
+			    
+
+			    &.pignose-calendar-wrapper-overlay-active {
+			        
+			    }
+			}		
+		}
+	}
+}
+
+
+
+/*
+	
+	
+
+	
+	.month{
+		display: flex;
+		justify-content: space-between;
+		margin: 20px;
+		flex-wrap: wrap;
+
+		.pre{
+			transform: rotate(180deg);
+		}
+
+		/*.pre,.next{
+			width: 20px;
+			height: 20px;
+		}
+
+		
+	}
+
+	/*.date{
+		width: 39px;
+		height: 40px;
+		text-align: center;
+	}*/
+
+	.days{
+		display: flex;
+		justify-content: space-between;
+		margin: auto 20px;
+		text-align: center;
+		vertical-align: center;
+
+		&.name{
+			color: #BC9CFF;//
+		}
+
+		p{
+			width: 39px;
+			height: 40px;
+		}
+	}
+
+
+

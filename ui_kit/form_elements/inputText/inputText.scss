@@ -1,8 +1,10 @@
 //Тектовое поле
 .inputText{
 	position: relative;
+	width: 100%;
 
 	.inputText_input{
+		width: 100%;
 		color: rgba(31, 32, 65, 0.25)!important;
 
 		::-webkit-input-placeholder { /* Chrome */

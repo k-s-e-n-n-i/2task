@@ -16,12 +16,12 @@ include comment/comment.pug
 
 div.formElements
 	div.blk
-		+inputText('Text Field','')
-		+inputText('Text Field','hover')
+		+inputText('Text Field','','Email')
+		+inputText('Text Field','hover','This is pretty awesome')
 
 		+dropdown('Dropdown','Сколько гостей','')
 
-		+inputText('masked Text Field','inputText_input__masked')
+		+inputText('masked Text Field','inputText_input__masked','ДД.ММ.ГГГГ')
 
 		div.flex
 			+dropdown('date Dropdown','ДД.ММ.ГГГГ','blockDropdown_dropdown__date')
@@ -29,7 +29,7 @@ div.formElements
 
 		+dropdown('filter date dropdown','19 авг - 23 авг','blockDropdown_dropdown__filter')
 
-		+inputText('subscription text field','inputText_input__subscription')
+		+inputText('subscription text field','inputText_input__subscription','Email')
 			div.arrow
 				div.arrow_line
 				div.arrow_next

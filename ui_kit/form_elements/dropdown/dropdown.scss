@@ -1,9 +1,16 @@
 //Выпадающий список
 .blockDropdown{
+	position: relative;
+	
+	&.blockDropdown__width100{
+		width: 100%;
+	}
 
 	.blockDropdown_dropdown{
 		position: relative;
 		color: rgba(31, 32, 65, 0.75);
+		border-radius: 4px;//4px 4px 0 0;
+		width: 100%;
 
 		&.blockDropdown_dropdown__date{
 			width: 148px;
@@ -12,12 +19,13 @@
 		}
 
 		&.blockDropdown_dropdown__whisItems{
-			border-radius: 4px 4px 0 0;
+			
 			border: 1px solid rgba(31, 32, 65, 0.25);
 		}
 
 		&.blockDropdown_dropdown__itemsShow{
 			border: 1px solid rgba(31, 32, 65, 0.5);
+			border-radius: 4px 4px 0 0;
 		}
 
 		&.blockDropdown_dropdown__filter{
@@ -43,6 +51,7 @@
 		border: 1px solid rgba(31, 32, 65, 0.5);
 		margin-top: -1px;
 		z-index: 1;
+		position: absolute;
 
 		&.blockDropdown_dropdown_items__hide{
 			display: none;
@@ -91,15 +100,21 @@
 				
 			}
 
-			.link{
-				&.link__clean{
-					margin: auto 15px;
-				}
+			&.dropdownItemsLink_flexEnd{
+				justify-content: flex-end;
 
-				&.link__ok{
-					margin: auto 7px;
+				.link{
+					&.link__clean{
+						margin: auto 15px;
+					}
+
+					&.link__ok{
+						margin: auto 7px;
+					}
 				}
 			}
+
+			
 
 			/*.blockDropdown_dropdown_items_line_links{
 				cursor: pointer;
