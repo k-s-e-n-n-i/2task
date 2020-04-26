@@ -1,15 +1,26 @@
 .forms{
 	display: flex;
 	flex-wrap: wrap;
+	background: #E5E5E5;
 
 	.blk{
 		border-bottom: 1px solid red;
 		margin: 20px;
-		width: 320px;
 
 		.formSearchNum{
 			position: relative;
 			margin-bottom: 40px;
 		}
+
+		.block{
+			height: 395px;
+		}
+	}
+
+	.formSearchNum,
+	.formRegistration,
+	.formReservation,
+	.formSignIn{
+		margin: 40px 0;
 	}
 }

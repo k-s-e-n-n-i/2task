@@ -1,0 +1,13 @@
+include /ui_kit/form_elements/inputText/inputText.pug
+include /ui_kit/form_elements/btn/btn.pug
+
+mixin formSignIn
+	div.formSignIn
+		h1 Войти
+		+inputText('','','Email')
+		+inputText('','','Пароль')
+		+btn('Войти','btn__gradient')
+		div.formSignIn_login
+			p Нет аккаунта Toxin?
+			+btn('Создать','btn__border')
+		

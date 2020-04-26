@@ -1,0 +1,14 @@
+include /ui_kit/cards/formSearchNum/formSearchNum.pug
+include /ui_kit/header_footer/header.pug
+
+
++header(0)
+
+div.content.landingPage
+	div(class='content_container content_container__flexend')
+		p.landingPage_label Лучшие номера для вашей работы, отдыха и просто вдохновения
+	div(class='content_container')
+		+formSearchNum
+	img.landingPage_image(src="project/img/image3.png")
+
+include /ui_kit/header_footer/footer.pug

@@ -1,0 +1,113 @@
+@import '/ui_kit/color_type/color_type.scss';
+
+
+.cardRoom{
+	width: 270px;
+	height: 257px;
+	background: #FFFFFF;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	border-radius: 4px;
+	margin: 10px 6px;
+
+	.cardRoom_image{
+		width: 270px;
+		height: 150px;
+		border-radius: 4px 4px 0 0;	
+		//background-image: url("img/image1.png");
+		background-size: cover;	
+		position: relative;
+
+		&.images1{
+			background-image: url("img/image1.png");
+		}
+		&.images2{
+			background-image: url("img/image2.png");
+		}
+
+		.cardRoom_image_pagination{
+			position: absolute;
+			bottom: 15px;
+			right: 15px;
+			//width: 25px;
+			display: flex;
+			flex-wrap: nowrap;
+			
+			.cardRoom_image_pagination_item{
+				width: 5.5px;
+				height: 5.5px;
+				margin: 0 2px;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				cursor: pointer;
+				box-sizing: border-box;
+				box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+
+				&.cardRoom_image_pagination_item__active{
+					background: #fff;
+				}
+				
+			}
+		}
+	}
+
+	.cardRoom_contentInfo{
+		margin: 20px;
+
+		.cardRoom_contentInfo_block{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			position: relative;
+			
+			&.cardRoom_contentInfo_block__border{
+				padding-bottom: 10px;
+				border: 1px solid rgba(31, 32, 65, 0.1);
+				border-width: 0 0 1px 0;
+				margin: 0 0 8px 0;
+
+				p{
+					&:nth-child(1){
+						color: $colorDarkShade100;
+
+						span{
+							&:nth-child(2){
+								font-size: 20px;
+							}
+						}
+					}
+					&:nth-child(2){
+						color: $colorDarkShade50;
+
+						span{
+							&:nth-child(1){
+								font-weight: bold;
+							}
+						}
+					}
+
+					span{
+						&:nth-child(1),
+						&:nth-child(2){
+							font-weight: bold;
+						}
+					}
+				}
+			}
+
+			p{
+				color: $colorDarkShade50;
+
+				span{
+					&:nth-child(1){
+						font-weight: bold;
+					}
+				}
+			}
+
+			.rate{
+				margin: 0;
+			}
+		}
+	}	
+}

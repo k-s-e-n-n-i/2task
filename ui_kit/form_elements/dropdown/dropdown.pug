@@ -14,19 +14,19 @@ mixin dropdownEx(label,text,dopclass)
 		img.blockDropdown_dropdown_expand(src="project/img/expand_more.svg")
 
 mixin dropdownItems(text,num,dopclass1,dopclass2)
-	div.blockDropdown_dropdown_items_line
+	div.blockDropdown_dropdownItems_line
 		h3= text
-		div.blockDropdown_dropdown_items_line_incBlock
-			div(class='blockDropdown_dropdown_items_line_incBlock_inc '+ dopclass1)= '-'
+		div.blockDropdown_dropdownItems_line_incBlock
+			div(class='blockDropdown_dropdownItems_line_incBlock_inc '+ dopclass1)= '-'
 			span= num
-			div(class='blockDropdown_dropdown_items_line_incBlock_inc '+ dopclass2)= '+'
+			div(class='blockDropdown_dropdownItems_line_incBlock_inc '+ dopclass2)= '+'
 
 mixin dropdownItemsLink(num)
 	
 	if num > 0
-		div.blockDropdown_dropdown_items_line
+		div.blockDropdown_dropdownItems_line
 			+link('Очистить','link__clean link__grey')
 			+link('Применить','link__ok')
 	else
-		div.blockDropdown_dropdown_items_line.dropdownItemsLink_flexEnd
+		div.blockDropdown_dropdownItems_line.dropdownItemsLink_flexEnd
 			+link('Применить','link__ok')

@@ -1,13 +1,18 @@
 include formSearchNum/formSearchNum.pug
 include formRegistration/formRegistration.pug
+include formReservation/formReservation.pug
+include formSignIn/formSignIn.pug
+include cardRoom/cardRoom.pug
 
 div.forms
 	div.blk
 		+formSearchNum
 		+formRegistration
 	div.blk
-		include /blocks/form_room/form_room.html
-		include /blocks/form_sign_in/form_sign_in.html
+		+formReservation(888,'9 990','38 081')
+		+formSignIn
 	div.blk
-		+calendar
-		include /blocks/catalog_room_num/catalog_room_num.html
+		div.block
+			+calendar
+		+cardRoom(1,888,'9 990','люкс',145)
+		+cardRoom(2,840,'9 900','',65)

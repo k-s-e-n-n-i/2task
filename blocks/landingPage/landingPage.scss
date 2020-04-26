@@ -1,0 +1,27 @@
+.landingPage{
+	.content_container{
+		width: 100%;
+
+		&.content_container__flexend{
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		.landingPage_label{
+			bottom: 18px;
+			width: 297px;
+			height: 48px;
+			text-align: right;
+			color: rgba(31, 32, 65, 0.75);
+		}
+	}
+	
+
+	.landingPage_image{
+		width: 100%;
+	}
+	.landingPage_label{
+		position:absolute;
+		
+	}
+}

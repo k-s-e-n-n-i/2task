@@ -1,15 +1,16 @@
 include /ui_kit/header_footer/hf_mixins.pug
 
-div.content.header_shadow
-	div.content_container
-		div.header
-			img(src="project/img/logo.svg")
-			div.header_nav
-				ul.header_nav_menu
-					+menu_li('О нас','menu_li__active')
-					+menu_li('Услуги','')
-					+menu_li('Вакансии','menu_li__expand')
-					+menu_li('Новости','')
-					+menu_li('Соглашения','')
-				+header_nav_login(1,'name')
+mixin header(auth)
+	div.content.header_shadow
+		div.content_container
+			div.header
+				img(src="project/img/logo.svg")
+				div.header_nav
+					ul.header_nav_menu
+						+menu_li('О нас','menu_li__active')
+						+menu_li('Услуги','')
+						+menu_li('Вакансии','menu_li__expand')
+						+menu_li('Новости','')
+						+menu_li('Соглашения','')
+					+header_nav_login(auth,'name')
 				

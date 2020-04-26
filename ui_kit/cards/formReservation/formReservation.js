@@ -1,8 +1,8 @@
 
 
 $(function() {
-	$('.formSearchNum').find('.formSearchNum_choiceDate .blockDropdown_dropdown__date').on('click', function(e) {
-		var calendar = $(this).closest('.formSearchNum').find('.dropdownItemCalendar_block');
+	$('.formReservation').find('.formReservation_block__flexcolumn .blockDropdown_dropdown__date').on('click', function(e) {
+		var calendar = $(this).closest('.formReservation').find('.dropdownItemCalendar_block');
 		
 		if (calendar.hasClass('hide')){
 			calendar.removeClass('hide');	
@@ -11,11 +11,11 @@ $(function() {
 		}
 	});	
 
-
-	$('.formSearchNum').find('.blockDropdown_dropdown__whisItems').on('click', function(e) {
-		var block_list = $(this).closest('.formSearchNum').find('.blockDropdown_dropdownItems');
+	$('.formReservation').find('.blockDropdown_dropdown__whisItems').on('click', function(e) {
+		var block_list = $(this).closest('.formReservation').find('.blockDropdown_dropdownItems');
 		dropdown_expend($(this),block_list);
 	});	
+
 });
 
 function dropdown_expend(expend,block) {

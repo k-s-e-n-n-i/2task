@@ -1,0 +1,44 @@
+include /ui_kit/form_elements/dropdown/dropdown.pug
+include /ui_kit/form_elements/btn/btn.pug
+script(src='/ui_kit/cards/formReservation/formReservation.js')
+
+
+
+mixin formReservation(number,priceS,price)
+	div.formReservation
+		div.formReservation_block
+			p
+				span= '№ '
+				span= number +' '
+				+link('люкс','link__fio')
+			p
+				span= priceS
+				span= '₽'
+				span= ' в сутки'
+		div.formReservation_block__flexcolumn
+			div.formReservation_block__flex
+				+dropdown('Прибытие','ДД.ММ.ГГГГ','blockDropdown_dropdown__date')
+				+dropdown('Выезд','ДД.ММ.ГГГГ','blockDropdown_dropdown__date')
+			+calendar('hide')
+		div.blockDropdown.blockDropdown__width100
+			+dropdownEx('Гости','3 гостя','')
+			div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
+				+dropdownItems('взрослые',3,'','')
+				+dropdownItems('дети',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
+				+dropdownItems('младенцы',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
+				+dropdownItemsLink(3)
+		div.formReservation_blockPrices
+			+formReservation_blockPrices_line('','9 990₽ х 4 суток','39 960')
+			+formReservation_blockPrices_line('formReservation_blockPrices_line_p__infoMark','Сбор за услуги: скидка 2 179₽','0')
+			+formReservation_blockPrices_line('formReservation_blockPrices_line_p__infoMark','Сбор за дополнительные услуги','39 960')
+		div.formReservation_block
+			h2= 'Итого'
+			span.dashed
+			h2= price +'₽'
+		+btn('Забронировать','btn__gradient')
+
+
+mixin formReservation_blockPrices_line(dopclass,text,price)
+	div.formReservation_blockPrices_line
+		p(class='formReservation_blockPrices_line_p__text '+dopclass)= text
+		p= price +'₽'

@@ -9,7 +9,7 @@ body{
 	line-height: 24px;
 	color: rgba(31, 32, 65, 0.75);
 }
-
+/*
 h1,h2,h3{
 	font-style: normal;
 	font-weight: bold;
@@ -59,7 +59,7 @@ p{
 	&.end{
 		justify-content:flex-end;
 	}
-}
+}*/
 
 .content{
 	width: 100%;
@@ -73,15 +73,6 @@ p{
 		max-width: 1150px;//1920px;
 		min-width: 320px;
 		margin: 0 auto;
-
-		&.content_container__flexend{
-			display: flex;
-			justify-content: flex-end;
-		}
-	}
-
-	.landingPage_label{
-		position:absolute;
 	}
 }
 
@@ -90,7 +81,7 @@ p{
 
 ///////////////////////////////////////////////
 
-.content_width{//1
+/*.content_width{//1
 	max-width: 1150px;//1920px;
 	min-width: 320px;
 	margin: 0 auto;
@@ -124,3 +115,4 @@ img{
 	user-select: none;
 }
 
+*/

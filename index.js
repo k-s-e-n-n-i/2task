@@ -1,10 +1,5 @@
 import '/project/style/styles.scss';
 import '/project/style/fonts.css';
-//import '/blocks/footer/footer.scss';
-import '/blocks/room_search/room_search.scss';
-import '/project/form_elements/form_elements.scss'
-
-//import '/blocks/calendar/calendar.scss';
 
 import '/ui_kit/form_elements/form_elements.scss'
 import '/ui_kit/form_elements/inputText/inputText.scss'
@@ -31,7 +26,13 @@ import '/ui_kit/cards/cards.scss'
 import '/ui_kit/cards/formSearchNum/formSearchNum.scss'
 import '/ui_kit/cards/calendar/calendar.scss'
 import '/ui_kit/cards/formRegistration/formRegistration.scss'
+import '/ui_kit/cards/formReservation/formReservation.scss'
+import '/ui_kit/cards/formSignIn/formSignIn.scss'
+import '/ui_kit/cards/cardRoom/cardRoom.scss'
 
 
-import '/blocks/landing_page/landing_page.scss'
+
+import '/blocks/landingPage/landingPage.scss'
+
+
 
