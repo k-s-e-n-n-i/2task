@@ -11,6 +11,7 @@
 		color: rgba(31, 32, 65, 0.75);
 		border-radius: 4px;//4px 4px 0 0;
 		width: 100%;
+		cursor: pointer;
 
 		&.blockDropdown_dropdown__date{
 			width: 148px;
@@ -69,6 +70,9 @@
 			h3{
 				padding: 13px 15px;
 				margin: 0;
+			}
+			h3,span{
+				color: rgba(31, 32, 65, 1);
 			}
 
 			.blockDropdown_dropdownItems_line_incBlock{

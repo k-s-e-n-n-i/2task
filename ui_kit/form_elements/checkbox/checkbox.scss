@@ -73,7 +73,7 @@
 			color: rgba(31, 32, 65, 0.5);
 			font-size: 12px;
 			line-height: 14px;
-			margin-bottom: 10px;
+			margin: 0 0 10px 0;
 		}
 	}
 }
@@ -96,6 +96,7 @@
 
 		h3{
 			margin: 0;
+			cursor: pointer;
 		}
 	}
 

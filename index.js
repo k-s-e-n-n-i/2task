@@ -33,6 +33,7 @@ import '/ui_kit/cards/cardRoom/cardRoom.scss'
 
 
 import '/blocks/landingPage/landingPage.scss'
+import '/blocks/searchRoom/searchRoom.scss'
 
 
 

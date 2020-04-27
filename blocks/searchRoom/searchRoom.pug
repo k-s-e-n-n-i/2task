@@ -1,0 +1,69 @@
+include /ui_kit/header_footer/header.pug
+include /ui_kit/form_elements/dropdown/dropdown.pug
+
+
+
+
+mixin
+
++header(0)
+
+div.content
+	div.content_container.searchRoom
+		div.searchRoom_filters
+			div.searchRoom_filters_date
+				+dropdown('даты пребывания в отеле','19 авг - 23 авг','')
+			
+			div.searchRoom_filters_guest
+				div.blockDropdown
+					+dropdownEx('Гости','Сколько гостей','')
+					div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
+						+dropdownItems('взрослые',0,'','')
+						+dropdownItems('дети',0,'','')
+						+dropdownItems('младенцы',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
+						+dropdownItemsLink(0)
+			
+			div.searchRoom_filters_diapason
+				h3 диапазон цены
+				div.searchRoom_filters_diapason_price
+			
+			div.searchRoom_filters_features
+				h3 Checkbox Buttons
+				div.checkbox
+					+checkbox_item("Можно курить", 51,'')
+					+checkbox_item("Можно с питомцами", 52,'')
+					+checkbox_item("Можно пригласить гостей (до 10 человек)", 53,'')
+			
+			div.searchRoom_filters_availability
+				h3 доступность
+				div.checkbox
+					+checkbox_item("Широкий коридор", 61, 'Ширина коридоров в номере не менее 91 см.')
+					+checkbox_item("Помощник для инвалидов", 62, 'На 1 этаже вас встретит специалист и проводит до номера.')
+
+			div.searchRoom_filters_comfort
+				div.blockDropdown
+					+dropdownEx('удобства номера','2 спальни, 2 кровати...','')
+					div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
+						+dropdownItems('спальни',2,'','')
+						+dropdownItems('кровати',2,'','')
+						+dropdownItems('ванные комнаты',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
+						+dropdownItemsLink(4)
+
+			div.checkboxList
+				div.flex
+					h3 дополнительные удобства
+					img.checkboxList_expand(src="project/img/expand_more.svg")
+				div.checkbox.checkbox__hide
+					+checkbox_item("Завтрак", 71,'')
+					+checkbox_item("Письменный стол", 72,'')
+					+checkbox_item("Стул для кормления", 73,'')
+					+checkbox_item("Кроватка", 74,'')
+					+checkbox_item("Телевизор", 75,'')
+					+checkbox_item("Шампунь", 76,'')
+					+checkbox_item("Телевизор", 77,'')
+					+checkbox_item("Шампунь", 78,'')
+
+
+
+include /ui_kit/header_footer/footer.pug
+
