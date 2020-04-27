@@ -1,5 +1,6 @@
 include /ui_kit/header_footer/header.pug
 include /ui_kit/form_elements/dropdown/dropdown.pug
+include /ui_kit/cards/cardRoom/cardRoom.pug
 
 
 
@@ -8,7 +9,7 @@ mixin
 
 +header(0)
 
-div.content
+div.content.searchRoom__shadow
 	div.content_container.searchRoom
 		div.searchRoom_filters
 			div.searchRoom_filters_date
@@ -63,7 +64,23 @@ div.content
 					+checkbox_item("Телевизор", 77,'')
 					+checkbox_item("Шампунь", 78,'')
 
+		div.searchRoom_rooms
+			h1 Номера, которые мы для вас подобрали
+			+cardRoom(1,888,'9 990','люкс',145,2)
+			+cardRoom(2,840,'9 900','',65,2)
+			+cardRoom(3,980,'8 500','люкс',35,2)
 
+			+cardRoom(4,856,'7 300','',19,2)
+			+cardRoom(5,740,'6 000','',44,2)
+			+cardRoom(6,982,'5 800','',56,2)
+
+			+cardRoom(7,678,'5 500','',45,2)
+			+cardRoom(8,450,'5 300','',39,2)
+			+cardRoom(9,982,'5 800','',56,2)
+
+			+cardRoom(10,666,'5 000','',25,2)
+			+cardRoom(11,444,'5 000','',15,2)
+			+cardRoom(12,352,'5 000','',55,2)
 
 include /ui_kit/header_footer/footer.pug
 

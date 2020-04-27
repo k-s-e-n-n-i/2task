@@ -23,6 +23,36 @@
 		&.images2{
 			background-image: url("img/image2.png");
 		}
+		&.images3{
+			background-image: url("img/image3.png");
+		}
+		&.images4{
+			background-image: url("img/image4.png");
+		}
+		&.images5{
+			background-image: url("img/image5.png");
+		}
+		&.images6{
+			background-image: url("img/image6.png");
+		}
+		&.images7{
+			background-image: url("img/image7.png");
+		}
+		&.images8{
+			background-image: url("img/image8.png");
+		}
+		&.images9{
+			background-image: url("img/image9.png");
+		}
+		&.images10{
+			background-image: url("img/image10.png");
+		}
+		&.images11{
+			background-image: url("img/image11.png");
+		}
+		&.images12{
+			background-image: url("img/image12.png");
+		}
 
 		.cardRoom_image_pagination{
 			position: absolute;
@@ -97,6 +127,7 @@
 
 			p{
 				color: $colorDarkShade50;
+				margin: 0;
 
 				span{
 					&:nth-child(1){

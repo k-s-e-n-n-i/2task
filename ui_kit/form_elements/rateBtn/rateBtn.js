@@ -1,4 +1,5 @@
 $(function() {
+
 	$('.rate_star').on('click', function(e) {
 		$(this).closest('.rate').find('.rate_star').removeClass('rate_star__active');
 

@@ -2,7 +2,7 @@ include /ui_kit/form_elements/rateBtn/rateBtn.pug
 script(src='/ui_kit/cards/cardRoom/cardRoom.js')
 
 
-mixin cardRoom(id,number,price,mark,review)
+mixin cardRoom(id,number,price,link,review,mark)
 	div.cardRoom
 		div.cardRoom_image(id=id)
 			div.cardRoom_image_pagination
@@ -15,14 +15,14 @@ mixin cardRoom(id,number,price,mark,review)
 				p
 					span= '№ '
 					span= number+' '
-					if mark!= ''
-						+link(mark)
+					if link!= ''
+						+link(link)
 				p
 					span= price
 					span= '₽'
 					span= ' в сутки'
 			div.cardRoom_contentInfo_block
-				+rate
+				+rate(mark)
 				p
 					span= review
 					span= ' отзывов'
