@@ -11,6 +11,8 @@
 	cursor: pointer;
 	margin: 15px 20px 15px 0;
 
+	-webkit-user-select: none;
+
 	&.link__fio{
 		color: #BC9CFF;
 	}

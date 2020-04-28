@@ -1,19 +1,21 @@
 include /ui_kit/header_footer/hf_mixins.pug
-	
-div.content.footer_shadow
-	div.content_container
-		ul.bottomMenu
-			+footerMenu_item('logo','Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»')
-			+footerMenu_item('Навигация','О нас','Новости','Служба поддержки','Услуги')
-			+footerMenu_item('О нас','О сервисе','Наша команда','Вакансии','Инвесторы')
-			+footerMenu_item('Служба поддержки','Соглашения','Сообщества','Связь с нами')
-			+footerMenu_item('Подписка','Получайте специальные предложения и новости сервиса','s')
 
-div.content
-	div.content_container
-		div.footer
-			p Copyright © 2018 Toxin отель. Все права зачищены.
-			div.footer_socBlock
-				img.footer_socBlock_network(src='ui_kit/header_footer/twitter.svg')
-				img.footer_socBlock_network(src='ui_kit/header_footer/facebook.svg')
-				img.footer_socBlock_network(src='ui_kit/header_footer/instagram.svg')
+mixin footer
+	div.content.footer_shadow
+		div.content_container
+			ul.bottomMenu
+				li.bottomMenu_logoBlock
+					img.logo(src='project/img/logo.svg')
+					p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+				+footerMenu_item('Навигация','О нас','Новости','Служба поддержки','Услуги')
+				+footerMenu_item('О нас','О сервисе','Наша команда','Вакансии','Инвесторы')
+				+footerMenu_item('Служба поддержки','Соглашения','Сообщества','Связь с нами')
+				+footerMenu_item('Подписка','Получайте специальные предложения и новости сервиса','s')
+	div.content
+		div.content_container
+			div.footer
+				p Copyright © 2018 Toxin отель. Все права зачищены.
+				div.footer_socBlock
+					img.footer_socBlock_network(src='ui_kit/header_footer/twitter.svg')
+					img.footer_socBlock_network(src='ui_kit/header_footer/facebook.svg')
+					img.footer_socBlock_network(src='ui_kit/header_footer/instagram.svg')

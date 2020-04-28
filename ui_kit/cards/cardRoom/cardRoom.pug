@@ -22,7 +22,7 @@ mixin cardRoom(id,number,price,link,review,mark)
 					span= '₽'
 					span= ' в сутки'
 			div.cardRoom_contentInfo_block
-				+rate(mark)
+				+rate(mark,1,2,3,4,5)
 				p
 					span= review
 					span= ' отзывов'

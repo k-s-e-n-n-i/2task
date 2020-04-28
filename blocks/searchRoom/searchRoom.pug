@@ -1,11 +1,28 @@
 include /ui_kit/header_footer/header.pug
+include /ui_kit/header_footer/footer.pug
 include /ui_kit/form_elements/dropdown/dropdown.pug
+include /ui_kit/form_elements/checkbox/checkbox.pug
 include /ui_kit/cards/cardRoom/cardRoom.pug
 
 
+mixin searchRoom_rooms_nav_num(active, ...items)
+	each item in items
+		if item == active
+			div.searchRoom_rooms_nav_num.searchRoom_rooms_nav_num__active= item
+		else
+			if item == 'next'
+				div.searchRoom_rooms_nav_num.searchRoom_rooms_nav_num__next
+			else		
+				div.searchRoom_rooms_nav_num= item
+		
+			
+		
 
+mixin arrow(dopclass)
+	div.arrow
+		div(class='arrow_line' +dopclass)
+		div(class='arrow_next' +dopclass)
 
-mixin
 
 +header(0)
 
@@ -66,21 +83,26 @@ div.content.searchRoom__shadow
 
 		div.searchRoom_rooms
 			h1 Номера, которые мы для вас подобрали
-			+cardRoom(1,888,'9 990','люкс',145,2)
-			+cardRoom(2,840,'9 900','',65,2)
-			+cardRoom(3,980,'8 500','люкс',35,2)
+			+cardRoom(1,888,'9 990','люкс',145,5)
+			+cardRoom(2,840,'9 900','',65,4)
+			+cardRoom(3,980,'8 500','люкс',35,3)
 
-			+cardRoom(4,856,'7 300','',19,2)
-			+cardRoom(5,740,'6 000','',44,2)
-			+cardRoom(6,982,'5 800','',56,2)
+			+cardRoom(4,856,'7 300','',19,5)
+			+cardRoom(5,740,'6 000','',44,4)
+			+cardRoom(6,982,'5 800','',56,3)
 
-			+cardRoom(7,678,'5 500','',45,2)
-			+cardRoom(8,450,'5 300','',39,2)
-			+cardRoom(9,982,'5 800','',56,2)
+			+cardRoom(7,678,'5 500','',45,5)
+			+cardRoom(8,450,'5 300','',39,4)
+			+cardRoom(9,982,'5 800','',56,3)
 
-			+cardRoom(10,666,'5 000','',25,2)
-			+cardRoom(11,444,'5 000','',15,2)
-			+cardRoom(12,352,'5 000','',55,2)
+			+cardRoom(10,666,'5 000','',25,5)
+			+cardRoom(11,444,'5 000','',15,3)
+			+cardRoom(12,352,'5 000','',55,3)
 
-include /ui_kit/header_footer/footer.pug
+			div.searchRoom_rooms_nav
+				+searchRoom_rooms_nav_num(1,1,2,3,'...',15,'next')
+			div.searchRoom_rooms_nav_label 1 – 15 из 100+ вариантов аренды
+
++footer
+
 

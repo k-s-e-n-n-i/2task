@@ -1,10 +1,9 @@
 script(src='/ui_kit/form_elements/rateBtn/rateBtn.js')
 
-mixin rate(mark)
+mixin rate(mark, ...items)
 	div.rate(name=mark)
-		div.rate_star(id=1)
-		div.rate_star(id=2)
-		div.rate_star(id=3)
-		div.rate_star(id=4)
-		div.rate_star(id=5)
-		
+		each item in items
+			if mark>=item
+				div(class='rate_star rate_star__active' id=item)
+			else	
+				div.rate_star(id=item)

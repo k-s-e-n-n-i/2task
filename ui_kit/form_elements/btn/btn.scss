@@ -16,6 +16,8 @@
 	text-align: center;
 	text-transform: uppercase;
 
+	-webkit-user-select: none;
+
 	&.btn__border{
 		background-color: #fff;
 		color: #BC9CFF;
