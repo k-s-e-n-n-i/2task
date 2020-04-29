@@ -1,15 +1,13 @@
 
 
 mixin inputText(text,dopclass,placeholder)
-	div.inputText
-		if text != ''
-			h3= text
-		input(class='inputText_input '+ dopclass placeholder=placeholder)
-		if dopclass == 'inputText_input__subscription'
-			+arrow('')
-
-
-mixin arrow(dopclass)
-	div.arrow
-		div(class='arrow_line' +dopclass)
-		div(class='arrow_next' +dopclass)
+	if dopclass == 'inputText_input__subscription'
+		div.inputText.inputText__subscription
+			if text != ''
+				h3= text
+			input(class='inputText_input '+ dopclass placeholder=placeholder)
+	else
+		div.inputText
+			if text != ''
+				h3= text
+			input(class='inputText_input '+ dopclass placeholder=placeholder)

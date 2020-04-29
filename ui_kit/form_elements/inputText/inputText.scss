@@ -21,6 +21,20 @@
 		}
 	}
 
+	&.inputText__subscription{
+		&:after{
+			content: '';
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+			position: absolute;
+			top: 18px;
+			right: 11px;
+			background-repeat: no-repeat;
+			background-image: url('/project/img/arrow.svg');
+		}
+	}
+
 	.inputText_input__masked{
 		background: yellow;//дописать маску
 	}
@@ -30,11 +44,11 @@
 		position: relative;
 	}
 
-	.arrow{
+	/*.arrow{
 		position: absolute;
 		bottom: 12px;
 	    left: 235px;
-	}
+	}*/
 }
 
 .inpinputText_input{
