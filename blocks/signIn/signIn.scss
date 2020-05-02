@@ -1,23 +1,25 @@
-.registration{
+.authorization{
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	background-image: url('/project/img/image4.1.png');
 	width: 100%;
 	height: 61vw;
 	background-size: cover;
 
-	.formRegistration{
-		margin: 30px auto;
+	.formSignIn{
+		margin: auto;
 	}
 }
 
-@media (max-width: 950px){
-	.registration{
+@media (max-width: 640px){
+	.authorization{
 		background: none;
 		height: auto;
 	}
-	.formRegistration{
+	.formSignIn{
 		position: inherit;
+		margin: 20px auto!important;
 	}
 }
 

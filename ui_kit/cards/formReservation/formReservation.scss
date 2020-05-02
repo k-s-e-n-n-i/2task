@@ -8,12 +8,16 @@
 	border-radius: 4px;
 
 	width: 380px;
-	height: 511px;
+	height: auto;//511px;
 	padding: 40px 30px 30px 30px;
 	
 	display: flex;	
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	p{
+		margin: 0;
+	}
 
 	.formReservation_block{
 		display: flex;

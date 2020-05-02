@@ -162,4 +162,13 @@
 			margin: 5px 0!important;
 		}
 	}
+
+	.header_nav_login{
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.btn{ 
+			margin: 15px 10px!important;
+		}
+	}
 }

@@ -90,7 +90,7 @@
 		.footer_socBlock_network{
 			height: 24px;
 			width: 24px;
-			padding-left: 23px;
+			padding-left: 20px;
 		}
 	}
 
@@ -154,6 +154,12 @@
 		margin: 20px 0 110px 0;
 		p{
 			display: none;
+		}
+
+		.footer_socBlock{
+			.footer_socBlock_network{
+				padding: 0 10px;
+			}
 		}
 	}
 }

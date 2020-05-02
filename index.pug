@@ -10,7 +10,7 @@ html(lang="ru")
 		
 		
 	body
-		//include blocks/landing_page/landing_page.html
+
 		//include ui_kit/form_elements/form_elements.pug
 		//include ui_kit/color_type/color_type.pug
 		//include ui_kit/header_footer/header.pug
@@ -19,18 +19,13 @@ html(lang="ru")
 		//include ui_kit/header_footer/footer2.pug
 		//include ui_kit/cards/cards.pug
 		
-		//include blocks/landing_page/landing_page.pug
-
 		include blocks/landingPage/landingPage.pug
 		include blocks/searchRoom/searchRoom.pug
+		include blocks/detailsRoom/detailsRoom.pug
+		include blocks/registration/registration.pug
+		include blocks/signIn/signIn.pug
+		
 		
 		
 		
 			
-
-
-
-mixin arrow(dopclass)
-	div.arrow
-		div(class='arrow_line' +dopclass)
-		div(class='arrow_next' +dopclass)
