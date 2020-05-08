@@ -1,14 +1,19 @@
 .registration{
 	display: flex;
-	justify-content: center;
+	//justify-content: center;
 	background-image: url('/project/img/image4.1.png');
 	width: 100%;
 	height: 61vw;
 	background-size: cover;
 
-	.formRegistration{
-		margin: 30px auto;
+	.content_container{
+		position: relative;
+		.formRegistration{
+			margin: 30px auto;
+		}
 	}
+
+	
 }
 
 @media (max-width: 950px){

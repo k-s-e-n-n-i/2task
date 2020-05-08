@@ -12,10 +12,10 @@ $(function() {
 	});	
 
 
-	$('.formSearchNum').find('.blockDropdown_dropdown__whisItems').on('click', function(e) {
+	/*$('.formSearchNum').find('.blockDropdown_dropdown__whisItems').on('click', function(e) {
 		var block_list = $(this).closest('.formSearchNum').find('.blockDropdown_dropdownItems');
 		dropdown_expend($(this),block_list);
-	});	
+	});*/	
 });
 
 function dropdown_expend(expend,block) {

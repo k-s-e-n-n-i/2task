@@ -11,10 +11,10 @@ $(function() {
 		}
 	});	
 
-	$('.formReservation').find('.blockDropdown_dropdown__whisItems').on('click', function(e) {
+	/*$('.formReservation').find('.blockDropdown_dropdown__whisItems').on('click', function(e) {
 		var block_list = $(this).closest('.formReservation').find('.blockDropdown_dropdownItems');
 		dropdown_expend($(this),block_list);
-	});	
+	});*/	
 
 });
 
