@@ -2,6 +2,7 @@ include /ui_kit/header_footer/header.pug
 include /ui_kit/header_footer/footer.pug
 include /ui_kit/form_elements/dropdown/dropdown.pug
 include /ui_kit/form_elements/checkbox/checkbox.pug
+include /ui_kit/form_elements/rangeSlider/rangeSlider.pug
 include /ui_kit/cards/cardRoom/cardRoom.pug
 
 
@@ -34,8 +35,8 @@ div.content.searchRoom__shadow
 						+dropdownItemsLink(0)
 			
 			div.searchRoom_filters_diapason
-				h3 диапазон цены
-				div.searchRoom_filters_diapason_price
+				+rangeSlider('диапазон цены',0,100000)
+				p Стоимость за сутки пребывания в номере
 			
 			div.searchRoom_filters_features
 				h3 Checkbox Buttons

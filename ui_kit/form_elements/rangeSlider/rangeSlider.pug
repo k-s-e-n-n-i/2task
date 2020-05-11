@@ -1,4 +1,15 @@
 
 
-mixin rangeSlider()
-		div.rangeSlider
+mixin rangeSlider(text,min,max)
+	div.rangeSlider
+		div.rangeSlider_label
+			h3= text
+			p
+				span.rangeSlider_label__min= min
+				span= '₽ - '
+				span.rangeSlider_label__max= max
+				span= '₽'
+		div.rangeSlider_slider
+			div.rangeSlider_slider_range
+			div.rangeSlider_slider_left
+			div.rangeSlider_slider_right

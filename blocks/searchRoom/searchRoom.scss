@@ -35,11 +35,16 @@
 
 		.searchRoom_filters_diapason{
 
-			.searchRoom_filters_diapason_price{
+			p{
+				color: rgba(31, 32, 65, 0.5);
+				font-size: 12px;
+				margin: 0;			
+			}
+			/*.searchRoom_filters_diapason_price{
 				width: 100%;
 				height: 20px;
 				background: red;
-			}
+			}*/
 		}	
 	}
 
