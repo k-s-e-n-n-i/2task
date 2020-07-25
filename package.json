@@ -17,6 +17,7 @@
     "sass": "^1.25.0"
   },
   "dependencies": {
+    "parcel": "^1.12.4",
     "pg-calendar": "^1.4.31"
   }
 }
