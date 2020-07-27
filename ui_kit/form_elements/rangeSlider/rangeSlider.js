@@ -10,19 +10,25 @@ $(function() {
 $.fn.slider = function() {
 
 		let dataSlider = {
+			idElement : 'idPrice',
+			type : 'diapazon',
 			min : 0,
 			max : 500000,
-			width : 256,
-			idElement : 'idPrice',
-			step : 'no'
+			//width : 256,
+			step : 'no',
+			orientation : 'horizontal',
+			value : 'on'
 		}
 
 		let dataSlider2 = {
+			idElement : 'idPrice2',
+			type : 'diapazon',
 			min : 0,
 			max : 10,
-			width : 100,
-			idElement : 'idPrice2',
-			step : 5
+			//width : 100,
+			step : 5,
+			orientation : 'horizontal',//'vertical',
+			value : 'on'
 		}
 
 		run(dataSlider);
@@ -34,16 +40,20 @@ $.fn.slider = function() {
 			let sliderBlock = $('.rangeSlider#'+obj.idElement),
 				slider = sliderBlock.find('.rangeSlider_slider'),
 				ind = slider.find('.rangeSlider_slider_range'),//"индикатор"
-				width = obj.width,
+				width = slider.width(),//obj.width,
 				min = obj.min, 
-				max = obj.max,
-				rangePositionLeft = parseInt(slider.position().left);//позиция бегунка
+				max = obj.max;
+				//rangePositionLeft = parseInt(slider.position().left);//позиция бегунка
+
+			checkType();
+			checkValue(sliderBlock);
+			checkOrientation();
 				
 			console.log('width:',width,'\nmin:',min,'\nmax:',max);
 
-			sliderBlock.find('.rangeSlider_label__min').html(min);
-			sliderBlock.find('.rangeSlider_label__max').html(max);
-			slider.css('width',obj.width);
+			//sliderBlock.find('.rangeSlider_label__min').html(min);
+			//sliderBlock.find('.rangeSlider_label__max').html(max);
+			//slider.css('width',obj.width);
 
 
 			//смена левой границы
@@ -61,12 +71,14 @@ $.fn.slider = function() {
 
 			function movie(range,e,cl){
 				let startPos = parseInt(range.css('left')),
-					indWidth = ind.width();
+					indWidth = ind.width(),
+					width = slider.width();
 
-				moveAt(e);
+				moveAt(e);	
+								
 			
 				$(document).on('mousemove', function(e) {
-			  		moveAt(e);
+			  		moveAt(e);	
 				});
 
 				$(document).on('mouseup', function(e) {
@@ -75,7 +87,15 @@ $.fn.slider = function() {
 				});
 				
 				function moveAt(e) {
-					pos = e.pageX - rangePositionLeft;
+					
+					if (obj.orientation == 'vertical'){
+						pos = e.pageY - parseInt(slider.position().top) - 93;//? подобрано число, пока не поняла что это
+						console.log(parseInt(slider.position().top));//позиция бегунка
+					}else{
+						pos = e.pageX - parseInt(slider.position().left);//позиция бегунка
+					}
+					
+					
 
 					if ((pos >= 0) && (pos <= width)){
 						
@@ -136,9 +156,35 @@ $.fn.slider = function() {
 						console.log('check',pos);
 					}
 				}
-			}
 
 			
+
+					
+			}
+
+			function checkValue(sliderBlock){
+				if (obj.value == 'off'){
+					sliderBlock.find('.rangeSlider_label_Block').css('display','none');
+				}else{
+					sliderBlock.find('.rangeSlider_label__min').html(obj.min);
+					sliderBlock.find('.rangeSlider_label__max').html(obj.max);
+				}
+			}
+
+			function checkOrientation(){
+				if (obj.orientation == 'vertical'){
+					slider.css('transform','rotate(90deg)');
+					//rangePositionLeft = parseInt(slider.position().top);
+				}
+			}
+
+			function checkType(){
+				if (obj.type == 'diapazon'){
+
+				}else{
+
+				}
+			}
 
 		}
 
