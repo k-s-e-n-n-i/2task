@@ -9,30 +9,96 @@ $(function() {
 (function( $ ) {
 $.fn.slider = function() {
 
-		let dataSlider = {
+	/** Как настроить слайдер
+	  	let obj = { //объект с параметрами слайдера
+			idElement : 'idPrice', //задается id элемента, который должен являться слайдером
+			type : 'interval', //три типа: 'interval' (выбирается диапазон), 'from0to' (от 0 до выбранного), 'one' (вибирается одно значение)
+			min : 0, //задается числовой минимум
+			max : 500000, //задается числовой максимум
+			step : 'no', //задается числовой шаг, либо значение 'no' (нет шага)
+			orientation : 'horizontal', //два типа: 'horizontal', 'vertical'
+			value : 'on', // отображать числовой диапазон над слайдером - 'on', не отображать - 'off'
+			scale : 'on', // отображать шкалу - 'on', не отображать - 'off'
+			scaleStep : 10 // задается числовое количество делений на шкале, либо значение 'default'
+	 	}
+	 	run(obj); //запуск слайдера с заданными параметрами в объекте
+	 */
+
+		let dataSlider = {//в blocks/searchRoom/searchRoom.pug
 			idElement : 'idPrice',
-			type : 'diapazon',
+			type : 'interval',
 			min : 0,
 			max : 500000,
-			//width : 256,
+			minStart : 50,
+			maxStart : 100,
 			step : 'no',
 			orientation : 'horizontal',
-			value : 'on'
+			value : 'on',
+			scale : 'on',
+			scaleStep : 10
+		}
+
+		let dataSlider1 = {
+			idElement : 'idPrice1',
+			type : 'interval',
+			min : 0,
+			max : 200,
+			minStart : 50,
+			maxStart : 100,
+			step : 'no',
+			orientation : 'horizontal',
+			value : 'on',
+			scale : 'on',
+			scaleStep : 20
 		}
 
 		let dataSlider2 = {
 			idElement : 'idPrice2',
-			type : 'diapazon',
+			type : 'interval',
 			min : 0,
 			max : 10,
-			//width : 100,
+			minStart : 5,
+			maxStart : 10,
 			step : 5,
 			orientation : 'horizontal',//'vertical',
-			value : 'on'
+			value : 'on',
+			scale : 'on',
+			scaleStep : 10
+		}
+
+		let dataSlider3 = {
+			idElement : 'idPrice3',
+			type : 'from0to',
+			min : 100,
+			max : 40000,
+			minStart : 50,
+			maxStart : 100,
+			step : 'no',
+			orientation : 'horizontal',
+			value : 'on',
+			scale : 'on',
+			scaleStep : 10
+		}
+
+		let dataSlider4 = {
+			idElement : 'idPrice4',
+			type : 'one',
+			min : 1000,
+			max : 25000,
+			minStart : 50,
+			maxStart : 100,
+			step : 'no',
+			orientation : 'horizontal',
+			value : 'on',
+			scale : 'on',
+			scaleStep : 8
 		}
 
 		run(dataSlider);
+		run(dataSlider1);
 		run(dataSlider2);
+		run(dataSlider3);
+		run(dataSlider4);
 
 
 		function run(obj) {
@@ -45,15 +111,14 @@ $.fn.slider = function() {
 				max = obj.max;
 				//rangePositionLeft = parseInt(slider.position().left);//позиция бегунка
 
-			checkType();
+			
+			checkType(sliderBlock);
 			checkValue(sliderBlock);
+			checkScale();
 			checkOrientation();
 				
 			console.log('width:',width,'\nmin:',min,'\nmax:',max);
 
-			//sliderBlock.find('.rangeSlider_label__min').html(min);
-			//sliderBlock.find('.rangeSlider_label__max').html(max);
-			//slider.css('width',obj.width);
 
 
 			//смена левой границы
@@ -68,6 +133,7 @@ $.fn.slider = function() {
 				movie(rangeRight,e,'right');		
 			});
 			
+			//checkStart(rangeLeft,rangeRight);
 
 			function movie(range,e,cl){
 				let startPos = parseInt(range.css('left')),
@@ -109,7 +175,9 @@ $.fn.slider = function() {
 								if (obj.step == 'no'){
 									step = startPos - parseInt(range.css('left'));//длина перемещения левого указателя	
 									console.log('step:',step);
-									ind.css('transform','translate('+pos+'px, -1px)');
+
+									ind.css('transform','translate('+pos+'px, 0px)');
+									
 									range.closest('.rangeSlider').find('.rangeSlider_label__min').html(price);
 								}else{
 									step = startPos - parseInt(range.css('left'));
@@ -118,7 +186,7 @@ $.fn.slider = function() {
 									//console.log('step:',step,'\npos:',pos);
 									//pos = rounding(pos,obj.step);
 
-									ind.css('transform','translate('+pos+'px, -1px)');
+									ind.css('transform','translate('+pos+'px, 0px)');
 									range.closest('.rangeSlider').find('.rangeSlider_label__min').html(price);
 								}
 								
@@ -178,12 +246,65 @@ $.fn.slider = function() {
 				}
 			}
 
-			function checkType(){
-				if (obj.type == 'diapazon'){
-
-				}else{
-
+			function checkType(sliderBlock){
+				if (obj.type == 'interval'){
+					return true;
 				}
+				if (obj.type == 'from0to'){
+					sliderBlock.find('.rangeSlider_slider_left').css('display','none');
+					ind.css('transform','translate('+(-5)+'px, 0px)');
+					return true;
+				}
+				if (obj.type == 'one'){
+					sliderBlock.find('.rangeSlider_slider_left').css('display','none');
+					ind.css('display','none');
+					spans = sliderBlock.find('.rangeSlider_label_Block').find('span');
+					spans[0].remove();
+					spans[1].remove();
+					return true;
+				}
+			}
+
+			function checkScale(){
+				if (obj.scale == 'on'){
+
+					let scaleKol,
+						ch = obj.min;
+					if (obj.scaleStep != 'default'){
+						scaleKol = obj.scaleStep;
+					}else{
+						scaleKol = Math.floor(width/45);
+					}
+
+					let scaleWidth = width/scaleKol;
+					
+					for(let i=0;i<=width;){
+						ii = Math.floor(i);
+						slider.append(`<div class="rangeSlider_slider_scale">
+							<div class="rangeSlider_slider_scale_line" id="scale${ii}"></div>
+							<div class="rangeSlider_slider_scale_val"></div>
+							</div>`);
+						shBlock = slider.find('.rangeSlider_slider_scale_line#scale'+ii).closest('.rangeSlider_slider_scale');
+						shLine = shBlock.find('.rangeSlider_slider_scale_line');
+						shVal = shBlock.find('.rangeSlider_slider_scale_val');
+						shBlock.css('left',ii+'px');
+						sliderBlock.css('margin-bottom','35px');
+						console.log(width, ii);
+						i = i+scaleWidth;
+
+						shBlock.find('.rangeSlider_slider_scale_val').html(ch);
+						ch = ch + Math.floor((obj.max-obj.min)/scaleKol);
+					}
+				}
+			}
+
+			function checkStart(left,right){
+				left.css('left', obj.minStart+'px');
+				right.css('left', obj.maxStart+'px');
+
+				//sliderBlock.find('.rangeSlider_slider_left').css('display','none');
+				ind.css('left', obj.minStart+'px');
+				ind.css('width',indWidth+'px');
 			}
 
 		}

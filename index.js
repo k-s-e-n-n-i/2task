@@ -54,3 +54,5 @@ import '/blocks/searchRoom/searchRoom.scss'
 import '/blocks/registration/registration.scss'
 import '/blocks/signIn/signIn.scss'
 import '/blocks/detailsRoom/detailsRoom.scss'
+
+import '/blocks/demoSlider/demoSlider.scss'

@@ -1,0 +1,30 @@
+include /ui_kit/header_footer/header.pug
+include /ui_kit/header_footer/footer.pug
+include /ui_kit/form_elements/rangeSlider/rangeSlider.pug
+
+
++header(0)
+
+div.content.searchRoom__shadow
+	div.content_container.searchRoom2
+		div.searchRoom_filters
+					
+			div.searchRoom_filters_diapason
+				+rangeSlider('диапазон цены',0,100000,'idPrice1')
+				p Стоимость за сутки пребывания в номере
+
+			div.searchRoom_filters_diapason
+				+rangeSlider('диапазон цены',100,1000,'idPrice2')
+				p Стоимость за сутки пребывания в номере
+			
+			div.searchRoom_filters_diapason
+				+rangeSlider('диапазон цены',0,100000,'idPrice3')
+				p Стоимость за сутки пребывания в номере
+
+			div.searchRoom_filters_diapason
+				+rangeSlider('диапазон цены',100,1000,'idPrice4')
+				p Стоимость за сутки пребывания в номере
+		
++footer
+
+

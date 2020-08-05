@@ -1,0 +1,140 @@
+
+
+.searchRoom2{
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+
+	.searchRoom_filters{
+		margin-left: 20px;
+		width: 400px;//267px;
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 0;
+		margin-right: 35px;
+
+		.blockDropdown{
+			width: 100%;
+			.blockDropdown_dropdown{
+				width: 100%;
+			}
+		}	
+
+		.searchRoom_filters_date,
+		.searchRoom_filters_diapason,
+		.searchRoom_filters_features,
+		.searchRoom_filters_availability,
+		.searchRoom_filters_comfort,
+		.searchRoom_filters_additional,
+		.checkboxList{
+			margin-top: 30px;
+		}
+
+		.searchRoom_filters_guest{
+			margin-top: 20px;
+		}
+
+		.searchRoom_filters_diapason{
+
+			p{
+				color: rgba(31, 32, 65, 0.5);
+				font-size: 12px;
+				margin: 0;			
+			}
+			/*.searchRoom_filters_diapason_price{
+				width: 100%;
+				height: 20px;
+				background: red;
+			}*/
+		}	
+	}
+
+	.searchRoom_rooms{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-bottom: 70px;
+
+		h1{
+			width: 100%;
+			margin: 25px 0 10px 0; 
+		}
+
+		.searchRoom_rooms_nav{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			//flex-direction: column;
+			margin: 30px 0 10px 0;
+
+			.searchRoom_rooms_nav_num{
+				width: 40px;
+				height: 40px;
+				color: rgba(31, 32, 65, 0.5);
+				font-size: 12px;
+				font-weight: bold;
+				border-radius: 50%;
+
+				display: flex;
+				justify-content: center;
+				//flex-direction: row;
+				align-items: center;
+
+				cursor: pointer;
+
+				&.searchRoom_rooms_nav_num__active{
+					background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+					color: #fff;
+				}
+				&.searchRoom_rooms_nav_num__next{
+					background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+					color: #fff;
+					position: relative;
+
+					&:after{
+						content: '';
+						width: 20px;
+						height: 20px;
+						cursor: pointer;
+						position: absolute;
+						top: 11px;
+						left: 11px;
+						background-repeat: no-repeat;
+						background-image: url('/project/img/arrow_white.svg');
+					}
+				}
+			}
+		}
+		.searchRoom_rooms_nav_label{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+
+
+@media (max-width: 1170px){
+	.searchRoom{
+		.searchRoom_filters{
+			margin-left: 20px;
+		}	
+		.searchRoom_rooms{
+			justify-content: space-around;
+			h1{
+				text-align: center;
+				padding: 0 15px;
+			}
+		}
+	}
+}
+
+@media (max-width: 620px){
+	.searchRoom{
+		flex-wrap: wrap;
+		justify-content: center;
+		.searchRoom_filters{
+			margin: 0;
+		}
+	}	
+}
