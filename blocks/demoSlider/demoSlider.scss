@@ -5,6 +5,20 @@
 	display: flex;
 	justify-content: space-between;
 
+	.sliderConf{
+		margin: 20px;
+		min-width: 400px;
+		
+		.checkbox{
+			display: flex;
+    		justify-content: flex-end;
+		}
+		.sliderConf_block{
+			display: none;
+			
+		}
+	}
+
 	.searchRoom_filters{
 		margin-left: 20px;
 		width: 400px;//267px;

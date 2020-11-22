@@ -56,3 +56,4 @@ import '/blocks/signIn/signIn.scss'
 import '/blocks/detailsRoom/detailsRoom.scss'
 
 import '/blocks/demoSlider/demoSlider.scss'
+import '/blocks/demoSlider/demoSlider.js'

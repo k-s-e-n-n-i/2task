@@ -1,13 +1,29 @@
+//export let dataSlider1;
+
+//export {exp};
 $(function() {
-	$('body').slider();
-
-
+	
+	
 });
 
 
+/*$('div.searchRoom_filters_diapason').slider({
+	idElement : 'idPrice1',
+	type : 'interval',
+	min : 0,
+	max : 200,
+	minStart : 50,
+	maxStart : 100,
+	step : 'no',
+	orientation : 'horizontal',
+	value : 'on',
+	scale : 'on',
+	scaleStep : 20
+});
+*/
 
 (function( $ ) {
-$.fn.slider = function() {
+$.fn.slider = function(options) {
 
 	/** Как настроить слайдер
 	  	let obj = { //объект с параметрами слайдера
@@ -15,6 +31,8 @@ $.fn.slider = function() {
 			type : 'interval', //три типа: 'interval' (выбирается диапазон), 'from0to' (от 0 до выбранного), 'one' (вибирается одно значение)
 			min : 0, //задается числовой минимум
 			max : 500000, //задается числовой максимум
+			minStart : 50, //непонятно зачем
+			maxStart : 100, //непонятно зачем
 			step : 'no', //задается числовой шаг, либо значение 'no' (нет шага)
 			orientation : 'horizontal', //два типа: 'horizontal', 'vertical'
 			value : 'on', // отображать числовой диапазон над слайдером - 'on', не отображать - 'off'
@@ -24,7 +42,7 @@ $.fn.slider = function() {
 	 	run(obj); //запуск слайдера с заданными параметрами в объекте
 	 */
 
-		let dataSlider = {//в blocks/searchRoom/searchRoom.pug
+		let dataSlider = $.extend({//в blocks/searchRoom/searchRoom.pug
 			idElement : 'idPrice',
 			type : 'interval',
 			min : 0,
@@ -36,9 +54,11 @@ $.fn.slider = function() {
 			value : 'on',
 			scale : 'on',
 			scaleStep : 10
-		}
+		}, options);
 
-		let dataSlider1 = {
+		return this.each(function() {
+
+		/*let dataSlider1 = {
 			idElement : 'idPrice1',
 			type : 'interval',
 			min : 0,
@@ -92,13 +112,15 @@ $.fn.slider = function() {
 			value : 'on',
 			scale : 'on',
 			scaleStep : 8
-		}
+		}*/
+
+		//writeObjSlider(dataSlider1);
 
 		run(dataSlider);
-		run(dataSlider1);
+		/*run(dataSlider1);
 		run(dataSlider2);
 		run(dataSlider3);
-		run(dataSlider4);
+		run(dataSlider4);*/
 
 
 		function run(obj) {
@@ -307,7 +329,16 @@ $.fn.slider = function() {
 				ind.css('width',indWidth+'px');
 			}
 
+			
+
 		}
 
+		function writeObjSlider(obj){
+			obj.min = $('.searchRoom2 .sliderConf .sliderConf_block .inputText_input#inputTextmin').val();
+			console.log(dataSlider1);
+		}
+		});
 	};
+
+
 })(jQuery);

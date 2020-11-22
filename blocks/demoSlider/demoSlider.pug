@@ -2,6 +2,10 @@ include /ui_kit/header_footer/header.pug
 include /ui_kit/header_footer/footer.pug
 include /ui_kit/form_elements/rangeSlider/rangeSlider.pug
 
+include /ui_kit/form_elements/inputText/inputText.pug
+include /ui_kit/form_elements/radiobutton/radiobutton.pug
+include /ui_kit/form_elements/checkbox/checkbox.pug
+include /ui_kit/form_elements/btn/btn.pug
 
 +header(0)
 
@@ -25,6 +29,46 @@ div.content.searchRoom__shadow
 				+rangeSlider('диапазон цены',100,1000,'idPrice4')
 				p Стоимость за сутки пребывания в номере
 		
+		div.sliderConf
+			div.checkbox
+				+checkbox_item('Настройки бегунков', 's1','')
+
+			div.sliderConf_block
+				+btn('Применить','btn__gradient')
+				div.formRegistration_blockRadio
+					+radio('s1','rbGroopSlider','Настройки бегунка №1','checked')
+					+radio('s2','rbGroopSlider','Настройки бегунка №2')
+					+radio('s3','rbGroopSlider','Настройки бегунка №3')
+					+radio('s4','rbGroopSlider','Настройки бегунка №4')
+				
+					+radio('srb1',"rbGroopType","Диапазон значений",'checked')
+					+radio('srb2',"rbGroopType","От 0 до выбранного")
+					+radio('srb3',"rbGroopType","Единичное значение")
+				+inputText('min','','0','min')
+				+inputText('max','','1000','max')
+				+inputText('Шаг','','2','step')
+				div.formRegistration_blockRadio
+					+radio(10,"rbGroopOrientation","Горизонтальная",'checked')
+					+radio(20,"rbGroopOrientation","Вертикальная")
+				+inputText('Кол-во делений','','')
+												
+				div.checkbox
+					+checkbox_item("Завтрак", 991,'')
+					+checkbox_item("Письменный стол", 992,'')
+					+checkbox_item("Стул для кормления", 993,'')
+
+				
+				
+
+
+
+			
+			
+			
+			
+			
+			
+
 +footer
 
 

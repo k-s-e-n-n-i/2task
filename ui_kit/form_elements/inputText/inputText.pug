@@ -1,13 +1,13 @@
 
 
-mixin inputText(text,dopclass,placeholder)
+mixin inputText(text,dopclass,placeholder,id)
 	if dopclass == 'inputText_input__subscription'
 		div.inputText.inputText__subscription
 			if text != ''
 				h3= text
-			input(class='inputText_input '+ dopclass placeholder=placeholder)
+			input(class='inputText_input '+ dopclass placeholder=placeholder id="inputText" + id)
 	else
 		div.inputText
 			if text != ''
 				h3= text
-			input(class='inputText_input '+ dopclass placeholder=placeholder)
+			input(class='inputText_input '+ dopclass placeholder=placeholder id="inputText" + id)
