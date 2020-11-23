@@ -54,14 +54,19 @@ $(function() {
 
 
 		$('.searchRoom2 .sliderConf .sliderConf_block .btn').on('click', function(e) {
+			
+			
+
 			let config = checkedSliderConf(),
 				num = config[0],
 				typeId = config[1],
-				min = config[2],
-				max = config[3],
+				min = Number.parseInt(config[2]),
+				max = Number.parseInt(config[3]),
+				scaleStep = Number.parseInt(config[4]),
 				type;
 			console.log( num, typeId );
 			
+			clear(num);
 			
 			switch(typeId) {
   				case '1': type = 'interval'; break;
@@ -76,7 +81,8 @@ $(function() {
 				idElement : 'idPrice'+num,
 				type : type,
 				min : min,
-				max : max
+				max : max,
+				scaleStep : scaleStep
 			});
 
 		});
@@ -101,12 +107,25 @@ $(function() {
 		let num = $('.searchRoom2 .sliderConf .sliderConf_block .formRegistration_blockRadio .radio .radio_input[name=rbGroopSlider]:checked').attr('id').replace('rbs',''),
 			typeId = $('.searchRoom2 .sliderConf .sliderConf_block .formRegistration_blockRadio .radio .radio_input[name=rbGroopType]:checked').attr('id').replace('rbsrb',''),
 			min = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin').val(),
-			max = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax').val();
+			max = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax').val(),
+			scaleStep = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep').val();
 		
 
-		console.log(num, typeId, min, max);
-		return [num, typeId, min, max];
+		console.log(num, typeId, min, max, scaleStep);
+		return [num, typeId, min, max, scaleStep];
 	}
 
+	function clear(num){
+		let x = $('.searchRoom2 .rangeSlider#idPrice'+num+' .rangeSlider_slider .rangeSlider_slider_scale')
+		console.log(x, "удаляем");
+		x.remove();
+
+
+		$('.searchRoom2 .rangeSlider#idPrice'+num+' .rangeSlider_slider_left').css('display','inline-block');
+		$('.searchRoom2 .rangeSlider#idPrice'+num+' .rangeSlider_slider_range').css('display','inline-block');
+
+	}
 	
 });
+
+//непонятный баг с первым делением

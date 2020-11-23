@@ -311,7 +311,7 @@ $.fn.slider = function(options) {
 						shVal = shBlock.find('.rangeSlider_slider_scale_val');
 						shBlock.css('left',ii+'px');
 						sliderBlock.css('margin-bottom','35px');
-						console.log(width, ii);
+						//console.log(width, ii);
 						i = i+scaleWidth;
 
 						shBlock.find('.rangeSlider_slider_scale_val').html(ch);
