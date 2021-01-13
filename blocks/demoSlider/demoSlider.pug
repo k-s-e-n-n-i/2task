@@ -34,28 +34,45 @@ div.content.searchRoom__shadow
 				+checkbox_item('Настройки бегунков', 's1','')
 
 			div.sliderConf_block
-				+btn('Применить','btn__gradient')
-				div.formRegistration_blockRadio
-					+radio('s1','rbGroopSlider','Настройки бегунка №1','checked')
-					+radio('s2','rbGroopSlider','Настройки бегунка №2')
-					+radio('s3','rbGroopSlider','Настройки бегунка №3')
-					+radio('s4','rbGroopSlider','Настройки бегунка №4')
+				div.sliderConf_block_item
+					+btn('Применить','btn__gradient')
+				div.sliderConf_block_item
+					div.sliderConf_block_item_option
+						+radio('s1','rbGroopSlider','Настройки бегунка №1','checked')
+						+radio('s2','rbGroopSlider','Настройки бегунка №2')
+						+radio('s3','rbGroopSlider','Настройки бегунка №3')
+						+radio('s4','rbGroopSlider','Настройки бегунка №4')
+					div.sliderConf_block_item_option
+						+radio('srb1',"rbGroopType",'Диапазон значений','checked')
+						+radio('srb2',"rbGroopType",'От 0 до выбранного')
+						+radio('srb3',"rbGroopType",'Единичное значение')
+					div.sliderConf_block_item_option
+						+radio('orient1','rbGroopOrientation','Горизонтальная','checked')
+						+radio('orient2','rbGroopOrientation','Вертикальная')
 				
-					+radio('srb1',"rbGroopType","Диапазон значений",'checked')
-					+radio('srb2',"rbGroopType","От 0 до выбранного")
-					+radio('srb3',"rbGroopType","Единичное значение")
-				+inputText('min','','0','min')
-				+inputText('max','','1000','max')
-				+inputText('Шаг','','2','step')
-				div.formRegistration_blockRadio
-					+radio(10,"rbGroopOrientation","Горизонтальная",'checked')
-					+radio(20,"rbGroopOrientation","Вертикальная")
-				+inputText('Кол-во делений','','10','scaleStep')
-												
-				div.checkbox
-					+checkbox_item("Завтрак", 991,'')
-					+checkbox_item("Письменный стол", 992,'')
-					+checkbox_item("Стул для кормления", 993,'')
+					div.sliderConf_block_item_option
+						+inputText('min','','0','min')
+						+inputText('max','','1000','max')
+					div.sliderConf_block_item_option
+						+inputText('min текущий','','50','minStart')
+						+inputText('max текущий','','500','maxStart')
+					div.sliderConf_block_item_option
+						+inputText('Шаг','','2','step')
+						
+
+				div.sliderConf_block_item
+					div.sliderConf_block_item_option
+						h2 Шкала
+						+radio('scale1','rbGroopScale','Вкл','checked')
+						+radio('scale2','rbGroopScale','Выкл')
+						+inputText('Кол-во делений','','10','scaleStep')
+					
+					div.sliderConf_block_item_option
+						h2 Числовой диапазон
+						+radio('value1','rbGroopValue','Вкл','checked')
+						+radio('value2','rbGroopValue','Выкл')
+					
+				
 
 				
 				

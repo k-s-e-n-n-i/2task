@@ -40,15 +40,17 @@ $.fn.slider = function(options) {
 			scaleStep : 10 // задается числовое количество делений на шкале, либо значение 'default'
 	 	}
 	 	run(obj); //запуск слайдера с заданными параметрами в объекте
+
+	 	//при type : 'one' нет минимального значения, работает по максимальному
 	 */
 
 		let dataSlider = $.extend({//в blocks/searchRoom/searchRoom.pug
 			idElement : 'idPrice',
 			type : 'interval',
 			min : 0,
-			max : 500000,
+			max : 1234,
 			minStart : 50,
-			maxStart : 100,
+			maxStart : 500,
 			step : 'no',
 			orientation : 'horizontal',
 			value : 'on',
@@ -133,6 +135,10 @@ $.fn.slider = function(options) {
 				max = obj.max;
 				//rangePositionLeft = parseInt(slider.position().left);//позиция бегунка
 
+				if (obj.minStart < min){obj.minStart = min;}
+				if (obj.maxStart > max){obj.maxStart = max;}
+				
+
 			
 			checkType(sliderBlock);
 			checkValue(sliderBlock);
@@ -155,7 +161,7 @@ $.fn.slider = function(options) {
 				movie(rangeRight,e,'right');		
 			});
 			
-			//checkStart(rangeLeft,rangeRight);
+			checkStart(rangeLeft,rangeRight,ind);
 
 			function movie(range,e,cl){
 				let startPos = parseInt(range.css('left')),
@@ -191,7 +197,7 @@ $.fn.slider = function(options) {
 
 						if (cl == 'left'){
 							rigth = parseInt(rangeRight.css('left'));
-							if (rigth >= pos){
+							if ((rigth >= pos)&&(obj.type != 'from0to')){
 								price = calc(range);
 
 								if (obj.step == 'no'){
@@ -205,7 +211,7 @@ $.fn.slider = function(options) {
 									step = startPos - parseInt(range.css('left'));
 									//step = steped(step);
 
-									//console.log('step:',step,'\npos:',pos);
+									console.log('step:',step,'\npos:',pos);
 									//pos = rounding(pos,obj.step);
 
 									ind.css('transform','translate('+pos+'px, 0px)');
@@ -234,6 +240,7 @@ $.fn.slider = function(options) {
 
 						pr = pos / width,
 						price = ((max - min) * pr + min).toFixed();
+						//console.log(price,'??????????????????');
 						return price;
 					}
 
@@ -256,8 +263,30 @@ $.fn.slider = function(options) {
 				if (obj.value == 'off'){
 					sliderBlock.find('.rangeSlider_label_Block').css('display','none');
 				}else{
-					sliderBlock.find('.rangeSlider_label__min').html(obj.min);
-					sliderBlock.find('.rangeSlider_label__max').html(obj.max);
+					sliderBlock.find('.rangeSlider_label_Block').css('display','flex');
+					if (obj.type != 'from0to'){
+						sliderBlock.find('.rangeSlider_label__min').html(obj.minStart);//меняю min/max на чтобы в подписи указывались стартовые позиции крайних точек
+					}else{
+						sliderBlock.find('.rangeSlider_label__min').html(obj.min);
+					}
+					sliderBlock.find('.rangeSlider_label__max').html(obj.maxStart);
+
+					//spans = sliderBlock.find('.rangeSlider_label_Block').find('span');
+					//console.log(spans[0].hasClass('rangeSlider_label__min'),'span');
+					spans = sliderBlock.find('.rangeSlider_label_Block');
+					if (obj.type == 'one'){
+						console.log(spans.is('span.rangeSlider_label__min'), 'есть тут минимум? ТУТ ЕДИНИЧНОЕ');
+						spans.find('span.rangeSlider_label__min').css('display','none');//.remove();
+						spans.find('span.rangeSlider_label__dash').css('display','none');//.remove();
+					}else{
+						spans.find('span.rangeSlider_label__min').css('display','block');//.remove();
+						spans.find('span.rangeSlider_label__dash').css('display','block');//.remove();
+						//if (spans.is('.rangeSlider_label__min') == false){
+						/*	console.log(spans.is('.rangeSlider_label__min'), 'есть тут минимум?? ТУТ ИНТЕРВАЛ');
+							sliderBlock.find('.rangeSlider_label_Block').prepend(`<span class="rangeSlider_label__min">
+								${obj.minStart}</span><span class="rangeSlider_label__dash">₽ - </span>`);	
+						*///}
+					}
 				}
 			}
 
@@ -280,9 +309,9 @@ $.fn.slider = function(options) {
 				if (obj.type == 'one'){
 					sliderBlock.find('.rangeSlider_slider_left').css('display','none');
 					ind.css('display','none');
-					spans = sliderBlock.find('.rangeSlider_label_Block').find('span');
-					spans[0].remove();
-					spans[1].remove();
+					spans = sliderBlock.find('.rangeSlider_label_Block');
+					spans.find('span.rangeSlider_label__min').css('display','none');//.remove();
+					spans.find('span.rangeSlider_label__dash').css('display','none');//.remove();
 					return true;
 				}
 			}
@@ -320,13 +349,25 @@ $.fn.slider = function(options) {
 				}
 			}
 
-			function checkStart(left,right){
-				left.css('left', obj.minStart+'px');
-				right.css('left', obj.maxStart+'px');
+			function checkStart(left,right,ind){
+				if (obj.type != 'from0to'){
+					posLeft = width * obj.minStart / obj.max;
+					left.css('left', posLeft +'px');
+				}
+
+				posRight = width * obj.maxStart / obj.max;
+				right.css('left', posRight +'px');
 
 				//sliderBlock.find('.rangeSlider_slider_left').css('display','none');
-				ind.css('left', obj.minStart+'px');
-				ind.css('width',indWidth+'px');
+				if (obj.type != 'from0to'){
+					ind.css('transform','translate('+posLeft+'px, 0px)');
+					ind.css('left', posLeft+'px');
+					ind.css('width',(posRight - posLeft)+'px');
+				}else{
+					ind.css('transform','translate(-5px, 0px)');
+					ind.css('left', '0px');
+					ind.css('width',posRight+'px');
+				}
 			}
 
 			

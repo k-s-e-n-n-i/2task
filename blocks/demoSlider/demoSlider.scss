@@ -1,3 +1,17 @@
+.sliderConf{
+	
+	.sliderConf_block{
+		/*display: flex;
+		
+		padding: 0;
+		margin: 0;*/
+	}
+	
+
+
+}
+
+
 
 
 .searchRoom2{
@@ -15,6 +29,16 @@
 		}
 		.sliderConf_block{
 			display: none;
+
+			.sliderConf_block_item{
+				display: flex;
+				flex-wrap: wrap;
+
+				.sliderConf_block_item_option{
+					//width: 300px;
+					margin: 5px;
+				}
+			}
 			
 		}
 	}
