@@ -20,12 +20,12 @@
 	justify-content: space-between;
 
 	.sliderConf{
-		margin: 20px;
+		//margin: 20px;
 		min-width: 400px;
 		
 		.checkbox{
 			display: flex;
-    		justify-content: flex-end;
+    		justify-content: flex-start;
 		}
 		.sliderConf_block{
 			display: none;
@@ -37,6 +37,13 @@
 				.sliderConf_block_item_option{
 					//width: 300px;
 					margin: 5px;
+
+					&.sliderConf_block_item_option__3inStr{
+						width: 30%;
+					}
+					&.sliderConf_block_item_option__2inStr{
+						width: 45%;
+					}
 				}
 			}
 			

@@ -63,10 +63,11 @@ $(function() {
 
 		$('.searchRoom2 .sliderConf .sliderConf_block .btn').on('click', function(e) {
 			
-			
+			console.log($(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1), 'КАКОЙ Я СЛАЙДЕР ВЫБРАЛА?');
 
-			let config = checkedSliderConf(),
-				num = config[0],
+			let 
+				num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1),//config[0],
+				config = checkedSliderConf(num),
 				typeId = config[1],
 				min = Number.parseInt(config[2]),
 				max = Number.parseInt(config[3]),
@@ -139,27 +140,27 @@ $(function() {
 	});	
 
 
-	function checkedSliderConf(){		
-		let num = $(`.searchRoom2 .sliderConf .sliderConf_block 
-					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopSlider]:checked`).attr('id').replace('rbs',''),
+	function checkedSliderConf(num){	
+		let classes = `.searchRoom2 .searchRoom_filters .sliderConf .sliderConf_block`,
+			/*num = 1,/*$(classes+`.sliderConf_block_item .sliderConf_block_item_option .radio 
+					.radio_input[name=rbGroopSlider]:checked`).attr('id').replace('rbs',''),*/
 			typeId = $(`.searchRoom2 .sliderConf .sliderConf_block 
 					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopType]:checked`).attr('id').replace('rbsrb',''),
-			min = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin').val(),
-			max = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax').val(),
-			minStart = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart').val(),
-			maxStart = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart').val(),
+					.radio_input[name=rbGroopType]:checked`).attr('id').substr(2,1),
+			min = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin'+num).val(),
+			max = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax'+num).val(),
+			minStart = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart'+num).val(),
+			maxStart = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart'+num).val(),
 			scaleID = $(`.searchRoom2 .sliderConf .sliderConf_block 
 					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopScale]:checked`).attr('id').replace('rbscale',''),
+					.radio_input[name=rbGroopScale]:checked`).attr('id').substr(2,1),
 			orientationID = $(`.searchRoom2 .sliderConf .sliderConf_block 
 					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopOrientation]:checked`).attr('id').replace('rborient',''),
+					.radio_input[name=rbGroopOrientation]:checked`).attr('id').substr(2,1),
 			valueID = $(`.searchRoom2 .sliderConf .sliderConf_block 
 					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopValue]:checked`).attr('id').replace('rbvalue',''),
-			scaleStep = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep').val();
+					.radio_input[name=rbGroopValue]:checked`).attr('id').substr(2,1),
+			scaleStep = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep'+num).val();
 		
 
 		console.log(num, typeId, min, max, minStart,  maxStart, orientationID, valueID, scaleID, scaleStep);
