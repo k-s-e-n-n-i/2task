@@ -7,7 +7,7 @@ import {exp} from '/ui_kit/form_elements/rangeSlider/rangeSlider.js'
 
 $(function() {
 
-	let s1 = $('body').slider({
+	let s = [ $('body').slider({
 		idElement : 'idPrice1',
 		type : 'interval',
 		min : 10,
@@ -19,8 +19,8 @@ $(function() {
 		value : 'on',
 		scale : 'on',
 		scaleStep : 20
-	});
-	let s2 = $('body').slider({
+	}),
+	$('body').slider({
 		idElement : 'idPrice2',
 		type : 'from0to',
 		min : 0,
@@ -32,146 +32,156 @@ $(function() {
 		value : 'on',
 		scale : 'on',
 		scaleStep : 10
-	});
-
-	let s3 = $('body').slider({
+	}),
+	$('body').slider({
 		idElement : 'idPrice3',
 		min : 100,
 		max : 40000,
-	});
+	}),
 
-	let s4 = $('body').slider({
+	$('body').slider({
 		idElement : 'idPrice4',
 		type : 'one',
 		min : 0,
 		max : 5000,
 		maxStart : 2000,
-	});
+	}) ];
+	
 
 
 	$('.searchRoom2 .sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
-		console.log('dmkmkfmkmfk',$(this).attr('id'));
+		console.log('numSlider:', $(this).attr('id').substr(-1));
 
 		if ($(this).prop('checked')){
-			console.log('vjfhgjkj');
 			$(this).closest('.sliderConf').find('.sliderConf_block').css('display','block');
 		}else{
-			console.log('nonoonnono');
 			$(this).closest('.sliderConf').find('.sliderConf_block').css('display','none');
 		}
 
 
-		$('.searchRoom2 .sliderConf .sliderConf_block .btn').on('click', function(e) {
+		$('.searchRoom2 .sliderConf .sliderConf_block .inputText_input').on('blur', function(e) {
 			
-			console.log($(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1), 'КАКОЙ Я СЛАЙДЕР ВЫБРАЛА?');
+			let num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1),
+				idStr = $(this).attr('id'),
+				sliObj = s[num-1],
+				min,
+				max,
+				minStart,
+				maxStart,
+				step,
+				scaleStep;
 
-			let 
-				num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1),//config[0],
-				config = checkedSliderConf(num),
-				typeId = config[1],
-				min = Number.parseInt(config[2]),
-				max = Number.parseInt(config[3]),
-				minStart = Number.parseInt(config[4]),
-				maxStart = Number.parseInt(config[5]),
-				orientationID = config[6],
-				valueID = config[7],
-				scaleID = config[8],
-				scaleStep = Number.parseInt(config[9]),
-				type, scale, value, orientation, step;
-			console.log('78: ', num, typeId, scaleID );
-			
-			clear(num);
-			
-			switch(typeId) {
-  				case '1': type = 'interval'; break;
-   				case '2': type = 'from0to'; break;
-   				case '3': type = 'one'; break;
-   				default : type = 'interval';
-   			}
-
-   			switch(orientationID) {
-  				case '1': orientation = 'horizontal'; break;
-   				case '2': orientation = 'vertical'; break;
-   				default : orientation = 'horizontal';
-   			}
-
-   			switch(valueID) {
-  				case '1': value = 'on'; break;
-   				case '2': value = 'off'; break;
-   				default : value = 'on';
-   			}
-
-   			switch(scaleID) {
-  				case '1': scale = 'on'; break;
-   				case '2': scale = 'off'; break;
-   				default : scale = 'on';
-   			}
-
-   			console.log(type, scale, 7777777777);
-
-			$('body').slider({
-				idElement : 'idPrice'+num,
-				type : type,
-				min : min,
-				max : max,
-				minStart : minStart,
-				maxStart : maxStart,
-				orientation : orientation,
-				value : value,
-				scale : scale,
-				scaleStep : scaleStep
-			});
-
+			if (idStr.indexOf('min',0) != -1){
+				min = Number.parseInt($(`.searchRoom2 .sliderConf 
+										.sliderConf_block .inputText #inputTextmin`+num).val());
+				clear(num);
+				sliObj.min = min;
+			}
+			if (idStr.indexOf('max',0) != -1){
+				max = Number.parseInt($(`.searchRoom2 .sliderConf 
+										.sliderConf_block .inputText #inputTextmax`+num).val());
+				clear(num);
+				sliObj.max = max;
+			}
+			if (idStr.indexOf('minStart',0) != -1){
+				minStart = Number.parseInt($(`.searchRoom2 .sliderConf 
+										.sliderConf_block .inputText #inputTextminStart`+num).val());
+				clear(num);
+				sliObj.minStart = minStart;
+			}
+			if (idStr.indexOf('maxStart',0) != -1){
+				maxStart = Number.parseInt($(`.searchRoom2 .sliderConf 
+										.sliderConf_block .inputText #inputTextmaxStart`+num).val());
+				clear(num);
+				sliObj.maxStart = maxStart;
+			}
+			if (idStr.indexOf('scaleStep',0) != -1){
+				scaleStep = Number.parseInt($(`.searchRoom2 .sliderConf 
+										.sliderConf_block .inputText #inputTextscaleStep`+num).val());
+				clear(num);
+				sliObj.scaleStep = scaleStep;
+				$('body').slider(s[num-1]);
+			}
+			if (idStr.indexOf('step',0) != -1){
+				step = Number.parseInt($(`.searchRoom2 .sliderConf 
+										.sliderConf_block .inputText #inputTextstep`+num).val());
+				clear(num);
+				sliObj.step = step;
+			}
+			$('body').slider(s[num-1]);
 		});
-		/*console.log(sliderConfig, dataSlider1[min]);
-		sliderConfig = {
-			idElement : 'idPrice1',
-			type : 'interval',
-			min : -10,
-			max : 20000000,
-			minStart : 50,
-			maxStart : 1000000000,
-			step : 'no',
-			orientation : 'horizontal',
-			value : 'off',
-			scale : 'on',
-			scaleStep : 20
-		}*/
-	});	
 
+		$('.searchRoom2 .sliderConf .sliderConf_block .radio_input').on('click', function(e) {
+			let num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1),
+				idStr = $(this).attr('name'),
+				sliObj = s[num-1],
+				type,
+				orientation,
+				value,
+				scale,
+				typeId, orientationID, valueID, scaleID;
 
-	function checkedSliderConf(num){	
-		let classes = `.searchRoom2 .searchRoom_filters .sliderConf .sliderConf_block`,
-			/*num = 1,/*$(classes+`.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopSlider]:checked`).attr('id').replace('rbs',''),*/
-			typeId = $(`.searchRoom2 .sliderConf .sliderConf_block 
+			if (idStr.indexOf('Type',0) != -1){
+				typeId = $(`.searchRoom2 .sliderConf .sliderConf_block 
 					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopType]:checked`).attr('id').substr(2,1),
-			min = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin'+num).val(),
-			max = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax'+num).val(),
-			minStart = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart'+num).val(),
-			maxStart = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart'+num).val(),
-			scaleID = $(`.searchRoom2 .sliderConf .sliderConf_block 
+					.radio_input[name=rbGroopType${num}]:checked`).attr('id').substr(2,1);
+
+				switch(typeId) {
+	  				case '1': type = 'interval'; break;
+	   				case '2': type = 'from0to'; break;
+	   				case '3': type = 'one'; break;
+	   				default : type = 'interval';
+	   			}
+				clear(num);
+				sliObj.type = type;
+			}
+			if (idStr.indexOf('Orientation',0) != -1){
+				orientationID = $(`.searchRoom2 .sliderConf .sliderConf_block 
 					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopScale]:checked`).attr('id').substr(2,1),
-			orientationID = $(`.searchRoom2 .sliderConf .sliderConf_block 
+					.radio_input[name=rbGroopOrientation${num}]:checked`).attr('id').substr(2,1);
+
+				switch(orientationID) {
+	  				case '1': orientation = 'horizontal'; break;
+	   				case '2': orientation = 'vertical'; break;
+	   				default : orientation = 'horizontal';
+	   			}
+				clear(num);
+				sliObj.orientation = orientation;
+			}
+			if (idStr.indexOf('Value',0) != -1){
+				valueID = $(`.searchRoom2 .sliderConf .sliderConf_block 
 					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopOrientation]:checked`).attr('id').substr(2,1),
-			valueID = $(`.searchRoom2 .sliderConf .sliderConf_block 
+					.radio_input[name=rbGroopValue${num}]:checked`).attr('id').substr(2,1);
+
+				switch(valueID) {
+	  				case '1': value = 'on'; break;
+	   				case '2': value = 'off'; break;
+	   				default : value = 'on';
+	   			}
+				clear(num);
+				sliObj.value = value;
+			}
+			if (idStr.indexOf('Scale',0) != -1){
+				scaleID = $(`.searchRoom2 .sliderConf .sliderConf_block 
 					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopValue]:checked`).attr('id').substr(2,1),
-			scaleStep = $('.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep'+num).val();
+					.radio_input[name=rbGroopScale${num}]:checked`).attr('id').substr(2,1);
+
+				switch(scaleID) {
+	  				case '1': scale = 'on'; break;
+	   				case '2': scale = 'off'; break;
+	   				default : scale = 'on';
+	   			}
+				clear(num);
+				sliObj.scale = scale;
+			}
+			$('body').slider(s[num-1]);
+		});
 		
-
-		console.log(num, typeId, min, max, minStart,  maxStart, orientationID, valueID, scaleID, scaleStep);
-		return [num, typeId, min, max, minStart,  maxStart, orientationID, valueID, scaleID, scaleStep];
-	}
+	});	
 
 	function clear(num){
 		let x = $('.searchRoom2 .rangeSlider#idPrice'+num+' .rangeSlider_slider .rangeSlider_slider_scale')
-		console.log(x, "удаляем");
 		x.remove();
-
 
 		$('.searchRoom2 .rangeSlider#idPrice'+num+' .rangeSlider_slider_left').css('display','inline-block');
 		$('.searchRoom2 .rangeSlider#idPrice'+num+' .rangeSlider_slider_range').css('display','inline-block');
