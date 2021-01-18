@@ -30,13 +30,15 @@ $(function() {
 		step : 5,
 		orientation : 'horizontal',//'vertical',
 		value : 'on',
-		scale : 'on',
+		scale : 'off',
 		scaleStep : 10
 	}),
 	$('body').slider({
 		idElement : 'idPrice3',
 		min : 100,
 		max : 40000,
+		value : 'off',
+		scale : 'on',
 	}),
 
 	$('body').slider({
@@ -45,8 +47,22 @@ $(function() {
 		min : 0,
 		max : 5000,
 		maxStart : 2000,
+	}),
+	$('body').slider({
+		idElement : 'idPrice5',
 	}) ];
 	
+	
+
+	let configItemMin = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin`,
+		configItemMax = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax`,
+		configItemMinStart = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart`,
+		configItemMaxStart = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart`,
+		configItemStep = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextstep`,
+		configItemScaleStep = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep`,
+		configItemRadiobtn = `.searchRoom2 .sliderConf .sliderConf_block .sliderConf_block_item
+					.sliderConf_block_item_option .radio `;
+	fillConfigStart();	
 
 
 	$('.searchRoom2 .sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
@@ -72,39 +88,33 @@ $(function() {
 				scaleStep;
 
 			if (idStr.indexOf('min',0) != -1){
-				min = Number.parseInt($(`.searchRoom2 .sliderConf 
-										.sliderConf_block .inputText #inputTextmin`+num).val());
+				min = Number.parseInt($(configItemMin+num).val());
 				clear(num);
 				sliObj.min = min;
 			}
 			if (idStr.indexOf('max',0) != -1){
-				max = Number.parseInt($(`.searchRoom2 .sliderConf 
-										.sliderConf_block .inputText #inputTextmax`+num).val());
+				max = Number.parseInt($(configItemMax+num).val());
 				clear(num);
 				sliObj.max = max;
 			}
 			if (idStr.indexOf('minStart',0) != -1){
-				minStart = Number.parseInt($(`.searchRoom2 .sliderConf 
-										.sliderConf_block .inputText #inputTextminStart`+num).val());
+				minStart = Number.parseInt($(configItemMinStart+num).val());
 				clear(num);
 				sliObj.minStart = minStart;
 			}
 			if (idStr.indexOf('maxStart',0) != -1){
-				maxStart = Number.parseInt($(`.searchRoom2 .sliderConf 
-										.sliderConf_block .inputText #inputTextmaxStart`+num).val());
+				maxStart = Number.parseInt($(configItemMaxStart+num).val());
 				clear(num);
 				sliObj.maxStart = maxStart;
 			}
 			if (idStr.indexOf('scaleStep',0) != -1){
-				scaleStep = Number.parseInt($(`.searchRoom2 .sliderConf 
-										.sliderConf_block .inputText #inputTextscaleStep`+num).val());
+				scaleStep = Number.parseInt($(configItemScaleStep+num).val());
 				clear(num);
 				sliObj.scaleStep = scaleStep;
 				$('body').slider(s[num-1]);
 			}
 			if (idStr.indexOf('step',0) != -1){
-				step = Number.parseInt($(`.searchRoom2 .sliderConf 
-										.sliderConf_block .inputText #inputTextstep`+num).val());
+				step = Number.parseInt($(configItemStep+num).val());
 				clear(num);
 				sliObj.step = step;
 			}
@@ -112,8 +122,14 @@ $(function() {
 		});
 
 		$('.searchRoom2 .sliderConf .sliderConf_block .radio_input').on('click', function(e) {
-			let num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1),
-				idStr = $(this).attr('name'),
+			let num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1);
+
+			let configItemType = configItemRadiobtn+`.radio_input[name=rbGroopType${num}]:checked`,
+				configItemOrientation = configItemRadiobtn+`.radio_input[name=rbGroopOrientation${num}]:checked`,
+				configItemValue = configItemRadiobtn+`.radio_input[name=rbGroopValue${num}]:checked`,
+				configItemScale = configItemRadiobtn+`.radio_input[name=rbGroopScale${num}]:checked`;
+
+			let	idStr = $(this).attr('name'),
 				sliObj = s[num-1],
 				type,
 				orientation,
@@ -122,9 +138,7 @@ $(function() {
 				typeId, orientationID, valueID, scaleID;
 
 			if (idStr.indexOf('Type',0) != -1){
-				typeId = $(`.searchRoom2 .sliderConf .sliderConf_block 
-					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopType${num}]:checked`).attr('id').substr(2,1);
+				typeId = $(configItemType).attr('id').substr(2,1);
 
 				switch(typeId) {
 	  				case '1': type = 'interval'; break;
@@ -136,9 +150,7 @@ $(function() {
 				sliObj.type = type;
 			}
 			if (idStr.indexOf('Orientation',0) != -1){
-				orientationID = $(`.searchRoom2 .sliderConf .sliderConf_block 
-					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopOrientation${num}]:checked`).attr('id').substr(2,1);
+				orientationID = $(configItemOrientation).attr('id').substr(2,1);
 
 				switch(orientationID) {
 	  				case '1': orientation = 'horizontal'; break;
@@ -149,9 +161,7 @@ $(function() {
 				sliObj.orientation = orientation;
 			}
 			if (idStr.indexOf('Value',0) != -1){
-				valueID = $(`.searchRoom2 .sliderConf .sliderConf_block 
-					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopValue${num}]:checked`).attr('id').substr(2,1);
+				valueID = $(configItemValue).attr('id').substr(2,1);
 
 				switch(valueID) {
 	  				case '1': value = 'on'; break;
@@ -162,9 +172,7 @@ $(function() {
 				sliObj.value = value;
 			}
 			if (idStr.indexOf('Scale',0) != -1){
-				scaleID = $(`.searchRoom2 .sliderConf .sliderConf_block 
-					.sliderConf_block_item .sliderConf_block_item_option .radio 
-					.radio_input[name=rbGroopScale${num}]:checked`).attr('id').substr(2,1);
+				scaleID = $(configItemScale).attr('id').substr(2,1);
 
 				switch(scaleID) {
 	  				case '1': scale = 'on'; break;
@@ -186,6 +194,48 @@ $(function() {
 		$('.searchRoom2 .rangeSlider#idPrice'+num+' .rangeSlider_slider_left').css('display','inline-block');
 		$('.searchRoom2 .rangeSlider#idPrice'+num+' .rangeSlider_slider_range').css('display','inline-block');
 
+	}
+
+	function fillConfigStart(){
+		let sliObj, min, typeID, orientationID, valueID, scaleID;
+
+		for (var i=1; i<=5; i++) {
+			sliObj = s[i-1];
+			$(configItemMin+i).val(sliObj.min);
+			$(configItemMax+i).val(sliObj.max);
+			$(configItemMinStart+i).val(sliObj.minStart);
+			$(configItemMaxStart+i).val(sliObj.maxStart);
+			$(configItemStep +i).val(sliObj.step);
+			$(configItemScaleStep +i).val(sliObj.scaleStep);
+
+			switch(sliObj.type) {
+  				case 'interval'	: typeID = '1'; break;
+   				case 'from0to'	: typeID = '2'; break;
+   				case 'one'		: typeID = '3'; break;
+   				default 		: typeID = '1';
+   			}
+   			switch(sliObj.orientation) {
+  				case 'horizontal': orientationID = '1'; break;
+   				case 'vertical': orientationID = '2'; break;
+   				default : orientationID = '1';
+   			}
+			switch(sliObj.value) {
+  				case 'on': valueID = '1'; break;
+   				case 'off': valueID = '2'; break;
+   				default : valueID = '1';
+   			}
+
+			switch(sliObj.scale) {
+  				case 'on': scaleID = '1'; break;
+   				case 'off': scaleID = '2'; break;
+   				default : scaleID = '1';
+   			}
+   			
+			$(configItemRadiobtn+`.radio_input[name=rbGroopType${i}]#rb${typeID}srb${i}`).prop('checked', true);
+			$(configItemRadiobtn+`.radio_input[name=rbGroopOrientation${i}]#rb${orientationID}orient${i}`).prop('checked', true);
+			$(configItemRadiobtn+`.radio_input[name=rbGroopValue${i}]#rb${valueID}value${i}`).prop('checked', true);
+			$(configItemRadiobtn+`.radio_input[name=rbGroopScale${i}]#rb${scaleID}scale${i}`).prop('checked', true);
+		}
 	}
 	
 });

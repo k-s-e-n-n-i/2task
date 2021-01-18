@@ -44,12 +44,12 @@ $(function() {
 		 	//при type : 'one' нет минимального значения, работает по максимальному
 		 */
 
-		let dataSlider = $.extend({//в blocks/searchRoom/searchRoom.pug
+		let dataSlider = $.extend({//в blocks/searchRoom/searchRoom.pug //значения по умолчанию
 			idElement : 'idPrice',
 			type : 'interval',
 			min : 0,
-			max : 1234,
-			minStart : 50,
+			max : 1000,
+			minStart : 150,
 			maxStart : 500,
 			step : 'no',
 			orientation : 'horizontal',
@@ -60,71 +60,12 @@ $(function() {
 
 		return this.each(function() {
 
-			/*let dataSlider1 = {
-				idElement : 'idPrice1',
-				type : 'interval',
-				min : 0,
-				max : 200,
-				minStart : 50,
-				maxStart : 100,
-				step : 'no',
-				orientation : 'horizontal',
-				value : 'on',
-				scale : 'on',
-				scaleStep : 20
-			}
-
-			let dataSlider2 = {
-				idElement : 'idPrice2',
-				type : 'interval',
-				min : 0,
-				max : 10,
-				minStart : 5,
-				maxStart : 10,
-				step : 5,
-				orientation : 'horizontal',//'vertical',
-				value : 'on',
-				scale : 'on',
-				scaleStep : 10
-			}
-
-			let dataSlider3 = {
-				idElement : 'idPrice3',
-				type : 'from0to',
-				min : 100,
-				max : 40000,
-				minStart : 50,
-				maxStart : 100,
-				step : 'no',
-				orientation : 'horizontal',
-				value : 'on',
-				scale : 'on',
-				scaleStep : 10
-			}
-
-			let dataSlider4 = {
-				idElement : 'idPrice4',
-				type : 'one',
-				min : 1000,
-				max : 25000,
-				minStart : 50,
-				maxStart : 100,
-				step : 'no',
-				orientation : 'horizontal',
-				value : 'on',
-				scale : 'on',
-				scaleStep : 8
-			}*/
+			
 
 			//writeObjSlider(dataSlider1);
 
 			run(dataSlider);
-			/*run(dataSlider1);
-			run(dataSlider2);
-			run(dataSlider3);
-			run(dataSlider4);*/
-
-
+			
 			function run(obj) {
 
 				let sliderBlock = $('.rangeSlider#'+obj.idElement),
@@ -145,6 +86,8 @@ $(function() {
 				checkScale();
 				checkOrientation();
 					
+				
+
 				console.log('width:',width,'\nmin:',min,'\nmax:',max);
 
 
@@ -217,9 +160,8 @@ $(function() {
 										ind.css('transform','translate('+pos+'px, 0px)');
 										range.closest('.rangeSlider').find('.rangeSlider_label__min').html(price);
 									}
-									
-									
 								}
+								presentValueL(obj, price);
 							}
 
 							if (cl == 'right'){
@@ -230,6 +172,7 @@ $(function() {
 									step = parseInt(range.css('left')) - startPos;//длина перемещения правого указателя
 									range.closest('.rangeSlider').find('.rangeSlider_label__max').html(price);
 								}
+								presentValueR(obj, price);
 							}
 
 							ind.css('width', indWidth+step+'px');//ширина индикатора
@@ -378,6 +321,17 @@ $(function() {
 				obj.min = $('.searchRoom2 .sliderConf .sliderConf_block .inputText_input#inputTextmin').val();
 				console.log(dataSlider1);
 			}
+
+
+			function presentValueL(obj, val){
+				$(`.searchRoom2 .sliderConf .sliderConf_block 
+					.inputText #inputTextminStart`+obj.idElement.substr(-1)).val(val);
+			}
+			function presentValueR(obj, val){
+				$(`.searchRoom2 .sliderConf .sliderConf_block 
+					.inputText #inputTextmaxStart`+obj.idElement.substr(-1)).val(val);	
+			}
+
 		}), dataSlider;
 	};
 
