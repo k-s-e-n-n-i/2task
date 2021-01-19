@@ -12,8 +12,6 @@
 }
 
 
-
-
 .searchRoom2{
 	margin-top: 30px;
 	display: flex;
@@ -32,18 +30,19 @@
 
 			.sliderConf_block_item{
 				display: flex;
-				flex-wrap: wrap;
+				flex-wrap: no-wrap;
+				//width: 100%;
 
 				.sliderConf_block_item_option{
 					//width: 300px;
 					margin: 5px;
 
-					&.sliderConf_block_item_option__3inStr{
+					/*&.sliderConf_block_item_option__3inStr{
 						width: 30%;
 					}
 					&.sliderConf_block_item_option__2inStr{
 						width: 45%;
-					}
+					}*/
 				}
 			}
 			
@@ -52,7 +51,7 @@
 
 	.searchRoom_filters{
 		margin-left: 20px;
-		width: 400px;//267px;
+		width: 100%;//400px;//267px;
 		display: flex;
 		flex-direction: column;
 		flex-shrink: 0;
@@ -80,7 +79,12 @@
 		}
 
 		.searchRoom_filters_diapason{
-
+			.rangeSlider{
+				width: 400px;
+			}
+			.sliderConf{
+				width: 100%;
+			}
 			p{
 				color: rgba(31, 32, 65, 0.5);
 				font-size: 12px;

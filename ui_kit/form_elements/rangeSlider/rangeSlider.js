@@ -1,26 +1,3 @@
-//export let dataSlider1;
-
-//export {exp};
-$(function() {
-	
-	
-});
-
-
-/*$('div.searchRoom_filters_diapason').slider({
-	idElement : 'idPrice1',
-	type : 'interval',
-	min : 0,
-	max : 200,
-	minStart : 50,
-	maxStart : 100,
-	step : 'no',
-	orientation : 'horizontal',
-	value : 'on',
-	scale : 'on',
-	scaleStep : 20
-});
-*/
 
 (function( $ ) {
 	$.fn.slider = function(options) {
@@ -51,7 +28,7 @@ $(function() {
 			max : 1000,
 			minStart : 150,
 			maxStart : 500,
-			step : 'no',
+			step : 1,
 			orientation : 'horizontal',
 			value : 'on',
 			scale : 'on',
@@ -79,18 +56,13 @@ $(function() {
 					if (obj.minStart < min){obj.minStart = min;}
 					if (obj.maxStart > max){obj.maxStart = max;}
 					
-
 				
 				checkType(sliderBlock);
 				checkValue(sliderBlock);
 				checkScale();
 				checkOrientation();
 					
-				
-
-				console.log('width:',width,'\nmin:',min,'\nmax:',max);
-
-
+				console.log('width=',width);	
 
 				//смена левой границы
 				let rangeLeft = slider.find('.rangeSlider_slider_left');
@@ -115,6 +87,7 @@ $(function() {
 									
 				
 					$(document).on('mousemove', function(e) {
+				  		//console.log('e=',e);
 				  		moveAt(e);	
 					});
 
@@ -129,53 +102,89 @@ $(function() {
 							pos = e.pageY - parseInt(slider.position().top) - 93;//? подобрано число, пока не поняла что это
 							console.log(parseInt(slider.position().top));//позиция бегунка
 						}else{
-							pos = e.pageX - parseInt(slider.position().left);//позиция бегунка
+							if (obj.step == 1){
+								pos = e.pageX - parseInt(slider.position().left);//позиция бегунка
+								console.log('pos=',e.pageX);
+								movingRange();	
+							}else{
+								let sumSegments = (obj.max - obj.min) / obj.step,
+									w1 = width / (obj.max - obj.min),//одно деление
+									w = w1 * obj.step, //длина шага
+									masScale=[];
+								console.log(' ',sumSegments, w1, w);
+								for (var i = 0; i <= sumSegments; i++) {
+									console.log(' ',obj.min,w,i, w*i);
+									masScale[i] = parseInt(w*i);
+								}
+								console.log(' ',masScale);
+
+								
+								//e.pageX = e.pageX - 20;
+								p = e.pageX - parseInt(slider.position().left);//позиция бегунка
+								console.log('posStep=',p, $.inArray(p, masScale));
+								if ($.inArray(p, masScale) != -1){
+									pos = e.pageX - parseInt(slider.position().left);//позиция бегунка
+									movingRange();
+									//startPos = pos;
+									console.log('da');
+								}else{
+									pos = startPos;
+									console.log('net');
+								}
+							}
 						}
 						
-						
+						function movingRange(){
 
-						if ((pos >= 0) && (pos <= width)){
-							
+							if ((pos >= 0) && (pos <= width)){
 
-
-							if (cl == 'left'){
-								rigth = parseInt(rangeRight.css('left'));
-								if ((rigth >= pos)&&(obj.type != 'from0to')){
-									price = calc(range);
-
-									if (obj.step == 'no'){
-										step = startPos - parseInt(range.css('left'));//длина перемещения левого указателя	
-										console.log('step:',step);
-
-										ind.css('transform','translate('+pos+'px, 0px)');
-										
-										range.closest('.rangeSlider').find('.rangeSlider_label__min').html(price);
-									}else{
-										step = startPos - parseInt(range.css('left'));
-										//step = steped(step);
-
-										console.log('step:',step,'\npos:',pos);
-										//pos = rounding(pos,obj.step);
-
-										ind.css('transform','translate('+pos+'px, 0px)');
-										range.closest('.rangeSlider').find('.rangeSlider_label__min').html(price);
-									}
+								if (cl == 'left'){
+									moveLeft(obj, pos, startPos);
 								}
-								presentValueL(obj, price);
-							}
 
-							if (cl == 'right'){
-								left = parseInt(rangeLeft.css('left'));
-								if (left <= pos){
-									price = calc(range);
-
-									step = parseInt(range.css('left')) - startPos;//длина перемещения правого указателя
-									range.closest('.rangeSlider').find('.rangeSlider_label__max').html(price);
+								if (cl == 'right'){
+									moveRight(obj, pos);
 								}
-								presentValueR(obj, price);
-							}
 
-							ind.css('width', indWidth+step+'px');//ширина индикатора
+								ind.css('width', indWidth+step+'px');//ширина индикатора
+							}
+						}
+
+						function moveLeft(obj, pos, startPos){
+							rigth = parseInt(rangeRight.css('left'));
+							if ((rigth >= pos)&&(obj.type != 'from0to')){
+								price = calc(range);
+
+								if (obj.step == 1){
+									step = startPos - parseInt(range.css('left'));//длина перемещения левого указателя	
+									console.log('step:',step);
+									startPos = pos;
+
+									ind.css('transform','translate('+pos+'px, 0px)');
+									
+									range.closest('.rangeSlider').find('.rangeSlider_label__min').html(price);
+								}else{
+									step = startPos - parseInt(range.css('left'));//длина перемещения левого указателя	
+									console.log('step:',step);
+									startPos = pos;
+
+									ind.css('transform','translate('+pos+'px, 0px)');
+									
+									range.closest('.rangeSlider').find('.rangeSlider_label__min').html(price);
+									console.log('step:',step,'\npos:',pos);
+								}
+							}
+							presentValueL(obj, price);
+						}
+						function moveRight(obj, pos){
+							left = parseInt(rangeLeft.css('left'));
+							if (left <= pos){
+								price = calc(range);
+
+								step = parseInt(range.css('left')) - startPos;//длина перемещения правого указателя
+								range.closest('.rangeSlider').find('.rangeSlider_label__max').html(price);
+							}
+							presentValueR(obj, price);
 						}
 
 						function calc(range){
@@ -324,10 +333,12 @@ $(function() {
 
 
 			function presentValueL(obj, val){
+				if (val < obj.min){val = obj.min;}
 				$(`.searchRoom2 .sliderConf .sliderConf_block 
 					.inputText #inputTextminStart`+obj.idElement.substr(-1)).val(val);
 			}
 			function presentValueR(obj, val){
+				if (val > obj.max){val = obj.max;}
 				$(`.searchRoom2 .sliderConf .sliderConf_block 
 					.inputText #inputTextmaxStart`+obj.idElement.substr(-1)).val(val);	
 			}

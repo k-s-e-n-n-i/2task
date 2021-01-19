@@ -14,7 +14,7 @@ $(function() {
 		max : 200,
 		minStart : 50,
 		maxStart : 100,
-		step : 'no',
+		step : 20,
 		orientation : 'horizontal',
 		value : 'on',
 		scale : 'on',
@@ -119,6 +119,7 @@ $(function() {
 				sliObj.step = step;
 			}
 			$('body').slider(s[num-1]);
+			console.log(sliObj);
 		});
 
 		$('.searchRoom2 .sliderConf .sliderConf_block .radio_input').on('click', function(e) {

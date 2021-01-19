@@ -15,32 +15,31 @@ mixin sliderConfig(id)
 
 		div.sliderConf_block
 			div.sliderConf_block_item
-				div.sliderConf_block_item_option.sliderConf_block_item_option__2inStr
+				div.sliderConf_block_item_option
+					+inputText('min','','0','min'+id)
+					+inputText('max','','1000','max'+id)
+				div.sliderConf_block_item_option
+					+inputText('min текущий','','50','minStart'+id)
+					+inputText('max текущий','','500','maxStart'+id)
+
+				div.sliderConf_block_item_option
+					h2 Тип
 					+radio('1srb'+id,"rbGroopType"+id,'Диапазон значений','')
 					+radio('2srb'+id,"rbGroopType"+id,'От 0 до выбранного')
 					+radio('3srb'+id,"rbGroopType"+id,'Единичное значение')
-				div.sliderConf_block_item_option.sliderConf_block_item_option__2inStr
+				div.sliderConf_block_item_option
+					h2 Ориентация
 					+radio('1orient'+id,'rbGroopOrientation'+id,'Горизонтальная','')
 					+radio('2orient'+id,'rbGroopOrientation'+id,'Вертикальная')
 			
-				div.sliderConf_block_item_option.sliderConf_block_item_option__3inStr
-					+inputText('min','','0','min'+id)
-					+inputText('max','','1000','max'+id)
-				div.sliderConf_block_item_option.sliderConf_block_item_option__3inStr
-					+inputText('min текущий','','50','minStart'+id)
-					+inputText('max текущий','','500','maxStart'+id)
-				div.sliderConf_block_item_option.sliderConf_block_item_option__3inStr
-					+inputText('Шаг','','2','step'+id)
-					
-
-			div.sliderConf_block_item
-				div.sliderConf_block_item_option.sliderConf_block_item_option__2inStr
+				div.sliderConf_block_item_option
 					h2 Шкала
 					+radio('1scale'+id,'rbGroopScale'+id,'Вкл','')
 					+radio('2scale'+id,'rbGroopScale'+id,'Выкл')
 					+inputText('Кол-во делений','','10','scaleStep'+id)
+					+inputText('Шаг','','2','step'+id)
 				
-				div.sliderConf_block_item_option.sliderConf_block_item_option__2inStr
+				div.sliderConf_block_item_option
 					h2 Числовой диапазон
 					+radio('1value'+id,'rbGroopValue'+id,'Вкл','')
 					+radio('2value'+id,'rbGroopValue'+id,'Выкл')
@@ -61,8 +60,6 @@ div.content.searchRoom__shadow
 			div.searchRoom_filters_diapason
 				+rangeSlider('диапазон цены',100,1000,'idPrice2')
 				+sliderConfig('2')
-								
-		div.searchRoom_filters
 					
 			div.searchRoom_filters_diapason
 				+rangeSlider('диапазон цены',0,100000,'idPrice3')
