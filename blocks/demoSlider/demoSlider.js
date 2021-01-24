@@ -1,7 +1,7 @@
 
 
 
-
+/*
 import '/ui_kit/form_elements/rangeSlider/rangeSlider.js'
 import {exp} from '/ui_kit/form_elements/rangeSlider/rangeSlider.js'
 
@@ -62,7 +62,7 @@ $(function() {
 		configItemScaleStep = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep`,
 		configItemRadiobtn = `.searchRoom2 .sliderConf .sliderConf_block .sliderConf_block_item
 					.sliderConf_block_item_option .radio `;
-	fillConfigStart();	
+	//fillConfigStart();	
 
 
 	$('.searchRoom2 .sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
@@ -239,6 +239,6 @@ $(function() {
 		}
 	}
 	
-});
+});*/
 
 //непонятный баг с первым делением
