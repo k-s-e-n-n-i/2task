@@ -55,6 +55,10 @@
 				//console.log('12345-3');
 				return model.sliderBlock(thisSlider).find('.rangeSlider_slider');
 			},
+			height : function (thisSlider){
+				const h = model.sliderBlock(thisSlider).height();
+				return h;
+			},
 			ind : function (thisSlider){ 
 				//console.log('12345-4');
 				return model.slider(thisSlider).find('.rangeSlider_slider_range');//"индикатор"
@@ -197,11 +201,15 @@
 			},
 			orientation : function (thisSlider){
 				switch(dataSlider.orientation) {
-	  				case 'horizontal': model.slider(thisSlider).css('transform','rotate(0deg)'); break;
+	  				case 'horizontal': {
+	  					model.slider(thisSlider).css('transform','rotate(0deg)'); 
+	  					model.sliderBlock(thisSlider).css('height', 53+'px');
+	  					break;
+	  				}
 	   				case 'vertical': {
 	   					model.slider(thisSlider).css('transform','rotate(90deg) translateX(50%)');
-	   					model.sliderBlock(thisSlider).css('height', model.width(thisSlider)+'px');
-	   					//model.slider(thisSlider).css('transform','translateY(-50%)');//addClass('__vertical');
+	   					model.sliderBlock(thisSlider).css('height', model.width(thisSlider)+75+'px');
+	   					model.slider(thisSlider).find('.rangeSlider_slider_scale_val').css('transform','rotate(-90deg)'); 
 	   					break;
 	   				}
 	   				default : break;
@@ -267,10 +275,22 @@
 				let startPos = parseInt(range.css('left'));
 				let indWidth = model.indWidth(thisSlider);
 
+				switch(lr){
+					case 'left' : {
+						model.rangeLeft(thisSlider).css('z-index', '15');
+						model.rangeRight(thisSlider).css('z-index', '10');
+						break;
+					}
+					case 'right' : {
+						model.rangeRight(thisSlider).css('z-index', '15');
+						model.rangeLeft(thisSlider).css('z-index', '10');
+						break;
+					}
+				}
+				
 				controller.moveAt(thisSlider, startPos, lr, e, indWidth);
 			
 				$(document).on('mousemove', function(e) {
-			  		//console.log('e=',e);
 			  		controller.moveAt(thisSlider, startPos, lr, e, indWidth);	
 				});
 
@@ -311,8 +331,8 @@
 	  					break;
 	  				}
 	   				case 'y': {
-	   					pos = e.pageY - parseInt(model.slider(thisSlider).position().top) - 93;//? подобрано число, пока не поняла что это
-	   					console.log(pos, 'vertical');
+	   					pos = e.pageY - parseInt(model.slider(thisSlider).offset().top);
+	   					movingRange(thisSlider, lr, startPos, pos, indWidth);
 	   					break;
 	   				}
 	   				default : break;
@@ -322,6 +342,7 @@
 
 				function movingRange(thisSlider, lr, startPos, pos, indWidth){
 					let price, step=0;
+					console.log(pos, 'horizontal', lr, startPos, model.width(thisSlider),(lr=='right'));
 					if ((pos >= 0) && (pos <= model.width(thisSlider))){
 						if (lr == 'left'){							
 							if ((model.posRangeRight(thisSlider) >= pos)&&(dataSlider.type != 'from0to')){
@@ -333,10 +354,12 @@
 								controller.writeValueMin(thisSlider, price);
 								controller.configMinChange(price);
 								controller.checkDataSliderMin(price);
+								model.ind(thisSlider).css('width', indWidth+step+'px');
 							}
 						}
 
 						if (lr == 'right'){
+							console.log(model.posRangeLeft(thisSlider),' <= ', pos, model.posRangeRight(thisSlider));
 							if (model.posRangeLeft(thisSlider) <= pos){
 								step = model.posRangeRight(thisSlider) - startPos;//длина перемещения правого указателя
 								price = calc(thisSlider, pos);
@@ -344,9 +367,9 @@
 								controller.writeValueMax(thisSlider, price);
 								controller.configMaxChange(price);
 								controller.checkDataSliderMax(price);
+								model.ind(thisSlider).css('width', indWidth+step+'px');
 							}
 						}
-						model.ind(thisSlider).css('width', indWidth+step+'px');//ширина индикатора
 					}
 				}
 				function calc(thisSlider, pos){
@@ -359,7 +382,7 @@
 			writeValueMin : function (thisSlider, val){
 				model.valueMin(thisSlider).html(val);
 			},
-			writeValueMax : function (val){
+			writeValueMax : function (thisSlider, val){
 				model.valueMax(thisSlider).html(val);
 			},
 
@@ -592,12 +615,13 @@
 		
 		
 		model.rangeLeft(thisSlider).on('mousedown', function(e) {
-			console.log('click');
 			controller.movie(thisSlider, model.rangeLeft(thisSlider), e, 'left');
 		});
 
 		model.rangeRight(thisSlider).on('mousedown', function(e) {
+			console.log('click');
 			controller.movie(thisSlider, model.rangeRight(thisSlider), e, 'right');
+			console.log('click2');
 		});
 		
 
