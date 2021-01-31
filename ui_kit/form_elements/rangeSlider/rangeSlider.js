@@ -315,7 +315,7 @@
 								w1 = model.width(thisSlider) / (dataSlider.max - dataSlider.min),//одно деление
 								w = w1 * dataSlider.step, //длина шага
 								masScale=[];
-							console.log(`model.width=${model.width()}, dataSlider.min=${dataSlider.min}, dataSlider.max=${dataSlider.max}, dataSlider.step=${dataSlider.step}`);
+							console.log(`model.width=${model.width(thisSlider)}, dataSlider.min=${dataSlider.min}, dataSlider.max=${dataSlider.max}, dataSlider.step=${dataSlider.step}`);
 							console.log(`sumSegments=${sumSegments}, w1=${w1}, w=${w}, masScale=${masScale}`);
 							for (var i = 0; i <= sumSegments; i++) {
 								masScale[i] = parseInt(w*i);
@@ -326,10 +326,12 @@
 							console.log(`p=${p}`);
 							if ($.inArray(p, masScale) != -1){
 								pos = e.pageX - parseInt(model.slider(thisSlider).position().left);//позиция бегунка
+								movingRange(thisSlider, lr, startPos, pos, indWidth);
 							}else{
 								pos = startPos;
 							}
 							console.log(`pos=${pos}`);
+							
 						}
 	  					break;
 	  				}
@@ -345,11 +347,11 @@
 
 				function movingRange(thisSlider, lr, startPos, pos, indWidth){
 					let price, step=0;
-					console.log(pos, 'horizontal', lr, startPos, model.width(thisSlider),(lr=='right'));
 					if ((pos >= 0) && (pos <= model.width(thisSlider))){
 						if (lr == 'left'){							
 							if ((model.posRangeRight(thisSlider) >= pos)&&(dataSlider.type != 'from0to')){
-								step = startPos - model.posRangeLeft(thisSlider);//длина перемещения левого указателя	
+								step = startPos - pos;//model.posRangeLeft(thisSlider);//длина перемещения левого указателя	
+								console.log('step:',indWidth, step);
 								price = calc(thisSlider, pos);
 								model.rangeLeft(thisSlider).css('left', pos+'px');//позиция указателей
 								model.ind(thisSlider).css('transform','translate('+pos+'px, 0px)');
@@ -357,19 +359,20 @@
 								controller.writeValueMin(thisSlider, price);
 								controller.configMinChange(price);
 								controller.checkDataSliderMin(price);
+								console.log('step:',indWidth, step);
 								model.ind(thisSlider).css('width', indWidth+step+'px');
 							}
 						}
 
 						if (lr == 'right'){
-							console.log(model.posRangeLeft(thisSlider),' <= ', pos, model.posRangeRight(thisSlider));
 							if (model.posRangeLeft(thisSlider) <= pos){
-								step = model.posRangeRight(thisSlider) - startPos;//длина перемещения правого указателя
+								step = pos - startPos;//model.posRangeRight(thisSlider) - startPos;//длина перемещения правого указателя
 								price = calc(thisSlider, pos);
 								model.rangeRight(thisSlider).css('left', pos+'px');//позиция указателей
 								controller.writeValueMax(thisSlider, price);
 								controller.configMaxChange(price);
 								controller.checkDataSliderMax(price);
+								console.log('step:',indWidth, step);	
 								model.ind(thisSlider).css('width', indWidth+step+'px');
 							}
 						}
@@ -622,9 +625,7 @@
 		});
 
 		model.rangeRight(thisSlider).on('mousedown', function(e) {
-			console.log('click');
 			controller.movie(thisSlider, model.rangeRight(thisSlider), e, 'right');
-			console.log('click2');
 		});
 		
 
