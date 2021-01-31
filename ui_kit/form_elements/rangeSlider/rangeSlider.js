@@ -91,6 +91,7 @@
 				//console.log('12345-11');
 				return model.rangeRight(thisSlider).closest('.rangeSlider').find('.rangeSlider_label__max');
 			},
+			masScaleStep : [],
 			configItemMin : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin`,
 			configItemMax : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax`,
 			configItemMinStart : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart`,
@@ -309,24 +310,16 @@
 	  				case 'x': {
 	  					if (dataSlider.step == 1){
 							pos = e.pageX - parseInt(model.slider(thisSlider).position().left);//позиция бегунка
-							movingRange(thisSlider, lr, startPos, pos, indWidth);
+							controller.movingRange(thisSlider, lr, startPos, pos, indWidth);
 						}else{//починить
-							let sumSegments = (dataSlider.max - dataSlider.min) / dataSlider.step,
-								w1 = model.width(thisSlider) / (dataSlider.max - dataSlider.min),//одно деление
-								w = w1 * dataSlider.step, //длина шага
-								masScale=[];
-							console.log(`model.width=${model.width(thisSlider)}, dataSlider.min=${dataSlider.min}, dataSlider.max=${dataSlider.max}, dataSlider.step=${dataSlider.step}`);
-							console.log(`sumSegments=${sumSegments}, w1=${w1}, w=${w}, masScale=${masScale}`);
-							for (var i = 0; i <= sumSegments; i++) {
-								masScale[i] = parseInt(w*i);
-							}
-							console.log(`masScale=${masScale}`);
-						
+							masScale = controller.masScale(thisSlider);
+							
 							p = e.pageX - parseInt(model.slider(thisSlider).position().left);//позиция бегунка
 							console.log(`p=${p}`);
+
 							if ($.inArray(p, masScale) != -1){
 								pos = e.pageX - parseInt(model.slider(thisSlider).position().left);//позиция бегунка
-								movingRange(thisSlider, lr, startPos, pos, indWidth);
+								controller.movingRange(thisSlider, lr, startPos, pos, indWidth);
 							}else{
 								pos = startPos;
 							}
@@ -337,7 +330,7 @@
 	  				}
 	   				case 'y': {
 	   					pos = e.pageY - parseInt(model.slider(thisSlider).offset().top);
-	   					movingRange(thisSlider, lr, startPos, pos, indWidth);
+	   					controller.movingRange(thisSlider, lr, startPos, pos, indWidth);
 	   					break;
 	   				}
 	   				default : break;
@@ -345,36 +338,37 @@
 					
 				return pos;
 
-				function movingRange(thisSlider, lr, startPos, pos, indWidth){
-					let price, step=0;
-					if ((pos >= 0) && (pos <= model.width(thisSlider))){
-						if (lr == 'left'){							
-							if ((model.posRangeRight(thisSlider) >= pos)&&(dataSlider.type != 'from0to')){
-								step = startPos - pos;//model.posRangeLeft(thisSlider);//длина перемещения левого указателя	
-								console.log('step:',indWidth, step);
-								price = calc(thisSlider, pos);
-								model.rangeLeft(thisSlider).css('left', pos+'px');//позиция указателей
-								model.ind(thisSlider).css('transform','translate('+pos+'px, 0px)');
-								startPos = pos;
-								controller.writeValueMin(thisSlider, price);
-								controller.configMinChange(price);
-								controller.checkDataSliderMin(price);
-								console.log('step:',indWidth, step);
-								model.ind(thisSlider).css('width', indWidth+step+'px');
-							}
+				
+			},
+			movingRange : function movingRange(thisSlider, lr, startPos, pos, indWidth){
+				let price, step=0;
+				if ((pos >= 0) && (pos <= model.width(thisSlider))){
+					if (lr == 'left'){							
+						if ((model.posRangeRight(thisSlider) >= pos)&&(dataSlider.type != 'from0to')){
+							step = startPos - pos;//model.posRangeLeft(thisSlider);//длина перемещения левого указателя	
+							console.log('step:',indWidth, step);
+							price = calc(thisSlider, pos);
+							model.rangeLeft(thisSlider).css('left', pos+'px');//позиция указателей
+							model.ind(thisSlider).css('transform','translate('+pos+'px, 0px)');
+							startPos = pos;
+							controller.writeValueMin(thisSlider, price);
+							controller.configMinChange(price);
+							controller.checkDataSliderMin(price);
+							console.log('step:',indWidth, step);
+							model.ind(thisSlider).css('width', indWidth+step+'px');
 						}
+					}
 
-						if (lr == 'right'){
-							if (model.posRangeLeft(thisSlider) <= pos){
-								step = pos - startPos;//model.posRangeRight(thisSlider) - startPos;//длина перемещения правого указателя
-								price = calc(thisSlider, pos);
-								model.rangeRight(thisSlider).css('left', pos+'px');//позиция указателей
-								controller.writeValueMax(thisSlider, price);
-								controller.configMaxChange(price);
-								controller.checkDataSliderMax(price);
-								console.log('step:',indWidth, step);	
-								model.ind(thisSlider).css('width', indWidth+step+'px');
-							}
+					if (lr == 'right'){
+						if (model.posRangeLeft(thisSlider) <= pos){
+							step = pos - startPos;//model.posRangeRight(thisSlider) - startPos;//длина перемещения правого указателя
+							price = calc(thisSlider, pos);
+							model.rangeRight(thisSlider).css('left', pos+'px');//позиция указателей
+							controller.writeValueMax(thisSlider, price);
+							controller.configMaxChange(price);
+							controller.checkDataSliderMax(price);
+							console.log('step:',indWidth, step);	
+							model.ind(thisSlider).css('width', indWidth+step+'px');
 						}
 					}
 				}
@@ -383,6 +377,84 @@
 						price = ((dataSlider.max - dataSlider.min) * pr + dataSlider.min).toFixed();
 					return price;
 				}
+			},
+			
+
+			clickSlider : function (thisSlider){
+				thisSlider.find('.rangeSlider_slider').on('mousedown', function(e) {
+				
+					thisSlider.find('.rangeSlider_slider').on('mouseup', function(e) {
+						console.log('clickkkkk');
+				  		let pos = e.pageX - parseInt(model.slider(thisSlider).position().left),
+				  			startPos;
+
+				  		if (dataSlider.step != 1){
+					  		pos = controller.checkRangeThisStep(thisSlider, pos);
+					  	}
+
+				  		switch(dataSlider.type) {
+			  				case 'interval' : {
+			  					let posL = model.posRangeLeft(thisSlider),
+			  						posR = model.posRangeRight(thisSlider);
+			  					if (Math.abs(posL - pos) < Math.abs(posR - pos)) {
+			  						startPos = model.posRangeLeft(thisSlider);
+			  						controller.movingRange(thisSlider, 'left', model.posRangeLeft(thisSlider), pos, model.indWidth(thisSlider));
+			  					}else{
+			  						startPos = model.posRangeRight(thisSlider);
+			  						controller.movingRange(thisSlider, 'right', model.posRangeRight(thisSlider), pos, model.indWidth(thisSlider));
+			  					}
+			  					
+			  					break;
+			  				}
+			   				case 'from0to' : {
+			   					startPos = model.posRangeRight(thisSlider);
+			   					controller.movingRange(thisSlider, 'right', model.posRangeRight(thisSlider), pos, model.indWidth(thisSlider));
+								break;
+							}
+			   				case 'one' : {
+			   					startPos = model.posRangeRight(thisSlider);
+			   					controller.movingRange(thisSlider, 'right', model.posRangeRight(thisSlider), pos, model.indWidth(thisSlider));
+			   					break;
+			   				}
+			   				
+			   			}
+
+				  		//controller.movingRange(thisSlider, lr, startPos, pos, indWidth);
+				  		thisSlider.find('.rangeSlider_slider').off('mouseup');
+				  	});
+				});
+			},
+			checkRangeThisStep : function (thisSlider, pos){
+				let p=0, len = model.width(thisSlider);
+
+				masScale = controller.masScale(thisSlider);
+		  		for (let i = 0; i < masScale.length; i++){
+		  			let lenL = Math.abs(masScale[i] - pos),
+		  				lenR = Math.abs(masScale[i+1] - pos);
+		  			
+		  			if (lenL < len) {
+		  				p = masScale[i];
+		  				len = lenL;
+		  			}else if (lenR < len){
+		  				p = masScale[i+1];
+		  				len = lenR;
+		  			}
+		  		}
+		  		return p;
+			},
+			masScale : function (thisSlider){
+				let sumSegments = (dataSlider.max - dataSlider.min) / dataSlider.step,
+					w1 = model.width(thisSlider) / (dataSlider.max - dataSlider.min),//одно деление
+					w = w1 * dataSlider.step, //длина шага
+					masScale=[];
+				//console.log(`model.width=${model.width(thisSlider)}, dataSlider.min=${dataSlider.min}, dataSlider.max=${dataSlider.max}, dataSlider.step=${dataSlider.step}`);
+				//console.log(`sumSegments=${sumSegments}, w1=${w1}, w=${w}, masScale=${masScale}`);
+				for (let i = 0; i <= sumSegments; i++) {
+					masScale[i] = parseInt(w*i);
+				}
+				//console.log(`masScale=${masScale}`);
+				
+				return masScale;
 			},
 
 			writeValueMin : function (thisSlider, val){
@@ -608,15 +680,18 @@
 		//console.log('this', this, dataSlider, 'proverka:', model.width(this), model.sliderBlock(this));
 		let thisSlider = this;
 
+
+		controller.checkMinMaxStart(this);//определили текущие мин и мах
+		controller.configCheckStart(this);//min-max value
+
 		view.type(this);
 		view.scale(this);
 		view.orientation(this);
 		view.value(this);
 
-		controller.checkMinMaxStart();//определили текущие мин и мах
-		controller.configCheckStart(this);//min-max value
 
 		view.range(this);
+		controller.clickSlider(this);
 		controller.configCheck(this);
 		
 		
