@@ -42,38 +42,50 @@
 		
 
 		let model = {
-			width : function (){
-				return $('.rangeSlider#'+dataSlider.idElement).find('.rangeSlider_slider').width();
+			width : function (thisSlider){
+				//console.log('this', thisSlider, dataSlider);
+				//console.log('12345-1');
+				return thisSlider.find('.rangeSlider#'+dataSlider.idElement).find('.rangeSlider_slider').width();
 			},
-			sliderBlock : function (){ 
-				return $('.rangeSlider#'+dataSlider.idElement);
+			sliderBlock : function (thisSlider){ 
+				//console.log('12345-2', dataSlider.idElement);
+				return thisSlider.find('.rangeSlider#'+dataSlider.idElement);
 			},
-			slider : function (){ 
-				return model.sliderBlock().find('.rangeSlider_slider');
+			slider : function (thisSlider){ 
+				//console.log('12345-3');
+				return model.sliderBlock(thisSlider).find('.rangeSlider_slider');
 			},
-			ind : function (){ 
-				return model.slider().find('.rangeSlider_slider_range');//"индикатор"
+			ind : function (thisSlider){ 
+				//console.log('12345-4');
+				return model.slider(thisSlider).find('.rangeSlider_slider_range');//"индикатор"
 			},
-			indWidth : function (){
-				return model.ind().width();
+			indWidth : function (thisSlider){
+				//console.log('12345-5');
+				return model.ind(thisSlider).width();
 			},
-			rangeLeft : function (){ 
-				return model.slider().find('.rangeSlider_slider_left');
+			rangeLeft : function (thisSlider){ 
+				//console.log('12345-6');
+				return model.slider(thisSlider).find('.rangeSlider_slider_left');
 			},
-			posRangeLeft : function (){
-				return parseInt((model.rangeLeft()).css('left'));
+			posRangeLeft : function (thisSlider){
+				//console.log('12345-7');
+				return parseInt((model.rangeLeft(thisSlider)).css('left'));
 			},
-			rangeRight : function (){ 
-				return model.slider().find('.rangeSlider_slider_right');
+			rangeRight : function (thisSlider){ 
+				//console.log('12345-8');
+				return model.slider(thisSlider).find('.rangeSlider_slider_right');
 			},
-			posRangeRight : function (){
-				return parseInt((model.rangeRight()).css('left'));
+			posRangeRight : function (thisSlider){
+				//console.log('12345-9');
+				return parseInt((model.rangeRight(thisSlider)).css('left'));
 			},
-			valueMin : function (){
-				return model.rangeLeft().closest('.rangeSlider').find('.rangeSlider_label__min');
+			valueMin : function (thisSlider){
+				//console.log('12345-10');
+				return model.rangeLeft(thisSlider).closest('.rangeSlider').find('.rangeSlider_label__min');
 			},
-			valueMax : function (){
-				return model.rangeRight().closest('.rangeSlider').find('.rangeSlider_label__max');
+			valueMax : function (thisSlider){
+				//console.log('12345-11');
+				return model.rangeRight(thisSlider).closest('.rangeSlider').find('.rangeSlider_label__max');
 			},
 			configItemMin : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin`,
 			configItemMax : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax`,
@@ -87,61 +99,61 @@
 		}
 
 		let view = {
-			range : function (){
+			range : function (thisSlider){
 				let posLeft, posRight;
 
-				posRight = model.width() * dataSlider.maxStart / dataSlider.max;
-				model.rangeRight().css('left', posRight +'px');
+				posRight = model.width(thisSlider) * dataSlider.maxStart / dataSlider.max;
+				model.rangeRight(thisSlider).css('left', posRight +'px');
 
 				switch(dataSlider.type) {
 	  				case 'interval' : {
-	  					posLeft = model.width() * dataSlider.minStart / dataSlider.max;
-						model.rangeLeft().css('left', posLeft +'px');
-	  					model.ind().css('transform','translate('+posLeft+'px, 0px)');
-						model.ind().css('left', posLeft+'px');
-						model.ind().css('width',(posRight - posLeft)+'px');
+	  					posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+						model.rangeLeft(thisSlider).css('left', posLeft +'px');
+	  					model.ind(thisSlider).css('transform','translate('+posLeft+'px, 0px)');
+						model.ind(thisSlider).css('left', posLeft+'px');
+						model.ind(thisSlider).css('width',(posRight - posLeft)+'px');
 	  					break;
 	  				}
 	   				case 'from0to' : {
-	   					model.ind().css('transform','translate(-5px, 0px)');
-						model.ind().css('left', '0px');
-						model.ind().css('width',posRight+'px');
+	   					model.ind(thisSlider).css('transform','translate(-5px, 0px)');
+						model.ind(thisSlider).css('left', '0px');
+						model.ind(thisSlider).css('width',posRight+'px');
 						break;
 					}
 	   				case 'one' : {
-	   					posLeft = model.width() * dataSlider.minStart / dataSlider.max;
-						model.rangeLeft().css('left', posLeft +'px');
-	   					model.ind().css('transform','translate('+posLeft+'px, 0px)');
-						model.ind().css('left', posLeft+'px');
-						model.ind().css('width',(posRight - posLeft)+'px');
+	   					posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+						model.rangeLeft(thisSlider).css('left', posLeft +'px');
+	   					model.ind(thisSlider).css('transform','translate('+posLeft+'px, 0px)');
+						model.ind(thisSlider).css('left', posLeft+'px');
+						model.ind(thisSlider).css('width',(posRight - posLeft)+'px');
 	   					break;
 	   				}
 	   				default : {
-	   					posLeft = model.width() * dataSlider.minStart / dataSlider.max;
-						model.rangeLeft().css('left', posLeft +'px');
-	  					model.ind().css('transform','translate('+posLeft+'px, 0px)');
-						model.ind().css('left', posLeft+'px');
-						model.ind().css('width',(posRight - posLeft)+'px');
+	   					posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+						model.rangeLeft(thisSlider).css('left', posLeft +'px');
+	  					model.ind(thisSlider).css('transform','translate('+posLeft+'px, 0px)');
+						model.ind(thisSlider).css('left', posLeft+'px');
+						model.ind(thisSlider).css('width',(posRight - posLeft)+'px');
 	   					break;
 	   				}
 	   			}
 			},
 			
-			type : function (){
+			type : function (thisSlider){
 				switch(dataSlider.type) {
 	  				case 'interval' : break;
 	   				case 'from0to' : {
-	   					model.rangeLeft().css('display','none');
-						model.ind().css('transform','translate('+(-5)+'px, 0px)');
+	   					model.rangeLeft(thisSlider).css('display','none');
+						model.ind(thisSlider).css('transform','translate('+(-5)+'px, 0px)');
 						//dataSlider.minStart = dataSlider.min;
 						//model.rangeLeft().css('transform','translate(0px, 0px)');
 						//controller.writeValueMin(dataSlider.min);
 						break;
 					}
 	   				case 'one' : {
-	   					model.sliderBlock().find('.rangeSlider_slider_left').css('display','none');
-						model.ind().css('display','none');
-						let spans = model.sliderBlock().find('.rangeSlider_label_Block');
+	   					model.sliderBlock(thisSlider).find('.rangeSlider_slider_left').css('display','none');
+						model.ind(thisSlider).css('display','none');
+						let spans = model.sliderBlock(thisSlider).find('.rangeSlider_label_Block');
 						spans.find('span.rangeSlider_label__min').css('display','none');
 						spans.find('span.rangeSlider_label__dash').css('display','none');
 	   					break;
@@ -149,7 +161,7 @@
 	   				default : break;
 	   			}
 	   		},
-	   		scale : function (){
+	   		scale : function (thisSlider){
 	   			switch(dataSlider.scale) {
 	  				case 'on' : {
 	  					let scaleKol,
@@ -158,20 +170,20 @@
 						if (dataSlider.scaleStep > 0){
 							scaleKol = dataSlider.scaleStep;
 						}else{
-							scaleKol = Math.floor(model.width()/45);
+							scaleKol = Math.floor(model.width(thisSlider)/45);
 						}
 
-						let scaleWidth = model.width()/scaleKol;
+						let scaleWidth = model.width(thisSlider)/scaleKol;
 						
-						for(let i=0;i<=model.width();){
+						for(let i=0;i<=model.width(thisSlider);){
 							ii = Math.floor(i);
-							model.slider().append(`<div class="rangeSlider_slider_scale">
+							model.slider(thisSlider).append(`<div class="rangeSlider_slider_scale">
 								<div class="rangeSlider_slider_scale_line" id="scale${ii}"></div>
 								<div class="rangeSlider_slider_scale_val"></div>
 								</div>`);
-							shBlock = model.slider().find('.rangeSlider_slider_scale_line#scale'+ii).closest('.rangeSlider_slider_scale');
+							shBlock = model.slider(thisSlider).find('.rangeSlider_slider_scale_line#scale'+ii).closest('.rangeSlider_slider_scale');
 							shBlock.css('left',ii+'px');
-							model.sliderBlock().css('margin-bottom','35px');
+							model.sliderBlock(thisSlider).css('margin-bottom','35px');
 							i = i+scaleWidth;
 
 							shBlock.find('.rangeSlider_slider_scale_val').html(ch);
@@ -183,47 +195,52 @@
 	   				default : break;
 	   			}		
 			},
-			orientation : function (){
+			orientation : function (thisSlider){
 				switch(dataSlider.orientation) {
-	  				case 'horizontal': break;
-	   				case 'vertical': model.slider().css('transform','rotate(90deg)'); break;
+	  				case 'horizontal': model.slider(thisSlider).css('transform','rotate(0deg)'); break;
+	   				case 'vertical': {
+	   					model.slider(thisSlider).css('transform','rotate(90deg) translateX(50%)');
+	   					model.sliderBlock(thisSlider).css('height', model.width(thisSlider)+'px');
+	   					//model.slider(thisSlider).css('transform','translateY(-50%)');//addClass('__vertical');
+	   					break;
+	   				}
 	   				default : break;
 	   			}
 			},
-			value : function (){
+			value : function (thisSlider){
 				switch(dataSlider.value) {
 	  				case 'on' : {
-	  					model.sliderBlock().find('.rangeSlider_label_Block').css('display','flex');
+	  					model.sliderBlock(thisSlider).find('.rangeSlider_label_Block').css('display','flex');
 						
-						model.sliderBlock().find('.rangeSlider_label__max').html(dataSlider.maxStart);
+						model.sliderBlock(thisSlider).find('.rangeSlider_label__max').html(dataSlider.maxStart);
 
-						let spans = model.sliderBlock().find('.rangeSlider_label_Block');
+						let spans = model.sliderBlock(thisSlider).find('.rangeSlider_label_Block');
 
 
 	  					switch(dataSlider.type) {
 			  				case 'interval' : {
-			  					model.sliderBlock().find('.rangeSlider_label__min').html(dataSlider.minStart);
+			  					model.sliderBlock(thisSlider).find('.rangeSlider_label__min').html(dataSlider.minStart);
 			  					spans.find('span.rangeSlider_label__min').css('display','block');
 								spans.find('span.rangeSlider_label__dash').css('display','block');
 								console.log('type=interval', dataSlider.min, dataSlider.max, dataSlider.minStart, dataSlider.maxStart);
 			  					break;
 			  				}
 			   				case 'from0to' : {
-			   					model.sliderBlock().find('.rangeSlider_label__min').html(dataSlider.min);
+			   					model.sliderBlock(thisSlider).find('.rangeSlider_label__min').html(dataSlider.min);
 			   					spans.find('span.rangeSlider_label__min').css('display','block');
 								spans.find('span.rangeSlider_label__dash').css('display','block');
 								console.log('type=from0to, ', dataSlider.min, dataSlider.max, dataSlider.minStart, dataSlider.maxStart);
 								break;
 							}
 			   				case 'one' : {
-			   					model.sliderBlock().find('.rangeSlider_label__min').html(dataSlider.minStart);
+			   					model.sliderBlock(thisSlider).find('.rangeSlider_label__min').html(dataSlider.minStart);
 			   					spans.find('span.rangeSlider_label__min').css('display','none');
 								spans.find('span.rangeSlider_label__dash').css('display','none');
 								console.log('type=one', dataSlider.min, dataSlider.max, dataSlider.minStart, dataSlider.maxStart);
 			   					break;
 			   				}
 			   				default : {//interval
-			  					model.sliderBlock().find('.rangeSlider_label__min').html(dataSlider.minStart);
+			  					model.sliderBlock(thisSlider).find('.rangeSlider_label__min').html(dataSlider.minStart);
 			  					spans.find('span.rangeSlider_label__min').css('display','block');
 								spans.find('span.rangeSlider_label__dash').css('display','block');
 								console.log('type=intervalDEFAULT', dataSlider.min, dataSlider.max, dataSlider.minStart, dataSlider.maxStart);
@@ -232,7 +249,7 @@
 			   			}
 	  					break;
 	  				}
-	   				case 'off' : model.sliderBlock().find('.rangeSlider_label_Block').css('display','none'); break;
+	   				case 'off' : model.sliderBlock(thisSlider).find('.rangeSlider_label_Block').css('display','none'); break;
 	   				default : break;
 	   			}
 			},
@@ -246,15 +263,15 @@
 				}
 				return 'y';
 			},
-			movie : function (range, e, lr){
+			movie : function (thisSlider, range, e, lr){
 				let startPos = parseInt(range.css('left'));
-				let indWidth = model.indWidth();
+				let indWidth = model.indWidth(thisSlider);
 
-				controller.moveAt(startPos, lr, e, indWidth);	
+				controller.moveAt(thisSlider, startPos, lr, e, indWidth);
 			
 				$(document).on('mousemove', function(e) {
 			  		//console.log('e=',e);
-			  		controller.moveAt(startPos, lr, e, indWidth);	
+			  		controller.moveAt(thisSlider, startPos, lr, e, indWidth);	
 				});
 
 				$(document).on('mouseup', function(e) {
@@ -262,34 +279,40 @@
 			  		$(document).off('mouseup');
 				});
 			},
-			moveAt : function (startPos, lr, e, indWidth){
+			moveAt : function (thisSlider, startPos, lr, e, indWidth){
 				let pos;
 
 				switch(controller.checkOrientation()) {
 	  				case 'x': {
 	  					if (dataSlider.step == 1){
-							pos = e.pageX - parseInt(model.slider().position().left);//позиция бегунка
-							movingRange(lr, startPos, pos, indWidth);
-						}else{
+							pos = e.pageX - parseInt(model.slider(thisSlider).position().left);//позиция бегунка
+							movingRange(thisSlider, lr, startPos, pos, indWidth);
+						}else{//починить
 							let sumSegments = (dataSlider.max - dataSlider.min) / dataSlider.step,
-								w1 = model.width / (dataSlider.max - dataSlider.min),//одно деление
+								w1 = model.width(thisSlider) / (dataSlider.max - dataSlider.min),//одно деление
 								w = w1 * dataSlider.step, //длина шага
 								masScale=[];
+							console.log(`model.width=${model.width()}, dataSlider.min=${dataSlider.min}, dataSlider.max=${dataSlider.max}, dataSlider.step=${dataSlider.step}`);
+							console.log(`sumSegments=${sumSegments}, w1=${w1}, w=${w}, masScale=${masScale}`);
 							for (var i = 0; i <= sumSegments; i++) {
 								masScale[i] = parseInt(w*i);
 							}
+							console.log(`masScale=${masScale}`);
 						
-							p = e.pageX - parseInt(model.slider().position().left);//позиция бегунка
+							p = e.pageX - parseInt(model.slider(thisSlider).position().left);//позиция бегунка
+							console.log(`p=${p}`);
 							if ($.inArray(p, masScale) != -1){
-								pos = e.pageX - parseInt(model.slider().position().left);//позиция бегунка
+								pos = e.pageX - parseInt(model.slider(thisSlider).position().left);//позиция бегунка
 							}else{
 								pos = startPos;
 							}
+							console.log(`pos=${pos}`);
 						}
 	  					break;
 	  				}
 	   				case 'y': {
-	   					pos = e.pageY - parseInt(slider.position().top) - 93;//? подобрано число, пока не поняла что это
+	   					pos = e.pageY - parseInt(model.slider(thisSlider).position().top) - 93;//? подобрано число, пока не поняла что это
+	   					console.log(pos, 'vertical');
 	   					break;
 	   				}
 	   				default : break;
@@ -297,47 +320,47 @@
 					
 				return pos;
 
-				function movingRange(lr, startPos, pos, indWidth){
+				function movingRange(thisSlider, lr, startPos, pos, indWidth){
 					let price, step=0;
-					if ((pos >= 0) && (pos <= model.width())){
+					if ((pos >= 0) && (pos <= model.width(thisSlider))){
 						if (lr == 'left'){							
-							if ((model.posRangeRight() >= pos)&&(dataSlider.type != 'from0to')){
-								step = startPos - model.posRangeLeft();//длина перемещения левого указателя	
-								price = calc(pos);
-								model.rangeLeft().css('left', pos+'px');//позиция указателей
-								model.ind().css('transform','translate('+pos+'px, 0px)');
+							if ((model.posRangeRight(thisSlider) >= pos)&&(dataSlider.type != 'from0to')){
+								step = startPos - model.posRangeLeft(thisSlider);//длина перемещения левого указателя	
+								price = calc(thisSlider, pos);
+								model.rangeLeft(thisSlider).css('left', pos+'px');//позиция указателей
+								model.ind(thisSlider).css('transform','translate('+pos+'px, 0px)');
 								startPos = pos;
-								controller.writeValueMin(price);
+								controller.writeValueMin(thisSlider, price);
 								controller.configMinChange(price);
 								controller.checkDataSliderMin(price);
 							}
 						}
 
 						if (lr == 'right'){
-							if (model.posRangeLeft() <= pos){
-								step = model.posRangeRight() - startPos;//длина перемещения правого указателя
-								price = calc(pos);
-								model.rangeRight().css('left', pos+'px');//позиция указателей
-								controller.writeValueMax(price);
+							if (model.posRangeLeft(thisSlider) <= pos){
+								step = model.posRangeRight(thisSlider) - startPos;//длина перемещения правого указателя
+								price = calc(thisSlider, pos);
+								model.rangeRight(thisSlider).css('left', pos+'px');//позиция указателей
+								controller.writeValueMax(thisSlider, price);
 								controller.configMaxChange(price);
 								controller.checkDataSliderMax(price);
 							}
 						}
-						model.ind().css('width', indWidth+step+'px');//ширина индикатора
+						model.ind(thisSlider).css('width', indWidth+step+'px');//ширина индикатора
 					}
 				}
-				function calc(pos){
-					let pr = pos / model.width(),
+				function calc(thisSlider, pos){
+					let pr = pos / model.width(thisSlider),
 						price = ((dataSlider.max - dataSlider.min) * pr + dataSlider.min).toFixed();
 					return price;
 				}
 			},
 
-			writeValueMin : function (val){
-				model.valueMin().html(val);
+			writeValueMin : function (thisSlider, val){
+				model.valueMin(thisSlider).html(val);
 			},
 			writeValueMax : function (val){
-				model.valueMax().html(val);
+				model.valueMax(thisSlider).html(val);
 			},
 
 			checkDataSliderMin : function (val){
@@ -352,9 +375,9 @@
 				if (dataSlider.maxStart > dataSlider.max){dataSlider.maxStart = dataSlider.max;}
 			},
 
-			configCheckStart : function (){
-				model.sliderBlock().find('.rangeSlider_label__min').html(dataSlider.minStart);
-				model.sliderBlock().find('.rangeSlider_label__max').html(dataSlider.maxStart);
+			configCheckStart : function (thisSlider){
+				model.sliderBlock(thisSlider).find('.rangeSlider_label__min').html(dataSlider.minStart);
+				model.sliderBlock(thisSlider).find('.rangeSlider_label__max').html(dataSlider.maxStart);
 
 				let typeID, orientationID, valueID, scaleID,
 					id = dataSlider.idElement.substr(-1);
@@ -389,10 +412,14 @@
 		   				default : scaleID = '1';
 		   			}
 		   			
-					$(model.configItemRadiobtn+`.radio_input[name=rbGroopType${id}]#rb${typeID}srb${id}`).prop('checked', true);
+					/*$(model.configItemRadiobtn+`.radio_input[name=rbGroopType${id}]#rb${typeID}srb${id}`).prop('checked', true);
 					$(model.configItemRadiobtn+`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).prop('checked', true);
 					$(model.configItemRadiobtn+`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).prop('checked', true);
-					$(model.configItemRadiobtn+`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);
+					$(model.configItemRadiobtn+`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);*/
+					thisSlider.find(`.radio_input[name=rbGroopType${id}]#rb${typeID}srb${id}`).prop('checked', true);
+					thisSlider.find(`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).prop('checked', true);
+					thisSlider.find(`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).prop('checked', true);
+					thisSlider.find(`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);
 			},
 			configMinChange : function (val){
 				if (val < dataSlider.min){val = dataSlider.min;}
@@ -405,8 +432,10 @@
 					.inputText #inputTextmaxStart`+dataSlider.idElement.substr(-1)).val(val);	
 			},
 
-			configCheck : function (){
-				$('.searchRoom2 .sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
+			configCheck : function (thisSlider){
+				//console.log('this', thisSlider, dataSlider);
+				//$('.searchRoom2 .sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
+				thisSlider.find('.sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
 					console.log('numSlider:', $(this).attr('id').substr(-1));
 
 					if ($(this).prop('checked')){
@@ -416,7 +445,8 @@
 					}
 
 
-					$('.searchRoom2 .sliderConf .sliderConf_block .inputText_input').on('blur', function(e) {
+					//$('.searchRoom2 .sliderConf .sliderConf_block .inputText_input').on('blur', function(e) {
+					thisSlider.find('.sliderConf .sliderConf_block .inputText_input').on('blur', function(e) {
 						
 						let //num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1),
 							idStr = $(this).attr('id'),
@@ -460,12 +490,13 @@
 							clear(id);
 							dataSlider.step = step;
 						}
-						console.log(dataSlider,'што тут происходит');
+						//console.log(dataSlider,'што тут происходит');
 						$('.searchRoom2 .slider'+id).slider(dataSlider);
-						console.log(dataSlider,'што тут происходит');
+						//console.log(dataSlider,'што тут происходит');
 					});
 
-					$('.searchRoom2 .sliderConf .sliderConf_block .radio_input').on('click', function(e) {
+					//$('.searchRoom2 .sliderConf .sliderConf_block .radio_input').on('click', function(e) {
+					thisSlider.find('.sliderConf .sliderConf_block .radio_input').on('click', function(e) {
 						let id = dataSlider.idElement.substr(-1);
 
 						let configItemType = model.configItemRadiobtn+`.radio_input[name=rbGroopType${id}]:checked`,
@@ -482,7 +513,11 @@
 
 							switch(typeId) {
 				  				case '1': type = 'interval'; break;
-				   				case '2': type = 'from0to'; break;
+				   				case '2': {
+				   					type = 'from0to'; 
+				   					dataSlider.minStart = dataSlider.min;
+				   					break;
+				   				}
 				   				case '3': type = 'one'; break;
 				   				default : type = 'interval';
 				   			}
@@ -522,7 +557,8 @@
 							clear(id);
 							dataSlider.scale = scale;
 						}
-						$('.searchRoom2 .slider'+id).slider(dataSlider);
+						//$('.searchRoom2 .slider'+id).slider(dataSlider);
+						thisSlider.slider(dataSlider);
 					});
 					
 				});	
@@ -540,27 +576,28 @@
 
 		}
 
-		view.type();
-		view.scale();
-		view.orientation();
-		view.value();
+		//console.log('this', this, dataSlider, 'proverka:', model.width(this), model.sliderBlock(this));
+		let thisSlider = this;
+
+		view.type(this);
+		view.scale(this);
+		view.orientation(this);
+		view.value(this);
 
 		controller.checkMinMaxStart();//определили текущие мин и мах
-		controller.configCheckStart();//min-max value
+		controller.configCheckStart(this);//min-max value
 
-		view.range();
-		controller.configCheck();
-
-
-		//fillConfigStart();
+		view.range(this);
+		controller.configCheck(this);
 		
 		
-		model.rangeLeft().on('mousedown', function(e) {
-			controller.movie(model.rangeLeft(),e,'left');
+		model.rangeLeft(thisSlider).on('mousedown', function(e) {
+			console.log('click');
+			controller.movie(thisSlider, model.rangeLeft(thisSlider), e, 'left');
 		});
 
-		model.rangeRight().on('mousedown', function(e) {
-			controller.movie(model.rangeRight(),e,'right');
+		model.rangeRight(thisSlider).on('mousedown', function(e) {
+			controller.movie(thisSlider, model.rangeRight(thisSlider), e, 'right');
 		});
 		
 
@@ -568,55 +605,6 @@
 
 		}), dataSlider;
 
-
-
-
-
-
-
-
-
-		function fillConfigStart(){
-			let sliObj, min, typeID, orientationID, valueID, scaleID;
-
-			//for (var i=1; i<=5; i++) {
-				sliObj = s[i-1];
-				$(configItemMin+i).val(sliObj.min);
-				$(configItemMax+i).val(sliObj.max);
-				$(configItemMinStart+i).val(sliObj.minStart);
-				$(configItemMaxStart+i).val(sliObj.maxStart);
-				$(configItemStep +i).val(sliObj.step);
-				$(configItemScaleStep +i).val(sliObj.scaleStep);
-
-				switch(sliObj.type) {
-	  				case 'interval'	: typeID = '1'; break;
-	   				case 'from0to'	: typeID = '2'; break;
-	   				case 'one'		: typeID = '3'; break;
-	   				default 		: typeID = '1';
-	   			}
-	   			switch(sliObj.orientation) {
-	  				case 'horizontal': orientationID = '1'; break;
-	   				case 'vertical': orientationID = '2'; break;
-	   				default : orientationID = '1';
-	   			}
-				switch(sliObj.value) {
-	  				case 'on': valueID = '1'; break;
-	   				case 'off': valueID = '2'; break;
-	   				default : valueID = '1';
-	   			}
-
-				switch(sliObj.scale) {
-	  				case 'on': scaleID = '1'; break;
-	   				case 'off': scaleID = '2'; break;
-	   				default : scaleID = '1';
-	   			}
-	   			
-				$(configItemRadiobtn+`.radio_input[name=rbGroopType${i}]#rb${typeID}srb${i}`).prop('checked', true);
-				$(configItemRadiobtn+`.radio_input[name=rbGroopOrientation${i}]#rb${orientationID}orient${i}`).prop('checked', true);
-				$(configItemRadiobtn+`.radio_input[name=rbGroopValue${i}]#rb${valueID}value${i}`).prop('checked', true);
-				$(configItemRadiobtn+`.radio_input[name=rbGroopScale${i}]#rb${scaleID}scale${i}`).prop('checked', true);
-			//}
-		}
 	};
 
 })(jQuery);
