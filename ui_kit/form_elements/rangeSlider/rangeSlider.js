@@ -111,7 +111,8 @@
 
 				switch(dataSlider.type) {
 	  				case 'interval' : {
-	  					posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+	  					//posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+	  					posLeft = ( model.width(thisSlider) / (dataSlider.max - dataSlider.min) ) * (dataSlider.minStart - dataSlider.min);//если мин не 0
 						model.rangeLeft(thisSlider).css('left', posLeft +'px');
 	  					model.ind(thisSlider).css('transform','translate('+posLeft+'px, 0px)');
 						model.ind(thisSlider).css('left', posLeft+'px');
@@ -125,7 +126,8 @@
 						break;
 					}
 	   				case 'one' : {
-	   					posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+	   					//posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+	   					posLeft = ( model.width(thisSlider) / (dataSlider.max - dataSlider.min) ) * (dataSlider.minStart - dataSlider.min);//если мин не 0
 						model.rangeLeft(thisSlider).css('left', posLeft +'px');
 	   					model.ind(thisSlider).css('transform','translate('+posLeft+'px, 0px)');
 						model.ind(thisSlider).css('left', posLeft+'px');
@@ -133,7 +135,8 @@
 	   					break;
 	   				}
 	   				default : {
-	   					posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+	   					//posLeft = model.width(thisSlider) * dataSlider.minStart / dataSlider.max;
+	   					posLeft = ( model.width(thisSlider) / (dataSlider.max - dataSlider.min) ) * (dataSlider.minStart - dataSlider.min);//если мин не 0
 						model.rangeLeft(thisSlider).css('left', posLeft +'px');
 	  					model.ind(thisSlider).css('transform','translate('+posLeft+'px, 0px)');
 						model.ind(thisSlider).css('left', posLeft+'px');
