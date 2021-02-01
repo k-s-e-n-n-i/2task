@@ -107,7 +107,7 @@
 			range : function (thisSlider){
 				let posLeft, posRight;
 
-				posRight = model.width(thisSlider) * dataSlider.maxStart / dataSlider.max;
+				posRight =  ( model.width(thisSlider) / (dataSlider.max - dataSlider.min) ) * (dataSlider.maxStart - dataSlider.min);//если мин не 0//model.width(thisSlider) * dataSlider.maxStart / dataSlider.max;
 				model.rangeRight(thisSlider).css('left', posRight +'px');
 
 				switch(dataSlider.type) {
@@ -194,8 +194,8 @@
 							model.sliderBlock(thisSlider).css('margin-bottom','35px');
 							i = i+scaleWidth;
 
-							shBlock.find('.rangeSlider_slider_scale_val').html(ch);
-							ch = ch + Math.floor((dataSlider.max-dataSlider.min)/scaleKol);
+							shBlock.find('.rangeSlider_slider_scale_val').html(Math.floor(ch));
+							ch = ch + (dataSlider.max-dataSlider.min)/scaleKol;
 						}
 	  					break;
 	  				}
@@ -474,6 +474,8 @@
 			checkMinMaxStart : function (){
 				if (dataSlider.minStart < dataSlider.min){dataSlider.minStart = dataSlider.min;}
 				if (dataSlider.maxStart > dataSlider.max){dataSlider.maxStart = dataSlider.max;}
+				if (dataSlider.minStart > dataSlider.max){dataSlider.minStart = dataSlider.max;}
+				if (dataSlider.maxStart < dataSlider.min){dataSlider.maxStart = dataSlider.min;}
 			},
 
 			configCheckStart : function (thisSlider){
@@ -591,9 +593,8 @@
 							clear(id);
 							dataSlider.step = step;
 						}
-						//console.log(dataSlider,'што тут происходит');
+						controller.checkMinMaxStart(thisSlider);
 						$('.searchRoom2 .slider'+id).slider(dataSlider);
-						//console.log(dataSlider,'што тут происходит');
 					});
 
 					//$('.searchRoom2 .sliderConf .sliderConf_block .radio_input').on('click', function(e) {
