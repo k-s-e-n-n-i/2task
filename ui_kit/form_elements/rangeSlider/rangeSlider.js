@@ -3,6 +3,9 @@
 //import {exp3} from '/blocks/demoSlider/sliderC.js'
 
 
+//эта версия файла будет для typescript
+
+
 (function( $ ) {
 	$.fn.slider = function(options) {
 
