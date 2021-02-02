@@ -179,6 +179,7 @@
 							scaleKol = dataSlider.scaleStep;
 						}else{
 							scaleKol = Math.floor(model.width(thisSlider)/45);
+							dataSlider.scaleStep = scaleKol;
 						}
 
 						let scaleWidth = model.width(thisSlider)/scaleKol;
