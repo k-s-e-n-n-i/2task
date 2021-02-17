@@ -15,64 +15,66 @@ interface dataSlider {
 }
 
 
-class model {
-	/*width(thisSlider : any, dataSlider : object) : number{
-		return thisSlider.find('.rangeSlider#'+dataSlider.idElement).find('.rangeSlider_slider').width();
+class Model {
+	width(thisSlider : any, dataSlider : object) : number{
+		return thisSlider.querySelector('.rangeSlider#'+dataSlider.idElement+' .rangeSlider_slider').clientWidth;
+		//return thisSlider.find('.rangeSlider#'+dataSlider.idElement).find('.rangeSlider_slider').width();
 	}
-	sliderBlock(thisSlider : object) : object{ 
-		return thisSlider.find('.rangeSlider#'+dataSlider.idElement);
+	sliderBlock(thisSlider : any, dataSlider : object) : object{
+		return thisSlider.querySelector('.rangeSlider#'+dataSlider.idElement);
+		//return thisSlider.find('.rangeSlider#'+dataSlider.idElement);
 	}
-	slider(thisSlider : object) : object{ 
-		return this.sliderBlock(thisSlider : object).find('.rangeSlider_slider');
-	},
-	height(thisSlider : object) : number{
-		const h = model.sliderBlock(thisSlider).height();
+	slider(thisSlider : any, dataSlider : object) : object{ 
+		return this.sliderBlock(thisSlider, dataSlider).querySelector('.rangeSlider_slider');
+		//return this.sliderBlock(thisSlider : object).find('.rangeSlider_slider');
+	}
+	height(thisSlider : any, dataSlider : object) : number{
+		//const h = model.sliderBlock(thisSlider).height();
+		const h = this.sliderBlock(thisSlider, dataSlider).clientHeight;
 		return h;
-	},
-	ind(thisSlider : object) : object{ 
-		//console.log('12345-4');
-		return model.slider(thisSlider).find('.rangeSlider_slider_range');//"индикатор"
-	},
-	indWidth(thisSlider : object) : object{
-		//console.log('12345-5');
-		return model.ind(thisSlider).width();
-	},
-	rangeLeft(thisSlider : object) : object{ 
-		//console.log('12345-6');
-		return model.slider(thisSlider).find('.rangeSlider_slider_left');
-	},
-	posRangeLeft(thisSlider : object) : object{
-		//console.log('12345-7');
-		return parseInt((model.rangeLeft(thisSlider)).css('left'));
-	},
-	rangeRight(thisSlider : object) : object{ 
-		//console.log('12345-8');
-		return model.slider(thisSlider).find('.rangeSlider_slider_right');
-	},
-	posRangeRight(thisSlider : object) : object{
-		//console.log('12345-9');
-		return parseInt((model.rangeRight(thisSlider)).css('left'));
-	},
-	valueMin : function (thisSlider){
-		//console.log('12345-10');
-		return model.rangeLeft(thisSlider).closest('.rangeSlider').find('.rangeSlider_label__min');
-	},
-	valueMax : function (thisSlider){
-		//console.log('12345-11');
-		return model.rangeRight(thisSlider).closest('.rangeSlider').find('.rangeSlider_label__max');
-	},
-			masScaleStep : [],
-			configItemMin : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin`,
-			configItemMax : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax`,
-			configItemMinStart : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart`,
-			configItemMaxStart : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart`,
-			configItemStep : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextstep`,
-			configItemScaleStep : `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep`,
-			configItemRadiobtn : `.searchRoom2 .sliderConf .sliderConf_block .sliderConf_block_item
+	}
+	ind(thisSlider : any, dataSlider : object) : object{ 
+		return this.slider(thisSlider, dataSlider).querySelector('.rangeSlider_slider_range');
+		//return model.slider(thisSlider).find('.rangeSlider_slider_range');//"индикатор"
+	}
+	indWidth(thisSlider : any, dataSlider : object) : number{
+		return this.ind(thisSlider, dataSlider).clientWidth;
+		//return model.ind(thisSlider).width();
+	}
+	rangeLeft(thisSlider : any, dataSlider : object) : object{ 
+		return this.slider(thisSlider, dataSlider).querySelector('.rangeSlider_slider_left');
+		//return model.slider(thisSlider).find('.rangeSlider_slider_left');
+	}
+	posRangeLeft(thisSlider : any, dataSlider : object) : number{
+		return parseInt(getComputedStyle(this.rangeLeft(thisSlider, dataSlider)).left);
+		//return parseInt((model.rangeLeft(thisSlider)).css('left'));
+	}
+	rangeRight(thisSlider : any, dataSlider : object) : object{ 
+		return this.slider(thisSlider, dataSlider).querySelector('.rangeSlider_slider_right');
+		//return model.slider(thisSlider).find('.rangeSlider_slider_right');
+	}
+	posRangeRight(thisSlider : any, dataSlider : object) : number{
+		return parseInt(getComputedStyle(this.rangeRight(thisSlider, dataSlider)).left);
+		//return parseInt((model.rangeRight(thisSlider)).css('left'));
+	}
+	valueMin(thisSlider : any, dataSlider : object) : object{
+		return thisSlider.querySelector('.rangeSlider_label__min');
+		//return model.rangeLeft(thisSlider).closest('.rangeSlider').find('.rangeSlider_label__min');
+	}
+	valueMax(thisSlider : any, dataSlider : object) : object{
+		return thisSlider.querySelector('.rangeSlider_label__max');
+		//return model.rangeRight(thisSlider).closest('.rangeSlider').find('.rangeSlider_label__max');
+	}
+			masScaleStep : number[] = [],
+			configItemMin : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin`,
+			configItemMax : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax`,
+			configItemMinStart : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart`,
+			configItemMaxStart : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart`,
+			configItemStep : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextstep`,
+			configItemScaleStep : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep`,
+			configItemRadiobtn : string = `.searchRoom2 .sliderConf .sliderConf_block .sliderConf_block_item
 						.sliderConf_block_item_option .radio `,
-	constructor(argument) {
-		// code...
-	}*/
+	
 }
 
 
@@ -125,4 +127,21 @@ const sliders : dataSlider[] =
 		idElement : 'idPrice5',
 	}) ];
 
+
+
 console.log(sliders);
+
+const model = new Model();
+
+console.log('1. model.width :',model.width(document.querySelector('.searchRoom2 .slider1'),sliders[0]));//.searchRoom2.slider1
+console.log('2. model.sliderBlock :',model.sliderBlock(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('3. model.slider :',model.slider(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('4. model.height :',model.height(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('5. model.ind :',model.ind(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('6. model.indWidth :',model.indWidth(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('7. model.rangeLeft :',model.rangeLeft(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('8. model.posRangeLeft :',model.posRangeLeft(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('9. model.rangeRight :',model.rangeRight(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('10. model.posRangeRight :',model.posRangeRight(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('11. model.valueMin :',model.valueMin(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
+console.log('12. model.valueMax :',model.valueMax(document.querySelector('.searchRoom2 .slider1'),sliders[0]));
