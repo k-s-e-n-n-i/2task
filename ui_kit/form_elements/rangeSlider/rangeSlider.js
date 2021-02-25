@@ -720,7 +720,7 @@
 
 $(function() {
 
-	let s = [ $('.searchRoom2 .slider1').slider({
+	/*let s = [ /*$('.searchRoom2 .slider1').slider({
 		idElement : 'idPrice1',
 		type : 'interval',
 		min : 10,
@@ -763,6 +763,7 @@ $(function() {
 	}),
 	$('.searchRoom2 .slider5').slider({
 		idElement : 'idPrice5',
-	}) ];
+	}) ];*/
 
 });
+

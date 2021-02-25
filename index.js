@@ -60,3 +60,8 @@ import '/blocks/demoSlider/demoSlider.js'
 
 import '/blocks/demoSlider/demoSlider_ts.ts'
 
+
+
+import '/blocks/demoSlider/demoSlider_tests.js'
+
+mocha.run();
