@@ -347,8 +347,8 @@ export class Controller {
 					model.ind(thisSlider, dataSlider.idElement).style.transform = 'translate('+pos+'px, 0px)';
 					startPos = pos;
 					controller.writeValueMin(thisSlider, price);
-					////controller.configMinChange(price);
-					////controller.checkDataSliderMin(price);
+					controller.configMinChange(thisSlider, dataSlider, price);
+					controller.checkDataSliderMin(dataSlider, price);
 					console.log('step:',indWidth, step);
 					model.ind(thisSlider, dataSlider.idElement).style.width = indWidth+step+'px';
 				}
@@ -360,113 +360,104 @@ export class Controller {
 					price = calc(thisSlider, dataSlider, pos);
 					model.rangeRight(thisSlider, dataSlider.idElement).style.left = pos+'px';//позиция указателей
 					controller.writeValueMax(thisSlider, price);
-					////controller.configMaxChange(price);
-					////controller.checkDataSliderMax(price);
+					controller.configMaxChange(thisSlider, dataSlider, price);
+					controller.checkDataSliderMax(dataSlider, price);
 					console.log('step:',indWidth, step);	
 					model.ind(thisSlider, dataSlider.idElement).style.width = indWidth+step+'px';
 				}
 			}
 		}
-		function calc(thisSlider, dataSlider, pos){
+		function calc(thisSlider : any, dataSlider : object, pos : number) : number{
 			let pr = pos / model.width(thisSlider, dataSlider.idElement),
 				price = ((dataSlider.max - dataSlider.min) * pr + dataSlider.min).toFixed();
 			return price;
 		}
-	},
+	}
 			
+	clickSlider(thisSlider : any, dataSlider : object){
+		thisSlider.querySelector('.rangeSlider_slider').onmousedown = function(e) {	
+			thisSlider.querySelector('.rangeSlider_slider').onmouseup = function(e) {
+		  		let pos = e.pageX - parseInt(model.slider(thisSlider, dataSlider.idElement).offsetLeft),
+		  			startPos;
+		  		if (dataSlider.step != 1){
+			  		pos = controller.checkRangeThisStep(thisSlider, dataSlider, pos);
+			  	}
+		  		switch(dataSlider.type) {
+	  				case 'interval' : {
+	  					let posL = model.posRangeLeft(thisSlider, dataSlider.idElement),
+	  						posR = model.posRangeRight(thisSlider, dataSlider.idElement);
+	  					if (Math.abs(posL - pos) < Math.abs(posR - pos)) {
+	  						startPos = model.posRangeLeft(thisSlider, dataSlider.idElement);
+	  						controller.movingRange(thisSlider, dataSlider, 'left', model.posRangeLeft(thisSlider, dataSlider.idElement), pos, model.indWidth(thisSlider, dataSlider.idElement));
+	  					}else{
+	  						startPos = model.posRangeRight(thisSlider, dataSlider.idElement);
+	  						controller.movingRange(thisSlider, dataSlider, 'right', model.posRangeRight(thisSlider, dataSlider.idElement), pos, model.indWidth(thisSlider, dataSlider.idElement));
+	  					}
+	  					break;
+	  				}
+	   				case 'from0to' : {
+	   					startPos = model.posRangeRight(thisSlider, dataSlider.idElement);
+	   					controller.movingRange(thisSlider, dataSlider, 'right', model.posRangeRight(thisSlider, dataSlider.idElement), pos, model.indWidth(thisSlider, dataSlider.idElement));
+						break;
+					}
+	   				case 'one' : {
+	   					startPos = model.posRangeRight(thisSlider, dataSlider.idElement);
+	   					controller.movingRange(thisSlider, dataSlider, 'right', model.posRangeRight(thisSlider, dataSlider.idElement), pos, model.indWidth(thisSlider, dataSlider.idElement));
+	   					break;
+	   				}
+	   			}
+		  		//thisSlider.querySelector('.rangeSlider_slider').offmouseup;
+		  	}
+		}
+	}
+	
+	checkRangeThisStep(thisSlider : any, dataSlider : object, pos : number){
+		let p = 0, masScale,
+			len = model.width(thisSlider, dataSlider.idElement);
+		masScale = controller.masScale(thisSlider, dataSlider);
+  		for (let i = 0; i < masScale.length; i++){
+  			let lenL = Math.abs(masScale[i] - pos),
+  				lenR = Math.abs(masScale[i+1] - pos);
+  			
+  			if (lenL < len) {
+  				p = masScale[i];
+  				len = lenL;
+  			}else if (lenR < len){
+  				p = masScale[i+1];
+  				len = lenR;
+  			}
+  		}
+  		return p;
+	}
+	masScale(thisSlider : any, dataSlider : object){
+		let sumSegments = (dataSlider.max - dataSlider.min) / dataSlider.step,
+			w1 = model.width(thisSlider, dataSlider.idElement) / (dataSlider.max - dataSlider.min),//одно деление
+			w = w1 * dataSlider.step, //длина шага
+			masScale=[];
+		//console.log(`model.width=${model.width(thisSlider)}, dataSlider.min=${dataSlider.min}, dataSlider.max=${dataSlider.max}, dataSlider.step=${dataSlider.step}`);
+		//console.log(`sumSegments=${sumSegments}, w1=${w1}, w=${w}, masScale=${masScale}`);
+		for (let i = 0; i <= sumSegments; i++) {
+			masScale[i] = parseInt(w*i);
+		}
+		//console.log(`masScale=${masScale}`);
+		return masScale;
+	}
 
-			/*clickSlider : function (thisSlider){
-				thisSlider.find('.rangeSlider_slider').on('mousedown', function(e) {
-				
-					thisSlider.find('.rangeSlider_slider').on('mouseup', function(e) {
-						console.log('clickkkkk');
-				  		let pos = e.pageX - parseInt(model.slider(thisSlider).position().left),
-				  			startPos;
-
-				  		if (dataSlider.step != 1){
-					  		pos = controller.checkRangeThisStep(thisSlider, pos);
-					  	}
-
-				  		switch(dataSlider.type) {
-			  				case 'interval' : {
-			  					let posL = model.posRangeLeft(thisSlider),
-			  						posR = model.posRangeRight(thisSlider);
-			  					if (Math.abs(posL - pos) < Math.abs(posR - pos)) {
-			  						startPos = model.posRangeLeft(thisSlider);
-			  						controller.movingRange(thisSlider, 'left', model.posRangeLeft(thisSlider), pos, model.indWidth(thisSlider));
-			  					}else{
-			  						startPos = model.posRangeRight(thisSlider);
-			  						controller.movingRange(thisSlider, 'right', model.posRangeRight(thisSlider), pos, model.indWidth(thisSlider));
-			  					}
-			  					
-			  					break;
-			  				}
-			   				case 'from0to' : {
-			   					startPos = model.posRangeRight(thisSlider);
-			   					controller.movingRange(thisSlider, 'right', model.posRangeRight(thisSlider), pos, model.indWidth(thisSlider));
-								break;
-							}
-			   				case 'one' : {
-			   					startPos = model.posRangeRight(thisSlider);
-			   					controller.movingRange(thisSlider, 'right', model.posRangeRight(thisSlider), pos, model.indWidth(thisSlider));
-			   					break;
-			   				}
-			   				
-			   			}
-
-				  		//controller.movingRange(thisSlider, lr, startPos, pos, indWidth);
-				  		thisSlider.find('.rangeSlider_slider').off('mouseup');
-				  	});
-				});
-			},
-			checkRangeThisStep : function (thisSlider, pos){
-				let p=0, len = model.width(thisSlider);
-
-				masScale = controller.masScale(thisSlider);
-		  		for (let i = 0; i < masScale.length; i++){
-		  			let lenL = Math.abs(masScale[i] - pos),
-		  				lenR = Math.abs(masScale[i+1] - pos);
-		  			
-		  			if (lenL < len) {
-		  				p = masScale[i];
-		  				len = lenL;
-		  			}else if (lenR < len){
-		  				p = masScale[i+1];
-		  				len = lenR;
-		  			}
-		  		}
-		  		return p;
-			},
-			masScale : function (thisSlider){
-				let sumSegments = (dataSlider.max - dataSlider.min) / dataSlider.step,
-					w1 = model.width(thisSlider) / (dataSlider.max - dataSlider.min),//одно деление
-					w = w1 * dataSlider.step, //длина шага
-					masScale=[];
-				//console.log(`model.width=${model.width(thisSlider)}, dataSlider.min=${dataSlider.min}, dataSlider.max=${dataSlider.max}, dataSlider.step=${dataSlider.step}`);
-				//console.log(`sumSegments=${sumSegments}, w1=${w1}, w=${w}, masScale=${masScale}`);
-				for (let i = 0; i <= sumSegments; i++) {
-					masScale[i] = parseInt(w*i);
-				}
-				//console.log(`masScale=${masScale}`);
-				
-				return masScale;
-			},*/
-
-	writeValueMin(thisSlider, val){
+	writeValueMin(thisSlider : any, val : number){
 		model.valueMin(thisSlider).innerHTML = val;
 	}
-	writeValueMax(thisSlider, val){
+	writeValueMax(thisSlider : any, val : number){
 		model.valueMax(thisSlider).innerHTML = val;
 	}
 
-			/*checkDataSliderMin : function (val){
-				dataSlider.minStart = val;
-			},
-			checkDataSliderMax : function (val){
-				dataSlider.maxStart = val;
-			},
+	checkDataSliderMin(dataSlider : object, val : number){
+		dataSlider.minStart = val;
+	}
+	checkDataSliderMax(dataSlider : object, val : number){
+		dataSlider.maxStart = val;
+	}
 
-			checkMinMaxStart : function (){
+			/*checkMinMaxStart : function (){
 				if (dataSlider.minStart < dataSlider.min){dataSlider.minStart = dataSlider.min;}
 				if (dataSlider.maxStart > dataSlider.max){dataSlider.maxStart = dataSlider.max;}
 				if (dataSlider.minStart > dataSlider.max){dataSlider.minStart = dataSlider.max;}
@@ -518,19 +509,19 @@ export class Controller {
 					thisSlider.find(`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).prop('checked', true);
 					thisSlider.find(`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).prop('checked', true);
 					thisSlider.find(`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);
-			},
-			configMinChange : function (val){
-				if (val < dataSlider.min){val = dataSlider.min;}
-				$(`.searchRoom2 .sliderConf .sliderConf_block 
-					.inputText #inputTextminStart`+dataSlider.idElement.substr(-1)).val(val);
-			},
-			configMaxChange : function (val){
-				if (val > dataSlider.max){val = dataSlider.max;}
-				$(`.searchRoom2 .sliderConf .sliderConf_block 
-					.inputText #inputTextmaxStart`+dataSlider.idElement.substr(-1)).val(val);	
-			},
+			},*/
+	configMinChange(thisSlider : any, dataSlider : object, val : number){
+		if (val < dataSlider.min){val = dataSlider.min;}
+		thisSlider.querySelector(`.sliderConf .sliderConf_block .inputText #inputTextminStart`+dataSlider.idElement.substr(-1)).value = val;
+		//$(`.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart`+dataSlider.idElement.substr(-1)).val(val);
+	}
+	configMaxChange(thisSlider : any, dataSlider : object, val : number){
+		if (val > dataSlider.max){val = dataSlider.max;}
+		thisSlider.querySelector(`.sliderConf .sliderConf_block .inputText #inputTextmaxStart`+dataSlider.idElement.substr(-1)).value = val);
+		//$(`.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart`+dataSlider.idElement.substr(-1)).val(val);	
+	}
 
-			configCheck : function (thisSlider){
+			/*configCheck : function (thisSlider){
 				//console.log('this', thisSlider, dataSlider);
 				//$('.searchRoom2 .sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
 				thisSlider.find('.sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
@@ -722,22 +713,23 @@ const sliders : dataSlider[] =
 	}),
 	$('.searchRoom2 .slider5').slider({
 		idElement : 'idPrice5',
+		type : 'from0to',
 	}) ];
 
 
 console.log(sliders);
 
 const model = new Model();
-console.log('1. model.width :',model.width(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));//.searchRoom2.slider1
-console.log('2. model.sliderBlock :',model.sliderBlock(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
-console.log('3. model.slider :',model.slider(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
-console.log('4. model.height :',model.height(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
-console.log('5. model.ind :',model.ind(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
-console.log('6. model.indWidth :',model.indWidth(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
-console.log('7. model.rangeLeft :',model.rangeLeft(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
-console.log('8. model.posRangeLeft :',model.posRangeLeft(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
-console.log('9. model.rangeRight :',model.rangeRight(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
-console.log('10. model.posRangeRight :',model.posRangeRight(document.querySelector('.searchRoom2 .slider1'),sliders[0].idElement));
+console.log('1. model.width :',model.width(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));//.searchRoom2.slider1
+console.log('2. model.sliderBlock :',model.sliderBlock(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('3. model.slider :',model.slider(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('4. model.height :',model.height(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('5. model.ind :',model.ind(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('6. model.indWidth :',model.indWidth(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('7. model.rangeLeft :',model.rangeLeft(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('8. model.posRangeLeft :',model.posRangeLeft(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('9. model.rangeRight :',model.rangeRight(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('10. model.posRangeRight :',model.posRangeRight(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
 console.log('11. model.valueMin :',model.valueMin(document.querySelector('.searchRoom2 .slider1')));
 console.log('12. model.valueMax :',model.valueMax(document.querySelector('.searchRoom2 .slider1')));
 
@@ -817,3 +809,16 @@ const controller = new Controller();
 console.log('1. controller.checkOrientation :', controller.checkOrientation(sliders[0].orientation));
 console.log('2.1. controller.movingRange :', controller.movingRange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 'left', 0, 30, 2000));
 console.log('2.2. controller.movingRange :', controller.movingRange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 'right', 270, 250, 240));
+console.log('3. controller.clickSlider :', controller.clickSlider(document.querySelector('.searchRoom2 .slider5'), sliders[3]));
+console.log('4. controller.masScale :', controller.masScale(document.querySelector('.searchRoom2 .slider1'), sliders[0]));
+console.log('5. controller.checkRangeThisStep :', controller.checkRangeThisStep(document.querySelector('.searchRoom2 .slider1'), sliders[0], 300));
+console.log('6.1. controller.checkDataSliderMin :', controller.checkDataSliderMin(sliders[1], 123), sliders[1]);
+console.log('6.2. controller.checkDataSliderMax :', controller.checkDataSliderMax(sliders[1], 456), sliders[1]);
+console.log('7.1. controller.configMinChange :', controller.configMinChange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 2));
+console.log('7.2. controller.configMaxChange :', controller.configMaxChange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 3000));
+
+
+
+
+
+

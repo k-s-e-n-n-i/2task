@@ -384,11 +384,11 @@
 			},
 			
 
-			clickSlider : function (thisSlider){
+			/*clickSlider : function (thisSlider){
 				thisSlider.find('.rangeSlider_slider').on('mousedown', function(e) {
 				
 					thisSlider.find('.rangeSlider_slider').on('mouseup', function(e) {
-						console.log('clickkkkk');
+						console.log('clickkkkk', model.slider(thisSlider).position().left);
 				  		let pos = e.pageX - parseInt(model.slider(thisSlider).position().left),
 				  			startPos;
 
@@ -427,7 +427,7 @@
 				  		thisSlider.find('.rangeSlider_slider').off('mouseup');
 				  	});
 				});
-			},
+			},*/
 			checkRangeThisStep : function (thisSlider, pos){
 				let p=0, len = model.width(thisSlider);
 
@@ -696,7 +696,7 @@
 
 
 		view.range(this);
-		controller.clickSlider(this);
+		//controller.clickSlider(this);
 		controller.configCheck(this);
 		
 		
