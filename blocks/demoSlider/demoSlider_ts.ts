@@ -71,13 +71,13 @@ export class Model {
 		//return model.rangeRight(thisSlider).closest('.rangeSlider').find('.rangeSlider_label__max');
 	}
 			masScaleStep : number[] = [],
-			configItemMin : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmin`,
-			configItemMax : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmax`,
-			configItemMinStart : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart`,
-			configItemMaxStart : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart`,
-			configItemStep : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextstep`,
-			configItemScaleStep : string = `.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextscaleStep`,
-			configItemRadiobtn : string = `.searchRoom2 .sliderConf .sliderConf_block .sliderConf_block_item
+			configItemMin : string = `.sliderConf .sliderConf_block .inputText #inputTextmin`,
+			configItemMax : string = `.sliderConf .sliderConf_block .inputText #inputTextmax`,
+			configItemMinStart : string = `.sliderConf .sliderConf_block .inputText #inputTextminStart`,
+			configItemMaxStart : string = `.sliderConf .sliderConf_block .inputText #inputTextmaxStart`,
+			configItemStep : string = `.sliderConf .sliderConf_block .inputText #inputTextstep`,
+			configItemScaleStep : string = `.sliderConf .sliderConf_block .inputText #inputTextscaleStep`,
+			configItemRadiobtn : string = `.sliderConf .sliderConf_block .sliderConf_block_item
 						.sliderConf_block_item_option .radio `,
 	
 }
@@ -373,6 +373,28 @@ export class Controller {
 			return price;
 		}
 	}
+	writeValueMin(thisSlider : any, val : number){
+		model.valueMin(thisSlider).innerHTML = val;
+	}
+	writeValueMax(thisSlider : any, val : number){
+		model.valueMax(thisSlider).innerHTML = val;
+	}
+	checkDataSliderMin(dataSlider : object, val : number){
+		dataSlider.minStart = val;
+	}
+	checkDataSliderMax(dataSlider : object, val : number){
+		dataSlider.maxStart = val;
+	}
+	configMinChange(thisSlider : any, dataSlider : object, val : number){
+		if (val < dataSlider.min){val = dataSlider.min;}
+		thisSlider.querySelector(`.sliderConf .sliderConf_block .inputText #inputTextminStart`+dataSlider.idElement.substr(-1)).value = val;
+		//$(`.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart`+dataSlider.idElement.substr(-1)).val(val);
+	}
+	configMaxChange(thisSlider : any, dataSlider : object, val : number){
+		if (val > dataSlider.max){val = dataSlider.max;}
+		thisSlider.querySelector(`.sliderConf .sliderConf_block .inputText #inputTextmaxStart`+dataSlider.idElement.substr(-1)).value = val);
+		//$(`.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart`+dataSlider.idElement.substr(-1)).val(val);	
+	}
 			
 	clickSlider(thisSlider : any, dataSlider : object){
 		thisSlider.querySelector('.rangeSlider_slider').onmousedown = function(e) {	
@@ -410,7 +432,6 @@ export class Controller {
 		  	}
 		}
 	}
-	
 	checkRangeThisStep(thisSlider : any, dataSlider : object, pos : number){
 		let p = 0, masScale,
 			len = model.width(thisSlider, dataSlider.idElement);
@@ -443,226 +464,204 @@ export class Controller {
 		return masScale;
 	}
 
-	writeValueMin(thisSlider : any, val : number){
-		model.valueMin(thisSlider).innerHTML = val;
-	}
-	writeValueMax(thisSlider : any, val : number){
-		model.valueMax(thisSlider).innerHTML = val;
-	}
+	configCheck(thisSlider : any, dataSlider : object){
+		//thisSlider.querySelector('.sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
+		thisSlider.querySelector('.sliderConf .checkbox .checkbox_item .checkbox_item_input').onclick = function(e) {
+			console.log('numSlider:', this);
 
-	checkDataSliderMin(dataSlider : object, val : number){
-		dataSlider.minStart = val;
-	}
-	checkDataSliderMax(dataSlider : object, val : number){
-		dataSlider.maxStart = val;
-	}
+			if (this.checked == true){
+				console.log(thisSlider.querySelector('.sliderConf .sliderConf_block'));
+				thisSlider.querySelector('.sliderConf .sliderConf_block').style.display = 'block';
+			}else{
+				thisSlider.querySelector('.sliderConf .sliderConf_block').style.display = 'none';
+			}
 
-			/*checkMinMaxStart : function (){
-				if (dataSlider.minStart < dataSlider.min){dataSlider.minStart = dataSlider.min;}
-				if (dataSlider.maxStart > dataSlider.max){dataSlider.maxStart = dataSlider.max;}
-				if (dataSlider.minStart > dataSlider.max){dataSlider.minStart = dataSlider.max;}
-				if (dataSlider.maxStart < dataSlider.min){dataSlider.maxStart = dataSlider.min;}
-			},
+			let inputS = thisSlider.getElementsByClassName('inputText_input');
+			for(var i = 0; i < inputS.length; i++) {
+				inputS[i].onblur = function (){
+					let //num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1),
+						idStr = this.id,
+						//sliObj = s[num-1],
+						id = dataSlider.idElement.substr(-1),
+						min,
+						max,
+						minStart,
+						maxStart,
+						step,
+						scaleStep;
 
-			configCheckStart : function (thisSlider){
-				model.sliderBlock(thisSlider).find('.rangeSlider_label__min').html(dataSlider.minStart);
-				model.sliderBlock(thisSlider).find('.rangeSlider_label__max').html(dataSlider.maxStart);
+					console.log(idStr, id, idStr.indexOf('max',0));
 
-				let typeID, orientationID, valueID, scaleID,
-					id = dataSlider.idElement.substr(-1);
-
-					$(model.configItemMin+id).val(dataSlider.min);
-					$(model.configItemMax+id).val(dataSlider.max);
-					$(model.configItemMinStart+id).val(dataSlider.minStart);
-					$(model.configItemMaxStart+id).val(dataSlider.maxStart);
-					$(model.configItemStep +id).val(dataSlider.step);
-					$(model.configItemScaleStep +id).val(dataSlider.scaleStep);
-
-					switch(dataSlider.type) {
-		  				case 'interval'	: typeID = '1'; break;
-		   				case 'from0to'	: typeID = '2'; break;
-		   				case 'one'		: typeID = '3'; break;
-		   				default 		: typeID = '1';
-		   			}
-		   			switch(dataSlider.orientation) {
-		  				case 'horizontal': orientationID = '1'; break;
-		   				case 'vertical': orientationID = '2'; break;
-		   				default : orientationID = '1';
-		   			}
-					switch(dataSlider.value) {
-		  				case 'on': valueID = '1'; break;
-		   				case 'off': valueID = '2'; break;
-		   				default : valueID = '1';
-		   			}
-
-					switch(dataSlider.scale) {
-		  				case 'on': scaleID = '1'; break;
-		   				case 'off': scaleID = '2'; break;
-		   				default : scaleID = '1';
-		   			}
-		   			
-					/*$(model.configItemRadiobtn+`.radio_input[name=rbGroopType${id}]#rb${typeID}srb${id}`).prop('checked', true);
-					$(model.configItemRadiobtn+`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).prop('checked', true);
-					$(model.configItemRadiobtn+`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).prop('checked', true);
-					$(model.configItemRadiobtn+`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);*/
-	/*				thisSlider.find(`.radio_input[name=rbGroopType${id}]#rb${typeID}srb${id}`).prop('checked', true);
-					thisSlider.find(`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).prop('checked', true);
-					thisSlider.find(`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).prop('checked', true);
-					thisSlider.find(`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);
-			},*/
-	configMinChange(thisSlider : any, dataSlider : object, val : number){
-		if (val < dataSlider.min){val = dataSlider.min;}
-		thisSlider.querySelector(`.sliderConf .sliderConf_block .inputText #inputTextminStart`+dataSlider.idElement.substr(-1)).value = val;
-		//$(`.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextminStart`+dataSlider.idElement.substr(-1)).val(val);
-	}
-	configMaxChange(thisSlider : any, dataSlider : object, val : number){
-		if (val > dataSlider.max){val = dataSlider.max;}
-		thisSlider.querySelector(`.sliderConf .sliderConf_block .inputText #inputTextmaxStart`+dataSlider.idElement.substr(-1)).value = val);
-		//$(`.searchRoom2 .sliderConf .sliderConf_block .inputText #inputTextmaxStart`+dataSlider.idElement.substr(-1)).val(val);	
-	}
-
-			/*configCheck : function (thisSlider){
-				//console.log('this', thisSlider, dataSlider);
-				//$('.searchRoom2 .sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
-				thisSlider.find('.sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
-					console.log('numSlider:', $(this).attr('id').substr(-1));
-
-					if ($(this).prop('checked')){
-						$(this).closest('.sliderConf').find('.sliderConf_block').css('display','block');
-					}else{
-						$(this).closest('.sliderConf').find('.sliderConf_block').css('display','none');
+					if (idStr.indexOf('min',0) != -1){
+						min = Number.parseInt(thisSlider.querySelector(model.configItemMin+id).value);//Number.parseInt(model.configItemMin+id.value);
+						clear(thisSlider, id);
+						dataSlider.min = min;
 					}
-
-
-					//$('.searchRoom2 .sliderConf .sliderConf_block .inputText_input').on('blur', function(e) {
-					thisSlider.find('.sliderConf .sliderConf_block .inputText_input').on('blur', function(e) {
-						
-						let //num = $(this).closest('.searchRoom_filters_diapason').find('.rangeSlider').attr('id').substr(-1),
-							idStr = $(this).attr('id'),
-							//sliObj = s[num-1],
-							id = dataSlider.idElement.substr(-1),
-							min,
-							max,
-							minStart,
-							maxStart,
-							step,
-							scaleStep;
-
-						if (idStr.indexOf('min',0) != -1){
-							min = Number.parseInt($(model.configItemMin+id).val());
-							clear(id);
-							dataSlider.min = min;
-						}
-						if (idStr.indexOf('max',0) != -1){
-							max = Number.parseInt($(model.configItemMax+id).val());
-							clear(id);
-							dataSlider.max = max;
-						}
-						if (idStr.indexOf('minStart',0) != -1){
-							minStart = Number.parseInt($(model.configItemMinStart+id).val());
-							clear(id);
-							dataSlider.minStart = minStart;
-						}
-						if (idStr.indexOf('maxStart',0) != -1){
-							maxStart = Number.parseInt($(model.configItemMaxStart+id).val());
-							clear(id);
-							dataSlider.maxStart = maxStart;
-						}
-						if (idStr.indexOf('scaleStep',0) != -1){
-							scaleStep = Number.parseInt($(model.configItemScaleStep+id).val());
-							clear(id);
-							dataSlider.scaleStep = scaleStep;
-							$('.searchRoom2 .slider'+id).slider(dataSlider);
-						}
-						if (idStr.indexOf('step',0) != -1){
-							step = Number.parseInt($(model.configItemStep+id).val());
-							clear(id);
-							dataSlider.step = step;
-						}
-						controller.checkMinMaxStart(thisSlider);
+					if (idStr.indexOf('max',0) != -1){
+						console.log('max');
+						max = Number.parseInt(thisSlider.querySelector(model.configItemMax+id).value);
+						clear(thisSlider, id);
+						dataSlider.max = max;
+					}
+					if (idStr.indexOf('minStart',0) != -1){
+						console.log('minStart');
+						minStart = Number.parseInt(thisSlider.querySelector(model.configItemMinStart+id).value);
+						clear(thisSlider, id);
+						dataSlider.minStart = minStart;
+					}
+					if (idStr.indexOf('maxStart',0) != -1){
+						console.log('maxStart');
+						maxStart = Number.parseInt(thisSlider.querySelector(model.configItemMaxStart+id).value);
+						clear(thisSlider, id);
+						dataSlider.maxStart = maxStart;
+					}
+					if (idStr.indexOf('scaleStep',0) != -1){
+						console.log('scaleStep');
+						scaleStep = Number.parseInt(thisSlider.querySelector(model.configItemScaleStep+id).value);
+						clear(thisSlider, id);
+						dataSlider.scaleStep = scaleStep;
 						$('.searchRoom2 .slider'+id).slider(dataSlider);
-					});
-
-					//$('.searchRoom2 .sliderConf .sliderConf_block .radio_input').on('click', function(e) {
-					thisSlider.find('.sliderConf .sliderConf_block .radio_input').on('click', function(e) {
-						let id = dataSlider.idElement.substr(-1);
-
-						let configItemType = model.configItemRadiobtn+`.radio_input[name=rbGroopType${id}]:checked`,
-							configItemOrientation = model.configItemRadiobtn+`.radio_input[name=rbGroopOrientation${id}]:checked`,
-							configItemValue = model.configItemRadiobtn+`.radio_input[name=rbGroopValue${id}]:checked`,
-							configItemScale = model.configItemRadiobtn+`.radio_input[name=rbGroopScale${id}]:checked`;
-
-						let	idStr = $(this).attr('name'),
-							type, orientation, value, scale,
-							typeId, orientationID, valueID, scaleID;
-
-						if (idStr.indexOf('Type',0) != -1){
-							typeId = $(configItemType).attr('id').substr(2,1);
-
-							switch(typeId) {
-				  				case '1': type = 'interval'; break;
-				   				case '2': {
-				   					type = 'from0to'; 
-				   					dataSlider.minStart = dataSlider.min;
-				   					break;
-				   				}
-				   				case '3': type = 'one'; break;
-				   				default : type = 'interval';
-				   			}
-							clear(id);
-							dataSlider.type = type;
-						}
-						if (idStr.indexOf('Orientation',0) != -1){
-							orientationID = $(configItemOrientation).attr('id').substr(2,1);
-
-							switch(orientationID) {
-				  				case '1': orientation = 'horizontal'; break;
-				   				case '2': orientation = 'vertical'; break;
-				   				default : orientation = 'horizontal';
-				   			}
-							clear(id);
-							dataSlider.orientation = orientation;
-						}
-						if (idStr.indexOf('Value',0) != -1){
-							valueID = $(configItemValue).attr('id').substr(2,1);
-
-							switch(valueID) {
-				  				case '1': value = 'on'; break;
-				   				case '2': value = 'off'; break;
-				   				default : value = 'on';
-				   			}
-							clear(id);
-							dataSlider.value = value;
-						}
-						if (idStr.indexOf('Scale',0) != -1){
-							scaleID = $(configItemScale).attr('id').substr(2,1);
-
-							switch(scaleID) {
-				  				case '1': scale = 'on'; break;
-				   				case '2': scale = 'off'; break;
-				   				default : scale = 'on';
-				   			}
-							clear(id);
-							dataSlider.scale = scale;
-						}
-						//$('.searchRoom2 .slider'+id).slider(dataSlider);
-						thisSlider.slider(dataSlider);
-					});
-					
-				});	
-
-				function clear(id){
-					let x = $('.searchRoom2 .rangeSlider#idPrice'+id+' .rangeSlider_slider .rangeSlider_slider_scale')
-					x.remove();
-
-					$('.searchRoom2 .rangeSlider#idPrice'+id+' .rangeSlider_slider_left').css('display','inline-block');
-					$('.searchRoom2 .rangeSlider#idPrice'+id+' .rangeSlider_slider_range').css('display','inline-block');
-
+					}
+					if (idStr.indexOf('step',0) != -1){
+						console.log('step');
+						step = Number.parseInt(thisSlider.querySelector(model.configItemStep+id).value);
+						clear(thisSlider, id);
+						dataSlider.step = step;
+					}
+					controller.checkMinMaxStart(thisSlider);
+					//return dataSlider;
+					$('.searchRoom2 .slider'+id).slider(dataSlider);
 				}
-			},
-			
+			}
 
-		}*/
+			let radioS = thisSlider.getElementsByClassName('radio_input');
+			for(var i = 0; i < radioS.length; i++) {
+				radioS[i].onclick = function (){
+					let id = dataSlider.idElement.substr(-1);
+
+					let configItemType = model.configItemRadiobtn+`.radio_input[name=rbGroopType${id}]:checked`,
+						configItemOrientation = model.configItemRadiobtn+`.radio_input[name=rbGroopOrientation${id}]:checked`,
+						configItemValue = model.configItemRadiobtn+`.radio_input[name=rbGroopValue${id}]:checked`,
+						configItemScale = model.configItemRadiobtn+`.radio_input[name=rbGroopScale${id}]:checked`;
+
+					let	idStr = this.name,
+						type, orientation, value, scale,
+						typeId, orientationID, valueID, scaleID;
+
+					if (idStr.indexOf('Type',0) != -1){
+						typeId = thisSlider.querySelector(configItemType).id.substr(2,1);
+
+						switch(typeId) {
+			  				case '1': type = 'interval'; break;
+			   				case '2': {
+			   					type = 'from0to'; 
+			   					dataSlider.minStart = dataSlider.min;
+			   					break;
+			   				}
+			   				case '3': type = 'one'; break;
+			   				default : type = 'interval';
+			   			}
+						clear(thisSlider, id);
+						dataSlider.type = type;
+					}
+					if (idStr.indexOf('Orientation',0) != -1){
+						orientationID = thisSlider.querySelector(configItemOrientation).attr('id').substr(2,1);
+
+						switch(orientationID) {
+			  				case '1': orientation = 'horizontal'; break;
+			   				case '2': orientation = 'vertical'; break;
+			   				default : orientation = 'horizontal';
+			   			}
+						clear(thisSlider, id);
+						dataSlider.orientation = orientation;
+					}
+					if (idStr.indexOf('Value',0) != -1){
+						valueID = thisSlider.querySelector(configItemValue).attr('id').substr(2,1);
+
+						switch(valueID) {
+			  				case '1': value = 'on'; break;
+			   				case '2': value = 'off'; break;
+			   				default : value = 'on';
+			   			}
+						clear(thisSlider, id);
+						dataSlider.value = value;
+					}
+					if (idStr.indexOf('Scale',0) != -1){
+						scaleID = thisSlider.querySelector(configItemScale).attr('id').substr(2,1);
+
+						switch(scaleID) {
+			  				case '1': scale = 'on'; break;
+			   				case '2': scale = 'off'; break;
+			   				default : scale = 'on';
+			   			}
+						clear(thisSlider, id);
+						dataSlider.scale = scale;
+					}
+				
+					$('.searchRoom2 .slider'+id).slider(dataSlider);
+				}
+			};
+			
+		});	
+
+		function clear(thisSlider : any, id : number){
+			let x = thisSlider.querySelectorAll('.rangeSlider#idPrice'+id+' .rangeSlider_slider .rangeSlider_slider_scale');
+			for (let i=0; i<x.length; i++){
+				x[i].remove();
+			}	
+
+			thisSlider.querySelector('.rangeSlider#idPrice'+id+' .rangeSlider_slider_left').style.display = 'inline-block';
+			thisSlider.querySelector('.rangeSlider#idPrice'+id+' .rangeSlider_slider_range').style.display = 'inline-block';
+		}
+	}
+
+	checkMinMaxStart(dataSlider : object): void{
+		if (dataSlider.minStart < dataSlider.min){dataSlider.minStart = dataSlider.min;}
+		if (dataSlider.maxStart > dataSlider.max){dataSlider.maxStart = dataSlider.max;}
+		if (dataSlider.minStart > dataSlider.max){dataSlider.minStart = dataSlider.max;}
+		if (dataSlider.maxStart < dataSlider.min){dataSlider.maxStart = dataSlider.min;}
+	}
+	configCheckStart(thisSlider : any, dataSlider : object){
+		model.sliderBlock(thisSlider, dataSlider.idElement).querySelector('.rangeSlider_label__min').innerHTML = dataSlider.minStart;
+		model.sliderBlock(thisSlider, dataSlider.idElement).querySelector('.rangeSlider_label__max').innerHTML = dataSlider.maxStart;
+
+		let typeID, orientationID, valueID, scaleID,
+			id = dataSlider.idElement.substr(-1);
+
+		thisSlider.querySelector(model.configItemMin+id).value = dataSlider.min;
+		thisSlider.querySelector(model.configItemMax+id).value = dataSlider.max;
+		thisSlider.querySelector(model.configItemMinStart+id).value = dataSlider.minStart;
+		thisSlider.querySelector(model.configItemMaxStart+id).value = dataSlider.maxStart;
+		thisSlider.querySelector(model.configItemStep +id).value = dataSlider.step;
+		thisSlider.querySelector(model.configItemScaleStep +id).value = dataSlider.scaleStep;
+
+		switch(dataSlider.type) {
+			case 'interval'	: typeID = '1'; break;
+			case 'from0to'	: typeID = '2'; break;
+			case 'one'		: typeID = '3'; break;
+			default 		: typeID = '1';
+		}
+		switch(dataSlider.orientation) {
+			case 'horizontal': orientationID = '1'; break;
+			case 'vertical': orientationID = '2'; break;
+			default : orientationID = '1';
+		}
+		switch(dataSlider.value) {
+			case 'on': valueID = '1'; break;
+			case 'off': valueID = '2'; break;
+			default : valueID = '1';
+		}
+
+		switch(dataSlider.scale) {
+			case 'on': scaleID = '1'; break;
+			case 'off': scaleID = '2'; break;
+			default : scaleID = '1';
+		}
+			
+		thisSlider.querySelector(`.radio_input[name=rbGroopType${id}]#rb${typeID}srb${id}`).checked = true;
+		thisSlider.querySelector(`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).checked = true;
+		thisSlider.querySelector(`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).checked = true;
+		thisSlider.querySelector(`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).checked = true;
 	}
 }
 
@@ -714,27 +713,50 @@ const sliders : dataSlider[] =
 	$('.searchRoom2 .slider5').slider({
 		idElement : 'idPrice5',
 		type : 'from0to',
+		min : 0,
+		max : 1000,
+		minStart : 150,
+		maxStart : 1000,
+		step : 1,
+		orientation : 'horizontal',
+		value : 'on',
+		scale : 'on',
+		scaleStep : 10
 	}) ];
 
 
 console.log(sliders);
 
 const model = new Model();
-console.log('1. model.width :',model.width(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));//.searchRoom2.slider1
-console.log('2. model.sliderBlock :',model.sliderBlock(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('3. model.slider :',model.slider(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('4. model.height :',model.height(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('5. model.ind :',model.ind(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('6. model.indWidth :',model.indWidth(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('7. model.rangeLeft :',model.rangeLeft(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('8. model.posRangeLeft :',model.posRangeLeft(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('9. model.rangeRight :',model.rangeRight(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('10. model.posRangeRight :',model.posRangeRight(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
-console.log('11. model.valueMin :',model.valueMin(document.querySelector('.searchRoom2 .slider1')));
-console.log('12. model.valueMax :',model.valueMax(document.querySelector('.searchRoom2 .slider1')));
+console.log('1. model.width см сладер '+sliders[0].idElement+' :\t\t\t',
+	model.width(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('2. model.sliderBlock см сладер '+sliders[0].idElement+' :\t',
+	model.sliderBlock(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('3. model.slider см сладер '+sliders[0].idElement+' :\t\t',
+	model.slider(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('4. model.height см сладер '+sliders[0].idElement+' :\t\t',
+	model.height(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('5. model.ind см сладер '+sliders[0].idElement+' :\t\t',
+	model.ind(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('6. model.indWidth см сладер '+sliders[0].idElement+' :\t\t',
+	model.indWidth(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('7. model.rangeLeft см сладер '+sliders[0].idElement+' :\t',
+	model.rangeLeft(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('8. model.posRangeLeft см сладер '+sliders[0].idElement+' :\t',
+	model.posRangeLeft(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('9. model.rangeRight см сладер '+sliders[0].idElement+' :',
+	model.rangeRight(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('10. model.posRangeRight см сладер '+sliders[0].idElement+' :',
+	model.posRangeRight(document.querySelector('.searchRoom2 .slider1'), sliders[0].idElement));
+console.log('11. model.valueMin см сладер '+sliders[0].idElement+' :\t',
+	model.valueMin(document.querySelector('.searchRoom2 .slider1')));
+console.log('12. model.valueMax см сладер '+sliders[0].idElement+' :\t',
+	model.valueMax(document.querySelector('.searchRoom2 .slider1')));
+
+console.log('-------------------------------------------');
 
 const view = new View();
-console.log('1. view.range :',view.range(document.querySelector('.searchRoom2 .slider2'),{
+console.log('1. view.range, см слайдер idPrice2 :\t\t', view.range(document.querySelector('.searchRoom2 .slider2'),{
 		idElement : 'idPrice2',
 		type : 'from0to',
 		min : 0,
@@ -748,7 +770,7 @@ console.log('1. view.range :',view.range(document.querySelector('.searchRoom2 .s
 		scaleStep : 10
 	})
 );
-console.log('2. view.type :',view.type(document.querySelector('.searchRoom2 .slider2'),{
+console.log('2. view.type, см слайдер idPrice2 :\t\t\t', view.type(document.querySelector('.searchRoom2 .slider2'),{
 		idElement : 'idPrice2',
 		type : 'from0to',//'interval',//'from0to', one
 		min : 0,
@@ -762,7 +784,7 @@ console.log('2. view.type :',view.type(document.querySelector('.searchRoom2 .sli
 		scaleStep : 10
 	})
 );
-console.log('3. view.scale :',view.scale(document.querySelector('.searchRoom2 .slider2'),{
+console.log('3. view.scale, см слайдер idPrice2 :\t\t', view.scale(document.querySelector('.searchRoom2 .slider2'),{
 		idElement : 'idPrice2',
 		type : 'from0to',//'interval',//'from0to', one
 		min : 0,
@@ -776,7 +798,7 @@ console.log('3. view.scale :',view.scale(document.querySelector('.searchRoom2 .s
 		scaleStep : 10
 	})
 );
-console.log('4. view.orientation :',view.orientation(document.querySelector('.searchRoom2 .slider2'),{
+console.log('4. view.orientation, см слайдер idPrice2 :\t', view.orientation(document.querySelector('.searchRoom2 .slider2'),{
 		idElement : 'idPrice2',
 		type : 'from0to',//'interval',//'from0to', one
 		min : 0,
@@ -790,7 +812,7 @@ console.log('4. view.orientation :',view.orientation(document.querySelector('.se
 		scaleStep : 10
 	})
 );
-console.log('5. view.value :',view.value(document.querySelector('.searchRoom2 .slider2'),{
+console.log('5. view.value, см слайдер idPrice2 :\t\t', view.value(document.querySelector('.searchRoom2 .slider2'),{
 		idElement : 'idPrice2',
 		type : 'from0to',//'interval',//'from0to', one
 		min : 0,
@@ -804,21 +826,40 @@ console.log('5. view.value :',view.value(document.querySelector('.searchRoom2 .s
 		scaleStep : 10
 	})
 );
+
+console.log('-------------------------------------------');
 
 const controller = new Controller();
-console.log('1. controller.checkOrientation :', controller.checkOrientation(sliders[0].orientation));
-console.log('2.1. controller.movingRange :', controller.movingRange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 'left', 0, 30, 2000));
-console.log('2.2. controller.movingRange :', controller.movingRange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 'right', 270, 250, 240));
-console.log('3. controller.clickSlider :', controller.clickSlider(document.querySelector('.searchRoom2 .slider5'), sliders[3]));
-console.log('4. controller.masScale :', controller.masScale(document.querySelector('.searchRoom2 .slider1'), sliders[0]));
-console.log('5. controller.checkRangeThisStep :', controller.checkRangeThisStep(document.querySelector('.searchRoom2 .slider1'), sliders[0], 300));
-console.log('6.1. controller.checkDataSliderMin :', controller.checkDataSliderMin(sliders[1], 123), sliders[1]);
-console.log('6.2. controller.checkDataSliderMax :', controller.checkDataSliderMax(sliders[1], 456), sliders[1]);
-console.log('7.1. controller.configMinChange :', controller.configMinChange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 2));
-console.log('7.2. controller.configMaxChange :', controller.configMaxChange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 3000));
+console.log('1. controller.checkOrientation, см слайдер '+sliders[0].idElement+' :\t', 
+	controller.checkOrientation(sliders[0].orientation));
+console.log('2.1. controller.movingRange, см слайдер '+sliders[0].idElement+' :\t\t', 
+	controller.movingRange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 'left', 0, 30, 2000));
+console.log('2.2. controller.movingRange, см слайдер '+sliders[0].idElement+' :\t\t', 
+	controller.movingRange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 'right', 270, 250, 240));
+console.log('3. controller.clickSlider '+sliders[3].idElement+' :\t\t\t\t\t', 
+	controller.clickSlider(document.querySelector('.searchRoom2 .slider5'), sliders[3]));
+console.log('4. controller.masScale, см слайдер '+sliders[0].idElement+' :\t\t\t', 
+	controller.masScale(document.querySelector('.searchRoom2 .slider1'), sliders[0]));
+console.log('5. controller.checkRangeThisStep, см слайдер '+sliders[0].idElement+' :\t', 
+	controller.checkRangeThisStep(document.querySelector('.searchRoom2 .slider1'), sliders[0], 300));
+console.log('6.1. controller.checkDataSliderMin '+sliders[1].idElement+' :\t\t\t', 
+	controller.checkDataSliderMin(sliders[1], 123), sliders[1]);
+console.log('6.2. controller.checkDataSliderMax '+sliders[1].idElement+' :\t\t\t', 
+	controller.checkDataSliderMax(sliders[1], 456), sliders[1]);
+console.log('7.1. controller.configMinChange, см слайдер '+sliders[0].idElement+' :\t', 
+	controller.configMinChange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 2));
+console.log('7.2. controller.configMaxChange '+sliders[0].idElement+' :\t\t\t\t', 
+	controller.configMaxChange(document.querySelector('.searchRoom2 .slider1'), sliders[0], 3000));
 
-
-
-
-
+let obj = {
+	idElement : 'idPrice2',
+	min : 0,
+	max : 10,
+	minStart : -15,
+	maxStart : -17,
+}
+console.log('8. controller.checkMinMaxStart :\t\t\t\t\t\t', controller.checkMinMaxStart(obj), obj);
+console.log('9. controller.configCheckStart, см слайдер '+sliders[3].idElement+' :\t', controller.configCheckStart(document.querySelector('.searchRoom2 .slider5'), sliders[3]));
+console.log('10. controller.configCheck, см слайдер '+sliders[3].idElement+' :\t\t', controller.configCheck(document.querySelector('.searchRoom2 .slider5'), sliders[3]));
+	
 

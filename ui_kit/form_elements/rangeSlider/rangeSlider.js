@@ -482,7 +482,7 @@
 				if (dataSlider.maxStart < dataSlider.min){dataSlider.maxStart = dataSlider.min;}
 			},
 
-			configCheckStart : function (thisSlider){
+			/*configCheckStart : function (thisSlider){
 				model.sliderBlock(thisSlider).find('.rangeSlider_label__min').html(dataSlider.minStart);
 				model.sliderBlock(thisSlider).find('.rangeSlider_label__max').html(dataSlider.maxStart);
 
@@ -519,15 +519,11 @@
 		   				default : scaleID = '1';
 		   			}
 		   			
-					/*$(model.configItemRadiobtn+`.radio_input[name=rbGroopType${id}]#rb${typeID}srb${id}`).prop('checked', true);
-					$(model.configItemRadiobtn+`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).prop('checked', true);
-					$(model.configItemRadiobtn+`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).prop('checked', true);
-					$(model.configItemRadiobtn+`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);*/
 					thisSlider.find(`.radio_input[name=rbGroopType${id}]#rb${typeID}srb${id}`).prop('checked', true);
 					thisSlider.find(`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).prop('checked', true);
 					thisSlider.find(`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).prop('checked', true);
 					thisSlider.find(`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);
-			},
+			},*/
 			configMinChange : function (val){
 				if (val < dataSlider.min){val = dataSlider.min;}
 				$(`.searchRoom2 .sliderConf .sliderConf_block 
@@ -543,7 +539,7 @@
 				//console.log('this', thisSlider, dataSlider);
 				//$('.searchRoom2 .sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
 				thisSlider.find('.sliderConf .checkbox .checkbox_item .checkbox_item_input').on('click', function(e) {
-					console.log('numSlider:', $(this).attr('id').substr(-1));
+					console.log('numSlider:', $(this), $(this).attr('id').substr(-1));
 
 					if ($(this).prop('checked')){
 						$(this).closest('.sliderConf').find('.sliderConf_block').css('display','block');
@@ -687,7 +683,7 @@
 
 
 		controller.checkMinMaxStart(this);//определили текущие мин и мах
-		controller.configCheckStart(this);//min-max value
+		//controller.configCheckStart(this);//min-max value
 
 		view.type(this);
 		view.scale(this);
@@ -697,7 +693,7 @@
 
 		view.range(this);
 		//controller.clickSlider(this);
-		controller.configCheck(this);
+		//controller.configCheck(this);
 		
 		
 		model.rangeLeft(thisSlider).on('mousedown', function(e) {
