@@ -682,27 +682,27 @@
 		let thisSlider = this;
 
 
-		controller.checkMinMaxStart(this);//определили текущие мин и мах
+		//controller.checkMinMaxStart(this);//определили текущие мин и мах
 		//controller.configCheckStart(this);//min-max value
 
-		view.type(this);
-		view.scale(this);
-		view.orientation(this);
-		view.value(this);
+		//view.type(this);
+		//view.scale(this);
+		//view.orientation(this);
+		//view.value(this);
 
 
-		view.range(this);
+		//view.range(this);
 		//controller.clickSlider(this);
 		//controller.configCheck(this);
 		
 		
-		model.rangeLeft(thisSlider).on('mousedown', function(e) {
+		/*model.rangeLeft(thisSlider).on('mousedown', function(e) {
 			controller.movie(thisSlider, model.rangeLeft(thisSlider), e, 'left');
 		});
 
 		model.rangeRight(thisSlider).on('mousedown', function(e) {
 			controller.movie(thisSlider, model.rangeRight(thisSlider), e, 'right');
-		});
+		});*/
 		
 
 		return this.each(function() {
