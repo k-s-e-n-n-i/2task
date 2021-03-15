@@ -314,6 +314,7 @@
 	  				case 'x': {
 	  					if (dataSlider.step == 1){
 							pos = e.pageX - parseInt(model.slider(thisSlider).position().left);//позиция бегунка
+							console.log(pos);
 							controller.movingRange(thisSlider, lr, startPos, pos, indWidth);
 						}else{//починить
 							masScale = controller.masScale(thisSlider);
@@ -334,6 +335,7 @@
 	  				}
 	   				case 'y': {
 	   					pos = e.pageY - parseInt(model.slider(thisSlider).offset().top);
+	   					console.log(pos);
 	   					controller.movingRange(thisSlider, lr, startPos, pos, indWidth);
 	   					break;
 	   				}
@@ -384,7 +386,7 @@
 			},
 			
 
-			/*clickSlider : function (thisSlider){
+			clickSlider : function (thisSlider){
 				thisSlider.find('.rangeSlider_slider').on('mousedown', function(e) {
 				
 					thisSlider.find('.rangeSlider_slider').on('mouseup', function(e) {
@@ -427,7 +429,7 @@
 				  		thisSlider.find('.rangeSlider_slider').off('mouseup');
 				  	});
 				});
-			},*/
+			},
 			checkRangeThisStep : function (thisSlider, pos){
 				let p=0, len = model.width(thisSlider);
 
@@ -482,7 +484,7 @@
 				if (dataSlider.maxStart < dataSlider.min){dataSlider.maxStart = dataSlider.min;}
 			},
 
-			/*configCheckStart : function (thisSlider){
+			configCheckStart : function (thisSlider){
 				model.sliderBlock(thisSlider).find('.rangeSlider_label__min').html(dataSlider.minStart);
 				model.sliderBlock(thisSlider).find('.rangeSlider_label__max').html(dataSlider.maxStart);
 
@@ -523,7 +525,7 @@
 					thisSlider.find(`.radio_input[name=rbGroopOrientation${id}]#rb${orientationID}orient${id}`).prop('checked', true);
 					thisSlider.find(`.radio_input[name=rbGroopValue${id}]#rb${valueID}value${id}`).prop('checked', true);
 					thisSlider.find(`.radio_input[name=rbGroopScale${id}]#rb${scaleID}scale${id}`).prop('checked', true);
-			},*/
+			},
 			configMinChange : function (val){
 				if (val < dataSlider.min){val = dataSlider.min;}
 				$(`.searchRoom2 .sliderConf .sliderConf_block 
@@ -682,21 +684,21 @@
 		let thisSlider = this;
 
 
-		//controller.checkMinMaxStart(this);//определили текущие мин и мах
-		//controller.configCheckStart(this);//min-max value
+		/*controller.checkMinMaxStart(this);//определили текущие мин и мах
+		controller.configCheckStart(this);//min-max value
 
-		//view.type(this);
-		//view.scale(this);
-		//view.orientation(this);
-		//view.value(this);
+		view.type(this);
+		view.scale(this);
+		view.orientation(this);
+		view.value(this);
 
 
-		//view.range(this);
-		//controller.clickSlider(this);
-		//controller.configCheck(this);
+		view.range(this);
+		controller.clickSlider(this);
+		controller.configCheck(this);
 		
 		
-		/*model.rangeLeft(thisSlider).on('mousedown', function(e) {
+		model.rangeLeft(thisSlider).on('mousedown', function(e) {
 			controller.movie(thisSlider, model.rangeLeft(thisSlider), e, 'left');
 		});
 
@@ -716,7 +718,7 @@
 
 $(function() {
 
-	/*let s = [ /*$('.searchRoom2 .slider1').slider({
+	/*let s = [ $('.searchRoom2 .slider1').slider({
 		idElement : 'idPrice1',
 		type : 'interval',
 		min : 10,

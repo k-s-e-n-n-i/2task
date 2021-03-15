@@ -55,13 +55,9 @@ import '/blocks/registration/registration.scss'
 import '/blocks/signIn/signIn.scss'
 import '/blocks/detailsRoom/detailsRoom.scss'
 
+
+/*plugin slider*/
 import '/blocks/demoSlider/demoSlider.scss'
-import '/blocks/demoSlider/demoSlider.js'
-
-import '/blocks/demoSlider/demoSlider_ts.ts'
-
-
-
+import '/blocks/demoSlider/run_demoSlider.ts'
 import '/blocks/demoSlider/demoSlider_tests.js'
-
 mocha.run();
