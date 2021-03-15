@@ -1,9 +1,3 @@
-console.log('Я TS!');
-
-export function pow(x : number, n : number) : number {
-  return 8;
-}
-
 import {Model, View, Controller} from '/blocks/demoSlider/demoSlider_MVC.ts';
 
 
@@ -13,6 +7,7 @@ export class slider {
 		let dataSlider = Object.assign({
 			element : document.querySelector('.searchRoom2 .slider1'),
 			idElement : 'idPrice',
+			width : 400,
 			type : 'interval',
 			min : 0,
 			max : 1000,
@@ -32,6 +27,8 @@ export class slider {
 
 		let thisSlider = dataSlider.element;
 
+		model.sliderBlock(thisSlider, dataSlider.idElement).style.width = dataSlider.width;
+
 		controller.checkMinMaxStart(dataSlider);//определили текущие мин и мах
 		controller.configCheckStart(thisSlider, dataSlider, model, controller);//min-max value
 
@@ -50,5 +47,7 @@ export class slider {
 		view.scale(thisSlider, dataSlider, model);
 		view.orientation(thisSlider, dataSlider, model);
 		view.value(thisSlider, dataSlider, model);
+
+		
 	};
 }

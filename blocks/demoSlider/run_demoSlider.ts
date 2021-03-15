@@ -8,6 +8,7 @@ const slider_1 = new slider();
 slider_1.slider({
 	element : document.querySelector('.searchRoom2 .slider1'),
 	idElement : 'idPrice1',
+	width : 400,
 	type : 'interval',
 	min : 10,
 	max : 200,
@@ -23,6 +24,7 @@ const slider_2 = new slider();
 slider_2.slider({
 	element : document.querySelector('.searchRoom2 .slider2'),
 	idElement : 'idPrice2',
+	width : 400,
 	type : 'from0to',
 	min : 0,
 	max : 10,
@@ -38,6 +40,7 @@ const slider_3 = new slider();
 slider_3.slider({
 	element : document.querySelector('.searchRoom2 .slider3'),
 	idElement : 'idPrice3',
+	width : 600,
 	min : 100,
 	max : 40000,
 	value : 'off',
