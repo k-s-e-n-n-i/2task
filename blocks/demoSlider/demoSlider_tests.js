@@ -95,46 +95,34 @@ describe("1. Определение ориентации.", function() {
 });
 //2. Controller.movie (void)
 //3. Controller.moveAt (void)
-/*describe("4. Определение позиции элемента.", function() {//не получается
+/*describe("4. Определение позиции элемента.", function() {//что-то не получилось
   it("Controller.getCoords: ", function() {
-    //assert.equal(contrTest.getCoords(modelTest.rangeLeft(obj.element, obj.idElement)), {top : 1339, left : parseInt(modelTest.slider(thisSlider, dataSlider.idElement).offsetLeft+parseInt(389/(200-10)*(50-10)),} );
-    assert.equal(contrTest.getCoords(modelTest.rangeLeft(obj.element, obj.idElement).left), 1351 );
+    assert.equal(contrTest.getCoords(modelTest.rangeLeft(obj.element, obj.idElement)), {
+    	top : 1339, 
+    	left : parseInt(modelTest.slider(thisSlider, dataSlider.idElement).offsetLeft+parseInt(389/(200-10)*(50-10)),
+    });
   });
-});*/
-console.log('get', modelTest.posRangeLeft(obj.element, obj.idElement), parseInt(389/(200-10)*(50-10)), contrTest.getCoords(modelTest.rangeLeft(obj.element, obj.idElement)));
+});
+console.log('get', modelTest.posRangeLeft(obj.element, obj.idElement), parseInt(389/(200-10)*(50-10)), contrTest.getCoords(modelTest.rangeLeft(obj.element, obj.idElement)));*/
 
-/*console.log('2.1. controller.movingRange, см слайдер '+obj.idElement+' :\t\t', 
-	contrTest.movingRange(document.querySelector('.searchRoom2 .slider1'), obj, 'left', 0, 30, 2000, modelTest, controller));
-console.log('2.2. controller.movingRange, см слайдер '+obj.idElement+' :\t\t', 
-	contrTest.movingRange(document.querySelector('.searchRoom2 .slider1'), obj, 'right', 270, 250, 240, modelTest, controller));
-console.log('3. controller.clickSlider '+obj.idElement+' :\t\t\t\t\t', 
-	contrTest.clickSlider(document.querySelector('.searchRoom2 .slider1'), obj, modelTest, controller));
-console.log('4. controller.masScale, см слайдер '+obj.idElement+' :\t\t\t', 
-	contrTest.masScale(document.querySelector('.searchRoom2 .slider1'), obj, modelTest));
-console.log('5. controller.checkRangeThisStep, см слайдер '+obj.idElement+' :\t', 
-	contrTest.checkRangeThisStep(document.querySelector('.searchRoom2 .slider1'), obj, 300, modelTest, controller));
-console.log('6.1. controller.checkDataSliderMin '+obj.idElement+' :\t\t\t', 
-	contrTest.checkDataSliderMin(obj, 123), obj);
-console.log('6.2. controller.checkDataSliderMax '+obj.idElement+' :\t\t\t', 
-	contrTest.checkDataSliderMax(obj, 456), obj);
-console.log('7.1. controller.configMinChange, см слайдер '+obj.idElement+' :\t', 
-	contrTest.configMinChange(document.querySelector('.searchRoom2 .slider1'), obj, 2));
-console.log('7.2. controller.configMaxChange '+obj.idElement+' :\t\t\t\t', 
-	contrTest.configMaxChange(document.querySelector('.searchRoom2 .slider1'), obj, 3000));
+// 5. Controller.movingRange (void)
+// 6. Controller.writeValueMin (void)
+// 7. Controller.writeValueMax (void)
+// 8. Controller.checkDataSliderMin (void)
+// 9. Controller.checkDataSliderMax (void)
+// 10. Controller.configMinChange (void)
+// 11. Controller.configMaxChange (void)
+// 12. Controller.clickSlider (void)
+// 13. Controller.checkRangeThisStep (void) // внутри вызывается masScale(), поэтому не могу написать тест
 
-/*console.log('8. controller.checkMinMaxStart :\t\t\t\t\t\t', controller.checkMinMaxStart(obj), obj);
-//console.log('9. controller.configCheckStart, см слайдер '+obj.idElement+' :\t', 
-//	controller.configCheckStart(document.querySelector('.searchRoom2 .slider5'), obj));
-console.log('10. controller.configCheck, см слайдер '+obj.idElement+' :\t\t', 
-	controller.configCheck(document.querySelector('.searchRoom2 .slider5'), obj));
-	
-console.log('11. controller.configCheck, см слайдер '+obj.idElement+' :\t\t');
-/*modelTest.rangeLeft(document.querySelector('.searchRoom2 .slider1'), obj.idElement).onmousedown = function(e) {
-	controller.movie(document.querySelector('.searchRoom2 .slider1'), obj, 
-		modelTest.rangeLeft(document.querySelector('.searchRoom2 .slider1'), obj.idElement), e, 'left', modelTest, controller);
-};
+describe("14. Массив пикселей, по которым располагаются шаги сладера.", function() {//не получается
+  it("Controller.masScale: ", function() {
+    assert.equal(contrTest.masScale(obj.element, obj, modelTest), [parseInt(389/(200-10)*20*0), parseInt(389/(200-10)*20*1), 81, 122, 163, 204, 245, 286, 327, 368] );
+  });
+});
+console.log('14. Массив пикселей, по которым располагаются шаги сладера.', contrTest.masScale(obj.element, obj, modelTest));
+console.log('14. Массив пикселей, по которым располагаются шаги сладера.', [parseInt(389/(200-10)*20*0), parseInt(389/(200-10)*20*1), 81, 122, 163, 204, 245, 286, 327, 368]);
 
-modelTest.rangeRight(document.querySelector('.searchRoom2 .slider5'), obj.idElement).onmousedown = function(e) {
-	controller.movie(document.querySelector('.searchRoom2 .slider1'), obj, 
-		modelTest.rangeRight(document.querySelector('.searchRoom2 .slider1'), obj.idElement), e, 'right', modelTest, controller);
-};*/
+// 15. Controller.configCheck (void)
+// 16. Controller.checkMinMaxStart (void)
+// 17. Controller.configCheckStar (void)

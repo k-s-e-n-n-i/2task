@@ -95,22 +95,22 @@ demoslider_MVC.ts
 		4. getCoords(elem : any) : object - определяет позицию шарика по х и у относительно страницы (используется при вертикальной ориентации), взято с https://learn.javascript.ru/coordinates-document
 			elem - html-элемент, позиция которого определяется. В данном случае позиция шарика (правого/левого).
 
-		movingRange(thisSlider : any, dataSlider : object, lr : string, startPos : number, pos : number, indWidth : number) - перемещает левую или правую границу ползунка
+		5. movingRange(thisSlider : any, dataSlider : object, lr : string, startPos : number, pos : number, indWidth : number) - перемещает левую или правую границу ползунка
 			 function calc(thisSlider : any, dataSlider : object, pos : number) - функция рассчета стоимости в точке итогового расположения перемещаемой границы, возвращает значение суммы, которое выводится в '.rangeSlider_label__min' или '.rangeSlider_label__max'
 
-		writeValueMin(thisSlider : any, val : number) - прописывает значение val(текущее) в элемент '.rangeSlider_label__max'
-		writeValueMax(thisSlider : any, val : number) - прописывает значение val(текущее) в элемент '.rangeSlider_label__max'
-		checkDataSliderMin(dataSlider : object, val : number) - обновляет текущее минимальное значение (minStart) в объекте с данными о слайдере
-		checkDataSliderMax(dataSlider : object, val : number) - обновляет текущее максимальное значение (maxStart) в объекте с данными о слайдере
-		configMinChange(thisSlider : any, dataSlider : object, val : number) : void - прописывает значение min в соответсвующее поле в Настройках 
-		configMaxChange(thisSlider : any, dataSlider : object, val : number) : void - прописывает значение max в соответсвующее поле в Настройках
+		6. writeValueMin(thisSlider : any, val : number) - прописывает значение val(текущее) в элемент '.rangeSlider_label__max'
+		7. writeValueMax(thisSlider : any, val : number) - прописывает значение val(текущее) в элемент '.rangeSlider_label__max'
+		8. checkDataSliderMin(dataSlider : object, val : number) - обновляет текущее минимальное значение (minStart) в объекте с данными о слайдере
+		9. checkDataSliderMax(dataSlider : object, val : number) - обновляет текущее максимальное значение (maxStart) в объекте с данными о слайдере
+		10. configMinChange(thisSlider : any, dataSlider : object, val : number) : void - прописывает значение min в соответсвующее поле в Настройках 
+		11. configMaxChange(thisSlider : any, dataSlider : object, val : number) : void - прописывает значение max в соответсвующее поле в Настройках
 
-		clickSlider(thisSlider : any, dataSlider : object, model : any, controller : any) : void - перемещает ближайшую к месту клика границу диапазона в точку щелчка
-		checkRangeThisStep(thisSlider : any, dataSlider : object, pos : number, model : any, controller : any) : number - определяет позицию, которая ближе всего в точке клика; вызывается в clickSlider()
-		masScale(thisSlider : any, dataSlider : object, model : any) : number[] - вычисляет точки-пиксели (массив), по которым бегунок может "шагать", если задан шаг; возвращае массив значений пикселей; вызывается в checkRangeThisStep()
+		12. clickSlider(thisSlider : any, dataSlider : object, model : any, controller : any) : void - перемещает ближайшую к месту клика границу диапазона в точку щелчка
+		13. checkRangeThisStep(thisSlider : any, dataSlider : object, pos : number, model : any, controller : any) : number - определяет позицию, которая ближе всего в точке клика; вызывается в clickSlider()
+		14. masScale(thisSlider : any, dataSlider : object, model : any) : number[] - вычисляет точки-пиксели (массив), по которым бегунок может "шагать", если задан шаг; возвращае массив значений пикселей; вызывается в checkRangeThisStep()
 
-		configCheck(thisSlider : any, dataSlider : object, model : any, controller : any, view : any) : void - отрабатывает клики по радиокнопка и полям в Настройках (минимум, максимум, тип, ориентация, шкала и т.д.). Введеные в поля значения сразу отображаются на слайдере. Выбранные радиокнопки сразу перерисовывоют слайдер в соответсвии с выбранными значениями. А также все выбранные/введенные значения прописываются в объект с данными о слайдере.
+		15. configCheck(thisSlider : any, dataSlider : object, model : any, controller : any, view : any) : void - отрабатывает клики по радиокнопка и полям в Настройках (минимум, максимум, тип, ориентация, шкала и т.д.). Введеные в поля значения сразу отображаются на слайдере. Выбранные радиокнопки сразу перерисовывоют слайдер в соответсвии с выбранными значениями. А также все выбранные/введенные значения прописываются в объект с данными о слайдере.
 
-		checkMinMaxStart(dataSlider : object) : void - прогоняет текущие значения minStart и maxStart, сравнивает с min и max, если текущиеслучайно вышли на пределы возможных значений, то ему присваивается крайнее возможное значение
+		16. checkMinMaxStart(dataSlider : object) : void - прогоняет текущие значения minStart и maxStart, сравнивает с min и max, если текущиеслучайно вышли на пределы возможных значений, то ему присваивается крайнее возможное значение
 
-		configCheckStart(thisSlider : any, dataSlider : object, model : any, controller : any) : void - прописывает все значения из объекта с данными о слайдере в поля Настроек и устанавливает соответсвующие радиокнопки (checked)
+		17. configCheckStart(thisSlider : any, dataSlider : object, model : any, controller : any) : void - прописывает все значения из объекта с данными о слайдере в поля Настроек и устанавливает соответсвующие радиокнопки (checked)
