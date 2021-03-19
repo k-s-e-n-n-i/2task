@@ -83,7 +83,7 @@ export class View {
 			default : {
 				posLeft = ( model.width(thisSlider, dataSlider.idElement) / (dataSlider.max - dataSlider.min) ) * (dataSlider.minStart - dataSlider.min);//если мин не 0
 				model.rangeLeft(thisSlider, dataSlider.idElement).style.left = posLeft+'px';
-					model.ind(thisSlider, dataSlider.idElement).style.transform = 'translateX('+posLeft+'px)';// css('transform','translate('+posLeft+'px, 0px)');
+				model.ind(thisSlider, dataSlider.idElement).style.transform = 'translateX('+posLeft+'px)';// css('transform','translate('+posLeft+'px, 0px)');
 				model.ind(thisSlider, dataSlider.idElement).style.left = posLeft+'px';
 				model.ind(thisSlider, dataSlider.idElement).style.width = (posRight - posLeft)+'px';
 				break;
