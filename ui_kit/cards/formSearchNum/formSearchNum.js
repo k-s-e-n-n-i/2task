@@ -11,6 +11,14 @@ $(function() {
 		}
 	});	
 
+	/*$('.calendar').on('click', function(e) {
+		console.log('active',$('.pignose-calendar-unit-active'));
+		if ($('.pignose-calendar-unit-active').length = 1){
+			$('.pignose-calendar-unit-active a').css('background','linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)')
+		}else{
+			$('.pignose-calendar-unit-active a').css('background','linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)')
+		}
+	});*/
 
 	/*$('.formSearchNum').find('.blockDropdown_dropdown__whisItems').on('click', function(e) {
 		var block_list = $(this).closest('.formSearchNum').find('.blockDropdown_dropdownItems');

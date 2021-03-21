@@ -6,6 +6,9 @@
 		background: #fff;
 		left: -1px;
 
+		//height: 500px;
+		width: 100%;
+
 		&.hide{
 			display: none;
 		}
@@ -40,12 +43,17 @@
 			    	border: none;
 					box-shadow: none;
 					background: #fff;
-					padding: 20px 0 30px 0;
+					padding: 0px 0 55px 0;
 					height: 20px;
+
+					display: flex;
+					justify-content:space-between ;
 
 			        .pignose-calendar-top-nav {
 			        	width: 24px;
 						height: 24px;
+
+						margin: 20px;
 
 			            &.pignose-calendar-top-prev,
 			            &.pignose-calendar-top-next {
@@ -58,6 +66,7 @@
 
 			                &.icon-arrow-left,
 			                &.icon-arrow-right {
+								display: block;
 			                    background: url('../calendar/arrow_forward.svg') no-repeat center;
 			                    width: 24px;
 								height: 24px;
@@ -77,7 +86,9 @@
 			        .pignose-calendar-top-date {
 			        	padding: 20px 0 30px 0;
 			        	display: flex;
-	    				justify-content: center;
+						justify-content: center;
+						
+						//display: flex;
 
 			            .pignose-calendar-top-month {
 			            	font-size: 19px;
@@ -98,7 +109,7 @@
 			    	margin: 0;
 			    	display: flex;
 					justify-content: space-between;
-					margin: 0 20px 20px 20px;
+					margin: 0 20px;
 
 			        .pignose-calendar-week {
 			            font-size: 12px;
@@ -123,6 +134,10 @@
 			        .pignose-calendar-row {
 			        	display: flex;
 						justify-content: space-between;
+
+						a{
+							text-decoration: none;
+						}
 
 			            .pignose-calendar-unit {
 			            	height: 40px;
@@ -275,6 +290,10 @@
 			        
 			    }
 			}		
+		}
+		.blockDropdown_dropdownItems_line{
+			//position: relative;
+			bottom: 20px;
 		}
 	}
 }

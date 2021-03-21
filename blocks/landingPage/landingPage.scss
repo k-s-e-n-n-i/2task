@@ -1,11 +1,14 @@
 .landingPage{
 	background-image: url('/project/img/image3.png');
-	width: 100%;
-	height: 61vw;
-	background-size: cover;	
+	//width: 100%;
+	//width: 1440px;
+	height: 63.5vw;
+	background-size: cover;
+	background-position: bottom;
 
 	.content_container{
-		width: 100%;
+		//width: 100%;
+		width: 80%;
 
 		&.content_container__flexend{
 			display: flex;
@@ -13,8 +16,8 @@
 		}
 
 		.landingPage_label{
-			
-			bottom: 18px;
+			margin-right: -14px;
+			bottom: 5px;
 			width: 297px;
 			height: 48px;
 			text-align: right;

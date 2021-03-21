@@ -28,7 +28,7 @@
 					&:after{
 						content: '';
 						display: inline-block;
-						width: 20px;
+						width: 25px;
 						height: 14px;
 						background-image: url('/project/img/expand_more.svg');
 						background-repeat: no-repeat;
@@ -47,11 +47,12 @@
 				width: 196px;
 			}
 			.btn__border{
-				width: 85px;
+				width: 83px;
+				//height: 10px;
 			}
 			.btn__header{
-				height: 17px;
-				line-height: 15px;
+				
+				//line-height: 12px;
 				margin: 15px 0 15px 20px;
 			}
 
@@ -86,6 +87,7 @@
 
 
 .content{
+	width: 1440px;
 
 	&.header_shadow{
 		box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -102,10 +104,9 @@
 	}*/
 
 	.content_container{
-		max-width: 1150px;//1920px;
+		max-width: 100%;//1920px;
 		min-width: 320px;
-		//width: 1150px;
-		//margin: 0 20px;
+		margin: 0 140px;
 
 		&.content_container__flexend{
 			display: flex;
