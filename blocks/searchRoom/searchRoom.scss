@@ -6,11 +6,11 @@
 	justify-content: space-between;
 
 	.searchRoom_filters{
-		width: 267px;
+		width: 266px;
 		display: flex;
 		flex-direction: column;
 		flex-shrink: 0;
-		margin-right: 35px;
+		margin-right: 4.6%;//53px;
 
 		.blockDropdown{
 			width: 100%;
@@ -20,18 +20,25 @@
 		}	
 
 		.searchRoom_filters_date,
-		.searchRoom_filters_diapason,
-		.searchRoom_filters_features,
-		.searchRoom_filters_availability,
-		.searchRoom_filters_comfort,
+		
 		.searchRoom_filters_additional,
 		.checkboxList{
 			margin-top: 30px;
 		}
-
-		.searchRoom_filters_guest{
+		.searchRoom_filters_guest,
+		.searchRoom_filters_comfort{
 			margin-top: 20px;
 		}
+		.searchRoom_filters_diapason{
+			margin-top: 26px;
+		}
+		.searchRoom_filters_features{
+			margin-top: 25px;
+		}
+		.searchRoom_filters_availability{
+			margin-top: 17px;
+		}
+		
 
 		.searchRoom_filters_diapason{
 
@@ -53,10 +60,16 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		padding-bottom: 70px;
+		width: 100%;
 
 		h1{
 			width: 100%;
-			margin: 25px 0 10px 0; 
+			margin: 29px 0 10px 5px; 
+		}
+
+		.searchRoom_rooms_line{
+			display: flex;
+			justify-content: space-between;
 		}
 
 		.searchRoom_rooms_nav{

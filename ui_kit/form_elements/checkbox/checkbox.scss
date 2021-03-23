@@ -1,6 +1,6 @@
 //чекбоксы
 .checkbox{
-	margin-top: 18px;
+	margin-top: 17px;
 
 	.checkbox_item{
 
@@ -35,12 +35,12 @@
 			display: inline-block;
 			cursor: pointer;
 			position: relative;
-			padding: 0 0 5px 30px;
+			padding: 0 0 10px 30px;
 			
 			font-size: 14px;
 			line-height: 20px;
 			color: rgba(31, 32, 65, 0.5);
-			width: 192px;
+			width: 200px;//192px;
 
 			&:before{
 				content: "";
@@ -73,7 +73,7 @@
 			color: rgba(31, 32, 65, 0.5);
 			font-size: 12px;
 			line-height: 14px;
-			margin: 0 0 10px 0;
+			margin: -4px 0 10px 0;
 		}
 	}
 }
