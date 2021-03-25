@@ -9,7 +9,7 @@
 
 	width: 380px;
 	height: auto;//511px;
-	padding: 40px 30px 30px 30px;
+	padding: 43px 29px 30px 29px;
 	
 	display: flex;	
 	flex-wrap: wrap;
@@ -26,22 +26,25 @@
 		position: relative;
 		align-items: baseline;
 
-		p{
+		p{	
 			&:nth-child(1){
+				font-weight: 700;
 				color: $colorDarkShade100;
 
 				span{
 					&:nth-child(2){
-						font-size: 20px;
+						font-size: 24px;
 					}
 				}
 			}
 			&:nth-child(2){
+				font-weight: 400;
+				font-size: 12.5px;
 				color: $colorDarkShade50;
 
 				span{
 					&:nth-child(1){
-						font-weight: bold;
+						font-size: 15px;
 					}
 				}
 			}
@@ -52,11 +55,15 @@
 					font-weight: bold;
 				}
 			}
+
+			a{
+				margin: 0 0 0 5px;
+			}
 		}
 
-		.link{
+		/*.link{
 			margin: 0;
-		}
+		}*/
 
 		.dashed{
 			border: 1px dashed $colorDarkShade25;
@@ -68,6 +75,8 @@
 
 		h2{
 			white-space: nowrap;
+			font-size: 19.8px;
+			font-weight: 700;
 		}
 	}
 
@@ -82,11 +91,16 @@
 		}
 	}
 
+	.blockDropdown__width100{
+		h3{
+			margin: 21px 0 0 0;
+		}
+	}
 
 	.formReservation_blockPrices{
-		margin: 20px 0;
+		margin: 18px 0 44px;
 		width: 100%;
-		
+	
 		.formReservation_blockPrices_line{
 			width: 100%;
 			display: flex;
@@ -101,40 +115,42 @@
 				margin: 0;//30px 0 0 0;
 			}
 		
-			p{
-				&.formReservation_blockPrices_line_p__text{
-					width: 215px;
+			.formReservation_blockPrices_line_leftBlock{
+				display: flex;
+
+				p{
+					&.formReservation_blockPrices_line_leftBlock_p__text{
+						
+					}	
 				}
 
-				&.formReservation_blockPrices_line_p__infoMark{
-
-					&:before{
-						content: "i";
-						position: absolute;
-						left: 220px;
-						width: 20px;
-						height: 20px;
-						border: 1px solid $colorDarkShade25;
-						box-sizing: border-box;
-						border-radius: 50%;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						color: $colorDarkShade25;
-						cursor: pointer;
-					}
+				.formReservation_blockPrices_line_leftBlock_p__infoMark{
+					width: 20px;
+					height: 20px;
+					margin: 0 9px;
+					border: 1px solid $colorDarkShade25;
+					box-sizing: border-box;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					color: $colorDarkShade25;
+					cursor: pointer;
 				}
-			}	
+			}
 		}
 	}
 
 	h3{
-		margin: 20px 0 0 0;
+		margin: 18px 0 0 0;
 	}
 
 	.btn{
 		width: 100%;
+		height: 36px;
+		line-height: 37px;
 		margin: 20px 0 0 0;
+		font-weight: 700;
 	}
 }
 

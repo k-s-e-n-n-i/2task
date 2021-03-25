@@ -1,7 +1,7 @@
 mixin comment_item(url,num,name,time,text)
 	div.comment_block
 		div.comment_col1
-			img.comment_col1_photo(src=url)
+			img.comment_col1_photo(src=url width="400" height="300")
 			+like(num)
 		div.comment_col2
 			p.comment_col2_name= name

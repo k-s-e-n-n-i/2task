@@ -3,7 +3,7 @@
 
 	.comment_block{
 		display: flex;
-		margin: 23px 0 25px;
+		margin: 20px 0 23px;
 
 		&:last-child{
 			margin-bottom: 0;
@@ -13,17 +13,16 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			margin: 2px;
+			margin: 0px 0px 12px -2px;
 
 			.comment_col1_photo{
 				width: 48px;
 				height: 48px;
 				margin-bottom: 12px;
-				background: yellow;
 			}
 
 			.like{
-				margin: 0;
+				margin: 0 0 0 2px;
 			}
 		}
 
@@ -40,10 +39,11 @@
 				margin: 0;
 			}
 			.comment_col2_text{
-				margin-bottom: 0;
+				margin: 10px 0 0 0;
 			}
 			p{
-				width: 100%;
+				width: 93.5%;
+				font-size: 14px;
 			}
 		}
 	}

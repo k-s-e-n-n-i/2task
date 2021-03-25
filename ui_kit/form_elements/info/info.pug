@@ -1,7 +1,7 @@
 
-mixin infoItem(label,text,url)
+mixin infoItem(label,text,url,dopclass)
 	div.info_item
-		img.info_item_icon(src=url)
+		img(src=url class='info_item_icon '+dopclass)
 		div.info_item_text
 			p
 				b= label
