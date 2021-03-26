@@ -11,14 +11,32 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: local('Montserrat Regular'), 
-    local('Montserrat-Regular'), 
+    src: local('MontserratRegular'), 
+    local('MontserratRegular'), 
     url('../font/montserrat/MontserratRegular/MontserratRegular.eot') format('opentype'), 
     url('../font/montserrat/MontserratRegular/MontserratRegular.woff') format('woff'), 
     url('../font/montserrat/MontserratRegular/MontserratRegular.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
     font-size: 13.7px;
+}
+
+@font-face {
+    font-family: 'MontserratBlack';
+    src: local('MontserratBlack'), 
+    local('MontserratBlack'), 
+    url('../font/montserrat/MontserratBlack/MontserratBlack.eot') format('opentype'), 
+    url('../font/montserrat/MontserratBlack/MontserratBlack.woff') format('woff'), 
+    url('../font/montserrat/MontserratBlack/MontserratBlack.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MontserratBold';
+    src: local('MontserratBold'), 
+    local('MontserratBold'), 
+    url('../font/montserrat/MontserratBold/MontserratBold.eot') format('opentype'), 
+    url('../font/montserrat/MontserratBold/MontserratBold.woff') format('woff'), 
+    url('../font/montserrat/MontserratBold/MontserratBold.ttf') format('truetype');
 }
 
 /*

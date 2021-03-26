@@ -57,14 +57,9 @@ let pieChart = new Chart(oilCanvas, {
       animateRotate: false,
       animateScale: false
     },
-    /*layout: {
-      padding: {
-          left: 50,
-          right: 0,
-          top: 0,
-          bottom: 0
-      }
-    }*/
+    tooltips: {
+      enabled: false
+    }
   }
 });
 
