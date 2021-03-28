@@ -8,7 +8,7 @@
 	box-sizing: border-box;
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
-	padding: 40px 30px 30px 30px;
+	padding: 40px 29px 30px 29px;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -32,8 +32,12 @@
 		width: 200px;
 	}
 
+	h1{
+		font-size: 24.6px;
+		line-height: 28px;
+	}
 	h3{
-		margin-top: 20px;
+		margin-top: 23px;
 	}
 
 	.link{
@@ -44,7 +48,9 @@
 		width: 100%;
 		margin: 30px 0 0 0;
 		height: 35px;
-		line-height: 32px;
+		line-height: 36px;
+		font-size: 11px;
+		letter-spacing: 0.9px;
 	}
 
 	/*.dropdown_items{
@@ -54,9 +60,29 @@
 
 	.blockDropdown{
 		
+		&.blockDropdown__width100{
+			h3{
+				margin-top: 20px;
+			}
+		}
+
 		.blockDropdown_dropdown__whisItems{
 			+ .blockDropdown{
 				width: 100%;
+			}
+		}
+
+		.blockDropdown_dropdownItems{
+			h3{
+				margin-top: 0px;
+			}
+			
+			.blockDropdown_dropdownItems_line{
+				height: 38px;
+
+				.blockDropdown_dropdownItems_line_incBlock{
+					margin: 8px 6px 0 0;
+				}
 			}
 		}
 	}

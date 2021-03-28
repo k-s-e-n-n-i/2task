@@ -27,7 +27,7 @@ div.content.searchRoom__shadow
 			
 			div.searchRoom_filters_guest
 				div.blockDropdown
-					+dropdownEx('Гости','Сколько гостей','')
+					+dropdownEx('Гости','3 гостя, 1 младенец','')
 					div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
 						+dropdownItems('взрослые',0,'','')
 						+dropdownItems('дети',0,'','')
@@ -35,21 +35,21 @@ div.content.searchRoom__shadow
 						+dropdownItemsLink(0)
 			
 			div.searchRoom_filters_diapason
-				+rangeSlider('диапазон цены',0,100000,'idPrice')
+				+rangeSlider('диапазон цены',5000,10000,'idPrice')
 				p Стоимость за сутки пребывания в номере
 			
 			div.searchRoom_filters_features
 				h3 Правила дома
 				div.checkbox
-					+checkbox_item("Можно курить", 51,'')
-					+checkbox_item("Можно с питомцами", 52,'')
-					+checkbox_item("Можно пригласить гостей (до 10 человек)", 53,'')
+					+checkbox_item("Можно курить", 51,'','')
+					+checkbox_item("Можно с питомцами", 52,'','')
+					+checkbox_item("Можно пригласить гостей (до 10 человек)", 53,'','')
 			
 			div.searchRoom_filters_availability
 				h3 доступность
 				div.checkbox
-					+checkbox_item("Широкий коридор", 61, 'Ширина коридоров в номере не менее 91 см.')
-					+checkbox_item("Помощник для инвалидов", 62, 'На 1 этаже вас встретит специалист и проводит до номера.')
+					+checkbox_item("Широкий коридор", 61, 'Ширина коридоров в номере не менее 91 см.','p_200')
+					+checkbox_item("Помощник для инвалидов", 62, 'На 1 этаже вас встретит специалист и проводит до номера.','p_225')
 
 			div.searchRoom_filters_comfort
 				div.blockDropdown
@@ -64,12 +64,12 @@ div.content.searchRoom__shadow
 					h3 дополнительные удобства
 					img.checkboxList_expand(src="project/img/expand_more.svg")
 				div.checkbox.checkbox__hide
-					+checkbox_item("Завтрак", 71,'')
-					+checkbox_item("Письменный стол", 72,'')
-					+checkbox_item("Стул для кормления", 73,'')
-					+checkbox_item("Кроватка", 74,'')
-					+checkbox_item("Телевизор", 75,'')
-					+checkbox_item("Шампунь", 76,'')
+					+checkbox_item("Завтрак", 71,'','')
+					+checkbox_item("Письменный стол", 72,'','')
+					+checkbox_item("Стул для кормления", 73,'','')
+					+checkbox_item("Кроватка", 74,'','')
+					+checkbox_item("Телевизор", 75,'','')
+					+checkbox_item("Шампунь", 76,'','')
 
 		div.searchRoom_rooms
 			h1 Номера, которые мы для вас подобрали
@@ -84,7 +84,7 @@ div.content.searchRoom__shadow
 		
 			+cardRoom(7,678,'5 500','',45,5)
 			+cardRoom(8,450,'5 300','',39,4)
-			+cardRoom(9,982,'5 800','',56,3)
+			+cardRoom(9,350,'5 000','',77,3)
 		
 			+cardRoom(10,666,'5 000','',25,5)
 			+cardRoom(11,444,'5 000','',15,3)
@@ -92,7 +92,7 @@ div.content.searchRoom__shadow
 
 			div.searchRoom_rooms_nav
 				+searchRoom_rooms_nav_num(1,1,2,3,'...',15,'next')
-			div.searchRoom_rooms_nav_label 1 – 15 из 100+ вариантов аренды
+			div.searchRoom_rooms_nav_label 1 – 12 из 100+ вариантов аренды
 
 +footer
 

@@ -7,20 +7,13 @@ $widthDiap: 100px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-
 	}
 
 
 	.rangeSlider_slider{
 		width: calc(100% - 11px);//266px;
 		height: 6px;
-
-		//border: 1px solid rgba(31, 32, 65, 0.25);
-		//box-sizing: border-box;
-		//border-radius: 3px;
-		//background: #fff;
 		margin: 18px 0 10px;
-
 		transform: translate(5px, 0);
 		position: relative;
 
@@ -56,18 +49,17 @@ $widthDiap: 100px;
 				transform: translateX(-50%);
 				font-size: 10px;
 			}
-
 		}
 
 		.rangeSlider_slider_range{
 			height: calc(100% + 0px);//6px;
-			width: calc(100% + 2px);//$widthDiap;
+			width: 85px;//calc(100% + 2px);//$widthDiap;
 			background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 			border-radius: 3px;
 			box-sizing: border-box;
 			
 			//opacity: 0.4;
-			transform: translate(-1px, 0px);
+			transform: translate(78px, 0px);//translate(-1px, 0px);
 		}
 
 		.rangeSlider_slider_left,
@@ -84,13 +76,11 @@ $widthDiap: 100px;
 			//opacity: 0.4;
 		}
 		.rangeSlider_slider_left{
-			left: 0px;//-3px;//77px;
-
+			left: 78px;//0px;
 			transform: translate(-50%, -12px);
 		}
 		.rangeSlider_slider_right{
-			left: 100%;//calc(100% - 11px);//	177px;
-
+			left: 163px;//100%;
 			transform: translate(-50%, -12px);
 		}
 	}

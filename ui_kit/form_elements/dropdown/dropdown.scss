@@ -59,7 +59,8 @@
 			display: none;
 		}
 
-		.blockDropdown_dropdownItems_line{
+		.blockDropdown_dropdownItems_line,
+		.blockDropdown_dropdownItems_lineBtn{
 			display: flex;
     		justify-content: space-between;
 			color: rgba(31, 32, 65, 0.5);
@@ -136,6 +137,17 @@
 					color: #BC9CFF;
 				}
 			}*/
+		}
+
+		.blockDropdown_dropdownItems_lineBtn{
+			height: 48px;
+
+			.link.link__clean{
+				margin: 21px 0 0 14px;
+			}
+			.link.link__ok{
+				margin: 21px 7px 0 0;
+			}
 		}
 	}
 }

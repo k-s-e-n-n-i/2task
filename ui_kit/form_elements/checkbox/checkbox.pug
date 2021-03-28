@@ -1,7 +1,7 @@
 
 
 
-mixin checkbox_item(label,id,p)
+mixin checkbox_item(label,id,p,dopclass)
 	if p ==''
 		div.checkbox_item
 			input.checkbox_item_input(id="check" + id type="checkbox")
@@ -10,7 +10,7 @@ mixin checkbox_item(label,id,p)
 		div.checkbox_item
 			input.checkbox_item_input(id="check" + id type="checkbox")
 			label.checkbox_item_label.checkbox_item_label__bold(for="check" + id)= label
-			p= p
+			p(class=dopclass)= p
 
 
 

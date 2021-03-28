@@ -4,6 +4,9 @@
 	margin-top: 30px;
 	display: flex;
 	justify-content: space-between;
+	&.content_container {
+		margin: 0 9.6% 0 9.7%;
+	}
 
 	.searchRoom_filters{
 		width: 266px;
@@ -11,6 +14,10 @@
 		flex-direction: column;
 		flex-shrink: 0;
 		margin-right: 4.6%;//53px;
+
+		h3{
+			font-size: 12.4px;
+		}
 
 		.blockDropdown{
 			width: 100%;
@@ -25,34 +32,93 @@
 		.checkboxList{
 			margin-top: 30px;
 		}
-		.searchRoom_filters_guest,
+		.searchRoom_filters_guest{
+			margin-top: 20px;
+		}
+
 		.searchRoom_filters_comfort{
 			margin-top: 20px;
+			
+			.blockDropdown_dropdown__whisItems{
+				margin-top: 4px;
+
+				img{
+					right: 16.5px;
+				}
+			}
+
+			.blockDropdown_dropdownItems{
+				padding-bottom: 5px;
+				box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+				.blockDropdown_dropdownItems_line{
+					height: 38px;
+
+					.blockDropdown_dropdownItems_line_incBlock{
+						margin: 6px 6px 0 0;
+					}
+
+					h3{
+						font-size: 12.2px;
+					}
+					span{
+						font-size: 12.2px;
+						margin-top: -3px;
+					}
+				}
+			}
 		}
 		.searchRoom_filters_diapason{
 			margin-top: 26px;
 		}
 		.searchRoom_filters_features{
 			margin-top: 25px;
+			
+			.checkbox{
+				margin-top: 16px;
+
+				.checkbox_item_label{
+					line-height: 20.5px;
+				}
+			}
 		}
 		.searchRoom_filters_availability{
-			margin-top: 17px;
+			margin-top: 18px;
+
+			.checkbox_item{
+				.p_200{
+					width: 200px;
+				}
+				.p_225{
+					width: 225px;
+				}
+	
+				.checkbox_item_label{
+					width: 210px;
+				}
+			}
 		}
-		
 
 		.searchRoom_filters_diapason{
-
 			p{
 				color: rgba(31, 32, 65, 0.5);
 				font-size: 12px;
 				margin: 0;			
 			}
-			/*.searchRoom_filters_diapason_price{
-				width: 100%;
-				height: 20px;
-				background: red;
-			}*/
-		}	
+		}
+		
+		.checkboxList{
+			h3{
+				font-size: 12.2px;
+			}
+			img{
+				right: 17px;
+			}
+			.checkbox {
+				margin-top: 18px;
+			}
+		}
+		
 	}
 
 	.searchRoom_rooms{
@@ -64,7 +130,8 @@
 
 		h1{
 			width: 100%;
-			margin: 29px 0 10px 5px; 
+			margin: 29px 0 10px 5px;
+			font-size: 25px;
 		}
 
 		.searchRoom_rooms_line{
@@ -76,8 +143,7 @@
 			width: 100%;
 			display: flex;
 			justify-content: center;
-			//flex-direction: column;
-			margin: 30px 0 10px 0;
+			margin: 31px 0 10px 0;
 
 			.searchRoom_rooms_nav_num{
 				width: 40px;
@@ -89,9 +155,7 @@
 
 				display: flex;
 				justify-content: center;
-				//flex-direction: row;
 				align-items: center;
-
 				cursor: pointer;
 
 				&.searchRoom_rooms_nav_num__active{

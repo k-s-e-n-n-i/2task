@@ -15,8 +15,8 @@ mixin cardRoom(id,number,price,link,review,mark)
 				p
 					span= '№ '
 					span= number+' '
-					if link!= ''
-						+link(link)
+					if link== 'люкс'
+						+link(link, 'link__lux')
 				p
 					span= price
 					span= '₽'
@@ -25,4 +25,4 @@ mixin cardRoom(id,number,price,link,review,mark)
 				+rate(mark,1,2,3,4,5)
 				p
 					span= review
-					span= ' отзывов'
+					span= ' Отзывов'

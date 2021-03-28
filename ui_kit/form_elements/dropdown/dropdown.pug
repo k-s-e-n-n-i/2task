@@ -24,9 +24,9 @@ mixin dropdownItems(text,num,dopclass1,dopclass2)
 mixin dropdownItemsLink(num)
 	
 	if num > 0
-		div.blockDropdown_dropdownItems_line
+		div.blockDropdown_dropdownItems_lineBtn
 			+link('Очистить','link__clean link__grey')
 			+link('Применить','link__ok')
 	else
-		div.blockDropdown_dropdownItems_line.dropdownItemsLink_flexEnd
+		div.blockDropdown_dropdownItems_lineBtn.dropdownItemsLink_flexEnd
 			+link('Применить','link__ok')
