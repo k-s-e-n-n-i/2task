@@ -9,13 +9,16 @@ $colorGreen: #6FCF97;
 
 .colorType{
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+    width: 1440px;
+    padding: 100px 140px 130px;
 }
 
 
 .blockColor{
 	display: flex;
 	flex-direction: column;
+	margin: 35px 0 0 0;
 
 	.blockColor_item{
 		display: flex;
@@ -26,7 +29,7 @@ $colorGreen: #6FCF97;
 			width: 70px;
 			height: 70px;
 			border-radius: 6px;
-			margin: 10px;
+			margin: 10px 40px 10px 10px;
 
 			&.colorDarkShade100{
 				background: $colorDarkShade100;
@@ -54,8 +57,14 @@ $colorGreen: #6FCF97;
 		.blockColor_text{
 			line-height: 29px;
 
+			.blockColor_text1{
+				margin-bottom: 2px;
+				font-size: 20px;
+			}
+
 			.blockColor_text2{
 				font-weight: normal;
+				margin-top: 3px;
 			}
 		}
 	}
@@ -64,10 +73,11 @@ $colorGreen: #6FCF97;
 .blockType{
 	display: flex;
 	flex-direction: column;
+	margin-top: 19px;
 
 	.blockType_item{
 		display: flex;
-		margin: 25px;
+		margin: 25px 280px 25px 0;
 
 		.blockType_item_sym{
 			display: flex;
@@ -81,7 +91,28 @@ $colorGreen: #6FCF97;
 		}
 
 		.blockType_text{
-			width: 355px;
+			width: 387px;					
+		}
+		h1{
+			&.blockType_text{
+				font-size: 25.5px;
+			}
+		}
+		h2{
+			&.blockType_text{
+				font-size: 20px;
+			}
+		}
+		h3{
+			&.blockType_text{
+				font-size: 12.5px;
+			}
+		}
+		p{
+			margin: -1px 0;
+			&.blockType_text{
+				width: 315px;
+			}
 		}
 	}
 }
