@@ -121,6 +121,10 @@
 		p{
 			margin: 20px 0 25px 0;
 		}
+
+		.footer_socBlock_network {
+
+		}
 	}	
 }
 
@@ -164,7 +168,8 @@
 			.bottomMenu_logoBlock{
 				margin: 0;
 				p{
-					margin: 10px 0 5px 0;
+					//margin: 10px 0 5px 0;
+					display: none;
 				}
 			}
 		}
@@ -173,12 +178,26 @@
 		flex-direction: column;
 		margin: 20px 0 110px 0;
 		p{
-			display: none;
+			//display: none;
 		}
 
 		.footer_socBlock{
 			.footer_socBlock_network{
 				padding: 0 10px;
+
+				&.twitter{
+					margin-top: -1px;
+				}
+				&.facebook{
+					width: 22px;
+					height: 22px;
+					margin-top: 1px;
+				}
+				&.instagram{
+					width: 22px;
+					height: 22px;
+					margin-top: 1px;
+				}
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 include /ui_kit/header_footer/hf_mixins.pug
 
-mixin header(auth)
+mixin header(auth, name)
 	div.content.header_shadow
 		div.content_container
 			div.header
@@ -12,5 +12,5 @@ mixin header(auth)
 						+menu_li('Вакансии','')
 						+menu_li('Новости','')
 						+menu_li('Соглашения','menu_li__expand')
-					+header_nav_login(auth,'name')
+					+header_nav_login(auth, name)
 				

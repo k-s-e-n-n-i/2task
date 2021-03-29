@@ -36,6 +36,7 @@ import '/ui_kit/color_type/color_type.scss'
 /*header_footer*/
 import '/ui_kit/header_footer/header.scss'
 import '/ui_kit/header_footer/footer.scss'
+import '/ui_kit/header_footer/header_footer.scss'
 
 
 /*cards*/
