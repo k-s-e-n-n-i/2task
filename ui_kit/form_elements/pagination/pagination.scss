@@ -29,12 +29,18 @@
 		&.pagination_num__next{
 			background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 			color: #fff;
+			position: relative;
+
 			.arrow{
-				.arrow_line{
-					background: #fff;
-				}
-				.arrow_next{
-					border-color: #fff;
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+				position: absolute;
+				top: 12px;
+				right: 9px;
+				background-repeat: no-repeat;
+				&.arrow__white{	
+					background-image: url('/project/img/arrow_white.svg');
 				}
 			}
 		}

@@ -9,9 +9,11 @@
 		outline: none;
 		font-size: 14px;		
 
-		&:hover{
+		&:hover,
+		&._hover{
 			color: rgba(31, 32, 65, 0.75);
 			border: 1px solid rgba(31, 32, 65, 0.5);
+			font-weight: bold;
 		}
 		&:focus{
 			color: rgba(31, 32, 65, 0.75);
@@ -34,7 +36,7 @@
 	}
 
 	.inputText_input__masked{
-		background: yellow;//дописать маску
+		
 	}
 
 	.inputText_input__subscription{

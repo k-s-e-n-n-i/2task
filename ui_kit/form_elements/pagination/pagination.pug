@@ -6,5 +6,5 @@ mixin pagination(text,dopclass)
 		div.pagination_num= '...'
 		div.pagination_num= 15
 		div.pagination_num.pagination_num__next
-			+arrow('arrow__white')
+			div(class='arrow arrow__white')
 	div(class='pagination_label ' +dopclass)= text

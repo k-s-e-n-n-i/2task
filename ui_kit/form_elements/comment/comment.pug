@@ -1,8 +1,8 @@
-mixin comment_item(url,num,name,time,text)
+mixin comment_item(url,dopclass,num,name,time,text)
 	div.comment_block
 		div.comment_col1
 			img.comment_col1_photo(src=url width="400" height="300")
-			+like(num)
+			+like(num,dopclass)
 		div.comment_col2
 			p.comment_col2_name= name
 			p.comment_col2_time= time

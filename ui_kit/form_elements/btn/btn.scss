@@ -38,7 +38,8 @@
 	}
 
 	&:hover,
-	:focus{
+	&:focus,
+	&._hover{
 		opacity: 0.5;
 	}
 

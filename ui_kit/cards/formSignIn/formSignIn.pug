@@ -4,8 +4,8 @@ include /ui_kit/form_elements/btn/btn.pug
 mixin formSignIn
 	div.formSignIn
 		h1 Войти
-		+inputText('','','Email')
-		+inputText('','','Пароль')
+		+inputText('','','','Email','','signIn')
+		+inputText('','','','Пароль','','signIn')
 		+btn('Войти','btn__gradient btn__gradient__pay')
 		div.formSignIn_login
 			p Нет аккаунта Toxin?

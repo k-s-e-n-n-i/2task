@@ -17,11 +17,11 @@ mixin formReservation(number,priceS,price)
 				span= ' в сутки'
 		div.formReservation_block__flexcolumn
 			div.formReservation_block__flex
-				+dropdown('Прибытие','19.08.2019','blockDropdown_dropdown__date')
-				+dropdown('Выезд','23.08.2019','blockDropdown_dropdown__date')
+				+dropdown('Прибытие','','19.08.2019','blockDropdown_dropdown__date')
+				+dropdown('Выезд','','23.08.2019','blockDropdown_dropdown__date')
 			+calendar('hide')
 		div.blockDropdown.blockDropdown__width100
-			+dropdownEx('Гости','3 гостя','')
+			+dropdownEx('Гости','','3 гостя','')
 			div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
 				+dropdownItems('взрослые',3,'','')
 				+dropdownItems('дети',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')

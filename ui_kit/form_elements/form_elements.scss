@@ -1,26 +1,355 @@
 .formElements{
 	display: flex;
 	flex-wrap: wrap;
+	width: 1440px;
+    padding: 123px 121px 130px;
+
+	h3{
+		font-size: 12.5px;
+	}
 
 	.blk{
-		border-bottom: 1px solid red;
-		margin: 20px;
+		//border-bottom: 1px solid red;
+		margin: 20px 20px 39px 20px;
 		width: 320px;
-		
-
-		.flex{
-			width: 100%;
-		}
-
-		&:nth-child(3n+1){
-			margin-right: 126px;
-		}
-		&:nth-child(3n+2){
-			margin-right: 72px;
-		}
 
 		&.width{
 			width: 717px;
+		}
+		
+		&.blk_1{
+			.inputText_labels{
+				display: flex;
+				justify-content: space-between;
+		
+				h3,p{
+					margin: 0;
+				}
+				p{
+					font-size: 12px;
+					line-height: 11px;
+					text-transform: uppercase;
+					color: #1F2041;
+				}
+			}
+			.inputText{
+				margin-bottom: 20px;
+	
+				&:nth-child(2){
+					.inputText_labels{
+						p{
+							line-height: 16px;
+							font-size: 11.7px;
+						}
+					}
+				}
+			}
+			.blockDropdown{
+				margin-bottom: 23px;
+			}
+
+			.inputText__subscription{
+				margin: 41px 0;
+	
+				&:after{
+					top: 33px;
+					right: 65px;
+				}
+	
+				.inputText_input__subscription{
+					width: 266px;
+				}
+			}
+		}
+		
+		.flex{
+			display: flex;
+			width: 100%;
+
+			&.flex__spaceBetween{
+				justify-content: space-between;
+			}
+			&.flex__flexStart{
+				justify-content: flex-start;
+			}
+
+			.blockDropdown{
+				margin: 20px 0 40px;				
+			}
+		}
+		//----------------------------------------------------
+		&:nth-child(3n+1){
+			margin-right: 106px;
+		}
+
+		&.blk_2{
+			.checkbox{
+				margin-bottom: 28px;
+			}
+	
+			.radio{
+				margin-bottom: 25px;
+	
+				.radio_label{
+					padding-left: 30px;
+					margin: 16px 20px 16px 0;
+				}
+			}
+	
+			h3:nth-child(5){//Toggle
+				line-height: 17px;
+			}
+	
+			.toggle__flex{
+				margin: 3px 0;
+				
+				&:nth-child(6){//почему 6??
+					margin-top: 7px;
+				}
+				&:nth-child(7){//почему 7??
+					margin-bottom: 42px;
+				}
+			}
+	
+			.like{
+				margin: 16px 10px 40px 0;
+			}
+	
+			.rate{
+				margin-top: 17px;
+			}
+		}
+		//----------------------------------------------------
+		&:nth-child(3n+2){
+			margin-right: 52px;
+		}
+
+		&.blk_3{
+			.btn{
+				margin: 16px 20px 14px 0;
+				height: 36px;
+				line-height: 35px;
+	
+				&.btn__border{
+					width: 95px;
+					height: 32px;
+					line-height: 32px;
+	
+				}
+			}
+	
+			.link{
+				font-size: 12.5px;
+				margin-top: 17px;
+			}
+	
+			.btn__gradient__pay{
+				margin: 15px 20px 40px 0;
+			}
+	
+			.pagination{
+				margin: 16px 0 9px 1px;
+			}
+	
+			.pagination_label {
+				margin-left: 6px;
+			}
+		}
+
+		&.blk__slider{
+			width: 266px;
+
+			.rangeSlider{
+				margin-bottom: 44px;
+	
+				.rangeSlider_label{
+					align-items: flex-start;
+					
+					.rangeSlider_label_Block{
+						margin: 2px 0 6px 0;
+						font-size: 12px;
+						line-height: 12px;
+					}
+				}
+			}
+		}
+		//----------------------------------------------------
+		&.blk_4{
+			width: 265px;
+			height: 261px;
+			margin: 20px 161px 39px 20px;
+
+			.blockDropdown_dropdownItems{
+				padding-bottom: 5px;
+			}
+		}
+
+		&.blk_4,
+		&.blk_5,
+		&.blk_6{
+			.blockDropdown{
+				margin-bottom: 20px;
+
+				.dropdown_labels{
+					display: flex;
+					justify-content: space-between;
+			
+					h3,p{
+						margin: 0;
+					}
+					h3{
+						font-size: 12px;
+					}
+					p{
+						font-size: 12px;
+						line-height: 15px;
+						text-transform: uppercase;
+						color: #1F2041;
+					}
+				}
+
+				.blockDropdown_dropdown{
+					border-radius: 4px 4px 0 0;
+				}
+
+				.blockDropdown_dropdownItems{
+					
+					.blockDropdown_dropdownItems_line{
+    					height: auto;
+
+						h3{
+							padding: 13px 13px 10px 14px;
+							font-size: 12px;
+						}
+
+						.blockDropdown_dropdownItems_line_incBlock{
+							margin: 6px 6px 0 0;
+
+							span{
+								font-size: 12px;
+								margin-bottom: 3px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.blk_5{
+			margin: 20px 52px 20px 20px;
+			
+			.blockDropdown_dropdownItems{
+				padding-bottom: 0;
+
+				.blockDropdown_dropdownItems_lineBtn {
+					height: auto;
+
+					.link__ok{
+						margin: 20px 7px 11px 0;
+					}
+				}
+			}	
+		}
+
+		&.blk_6{
+			.blockDropdown_dropdownItems{
+				.blockDropdown_dropdownItems_lineBtn{
+					height: auto;
+
+					.link__clean {
+						margin: 20px 0 11px 13px;
+					}
+					.link__ok{
+						margin: 20px 7px 11px 0;
+					}
+				}
+			}
+		}
+		
+		&.blk_7{
+			width: 265px;
+			margin-right: 161px;
+			margin: 20px 161px 5px 20px;
+
+			.checkboxList{
+				margin: 0 0 50px 0;
+
+				h3{
+					font-size: 12.3px;
+				}
+
+				.checkbox{
+					&.checkbox__hide{
+						+ .flex{
+							.checkboxList_expand{
+								transform: rotate(180deg);
+							}
+						}
+					}
+
+					.checkbox_item_label{
+						padding: 0 0 10px 29px;
+					}
+				}
+			}
+		}
+
+		&.blk_8{
+			width: 260px;
+			margin-right: 112px;
+
+			.checkbox {
+				margin-top: 15px;
+
+				.checkbox_item:nth-child(1){
+					width: 220px;
+				}
+				
+				.checkbox_item_label{
+					width: 100%;
+					padding: 1px 0 10px 30px;
+				}	
+			}
+		}
+
+		&.blk_9{
+			.list{
+				margin: 13px 0 0 0;
+
+				.list_item:before{
+					margin: 7px 12px 7px 0;
+				}
+			}
+		}
+
+		&.blk_10{
+			width: 278px;
+			margin: 15px 151px 39px 20px;
+
+			.info{
+				width: 100%;
+				min-width: unset;
+				margin: 0;
+
+				.info_item{
+					margin: 25px 0 22px;
+
+					.info_item_icon {
+						margin-left: 3px;
+						margin-top: 0;
+					}
+					.info_item_text p{
+						font-size: 14.5px;
+						line-height: 14px;
+						margin-bottom: 2px;
+					}
+				}
+			}
+		}
+
+		&.blk_11{
+			margin: 26px 20px 39px 20px;
+			width: 755px;
 		}
 	}
 }

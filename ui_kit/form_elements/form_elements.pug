@@ -15,26 +15,26 @@ include comment/comment.pug
 
 
 div.formElements
-	div.blk
-		+inputText('Text Field','','Email')
-		+inputText('Text Field','hover','This is pretty awesome')
+	div.blk.blk_1
+		+inputText('Text Field','Default','','Email','','blk_1')
+		+inputText('Text Field','Hover / Focus','_hover','This is pretty awesome','This is pretty awesome','blk_2')
 
-		+dropdown('Dropdown','Сколько гостей','')
+		+dropdown('Dropdown','','Сколько гостей','')
 
-		+inputText('masked Text Field','inputText_input__masked','ДД.ММ.ГГГГ')
+		+inputText('masked Text Field','','inputText_input__masked','ДД.ММ.ГГГГ','','blk_3')
 
-		div.flex
-			+dropdown('date Dropdown','ДД.ММ.ГГГГ','blockDropdown_dropdown__date')
-			+dropdown('date Dropdown','ДД.ММ.ГГГГ','blockDropdown_dropdown__date')
+		div.flex.flex__spaceBetween
+			+dropdown('date Dropdown','','ДД.ММ.ГГГГ','blockDropdown_dropdown__date')
+			+dropdown('date Dropdown','','19.08.2019','blockDropdown_dropdown__date')
 
-		+dropdown('filter date dropdown','19 авг - 23 авг','blockDropdown_dropdown__filter')
+		+dropdown('filter date dropdown','','19 авг - 23 авг','blockDropdown_dropdown__filter')
 
-		+inputText('subscription text field','inputText_input__subscription','Email')
+		+inputText('subscription text field','','inputText_input__subscription','Email','','blk_4')
 			div.arrow
 				div.arrow_line
 				div.arrow_next
 
-	div.blk
+	div.blk.blk_2
 		h3 Checkbox Buttons
 		div.checkbox
 			+checkbox_item("Можно курить", 11,'','')
@@ -42,113 +42,113 @@ div.formElements
 			+checkbox_item("Можно пригласить гостей (до 10 человек)", 13,'','')
 
 		h3 Radio Buttons
-		div.flex.start
-			+radio(1,"rbGroop1","Мужчина")
+		div.flex.flex__flexStart
+			+radio(1,"rbGroop1","Мужчина",'checked')
 			+radio(2,"rbGroop1","Женщина")
 
 		h3 Toggle
-		+toggle("toggleGrooup1","Получать спецпредложения")
-		+toggle("toggleGrooup2","Получать спецпредложения")
+		+toggle("toggleGrooup1","Получать спецпредложения",'on')
+		+toggle("toggleGrooup2","Получать спецпредложения",'off')
 
 		h3 like button
-		div.flex.start
-			+like('5')
-			+like('18')
+		div.flex.flex__flexStart
+			+like('2','')
+			+like('12','like__liked')
 
 		h3 rate button
-		div.flex.start
-			+rate('',1,2,3,4,5)
-			+rate('',1,2,3,4,5)
+		div.flex.flex__flexStart
+			+rate('4',1,2,3,4,5)
+			+rate('5',1,2,3,4,5)
 
-	div.blk
-		+rangeSlider('Range Slider',0,100000,'idPrice0')
+	div.blk.blk__slider.blk_3
+		+rangeSlider('Range Slider',5000,10000,'idPrice0')
 
 		h3 buttons
-		div.flex.start
+		div.flex.flex__flexStart
 			+btn('CLICK ME','btn__gradient')
-			+btn('CLICK ME','btn__gradient')
-		div.flex.start
+			+btn('CLICK ME','btn__gradient _hover')
+		div.flex.flex__flexStart
 			+btn('CLICK ME','btn__border')
-			+btn('CLICK ME','btn__border')
+			+btn('CLICK ME','btn__border _hover')
 
-		div.flex.start
-			+link('CLICK ME','link__grey')
+		div.flex.flex__flexStart
 			+link('CLICK ME','')
+			+link('CLICK ME','link__grey')
 
 		+btn('перейти к оплате','btn__gradient btn__gradient__pay')
 
 		h3 pagination
-		+pagination('1 – 15 из 100+ вариантов аренды','')
+		+pagination('1 – 12 из 100+ вариантов аренды','')
 		//__center
 		
-	div.blk
-		+dropdown('Dropdown','2 спальни, 2 кровати...','')
+	div.blk.blk_4
+		+dropdown('Dropdown','Default','2 спальни, 2 кровати...','')
 
 		div.blockDropdown
-			+dropdownEx('Dropdown','2 спальни, 2 кровати...','blockDropdown_dropdown__itemsShow')
+			+dropdownEx('Dropdown','expanded','2 спальни, 2 кровати...','blockDropdown_dropdown__itemsShow')
 			div.blockDropdown_dropdownItems
 				+dropdownItems('спальни',2,'','')
 				+dropdownItems('кровати',2,'','')
 				+dropdownItems('ванные комнаты',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
 
-	div.blk
+	div.blk.blk_5
 		div.blockDropdown
-			+dropdownEx('Dropdown','Сколько гостей','blockDropdown_dropdown__itemsShow')
+			+dropdownEx('Dropdown','','Сколько гостей','blockDropdown_dropdown__itemsShow')
 			div.blockDropdown_dropdownItems
 				+dropdownItems('взрослые',0,'','')
 				+dropdownItems('дети',0,'','')
 				+dropdownItems('младенцы',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
 				+dropdownItemsLink(0)
 
-	div.blk
+	div.blk.blk_6
 		div.blockDropdown
-			+dropdownEx('Dropdown','3 гостя','blockDropdown_dropdown__itemsShow')
+			+dropdownEx('Dropdown','','3 гостя','blockDropdown_dropdown__itemsShow')
 			div.blockDropdown_dropdownItems
 				+dropdownItems('взрослые',2,'','')
 				+dropdownItems('дети',1,'','')
 				+dropdownItems('младенцы',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
 				+dropdownItemsLink(3)
 			
-	div.blk
-		div.checkboxList
-			div.flex
-				h3 expandable checkbox list
-				img.checkboxList_expand(src="project/img/expand_more.svg")
-
+	div.blk.blk_7
 		div.checkboxList
 			div.flex
 				h3 expandable checkbox list
 				img.checkboxList_expand(src="project/img/expand_more.svg")
 			div.checkbox.checkbox__hide
+				+checkbox_item("Тест", 2100,'','')
+
+		div.checkboxList
+			div.flex
+				h3 expandable checkbox list
+				img.checkboxList_expand.checkboxList_expand__open(src="project/img/expand_more.svg")
+			div.checkbox
 				+checkbox_item("Завтрак", 21,'','')
 				+checkbox_item("Письменный стол", 22,'','')
 				+checkbox_item("Стул для кормления", 23,'','')
 				+checkbox_item("Кроватка", 24,'','')
 				+checkbox_item("Телевизор", 25,'','')
 				+checkbox_item("Шампунь", 26,'','')
-				+checkbox_item("Телевизор", 27,'','')
-				+checkbox_item("Шампунь", 28,'','')
 
-	div.blk
+	div.blk.blk_8
 		h3 Rich Checkbox Buttons
 		div.checkbox
 			+checkbox_item("Широкий коридор", 31, 'Ширина коридоров в номере не менее 91 см.','p_200')
 			+checkbox_item("Помощник для инвалидов", 32, 'На 1 этаже вас встретит специалист и проводит до номера.','p_225')
 	
-	div.blk
+	div.blk.blk_9
 		h3 bullet list
 		ul.list
 			+listItem('Нельзя с питомцами')
 			+listItem('Без вечеринок и мероприятий')
 			+listItem('Время прибытия — после 13:00, а выезд до 12:00')
 
-	div.blk
+	div.blk.blk_10
 		div.info
-			+infoItem('Комфорт', 'Шумопоглощающие стены','ui_kit/form_elements/info/insert_emoticon.svg','')
+			+infoItem('Комфорт', 'Шумопоглощающие стены','ui_kit/form_elements/info/insert_emoticon.svg','insert_emoticon')
 			hr.info_hr
-			+infoItem('Удобство', 'Окно в каждой из спален','ui_kit/form_elements/info/location_city.svg','')
+			+infoItem('Удобство', 'Окно в каждой из спален','ui_kit/form_elements/info/location_city.svg','location_city')
+			hr.info_hr
 
-	div.blk.width
+	div.blk.width.blk_11
 		div.comment
-			h2 
-			+comment_item('ui_kit/form_elements/comment/photo1.svg',12,'Мурад Сарафанов','5 дней назад','Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+			+comment_item('ui_kit/form_elements/comment/photo1.png','like__liked',12,'Мурад Сарафанов','5 дней назад','Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')

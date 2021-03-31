@@ -7,16 +7,16 @@ mixin formRegistration
 	div.formRegistration
 		h1 Регистрация аккаунта
 		div.formRegistration_itemText
-			+inputText('','','Имя')
-			+inputText('','','Фамилия')
+			+inputText('','','','Имя','','registration')
+			+inputText('','','','Фамилия','','registration')
 			
 		div.formRegistration_blockRadio
 			+radio(1,"rbGroop1","Мужчина",'checked')
 			+radio(2,"rbGroop1","Женщина")
-		+inputText('Дата рождения','','ДД.ММ.ГГГГ')
-		+inputText('данные для входа в сервис','','Email')
-		+inputText('','','Пароль')
-		+toggle("toggleGrooup1","Получать спецпредложения")
+		+inputText('Дата рождения','','','ДД.ММ.ГГГГ','','registration')
+		+inputText('данные для входа в сервис','','','Email','','registration')
+		+inputText('','','','Пароль','','registration')
+		+toggle("toggleGrooup1","Получать спецпредложения",'on')
 		+btn('Зарегистрироваться','btn__gradient btn__gradient__pay')
 		div.formRegistration_login
 			p Уже есть аккаунт на Toxin

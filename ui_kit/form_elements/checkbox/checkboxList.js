@@ -8,14 +8,11 @@ $(function() {
 		
 		if (block_list.hasClass('checkbox__hide')){
 			block_list.removeClass('checkbox__hide');
-			expend.css('transform','rotate(180deg)');
+			expend.addClass('checkboxList_expand__open');
 		}else{
 			block_list.addClass('checkbox__hide');
-			expend.css('transform','rotate(360deg)');
+			expend.removeClass('checkboxList_expand__open');
 		}
-
 	});	
-
-	
 	
 });

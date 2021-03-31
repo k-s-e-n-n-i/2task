@@ -1,15 +1,31 @@
 
 include /ui_kit/form_elements/link/link.pug
 
-mixin dropdown(label,text,dopclass)
+mixin dropdown(label,labelRight,text,dopclass)
 	div.blockDropdown
-		h3= label
+		if label != '' && labelRight !=''
+			div.dropdown_labels
+				h3= label
+				p= labelRight
+		else 
+			if label != ''
+				h3= label
+			if labelRight != ''
+				p= labelRight
 		div(class='blockDropdown_dropdown '+ dopclass)= text
 			img.blockDropdown_dropdown_expand(src="project/img/expand_more.svg")
 				
 
-mixin dropdownEx(label,text,dopclass)
-	h3= label
+mixin dropdownEx(label,labelRight,text,dopclass)
+	if label != '' && labelRight !=''
+		div.dropdown_labels
+			h3= label
+			p= labelRight
+	else 
+		if label != ''
+			h3= label
+		if labelRight != ''
+			p= labelRight
 	div(class='blockDropdown_dropdown blockDropdown_dropdown__whisItems '+ dopclass)= text
 		img.blockDropdown_dropdown_expand(src="project/img/expand_more.svg")
 

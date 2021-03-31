@@ -1,6 +1,6 @@
 
 
-mixin like(text)
-		div.like
-			div.like_ico
-			div.like_sum= text
+mixin like(text,dopclass)
+		div(class='like '+dopclass)
+			div(class='like_ico '+dopclass)
+			div(class='like_sum '+dopclass)= text

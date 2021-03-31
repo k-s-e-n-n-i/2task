@@ -23,11 +23,11 @@ div.content.searchRoom__shadow
 	div.content_container.searchRoom
 		div.searchRoom_filters
 			div.searchRoom_filters_date
-				+dropdown('даты пребывания в отеле','19 авг - 23 авг','')
+				+dropdown('даты пребывания в отеле','','19 авг - 23 авг','')
 			
 			div.searchRoom_filters_guest
 				div.blockDropdown
-					+dropdownEx('Гости','3 гостя, 1 младенец','')
+					+dropdownEx('Гости','','3 гостя, 1 младенец','')
 					div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
 						+dropdownItems('взрослые',0,'','')
 						+dropdownItems('дети',0,'','')
@@ -53,7 +53,7 @@ div.content.searchRoom__shadow
 
 			div.searchRoom_filters_comfort
 				div.blockDropdown
-					+dropdownEx('удобства номера','2 спальни, 2 кровати...','')
+					+dropdownEx('удобства номера','','2 спальни, 2 кровати...','')
 					div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
 						+dropdownItems('спальни',2,'','')
 						+dropdownItems('кровати',2,'','')
