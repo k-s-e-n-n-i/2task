@@ -18,6 +18,7 @@ export class slider {
 			value : 'on',
 			scale : 'on',
 			scaleStep : 10,//12 ??
+			settings : 'on',
 		}, option);
 
 		
@@ -30,11 +31,15 @@ export class slider {
 		model.sliderBlock(thisSlider, dataSlider.idElement).style.width = dataSlider.width;
 
 		controller.checkMinMaxStart(dataSlider);//определили текущие мин и мах
-		controller.configCheckStart(thisSlider, dataSlider, model, controller);//min-max value
+		if (dataSlider.settings == 'on'){
+			controller.configCheckStart(thisSlider, dataSlider, model, controller);//min-max value
+		}
 
 		view.range(thisSlider, dataSlider, model);
 		controller.clickSlider(thisSlider, dataSlider, model, controller);
-		controller.configCheck(thisSlider, dataSlider, model, controller, view);
+		if (dataSlider.settings == 'on'){
+			controller.configCheck(thisSlider, dataSlider, model, controller, view);
+		}
 		model.rangeLeft(thisSlider, dataSlider.idElement).onmousedown = function(e) {
 			controller.movie(thisSlider, dataSlider, model.rangeLeft(thisSlider, dataSlider.idElement), e, 'left', model, controller);
 		};

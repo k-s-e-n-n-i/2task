@@ -18,7 +18,8 @@ slider_1.slider({
 	orientation : 'horizontal',
 	value : 'on',
 	scale : 'on',
-	scaleStep : 20
+	scaleStep : 20,
+	settings : 'on'
 });
 const slider_2 = new slider();
 slider_2.slider({
@@ -34,7 +35,8 @@ slider_2.slider({
 	orientation : 'horizontal',//'vertical',
 	value : 'on',
 	scale : 'off',
-	scaleStep : 10
+	scaleStep : 10,
+	settings : 'on'
 });
 const slider_3 = new slider();
 slider_3.slider({
@@ -45,6 +47,7 @@ slider_3.slider({
 	max : 40000,
 	value : 'off',
 	scale : 'on',
+	settings : 'on'
 });
 const slider_4 = new slider();
 slider_4.slider({
@@ -54,9 +57,11 @@ slider_4.slider({
 	min : 0,
 	max : 5000,
 	maxStart : 2000,
+	settings : 'on'
 });
 const slider_5 = new slider();
 slider_5.slider({
 	element : document.querySelector('.searchRoom2 .slider5'),
 	idElement : 'idPrice5',
+	settings : 'on'
 });

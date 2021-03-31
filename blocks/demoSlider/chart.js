@@ -1,15 +1,5 @@
 
-//var barChart = new Chart({...})
-
-console.log('aaaaaaaaaaaaaaaaa!!');
-
 let oilCanvas = document.getElementById("oilChart");
-//    ctx = oilCanvas.getContext('2d');
-
-
-
-
-
 
 let pieChart = new Chart(oilCanvas, {
   type: 'doughnut',
@@ -37,11 +27,6 @@ let pieChart = new Chart(oilCanvas, {
     rotation: 0.5 * Math.PI,
     cutoutPercentage: 90,
     circumference: 2 * Math.PI,
-    /*title: {
-      display: true,
-      text: 'Пример Chart.js',
-      position: 'top'
-    },*/
     legend: {
       position: 'right',
       align: 'end',

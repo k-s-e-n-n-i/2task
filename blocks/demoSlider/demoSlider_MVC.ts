@@ -163,22 +163,22 @@ export class View {
 	orientation(thisSlider : any, dataSlider : object, model : any) : void{
 		switch(dataSlider.orientation) {
 			case 'horizontal': {
-				model.slider(thisSlider, dataSlider.idElement).style.transform = 'rotate(0deg)';
+				model.slider(thisSlider, dataSlider.idElement).style.transform = 'translate(5px, 0) rotate(0deg)';
 				model.sliderBlock(thisSlider, dataSlider.idElement).style.height = '53px';
 				break;
 			}
 			case 'vertical': {
-				model.slider(thisSlider, dataSlider.idElement).style.transform = 'rotate(90deg) translateX(50%)';
+				model.slider(thisSlider, dataSlider.idElement).style.transform = 'translate(5px, 0) rotate(90deg) translateX(50%)';
 				model.sliderBlock(thisSlider, dataSlider.idElement).style.height = model.width(thisSlider, dataSlider.idElement)+75+'px';
 				
 				let vals = model.slider(thisSlider, dataSlider.idElement).querySelectorAll('.rangeSlider_slider_scale_val');
 				for (let i = 0; i < vals.length; i++){
-					vals[i].style.transform = 'rotate(-90deg)';
+					vals[i].style.transform = 'translate(5px, 0) rotate(-90deg)';
 				}
 				break;
 			}
 			default : {
-				model.slider(thisSlider, dataSlider.idElement).style.transform = 'rotate(0deg)';
+				model.slider(thisSlider, dataSlider.idElement).style.transform = 'translate(5px, 0) rotate(0deg)';
 				model.sliderBlock(thisSlider, dataSlider.idElement).style.height = '53px';
 				break;
 			}
@@ -328,7 +328,9 @@ export class Controller {
 					model.ind(thisSlider, dataSlider.idElement).style.transform = 'translate('+pos+'px, 0px)';
 					startPos = pos;
 					controller.writeValueMin(thisSlider, price, model);
-					controller.configMinChange(thisSlider, dataSlider, price);
+					if (dataSlider.settings == 'on'){
+						controller.configMinChange(thisSlider, dataSlider, price);
+					}
 					controller.checkDataSliderMin(dataSlider, price);
 					model.ind(thisSlider, dataSlider.idElement).style.width = indWidth+step+'px';
 				}
@@ -340,7 +342,9 @@ export class Controller {
 					price = calc(thisSlider, dataSlider, pos);
 					model.rangeRight(thisSlider, dataSlider.idElement).style.left = pos+'px';//позиция указателей
 					controller.writeValueMax(thisSlider, price, model);
-					controller.configMaxChange(thisSlider, dataSlider, price);
+					if (dataSlider.settings == 'on'){
+						controller.configMaxChange(thisSlider, dataSlider, price);
+					}
 					controller.checkDataSliderMax(dataSlider, price);
 					model.ind(thisSlider, dataSlider.idElement).style.width = indWidth+step+'px';
 				}
@@ -456,7 +460,7 @@ export class Controller {
 			masScale=[];
 		
 		for (let i = 0; i <= sumSegments; i++) {
-			masScale[i] = parseInt(w*i);
+			masScale[i] = w*i;//parseInt(w*i); //без parseInt, чтобы точность стоимости была выше
 		}
 
 		return masScale;
@@ -514,10 +518,13 @@ export class Controller {
 					}
 
 					controller.checkMinMaxStart(dataSlider);
+					view.type(thisSlider, dataSlider, model);
 					view.scale(thisSlider, dataSlider, model);
 					view.range(thisSlider, dataSlider, model);
 					view.value(thisSlider, dataSlider, model);
-					controller.configCheckStart(thisSlider, dataSlider, model);
+					if (dataSlider.settings == 'on'){
+						controller.configCheckStart(thisSlider, dataSlider, model, controller);
+					}
 				}
 			}
 
@@ -592,7 +599,9 @@ export class Controller {
 					view.orientation(thisSlider, dataSlider, model);
 					view.value(thisSlider, dataSlider, model);
 					view.range(thisSlider, dataSlider, model);
-					controller.configCheckStart(thisSlider, dataSlider, model);
+					if (dataSlider.settings == 'on'){
+						controller.configCheckStart(thisSlider, dataSlider, model, controller);
+					}
 				}
 			};
 		};	
