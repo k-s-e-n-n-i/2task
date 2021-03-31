@@ -7,7 +7,7 @@ const slider_100 = new slider();
 slider_100.slider({
 	element : document.querySelector('.formElements .slider100'),
 	idElement : 'idPrice0',
-	width : 255,
+	width : 265,
 	type : 'interval',
 	min : 0,
 	max : 15000,

@@ -18,6 +18,8 @@
 		}
 		
 		&.blk_1{
+			margin-right: 106px;
+
 			.inputText_labels{
 				display: flex;
 				justify-content: space-between;
@@ -34,6 +36,10 @@
 			}
 			.inputText{
 				margin-bottom: 20px;
+
+				.inputText_input{
+					font-size: 13.5px;
+				}
 	
 				&:nth-child(2){
 					.inputText_labels{
@@ -79,10 +85,12 @@
 		}
 		//----------------------------------------------------
 		&:nth-child(3n+1){
-			margin-right: 106px;
+			//margin-right: 106px;
 		}
 
 		&.blk_2{
+			margin-right: 52px;
+
 			.checkbox{
 				margin-bottom: 28px;
 			}
@@ -121,7 +129,7 @@
 		}
 		//----------------------------------------------------
 		&:nth-child(3n+2){
-			margin-right: 52px;
+			//margin-right: 52px;
 		}
 
 		&.blk_3{
@@ -160,7 +168,7 @@
 			width: 266px;
 
 			.rangeSlider{
-				margin-bottom: 44px;
+				margin-bottom: 35px;
 	
 				.rangeSlider_label{
 					align-items: flex-start;
