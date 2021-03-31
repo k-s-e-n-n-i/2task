@@ -60,7 +60,6 @@ import '/blocks/registration/registration.scss'
 import '/blocks/signIn/signIn.scss'
 import '/blocks/detailsRoom/detailsRoom.scss'
 
-//import '/blocks/demoSlider/chart.js'
 
 /*plugin slider*/
 import '/blocks/demoSlider/demoSlider.scss'
