@@ -1,0 +1,32 @@
+
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Document
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+		
+		link(href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js")
+		script
+			include /blocks/demoSlider/mochaJS.js
+		
+	body
+		include blocks/demoSlider/mixin_demoSlider.pug
+		div.content.searchRoom__shadow
+			div.content_container.searchRoom2
+				div.searchRoom_filters
+							
+					div.searchRoom_filters_diapason.slider1
+						+rangeSlider('диапазон цены',0,100000,'idPrice1')
+						+sliderConfig('1')
+
+		div(id='mocha')
+		
+		script(src='./index.js')
+		script(src='./indexTests.js')
+
+
+

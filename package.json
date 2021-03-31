@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.pug --open",
-    "build": "parcel build index.pug -d docs --public-url ./"
+    "build": "parcel build index.pug -d docs --public-url ./",
+    "clean": "rm -rf dist/*",
+    "tests": "parcel indexTests.pug --open"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
     "typescript": "^4.1.3"
   },
   "dependencies": {
+    "chai": "^4.3.4",
     "chart.js": "^2.9.4",
     "parcel": "^1.12.4",
     "pg-calendar": "^1.4.31"

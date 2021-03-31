@@ -1,7 +1,10 @@
 
 
 
-Чтобы запустить страницу со слайдерами и тестами должно быть в файлах: 
+Запустить страницу со слайдером и тестами: npm run tests
+Запустить обычный проект: npm run start
+
+Необходимые файлы для тестов: 
 index.pug : include blocks/demoSlider/demoSlider.pug
 index.js : import '/blocks/demoSlider/demoSlider.scss'
 import '/blocks/demoSlider/demoSlider_tests.js'

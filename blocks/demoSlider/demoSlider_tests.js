@@ -1,8 +1,7 @@
 import {Model, View, Controller} from '/blocks/demoSlider/demoSlider_MVC.ts';
 
-
 let obj = {
-	element : document.querySelector('.searchRoom2 .slider1'),
+	element : document.querySelector('.slider1'),
 	idElement : 'idPrice1',
 	width : 400,
 	type : 'interval',
@@ -17,8 +16,15 @@ let obj = {
 	scaleStep : 20
 };
 
+import {slider} from '/blocks/demoSlider/demoSlider_ts.ts';
+
+const slider_1 = new slider();
+slider_1.slider(obj);
+
 //-------------------------------------------Model---'
 const modelTest = new Model();
+
+console.log('ddd',modelTest.width(obj.element, obj.idElement));
 
 describe("1. Ширина слайдера.", function() {
   it("Model.width: ", function() {
@@ -127,3 +133,6 @@ console.log('14. Массив пикселей, по которым распол
 // 15. Controller.configCheck (void)
 // 16. Controller.checkMinMaxStart (void)
 // 17. Controller.configCheckStar (void)
+
+
+console.log(modelTest, viewTest, contrTest)

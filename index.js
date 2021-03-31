@@ -63,5 +63,5 @@ import '/blocks/detailsRoom/detailsRoom.scss'
 
 /*plugin slider*/
 import '/blocks/demoSlider/demoSlider.scss'
-import '/blocks/demoSlider/demoSlider_tests.js'
-mocha.run();//вместе с demoSlider_tests.js
+//import '/blocks/demoSlider/demoSlider_tests.js'
+//mocha.run();//вместе с demoSlider_tests.js
