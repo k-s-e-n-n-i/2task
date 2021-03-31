@@ -1,3 +1,13 @@
+
+
+
+Чтобы запустить страницу со слайдерами и тестами должно быть в файлах: 
+index.pug : include blocks/demoSlider/demoSlider.pug
+index.js : import '/blocks/demoSlider/demoSlider.scss'
+import '/blocks/demoSlider/demoSlider_tests.js'
+mocha.run();//вместе с demoSlider_tests.js
+
+
 Объявление сладеров находится в blocks/demoSlider/
 	demoSlider.pug (html-элементы)
 	run_demoSlider.ts (объекты с данными)

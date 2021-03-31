@@ -62,9 +62,7 @@ import '/blocks/detailsRoom/detailsRoom.scss'
 
 //import '/blocks/demoSlider/chart.js'
 
-
 /*plugin slider*/
 import '/blocks/demoSlider/demoSlider.scss'
-//import '/blocks/demoSlider/run_demoSlider.ts'
-//import '/blocks/demoSlider/demoSlider_tests.js'
-mocha.run();
+import '/blocks/demoSlider/demoSlider_tests.js'
+mocha.run();//вместе с demoSlider_tests.js
