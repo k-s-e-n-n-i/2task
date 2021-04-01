@@ -1,15 +1,6 @@
 
-
-
-Запустить страницу со слайдером и тестами: npm run tests
-Запустить обычный проект: npm run start
-
-Необходимые файлы для тестов: 
-index.pug : include blocks/demoSlider/demoSlider.pug
-index.js : import '/blocks/demoSlider/demoSlider.scss'
-import '/blocks/demoSlider/demoSlider_tests.js'
-mocha.run();//вместе с demoSlider_tests.js
-
+Запустить проект: npm run start
+-----Структура проекта->>------------------------------------------------------------------------------------------------
 
 Объявление сладеров находится в blocks/demoSlider/
 	demoSlider.pug (html-элементы)
@@ -127,3 +118,24 @@ demoslider_MVC.ts
 		16. checkMinMaxStart(dataSlider : object) : void - прогоняет текущие значения minStart и maxStart, сравнивает с min и max, если текущиеслучайно вышли на пределы возможных значений, то ему присваивается крайнее возможное значение
 
 		17. configCheckStart(thisSlider : any, dataSlider : object, model : any, controller : any) : void - прописывает все значения из объекта с данными о слайдере в поля Настроек и устанавливает соответсвующие радиокнопки (checked)
+
+-----Тесты->>------------------------------------------------------------------------------------------------
+Запустить страницу со слайдером и тестами: npm run tests
+
+Необходимые файлы для тестов: 
+index.pug : include blocks/demoSlider/demoSlider.pug
+index.js : import '/blocks/demoSlider/demoSlider.scss'
+import '/blocks/demoSlider/demoSlider_tests.js'
+mocha.run();//вместе с demoSlider_tests.js
+
+-----UML->>------------------------------------------------------------------------------------------------
+
+Не знала как лучше изобразить, показалось наиболее понятной диаграма Деятельности.
+Ее подобие размещено по адресам:
+
+https://app.diagrams.net/#G1VwTz2cK7QZN_417_Y1b9WzFS6AWQ9DQW
+https://drive.google.com/file/d/1VwTz2cK7QZN_417_Y1b9WzFS6AWQ9DQW/view?usp=sharing
+
+Блоки, размещенные в области классов Model, View и Controller - это методы классов.
+В Пользователе указаны возможные действия, которые может выполнять пользователь.
+В классе slider указаны действия, которые выполняются при объявлении экземпляра класса.
