@@ -1,8 +1,9 @@
 .formElements{
 	display: flex;
 	flex-wrap: wrap;
-	width: 1440px;
-    padding: 123px 121px 130px;
+	width: 1320px;//1440px;
+    padding: 123px 0 130px 121px;
+	position: relative;
 
 	h3{
 		font-size: 12.5px;
