@@ -65,3 +65,10 @@ import '/blocks/detailsRoom/detailsRoom.scss'
 import '/blocks/demoSlider/demoSlider.scss'
 //import '/blocks/demoSlider/demoSlider_tests.js'
 //mocha.run();//вместе с demoSlider_tests.js
+
+
+const pages = {
+    //home: import ('./block/signIn/signIn.pug'),
+    //projects: import('./src/js/projects.js'),
+    //contact: import('./src/js/contact.js')
+}
