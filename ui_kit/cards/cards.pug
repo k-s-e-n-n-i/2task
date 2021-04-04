@@ -5,15 +5,15 @@ include formSignIn/formSignIn.pug
 include cardRoom/cardRoom.pug
 
 div.forms
-	img.ico_logo(src="ui_kit/ico_logo.svg")
-	div.blk
-		+formSearchNum('uikit')
-		+formRegistration('uikit')
-	div.blk
-		+formReservation(888,'9 990','38 081')
-		+formSignIn('uikit')
-	div.blk
-		div.block
-			+calendar
-		+cardRoom(1,888,'9 990','люкс',145)
-		+cardRoom(2,840,'9 900','',65)
+  img.ico_logo(src="ui_kit/ico_logo.svg" alt="logo")
+  div.blk
+    +formSearchNum("uikit")
+    +formRegistration("uikit")
+  div.blk
+    +formReservation(888,"9 990","38 081")
+    +formSignIn("uikit")
+  div.blk
+    div.block
+      +calendar
+    +cardRoom(1,888,"9 990","люкс",145)
+    +cardRoom(2,840,"9 900","",65)

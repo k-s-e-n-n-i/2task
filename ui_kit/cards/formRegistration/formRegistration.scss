@@ -1,82 +1,80 @@
 .formRegistration{
-	background: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 
-	width: 380px;
-	height: auto;//646px;//576px;
-	padding: 38px 29px 26px 29px;
-	
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	//flex-wrap: wrap;
-	z-index: 1000000;
-	
-	h1{
-		margin-bottom: 10px;
-		font-size: 25px;
-	}
-	h3{
-		margin: 21px 0 -5px;
-		font-size: 12.5px;
-		//font-weight: bold;
-	}
+  width: 380px;
+  height: auto;
+  padding: 38px 29px 26px 29px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 1000000;
+  
+  h1{
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
 
-	.inputText_input {
-		margin-top: 10px;
-	}
+  h3{
+    margin: 21px 0 -5px;
+    font-size: 12.5px;
+  }
 
-	.formRegistration_itemText{
-		display: flex;
-		flex-direction: column;
-		//flex-wrap: wrap;
-		justify-content: flex-start;
-		width: 100%;
-		h3{
-			margin: 0;
-		}
-	}
+  .inputText_input{
+    margin-top: 10px;
+  }
 
-	.formRegistration_blockRadio{
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
+  .formRegistration_itemText{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
 
-		.radio_label{
-			margin: 11px 20px 5px 0;
-			padding-left: 30px;
-		}
-	}	
+    h3{
+      margin: 0;
+    }
+  }
 
-	.btn{
-		&.btn__gradient{
-			width: 100%;
-			height: 36px;
-			line-height: 35px;
-			margin: 22px 0 27px 0;
-		}
+  .formRegistration_blockRadio{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 
-		&.btn__border{
-			width: 95px;
-			height: 32px;
-			line-height: 30px;
-			margin: 0;
-			
-		}
-	}
+    .radio_label{
+      margin: 11px 20px 5px 0;
+      padding-left: 30px;
+    }
+  }	
 
-	.formRegistration_login{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		//margin-top: 30px;
-		width: 100%;
+  .btn{
 
-		p{
-			margin: 13px 0px;
-		}
-	}
+    &.btn__gradient{
+      width: 100%;
+      height: 36px;
+      line-height: 35px;
+      margin: 22px 0 27px 0;
+    }
+
+    &.btn__border{
+      width: 95px;
+      height: 32px;
+      line-height: 30px;
+      margin: 0;
+    }
+  }
+
+  .formRegistration_login{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    p{
+      margin: 13px 0px;
+    }
+  }
 }

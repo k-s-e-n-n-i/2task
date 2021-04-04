@@ -1,10 +1,10 @@
 mixin pagination(text,dopclass)
-	div(class='pagination ' +dopclass)
-		div.pagination_num.pagination_num__active= 1
-		div.pagination_num= 2
-		div.pagination_num= 3
-		div.pagination_num= '...'
-		div.pagination_num= 15
-		div.pagination_num.pagination_num__next
-			div(class='arrow arrow__white')
-	div(class='pagination_label ' +dopclass)= text
+  div(class="pagination " +dopclass)
+    div.pagination_num.pagination_num__active= 1
+    div.pagination_num= 2
+    div.pagination_num= 3
+    div.pagination_num= "..."
+    div.pagination_num= 15
+    div.pagination_num.pagination_num__next
+      div(class="arrow arrow__white")
+  div(class="pagination_label " +dopclass)= text

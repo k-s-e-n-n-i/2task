@@ -1,72 +1,59 @@
 .comment{
-	width: 100%;
-	margin: 13px 0 33px 0;//detail
+  width: 100%;
+  margin: 13px 0 33px 0;//detail
 
-	.comment_block{
-		display: flex;
-		margin: 20px 0 23px;
+  .comment_block{
+    display: flex;
+    margin: 20px 0 23px;
 
-		&:last-child{
-			margin-bottom: 0;
-		}
+    &:last-child{
+      margin-bottom: 0;
+    }
 
-			/*.comment_title{
-				display: flex;
-				justify-content: space-between;
-				margin: 0;
-				height: 22px;
-				
-				h2{
-					line-height: 21px;
-					
-				}
-				p{
-					margin: 0 44px 0 0;
-				}
-			}*/
+    .comment_col1{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px 0px 12px -2px;
 
-		.comment_col1{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin: 0px 0px 12px -2px;
+      .comment_col1_photo{
+        width: 48px;
+        height: 48px;
+        margin-bottom: 12px;
+        width: 44px;//detail
+        height: 44px;//detail
+        border-radius: 50%;//detail
+        border: 2px solid #FFFFFF;//detail
+        filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));//detail
+      }
 
-			.comment_col1_photo{
-				width: 48px;
-				height: 48px;
-				margin-bottom: 12px;
+      .like{
+        margin: 0 0 0 2px;
+      }
+    }
 
-				width: 44px;//detail
-				height: 44px;//detail
-				border-radius: 50%;//detail
-				border: 2px solid #FFFFFF;//detail
-				filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));//detail
-			}
+    .comment_col2{
+      margin-left: 10px;
+      width: 100%;
 
-			.like{
-				margin: 0 0 0 2px;
-			}
-		}
+      .comment_col2_name{
+        font-weight: bold;
+        margin: 0;
+      }
 
-		.comment_col2{
-			margin-left: 10px;
-			width: 100%;
+      .comment_col2_time{
+        margin-bottom: 12px;
+        margin: 0;
+      }
 
-			.comment_col2_name{
-				font-weight: bold;
-				margin: 0;
-			}
-			.comment_col2_time{
-				margin-bottom: 12px;
-				margin: 0;
-			}
-			.comment_col2_text{
-				margin: 10px 0 0 0;
-			}
-			p{
-				width: 93.5%;
-				font-size: 14px;
-			}
-		}
-	}
+      .comment_col2_text{
+        margin: 10px 0 0 0;
+      }
+      
+      p{
+        width: 93.5%;
+        font-size: 14px;
+      }
+    }
+  }
 }

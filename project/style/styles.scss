@@ -1,121 +1,26 @@
 body{
-	margin: 0;
-	padding: 0;
-
-    font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13.7px;
-	line-height: 24px;
-	color: rgba(31, 32, 65, 0.75);
-
-	min-width: 320px;
-	
-}
-/*
-h1,h2,h3{
-	font-style: normal;
-	font-weight: bold;
-	color: #1F2041;
-	margin: 0;
-	padding: 0;
-}
-
-h1{
-	font-family: Open Sans;
-	font-family: Montserrat;
-	font-size: 24px;
-	line-height: 30px;
-}
-
-h2{
-	font-family: Open Sans;
-	font-family: Montserrat;
-	font-size: 19px;
-	line-height: 24px;
-}
-
-h3{
-	font-family: Montserrat;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	margin-top: 20px;
-}
-
-p{
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	//line-height: 18px;
-	margin: 0;
-}
-
-.flex{
-	display: flex;
-	justify-content: space-between;
-
-	&.start{
-		justify-content: flex-start;
-	}
-	&.end{
-		justify-content:flex-end;
-	}
-}*/
-
-.content{
-	width: 100%;
-	position:relative;
-
-	&.content__headerShadow{
-		box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-	}
-
-	.content_container{
-		max-width: 1150px;//1920px;
-		min-width: 400px;//320px;
-		margin: 0 auto;
-	}
-}
-
-
-
-
-///////////////////////////////////////////////
-
-/*.content_width{//1
-	max-width: 1150px;//1920px;
-	min-width: 320px;
-	margin: 0 auto;
-
-	&.flexend{
-		display: flex;
-		justify-content: flex-end;
-	}
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13.7px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  min-width: 320px;
 }
 
 .content{
-	width: 100%;
-	position:relative;
+  width: 100%;
+  position:relative;
 
-	.image{
-			//height: vw100;
-		width: 100%;
-	}
+  &.content__headerShadow{
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
 
-	.label{
-		position:absolute;
-		bottom: 18px;
-		width: 297px;
-		height: 48px;
-		text-align: right;
-		color: rgba(31, 32, 65, 0.75);
-	}
+  .content_container{
+    max-width: 1150px;//1920px;
+    min-width: 400px;//320px;
+    margin: 0 auto;
+  }
 }
-
-img{
-	user-select: none;
-}
-
-*/

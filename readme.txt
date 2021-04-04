@@ -1,3 +1,6 @@
+Верстка страниц по макету (задание №2) и Слайдер (задание №4)
+
+$ git clone https://github.com/KsuVla/2task
 
 Запустить проект: npm run start
 

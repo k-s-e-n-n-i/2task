@@ -1,32 +1,32 @@
-
 html(lang="ru")
-	head
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		meta(http-equiv="X-UA-Compatible", content="ie=edge")
-		title Document
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-		script(src='./ui_kit/cards/calendar/pignose.calendar.min.js')
-		
-		link(href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js")
-		script
-			include /blocks/demoSlider/mochaJS.js
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js")
-		
-	body
-		include blocks/landingPage/landingPage.pug
-		include blocks/searchRoom/searchRoom.pug
-		include blocks/detailsRoom/detailsRoom.pug
-		include blocks/registration/registration.pug
-		include blocks/signIn/signIn.pug
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Document
+    meta(keywords="keywords", description="description")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="./ui_kit/cards/calendar/pignose.calendar.min.js")
+    
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js")
+    script
+      include /blocks/demoSlider/mochaJS.js
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js")
+    
+  body
+    include blocks/landingPage/landingPage.pug
+    include blocks/searchRoom/searchRoom.pug
+    include blocks/detailsRoom/detailsRoom.pug
+    include blocks/registration/registration.pug
+    include blocks/signIn/signIn.pug
 
-		include blocks/demoSlider/demoSlider.pug
-		
-		include ui_kit/form_elements/form_elements.pug
-		include ui_kit/color_type/color_type.pug
-		include ui_kit/header_footer/header_footer.pug
-		include ui_kit/cards/cards.pug
-				
-		script(src='./index.js')
+    include blocks/demoSlider/demoSlider.pug
+    
+    include ui_kit/form_elements/form_elements.pug
+    include ui_kit/color_type/color_type.pug
+    include ui_kit/header_footer/header_footer.pug
+    include ui_kit/cards/cards.pug
+        
+    script(src="./index.js")

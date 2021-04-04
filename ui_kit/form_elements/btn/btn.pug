@@ -1,14 +1,12 @@
 mixin btn(text,dopclass)
-
-
-	div(class="btn " + dopclass)
-		a(href=link)= text
-	if dopclass == 'btn__gradient btn__gradient__pay'
-		div.arrow.arrow__white
-	else
+  div(class="btn " + dopclass)
+    a(href=link)= text
+  if dopclass == "btn__gradient btn__gradient__pay"
+    div.arrow.arrow__white
+  else
 
 
 mixin arrow(dopclass)
-	div.arrow
-		div(class='arrow_line ' +dopclass)
-		div(class='arrow_next ' +dopclass)
+  div.arrow
+    div(class="arrow_line " +dopclass)
+    div(class="arrow_next " +dopclass)

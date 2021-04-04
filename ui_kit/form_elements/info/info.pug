@@ -1,8 +1,7 @@
-
 mixin infoItem(label,text,url,dopclass)
-	div.info_item
-		img(src=url class='info_item_icon '+dopclass)
-		div.info_item_text
-			p
-				b= label
-			p= text
+  div.info_item
+    img(src=url class="info_item_icon "+dopclass alt="icon")
+    div.info_item_text
+      p
+        b= label
+      p= text

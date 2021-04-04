@@ -6,145 +6,156 @@ $colorDarkShade5: rgba(31, 32, 65, 0.05);
 $colorPurple: #BC9CFF;
 $colorGreen: #6FCF97;
 
-
 .colorType{
-	display: flex;
-	justify-content: space-between;
-    width: 1300px;//1440px;
-    padding: 100px 0 130px 140px;
-	position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 1300px;//1440px;
+  padding: 100px 0 130px 140px;
+  position: relative;
 }
 
-
 .blockColor{
-	display: flex;
-	flex-direction: column;
-	margin: 35px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  margin: 35px 0 0 0;
 
-	.blockColor_item{
-		display: flex;
-		align-items: center;
+  .blockColor_item{
+    display: flex;
+    align-items: center;
 
-		.blockColor_item_blk{
-			display: flex;
-			width: 70px;
-			height: 70px;
-			border-radius: 6px;
-			margin: 10px 40px 10px 10px;
+    .blockColor_item_blk{
+      display: flex;
+      width: 70px;
+      height: 70px;
+      border-radius: 6px;
+      margin: 10px 40px 10px 10px;
 
-			&.colorDarkShade100{
-				background: $colorDarkShade100;
-			}
-			&.colorDarkShade75{
-				background: $colorDarkShade75;
-			}
-			&.colorDarkShade50{
-				background: $colorDarkShade50;
-			}
-			&.colorDarkShade25{
-				background: $colorDarkShade25;
-			}
-			&.colorDarkShade5{
-				background: $colorDarkShade5;
-			}
-			&.colorPurple{
-				background: $colorPurple;
-			}
-			&.colorGreen{
-				background: $colorGreen;
-			}
-		}
+      &.colorDarkShade100{
+        background: $colorDarkShade100;
+      }
 
-		.blockColor_text{
-			line-height: 29px;
+      &.colorDarkShade75{
+        background: $colorDarkShade75;
+      }
 
-			.blockColor_text1{
-				margin-bottom: 2px;
-				font-size: 20px;
-			}
+      &.colorDarkShade50{
+        background: $colorDarkShade50;
+      }
 
-			.blockColor_text2{
-				font-weight: normal;
-				margin-top: 3px;
-			}
-		}
-	}
+      &.colorDarkShade25{
+        background: $colorDarkShade25;
+      }
+
+      &.colorDarkShade5{
+        background: $colorDarkShade5;
+      }
+
+      &.colorPurple{
+        background: $colorPurple;
+      }
+
+      &.colorGreen{
+        background: $colorGreen;
+      }
+    }
+
+    .blockColor_text{
+      line-height: 29px;
+
+      .blockColor_text1{
+        margin-bottom: 2px;
+        font-size: 20px;
+      }
+
+      .blockColor_text2{
+        font-weight: normal;
+        margin-top: 3px;
+      }
+    }
+  }
 }
 
 .blockType{
-	display: flex;
-	flex-direction: column;
-	margin-top: 19px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
 
-	.blockType_item{
-		display: flex;
-		margin: 25px 280px 25px 0;
+  .blockType_item{
+    display: flex;
+    margin: 25px 280px 25px 0;
 
-		.blockType_item_sym{
-			display: flex;
-			color: rgba(31, 32, 65, 0.25);
-			margin-right: 30px;
-			font-family: Montserrat;
+    .blockType_item_sym{
+      display: flex;
+      color: rgba(31, 32, 65, 0.25);
+      margin-right: 30px;
+      font-family: Montserrat, Arial, sans-serif;
+      width: 40px;
+      justify-content: flex-end;
+      align-items: left;			
+    }
 
-			width: 40px;
-			justify-content: flex-end;
-			align-items: left;			
-		}
+    .blockType_text{
+      width: 387px;					
+    }
 
-		.blockType_text{
-			width: 387px;					
-		}
-		h1{
-			&.blockType_text{
-				font-size: 25.5px;
-			}
-		}
-		h2{
-			&.blockType_text{
-				font-size: 20px;
-			}
-		}
-		h3{
-			&.blockType_text{
-				font-size: 12.5px;
-			}
-		}
-		p{
-			margin: -1px 0;
-			&.blockType_text{
-				width: 315px;
-			}
-		}
-	}
+    h1{
+
+      &.blockType_text{
+        font-size: 25.5px;
+      }
+    }
+
+    h2{
+
+      &.blockType_text{
+        font-size: 20px;
+      }
+    }
+
+    h3{
+
+      &.blockType_text{
+        font-size: 12.5px;
+      }
+    }
+
+    p{
+      margin: -1px 0;
+      
+      &.blockType_text{
+        width: 315px;
+      }
+    }
+  }
 }
 
 h1{
-	font-family: Open Sans;
-	font-size: 24px;
-	line-height: 30px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 h2{
-	font-family: Montserrat;//Open Sans;
-	font-size: 19px;
-	line-height: 24px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 19px;
+  line-height: 24px;
 }
 
 h3{
-	font-family: Montserrat;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
 }
 
 h1,h2,h3{
-	margin: 0;
+  margin: 0;
 }
 
 body,p{
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
 }

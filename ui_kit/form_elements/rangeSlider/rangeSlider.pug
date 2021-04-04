@@ -1,15 +1,13 @@
-
-
 mixin rangeSlider(text,min,max,id)
-	div(class='rangeSlider' id=id)
-		div.rangeSlider_label
-			h3= text
-			p.rangeSlider_label_Block
-				span.rangeSlider_label__min= min
-				span.rangeSlider_label__dash= '₽ - '
-				span.rangeSlider_label__max= max
-				span= '₽'
-		div.rangeSlider_slider
-			div.rangeSlider_slider_range
-			div.rangeSlider_slider_left
-			div.rangeSlider_slider_right
+  div(class="rangeSlider" id=id)
+    div.rangeSlider_label
+      h3= text
+      p.rangeSlider_label_Block
+        span.rangeSlider_label__min= min
+        span.rangeSlider_label__dash= "₽ - "
+        span.rangeSlider_label__max= max
+        span= "₽"
+    div.rangeSlider_slider
+      div.rangeSlider_slider_range
+      div.rangeSlider_slider_left
+      div.rangeSlider_slider_right

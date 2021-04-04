@@ -7,93 +7,93 @@ include /ui_kit/cards/cardRoom/cardRoom.pug
 
 
 mixin searchRoom_rooms_nav_num(active, ...items)
-	each item in items
-		if item == active
-			div.searchRoom_rooms_nav_num.searchRoom_rooms_nav_num__active= item
-		else
-			if item == 'next'
-				div.searchRoom_rooms_nav_num.searchRoom_rooms_nav_num__next
-			else		
-				div.searchRoom_rooms_nav_num= item
-		
+  each item in items
+    if item == active
+      div.searchRoom_rooms_nav_num.searchRoom_rooms_nav_num__active= item
+    else
+      if item == "next"
+        div.searchRoom_rooms_nav_num.searchRoom_rooms_nav_num__next
+      else		
+        div.searchRoom_rooms_nav_num= item
+
 
 +header(0)
 
 div.content.searchRoom__shadow
-	div.content_container.searchRoom
-		div.searchRoom_filters
-			div.searchRoom_filters_date
-				+dropdown('даты пребывания в отеле','','19 авг - 23 авг','')
-			
-			div.searchRoom_filters_guest
-				div.blockDropdown
-					+dropdownEx('Гости','','3 гостя, 1 младенец','')
-					div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
-						+dropdownItems('взрослые',0,'','')
-						+dropdownItems('дети',0,'','')
-						+dropdownItems('младенцы',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
-						+dropdownItemsLink(0)
-			
-			div.searchRoom_filters_diapason.slider101
-				+rangeSlider('диапазон цены',5000,10000,'idPrice0')
-				p.searchRoom_filters_diapason_text Стоимость за сутки пребывания в номере
-			
-			div.searchRoom_filters_features
-				h3 Правила дома
-				div.checkbox
-					+checkbox_item("Можно курить", 51,'','')
-					+checkbox_item("Можно с питомцами", 52,'','')
-					+checkbox_item("Можно пригласить гостей (до 10 человек)", 53,'','')
-			
-			div.searchRoom_filters_availability
-				h3 доступность
-				div.checkbox
-					+checkbox_item("Широкий коридор", 61, 'Ширина коридоров в номере не менее 91 см.','p_200')
-					+checkbox_item("Помощник для инвалидов", 62, 'На 1 этаже вас встретит специалист и проводит до номера.','p_225')
+  div.content_container.searchRoom
+    div.searchRoom_filters
+      div.searchRoom_filters_date
+        +dropdown("даты пребывания в отеле","","19 авг - 23 авг","")
+      
+      div.searchRoom_filters_guest
+        div.blockDropdown
+          +dropdownEx("Гости","","3 гостя, 1 младенец","")
+          div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
+            +dropdownItems("взрослые",0,"","")
+            +dropdownItems("дети",0,"","")
+            +dropdownItems("младенцы",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
+            +dropdownItemsLink(0)
+      
+      div.searchRoom_filters_diapason.slider101
+        +rangeSlider("диапазон цены",5000,10000,"idPrice0")
+        p.searchRoom_filters_diapason_text Стоимость за сутки пребывания в номере
+      
+      div.searchRoom_filters_features
+        h3 Правила дома
+        div.checkbox
+          +checkbox_item("Можно курить", 51,"","")
+          +checkbox_item("Можно с питомцами", 52,"","")
+          +checkbox_item("Можно пригласить гостей (до 10 человек)", 53,"","")
+      
+      div.searchRoom_filters_availability
+        h3 доступность
+        div.checkbox
+          +checkbox_item("Широкий коридор", 61, "Ширина коридоров в номере не менее 91 см.","p_200")
+          +checkbox_item("Помощник для инвалидов", 62, "На 1 этаже вас встретит специалист и проводит до номера.","p_225")
 
-			div.searchRoom_filters_comfort
-				div.blockDropdown
-					+dropdownEx('удобства номера','','2 спальни, 2 кровати...','')
-					div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
-						+dropdownItems('спальни',2,'','')
-						+dropdownItems('кровати',2,'','')
-						+dropdownItems('ванные комнаты',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
+      div.searchRoom_filters_comfort
+        div.blockDropdown
+          +dropdownEx("удобства номера","","2 спальни, 2 кровати...","")
+          div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
+            +dropdownItems("спальни",2,"","")
+            +dropdownItems("кровати",2,"","")
+            +dropdownItems("ванные комнаты",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
 
-			div.checkboxList
-				div.flex
-					h3 дополнительные удобства
-					img.checkboxList_expand(src="project/img/expand_more.svg")
-				div.checkbox.checkbox__hide
-					+checkbox_item("Завтрак", 71,'','')
-					+checkbox_item("Письменный стол", 72,'','')
-					+checkbox_item("Стул для кормления", 73,'','')
-					+checkbox_item("Кроватка", 74,'','')
-					+checkbox_item("Телевизор", 75,'','')
-					+checkbox_item("Шампунь", 76,'','')
+      div.checkboxList
+        div.flex
+          h3 дополнительные удобства
+          img(alt="expand_more.svg").checkboxList_expand(src="project/img/expand_more.svg")
+        div.checkbox.checkbox__hide
+          +checkbox_item("Завтрак", 71,"","")
+          +checkbox_item("Письменный стол", 72,"","")
+          +checkbox_item("Стул для кормления", 73,"","")
+          +checkbox_item("Кроватка", 74,"","")
+          +checkbox_item("Телевизор", 75,"","")
+          +checkbox_item("Шампунь", 76,"","")
 
-		div.searchRoom_rooms
-			h1 Номера, которые мы для вас подобрали
-			
-			+cardRoom(1,888,'9 990','люкс',145,5)
-			+cardRoom(2,840,'9 900','',65,4)
-			+cardRoom(3,980,'8 500','люкс',35,3)
-		
-			+cardRoom(4,856,'7 300','',19,5)
-			+cardRoom(5,740,'6 000','',44,4)
-			+cardRoom(6,982,'5 800','',56,3)
-		
-			+cardRoom(7,678,'5 500','',45,5)
-			+cardRoom(8,450,'5 300','',39,4)
-			+cardRoom(9,350,'5 000','',77,3)
-		
-			+cardRoom(10,666,'5 000','',25,5)
-			+cardRoom(11,444,'5 000','',15,3)
-			+cardRoom(12,352,'5 000','',55,3)
+    div.searchRoom_rooms
+      h1 Номера, которые мы для вас подобрали
+      
+      +cardRoom(1,888,"9 990","люкс",145,5)
+      +cardRoom(2,840,"9 900","",65,4)
+      +cardRoom(3,980,"8 500","люкс",35,3)
+    
+      +cardRoom(4,856,"7 300","",19,5)
+      +cardRoom(5,740,"6 000","",44,4)
+      +cardRoom(6,982,"5 800","",56,3)
+    
+      +cardRoom(7,678,"5 500","",45,5)
+      +cardRoom(8,450,"5 300","",39,4)
+      +cardRoom(9,350,"5 000","",77,3)
+    
+      +cardRoom(10,666,"5 000","",25,5)
+      +cardRoom(11,444,"5 000","",15,3)
+      +cardRoom(12,352,"5 000","",55,3)
 
-			div.searchRoom_rooms_nav
-				+searchRoom_rooms_nav_num(1,1,2,3,'...',15,'next')
-			div.searchRoom_rooms_nav_label 1 – 12 из 100+ вариантов аренды
+      div.searchRoom_rooms_nav
+        +searchRoom_rooms_nav_num(1,1,2,3,"...",15,"next")
+      div.searchRoom_rooms_nav_label 1 – 12 из 100+ вариантов аренды
 
 +footer
 
-script(src='/blocks/searchRoom/run_searchRSlider.ts')
+script(src="/blocks/searchRoom/run_searchRSlider.ts")

@@ -1,20 +1,18 @@
-
-
 mixin inputText(text,textRight,dopclass,placeholder,inputText,id)
-	if dopclass == 'inputText_input__subscription'
-		div.inputText.inputText__subscription
-			if text != ''
-				h3= text
-			input(class='inputText_input '+ dopclass placeholder=placeholder id="inputText" + id value=inputText)
-	else
-		div.inputText
-			if text != '' && textRight !=''
-				div.inputText_labels
-					h3= text
-					p= textRight
-			else 
-				if text != ''
-					h3= text
-				if textRight != ''
-					p= textRight
-			input(class='inputText_input '+ dopclass placeholder=placeholder id="inputText" + id value=inputText)
+  if dopclass == "inputText_input__subscription"
+    div.inputText.inputText__subscription
+      if text != ""
+        h3= text
+      input(class="inputText_input "+ dopclass placeholder=placeholder id="inputText" + id value=inputText)
+  else
+    div.inputText
+      if text != "" && textRight !=""
+        div.inputText_labels
+          h3= text
+          p= textRight
+      else 
+        if text != ""
+          h3= text
+        if textRight != ""
+          p= textRight
+      input(class="inputText_input "+ dopclass placeholder=placeholder id="inputText" + id value=inputText)

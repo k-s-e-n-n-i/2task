@@ -2,24 +2,19 @@ include /ui_kit/form_elements/dropdown/dropdown.pug
 include /ui_kit/form_elements/btn/btn.pug
 include /ui_kit/cards/calendar/calendar.pug
 
-
 mixin formSearchNum
-	div.formSearchNum
-		h1 Найдём номера под ваши пожелания
-		div.formSearchNum_choiceDate
-			div.formSearchNum_choiceDate_flex
-				+dropdown('Прибытие','','ДД.ММ.ГГГГ','blockDropdown_dropdown__date')
-				+dropdown('Выезд','','ДД.ММ.ГГГГ','blockDropdown_dropdown__date')
-			+calendar('hide')
-		div.blockDropdown.blockDropdown__width100
-			+dropdownEx('Гости','','Сколько гостей','')
-			div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
-				+dropdownItems('взрослые',2,'','')
-				+dropdownItems('дети',1,'','')
-				+dropdownItems('младенцы',0,'blockDropdown_dropdownItems_line_incBlock_inc__disable','')
-				+dropdownItemsLink(1)
-		+btn('подобрать номер','btn__gradient btn__gradient__pay')
-			
-		
-
-	
+  div.formSearchNum
+    h1 Найдём номера под ваши пожелания
+    div.formSearchNum_choiceDate
+      div.formSearchNum_choiceDate_flex
+        +dropdown("Прибытие","","ДД.ММ.ГГГГ","blockDropdown_dropdown__date")
+        +dropdown("Выезд","","ДД.ММ.ГГГГ","blockDropdown_dropdown__date")
+      +calendar("hide")
+    div.blockDropdown.blockDropdown__width100
+      +dropdownEx("Гости","","Сколько гостей","")
+      div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
+        +dropdownItems("взрослые",2,"","")
+        +dropdownItems("дети",1,"","")
+        +dropdownItems("младенцы",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
+        +dropdownItemsLink(1)
+    +btn("подобрать номер","btn__gradient btn__gradient__pay")

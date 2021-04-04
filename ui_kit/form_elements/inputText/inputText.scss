@@ -1,59 +1,55 @@
-//Тектовое поле
 .inputText{
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
 
-	.inputText_input{
-		width: 100%;
-		color: rgba(31, 32, 65, 0.25);
-		outline: none;
-		font-size: 14px;		
+  .inputText_input{
+    width: 100%;
+    color: rgba(31, 32, 65, 0.25);
+    outline: none;
+    font-size: 14px;		
 
-		&:hover,
-		&._hover{
-			color: rgba(31, 32, 65, 0.75);
-			border: 1px solid rgba(31, 32, 65, 0.5);
-			font-weight: bold;
-		}
-		&:focus{
-			color: rgba(31, 32, 65, 0.75);
-			border: 1px solid rgba(31, 32, 65, 0.5);
-		}
-	}
+    &:hover,
+    &._hover{
+      color: rgba(31, 32, 65, 0.75);
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      font-weight: bold;
+    }
+    &:focus{
+      color: rgba(31, 32, 65, 0.75);
+      border: 1px solid rgba(31, 32, 65, 0.5);
+    }
+  }
 
-	&.inputText__subscription{
-		&:after{
-			content: '';
-			width: 20px;
-			height: 20px;
-			cursor: pointer;
-			position: absolute;
-			top: 18px;
-			right: 11px;
-			background-repeat: no-repeat;
-			background-image: url('/project/img/arrow.svg');
-		}
-	}
+  &.inputText__subscription{
 
-	.inputText_input__masked{
-		
-	}
+    &:after{
+      content: '';
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      position: absolute;
+      top: 18px;
+      right: 11px;
+      background-repeat: no-repeat;
+      background-image: url('/project/img/arrow.svg');
+    }
+  }
 
-	.inputText_input__subscription{
-		width: 260px;
-		position: relative;
-	}
+  .inputText_input__subscription{
+    width: 260px;
+    position: relative;
+  }
 
-	::-webkit-input-placeholder { /* Chrome */
-		color: rgba(31, 32, 65, 0.25);
-	}
-	:-ms-input-placeholder { /* IE 10+ */
-		color: rgba(31, 32, 65, 0.25);
-	}
-	::-moz-placeholder { /* Firefox 19+ */
-		color: rgba(31, 32, 65, 0.25);
-	}
-	:-moz-placeholder { /* Firefox 4 - 18 */
-		color: rgba(31, 32, 65, 0.25);
-	}
+  ::-webkit-input-placeholder { /* Chrome */
+    color: rgba(31, 32, 65, 0.25);
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: rgba(31, 32, 65, 0.25);
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(31, 32, 65, 0.25);
+  }
+  :-moz-placeholder { /* Firefox 4 - 18 */
+    color: rgba(31, 32, 65, 0.25);
+  }
 }

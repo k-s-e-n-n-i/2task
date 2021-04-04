@@ -1,8 +1,4 @@
 import '/project/font/fonts.css'
-
-
-
-//import '/project/font/montserrat_5/montserrat.css'
 import '/project/style/styles.scss'
 
 /*form_elements*/
@@ -65,10 +61,3 @@ import '/blocks/detailsRoom/detailsRoom.scss'
 import '/blocks/demoSlider/demoSlider.scss'
 //import '/blocks/demoSlider/demoSlider_tests.js'
 //mocha.run();//вместе с demoSlider_tests.js
-
-
-const pages = {
-    //home: import ('./block/signIn/signIn.pug'),
-    //projects: import('./src/js/projects.js'),
-    //contact: import('./src/js/contact.js')
-}

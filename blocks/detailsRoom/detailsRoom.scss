@@ -2,253 +2,264 @@
 .room_blockImages_col1_image,
 .room_blockImages_col1,
 .room_blockImages_col2{
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .room{
-	.room_blockImages{
-		//width: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
 
-		.room_blockImages_col1{
-			width: 68.2%;
+  .room_blockImages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-			.room_blockImages_col1_image{
-				background-image: url('/blocks/detailsRoom/image.png');
-				width: 100%;
-				height: 37.2vw;
-				background-size: cover;
-				background-position: 50%;
-			}
-		}
-		
-		.room_blockImages_col2{
-			width: 31.8%;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
+    .room_blockImages_col1{
+      width: 68.2%;
 
-			.room_blockImages_col2_image{
-				margin: 0;
-				padding: 0;
-				height: 50%;
-				background-size: cover;	
+      .room_blockImages_col1_image{
+        background-image: url('/blocks/detailsRoom/image.png');
+        width: 100%;
+        height: 37.2vw;
+        background-size: cover;
+        background-position: 50%;
+      }
+    }
+    
+    .room_blockImages_col2{
+      width: 31.8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-				&.room_blockImages_col2_image__1{
-					background-image: url('/blocks/detailsRoom/image2.png');
-				}
-				&.room_blockImages_col2_image__2{
-					background-image: url('/blocks/detailsRoom/image3.png');
-				}
-			}
-		}
-	}
+      .room_blockImages_col2_image{
+        margin: 0;
+        padding: 0;
+        height: 50%;
+        background-size: cover;	
 
-	.content_container{
-		display: flex;
-		justify-content: space-between;
-		//flex-wrap: nowrap;
-		margin: 70px 9.7% 60px;
+        &.room_blockImages_col2_image__1{
+          background-image: url('/blocks/detailsRoom/image2.png');
+        }
 
-		.room_blockInfo{
-			width: 65%;
-			display: flex;
-			flex-wrap: wrap;
-			//justify-content: space-between;
-			//margin-right: 50px;
+        &.room_blockImages_col2_image__2{
+          background-image: url('/blocks/detailsRoom/image3.png');
+        }
+      }
+    }
+  }
 
-			h2{
-				font-weight: bold;
-				font-size: 19.9px;
-				line-height: 22px;
-				margin-bottom: 24px;
-				
-			}
+  .content_container{
+    display: flex;
+    justify-content: space-between;
+    margin: 70px 9.7% 60px;
 
-			.room_blockInfo_impression{//2
-				position: relative;
-				h2{
-					margin-bottom: 7px;
-				}
+    .room_blockInfo{
+      width: 65%;
+      display: flex;
+      flex-wrap: wrap;
 
-				.room_blockInfo_impression_text{
-					color: #BC9CFF;
-					font-weight: bold;
-					position: absolute;
-					width: 82px;
-					height: 82px;
-					
+      h2{
+        font-weight: bold;
+        font-size: 19.9px;
+        line-height: 22px;
+        margin-bottom: 24px;
+      }
 
-					.room_blockInfo_impression_text_num{
-						font-size: 25px;
-						font-weight: bold;
-						//margin: auto;
-						position: absolute;
-						left: 48%;
-						top: 33%;
-					}
-					.room_blockInfo_impression_text_text{
-						font-weight: bold;
-						position: absolute;
-						left: 40%;
-						top: 72%;
-					}
-				}
-			}
-			.comment{//3
-				margin: 13px 0 33px 0;
+      .room_blockInfo_impression{//2
+        position: relative;
 
-				.comment_title{
-					display: flex;
-					justify-content: space-between;
-					margin: 0;
-					height: 22px;
-					
-					h2{
-						line-height: 21px;
-						
-					}
-					p{
-						margin: 0 44px 0 0;
-					}
-				}
+        h2{
+          margin-bottom: 7px;
+        }
 
-				.comment_col1{
-					.comment_col1_photo{
-						width: 44px;
-						height: 44px;
+        .room_blockInfo_impression_text{
+          color: #BC9CFF;
+          font-weight: bold;
+          position: absolute;
+          width: 82px;
+          height: 82px;
+          
+          .room_blockInfo_impression_text_num{
+            font-size: 25px;
+            font-weight: bold;
+            position: absolute;
+            left: 48%;
+            top: 33%;
+          }
 
-						border-radius: 50%;
-						border: 2px solid #FFFFFF;
-						filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
-					}
-				}
-			}
-			.room_blockInfo_rules{//4
-				width: 361px;
-				h2{
-					margin: 0 0 0 20px;
-					font-size: 19.4px;
-				}
-			}
-			.room_blockInfo_cancel{
-				width: 340px;
-				h2{
-					margin: 0 0 20px 0;
-				}
-				
-			}
-		}
-		.room_formReservation{
-			//width: 33%;
-		}
-	}
+          .room_blockInfo_impression_text_text{
+            font-weight: bold;
+            position: absolute;
+            left: 40%;
+            top: 72%;
+          }
+        }
+      }
+      .comment{//3
+        margin: 13px 0 33px 0;
+
+        .comment_title{
+          display: flex;
+          justify-content: space-between;
+          margin: 0;
+          height: 22px;
+          
+          h2{
+            line-height: 21px;
+          }
+
+          p{
+            margin: 0 44px 0 0;
+          }
+        }
+
+        .comment_col1{
+
+          .comment_col1_photo{
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+          }
+        }
+      }
+
+      .room_blockInfo_rules{//4
+        width: 361px;
+
+        h2{
+          margin: 0 0 0 20px;
+          font-size: 19.4px;
+        }
+      }
+
+      .room_blockInfo_cancel{
+        width: 340px;
+
+        h2{
+          margin: 0 0 20px 0;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1170px){
-	.room{
-		.content_container{
-			.room_blockInfo{
-				margin: 0 20px;
-			}
-			.formReservation{
-				margin-right: 20px;
-			}			
-		}
-	}
+  .room{
+
+    .content_container{
+
+      .room_blockInfo{
+        margin: 0 20px;
+      }
+
+      .formReservation{
+        margin-right: 20px;
+      }			
+    }
+  }
 }
 
 @media (max-width: 890px){
-	.room{
-		.content_container{
-			//display: block;
-			//margin: auto;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			margin: 20px auto;
+  .room{
 
-			.room_blockInfo{
-				.info,
-				.room_blockInfo_impression,
-				.comment,
-				.room_blockInfo_rules,
-				.room_blockInfo_cancel{
-					margin: auto;
-				}
+    .content_container{
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
 
-				.comment{
-					.comment_title{
-						flex-wrap: wrap;
-						height: auto;
-						h2{
-							margin-bottom: 10px;
-						}
-					}
-				}
-				.room_blockInfo_rules{//4
-					h2{
-						margin: 30px 0 0 0;
-					}
-				}
-			}
+      .room_blockInfo{
 
-			.formReservation{
-				margin: 20px auto 0;
-			}
-		}
-	}
+        .info,
+        .room_blockInfo_impression,
+        .comment,
+        .room_blockInfo_rules,
+        .room_blockInfo_cancel{
+          margin: auto;
+        }
+
+        .comment{
+          
+          .comment_title{
+            flex-wrap: wrap;
+            height: auto;
+
+            h2{
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+        .room_blockInfo_rules{//4
+
+          h2{
+            margin: 30px 0 0 0;
+          }
+        }
+      }
+
+      .formReservation{
+        margin: 20px auto 0;
+      }
+    }
+  }
 }
 
 @media (max-width: 640px){
-	.room{
-		.room_blockImages{
-			.room_blockImages_col1{
-				width: 100%;
+  .room{
 
-				.room_blockImages_col1_image{
-					height: 48vw;
-					margin: 1px auto;
-				}
-			}
-			.room_blockImages_col2{
-				width: 100%;
+    .room_blockImages{
 
-				.room_blockImages_col2_image{
-					height: 48vw;
-					margin: 1px auto;
-					width: 100%;
-				}
-			}
-		}
-	}
+      .room_blockImages_col1{
+        width: 100%;
+
+        .room_blockImages_col1_image{
+          height: 48vw;
+          margin: 1px auto;
+        }
+      }
+
+      .room_blockImages_col2{
+        width: 100%;
+
+        .room_blockImages_col2_image{
+          height: 48vw;
+          margin: 1px auto;
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 400px){
-	.formReservation{
-		width: 100%;
-		padding: 20px;
+  .formReservation{
+    width: 100%;
+    padding: 20px;
 
-		.formReservation_block__flex{
-			flex-wrap: wrap;
-		}
-		.formReservation_blockPrices_line_p__text{
-			word-break: break-all;
-			width: 175px!important;
-			margin-right: 10px;
-			text-align: left;
-			&.formReservation_blockPrices_line_p__infoMark{
-				&:before{
-					left: 170px!important;
-				}
-			}
-		}
-		p{
-			min-width: 57px;
-			text-align: right;
-		}
-	}
+    .formReservation_block__flex{
+      flex-wrap: wrap;
+    }
+
+    .formReservation_blockPrices_line_p__text{
+      word-break: break-all;
+      width: 175px!important;
+      margin-right: 10px;
+      text-align: left;
+
+      &.formReservation_blockPrices_line_p__infoMark{
+
+        &:before{
+          left: 170px!important;
+        }
+      }
+    }
+    
+    p{
+      min-width: 57px;
+      text-align: right;
+    }
+  }
 }

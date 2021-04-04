@@ -1,65 +1,62 @@
-//Кнопки
 .btn{
-	border-radius: 22px;
-	width: 99px;
-	height: 26px;
-	padding: 4px 0;
-	color: #ffffff;
-	cursor: pointer;
-	margin: 15px 20px 15px 0;
-	position: relative;
+  border-radius: 22px;
+  width: 99px;
+  height: 26px;
+  padding: 4px 0;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 15px 20px 15px 0;
+  position: relative;
 
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	text-align: center;
-	text-transform: uppercase;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
 
-	-webkit-user-select: none;
+  -webkit-user-select: none;
 
-	&.btn__border{
-		background-color: #fff;
-		color: #BC9CFF;
-		border: 1px #BC9CFF solid;
-		//padding: 9px 0 10px;	
-		width: 97px;
-		height: 22px;
-		border-width: 2px;
-	}
+  &.btn__border{
+    background-color: #fff;
+    color: #BC9CFF;
+    border: 1px #BC9CFF solid;	
+    width: 97px;
+    height: 22px;
+    border-width: 2px;
+  }
 
-	&.btn__gradient{
-		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-		color: #ffffff;	
+  &.btn__gradient{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #ffffff;	
 
-		&.btn__gradient__pay{
-			width: 320px;
-		}
-	}
+    &.btn__gradient__pay{
+      width: 320px;
+    }
+  }
 
-	&:hover,
-	&:focus,
-	&._hover{
-		opacity: 0.5;
-	}
+  &:hover,
+  &:focus,
+  &._hover{
+    opacity: 0.5;
+  }
 
-	.arrow{
-		position: absolute;
-		bottom: 12px;
-		right: 15px;
-
-		content: '';
-		width: 20px;
-		height: 20px;
-		cursor: pointer;
-		position: absolute;
-		top: 13px;
-		right: 11px;
-		background-repeat: no-repeat;
-		background-image: url('/project/img/arrow.svg');
-		
-		&.arrow__white{	
-			background-image: url('/project/img/arrow_white.svg');
-		}
-	}
+  .arrow{
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 13px;
+    right: 11px;
+    background-repeat: no-repeat;
+    background-image: url('/project/img/arrow.svg');
+    
+    &.arrow__white{	
+      background-image: url('/project/img/arrow_white.svg');
+    }
+  }
 }

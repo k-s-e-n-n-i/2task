@@ -1,28 +1,26 @@
 include /ui_kit/form_elements/rateBtn/rateBtn.pug
 
-
-
 mixin cardRoom(id,number,price,link,review,mark)
-	div.cardRoom
-		div.cardRoom_image(id=id)
-			div.cardRoom_image_pagination
-				div.cardRoom_image_pagination_item.cardRoom_image_pagination_item__active
-				div.cardRoom_image_pagination_item
-				div.cardRoom_image_pagination_item
-				div.cardRoom_image_pagination_item
-		div.cardRoom_contentInfo
-			div.cardRoom_contentInfo_block.cardRoom_contentInfo_block__border
-				p
-					span= '№ '
-					span= number+' '
-					if link== 'люкс'
-						+link(link, 'link__lux')
-				p
-					span= price
-					span= '₽'
-					span= ' в сутки'
-			div.cardRoom_contentInfo_block
-				+rate(mark,1,2,3,4,5)
-				p
-					span= review
-					span= ' Отзывов'
+  div.cardRoom
+    div.cardRoom_image(id=id)
+      div.cardRoom_image_pagination
+        div.cardRoom_image_pagination_item.cardRoom_image_pagination_item__active
+        div.cardRoom_image_pagination_item
+        div.cardRoom_image_pagination_item
+        div.cardRoom_image_pagination_item
+    div.cardRoom_contentInfo
+      div.cardRoom_contentInfo_block.cardRoom_contentInfo_block__border
+        p
+          span= "№ "
+          span= number+" "
+          if link== "люкс"
+            +link(link, "link__lux",'#')
+        p
+          span= price
+          span= "₽"
+          span= " в сутки"
+      div.cardRoom_contentInfo_block
+        +rate(mark,1,2,3,4,5)
+        p
+          span= review
+          span= " Отзывов"

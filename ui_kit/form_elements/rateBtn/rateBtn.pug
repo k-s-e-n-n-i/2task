@@ -1,9 +1,7 @@
-
-
 mixin rate(mark, ...items)
-	div.rate(name=mark)
-		each item in items
-			if mark>=item
-				div(class='rate_star rate_star__active' id=item)
-			else	
-				div.rate_star(id=item)
+  div.rate(name=mark)
+    each item in items
+      if mark>=item
+        div(class="rate_star rate_star__active" id=item)
+      else	
+        div.rate_star(id=item)
