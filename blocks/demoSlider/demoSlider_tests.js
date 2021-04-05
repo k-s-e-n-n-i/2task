@@ -24,8 +24,6 @@ slider_1.slider(obj);
 //-------------------------------------------Model---'
 const modelTest = new Model();
 
-console.log('ddd',modelTest.width(obj.element, obj.idElement));
-
 describe("1. Ширина слайдера.", function() {
   it("Model.width: ", function() {
     assert.equal(modelTest.width(obj.element, obj.idElement), 389);//obj.width-11
@@ -133,6 +131,3 @@ console.log('14. Массив пикселей, по которым распол
 // 15. Controller.configCheck (void)
 // 16. Controller.checkMinMaxStart (void)
 // 17. Controller.configCheckStar (void)
-
-
-console.log(modelTest, viewTest, contrTest)

@@ -1,4 +1,3 @@
-
 let oilCanvas = document.getElementById("oilChart");
 
 let pieChart = new Chart(oilCanvas, {
@@ -20,7 +19,6 @@ let pieChart = new Chart(oilCanvas, {
       ],
       borderColor: "white",
       borderWidth: 2,
-      
     }]
   },
   options: {
