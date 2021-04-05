@@ -145,7 +145,7 @@ demoslider_MVC.ts
 		17. configCheckStart(thisSlider : any, dataSlider : object, model : any, controller : any) : void - прописывает все значения из объекта с данными о слайдере в поля Настроек и устанавливает соответсвующие радиокнопки (checked)
 
 -----Тесты->>------------------------------------------------------------------------------------------------
-Запустить страницу со слайдером и тестами: npm run tests
+Запустить страницу со слайдером и тестами: npm run test
 
 Необходимые файлы для тестов: 
 index.pug : include blocks/demoSlider/demoSlider.pug
