@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 $(function() {
   $('.formSearchNum').find('.formSearchNum_choiceDate .blockDropdown_dropdown__date').on('click', function(e) {
     var calendar = $(this).closest('.formSearchNum').find('.dropdownItemCalendar_block');

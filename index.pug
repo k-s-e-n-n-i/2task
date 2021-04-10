@@ -5,24 +5,15 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Document
     meta(keywords="keywords", description="description")
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-    script(src="./ui_kit/cards/calendar/pignose.calendar.min.js")
-    
-    link(href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js")
-    script
-      include /blocks/demoSlider/mochaJS.js
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js")
+    //script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    //script(src="./ui_kit/cards/calendar/pignose.calendar.min.js")
     
   body
-    include blocks/landingPage/landingPage.pug
-    include blocks/searchRoom/searchRoom.pug
-    include blocks/detailsRoom/detailsRoom.pug
-    include blocks/registration/registration.pug
-    include blocks/signIn/signIn.pug
-
-    include blocks/demoSlider/demoSlider.pug
+    include pages/landingPage/landingPage.pug
+    include pages/searchRoom/searchRoom.pug
+    include pages/detailsRoom/detailsRoom.pug
+    include pages/registration/registration.pug
+    include pages/signIn/signIn.pug
     
     include ui_kit/form_elements/form_elements.pug
     include ui_kit/color_type/color_type.pug

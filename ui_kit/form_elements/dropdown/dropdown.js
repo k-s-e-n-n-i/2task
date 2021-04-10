@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 $(function() {
   $('.blockDropdown_dropdown__whisItems').on('click', function(e) {
     var block_list = $(this).closest('.blockDropdown').find('.blockDropdown_dropdownItems');

@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 $(function() {
   $('.checkboxList').on('click', function(e) {
     var block_list = $(this).find('.checkbox'),

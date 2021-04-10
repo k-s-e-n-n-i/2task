@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 $(function() {
   $('.like').on('click', function(e) {
     var sum = parseInt($(this).find('.like_sum').html());

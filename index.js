@@ -1,3 +1,4 @@
+//import $ from 'jquery'
 import '/project/font/fonts.css'
 import '/project/style/styles.scss'
 
@@ -39,7 +40,7 @@ import '/ui_kit/cards/cards.scss'
 import '/ui_kit/cards/formSearchNum/formSearchNum.scss'
 import '/ui_kit/cards/formSearchNum/formSearchNum.js'
 import '/ui_kit/cards/calendar/calendar.scss'
-import '/ui_kit/cards/calendar/calendar.js'
+//import '/ui_kit/cards/calendar/calendar.js'
 import '/ui_kit/cards/formRegistration/formRegistration.scss'
 import '/ui_kit/cards/formReservation/formReservation.scss'
 import '/ui_kit/cards/formReservation/formReservation.js'
@@ -49,14 +50,8 @@ import '/ui_kit/cards/cardRoom/cardRoom.js'
 
 
 /*pages*/
-import '/blocks/landingPage/landingPage.scss'
-import '/blocks/searchRoom/searchRoom.scss'
-import '/blocks/registration/registration.scss'
-import '/blocks/signIn/signIn.scss'
-import '/blocks/detailsRoom/detailsRoom.scss'
-
-
-/*plugin slider*/
-import '/blocks/demoSlider/demoSlider.scss'
-//import '/blocks/demoSlider/demoSlider_tests.js'
-//mocha.run();//вместе с demoSlider_tests.js
+import '/pages/landingPage/landingPage.scss'
+import '/pages/searchRoom/searchRoom.scss'
+import '/pages/registration/registration.scss'
+import '/pages/signIn/signIn.scss'
+import '/pages/detailsRoom/detailsRoom.scss'

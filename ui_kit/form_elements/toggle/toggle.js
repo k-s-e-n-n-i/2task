@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 $(function() {
   $('.toggle_item_label').on('click', function(e) {
     if ($(this).hasClass('off')){

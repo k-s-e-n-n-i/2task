@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 $(function() {
   $('.formReservation').find('.formReservation_block__flexcolumn .blockDropdown_dropdown__date').on('click', function(e) {
     var calendar = $(this).closest('.formReservation').find('.dropdownItemCalendar_block');
