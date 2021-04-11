@@ -1,0 +1,42 @@
+.like{
+  display: flex;
+  justify-content: space-between;
+  width: 38px;
+  height: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  margin: 15px 10px 0 0;
+  cursor: pointer;
+
+  &.like__liked{
+    border-color: #BC9CFF;
+  }
+
+  .like_ico{
+    width: 10px;
+    height: 10px;
+    margin: 4px 0 5px 4px;
+    cursor: pointer;
+    background-image: url('/blocks/elements/like/favorite_border.svg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+
+    &.like__liked{
+      background-image: url('/blocks/elements/like/favorite.svg');
+    }
+  }
+
+  .like_sum{
+    margin: 4px 10px 3px 0;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    color: rgba(31, 32, 65, 0.25);
+    cursor: pointer;
+
+    &.like__liked{
+      color: #BC9CFF;
+    }
+  }
+}

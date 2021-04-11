@@ -1,0 +1,7 @@
+include /blocks/elements/dropdown/dropdown.pug
+
+mixin calendar(dopclass)
+  div.dropdownItemCalendar
+    div(class="dropdownItemCalendar_block " +dopclass)
+      div.calendar
+      +dropdownItemsLink(1)

@@ -1,0 +1,19 @@
+include /blocks/cards/formSearchNum/formSearchNum.pug
+include /blocks/cards/formRegistration/formRegistration.pug
+include /blocks/cards/formReservation/formReservation.pug
+include /blocks/cards/formSignIn/formSignIn.pug
+include /blocks/cards/cardRoom/cardRoom.pug
+
+div.forms
+  img.ico_logo(src="pages/ui-kit_cards/ico_logo.svg" alt="logo")
+  div.blk
+    +formSearchNum("uikit")
+    +formRegistration("uikit")
+  div.blk
+    +formReservation(888,"9 990","38 081")
+    +formSignIn("uikit")
+  div.blk
+    div.block
+      +calendar
+    +cardRoom(1,888,"9 990","люкс",145)
+    +cardRoom(2,840,"9 900","",65)

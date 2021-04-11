@@ -1,0 +1,29 @@
+include /blocks/elements/btn/btn.pug
+include /blocks/elements/inputText/inputText.pug
+
+
+mixin menu_li(text,dopclass)
+  li(class="menu_li " +dopclass)= text
+
+
+mixin header_nav_login(auth,name)
+  div.header_nav_login
+    if auth == 0
+      +btn("Войти","btn__border btn__header","./blocks/signIn/signIn.pug")
+      +btn("Зарегистрироваться","btn__gradient btn__header")
+    else
+      div.header_nav_login_hr
+      p= name
+
+
+mixin footerMenu_item(...items)
+  li.bottomMenu_column
+    ul.bottomMenu_column_list
+      each item in items
+        if item == "subscription"
+          +inputText("","","inputText_input__subscription","Email","","inputFooter")
+        else
+          if item == "logo"
+            img.logo(src="pages/ui-kit_headerFooter/logo.svg" alt="logo")
+          else
+            +menu_li(item,"")
