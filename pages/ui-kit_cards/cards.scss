@@ -2,12 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   background: #F4F4F6;
-  padding: 130px 0 130px 120px;
-  width: 1320px;//1440px;
+  padding: 130px 0 130px  8.4%;
+  //width: 100%;
   position: relative;
 
   .blk{
     margin: 20px;
+
+    &.blk_3{
+      width: 320px;
+    }
 
     .formSearchNum{
       position: relative;

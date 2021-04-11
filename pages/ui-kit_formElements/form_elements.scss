@@ -1,8 +1,8 @@
 .formElements{
   display: flex;
   flex-wrap: wrap;
-  width: 1320px;//1440px;
-  padding: 123px 0 130px 121px;
+  //width: 100%;
+  padding: 123px 0 130px 8.4%;
   position: relative;
 
   h3{
@@ -168,18 +168,22 @@
     }
 
     &.blk__slider{
-      width: 266px;
+      width: 320px;
 
-      .rangeSlider{
-        margin-bottom: 35px;
-  
-        .rangeSlider_label{
-          align-items: flex-start;
-          
-          .rangeSlider_label_Block{
-            margin: 2px 0 6px 0;
-            font-size: 12px;
-            line-height: 12px;
+      .blk__slider_blk{
+        width: 266px;
+
+        .rangeSlider{
+          margin-bottom: 44px;
+    
+          .rangeSlider_label{
+            align-items: flex-start;
+            
+            .rangeSlider_label_Block{
+              margin: 2px 0 6px 0;
+              font-size: 12px;
+              line-height: 12px;
+            }
           }
         }
       }
