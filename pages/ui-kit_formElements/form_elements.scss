@@ -95,7 +95,7 @@
     &.blk_2{
       margin-right: 52px;
 
-      .checkbox{
+      .checkbox-list{
         margin-bottom: 28px;
       }
   
@@ -141,7 +141,7 @@
         height: 36px;
         line-height: 35px;
   
-        &.btn__border{
+        &.btn_border{
           width: 95px;
           height: 32px;
           line-height: 32px;
@@ -154,7 +154,7 @@
         margin-top: 17px;
       }
   
-      .btn__gradient__pay{
+      .btn_gradient_pay{
         margin: 15px 20px 40px 0;
       }
   
@@ -295,26 +295,26 @@
       margin-right: 161px;
       margin: 20px 161px 5px 20px;
 
-      .checkboxList{
+      .checkbox-list-expandable{
         margin: 0 0 50px 0;
 
         h3{
           font-size: 12.3px;
         }
 
-        .checkbox{
+        .checkbox-list{
 
-          &.checkbox__hide{
+          &.checkbox-list_hide{
 
-            + .flex{
+            + .checkbox-list-expandable__topicBlock{
 
-              .checkboxList_expand{
+              .checkbox-list-expandable__expand{
                 transform: rotate(180deg);
               }
             }
           }
 
-          .checkbox_item_label{
+          .checkbox-list__label{
             padding: 0 0 10px 29px;
           }
         }
@@ -325,14 +325,14 @@
       width: 260px;
       margin-right: 112px;
 
-      .checkbox{
+      .checkbox-list{
         margin-top: 15px;
 
-        .checkbox_item:nth-child(1){
+        .checkbox-list__item:nth-child(1){
           width: 220px;
         }
         
-        .checkbox_item_label{
+        .checkbox-list__label{
           width: 100%;
           padding: 1px 0 10px 30px;
         }	

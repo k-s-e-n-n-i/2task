@@ -1,7 +1,8 @@
 include /pages/ui-kit_headerFooter/header.pug
 include /pages/ui-kit_headerFooter/footer.pug
 include /blocks/elements/dropdown/dropdown.pug
-include /blocks/elements/checkbox/checkbox.pug
+include /blocks/elements/checkboxList/checkboxList.pug
+include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
 include /blocks/elements/rangeSlider/rangeSlider.pug
 include /blocks/cards/cardRoom/cardRoom.pug
 
@@ -40,17 +41,44 @@ div.content.searchRoom__shadow
       
       div.searchRoom_filters_features
         h3 Правила дома
-        div.checkbox
-          +checkbox_item("Можно курить", 51,"","")
-          +checkbox_item("Можно с питомцами", 52,"","")
-          +checkbox_item("Можно пригласить гостей (до 10 человек)", 53,"","")
+        +checkboxList("",
+          {
+            label : "Можно курить", 
+            id : 51,
+            p : "", 
+            p__dopclass : ""
+          },
+          {
+            label : "Можно с питомцами", 
+            id : 52,
+            p : "", 
+            p__dopclass : ""
+          },
+          {
+            label : "Можно пригласить гостей (до 10 человек)", 
+            id : 53,
+            p : "", 
+            p__dopclass : ""
+          }
+        )
       
       div.searchRoom_filters_availability
         h3 доступность
-        div.checkbox
-          +checkbox_item("Широкий коридор", 61, "Ширина коридоров в номере не менее 91 см.","p_200")
-          +checkbox_item("Помощник для инвалидов", 62, "На 1 этаже вас встретит специалист и проводит до номера.","p_225")
-
+        +checkboxList("",
+          {
+            label : "Широкий коридор", 
+            id : 61,
+            p : "Ширина коридоров в номере не менее 91 см.", 
+            p__dopclass : "checkbox-list__p_width200"
+          },
+          {
+            label : "Помощник для инвалидов", 
+            id : 62,
+            p : "На 1 этаже вас встретит специалист и проводит до номера.", 
+            p__dopclass : "checkbox-list__p_width225"
+          }
+        )
+        
       div.searchRoom_filters_comfort
         div.blockDropdown
           +dropdownEx("удобства номера","","2 спальни, 2 кровати...","")
@@ -59,17 +87,44 @@ div.content.searchRoom__shadow
             +dropdownItems("кровати",2,"","")
             +dropdownItems("ванные комнаты",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
 
-      div.checkboxList
-        div.flex
-          h3 дополнительные удобства
-          img(alt="expand_more.svg").checkboxList_expand(src="project/img/expand_more.svg")
-        div.checkbox.checkbox__hide
-          +checkbox_item("Завтрак", 71,"","")
-          +checkbox_item("Письменный стол", 72,"","")
-          +checkbox_item("Стул для кормления", 73,"","")
-          +checkbox_item("Кроватка", 74,"","")
-          +checkbox_item("Телевизор", 75,"","")
-          +checkbox_item("Шампунь", 76,"","")
+      +checkboxListExpandable("дополнительные удобства","close",
+        {
+          label : "Завтрак", 
+          id : 71,
+          p : "", 
+          p__dopclass : ""
+        },
+        {
+          label : "Письменный стол", 
+          id : 72,
+          p : "", 
+          p__dopclass : ""
+        },
+        {
+          label : "Стул для кормления", 
+          id : 73,
+          p : "", 
+          p__dopclass : ""
+        },
+        {
+          label : "Кроватка", 
+          id : 74,
+          p : "", 
+          p__dopclass : ""
+        },
+        {
+          label : "Телевизор", 
+          id : 75,
+          p : "", 
+          p__dopclass : ""
+        },
+        {
+          label : "Шампунь", 
+          id : 76,
+          p : "", 
+          p__dopclass : ""
+        }
+      )
 
     div.searchRoom_rooms
       h1 Номера, которые мы для вас подобрали

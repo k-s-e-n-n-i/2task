@@ -1,0 +1,16 @@
+//(label,id,p,p__dopclass)
+
+
+
+mixin checkboxList(checkboxListExpandable_state,...items)
+  div(class="checkbox-list "+checkboxListExpandable_state)
+    each item in items
+      if item.p ==""
+        div.checkbox-list__item
+          input.checkbox-list__input(id="check" + item.id type="checkbox")
+          label.checkbox-list__label(for="check" + item.id)= item.label
+      else
+        div.checkbox-list__item
+          input.checkbox-list__input(id="check" + item.id type="checkbox")
+          label.checkbox-list__label.checkbox-list__label_bold(for="check" + item.id)= item.label
+          p(class=item.p__dopclass)= item.p

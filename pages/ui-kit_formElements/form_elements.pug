@@ -1,7 +1,8 @@
 include /blocks/elements/inputText/inputText.pug
 include /blocks/elements/dropdown/dropdown.pug
 include /blocks/elements/btn/btn.pug
-include /blocks/elements/checkbox/checkbox.pug
+include /blocks/elements/checkboxList/checkboxList.pug
+include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
 include /blocks/elements/radiobutton/radiobutton.pug
 include /blocks/elements/toggle/toggle.pug
 include /blocks/elements/like/like.pug
@@ -37,10 +38,26 @@ div.formElements
 
   div.blk.blk_2
     h3 Checkbox Buttons
-    div.checkbox
-      +checkbox_item("Можно курить", 11,"","")
-      +checkbox_item("Можно с питомцами", 12,"","")
-      +checkbox_item("Можно пригласить гостей (до 10 человек)", 13,"","")
+    +checkboxList("",
+      {
+        label : "Можно курить", 
+        id : 11,
+        p : "", 
+        p__dopclass : ""
+      },
+      {
+        label : "Можно с питомцами", 
+        id : 12,
+        p : "", 
+        p__dopclass : ""
+      },
+      {
+        label : "Можно пригласить гостей (до 10 человек)", 
+        id : 13,
+        p : "", 
+        p__dopclass : ""
+      }
+    )
 
     h3 Radio Buttons
     div.flex.flex__flexStart
@@ -67,17 +84,17 @@ div.formElements
 
     h3 buttons
     div.flex.flex__flexStart
-      +btn("CLICK ME","btn__gradient")
-      +btn("CLICK ME","btn__gradient _hover")
+      +btn("CLICK ME","btn_gradient")
+      +btn("CLICK ME","btn_gradient btn_hover")
     div.flex.flex__flexStart
-      +btn("CLICK ME","btn__border")
-      +btn("CLICK ME","btn__border _hover")
+      +btn("CLICK ME","btn_border")
+      +btn("CLICK ME","btn_border btn_hover")
 
     div.flex.flex__flexStart
       +link("CLICK ME","",'#')
       +link("CLICK ME","link__grey",'#')
 
-    +btn("перейти к оплате","btn__gradient btn__gradient__pay")
+    +btn("перейти к оплате","btn_gradient btn_gradient_pay")
 
     h3 pagination
     +pagination("1 – 12 из 100+ вариантов аренды","")
@@ -111,31 +128,71 @@ div.formElements
         +dropdownItemsLink(3)
       
   div.blk.blk_7
-    div.checkboxList
-      div.flex
-        h3 expandable checkbox list
-        img.checkboxList_expand(src="project/img/expand_more.svg" alt="expand_more.svg")
-      div.checkbox.checkbox__hide
-        +checkbox_item("Тест", 2100,"","")
-
-    div.checkboxList
-      div.flex
-        h3 expandable checkbox list
-        img.checkboxList_expand.checkboxList_expand__open(src="project/img/expand_more.svg" alt="expand_more.svg")
-      div.checkbox
-        +checkbox_item("Завтрак", 21,"","")
-        +checkbox_item("Письменный стол", 22,"","")
-        +checkbox_item("Стул для кормления", 23,"","")
-        +checkbox_item("Кроватка", 24,"","")
-        +checkbox_item("Телевизор", 25,"","")
-        +checkbox_item("Шампунь", 26,"","")
+    +checkboxListExpandable("expandable checkbox list","close",
+      {
+        label : "Тест", 
+        id : 2100,
+        p : "", 
+        p__dopclass : ""
+      }
+    )
+    
+    +checkboxListExpandable("expandable checkbox list","open",
+      {
+        label : "Завтрак", 
+        id : 21,
+        p : "", 
+        p__dopclass : ""
+      },
+      {
+        label : "Письменный стол", 
+        id : 22,
+        p : "", 
+        p__dopclass : ""
+      },
+      {
+        label : "Стул для кормления", 
+        id : 23,
+        p : "", 
+        p__dopclass : ""
+      },
+      {
+        label : "Кроватка", 
+        id : 24,
+        p : "", 
+        p__dopclass : ""
+      },
+      {
+        label : "Телевизор", 
+        id : 25,
+        p : "", 
+        p__dopclass : ""
+      },
+      {
+        label : "Шампунь", 
+        id : 26,
+        p : "", 
+        p__dopclass : ""
+      }
+    )
 
   div.blk.blk_8
     h3 Rich Checkbox Buttons
-    div.checkbox
-      +checkbox_item("Широкий коридор", 31, "Ширина коридоров в номере не менее 91 см.","p_200")
-      +checkbox_item("Помощник для инвалидов", 32, "На 1 этаже вас встретит специалист и проводит до номера.","p_225")
-  
+    +checkboxList("",
+      {
+        label : "Широкий коридор", 
+        id : 31,
+        p : "Ширина коридоров в номере не менее 91 см.", 
+        p__dopclass : "checkbox-list__p_width200"
+      },
+      {
+        label : "Помощник для инвалидов", 
+        id : 32,
+        p : "На 1 этаже вас встретит специалист и проводит до номера.", 
+        p__dopclass : "checkbox-list__p_width225"
+      }
+    )
+    
   div.blk.blk_9
     h3 bullet list
     ul.list

@@ -42,11 +42,11 @@
       display: flex;
       align-items: center;
 
-      .btn__gradient{
+      .btn_gradient{
         width: 196px;
       }
 
-      .btn__border{
+      .btn_border{
         width: 83px;
       }
 
@@ -70,12 +70,12 @@
   .btn{
     font-weight: bold;
 
-    .btn__border {
+    .btn_border {
       font-size: 12px;
       line-height: 22px;
     }
 
-    .btn__gradient{
+    .btn_gradient{
       line-height: 26px;
       font-size: 12.3px;
     }
@@ -155,7 +155,7 @@
         }
       }
 
-      .btn__border{
+      .btn_border{
 
         &.btn__header{
            margin-left: 0;
@@ -168,7 +168,7 @@
 @media (max-width: 620px){
   .header{
 
-    .btn__border{
+    .btn_border{
       
       &.btn__header{
          margin-left: 0;

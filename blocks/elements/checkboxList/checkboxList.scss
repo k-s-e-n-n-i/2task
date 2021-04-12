@@ -1,24 +1,28 @@
-.checkbox{
+.checkbox-list{
   margin-top: 17px;
 
-  .checkbox_item{
+  &.checkbox-list_hide{
+    display: none;
+  }
 
-    input.checkbox_item_input{
+  .checkbox-list__item{
+
+    .checkbox-list__input{
       display: none;
 
-      &:checked + .checkbox_item_label{
+      &:checked + .checkbox-list__label{
 
-        &:after{//галка
+        &:after{
           content: '';
           position: absolute;
-          width: 4px;//6px;
-          height: 6px;//8px;
+          width: 4px;
+          height: 6px;
           border-style: solid;
           border-width: 0 2px 2px 0;
           border-color: #BC9CFF;
           transform: rotate(45deg);
-          left: 7px;//6px;
-          top: 5px;//2px;
+          left: 7px;
+          top: 5px;
         }
 
         &:before{
@@ -27,7 +31,7 @@
       }
     }
 
-    .checkbox_item_label{
+    .checkbox-list__label{
       display: inline-block;
       cursor: pointer;
       position: relative;
@@ -35,7 +39,7 @@
       font-size: 14px;
       line-height: 20px;
       color: rgba(31, 32, 65, 0.5);
-      width: 200px;//192px;
+      width: 210px;
 
       &:before{
         content: '';
@@ -50,7 +54,7 @@
         border-radius: 4px;
       }
 
-      &.checkbox_item_label__bold{			
+      &.checkbox-list__label_bold{			
         color: rgba(31, 32, 65, 0.75);
         font-weight: bold;
         font-size: 14.5px;
@@ -64,39 +68,14 @@
       font-size: 12px;
       line-height: 14px;
       margin: -4px 0 10px 0;
-    }
-  }
-}
 
-.checkboxList{
-  margin: 50px 0 17px 0;
-
-  .flex{
-    position: relative;
-
-    .checkboxList_expand{
-      width: 10px;
-      height: 10px;
-      position: absolute;
-      bottom: 2px;
-      right: 15px;
-      cursor: pointer;
-
-      &.checkboxList_expand__open{
-        transform: rotate(180deg);
+      &.checkbox-list__p_width200{
+        width: 200px;
       }
-    }
 
-    h3{
-      margin: 0;
-      cursor: pointer;
-    }
-  }
-
-  .checkbox{
-    
-    &.checkbox__hide{
-      display: none;
+      &.checkbox-list__p_width225{
+        width: 225px;
+      }
     }
   }
 }

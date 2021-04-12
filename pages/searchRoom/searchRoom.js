@@ -11,7 +11,7 @@ $(function() {
   });
 
   $('.room_search').find('.filter_additional .expand').on('click', function(e) {
-    var block_list = $(this).closest('.filter_additional').find('.checkbox');
+    var block_list = $(this).closest('.filter_additional').find('.checkbox-list');
     dropdown_expend($(this),block_list);
   });
 });

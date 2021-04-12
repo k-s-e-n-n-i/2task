@@ -17,7 +17,7 @@
 
   -webkit-user-select: none;
 
-  &.btn__border{
+  &.btn_border{
     background-color: #fff;
     color: #BC9CFF;
     border: 1px #BC9CFF solid;	
@@ -26,22 +26,22 @@
     border-width: 2px;
   }
 
-  &.btn__gradient{
+  &.btn_gradient{
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     color: #ffffff;	
 
-    &.btn__gradient__pay{
+    &.btn_gradient_pay{
       width: 320px;
     }
   }
 
   &:hover,
   &:focus,
-  &._hover{
+  &.btn_hover{
     opacity: 0.5;
   }
 
-  .arrow{
+  .btn__arrow{
     position: absolute;
     bottom: 12px;
     right: 15px;
@@ -55,7 +55,7 @@
     background-repeat: no-repeat;
     background-image: url('/project/img/arrow.svg');
     
-    &.arrow__white{	
+    &.btn__arrow_white{	
       background-image: url('/project/img/arrow_white.svg');
     }
   }
