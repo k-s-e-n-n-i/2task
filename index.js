@@ -22,7 +22,7 @@ import '/blocks/elements/link/link.scss'
 import '/blocks/elements/pagination/pagination.scss'
 import '/blocks/elements/list/list.scss'
 import '/blocks/elements/info/info.scss'
-import '/blocks/elements/comment/comment.scss'
+import '/blocks/elements/commentBlock/commentBlock.scss'
 
 
 /*color_type*/

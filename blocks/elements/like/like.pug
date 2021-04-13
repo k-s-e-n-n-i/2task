@@ -1,4 +1,9 @@
-mixin like(text,dopclass)
-  div(class="like "+dopclass)
-    div(class="like_ico "+dopclass)
-    div(class="like_sum "+dopclass)= text
+mixin like(text,liked)
+  if liked == true
+    div(class="like like_liked")
+      div(class="like__ico like__ico_liked")
+      div(class="like__sum like__sum_liked")= text
+  else
+    div(class="like")
+      div(class="like__ico")
+      div(class="like__sum")= text

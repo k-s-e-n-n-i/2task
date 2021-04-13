@@ -1,0 +1,17 @@
+
+mixin commentBlock(topic,qty,...items)
+  div.comment-block
+    if topic != ""
+      div.comment-block__title
+        h2= topic
+        p= qty
+    each item in items
+      div.comment-block__comment
+        div.comment-block__person
+          img.comment-block__photo(src=item.urlImg width="400" height="300" alt="photo room")
+          div.comment-block__name-time
+            p.comment-block__name= item.name
+            p.comment-block__time= item.time
+        div.comment-block__comment-text
+          +like(item.qty,item.liked)
+          p.comment-block__text= item.text

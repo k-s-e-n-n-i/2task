@@ -12,7 +12,7 @@ include /blocks/elements/link/link.pug
 include /blocks/elements/pagination/pagination.pug
 include /blocks/elements/list/list.pug
 include /blocks/elements/info/info.pug
-include /blocks/elements/comment/comment.pug
+include /blocks/elements/commentBlock/commentBlock.pug
 
 
 div.formElements
@@ -70,8 +70,8 @@ div.formElements
 
     h3 like button
     div.flex.flex__flexStart
-      +like("2","")
-      +like("12","like__liked")
+      +like("2", false)
+      +like("12", true)
 
     h3 rate button
     div.flex.flex__flexStart
@@ -207,6 +207,15 @@ div.formElements
       +infoItem("Удобство", "Окно в каждой из спален","blocks/elements/info/location_city.svg","location_city")
       hr.info_hr
 
+  
   div.blk.width.blk_11
-    div.comment
-      +comment_item("blocks/elements/comment/photo1.png","like__liked",12,"Мурад Сарафанов","5 дней назад","Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+    +commentBlock("", "2 отзыва",
+    {
+      urlImg: "pages/detailsRoom/photo1.png",
+      liked : true,
+      qty : 12,
+      name : "Мурад Сарафанов",
+      time : "5 дней назад",
+      text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
+    }
+    )

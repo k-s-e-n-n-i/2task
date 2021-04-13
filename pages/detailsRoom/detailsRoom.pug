@@ -2,7 +2,7 @@ include /pages/ui-kit_headerFooter/header.pug
 include /pages/ui-kit_headerFooter/footer.pug
 
 include /blocks/elements/info/info.pug
-include /blocks/elements/comment/comment.pug
+include /blocks/elements/commentBlock/commentBlock.pug
 include /blocks/elements/like/like.pug
 include /blocks/elements/list/list.pug
 
@@ -36,12 +36,26 @@ div.content.room
           p.room_blockInfo_impression_text_num 260
           p.room_blockInfo_impression_text_text голосов
         canvas(id="oilChart" width="290" height="150")
-      div.comment
-        div.comment_title
-          h2 Отзывы посетителей номера
-          p 2 отзыва
-        +comment_item("pages/detailsRoom/photo1.png","like__liked",12,"Мурад Сарафанов","5 дней назад","Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
-        +comment_item("pages/detailsRoom/photo2.png","",2,"Патрисия Стёклышкова","Неделю назад","Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.")
+
+      +commentBlock("Отзывы посетителей номера", "2 отзыва",
+        {
+          urlImg: "pages/detailsRoom/photo1.png",
+          liked : true,
+          qty : 12,
+          name : "Мурад Сарафанов",
+          time : "5 дней назад",
+          text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
+        },
+        {
+          urlImg: "pages/detailsRoom/photo2.png",
+          liked : false,
+          qty : 2,
+          name : "Патрисия Стёклышкова",
+          time : "Неделю назад",
+          text : `Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.`
+        }
+        )
+      
       div.room_blockInfo_rules
         h2 Правила
         ul.list
