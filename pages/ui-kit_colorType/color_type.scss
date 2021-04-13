@@ -8,16 +8,16 @@ $colorGreen: #6FCF97;
 
 .colorType{
   display: flex;
-  //justify-content: space-between;
-  //width: 100%;
-  padding: 100px 0 130px 9.7%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 100px 9.7% 131px;
   position: relative;
 }
 
 .blockColor{
   display: flex;
   flex-direction: column;
-  margin: 35px 31% 0 0;
+  margin: 35px 0 0 0;//35px 31% 0 0;
   min-width: 300px;
 
   .blockColor_item{
@@ -80,10 +80,11 @@ $colorGreen: #6FCF97;
   display: flex;
   flex-direction: column;
   margin-top: 19px;
+  min-width: 200px;
 
   .blockType_item{
     display: flex;
-    margin: 25px 280px 25px 0;
+    margin: 25px 0;
 
     .blockType_item_sym{
       display: flex;
