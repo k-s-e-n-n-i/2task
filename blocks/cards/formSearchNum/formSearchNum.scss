@@ -14,19 +14,6 @@
   flex-wrap: wrap;
   z-index: 1;
 
-  .formSearchNum_choiceDate{
-    width: 100%;
-    
-    .formSearchNum_choiceDate_flex{
-      display: flex;
-      justify-content: space-between;
-
-      .blockDropdown_dropdown__date{
-        margin: 5px 0 0 0;
-      }
-    }
-  }
-
   .dropdownItemCalendar{
     display: block;
     width: 200px;
@@ -54,31 +41,18 @@
     letter-spacing: 0.9px;
   }
 
-  .blockDropdown{
-    
-    &.blockDropdown__width100{
+  .dropdown-block{
 
-      h3{
-        margin-top: 20px;
-      }
-    }
-
-    .blockDropdown_dropdown__whisItems{
-      + .blockDropdown{
-        width: 100%;
-      }
-    }
-
-    .blockDropdown_dropdownItems{
+    .dropdown-block__dropdown-items{
       
       h3{
         margin-top: 0px;
       }
       
-      .blockDropdown_dropdownItems_line{
+      .dropdown-block__items-line{
         height: 38px;
 
-        .blockDropdown_dropdownItems_line_incBlock{
+        .dropdown-block__block-qty{
           margin: 8px 6px 0 0;
         }
       }

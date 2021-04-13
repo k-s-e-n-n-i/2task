@@ -1,20 +1,53 @@
-include /blocks/elements/dropdown/dropdown.pug
+include /blocks/elements/dropdown/dropdownBlock.pug
+include /blocks/elements/dropdown/dropdownDates.pug
 include /blocks/elements/btn/btn.pug
 include /blocks/cards/calendar/calendar.pug
 
 mixin formSearchNum
   div.formSearchNum
     h1 Найдём номера под ваши пожелания
-    div.formSearchNum_choiceDate
-      div.formSearchNum_choiceDate_flex
-        +dropdown("Прибытие","","ДД.ММ.ГГГГ","blockDropdown_dropdown__date")
-        +dropdown("Выезд","","ДД.ММ.ГГГГ","blockDropdown_dropdown__date")
-      +calendar("hide")
-    div.blockDropdown.blockDropdown__width100
-      +dropdownEx("Гости","","Сколько гостей","")
-      div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
-        +dropdownItems("взрослые",2,"","")
-        +dropdownItems("дети",1,"","")
-        +dropdownItems("младенцы",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
-        +dropdownItemsLink(1)
+    +dropdownDates(
+      {
+        btnClean : false,
+        btnOk : false
+      },
+      { 
+        topic : "Прибытие",
+        activeText : "ДД.ММ.ГГГГ",
+      },
+      { 
+        topic : "Выезд",
+        activeText : "ДД.ММ.ГГГГ",
+      }
+      ) 
+    
+    +dropdownBlock(          
+      { 
+        topic : "Гости",
+        label : "",
+        activeText : "Сколько гостей",
+        state : "close",
+        btnClean : true,
+        btnOk : true
+      },
+      {
+        text : "взрослые",
+        qty : 2,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "дети",
+        qty : 1,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "младенцы",
+        qty : 0,
+        minus : "disable",
+        plus : "active"
+      }    
+      )
+    
     +btn("подобрать номер","btn_gradient btn_gradient_pay")

@@ -20,10 +20,10 @@
       font-size: 12.4px;
     }
 
-    .blockDropdown{
+    .dropdown-block{
       width: 100%;
 
-      .blockDropdown_dropdown{
+      .dropdown-block__dropdown{
         width: 100%;
       }
     }	
@@ -40,23 +40,15 @@
 
     .searchRoom_filters_comfort{
       margin-top: 20px;
-      
-      .blockDropdown_dropdown__whisItems{
-        margin-top: 4px;
 
-        img{
-          right: 16.5px;
-        }
-      }
-
-      .blockDropdown_dropdownItems{
+      .dropdown-block__dropdown-items{
         padding-bottom: 5px;
         box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-        .blockDropdown_dropdownItems_line{
+        .dropdown-block__items-line{
           height: 38px;
 
-          .blockDropdown_dropdownItems_line_incBlock{
+          .dropdown-block__block-qty{
             margin: 6px 6px 0 0;
           }
 

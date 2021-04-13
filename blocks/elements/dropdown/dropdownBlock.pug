@@ -1,0 +1,70 @@
+include /blocks/elements/link/link.pug
+
+mixin dropdownBlock(obj,...items)
+  div.dropdown-block
+    if obj.topic != "" && obj.label !=""
+      div.dropdown-block__labels
+        h3= obj.topic
+        p= obj.label
+      +dropdownBlock__dropdown(obj)
+    else 
+      if obj.topic != ""
+        h3= obj.topic
+      if obj.label != ""
+        p= obj.label  
+      +dropdownBlock__dropdown(obj)
+
+    if items != ""
+      if obj.state == "close"
+        div.dropdown-block__dropdown-items.dropdown-block__dropdown-items_hide
+          +dropdownBlock__itemsLine(obj,...items)
+      else
+        div.dropdown-block__dropdown-items
+          +dropdownBlock__itemsLine(obj,...items)
+      
+
+mixin dropdownBlock__dropdown(obj)
+  if obj.state == "close"
+    div(class="dropdown-block__dropdown")= obj.activeText
+      img.dropdown-block__expand(src="project/img/expand_more.svg" alt="expand_more.svg")
+  else
+    div(class="dropdown-block__dropdown dropdown-block__dropdown_items-show")= obj.activeText
+      img.dropdown-block__expand(src="project/img/expand_more.svg" alt="expand_more.svg")
+
+
+mixin dropdownBlock__itemsLine(obj,...items)
+  each item in items
+    div.dropdown-block__items-line
+      h3= item.text
+      div.dropdown-block__block-qty
+        if item.minus == "disable"
+          div(class="dropdown-block__inc-qty dropdown-block__inc-qty_disable")= "-"
+        else
+          div(class="dropdown-block__inc-qty")= "-"
+        span= item.qty
+        if item.plus == "disable"
+          div(class="dropdown-block__inc-qty dropdown-block__inc-qty_disable")= "-"
+        else
+          div(class="dropdown-block__inc-qty")= "+"
+  
+  if obj.btnClean == true || obj.btnOk == true
+    if obj.btnClean == false && obj.btnOk == true
+      div.dropdown-block__btns.dropdown-block__btns_flex-end
+        +link("Применить","link__ok",'#')
+    else
+      div.dropdown-block__btns
+        if obj.btnClean == true
+          +link("Очистить","link__clean link__grey",'#')
+        if obj.btnOk == true
+          +link("Применить","link__ok",'#')
+        
+//-----------------------------------------------------------
+
+mixin dropdownItemsLink(num)
+  if num > 0
+    div.dropdown-block__btns
+      +link("Очистить","link__clean link__grey",'#')
+      +link("Применить","link__ok",'#')
+  else
+    div.dropdown-block__btns.dropdown-block__btns_flex-end
+      +link("Применить","link__ok",'#')

@@ -1,6 +1,7 @@
 include /pages/ui-kit_headerFooter/header.pug
 include /pages/ui-kit_headerFooter/footer.pug
-include /blocks/elements/dropdown/dropdown.pug
+include /blocks/elements/dropdown/dropdownBlock.pug
+include /blocks/elements/dropdown/dropdownDates.pug
 include /blocks/elements/checkboxList/checkboxList.pug
 include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
 include /blocks/elements/rangeSlider/rangeSlider.pug
@@ -24,16 +25,46 @@ div.content.searchRoom__shadow
   div.content_container.searchRoom
     div.searchRoom_filters
       div.searchRoom_filters_date
-        +dropdown("даты пребывания в отеле","","19 авг - 23 авг","")
+        +dropdownBlock(          
+          { 
+            topic : "даты пребывания в отеле",
+            label : "",
+            activeText : "19 авг - 23 авг",
+            state : "close",
+            btnClean : false,
+            btnOk : false
+          }
+          )
       
       div.searchRoom_filters_guest
-        div.blockDropdown
-          +dropdownEx("Гости","","3 гостя, 1 младенец","")
-          div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
-            +dropdownItems("взрослые",0,"","")
-            +dropdownItems("дети",0,"","")
-            +dropdownItems("младенцы",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
-            +dropdownItemsLink(0)
+        +dropdownBlock(          
+          { 
+            topic : "Гости",
+            label : "",
+            activeText : "3 гостя, 1 младенец",
+            state : "close",
+            btnClean : false,
+            btnOk : true
+          },
+          {
+            text : "взрослые",
+            qty : 3,
+            minus : "active",
+            plus : "active"
+          },
+          {
+            text : "дети",
+            qty : 0,
+            minus : "disable",
+            plus : "active"
+          },
+          {
+            text : "младенцы",
+            qty : 1,
+            minus : "active",
+            plus : "active"
+          }    
+          )
       
       div.searchRoom_filters_diapason.slider101
         +rangeSlider("диапазон цены",5000,10000,"idPrice0")
@@ -80,12 +111,34 @@ div.content.searchRoom__shadow
         )
         
       div.searchRoom_filters_comfort
-        div.blockDropdown
-          +dropdownEx("удобства номера","","2 спальни, 2 кровати...","")
-          div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
-            +dropdownItems("спальни",2,"","")
-            +dropdownItems("кровати",2,"","")
-            +dropdownItems("ванные комнаты",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
+        +dropdownBlock(          
+          { 
+            topic : "удобства номера",
+            label : "",
+            activeText : "2 спальни, 2 кровати...",
+            state : "close",
+            btnClean : false,
+            btnOk : false
+          },
+          {
+            text : "спальни",
+            qty : 2,
+            minus : "active",
+            plus : "active"
+          },
+          {
+            text : "кровати",
+            qty : 2,
+            minus : "active",
+            plus : "active"
+          },
+          {
+            text : "ванные комнаты",
+            qty : 0,
+            minus : "disable",
+            plus : "active"
+          }    
+          )
 
       +checkboxListExpandable("дополнительные удобства","close",
         {

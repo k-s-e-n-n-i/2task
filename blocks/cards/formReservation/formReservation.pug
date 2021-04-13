@@ -1,4 +1,5 @@
-include /blocks/elements/dropdown/dropdown.pug
+include /blocks/elements/dropdown/dropdownBlock.pug
+include /blocks/elements/dropdown/dropdownDates.pug
 include /blocks/elements/btn/btn.pug
 
 mixin formReservation(number,priceS,price)
@@ -12,18 +13,52 @@ mixin formReservation(number,priceS,price)
         span= priceS
         span= "₽"
         span= " в сутки"
-    div.formReservation_block__flexcolumn
-      div.formReservation_block__flex
-        +dropdown("Прибытие","","19.08.2019","blockDropdown_dropdown__date")
-        +dropdown("Выезд","","23.08.2019","blockDropdown_dropdown__date")
-      +calendar("hide")
-    div.blockDropdown.blockDropdown__width100
-      +dropdownEx("Гости","","3 гостя","")
-      div.blockDropdown_dropdownItems.blockDropdown_dropdownItems__hide
-        +dropdownItems("взрослые",3,"","")
-        +dropdownItems("дети",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
-        +dropdownItems("младенцы",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
-        +dropdownItemsLink(3)
+          
+    +dropdownDates(
+      {
+        btnClean : false,
+        btnOk : false
+      },
+      { 
+        topic : "Прибытие",
+        activeText : "19.08.2019",
+      },
+      { 
+        topic : "Выезд",
+        activeText : "23.08.2019",
+      }
+      ) 
+    
+
+    +dropdownBlock(          
+      { 
+        topic : "Гости",
+        label : "",
+        activeText : "3 гостя",
+        state : "close",
+        btnClean : true,
+        btnOk : true
+      },
+      {
+        text : "взрослые",
+        qty : 3,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "дети",
+        qty : 0,
+        minus : "disable",
+        plus : "active"
+      },
+      {
+        text : "младенцы",
+        qty : 0,
+        minus : "disable",
+        plus : "active"
+      }    
+      )  
+    
     div.formReservation_blockPrices
       +formReservation_blockPrices_line("","9 990₽ х 4 суток","39 960")
       +formReservation_blockPrices_line("formReservation_blockPrices_line_leftBlock_p__infoMark","Сбор за услуги: скидка 2 179₽","0")

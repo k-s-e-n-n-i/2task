@@ -81,24 +81,6 @@
     }
   }
 
-  .formReservation_block__flexcolumn{
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-
-    .formReservation_block__flex{
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  .blockDropdown__width100{
-
-    h3{
-      margin: 21px 0 0 0;
-    }
-  }
-
   .formReservation_blockPrices{
     margin: 18px 0 44px;
     width: 100%;
@@ -120,13 +102,6 @@
     
       .formReservation_blockPrices_line_leftBlock{
         display: flex;
-
-        /*p{
-
-          &.formReservation_blockPrices_line_leftBlock_p__text{
-            
-          }	
-        }*/
 
         .formReservation_blockPrices_line_leftBlock_p__infoMark{
           width: 20px;

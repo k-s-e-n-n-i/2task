@@ -1,15 +1,15 @@
 import $ from "jquery"
 
 $(function() {
-  $('.blockDropdown_dropdown__whisItems').on('click', function(e) {
-    var block_list = $(this).closest('.blockDropdown').find('.blockDropdown_dropdownItems');
+  $('.dropdown-block__dropdown').on('click', function(e) {
+    var block_list = $(this).closest('.dropdown-block').find('.dropdown-block__dropdown-items');
 
-    if (block_list.hasClass('blockDropdown_dropdownItems__hide')){
-      block_list.removeClass('blockDropdown_dropdownItems__hide');
-      $(this).addClass('blockDropdown_dropdown__itemsShow');
+    if (block_list.hasClass('dropdown-block__dropdown-items_hide')){
+      block_list.removeClass('dropdown-block__dropdown-items_hide');
+      $(this).addClass('dropdown-block__dropdown_items-show');
     }else{
-      block_list.addClass('blockDropdown_dropdownItems__hide');
-      $(this).removeClass('blockDropdown_dropdown__itemsShow');
+      block_list.addClass('dropdown-block__dropdown-items_hide');
+      $(this).removeClass('dropdown-block__dropdown_items-show');
     }
   });	
 });

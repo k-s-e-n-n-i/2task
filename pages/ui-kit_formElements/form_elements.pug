@@ -1,5 +1,6 @@
 include /blocks/elements/inputText/inputText.pug
-include /blocks/elements/dropdown/dropdown.pug
+include /blocks/elements/dropdown/dropdownBlock.pug
+include /blocks/elements/dropdown/dropdownDates.pug
 include /blocks/elements/btn/btn.pug
 include /blocks/elements/checkboxList/checkboxList.pug
 include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
@@ -21,20 +22,50 @@ div.formElements
     +inputText("Text Field","Default","","Email","","blk_1")
     +inputText("Text Field","Hover / Focus","_hover","This is pretty awesome","This is pretty awesome","blk_2")
 
-    +dropdown("Dropdown","","Сколько гостей","")
+    +dropdownBlock(          
+      { 
+        topic : "Dropdown",
+        label : "",
+        activeText : "Сколько гостей",
+        state : "close",
+        btnClean : false,
+        btnOk : false
+      }
+      )
 
     +inputText("masked Text Field","","inputText_input__masked","ДД.ММ.ГГГГ","","blk_3")
 
-    div.flex.flex__spaceBetween
-      +dropdown("date Dropdown","","ДД.ММ.ГГГГ","blockDropdown_dropdown__date")
-      +dropdown("date Dropdown","","19.08.2019","blockDropdown_dropdown__date")
+    +dropdownDates(
+      {
+        btnClean : false,
+        btnOk : false
+      },
+      { 
+        topic : "date Dropdown",
+        activeText : "ДД.ММ.ГГГГ",
+      },
+      { 
+        topic : "date Dropdown",
+        activeText : "19.08.2019",
+      }
+      ) 
 
-    +dropdown("filter date dropdown","","19 авг - 23 авг","blockDropdown_dropdown__filter")
+    div.formElements__blk1Narrow
+      +dropdownBlock(          
+        { 
+          topic : "filter date dropdown",
+          label : "",
+          activeText : "19 авг - 23 авг",
+          state : "close",
+          btnClean : false,
+          btnOk : false
+        }
+        )
 
-    +inputText("subscription text field","","inputText_input__subscription","Email","","blk_4")
-      div.arrow
-        div.arrow_line
-        div.arrow_next
+      +inputText("subscription text field","","inputText_input__subscription","Email","","blk_4")
+        div.arrow
+          div.arrow_line
+          div.arrow_next
 
   div.blk.blk_2
     h3 Checkbox Buttons
@@ -100,32 +131,105 @@ div.formElements
     +pagination("1 – 12 из 100+ вариантов аренды","")
     
   div.blk.blk_4
-    +dropdown("Dropdown","Default","2 спальни, 2 кровати...","")
+    +dropdownBlock(          
+      { 
+        topic : "Dropdown",
+        label : "Default",
+        activeText : "2 спальни, 2 кровати...",
+        state : "close",
+        btnClean : false,
+        btnOk : false
+      }
+      )
 
-    div.blockDropdown
-      +dropdownEx("Dropdown","expanded","2 спальни, 2 кровати...","blockDropdown_dropdown__itemsShow")
-      div.blockDropdown_dropdownItems
-        +dropdownItems("спальни",2,"","")
-        +dropdownItems("кровати",2,"","")
-        +dropdownItems("ванные комнаты",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
+    +dropdownBlock(          
+      { 
+        topic : "Dropdown",
+        label : "expanded",
+        activeText : "2 спальни, 2 кровати...",
+        state : "open",
+        btnClean : false,
+        btnOk : false
+      },
+      {
+        text : "спальни",
+        qty : 2,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "кровати",
+        qty : 2,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "ванные комнаты",
+        qty : 0,
+        minus : "disable",
+        plus : "active"
+      }    
+      )
 
   div.blk.blk_5
-    div.blockDropdown
-      +dropdownEx("Dropdown","","Сколько гостей","blockDropdown_dropdown__itemsShow")
-      div.blockDropdown_dropdownItems
-        +dropdownItems("взрослые",0,"","")
-        +dropdownItems("дети",0,"","")
-        +dropdownItems("младенцы",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
-        +dropdownItemsLink(0)
+    +dropdownBlock(
+      { 
+        topic : "Dropdown",
+        label : "",
+        activeText : "Сколько гостей",
+        state : "open",
+        btnClean : false,
+        btnOk : true
+      },
+      {
+        text : "взрослые",
+        qty : 0,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "дети",
+        qty : 0,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "младенцы",
+        qty : 0,
+        minus : "disable",
+        plus : "active"
+      }    
+      )
 
   div.blk.blk_6
-    div.blockDropdown
-      +dropdownEx("Dropdown","","3 гостя","blockDropdown_dropdown__itemsShow")
-      div.blockDropdown_dropdownItems
-        +dropdownItems("взрослые",2,"","")
-        +dropdownItems("дети",1,"","")
-        +dropdownItems("младенцы",0,"blockDropdown_dropdownItems_line_incBlock_inc__disable","")
-        +dropdownItemsLink(3)
+    +dropdownBlock(
+      { 
+        topic : "Dropdown",
+        label : "",
+        activeText : "3 гостя",
+        state : "open",
+        btnClean : true,
+        btnOk : true
+      },
+      {
+        text : "взрослые",
+        qty : 2,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "дети",
+        qty : 1,
+        minus : "active",
+        plus : "active"
+      },
+      {
+        text : "младенцы",
+        qty : 0,
+        minus : "disable",
+        plus : "active"
+      }    
+      )
       
   div.blk.blk_7
     +checkboxListExpandable("expandable checkbox list","close",

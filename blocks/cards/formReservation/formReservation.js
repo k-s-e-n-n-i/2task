@@ -1,7 +1,7 @@
 import $ from "jquery"
 
 $(function() {
-  $('.formReservation').find('.formReservation_block__flexcolumn .blockDropdown_dropdown__date').on('click', function(e) {
+  $('.formReservation').find('.dropdown-dates .dropdown-block__dropdown_date').on('click', function(e) {
     var calendar = $(this).closest('.formReservation').find('.dropdownItemCalendar_block');
     
     if (calendar.hasClass('hide')){
@@ -13,13 +13,13 @@ $(function() {
 });
 
 function dropdown_expend(expend,block) {
-  input = expend.closest('.blockDropdown_dropdown');
+  input = expend.closest('.dropdown-block__dropdown');
 
-    if (block.hasClass('blockDropdown_dropdownItems__hide')){
-    block.removeClass('blockDropdown_dropdownItems__hide');
-    input.addClass('blockDropdown_dropdown__itemsShow');
+    if (block.hasClass('dropdown-block__dropdown-items_hide')){
+    block.removeClass('dropdown-block__dropdown-items_hide');
+    input.addClass('dropdown-block__dropdown_items-show');
   }else{
-    block.addClass('blockDropdown_dropdownItems__hide');
-    input.removeClass('blockDropdown_dropdown__itemsShow');
+    block.addClass('dropdown-block__dropdown-items_hide');
+    input.removeClass('dropdown-block__dropdown_items-show');
   }
 }

@@ -55,22 +55,28 @@
         }
       }
 
-      .blockDropdown{
+      .formElements__blk1Narrow{
+        width: 267px;
+
+        .inputText__subscription{
+          margin: 41px 0;
+    
+          &:after{
+            top: 33px;
+            right: 12px;
+          }
+    
+          .inputText_input__subscription{
+            width: 266px;
+          }
+        }
+      }
+
+      .dropdown-block{
         margin-bottom: 23px;
       }
 
-      .inputText__subscription{
-        margin: 41px 0;
-  
-        &:after{
-          top: 33px;
-          right: 65px;
-        }
-  
-        .inputText_input__subscription{
-          width: 266px;
-        }
-      }
+      
     }
     
     .flex{
@@ -85,7 +91,7 @@
         justify-content: flex-start;
       }
 
-      .blockDropdown{
+      .dropdown-block{
         margin: 20px 0 40px;				
       }
     }
@@ -196,7 +202,7 @@
       height: 261px;
       margin: 20px 161px 39px 20px;
 
-      .blockDropdown_dropdownItems{
+      .dropdown-block__dropdown-items{
         padding-bottom: 5px;
       }
     }
@@ -205,10 +211,10 @@
     &.blk_5,
     &.blk_6{
 
-      .blockDropdown{
+      .dropdown-block{
         margin-bottom: 20px;
 
-        .dropdown_labels{
+        .dropdown-block__labels{
           display: flex;
           justify-content: space-between;
       
@@ -229,13 +235,13 @@
           }
         }
 
-        .blockDropdown_dropdown{
+        .dropdown-block__dropdown{
           border-radius: 4px 4px 0 0;
         }
 
-        .blockDropdown_dropdownItems{
+        .dropdown-block__dropdown-items{
           
-          .blockDropdown_dropdownItems_line{
+          .dropdown-block__items-line{
             height: auto;
 
             h3{
@@ -243,7 +249,7 @@
               font-size: 12px;
             }
 
-            .blockDropdown_dropdownItems_line_incBlock{
+            .dropdown-block__block-qty{
               margin: 6px 6px 0 0;
 
               span{
@@ -259,10 +265,10 @@
     &.blk_5{
       margin: 20px 52px 20px 20px;
       
-      .blockDropdown_dropdownItems{
+      .dropdown-block__dropdown-items{
         padding-bottom: 0;
 
-        .blockDropdown_dropdownItems_lineBtn {
+        .dropdown-block__btns {
           height: auto;
 
           .link__ok{
@@ -274,9 +280,9 @@
 
     &.blk_6{
 
-      .blockDropdown_dropdownItems{
+      .dropdown-block__dropdown-items{
 
-        .blockDropdown_dropdownItems_lineBtn{
+        .dropdown-block__btns{
           height: auto;
 
           .link__clean{
@@ -385,7 +391,7 @@
   
 
 .inputText_input,
-.blockDropdown_dropdown{
+.dropdown-block__dropdown{
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 4px;
