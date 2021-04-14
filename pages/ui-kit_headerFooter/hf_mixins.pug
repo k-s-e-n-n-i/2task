@@ -21,7 +21,16 @@ mixin footerMenu_item(...items)
     ul.bottomMenu_column_list
       each item in items
         if item == "subscription"
-          +inputText("","","inputText_input__subscription","Email","","inputFooter")
+          +inputText(
+            {
+              topic : "",
+              label : "",
+              placeholder : "Email",
+              inputText : "",
+              id : "inputFooter",
+              type : "subscription"
+            }
+          )
         else
           if item == "logo"
             img.logo(src="pages/ui-kit_headerFooter/logo.svg" alt="logo")

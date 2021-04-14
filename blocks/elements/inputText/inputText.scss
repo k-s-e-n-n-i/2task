@@ -1,15 +1,31 @@
-.inputText{
+.input-text{
   position: relative;
   width: 100%;
 
-  .inputText_input{
+  &.input-text_subscription{
+    margin-top: 10px;
+  
+    &:after{
+      content: '';
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      position: absolute;
+      bottom: 11px;
+      right: 11px;
+      background-repeat: no-repeat;
+      background-image: url('/project/img/arrow.svg');
+    }
+  }
+
+  .input-text__input{
     width: 100%;
     color: rgba(31, 32, 65, 0.25);
     outline: none;
     font-size: 14px;		
 
     &:hover,
-    &._hover{
+    &.input-text__input_hover{
       color: rgba(31, 32, 65, 0.75);
       border: 1px solid rgba(31, 32, 65, 0.5);
       font-weight: bold;
@@ -18,26 +34,6 @@
       color: rgba(31, 32, 65, 0.75);
       border: 1px solid rgba(31, 32, 65, 0.5);
     }
-  }
-
-  &.inputText__subscription{
-
-    &:after{
-      content: '';
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      position: absolute;
-      top: 18px;
-      right: 11px;
-      background-repeat: no-repeat;
-      background-image: url('/project/img/arrow.svg');
-    }
-  }
-
-  .inputText_input__subscription{
-    width: 260px;
-    position: relative;
   }
 
   ::-webkit-input-placeholder { /* Chrome */

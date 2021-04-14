@@ -20,32 +20,16 @@
     &.blk_1{
       margin-right: 106px;
 
-      .inputText_labels{
-        display: flex;
-        justify-content: space-between;
-    
-        h3,p{
-          margin: 0;
-        }
-
-        p{
-          font-size: 12px;
-          line-height: 11px;
-          text-transform: uppercase;
-          color: #1F2041;
-        }
-      }
-
-      .inputText{
+      .input-text{
         margin-bottom: 20px;
 
-        .inputText_input{
+        .input-text__input{
           font-size: 13.5px;
         }
   
         &:nth-child(2){
 
-          .inputText_labels{
+          .topic-label{
 
             p{
               line-height: 16px;
@@ -58,16 +42,11 @@
       .formElements__blk1Narrow{
         width: 267px;
 
-        .inputText__subscription{
+        .input-text_subscription{
           margin: 41px 0;
     
-          &:after{
-            top: 33px;
-            right: 12px;
-          }
-    
-          .inputText_input__subscription{
-            width: 266px;
+          .input-text__input{
+            width: 100%;
           }
         }
       }
@@ -390,7 +369,7 @@
 }
   
 
-.inputText_input,
+.input-text__input,
 .dropdown-block__dropdown{
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;

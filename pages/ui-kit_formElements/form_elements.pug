@@ -19,10 +19,28 @@ include /blocks/elements/commentBlock/commentBlock.pug
 div.formElements
   img.ico_logo(src="pages/ui-kit_formElements/ico_logo.svg" alt="logo")
   div.blk.blk_1
-    +inputText("Text Field","Default","","Email","","blk_1")
-    +inputText("Text Field","Hover / Focus","_hover","This is pretty awesome","This is pretty awesome","blk_2")
-
-    +dropdownBlock(          
+    +inputText(
+      {
+        topic : "Text Field",
+        label : "Default",
+        placeholder : "Email",
+        inputText : "",
+        state : "",
+        id : "blk_1",
+      }
+      )
+    +inputText(
+      {
+        topic : "Text Field",
+        label : "Hover / Focus",
+        placeholder : "This is pretty awesome",
+        inputText : "This is pretty awesome",
+        state : "focus",
+        id : "blk_1"
+      }
+      )
+    
+    +dropdownBlock(
       { 
         topic : "Dropdown",
         label : "",
@@ -33,7 +51,16 @@ div.formElements
       }
       )
 
-    +inputText("masked Text Field","","inputText_input__masked","ДД.ММ.ГГГГ","","blk_3")
+    +inputText(
+      {
+        topic : "masked Text Field",
+        label : "",
+        placeholder : "ДД.ММ.ГГГГ",
+        inputText : "",
+        state : "",
+        id : "blk_3"
+      }
+      )
 
     +dropdownDates(
       {
@@ -51,7 +78,7 @@ div.formElements
       ) 
 
     div.formElements__blk1Narrow
-      +dropdownBlock(          
+      +dropdownBlock(
         { 
           topic : "filter date dropdown",
           label : "",
@@ -62,10 +89,16 @@ div.formElements
         }
         )
 
-      +inputText("subscription text field","","inputText_input__subscription","Email","","blk_4")
-        div.arrow
-          div.arrow_line
-          div.arrow_next
+      +inputText(
+        {
+          topic : "subscription text field",
+          label : "",
+          placeholder : "Email",
+          inputText : "",
+          id : "blk_4",
+          type : "subscription"
+        }
+        )
 
   div.blk.blk_2
     h3 Checkbox Buttons
@@ -131,7 +164,7 @@ div.formElements
     +pagination("1 – 12 из 100+ вариантов аренды","")
     
   div.blk.blk_4
-    +dropdownBlock(          
+    +dropdownBlock(
       { 
         topic : "Dropdown",
         label : "Default",
@@ -142,7 +175,7 @@ div.formElements
       }
       )
 
-    +dropdownBlock(          
+    +dropdownBlock(
       { 
         topic : "Dropdown",
         label : "expanded",

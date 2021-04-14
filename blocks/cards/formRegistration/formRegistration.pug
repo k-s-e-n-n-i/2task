@@ -7,15 +7,62 @@ mixin formRegistration(id)
   div.formRegistration
     h1 Регистрация аккаунта
     div.formRegistration_itemText
-      +inputText("","","","Имя","","registration")
-      +inputText("","","","Фамилия","","registration")
+      +inputText(
+        {
+          topic : "",
+          label : "",
+          placeholder : "Имя",
+          inputText : "",
+          state : "",
+          id : "registration"
+        }
+        )
+      +inputText(
+        {
+          topic : "",
+          label : "",
+          placeholder : "Фамилия",
+          inputText : "",
+          state : "",
+          id : "registration"
+        }
+        )
       
     div.formRegistration_blockRadio
       +radio(1+id,"rbGroop1"+id,"Мужчина","checked")
       +radio(2+id,"rbGroop1"+id,"Женщина")
-    +inputText("Дата рождения","","","ДД.ММ.ГГГГ","","registration")
-    +inputText("данные для входа в сервис","","","Email","","registration")
-    +inputText("","","","Пароль","","registration")
+
+    +inputText(
+      {
+        topic : "Дата рождения",
+        label : "",
+        placeholder : "ДД.ММ.ГГГГ",
+        inputText : "",
+        state : "",
+        id : "registration"
+      }
+      )
+    +inputText(
+      {
+        topic : "данные для входа в сервис",
+        label : "",
+        placeholder : "Email",
+        inputText : "",
+        state : "",
+        id : "registration"
+      }
+      )
+    +inputText(
+      {
+        topic : "",
+        label : "",
+        placeholder : "Пароль",
+        inputText : "",
+        state : "",
+        id : "registration"
+      }
+      )
+    
     +toggle("toggleGrooup1"+id,"Получать спецпредложения","on")
     +btn("Зарегистрироваться","btn_gradient btn_gradient_pay")
     div.formRegistration_login

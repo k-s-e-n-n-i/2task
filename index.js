@@ -23,6 +23,7 @@ import '/blocks/elements/pagination/pagination.scss'
 import '/blocks/elements/list/list.scss'
 import '/blocks/elements/infoBlock/infoBlock.scss'
 import '/blocks/elements/commentBlock/commentBlock.scss'
+import '/blocks/elements/topicLabel/topicLabel.scss'
 
 
 /*color_type*/

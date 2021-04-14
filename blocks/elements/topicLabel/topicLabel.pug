@@ -1,0 +1,10 @@
+mixin topicLabel(obj)
+  if obj.topic != "" && obj.label !=""
+    div.topic-label
+      h3= obj.topic
+      p= obj.label
+  else 
+    if obj.topic != ""
+      h3= obj.topic
+    if obj.label != ""
+      p= obj.label
