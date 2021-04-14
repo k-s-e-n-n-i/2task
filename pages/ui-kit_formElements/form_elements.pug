@@ -12,7 +12,7 @@ include /blocks/elements/rangeSlider/rangeSlider.pug
 include /blocks/elements/link/link.pug
 include /blocks/elements/pagination/pagination.pug
 include /blocks/elements/list/list.pug
-include /blocks/elements/info/info.pug
+include /blocks/elements/infoBlock/infoBlock.pug
 include /blocks/elements/commentBlock/commentBlock.pug
 
 
@@ -305,12 +305,24 @@ div.formElements
       +listItem("Время прибытия — после 13:00, а выезд до 12:00")
 
   div.blk.blk_10
-    div.info
-      +infoItem("Комфорт", "Шумопоглощающие стены","blocks/elements/info/insert_emoticon.svg","insert_emoticon")
-      hr.info_hr
-      +infoItem("Удобство", "Окно в каждой из спален","blocks/elements/info/location_city.svg","location_city")
-      hr.info_hr
-
+    +infoBlock(
+      {
+        topic : "Сведения о номере",
+        qtyHR : 2
+      },
+      {
+        label : "Комфорт",
+        text : "Шумопоглощающие стены",
+        url : "blocks/elements/infoBlock/emoticon.svg",
+        dopclass : "info-block__icon_emoticon"
+      },
+      {
+        label : "Удобство",
+        text : "Окно в каждой из спален",
+        url : "blocks/elements/infoBlock/city.svg",
+        dopclass : "info-block__icon_city"
+      }
+    )
   
   div.blk.width.blk_11
     +commentBlock("", "2 отзыва",

@@ -1,7 +1,7 @@
 include /pages/ui-kit_headerFooter/header.pug
 include /pages/ui-kit_headerFooter/footer.pug
 
-include /blocks/elements/info/info.pug
+include /blocks/elements/infoBlock/infoBlock.pug
 include /blocks/elements/commentBlock/commentBlock.pug
 include /blocks/elements/like/like.pug
 include /blocks/elements/list/list.pug
@@ -24,13 +24,31 @@ div.content.room
       div.room_blockImages_col2_image.room_blockImages_col2_image__2
   div.content_container
     div.room_blockInfo
-      div.info
-        h2 Сведения о номере
-        +infoItem("Комфорт", "Шумопоглощающие стены","pages/detailsRoom/insert_emoticon.svg","insert_emoticon")
-        hr.info_hr
-        +infoItem("Удобство", "Окно в каждой из спален","pages/detailsRoom/location_city.svg","location_city")
-        hr.info_hr
-        +infoItem("Уют", "Номер оснащён камином","pages/detailsRoom/whatshot.svg","whatshot")
+      +infoBlock(
+        {
+          topic : "Сведения о номере",
+          qtyHR : 2
+        },
+        {
+          label : "Комфорт",
+          text : "Шумопоглощающие стены",
+          url : "blocks/elements/infoBlock/emoticon.svg",
+          dopclass : "info-block__icon_emoticon"
+        },
+        {
+          label : "Удобство",
+          text : "Окно в каждой из спален",
+          url : "blocks/elements/infoBlock/city.svg",
+          dopclass : "info-block__icon_city"
+        },
+        {
+          label : "Уют",
+          text : "Номер оснащён камином",
+          url : "blocks/elements/infoBlock/whatshot.svg",
+          dopclass : "info-block__icon_whatshot"
+        }
+      )
+
       div.room_blockInfo_impression
         h2 Впечатления от номера
         div.room_blockInfo_impression_text 
