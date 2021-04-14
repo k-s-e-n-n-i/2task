@@ -134,8 +134,18 @@ div.formElements
 
     h3 like button
     div.flex.flex__flexStart
-      +like("2", false)
-      +like("12", true)
+      +like(
+        {
+          qty : 2,
+          liked : false
+        }
+        )
+      +like(
+        {
+          qty : 12,
+          liked : true
+        }
+        )
 
     h3 rate button
     div.flex.flex__flexStart
