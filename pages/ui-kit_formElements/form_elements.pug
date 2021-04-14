@@ -165,8 +165,20 @@ div.formElements
       +btn("CLICK ME","btn_border btn_hover")
 
     div.flex.flex__flexStart
-      +link("CLICK ME","",'#')
-      +link("CLICK ME","link__grey",'#')
+      +link(
+        {
+          text : "CLICK ME",
+          url : '#',
+          type : "main"
+        }
+        )
+      +link(
+        {
+          text : "CLICK ME",
+          url : '#',
+          type : "clean"
+        }
+        )
 
     +btn("перейти к оплате","btn_gradient btn_gradient_pay")
 

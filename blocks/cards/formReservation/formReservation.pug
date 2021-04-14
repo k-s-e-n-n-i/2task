@@ -8,7 +8,13 @@ mixin formReservation(number,priceS,price)
       p
         span= "№ "
         span= number +" "
-        +link("люкс","link__fio",'#')
+        +link(
+          {
+            text : "люкс",
+            url : '#',
+            type : "lux"
+          }
+          )
       p
         span= priceS
         span= "₽"

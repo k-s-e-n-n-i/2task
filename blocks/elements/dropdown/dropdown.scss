@@ -98,11 +98,11 @@
 
       .link{
 
-        &.link__clean{
+        &.link_clean{
           margin: auto 15px;
         }
 
-        &.link__ok{
+        &.link_ok{
           margin: auto 7px;
         }
       }
@@ -115,11 +115,11 @@
         justify-content: flex-end;
       }
 
-      .link.link__clean{
+      .link_clean{
         margin: 21px 0 0 14px;
       }
       
-      .link.link__ok{
+      .link_ok{
         margin: 21px 7px 0 0;
       }
     }

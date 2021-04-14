@@ -14,7 +14,13 @@ mixin cardRoom(id,number,price,link,review,mark)
           span= "№ "
           span= number+" "
           if link== "люкс"
-            +link(link, "link__lux",'#')
+            +link(
+              {
+                text : "люкс",
+                url : '#',
+                type : "lux"
+              }
+              )
         p
           span= price
           span= "₽"
