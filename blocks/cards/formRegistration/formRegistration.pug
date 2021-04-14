@@ -1,5 +1,5 @@
 include /blocks/elements/inputText/inputText.pug
-include /blocks/elements/radiobutton/radiobutton.pug
+include /blocks/elements/radiogroup/radiogroup.pug
 include /blocks/elements/toggle/toggle.pug
 include /blocks/elements/btn/btn.pug
 
@@ -28,9 +28,19 @@ mixin formRegistration(id)
         }
         )
       
-    div.formRegistration_blockRadio
-      +radio(1+id,"rbGroop1"+id,"Мужчина","checked")
-      +radio(2+id,"rbGroop1"+id,"Женщина")
+    +radiogroup(
+      {
+        nameGroup : "rbGroop"+id,
+        idMainBlock : id
+      },
+      {
+        text : "Мужчина",
+        check : "checked"
+      },
+      {
+        text : "Женщина"
+      }
+      )
 
     +inputText(
       {

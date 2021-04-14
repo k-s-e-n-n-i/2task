@@ -4,7 +4,7 @@ include /blocks/elements/dropdown/dropdownDates.pug
 include /blocks/elements/btn/btn.pug
 include /blocks/elements/checkboxList/checkboxList.pug
 include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
-include /blocks/elements/radiobutton/radiobutton.pug
+include /blocks/elements/radiogroup/radiogroup.pug
 include /blocks/elements/toggle/toggle.pug
 include /blocks/elements/like/like.pug
 include /blocks/elements/rateBtn/rateBtn.pug
@@ -124,9 +124,19 @@ div.formElements
       )
 
     h3 Radio Buttons
-    div.flex.flex__flexStart
-      +radio(100,"rbGroop1_uikit","Мужчина","checked")
-      +radio(200,"rbGroop1_uikit","Женщина")
+    +radiogroup(
+      {
+        nameGroup : "rbGroopUiFormEl",
+        idMainBlock : "UiFormEl"
+      },
+      {
+        text : "Мужчина",
+        check : "checked"
+      },
+      {
+        text : "Женщина"
+      }
+      )
 
     h3 Toggle
     +toggle("toggleGrooup1_uikit","Получать спецпредложения","on")
