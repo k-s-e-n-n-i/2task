@@ -4,7 +4,7 @@ include /pages/ui-kit_headerFooter/footer.pug
 include /blocks/elements/infoBlock/infoBlock.pug
 include /blocks/elements/commentBlock/commentBlock.pug
 include /blocks/elements/like/like.pug
-include /blocks/elements/list/list.pug
+include /blocks/elements/listBlock/listBlock.pug
 
 include /blocks/cards/formReservation/formReservation.pug
 include /blocks/elements/dropdown/dropdownBlock.pug
@@ -75,12 +75,22 @@ div.content.room
         }
         )
       
-      div.room_blockInfo_rules
-        h2 Правила
-        ul.list
-          +listItem("Нельзя с питомцами")
-          +listItem("Без вечеринок и мероприятий")
-          +listItem("Время прибытия — после 13:00, а выезд до 12:00")
+      +listBlock(
+        {
+          topic : "Правила",
+          tagTopic : "h2"
+        },
+        {
+          text : "Нельзя с питомцами"
+        },
+        {
+          text : "Без вечеринок и мероприятий"
+        },
+        {
+          text : "Время прибытия — после 13:00, а выезд до 12:00"
+        }
+      )
+      
       div.room_blockInfo_cancel
         h2 Отмена
         p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

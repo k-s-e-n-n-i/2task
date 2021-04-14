@@ -11,7 +11,7 @@ include /blocks/elements/rateBtn/rateBtn.pug
 include /blocks/elements/rangeSlider/rangeSlider.pug
 include /blocks/elements/link/link.pug
 include /blocks/elements/pagination/pagination.pug
-include /blocks/elements/list/list.pug
+include /blocks/elements/listBlock/listBlock.pug
 include /blocks/elements/infoBlock/infoBlock.pug
 include /blocks/elements/commentBlock/commentBlock.pug
 
@@ -353,11 +353,21 @@ div.formElements
     )
     
   div.blk.blk_9
-    h3 bullet list
-    ul.list
-      +listItem("Нельзя с питомцами")
-      +listItem("Без вечеринок и мероприятий")
-      +listItem("Время прибытия — после 13:00, а выезд до 12:00")
+    +listBlock(
+      {
+        topic : "bullet list",
+        tagTopic : "h3"
+      },
+      {
+        text : "Нельзя с питомцами"
+      },
+      {
+        text : "Без вечеринок и мероприятий"
+      },
+      {
+        text : "Время прибытия — после 13:00, а выезд до 12:00"
+      }
+      )
 
   div.blk.blk_10
     +infoBlock(

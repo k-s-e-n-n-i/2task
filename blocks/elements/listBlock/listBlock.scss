@@ -1,8 +1,13 @@
-.list{
-  margin: 20px 0 0 0;
-  padding: 0;
+.list-block{
+  width: 361px;
+  margin: auto;
 
-  .list_item{
+  .list-block__list{
+    margin: 0;
+    padding: 0;
+  }
+
+  .list-block__item{
     position: relative;
     margin: 10px 0;
     display: flex;
