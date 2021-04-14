@@ -1,10 +1,15 @@
-mixin pagination(text,dopclass)
-  div(class="pagination " +dopclass)
-    div.pagination_num.pagination_num__active= 1
-    div.pagination_num= 2
-    div.pagination_num= 3
-    div.pagination_num= "..."
-    div.pagination_num= 15
-    div.pagination_num.pagination_num__next
-      div(class="arrow arrow__white")
-  div(class="pagination_label " +dopclass)= text
+
+
+ 
+
+mixin pagination(obj)
+  div(class="pagination")
+    div.pagination__num-block
+      div.pagination__num.pagination__num_active= 1
+      div.pagination__num= 2
+      div.pagination__num= 3
+      div.pagination__num= "..."
+      div.pagination__num= obj.max
+      div.pagination__num.pagination__num_next
+        div(class="pagination__arrow pagination__arrow_white")
+    div(class="pagination__label ")= obj.text

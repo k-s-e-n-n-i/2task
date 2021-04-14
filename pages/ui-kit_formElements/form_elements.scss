@@ -145,10 +145,15 @@
   
       .pagination{
         margin: 16px 0 9px 1px;
-      }
-  
-      .pagination_label {
-        margin-left: 6px;
+
+        .pagination__num-block,
+        .pagination__label{
+          justify-content: flex-start;
+        }
+
+        .pagination__label {
+          margin-left: 6px;
+        }
       }
     }
 

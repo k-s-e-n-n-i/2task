@@ -5,18 +5,8 @@ include /blocks/elements/dropdown/dropdownDates.pug
 include /blocks/elements/checkboxList/checkboxList.pug
 include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
 include /blocks/elements/rangeSlider/rangeSlider.pug
+include /blocks/elements/pagination/pagination.pug
 include /blocks/cards/cardRoom/cardRoom.pug
-
-
-mixin searchRoom_rooms_nav_num(active, ...items)
-  each item in items
-    if item == active
-      div.searchRoom_rooms_nav_num.searchRoom_rooms_nav_num__active= item
-    else
-      if item == "next"
-        div.searchRoom_rooms_nav_num.searchRoom_rooms_nav_num__next
-      else		
-        div.searchRoom_rooms_nav_num= item
 
 
 +header(0)
@@ -197,9 +187,12 @@ div.content.searchRoom__shadow
       +cardRoom(10,666,"5 000","",25,5)
       +cardRoom(11,444,"5 000","",15,3)
       +cardRoom(12,352,"5 000","",55,3)
-
-      div.searchRoom_rooms_nav
-        +searchRoom_rooms_nav_num(1,1,2,3,"...",15,"next")
-      div.searchRoom_rooms_nav_label 1 – 12 из 100+ вариантов аренды
+  
+      +pagination(
+        {
+          text : "1 – 12 из 100+ вариантов аренды",
+          max : 15
+        }
+        )
 
 +footer
