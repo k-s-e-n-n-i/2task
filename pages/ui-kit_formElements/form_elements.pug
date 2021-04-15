@@ -159,8 +159,18 @@ div.formElements
 
     h3 rate button
     div.flex.flex__flexStart
-      +rate("4",1,2,3,4,5)
-      +rate("5",1,2,3,4,5)
+      +rateBtn(
+        {
+          qty : 5,
+          active : 4
+        }
+      )
+      +rateBtn(
+        {
+          qty : 5,
+          active : 5
+        }
+      )
 
   div.blk.blk_3.blk__slider.slider100
     div.blk__slider_blk

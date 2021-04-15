@@ -1,13 +1,13 @@
 import $ from "jquery"
 
 $(function() {
-  $('.rate_star').on('click', function(e) {
-    $(this).closest('.rate').find('.rate_star').removeClass('rate_star__active');
+  $('.rate-btn__star').on('click', function(e) {
+    $(this).closest('.rate-btn').find('.rate-btn__star').removeClass('rate-btn__star_active');
 
     var num = parseInt($(this).attr('id'));
 
     for(let i=1;i<=num;i++){
-      $(this).closest('.rate').find('#'+i).addClass('rate_star__active');
+      $(this).closest('.rate-btn').find('#'+i).addClass('rate-btn__star_active');
     }
   });	
 });

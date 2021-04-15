@@ -1,7 +1,8 @@
-mixin rate(mark, ...items)
-  div.rate(name=mark)
-    each item in items
-      if mark>=item
-        div(class="rate_star rate_star__active" id=item)
+mixin rateBtn(obj)
+  - var i = 0;
+  div.rate-btn
+    while i < obj.qty
+      if obj.active > i++
+        div(class="rate-btn__star rate-btn__star_active" id=i)
       else	
-        div.rate_star(id=item)
+        div.rate-btn__star(id=i)

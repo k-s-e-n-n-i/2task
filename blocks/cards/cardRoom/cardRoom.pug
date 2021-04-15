@@ -26,7 +26,12 @@ mixin cardRoom(id,number,price,link,review,mark)
           span= "₽"
           span= " в сутки"
       div.cardRoom_contentInfo_block
-        +rate(mark,1,2,3,4,5)
+        +rateBtn(
+          {
+            qty : 5,
+            active : mark
+          }
+        )
         p
           span= review
           span= " Отзывов"
