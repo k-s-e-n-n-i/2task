@@ -1,8 +1,8 @@
 import $ from "jquery"
 
 $(function() {
-  let kol = $('.cardRoom .cardRoom_image').length;
-  for(let i=1;i<=kol;i++){
-    $('.cardRoom').find('#'+i+'.cardRoom_image').addClass('images'+i);
+  let kol = $('.card-room .card-room__image').length;
+  for(let i = 1; i <= kol; i++){
+    $('.card-room').find('#'+i+'.card-room__image').addClass('images'+i);
   }
 });

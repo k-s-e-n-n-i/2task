@@ -15,5 +15,23 @@ div.forms
   div.blk.blk_3
     div.block
       +calendar({state : "open"})
-    +cardRoom(1,888,"9 990","люкс",145)
-    +cardRoom(2,840,"9 900","",65)
+    +cardRoom(
+      {
+        id : 1,
+        number : 888,
+        price : "9 990",
+        markLink : "люкс",
+        review : 145,
+        rating : 5
+      }
+      )
+    +cardRoom(
+      {
+        id : 2,
+        number : 840,
+        price : "9 990",
+        markLink : "",
+        review : 65,
+        rating : 4
+      }
+      )

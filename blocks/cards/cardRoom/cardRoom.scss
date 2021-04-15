@@ -1,6 +1,4 @@
-@import '/pages/ui-kit_colorType/color_type.scss';
-
-.cardRoom{
+.card-room{
   width: 270px;
   height: 257px;
   background: #FFFFFF;
@@ -8,7 +6,7 @@
   border-radius: 4px;
   margin: 12px 2.5px 9px 7.4px;
 
-  .cardRoom_image{
+  .card-room__image{
     width: 270px;
     height: 150px;
     border-radius: 4px 4px 0 0;	
@@ -52,14 +50,14 @@
       background-image: url('img/image12.png');
     }
 
-    .cardRoom_image_pagination{
+    .card-room__slider-pagination{
       position: absolute;
       bottom: 14px;
       right: 14px;
       display: flex;
       flex-wrap: nowrap;
       
-      .cardRoom_image_pagination_item{
+      .card-room__slider-pagination-item{
         width: 7.5px;
         height: 7.5px;
         margin: 0 2px;
@@ -69,7 +67,7 @@
         box-sizing: border-box;
         box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
 
-        &.cardRoom_image_pagination_item__active{
+        &.card-room__slider-pagination-item_active{
           background: #fff;
         }
         
@@ -77,10 +75,10 @@
     }
   }
 
-  .cardRoom_contentInfo{
+  .card-room__info-room{
     margin: 20px;
 
-    .cardRoom_contentInfo_block{
+    .card-room__number-price{
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -88,7 +86,7 @@
       position: relative;
       height: 27px;
       
-      &.cardRoom_contentInfo_block__border{
+      &.card-room__number-price_bottom-border{
         padding-bottom: 8px;
         border: 1px solid rgba(31, 32, 65, 0.1);
         border-width: 0 0 1px 0;
@@ -97,7 +95,7 @@
         p{
 
           &:nth-child(1){
-            color: $colorDarkShade100;
+            color: rgba(31, 32, 65, 1);
 
             span{
 
@@ -112,7 +110,7 @@
           }
 
           &:nth-child(2){
-            color: $colorDarkShade50;
+            color: rgba(31, 32, 65, 0.5);
 
             span{
 
@@ -143,7 +141,7 @@
       }
 
       p{
-        color: $colorDarkShade50;
+        color: rgba(31, 32, 65, 0.5);
         margin: 0;
 
         span{
