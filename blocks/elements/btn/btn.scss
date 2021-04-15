@@ -1,29 +1,22 @@
 .btn{
   border-radius: 22px;
-  width: 99px;
   height: 26px;
   padding: 4px 0;
-  color: #ffffff;
   cursor: pointer;
   margin: 15px 20px 15px 0;
   position: relative;
-
-  font-family: Montserrat, Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
   text-align: center;
-  text-transform: uppercase;
-
-  -webkit-user-select: none;
 
   &.btn_border{
     background-color: #fff;
-    color: #BC9CFF;
     border: 1px #BC9CFF solid;	
-    width: 97px;
+
     height: 22px;
     border-width: 2px;
+
+    .btn__link{
+      color: #BC9CFF;
+    }
   }
 
   &.btn_gradient{
@@ -39,6 +32,18 @@
   &:focus,
   &.btn_hover{
     opacity: 0.5;
+  }
+
+  .btn__link{
+    color: #ffffff;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-user-select: none;
   }
 
   .btn__arrow{

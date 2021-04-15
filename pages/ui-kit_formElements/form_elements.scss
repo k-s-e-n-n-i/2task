@@ -125,12 +125,20 @@
         margin: 16px 20px 14px 0;
         height: 36px;
         line-height: 35px;
+
+        &.btn_gradient{
+          width: 97px;
+        }
   
         &.btn_border{
           width: 95px;
           height: 32px;
           line-height: 32px;
   
+        }
+
+        &.btn_gradient_pay{
+          width: 100%;
         }
       }
   

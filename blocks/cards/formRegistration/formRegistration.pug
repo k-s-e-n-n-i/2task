@@ -81,7 +81,21 @@ mixin formRegistration(id)
       }
     )
   
-    +btn("Зарегистрироваться","btn_gradient btn_gradient_pay")
+    +btn(
+      {
+        text : "Зарегистрироваться",
+        dopclass : "btn_gradient btn_gradient_pay",
+        link : "#",
+        arrow : true
+      }
+      )
     div.formRegistration_login
       p Уже есть аккаунт на Toxin
-      +btn("Войти","btn_border")
+      +btn(
+      {
+        text : "Войти",
+        dopclass : "btn_border",
+        link : "#",
+        arrow : false
+      }
+      )

@@ -198,11 +198,40 @@ div.formElements
 
     h3 buttons
     div.flex.flex__flexStart
-      +btn("CLICK ME","btn_gradient")
-      +btn("CLICK ME","btn_gradient btn_hover")
+      +btn(
+        {
+          text : "CLICK ME",
+          dopclass : "btn_gradient",
+          link : "#",
+          arrow : false
+        }
+        )
+      +btn(
+        {
+          text : "CLICK ME",
+          dopclass : "btn_gradient btn_hover",
+          link : "#",
+          arrow : false
+        }
+        )
+  
     div.flex.flex__flexStart
-      +btn("CLICK ME","btn_border")
-      +btn("CLICK ME","btn_border btn_hover")
+      +btn(
+        {
+          text : "CLICK ME",
+          dopclass : "btn_border",
+          link : "#",
+          arrow : false
+        }
+        )
+      +btn(
+        {
+          text : "CLICK ME",
+          dopclass : "btn_border btn_hover",
+          link : "#",
+          arrow : false
+        }
+        )
 
     div.flex.flex__flexStart
       +link(
@@ -220,7 +249,14 @@ div.formElements
         }
         )
 
-    +btn("перейти к оплате","btn_gradient btn_gradient_pay")
+    +btn(
+      {
+        text : "перейти к оплате",
+        dopclass : "btn_gradient btn_gradient_pay",
+        link : "#",
+        arrow : true
+      }
+      )
 
     h3 pagination
     +pagination(

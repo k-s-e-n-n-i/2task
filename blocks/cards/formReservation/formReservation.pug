@@ -73,7 +73,14 @@ mixin formReservation(number,priceS,price)
       h2= "Итого"
       span.dashed
       h2= price +"₽"
-    +btn("Забронировать","btn_gradient btn_gradient_pay")
+    +btn(
+      {
+        text : "Забронировать",
+        dopclass : "btn_gradient btn_gradient_pay",
+        link : "#",
+        arrow : true
+      }
+      )
 
 
 mixin formReservation_blockPrices_line(dopclass,text,price)

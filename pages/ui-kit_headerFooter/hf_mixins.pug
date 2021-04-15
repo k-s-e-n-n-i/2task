@@ -9,8 +9,22 @@ mixin menu_li(text,dopclass)
 mixin header_nav_login(auth,name)
   div.header_nav_login
     if auth == 0
-      +btn("Войти","btn_border btn__header","./blocks/signIn/signIn.pug")
-      +btn("Зарегистрироваться","btn_gradient btn__header")
+      +btn(
+      {
+        text : "Войти",
+        dopclass : "btn_border btn__header",
+        link : "#",
+        arrow : false
+      }
+      )
+      +btn(
+      {
+        text : "Зарегистрироваться",
+        dopclass : "btn_gradient btn__header",
+        link : "#",
+        arrow : false
+      }
+      )
     else
       div.header_nav_login_hr
       p= name

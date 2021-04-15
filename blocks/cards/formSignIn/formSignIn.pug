@@ -25,7 +25,22 @@ mixin formSignIn
       }
       )
 
-    +btn("Войти","btn_gradient btn_gradient_pay")
+    +btn(
+      {
+        text : "Войти",
+        dopclass : "btn_gradient btn_gradient_pay",
+        link : "#",
+        arrow : true
+      }
+      )
+
     div.formSignIn_login
       p Нет аккаунта Toxin?
-      +btn("Создать","btn_border")
+      +btn(
+      {
+        text : "Создать",
+        dopclass : "btn_border",
+        link : "#",
+        arrow : false
+      }
+      )
