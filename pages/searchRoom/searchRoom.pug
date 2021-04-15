@@ -57,8 +57,15 @@ div.content.searchRoom__shadow
           )
       
       div.searchRoom_filters_diapason.slider101
-        +rangeSlider("диапазон цены",5000,10000,"idPrice0")
-        p.searchRoom_filters_diapason_text Стоимость за сутки пребывания в номере
+        +rangeSlider(
+          {
+            topic : "диапазон цены",
+            labelMin : 5000,
+            labelMax : 10000,
+            id : "idPrice1",
+            postText : "Стоимость за сутки пребывания в номере"
+          }
+          )
       
       div.searchRoom_filters_features
         h3 Правила дома

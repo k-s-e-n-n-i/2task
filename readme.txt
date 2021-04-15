@@ -64,17 +64,17 @@ demoslider_MVC.ts
 		(thisSlider : any, dataSlider : object, model : any)
 
 		1. width - определяет ширину слайдера в пикселях
-		2. sliderBlock - ищет блок со слайдером и заголовком ('.rangeSlider), без настроек ('.sliderConf')
-		3. slider - ищет именно блок со слайдером/шкалой ('.rangeSlider_slider')
-		4. height - определяет высоту блока со слайдером и заголовком ('.rangeSlider)
+		2. sliderBlock - ищет блок со слайдером и заголовком ('.range-slider), без настроек ('.sliderConf')
+		3. slider - ищет именно блок со слайдером/шкалой ('.range-slider__slider')
+		4. height - определяет высоту блока со слайдером и заголовком ('.range-slider)
 		5. ind - ищет элемент, отображающий активный диапазон значений, индикатор, зеланая линия
 		6. indWidth - определяет ширину активного диапазона в пикселях
-		7. rangeLeft - ищет элемент левой границы диапазона, шарик ('.rangeSlider_slider_left')
+		7. rangeLeft - ищет элемент левой границы диапазона, шарик ('.range-slider__left')
 		8. posRangeLeft - определяет позицию левой границы диапазона относительно начала шкалы в пикселях
-		9. rangeRight - ищет элемент правой границы диапазона, шарик ('.rangeSlider_slider_right')
+		9. rangeRight - ищет элемент правой границы диапазона, шарик ('.range-slider__right')
 		10. posRangeRight - определяет позицию правой границы диапазона относительно начала шкалы в пикселях
-		11. valueMin - ищет элемент, отображающий значение левой границы диапазона ('.rangeSlider_label__min')
-		12. valueMax - ищет элемент, отображающий значение правой границы диапазона ('.rangeSlider_label__max')
+		11. valueMin - ищет элемент, отображающий значение левой границы диапазона ('.range-slider__label-min')
+		12. valueMax - ищет элемент, отображающий значение правой границы диапазона ('.range-slider__label-max')
 
 		переменные
 		masScaleStep  - массив, используется для хранения значений пикселей соответсвующих позициям, где расположены "шаги". Применяется, когда задан шаг у слайдера, то есть бегунок перемещается по точкам, перескакивая промежуточные значения.
@@ -94,7 +94,7 @@ demoslider_MVC.ts
 		2. type - в зависимости от заданного типа слайдера (type), отрисовывает/скрывает элементы 
 		3. scale - в зависимости от заданных в scale и scaleStep отрисовывает или скрывает шкалу делений
 		4. orientation - в зависимости от заданной ориентации меняет положение самого блока со слайдером, а также корректирует отображение значений около делений шкалы
-		5. value - в зависимости от заданного value отрисовывает/скрывает элементы, отображающие значения текущего выбранного диапазона значений ('.rangeSlider_label_Block')
+		5. value - в зависимости от заданного value отрисовывает/скрывает элементы, отображающие значения текущего выбранного диапазона значений ('.range-slider__label-block')
 
 	class Controller
 		встречающиеся переменные:
@@ -125,10 +125,10 @@ demoslider_MVC.ts
 			elem - html-элемент, позиция которого определяется. В данном случае позиция шарика (правого/левого).
 
 		5. movingRange(thisSlider : any, dataSlider : object, lr : string, startPos : number, pos : number, indWidth : number) - перемещает левую или правую границу ползунка
-			 function calc(thisSlider : any, dataSlider : object, pos : number) - функция рассчета стоимости в точке итогового расположения перемещаемой границы, возвращает значение суммы, которое выводится в '.rangeSlider_label__min' или '.rangeSlider_label__max'
+			 function calc(thisSlider : any, dataSlider : object, pos : number) - функция рассчета стоимости в точке итогового расположения перемещаемой границы, возвращает значение суммы, которое выводится в '.range-slider__label-min' или '.range-slider__label-max'
 
-		6. writeValueMin(thisSlider : any, val : number) - прописывает значение val(текущее) в элемент '.rangeSlider_label__max'
-		7. writeValueMax(thisSlider : any, val : number) - прописывает значение val(текущее) в элемент '.rangeSlider_label__max'
+		6. writeValueMin(thisSlider : any, val : number) - прописывает значение val(текущее) в элемент '.range-slider__label-max'
+		7. writeValueMax(thisSlider : any, val : number) - прописывает значение val(текущее) в элемент '.range-slider__label-max'
 		8. checkDataSliderMin(dataSlider : object, val : number) - обновляет текущее минимальное значение (minStart) в объекте с данными о слайдере
 		9. checkDataSliderMax(dataSlider : object, val : number) - обновляет текущее максимальное значение (maxStart) в объекте с данными о слайдере
 		10. configMinChange(thisSlider : any, dataSlider : object, val : number) : void - прописывает значение min в соответсвующее поле в Настройках 

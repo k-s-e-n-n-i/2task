@@ -164,7 +164,15 @@ div.formElements
 
   div.blk.blk_3.blk__slider.slider100
     div.blk__slider_blk
-      +rangeSlider("Range Slider",5000,10000,"idPrice0")
+      +rangeSlider(
+        {
+          topic : "Range Slider",
+          labelMin : 5000,
+          labelMax : 10000,
+          id : "idPrice0",
+          postText : ""
+        }
+        )
 
     h3 buttons
     div.flex.flex__flexStart
