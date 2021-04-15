@@ -7,4 +7,4 @@ mixin dropdownDates(obj,...items)
             h3= item.topic
           div(class="dropdown-block__dropdown dropdown-block__dropdown_date")= item.activeText
             img.dropdown-block__expand(src="project/img/expand_more.svg" alt="expand_more.svg")
-    +calendar("hide")
+    +calendar({state : "close"})

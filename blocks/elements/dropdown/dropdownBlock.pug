@@ -76,32 +76,3 @@ mixin dropdownBlock__itemsLine(obj,...items)
               type : "ok"
             }
             )
-        
-//-----------------------------------------------------------
-
-mixin dropdownItemsLink(num)
-  if num > 0
-    div.dropdown-block__btns
-      +link(
-        {
-          text : "Очистить",
-          url : '#',
-          type : "clean"
-        }
-        )
-      +link(
-        {
-          text : "Применить",
-          url : '#',
-          type : "ok"
-        }
-        )
-  else
-    div.dropdown-block__btns.dropdown-block__btns_flex-end
-      +link(
-        {
-          text : "Применить",
-          url : '#',
-          type : "ok"
-        }
-        )
