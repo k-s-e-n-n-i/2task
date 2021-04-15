@@ -1,6 +1,6 @@
 include /blocks/elements/inputText/inputText.pug
 include /blocks/elements/radiogroup/radiogroup.pug
-include /blocks/elements/toggle/toggle.pug
+include /blocks/elements/toggleBlock/toggleBlock.pug
 include /blocks/elements/btn/btn.pug
 
 mixin formRegistration(id)
@@ -73,7 +73,14 @@ mixin formRegistration(id)
       }
       )
     
-    +toggle("toggleGrooup1"+id,"Получать спецпредложения","on")
+    +toggleBlock(
+      {
+        id : id,
+        text : "Получать спецпредложения",
+        active : "on"
+      }
+    )
+  
     +btn("Зарегистрироваться","btn_gradient btn_gradient_pay")
     div.formRegistration_login
       p Уже есть аккаунт на Toxin

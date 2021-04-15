@@ -1,8 +1,8 @@
-.toggle__flex{
+.toggle-block{
   display: flex;
   justify-content: flex-start;
 
-  .toggle{
+  .toggle-block__toggle{
     display: flex;
     justify-content: space-between;
     width: 38px;
@@ -11,14 +11,14 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     margin-top: 9px;
 
-    .toggle_item{
+    .toggle-block__item{
 
-      .toggle_item_input{
+      .toggle-block__input{
         display: none;
 
         &:checked{
 
-          + .toggle_item_label{
+          + .toggle-block__input-label{
 
             &:after{
               content: '';
@@ -31,25 +31,10 @@
               top: 0px;
             }
           }
-
-          + .off{
-
-            &:after{
-              background: rgba(31, 32, 65, 0.25);
-            }
-          }
-
-          + .on{
-
-            &:after{
-              background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-              $color: #000;
-            }
-          }
         }	
       }
 
-      .toggle_item_label{
+      .toggle-block__input-label{
         display: inline-block;
         cursor: pointer;
         position: relative;
@@ -63,6 +48,21 @@
           width: 12px;
           height: 12px;
           border-radius: 50%;
+        }
+
+        &.toggle-block__input-label_off{
+
+          &:after{
+            background: rgba(31, 32, 65, 0.25);
+          }
+        }
+
+        &.toggle-block__input-label_on{
+
+          &:after{
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            $color: #000;
+          }
         }
       }
     }

@@ -5,7 +5,7 @@ include /blocks/elements/btn/btn.pug
 include /blocks/elements/checkboxList/checkboxList.pug
 include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
 include /blocks/elements/radiogroup/radiogroup.pug
-include /blocks/elements/toggle/toggle.pug
+include /blocks/elements/toggleBlock/toggleBlock.pug
 include /blocks/elements/like/like.pug
 include /blocks/elements/rateBtn/rateBtn.pug
 include /blocks/elements/rangeSlider/rangeSlider.pug
@@ -139,8 +139,20 @@ div.formElements
       )
 
     h3 Toggle
-    +toggle("toggleGrooup1_uikit","Получать спецпредложения","on")
-    +toggle("toggleGrooup2_uikit","Получать спецпредложения","off")
+    +toggleBlock(
+      {
+        id : "1Uikit",
+        text : "Получать спецпредложения",
+        active : "on"
+      }
+    )
+    +toggleBlock(
+      {
+        id : "2Uikit",
+        text : "Получать спецпредложения",
+        active : "off"
+      }
+    )
 
     h3 like button
     div.flex.flex__flexStart
