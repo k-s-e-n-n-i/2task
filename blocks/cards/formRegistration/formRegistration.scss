@@ -1,4 +1,4 @@
-.formRegistration{
+.form-registration{
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -28,7 +28,7 @@
     margin-top: 10px;
   }
 
-  .formRegistration_itemText{
+  /*.form-registration_itemText{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -37,7 +37,7 @@
     h3{
       margin: 0;
     }
-  }
+  }*/
 
   .btn{
 
@@ -56,7 +56,7 @@
     }
   }
 
-  .formRegistration_login{
+  .form-registration__login{
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -4,20 +4,20 @@ include /blocks/elements/toggleBlock/toggleBlock.pug
 include /blocks/elements/btn/btn.pug
 
 mixin formRegistration(id)
-  div.formRegistration
+  div.form-registration
     h1 Регистрация аккаунта
-    div.formRegistration_itemText
-      +inputText(
-        {
-          topic : "",
-          label : "",
-          placeholder : "Имя",
-          inputText : "",
-          state : "",
-          id : "registration"
-        }
-        )
-      +inputText(
+
+    +inputText(
+      {
+        topic : "",
+        label : "",
+        placeholder : "Имя",
+        inputText : "",
+        state : "",
+        id : "registration"
+      }
+      )
+    +inputText(
         {
           topic : "",
           label : "",
@@ -79,7 +79,7 @@ mixin formRegistration(id)
         text : "Получать спецпредложения",
         active : "on"
       }
-    )
+      )
   
     +btn(
       {
@@ -89,13 +89,13 @@ mixin formRegistration(id)
         arrow : true
       }
       )
-    div.formRegistration_login
+    div.form-registration__login
       p Уже есть аккаунт на Toxin
       +btn(
-      {
-        text : "Войти",
-        dopclass : "btn_border",
-        link : "#",
-        arrow : false
-      }
-      )
+        {
+          text : "Войти",
+          dopclass : "btn_border",
+          link : "#",
+          arrow : false
+        }
+        )
