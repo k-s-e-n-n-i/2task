@@ -1,8 +1,8 @@
 import $ from "jquery"
 
 $(function() {
-  $('.formReservation').find('.dropdown-dates .dropdown-block__dropdown_date').on('click', function(e) {
-    var calendar = $(this).closest('.formReservation').find('.dropdownItemCalendar_block');
+  $('.form-reservation').find('.dropdown-dates .dropdown-block__dropdown_date').on('click', function(e) {
+    var calendar = $(this).closest('.form-reservation').find('.dropdownItemCalendar_block');
     
     if (calendar.hasClass('hide')){
       calendar.removeClass('hide');	

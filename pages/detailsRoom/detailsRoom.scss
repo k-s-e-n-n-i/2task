@@ -154,7 +154,7 @@
         margin: 0 20px;
       }
 
-      .formReservation{
+      .form-reservation{
         margin-right: 20px;
       }			
     }
@@ -200,7 +200,7 @@
         }
       }
 
-      .formReservation{
+      .form-reservation{
         margin: 20px auto 0;
       }
     }
@@ -235,7 +235,7 @@
 }
 
 @media (max-width: 400px){
-  .formReservation{
+  .form-reservation{
     width: 100%;
     padding: 20px;
 
@@ -243,13 +243,13 @@
       flex-wrap: wrap;
     }
 
-    .formReservation_blockPrices_line_p__text{
+    .form-reservation__line-price_p__text{
       word-break: break-all;
       width: 175px!important;
       margin-right: 10px;
       text-align: left;
 
-      &.formReservation_blockPrices_line_p__infoMark{
+      &.form-reservation__line-price_p__infoMark{
 
         &:before{
           left: 170px!important;

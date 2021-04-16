@@ -18,10 +18,10 @@
       margin-bottom: 40px;
     }
 
-    .formReservation{
+    .form-reservation{
       margin-bottom: 40px;
 
-      .formReservation_block{
+      .form-reservation__block{
 
         p{
 
@@ -39,9 +39,9 @@
       }
     }
 
-    .formReservation_blockPrices{
+    .form-reservation__block-prices{
 
-      .formReservation_blockPrices_line_leftBlock_p__infoMark{
+      .form-reservation__icon-info-price{
         position: absolute;
         left: 211px;
       }
@@ -84,7 +84,7 @@
 
   .formSearchNum,
   .form-registration,
-  .formReservation,
+  .form-reservation,
   .formSignIn{
     margin: 0;
   }

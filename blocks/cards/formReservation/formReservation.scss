@@ -1,6 +1,4 @@
-@import '/pages/ui-kit_colorType/color_type.scss';
-
-.formReservation{
+.form-reservation{
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -8,7 +6,7 @@
   border-radius: 4px;
 
   width: 380px;
-  height: auto;//511px;
+  height: auto;
   padding: 43px 29px 30px 29px;
   
   display: flex;	
@@ -19,7 +17,7 @@
     margin: 0;
   }
 
-  .formReservation_block{
+  .form-reservation__block{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -30,7 +28,7 @@
 
       &:nth-child(1){
         font-weight: 700;
-        color: $colorDarkShade100;
+        color: rgba(31, 32, 65, 1) ;
 
         span{
 
@@ -43,7 +41,7 @@
       &:nth-child(2){
         font-weight: 400;
         font-size: 12.5px;
-        color: $colorDarkShade50;
+        color: rgba(31, 32, 65, 0.5) ;
 
         span{
 
@@ -66,8 +64,8 @@
       }
     }
 
-    .dashed{
-      border: 1px dashed $colorDarkShade25;
+    .form-reservation__dashed{
+      border: 1px dashed rgba(31, 32, 65, 0.25) ;
       height: 0;
       width: 100%;
       box-sizing: border-box;
@@ -81,11 +79,11 @@
     }
   }
 
-  .formReservation_blockPrices{
+  .form-reservation__block-prices{
     margin: 18px 0 44px;
     width: 100%;
   
-    .formReservation_blockPrices_line{
+    .form-reservation__line-price{
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -100,20 +98,20 @@
         margin: 0;
       }
     
-      .formReservation_blockPrices_line_leftBlock{
+      .form-reservation__text-price{
         display: flex;
 
-        .formReservation_blockPrices_line_leftBlock_p__infoMark{
+        .form-reservation__icon-info-price{
           width: 20px;
           height: 20px;
           margin: 0 9px;
-          border: 1px solid $colorDarkShade25;
+          border: 1px solid rgba(31, 32, 65, 0.25) ;
           box-sizing: border-box;
           border-radius: 50%;
           display: flex;
           justify-content: center;
           align-items: center;
-          color: $colorDarkShade25;
+          color: rgba(31, 32, 65, 0.25) ;
           cursor: pointer;
         }
       }

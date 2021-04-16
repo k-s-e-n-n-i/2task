@@ -1,10 +1,11 @@
+include /blocks/elements/link/link.pug
 include /blocks/elements/dropdown/dropdownBlock.pug
 include /blocks/elements/dropdown/dropdownDates.pug
 include /blocks/elements/btn/btn.pug
 
 mixin formReservation(number,priceS,price)
-  div.formReservation
-    div.formReservation_block
+  div.form-reservation
+    div.form-reservation__block
       p
         span= "№ "
         span= number +" "
@@ -35,8 +36,7 @@ mixin formReservation(number,priceS,price)
       }
       ) 
     
-
-    +dropdownBlock(          
+    +dropdownBlock(
       { 
         topic : "Гости",
         label : "",
@@ -65,14 +65,29 @@ mixin formReservation(number,priceS,price)
       }    
       )  
     
-    div.formReservation_blockPrices
-      +formReservation_blockPrices_line("","9 990₽ х 4 суток","39 960")
-      +formReservation_blockPrices_line("formReservation_blockPrices_line_leftBlock_p__infoMark","Сбор за услуги: скидка 2 179₽","0")
-      +formReservation_blockPrices_line("formReservation_blockPrices_line_leftBlock_p__infoMark","Сбор за доп. услуги","300")
-    div.formReservation_block
+    +formReservation__blockPrices(
+      {
+        textPrice : "9 990₽ х 4 суток",
+        sumPrice : "39 960",
+        iconInfo : false
+      },
+      {
+        textPrice : "Сбор за услуги: скидка 2 179₽",
+        sumPrice : "0",
+        iconInfo : true
+      },
+      {
+        textPrice : "Сбор за доп. услуги",
+        sumPrice : "300",
+        iconInfo : true
+      }
+      )
+
+    div.form-reservation__block
       h2= "Итого"
-      span.dashed
+      span.form-reservation__dashed
       h2= price +"₽"
+
     +btn(
       {
         text : "Забронировать",
@@ -83,10 +98,12 @@ mixin formReservation(number,priceS,price)
       )
 
 
-mixin formReservation_blockPrices_line(dopclass,text,price)
-  div.formReservation_blockPrices_line
-    div.formReservation_blockPrices_line_leftBlock
-      p(class="formReservation_blockPrices_line_leftBlock_p__text ")= text
-      if dopclass=="formReservation_blockPrices_line_leftBlock_p__infoMark"
-        div.formReservation_blockPrices_line_leftBlock_p__infoMark i
-    p= price +"₽"
+mixin formReservation__blockPrices(...items)
+  div.form-reservation__block-prices
+    each item in items
+      div.form-reservation__line-price
+        div.form-reservation__text-price
+          p= item.textPrice
+          if item.iconInfo == true
+            div.form-reservation__icon-info-price i
+        p= item.sumPrice +"₽"
