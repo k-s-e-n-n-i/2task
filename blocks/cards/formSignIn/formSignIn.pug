@@ -2,7 +2,7 @@ include /blocks/elements/inputText/inputText.pug
 include /blocks/elements/btn/btn.pug
 
 mixin formSignIn
-  div.formSignIn
+  div.form-sign-in
     h1 Войти
     +inputText(
       {
@@ -34,13 +34,13 @@ mixin formSignIn
       }
       )
 
-    div.formSignIn_login
+    div.form-sign-in__login
       p Нет аккаунта Toxin?
       +btn(
-      {
-        text : "Создать",
-        dopclass : "btn_border",
-        link : "#",
-        arrow : false
-      }
-      )
+        {
+          text : "Создать",
+          dopclass : "btn_border",
+          link : "#",
+          arrow : false
+        }
+        )
