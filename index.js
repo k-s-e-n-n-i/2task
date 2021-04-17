@@ -69,7 +69,7 @@ import '/blocks/cards/cardRoom/cardRoom.js'
 
 
 /*form elements*/
-import '/pages/ui-kit_formElements/form_elements.scss'
+import '/pages/ui-kit_formElements/ui-kit_formElements.scss'
 
 
 /*pages*/

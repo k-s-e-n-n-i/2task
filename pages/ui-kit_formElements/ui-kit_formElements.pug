@@ -16,9 +16,9 @@ include /blocks/elements/infoBlock/infoBlock.pug
 include /blocks/elements/commentBlock/commentBlock.pug
 
 
-div.formElements
-  img.ico_logo(src="pages/ui-kit_formElements/ico_logo.svg" alt="logo")
-  div.blk.blk_1
+div.ui-kit-form-elements
+  img.ui-kit-form-elements__ico-logo(src="pages/ui-kit_formElements/ico_logo.svg" alt="logo")
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_1
     +inputText(
       {
         topic : "Text Field",
@@ -77,7 +77,7 @@ div.formElements
       }
       ) 
 
-    div.formElements__blk1Narrow
+    div.ui-kit-form-elements__input-blk-narrow
       +dropdownBlock(
         { 
           topic : "filter date dropdown",
@@ -100,7 +100,7 @@ div.formElements
         }
         )
 
-  div.blk.blk_2
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_2
     h3 Checkbox Buttons
     +checkboxList("",
       {
@@ -145,17 +145,17 @@ div.formElements
         text : "Получать спецпредложения",
         active : "on"
       }
-    )
+      )
     +toggleBlock(
       {
         id : "2Uikit",
         text : "Получать спецпредложения",
         active : "off"
       }
-    )
+      )
 
     h3 like button
-    div.flex.flex__flexStart
+    div.ui-kit-form-elements__flex-block
       +like(
         {
           qty : 2,
@@ -170,22 +170,22 @@ div.formElements
         )
 
     h3 rate button
-    div.flex.flex__flexStart
+    div.ui-kit-form-elements__flex-block
       +rateBtn(
         {
           qty : 5,
           active : 4
         }
-      )
+        )
       +rateBtn(
         {
           qty : 5,
           active : 5
         }
-      )
+        )
 
-  div.blk.blk_3.blk__slider.slider100
-    div.blk__slider_blk
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_3.ui-kit-form-elements__blk_slider
+    div.ui-kit-form-elements__slider-blk
       +rangeSlider(
         {
           topic : "Range Slider",
@@ -197,7 +197,7 @@ div.formElements
         )
 
     h3 buttons
-    div.flex.flex__flexStart
+    div.ui-kit-form-elements__flex-block
       +btn(
         {
           text : "CLICK ME",
@@ -215,7 +215,7 @@ div.formElements
         }
         )
   
-    div.flex.flex__flexStart
+    div.ui-kit-form-elements__flex-block
       +btn(
         {
           text : "CLICK ME",
@@ -233,7 +233,7 @@ div.formElements
         }
         )
 
-    div.flex.flex__flexStart
+    div.ui-kit-form-elements__flex-block
       +link(
         {
           text : "CLICK ME",
@@ -266,7 +266,7 @@ div.formElements
       }
       )
     
-  div.blk.blk_4
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_4
     +dropdownBlock(
       { 
         topic : "Dropdown",
@@ -277,7 +277,6 @@ div.formElements
         btnOk : false
       }
       )
-
     +dropdownBlock(
       { 
         topic : "Dropdown",
@@ -307,7 +306,7 @@ div.formElements
       }    
       )
 
-  div.blk.blk_5
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_5
     +dropdownBlock(
       { 
         topic : "Dropdown",
@@ -337,7 +336,7 @@ div.formElements
       }    
       )
 
-  div.blk.blk_6
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_6
     +dropdownBlock(
       { 
         topic : "Dropdown",
@@ -367,7 +366,7 @@ div.formElements
       }    
       )
       
-  div.blk.blk_7
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_7
     +checkboxListExpandable("expandable checkbox list","close",
       {
         label : "Тест", 
@@ -376,7 +375,6 @@ div.formElements
         p__dopclass : ""
       }
       )
-    
     +checkboxListExpandable("expandable checkbox list","open",
       {
         label : "Завтрак", 
@@ -416,7 +414,7 @@ div.formElements
       }
       )
 
-  div.blk.blk_8
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_8
     h3 Rich Checkbox Buttons
     +checkboxList("",
       {
@@ -433,7 +431,7 @@ div.formElements
       }
       )
     
-  div.blk.blk_9
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_9
     +listBlock(
       {
         topic : "bullet list",
@@ -450,7 +448,7 @@ div.formElements
       }
       )
 
-  div.blk.blk_10
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_10
     +infoBlock(
       {
         topic : "Сведения о номере",
@@ -470,7 +468,7 @@ div.formElements
       }
     )
   
-  div.blk.width.blk_11
+  div.ui-kit-form-elements__blk.width.ui-kit-form-elements__blk_11
     +commentBlock("", "2 отзыва",
       {
         urlImg: "pages/detailsRoom/photo1.png",

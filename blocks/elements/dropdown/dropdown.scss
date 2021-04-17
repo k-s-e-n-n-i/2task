@@ -9,6 +9,18 @@
     width: 100%;
     cursor: pointer;
     border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    height: 44px;
+    padding: 8px 14px;
+    margin-top: 5px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+
+    &:hover{
+      color: rgba(31, 32, 65, 0.75);
+      border: 1px solid rgba(31, 32, 65, 0.5);
+    }
 
     &.dropdown-block__dropdown_date{
       width: 150px;

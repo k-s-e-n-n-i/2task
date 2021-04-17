@@ -1,23 +1,26 @@
-.formElements{
+.ui-kit-form-elements{
   display: flex;
   flex-wrap: wrap;
-  //width: 100%;
   padding: 123px 0 130px 8.4%;
   position: relative;
+
+  .ui-kit-form-elements__ico-logo{
+    width: 48px;
+    height: 48px;
+    position:absolute;
+    left: 31px;
+    top: 30px;
+  }
 
   h3{
     font-size: 12.5px;
   }
 
-  .blk{
+  .ui-kit-form-elements__blk{
     margin: 20px 20px 39px 20px;
     width: 320px;
 
-    &.width{
-      width: 717px;
-    }
-    
-    &.blk_1{
+    &.ui-kit-form-elements__blk_1{
       margin-right: 106px;
 
       .input-text{
@@ -39,7 +42,7 @@
         }
       }
 
-      .formElements__blk1Narrow{
+      .ui-kit-form-elements__input-blk-narrow{
         width: 267px;
 
         .input-text_subscription{
@@ -54,30 +57,17 @@
       .dropdown-block{
         margin-bottom: 23px;
       }
-
-      
     }
     
-    .flex{
+    .ui-kit-form-elements__flex-block{
       display: flex;
       width: 100%;
-
-      &.flex__spaceBetween{
-        justify-content: space-between;
-      }
-
-      &.flex__flexStart{
-        justify-content: flex-start;
-      }
-
-      .dropdown-block{
-        margin: 20px 0 40px;				
-      }
+      justify-content: flex-start;
     }
 
     //----------------------------------------------------
 
-    &.blk_2{
+    &.ui-kit-form-elements__blk_2{
       margin-right: 52px;
 
       .checkbox-list{
@@ -100,10 +90,10 @@
       .toggle-block{
         margin: 3px 0;
         
-        &:nth-child(6){//почему 6??
+        &:nth-child(6){
           margin-top: 7px;
         }
-        &:nth-child(7){//почему 7??
+        &:nth-child(7){
           margin-bottom: 42px;
         }
       }
@@ -119,7 +109,7 @@
 
     //----------------------------------------------------
     
-    &.blk_3{
+    &.ui-kit-form-elements__blk_3{
 
       .btn{
         margin: 16px 20px 14px 0;
@@ -134,21 +124,17 @@
           width: 95px;
           height: 32px;
           line-height: 32px;
-  
         }
 
         &.btn_gradient_pay{
           width: 100%;
+          margin: 15px 20px 40px 0;
         }
       }
   
       .link{
         font-size: 12.5px;
         margin-top: 17px;
-      }
-  
-      .btn_gradient_pay{
-        margin: 15px 20px 40px 0;
       }
   
       .pagination{
@@ -165,10 +151,10 @@
       }
     }
 
-    &.blk__slider{
+    &.ui-kit-form-elements__blk_slider{
       width: 320px;
 
-      .blk__slider_blk{
+      .ui-kit-form-elements__blk_slider_blk{
         width: 266px;
 
         .range-slider{
@@ -189,7 +175,7 @@
 
     //----------------------------------------------------
 
-    &.blk_4{
+    &.ui-kit-form-elements__blk_4{
       width: 265px;
       height: 261px;
       margin: 20px 161px 39px 20px;
@@ -199,9 +185,9 @@
       }
     }
 
-    &.blk_4,
-    &.blk_5,
-    &.blk_6{
+    &.ui-kit-form-elements__blk_4,
+    &.ui-kit-form-elements__blk_5,
+    &.ui-kit-form-elements__blk_6{
 
       .dropdown-block{
         margin-bottom: 20px;
@@ -254,7 +240,7 @@
       }
     }
 
-    &.blk_5{
+    &.ui-kit-form-elements__blk_5{
       margin: 20px 52px 20px 20px;
       
       .dropdown-block__dropdown-items{
@@ -270,7 +256,7 @@
       }	
     }
 
-    &.blk_6{
+    &.ui-kit-form-elements__blk_6{
 
       .dropdown-block__dropdown-items{
 
@@ -288,7 +274,7 @@
       }
     }
     
-    &.blk_7{
+    &.ui-kit-form-elements__blk_7{
       width: 265px;
       margin-right: 161px;
       margin: 20px 161px 5px 20px;
@@ -319,7 +305,7 @@
       }
     }
 
-    &.blk_8{
+    &.ui-kit-form-elements__blk_8{
       width: 260px;
       margin-right: 112px;
 
@@ -337,7 +323,7 @@
       }
     }
 
-    &.blk_9{
+    &.ui-kit-form-elements__blk_9{
 
       .list-block{
         h3{
@@ -350,7 +336,7 @@
       }
     }
 
-    &.blk_10{
+    &.ui-kit-form-elements__blk_10{
       width: 278px;
       margin: 15px 149px 39px 20px;
 
@@ -376,37 +362,9 @@
       }
     }
 
-    &.blk_11{
+    &.ui-kit-form-elements__blk_11{
       margin: 26px 20px 39px 20px;
       width: 755px;
     }
   }
-}
-  
-
-.input-text__input,
-.dropdown-block__dropdown{
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  border-radius: 4px;
-  height: 44px;
-  color: rgba(31, 32, 65, 0.25);
-  padding: 8px 14px;
-  margin-top: 5px;
-  font-family: Montserrat, Arial, sans-serif;
-  font-weight: normal;
-  font-style: normal;    
-
-  &:hover{
-    color: rgba(31, 32, 65, 0.75);
-    border: 1px solid rgba(31, 32, 65, 0.5);
-  }
-}
-
-.ico_logo{
-  width: 48px;
-  height: 48px;
-  position:absolute;
-  left: 31px;
-  top: 30px;
 }

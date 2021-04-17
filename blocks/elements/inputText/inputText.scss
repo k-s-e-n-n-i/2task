@@ -22,7 +22,16 @@
     width: 100%;
     color: rgba(31, 32, 65, 0.25);
     outline: none;
-    font-size: 14px;		
+    font-size: 14px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 44px;
+    padding: 8px 14px;
+    margin-top: 5px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;    
 
     &:hover,
     &.input-text__input_hover{
