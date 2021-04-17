@@ -11,7 +11,13 @@ div.forms
     +formSearchNum("Uikit")
     +formRegistration("Uikit")
   div.blk
-    +formReservation(888,"9 990","38 081")
+    +formReservation(
+      {
+        number : 888,
+        priceFrom : "9 990",
+        priceFinal : "38 081"
+      }
+      )
     +formSignIn("Uikit")
   div.blk.blk_3
     div.block

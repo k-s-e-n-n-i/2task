@@ -3,12 +3,12 @@ include /blocks/elements/dropdown/dropdownBlock.pug
 include /blocks/elements/dropdown/dropdownDates.pug
 include /blocks/elements/btn/btn.pug
 
-mixin formReservation(number,priceS,price)
+mixin formReservation(obj)
   div.form-reservation
     div.form-reservation__block
       p
         span= "№ "
-        span= number +" "
+        span= obj.number +" "
         +link(
           {
             text : "люкс",
@@ -17,7 +17,7 @@ mixin formReservation(number,priceS,price)
           }
           )
       p
-        span= priceS
+        span= obj.priceFrom
         span= "₽"
         span= " в сутки"
           
@@ -86,7 +86,7 @@ mixin formReservation(number,priceS,price)
     div.form-reservation__block
       h2= "Итого"
       span.form-reservation__dashed
-      h2= price +"₽"
+      h2= obj.priceFinal +"₽"
 
     +btn(
       {

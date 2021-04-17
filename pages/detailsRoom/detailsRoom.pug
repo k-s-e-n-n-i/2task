@@ -15,15 +15,15 @@ include /blocks/cards/calendar/calendar.pug
 
 +header(0)
 
-div.content.room
-  div.room_blockImages
-    div.room_blockImages_col1
-      div.room_blockImages_col1_image
-    div.room_blockImages_col2
-      div.room_blockImages_col2_image.room_blockImages_col2_image__1
-      div.room_blockImages_col2_image.room_blockImages_col2_image__2
-  div.content_container
-    div.room_blockInfo
+div.details-room
+  div.details-room__block-images
+    div.details-room__blk-image-one
+      div.details-room__image-one
+    div.details-room__blk-image-two
+      div.details-room__image-two.details-room__image-two_top
+      div.details-room__image-two.details-room__image-two_bottom
+  div.details-room__content-block
+    div.details-room__room-info
       +infoBlock(
         {
           topic : "Сведения о номере",
@@ -47,13 +47,13 @@ div.content.room
           url : "blocks/elements/infoBlock/whatshot.svg",
           dopclass : "info-block__icon_whatshot"
         }
-      )
+        )
 
-      div.room_blockInfo_impression
+      div.details-room__room-impression
         h2 Впечатления от номера
-        div.room_blockInfo_impression_text 
-          p.room_blockInfo_impression_text_num 260
-          p.room_blockInfo_impression_text_text голосов
+        div.details-room__impression
+          p.details-room__impression-qty-review 260
+          p.details-room__impression-text голосов
         canvas(id="oilChart" width="290" height="150")
 
       +commentBlock("Отзывы посетителей номера", "2 отзыва",
@@ -89,13 +89,19 @@ div.content.room
         {
           text : "Время прибытия — после 13:00, а выезд до 12:00"
         }
-      )
+        )
       
-      div.room_blockInfo_cancel
+      div.details-room__info-cancel
         h2 Отмена
         p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-    div.room_formReservation
-      +formReservation(888,"9 990","38 081")
+    div.details-room__form-reservation
+      +formReservation(
+        {
+          number : 888,
+          priceFrom : "9 990",
+          priceFinal : "38 081"
+        }
+        )
 
 +footer
 
