@@ -1,20 +1,18 @@
 
 
-.searchRoom{
+.search-room{
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
 
-  &.content_container {
-    margin: 0 9.6% 0 9.7%;
-  }
+  margin: 0 9.6% 0 9.7%;
 
-  .searchRoom_filters{
+  .search-room__filters{
     width: 266px;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    margin-right: 4.6%;//53px;
+    margin-right: 4.6%;
 
     h3{
       font-size: 12.4px;
@@ -28,17 +26,17 @@
       }
     }	
 
-    .searchRoom_filters_date,
-    .searchRoom_filters_additional,
+    .search-room__filter-date,
+    .search-room__filters_additional,
     .checkbox-list-expandable{
       margin-top: 30px;
     }
 
-    .searchRoom_filters_guest{
+    .search-room__filter-guest{
       margin-top: 20px;
     }
 
-    .searchRoom_filters_comfort{
+    .search-room__filter-comfort{
       margin-top: 20px;
 
       .dropdown-block__dropdown-items{
@@ -64,11 +62,11 @@
       }
     }
 
-    .searchRoom_filters_diapason{
+    .search-room__slider-price{
       margin-top: 26px;
     }
 
-    .searchRoom_filters_features{
+    .search-room__filter-features{
       margin-top: 25px;
       
       .checkbox-list{
@@ -80,11 +78,11 @@
       }
     }
 
-    .searchRoom_filters_availability{
+    .search-room__filter-availability{
       margin-top: 18px;
     }
 
-    .searchRoom_filters_diapason{
+    .search-room__slider-price{
 
       p{
         color: rgba(31, 32, 65, 0.5);
@@ -107,10 +105,9 @@
         margin-top: 18px;
       }
     }
-    
   }
 
-  .searchRoom_rooms{
+  .search-room__rooms{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -122,72 +119,17 @@
       margin: 29px 0 10px 5px;
       font-size: 25px;
     }
-
-    .searchRoom_rooms_line{
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .searchRoom_rooms_nav{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: 32px 0 7px 0;
-
-      .searchRoom_rooms_nav_num{
-        width: 40px;
-        height: 40px;
-        color: rgba(31, 32, 65, 0.5);
-        font-size: 12px;
-        font-weight: bold;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-
-        &.searchRoom_rooms_nav_num__active{
-          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-          color: #fff;
-        }
-
-        &.searchRoom_rooms_nav_num__next{
-          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-          color: #fff;
-          position: relative;
-
-          &:after{
-            content: '';
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            position: absolute;
-            top: 11px;
-            left: 11px;
-            background-repeat: no-repeat;
-            background-image: url('/project/img/arrow_white.svg');
-          }
-        }
-      }
-    }
-
-    .searchRoom_rooms_nav_label{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
   }
 }
 
-
 @media (max-width: 1170px){
-  .searchRoom{
+  .search-room{
 
-    .searchRoom_filters{
+    .search-room__filters{
       margin-left: 20px;
     }
 
-    .searchRoom_rooms{
+    .search-room__rooms{
       justify-content: space-around;
 
       h1{
@@ -199,12 +141,12 @@
 }
 
 @media (max-width: 620px){
-  .searchRoom{
+  .search-room{
 
     flex-wrap: wrap;
     justify-content: center;
     
-    .searchRoom_filters{
+    .search-room__filters{
       margin: 0;
     }
   }	
