@@ -1,4 +1,4 @@
-.authorization{
+.sign-in{
   display: flex;
   justify-content: center;
   text-align: center;
@@ -13,7 +13,7 @@
 } 
 
 @media (max-width: 640px){
-  .authorization{
+  .sign-in{
     background: none;
     height: auto;
   }
