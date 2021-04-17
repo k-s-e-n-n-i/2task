@@ -45,7 +45,7 @@ import '/blocks/elements/topicLabel/topicLabel.scss'
 
 
 /*color_type*/
-import '/pages/ui-kit_colorType/color_type.scss'
+import '/pages/ui-kit_colorType/ui-kit_colorType.scss'
 
 
 /*header_footer*/

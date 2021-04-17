@@ -5,6 +5,14 @@
   padding: 130px 0 130px  8.4%;
   position: relative;
 
+  .ui-kit-cards__ico-logo{
+    width: 48px;
+    height: 48px;
+    position:absolute;
+    left: 31px;
+    top: 30px;
+  }
+
   .ui-kit-cards__blk{
     margin: 20px;
 
@@ -83,12 +91,4 @@
   .form-sign-in{
     margin: 0;
   }
-}
-
-.ui-kit-cards__ico-logo{
-  width: 48px;
-  height: 48px;
-  position:absolute;
-  left: 31px;
-  top: 30px;
 }
