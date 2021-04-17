@@ -1,17 +1,12 @@
-.forms{
+.ui-kit-cards{
   display: flex;
   flex-wrap: wrap;
   background: #F4F4F6;
   padding: 130px 0 130px  8.4%;
-  //width: 100%;
   position: relative;
 
-  .blk{
+  .ui-kit-cards__blk{
     margin: 20px;
-
-    &.blk_3{
-      width: 320px;
-    }
 
     .form-search-num{
       position: relative;
@@ -51,7 +46,7 @@
       padding: 37px 30px 30px 30px;
     }
 
-    .block{
+    .ui-kit-cards__calendar-block{
       height: 395px;
 
       .dropdownItemCalendar{
@@ -90,8 +85,7 @@
   }
 }
 
-
-.ico_logo{
+.ui-kit-cards__ico-logo{
   width: 48px;
   height: 48px;
   position:absolute;

@@ -55,7 +55,7 @@ import '/pages/ui-kit_headerFooter/header_footer.scss'
 
 
 /*cards*/
-import '/pages/ui-kit_cards/cards.scss'
+import '/pages/ui-kit_cards/ui-kit_cards.scss'
 import '/blocks/cards/formSearchNum/formSearchNum.scss'
 import '/blocks/cards/formSearchNum/formSearchNum.js'
 import '/blocks/cards/calendar/calendar.scss'

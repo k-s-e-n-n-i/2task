@@ -5,12 +5,12 @@ include /blocks/cards/formSignIn/formSignIn.pug
 include /blocks/cards/cardRoom/cardRoom.pug
 include /blocks/cards/calendar/calendar.pug
 
-div.forms
-  img.ico_logo(src="pages/ui-kit_cards/ico_logo.svg" alt="logo")
-  div.blk
+div.ui-kit-cards
+  img.ui-kit-cards__ico-logo(src="pages/ui-kit_cards/ico_logo.svg" alt="logo")
+  div.ui-kit-cards__blk
     +formSearchNum("Uikit")
     +formRegistration("Uikit")
-  div.blk
+  div.ui-kit-cards__blk
     +formReservation(
       {
         number : 888,
@@ -19,8 +19,8 @@ div.forms
       }
       )
     +formSignIn("Uikit")
-  div.blk.blk_3
-    div.block
+  div.ui-kit-cards__blk
+    div.ui-kit-cards__calendar-block
       +calendar({state : "open"})
     +cardRoom(
       {
