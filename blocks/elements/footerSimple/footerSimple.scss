@@ -1,0 +1,41 @@
+.footer-simple{
+  background: #fff;
+  width: 768px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  padding: 100px 0 110px 0;
+  padding: 120px 0 121px 0;
+  align-items: center;
+
+  p{
+    margin: 20px 0 25px 0;
+  }
+
+  p{
+    margin: 17px 0 22px 0;
+  }
+
+  .footer__soc-network{
+    padding: 0 11px;
+    
+    &.footer__soc-network_twitter{
+      margin: -2px 0 0 -2px;
+    }
+
+    &.footer__soc-network_facebook{
+      width: 22px;
+      height: 22px;
+      margin-top: 1px;
+    }
+
+    &.footer__soc-network_instagram{
+      width: 22px;
+      height: 22px;
+      margin-top: 1px -2px 0 0;
+    }
+  }
+}

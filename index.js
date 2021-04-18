@@ -4,43 +4,29 @@ import '/project/styles/styles.scss'
 
 
 /*form_elements*/
-//import '/blocks/elements/btn/btn.pug'
 import '/blocks/elements/btn/btn.scss'
-//import '/blocks/elements/checkboxList/checkboxList.pug'
 import '/blocks/elements/checkboxList/checkboxList.scss'
-//import '/blocks/elements/checkboxListExpandable/checkboxListExpandable.pug'
 import '/blocks/elements/checkboxListExpandable/checkboxListExpandable.scss'
 import '/blocks/elements/checkboxListExpandable/checkboxListExpandable.js'
-//import '/blocks/elements/commentBlock/commentBlock.pug'
 import '/blocks/elements/commentBlock/commentBlock.scss'
-//import '/blocks/elements/dropdown/dropdownBlock.pug'
-//import '/blocks/elements/dropdown/dropdownDates.pug'
 import '/blocks/elements/dropdown/dropdown.scss'
 import '/blocks/elements/dropdown/dropdown.js'
-//import '/blocks/elements/infoBlock/infoBlock.pug'
+import '/blocks/elements/footer/footer.scss'
+import '/blocks/elements/footerSimple/footerSimple.scss'
+import '/blocks/elements/header/header.scss'
 import '/blocks/elements/infoBlock/infoBlock.scss'
-//import '/blocks/elements/inputText/inputText.pug'
 import '/blocks/elements/inputText/inputText.scss'
-//import '/blocks/elements/like/like.pug'
 import '/blocks/elements/like/like.scss'
 import '/blocks/elements/like/like.js'
-//import '/blocks/elements/link/link.pug'
 import '/blocks/elements/link/link.scss'
-//import '/blocks/elements/listBlock/listBlock.pug'
 import '/blocks/elements/listBlock/listBlock.scss'
-//import '/blocks/elements/pagination/pagination.pug'
 import '/blocks/elements/pagination/pagination.scss'
-//import '/blocks/elements/radiogroup/radiogroup.pug'
 import '/blocks/elements/radiogroup/radiogroup.scss'
-//import '/blocks/elements/rangeSlider/rangeSlider.pug'
 import '/blocks/elements/rangeSlider/rangeSlider.scss'
-//import '/blocks/elements/rateBtn/rateBtn.pug'
 import '/blocks/elements/rateBtn/rateBtn.scss'
 import '/blocks/elements/rateBtn/rateBtn.js'
-//import '/blocks/elements/toggleBlock/toggleBlock.pug'
 import '/blocks/elements/toggleBlock/toggleBlock.scss'
 import '/blocks/elements/toggleBlock/toggleBlock.js'
-//import '/blocks/elements/topicLabel/topicLabel.pug'
 import '/blocks/elements/topicLabel/topicLabel.scss'
 
 
@@ -49,9 +35,7 @@ import '/pages/ui-kit_colorType/ui-kit_colorType.scss'
 
 
 /*header_footer*/
-import '/pages/ui-kit_headerFooter/header.scss'
-import '/pages/ui-kit_headerFooter/footer.scss'
-import '/pages/ui-kit_headerFooter/header_footer.scss'
+import '/pages/ui-kit_headerFooter/ui-kit_headerFooter.scss'
 
 
 /*cards*/

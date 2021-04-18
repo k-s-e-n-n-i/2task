@@ -1,0 +1,70 @@
+include /blocks/elements/footer/footer.pug
+include /blocks/elements/header/header.pug
+include /blocks/elements/footerSimple/footerSimple.pug
+
+div.ui-kit-header-footer
+  img.ui-kit-header-footer__ico_logo(src="pages/ui-kit_headerFooter/ico_logo.svg" alt="logo")
+  +header(
+    {
+      authorization : 0,
+      name : "",
+    },
+    {
+      menuItem : "О нас",
+      state : "active",
+      type : "main"
+    },
+    {
+      menuItem : "Услуги",
+      state : "",
+      type : "expand"
+    },
+    {
+      menuItem : "Вакансии",
+      state : "",
+      type : "main"
+    },
+    {
+      menuItem : "Новости",
+      state : "",
+      type : "main"
+    },
+    {
+      menuItem : "Соглашения",
+      state : "",
+      type : "expand"
+    }
+    )
+  +header(
+    {
+      authorization : 1,
+      name : "Юлий Цезарь"
+    },
+    {
+      menuItem : "О нас",
+      state : "active",
+      type : "main"
+    },
+    {
+      menuItem : "Услуги",
+      state : "",
+      type : "expand"
+    },
+    {
+      menuItem : "Вакансии",
+      state : "",
+      type : "main"
+    },
+    {
+      menuItem : "Новости",
+      state : "",
+      type : "main"
+    },
+    {
+      menuItem : "Соглашения",
+      state : "",
+      type : "expand"
+    }
+    )
+  +footer
+  +footerSimple

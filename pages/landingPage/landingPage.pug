@@ -1,8 +1,38 @@
-include /pages/ui-kit_headerFooter/header.pug
-include /pages/ui-kit_headerFooter/footer.pug
+include /blocks/elements/header/header.pug
+include /blocks/elements/footer/footer.pug
 include /blocks/cards/formSearchNum/formSearchNum.pug
 
-+header(0)
++header(
+  {
+      authorization : 0,
+      name : "",
+    },
+    {
+      menuItem : "О нас",
+      state : "active",
+      type : "main"
+    },
+    {
+      menuItem : "Услуги",
+      state : "",
+      type : "expand"
+    },
+    {
+      menuItem : "Вакансии",
+      state : "",
+      type : "main"
+    },
+    {
+      menuItem : "Новости",
+      state : "",
+      type : "main"
+    },
+    {
+      menuItem : "Соглашения",
+      state : "",
+      type : "expand"
+    }
+  )
 
 div.landing-page
   div.landing-page__content-container

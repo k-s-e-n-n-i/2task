@@ -16,6 +16,10 @@
   .ui-kit-cards__blk{
     margin: 20px;
 
+    &.ui-kit-cards__blk_3{
+      width: 320px;
+    }
+
     .form-search-num{
       position: relative;
       margin-bottom: 40px;

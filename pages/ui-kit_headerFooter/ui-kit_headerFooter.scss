@@ -1,0 +1,30 @@
+.ui-kit-header-footer{
+  background: #F4F4F6;
+  width: 100%;
+  padding: 100px 0 130px 0;
+  position: relative;
+
+  .ui-kit-header-footer__ico_logo{
+    width: 48px;
+    height: 48px;
+    position:absolute;
+    left: 31px;
+    top: 30px;
+  }
+
+  .header{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+    .footer__block-menu{
+      z-index: 200;
+    }
+  }
+
+  
+}
