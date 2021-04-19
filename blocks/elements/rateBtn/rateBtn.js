@@ -1,7 +1,9 @@
 import $ from "jquery"
 
 $(function() {
-  $('.rate-btn__star').on('click', function(e) {
+  $('.rate-btn__star').on('click', handleRatebtnClick)
+
+  function handleRatebtnClick(){
     $(this).closest('.rate-btn').find('.rate-btn__star').removeClass('rate-btn__star_active');
 
     var num = parseInt($(this).attr('id'));
@@ -9,5 +11,5 @@ $(function() {
     for(let i=1;i<=num;i++){
       $(this).closest('.rate-btn').find('#'+i).addClass('rate-btn__star_active');
     }
-  });	
+  }
 });

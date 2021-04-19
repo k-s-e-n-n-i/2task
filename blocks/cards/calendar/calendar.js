@@ -12,7 +12,9 @@ $(document).ready(function() {
 
 
 $(function() {
-  $('.dropdown-block__dropdown').on('click', function(e) {
+  $('.dropdown-block__dropdown').on('click', handleCalendarblockClick);
+
+  function handleCalendarblockClick(){
     var block_calendar = $(this).closest('.dropdown-dates').find('.calendar-block');
 
     if (block_calendar.hasClass('calendar-block_hide')){
@@ -22,5 +24,5 @@ $(function() {
       block_calendar.addClass('calendar-block_hide');
       $(this).removeClass('dropdown-block__dropdown_items-show');
     }
-  });	
+  }
 });

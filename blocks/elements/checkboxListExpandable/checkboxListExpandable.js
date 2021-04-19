@@ -1,7 +1,9 @@
 import $ from "jquery"
 
 $(function() {
-  $('.checkbox-list-expandable').on('click', function(e) {
+  $('.checkbox-list-expandable').on('click', handleCheckboxlistClick);
+
+  function handleCheckboxlistClick(){
     var block_list = $(this).find('.checkbox-list'),
       expend = $(this).find('.checkbox-list-expandable__expand');
     
@@ -12,5 +14,5 @@ $(function() {
       block_list.addClass('checkbox-list_hide');
       expend.removeClass('checkbox-list-expandable__expand_open');
     }
-  });
+  }
 });

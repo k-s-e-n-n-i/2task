@@ -1,7 +1,9 @@
 import $ from "jquery"
 
 $(function() {
-  $('.like').on('click', function(e) {
+  $('.like').on('click', handleLikeClick)
+
+  function handleLikeClick(){
     var sum = parseInt($(this).find('.like__sum').html());
     
     if ($(this).hasClass('like_liked')){
@@ -15,5 +17,5 @@ $(function() {
       $(this).find('.like__sum').addClass('like__sum_liked');
       $(this).find('.like__sum').html(sum + 1);	
     }
-  });	
+  }	
 });
