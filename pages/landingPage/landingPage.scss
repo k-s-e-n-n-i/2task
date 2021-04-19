@@ -70,9 +70,10 @@
     }
     
     .landing-page__label{
-      bottom: 35px;
+      /*bottom: 35px;
       position: absolute;
-      text-shadow: 1px 1px 1px #fff;
+      text-shadow: 1px 1px 1px #fff;*/
+      display: none;
     }
   }
 }

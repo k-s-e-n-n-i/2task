@@ -112,13 +112,11 @@
   }
 }
 
-@media (max-width: 930px){
+@media (max-width: 960px){
   .header__links{
+    display: flex;
     flex-direction: column;
-    
-    .logo{ 
-      margin: 15px auto;
-    }
+    align-items: center;
 
     .header__block-menu{
       flex-direction: column;
@@ -137,6 +135,10 @@
            margin-left: 0;
         }
       }
+
+      .header__block-login-hr{
+        display: none;
+      }
     }
   }
 }
@@ -153,7 +155,7 @@
   }
 }
 
-@media (max-width: 500px){
+@media (max-width: 530px){
   .header__menu{
     flex-direction: column;
     

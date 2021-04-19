@@ -171,7 +171,6 @@
       }
 
       .footer__logo{
-        width: 270px;
         margin: 10px 20px;
         max-width: none;
       }
@@ -183,12 +182,23 @@
   }
 }
 
+@media (max-width: 790px){
+  .footer{
+
+    .footer__bottom-menu{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
 @media (max-width: 620px){
   .footer{
 
     .footer__bottom-menu{
       padding: 90px 0 0 0;
-
+      
       .footer__menu-column{
         display: none;
       }
