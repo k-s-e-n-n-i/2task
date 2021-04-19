@@ -1,4 +1,3 @@
-//import $ from 'jquery'
 import '/project/font/fonts.css'
 import '/project/styles/styles.scss'
 

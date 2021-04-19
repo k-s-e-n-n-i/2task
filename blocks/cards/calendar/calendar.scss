@@ -1,29 +1,11 @@
-.days{
-  display: flex;
-  justify-content: space-between;
-  margin: auto 20px;
-  text-align: center;
-  vertical-align: center;
-
-  &.name{
-    color: #BC9CFF;
-  }
-
-  p{
-    width: 39px;
-    height: 40px;
-  }
-}
-
-//--------------
 .calendar-block{
   position: absolute;
   z-index: 100;
+  margin-top: 5px;
     
   &.calendar-block_hide{
     display: none;
   }
-    
 
   .calendar{
     width: 320px;
@@ -36,6 +18,10 @@
     border-radius: 4px;
     background: #fff;
     left: -1px;
+
+    margin-left: -1px;
+    width: 322px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
     .pignose-calendar{
       width: 100%;

@@ -35,7 +35,7 @@ let pieChart = new Chart(oilCanvas, {
         usePointStyle: true,
         boxWidth: 9,
         padding: 10,
-        fontFamily: 'Arial',//'sans-serif',
+        fontFamily: 'Arial',
         fontSize: 14
       },
     },
