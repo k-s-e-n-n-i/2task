@@ -8,8 +8,12 @@ include /blocks/cards/calendar/calendar.pug
 div.ui-kit-cards
   img.ui-kit-cards__ico-logo(src="pages/ui-kit_cards/ico_logo.svg" alt="logo")
   div.ui-kit-cards__blk
-    +formSearchNum("Uikit")
-    +formRegistration("Uikit")
+    +formSearchNum
+    +formRegistration(
+      {
+        id : "Uikit"
+      }
+      )
   div.ui-kit-cards__blk
     +formReservation(
       {
@@ -18,7 +22,7 @@ div.ui-kit-cards
         priceFinal : "38 081"
       }
       )
-    +formSignIn("Uikit")
+    +formSignIn
   div.ui-kit-cards__blk.ui-kit-cards__blk_3
     div.ui-kit-cards__calendar-block
       +calendar({state : "open"})

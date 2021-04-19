@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel index.pug --open",
     "build": "parcel build index.pug -d docs --public-url ./",
-    "clean": "rm -rf dist/* && rm -rf docs/*"
+    "clean": "rm -rf dist/* && rm -rf docs/*",
+    "ttt" :"parcel build index.pug -d ttt/js/ --public-url ./"
   },
   "keywords": [],
   "author": "",

@@ -11,7 +11,7 @@ include /blocks/elements/pagination/pagination.pug
 
 +header(
   {
-      authorization : 0,
+      authorization : false,
       name : "",
     },
     {
@@ -172,42 +172,40 @@ div.search-room
         }    
         )
 
-    +checkboxListExpandable("дополнительные удобства","close",
+    +checkboxListExpandable(
+      {
+        topic: "дополнительные удобства",
+        state : "close",
+      },
       {
         label : "Завтрак", 
         id : 71,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Письменный стол", 
         id : 72,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Стул для кормления", 
         id : 73,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Кроватка", 
         id : 74,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Телевизор", 
         id : 75,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Шампунь", 
         id : 76,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       }
     )
 

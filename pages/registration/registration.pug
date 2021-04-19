@@ -5,7 +5,7 @@ include /blocks/cards/formRegistration/formRegistration.pug
 
 +header(
   {
-      authorization : 0,
+      authorization : false,
       name : "",
     },
     {
@@ -37,6 +37,10 @@ include /blocks/cards/formRegistration/formRegistration.pug
 
 div.registration
   div.registration__content-container
-    +formRegistration("Main")
+    +formRegistration(
+      {
+        id : "Main"
+      }
+      )
 
 +footer

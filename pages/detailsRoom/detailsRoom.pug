@@ -9,7 +9,7 @@ include /blocks/cards/formReservation/formReservation.pug
 
 +header(
   {
-      authorization : 0,
+      authorization : false,
       name : "",
     },
     {
@@ -80,7 +80,11 @@ div.details-room
           p.details-room__impression-text голосов
         canvas(id="oilChart" width="290" height="150")
 
-      +commentBlock("Отзывы посетителей номера", "2 отзыва",
+      +commentBlock(
+        {
+          topic : "Отзывы посетителей номера",
+          label : "2 отзыва"
+        },
         {
           urlImg: "pages/detailsRoom/photo1.png",
           liked : true,

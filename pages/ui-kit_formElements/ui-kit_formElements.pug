@@ -370,50 +370,51 @@ div.ui-kit-form-elements
       )
       
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_7
-    +checkboxListExpandable("expandable checkbox list","close",
+    +checkboxListExpandable(
+      {
+        topic: "expandable checkbox list",
+        state : "close",
+      },
       {
         label : "Тест", 
         id : 2100,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       }
       )
-    +checkboxListExpandable("expandable checkbox list","open",
+    +checkboxListExpandable(
+      {
+        topic: "expandable checkbox list",
+        state : "open",
+      },
       {
         label : "Завтрак", 
         id : 21,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Письменный стол", 
         id : 22,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Стул для кормления", 
         id : 23,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Кроватка", 
         id : 24,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Телевизор", 
         id : 25,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       },
       {
         label : "Шампунь", 
         id : 26,
-        p : "", 
-        p__dopclass : ""
+        p : ""
       }
       )
 
@@ -475,7 +476,11 @@ div.ui-kit-form-elements
     )
   
   div.ui-kit-form-elements__blk.width.ui-kit-form-elements__blk_11
-    +commentBlock("", "2 отзыва",
+    +commentBlock(
+      {
+        topic : "",
+        label : "2 отзыва"
+      },
       {
         urlImg: "pages/detailsRoom/photo1.png",
         liked : true,

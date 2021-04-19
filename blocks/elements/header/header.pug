@@ -16,11 +16,11 @@ mixin header(obj,...items)
                 - var expand = "";
               li(class="header__menu-li " +active+" "+expand)= item.menuItem
           div.header__block-login
-            if obj.authorization == 0
+            if obj.authorization == false
               +btn(
                 {
                   text : "Войти",
-                  dopclass : "btn_border btn__header",
+                  dopclass : "btn_border btn_header",
                   link : "#",
                   arrow : false
                 }
@@ -28,7 +28,7 @@ mixin header(obj,...items)
               +btn(
                 {
                   text : "Зарегистрироваться",
-                  dopclass : "btn_gradient btn__header",
+                  dopclass : "btn_gradient btn_header",
                   link : "#",
                   arrow : false
                 }

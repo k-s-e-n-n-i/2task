@@ -1,11 +1,11 @@
 include /blocks/elements/like/like.pug
 
-mixin commentBlock(topic,qty,...items)
+mixin commentBlock(obj,...items)
   div.comment-block
-    if topic != ""
+    if obj.topic != ""
       div.comment-block__title
-        h2= topic
-        p= qty
+        h2= obj.topic
+        p= obj.label
     each item in items
       div.comment-block__comment
         div.comment-block__person
