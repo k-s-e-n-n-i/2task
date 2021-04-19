@@ -1,5 +1,3 @@
-
-
 .search-room{
   margin-top: 30px;
   display: flex;
@@ -111,13 +109,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 70px;
+    padding-bottom: 60px;
     width: 100%;
 
     h1{
       width: 100%;
       margin: 29px 0 10px 5px;
       font-size: 25px;
+    }
+
+    .pagination{
+      margin: 22px 0 10px 0;
+      padding-right: 9px;
+
+      .pagination__num-block{
+        margin: 10px 0 7px;
+      }
     }
   }
 }

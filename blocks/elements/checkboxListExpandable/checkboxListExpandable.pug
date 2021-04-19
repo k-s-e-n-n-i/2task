@@ -6,9 +6,9 @@ mixin checkboxListExpandable(topic,checkboxListExpandableState,...items)
       div.checkbox-list-expandable__topicBlock
         h3= topic
         img(alt="expand_more.svg" class="checkbox-list-expandable__expand" src="project/img/expand_more.svg")
-      +checkboxList("checkbox-list_hide",...items)
+      +checkboxList({ stateHide : "checkbox-list_hide" }, ...items)
     if checkboxListExpandableState == "open"
       div.checkbox-list-expandable__topicBlock
         h3= topic
         img(alt="expand_more.svg" class="checkbox-list-expandable__expand checkbox-list-expandable__expand_open" src="project/img/expand_more.svg")
-      +checkboxList("",...items)
+      +checkboxList({ stateHide : "" },...items)

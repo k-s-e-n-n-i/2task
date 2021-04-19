@@ -98,7 +98,10 @@ div.search-room
     
     div.search-room__filter-features
       h3 Правила дома
-      +checkboxList("",
+      +checkboxList(
+        { 
+          stateHide : ""
+        },
         {
           label : "Можно курить", 
           id : 51,
@@ -121,7 +124,10 @@ div.search-room
     
     div.search-room__filter-availability
       h3 доступность
-      +checkboxList("",
+      +checkboxList(
+        { 
+          stateHide : ""
+        },
         {
           label : "Широкий коридор", 
           id : 61,

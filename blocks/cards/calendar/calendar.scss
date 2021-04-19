@@ -28,7 +28,6 @@
   .calendar{
     width: 320px;
     height: 337px;
-    margin-top: 5px;
     z-index: 5;
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-width: 1px 1px 0 1px;
@@ -200,7 +199,7 @@
     border-radius: 0 0 4px 4px;
 
     .link{
-      margin: 15px 7px 15px 14px;
+      margin: 15px 7px 15px 13px;
     }
   }
 }

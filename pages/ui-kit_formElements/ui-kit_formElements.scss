@@ -20,6 +20,12 @@
     margin: 20px 20px 39px 20px;
     width: 320px;
 
+    .ui-kit-form-elements__flex-block{
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
     &.ui-kit-form-elements__blk_1{
       margin-right: 106px;
 
@@ -42,6 +48,16 @@
         }
       }
 
+      .dropdown-block{
+        margin-bottom: 23px;
+      }
+
+      .dropdown-dates{
+        margin-top: 39px;
+        margin-bottom: 18px;
+      }
+
+
       .ui-kit-form-elements__input-blk-narrow{
         width: 267px;
 
@@ -52,17 +68,7 @@
             width: 100%;
           }
         }
-      }
-
-      .dropdown-block{
-        margin-bottom: 23px;
-      }
-    }
-    
-    .ui-kit-form-elements__flex-block{
-      display: flex;
-      width: 100%;
-      justify-content: flex-start;
+      } 
     }
 
     //----------------------------------------------------
@@ -84,6 +90,7 @@
       }
   
       h3:nth-child(5){//Toggle
+        font-size: 12px;
         line-height: 17px;
       }
   
@@ -112,12 +119,12 @@
     &.ui-kit-form-elements__blk_3{
 
       .btn{
-        margin: 16px 20px 14px 0;
+        margin: 16px 17px 14px 1px;
         height: 36px;
         line-height: 35px;
 
         &.btn_gradient{
-          width: 97px;
+          width: 100px;
         }
   
         &.btn_border{
@@ -154,7 +161,7 @@
     &.ui-kit-form-elements__blk_slider{
       width: 320px;
 
-      .ui-kit-form-elements__blk_slider_blk{
+      .ui-kit-form-elements__slider-blk{
         width: 266px;
 
         .range-slider{

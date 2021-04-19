@@ -23,6 +23,16 @@
     
     .footer__block-menu{
       z-index: 200;
+
+      .footer__bottom-menu{
+        padding-top: 88px;
+      }
+    }
+
+    .footer__copyright-content{
+      p{
+        margin: 25px 0 23px 0;
+      }
     }
   }
 

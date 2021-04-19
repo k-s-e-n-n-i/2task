@@ -1,5 +1,8 @@
-mixin checkboxList(checkboxListExpandable_state,...items)
-  div(class="checkbox-list "+checkboxListExpandable_state)
+
+
+
+mixin checkboxList(obj,...items)
+  div(class="checkbox-list "+obj.stateHide)
     each item in items
       if item.p ==""
         div.checkbox-list__item

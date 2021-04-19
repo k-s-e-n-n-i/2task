@@ -14,9 +14,15 @@
   flex-wrap: wrap;
   z-index: 1;
 
-  .dropdownItemCalendar{
+  /*.dropdownItemCalendar{
     display: block;
     width: 200px;
+  }*/
+
+  > .dropdown-block{
+    h3{
+      margin-top: 20px;
+    }
   }
 
   h1{
@@ -28,9 +34,9 @@
     margin-top: 23px;
   }
 
-  .link{
+  /*.link{
     margin: 15px 7px 15px 14px;
-  }
+  }*/
 
   .btn{
     width: 100%;
@@ -39,10 +45,28 @@
     line-height: 36px;
     font-size: 11px;
     letter-spacing: 0.9px;
+
+    .btn__link{
+      padding-right: 5px;
+      font-size: 11px;
+    }
+  }
+
+  .dropdown-dates{
+
+    .calendar-block{
+      margin-top: 5px;
+
+      .calendar{
+        margin-left: -1px;
+        width: 322px;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+      }
+    }
   }
 
   .dropdown-block{
-
+    
     .dropdown-block__dropdown-items{
       
       h3{
@@ -54,6 +78,21 @@
 
         .dropdown-block__block-qty{
           margin: 8px 6px 0 0;
+
+          span{
+            font-size: 10px;
+          }
+        }
+      }
+
+      .dropdown-block__btns{
+
+        .link{
+          margin: auto 14px 12px;
+
+          &.link_ok{
+            margin: auto 6px 12px;
+          }
         }
       }
     }
