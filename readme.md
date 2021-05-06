@@ -1,11 +1,23 @@
 # Верстка страниц по макету (задание №2)
 
 ## Команды
-Инициализировать проект: npm install
-Запустить проект: npm run start
+Инициализировать проект: 
+```
+npm install
+```
+Запустить проект: 
+```
+npm run start
+```
 
-Собрать проект (для Github pages): npm run build
-Очистить dist/ и docs/: npm run clean
+Собрать проект (для Github pages): 
+```
+npm run build
+```
+Очистить dist/ и docs/: 
+```
+npm run clean
+```
 
 ## Github pages 
 https://ksuvla.github.io/2task/
