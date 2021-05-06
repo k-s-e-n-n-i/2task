@@ -6,8 +6,7 @@
   "scripts": {
     "start": "parcel index.pug --open",
     "build": "parcel build index.pug -d docs --public-url ./",
-    "clean": "rm -rf dist/* && rm -rf docs/*",
-    "ttt" :"parcel build index.pug -d ttt/js/ --public-url ./"
+    "clean": "rm -rf dist/* && rm -rf docs/*"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +23,7 @@
     "jq-min": "^0.2.0",
     "jquery-min": "0.0.2",
     "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.5",
     "pg-calendar": "^1.4.31"
   }
 }
