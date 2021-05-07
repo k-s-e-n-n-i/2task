@@ -1,6 +1,6 @@
-include /blocks/elements/dropdown/dropdownBlock.pug
-include /blocks/elements/dropdown/dropdownDates.pug
-include /blocks/elements/btn/btn.pug
+include ../../../blocks/elements/dropdown/dropdownBlock.pug
+include ../../../blocks/elements/dropdown/dropdownDates.pug
+include ../../../blocks/elements/btn/btn.pug
 
 mixin formSearchNum
   div.form-search-num
@@ -53,7 +53,7 @@ mixin formSearchNum
       {
         text : "подобрать номер",
         dopclass : "btn_gradient btn_gradient_pay",
-        link : "#",
+        link : "/pages/searchRoom/searchRoom.pug",
         arrow : true
       }
       )

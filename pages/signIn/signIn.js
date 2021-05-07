@@ -29,33 +29,13 @@ import '/blocks/elements/toggleBlock/toggleBlock.js'
 import '/blocks/elements/topicLabel/topicLabel.scss'
 
 
-/*color_type*/
-import '/pages/ui-kit_colorType/ui-kit_colorType.scss'
-
-
 /*header_footer*/
 import '/pages/ui-kit_headerFooter/ui-kit_headerFooter.scss'
 
 
 /*cards*/
-import '/pages/ui-kit_cards/ui-kit_cards.scss'
-import '/blocks/cards/formSearchNum/formSearchNum.scss'
-import '/blocks/cards/calendar/calendar.scss'
-import '/blocks/cards/calendar/calendar.js'
-import '/blocks/cards/formRegistration/formRegistration.scss'
-import '/blocks/cards/formReservation/formReservation.scss'
 import '/blocks/cards/formSignIn/formSignIn.scss'
-import '/blocks/cards/cardRoom/cardRoom.scss'
-import '/blocks/cards/cardRoom/cardRoom.js'
-
-
-/*form elements*/
-import '/pages/ui-kit_formElements/ui-kit_formElements.scss'
 
 
 /*pages*/
-import '/pages/landingPage/landingPage.scss'
-import '/pages/searchRoom/searchRoom.scss'
-import '/pages/registration/registration.scss'
 import '/pages/signIn/signIn.scss'
-import '/pages/detailsRoom/detailsRoom.scss'

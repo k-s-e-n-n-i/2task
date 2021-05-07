@@ -126,7 +126,7 @@ https://ksuvla.github.io/2task/
       label : "2 отзыва"
     },
     {
-      urlImg : "pages/detailsRoom/photo1.png",
+      urlImg : "/pages/detailsRoom/photo1.png",
       liked : true,
       qty : 12,
       name : "Мурад Сарафанов",
@@ -241,6 +241,7 @@ https://ksuvla.github.io/2task/
     },
     {
       menuItem : "О нас",
+      link : "#",
       state : "active",
       type : "expand"
     },
@@ -270,7 +271,7 @@ https://ksuvla.github.io/2task/
     {
       label : "Комфорт",
       text : "Шумопоглощающие стены",
-      url : "blocks/elements/infoBlock/emoticon.svg",
+      url : "/blocks/elements/infoBlock/emoticon.svg",
       dopclass : "info-block__icon_emoticon"
     },
     ...

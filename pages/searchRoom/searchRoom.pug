@@ -1,45 +1,15 @@
-include /blocks/elements/header/header.pug
-include /blocks/elements/footer/footer.pug
+include ../../blocks/elements/header/header.pug
+include ../../blocks/elements/footer/footer.pug
 
-include /blocks/elements/dropdown/dropdownBlock.pug
-include /blocks/elements/rangeSlider/rangeSlider.pug
-include /blocks/elements/checkboxList/checkboxList.pug
-include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
-include /blocks/cards/cardRoom/cardRoom.pug
-include /blocks/elements/pagination/pagination.pug
+include ../../blocks/elements/dropdown/dropdownBlock.pug
+include ../../blocks/elements/rangeSlider/rangeSlider.pug
+include ../../blocks/elements/checkboxList/checkboxList.pug
+include ../../blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
+include ../../blocks/cards/cardRoom/cardRoom.pug
+include ../../blocks/elements/pagination/pagination.pug
 
 
-+header(
-  {
-      authorization : false,
-      name : "",
-    },
-    {
-      menuItem : "О нас",
-      state : "active",
-      type : "main"
-    },
-    {
-      menuItem : "Услуги",
-      state : "",
-      type : "expand"
-    },
-    {
-      menuItem : "Вакансии",
-      state : "",
-      type : "main"
-    },
-    {
-      menuItem : "Новости",
-      state : "",
-      type : "main"
-    },
-    {
-      menuItem : "Соглашения",
-      state : "",
-      type : "expand"
-    }
-  )
+include ../globalHEAD.pug
 
 div.search-room
   div.search-room__filters
@@ -343,4 +313,6 @@ div.search-room
         }
         )
 
-+footer
+include ../globalFOOTER.pug
+
+script(src="/pages/searchRoom/searchRoom.js")

@@ -1,14 +1,14 @@
-include /blocks/elements/checkboxList/checkboxList.pug
+include ../../../blocks/elements/checkboxList/checkboxList.pug
 
 mixin checkboxListExpandable(obj,...items)
   div.checkbox-list-expandable
     if obj.state == "close"
       div.checkbox-list-expandable__topicBlock
         h3= obj.topic
-        img(alt="expand_more.svg" class="checkbox-list-expandable__expand" src="project/img/expand_more.svg")
+        img(alt="expand_more.svg" class="checkbox-list-expandable__expand" src="/project/img/expand_more.svg")
       +checkboxList({ stateHide : "checkbox-list_hide" }, ...items)
     if obj.state == "open"
       div.checkbox-list-expandable__topicBlock
         h3= obj.topic
-        img(alt="expand_more.svg" class="checkbox-list-expandable__expand checkbox-list-expandable__expand_open" src="project/img/expand_more.svg")
+        img(alt="expand_more.svg" class="checkbox-list-expandable__expand checkbox-list-expandable__expand_open" src="/project/img/expand_more.svg")
       +checkboxList({ stateHide : "" },...items)

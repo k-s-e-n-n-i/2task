@@ -7,7 +7,8 @@ mixin colorType__itemColor(obj)
 
 
 div.ui-kit-color-type
-  img.ui-kit-color-type__ico-logo(src="pages/ui-kit_colorType/ico_logo.svg" alt="logo")
+  a(href="/index.pug")
+    img.ui-kit-color-type__ico-logo(src="/pages/ui-kit_colorType/ico_logo.svg" alt="logo")
   div.ui-kit-color-type__block-colors
     +colorType__itemColor(
       {
@@ -72,3 +73,5 @@ div.ui-kit-color-type
     div.ui-kit-color-type__item-type
       p.ui-kit-color-type__type-tag= "Body"
       p.ui-kit-color-type__type-text= "This is the body text which is used for most of the design, like paragraphs, lists, etc."
+      
+script(src="/pages/ui-kit_colorType/ui-kit_colorType.js")

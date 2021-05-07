@@ -1,41 +1,13 @@
-include /blocks/elements/header/header.pug
-include /blocks/elements/footer/footer.pug
-include /blocks/cards/formSignIn/formSignIn.pug
+include ../../blocks/elements/header/header.pug
+include ../../blocks/elements/footer/footer.pug
+include ../../blocks/cards/formSignIn/formSignIn.pug
 
 
-+header(
-  {
-      authorization : false,
-      name : "",
-    },
-    {
-      menuItem : "О нас",
-      state : "active",
-      type : "main"
-    },
-    {
-      menuItem : "Услуги",
-      state : "",
-      type : "expand"
-    },
-    {
-      menuItem : "Вакансии",
-      state : "",
-      type : "main"
-    },
-    {
-      menuItem : "Новости",
-      state : "",
-      type : "main"
-    },
-    {
-      menuItem : "Соглашения",
-      state : "",
-      type : "expand"
-    }
-  )
+include ../globalHEAD.pug
 
 div.sign-in
   +formSignIn
 
-+footer
+include ../globalFOOTER.pug
+
+script(src="/pages/signIn/signIn.js")

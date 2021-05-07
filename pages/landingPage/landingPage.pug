@@ -1,38 +1,8 @@
-include /blocks/elements/header/header.pug
-include /blocks/elements/footer/footer.pug
-include /blocks/cards/formSearchNum/formSearchNum.pug
+include ../../blocks/elements/header/header.pug
+include ../../blocks/elements/footer/footer.pug
+include ../../blocks/cards/formSearchNum/formSearchNum.pug
 
-+header(
-  {
-      authorization : false,
-      name : "",
-    },
-    {
-      menuItem : "О нас",
-      state : "active",
-      type : "main"
-    },
-    {
-      menuItem : "Услуги",
-      state : "",
-      type : "expand"
-    },
-    {
-      menuItem : "Вакансии",
-      state : "",
-      type : "main"
-    },
-    {
-      menuItem : "Новости",
-      state : "",
-      type : "main"
-    },
-    {
-      menuItem : "Соглашения",
-      state : "",
-      type : "expand"
-    }
-  )
+include ../globalHEAD.pug
 
 div.landing-page
   div.landing-page__content-container
@@ -40,4 +10,6 @@ div.landing-page
   div(class="landing-page__content-container landing-page__content-container_flex-end")
     p.landing-page__label Лучшие номера для вашей работы, отдыха и просто вдохновения
 
-+footer
+include ../globalFOOTER.pug
+
+script(src="/pages/landingPage/landingPage.js")

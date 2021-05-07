@@ -1,14 +1,15 @@
-include /blocks/elements/link/link.pug
-include /blocks/elements/rateBtn/rateBtn.pug
+include ../../../blocks/elements/link/link.pug
+include ../../../blocks/elements/rateBtn/rateBtn.pug
 
 mixin cardRoom(obj)
   div.card-room
-    div.card-room__image(id=obj.id)
-      div.card-room__pagination
-        div.card-room__slider-pagination-item.card-room__slider-pagination-item_active
-        div.card-room__slider-pagination-item
-        div.card-room__slider-pagination-item
-        div.card-room__slider-pagination-item
+    a(href="/pages/detailsRoom/detailsRoom.pug")
+      div.card-room__image(id=obj.id)
+        div.card-room__slider-pagination
+          div.card-room__slider-pagination-item.card-room__slider-pagination-item_active
+          div.card-room__slider-pagination-item
+          div.card-room__slider-pagination-item
+          div.card-room__slider-pagination-item
     div.card-room__info-room
       div.card-room__number-price.card-room__number-price_bottom-border
         p

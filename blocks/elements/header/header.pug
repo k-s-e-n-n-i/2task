@@ -1,8 +1,11 @@
+include ../../../blocks/elements/btn/btn.pug
+
 mixin header(obj,...items)
   div.header
     div.header__content-container
       div.header__links
-        img.header__logo(src="/blocks/elements/header/logo.svg" alt="logo")
+        a(href="/index.pug")
+          img.header__logo(src="/blocks/elements/header/logo.svg" alt="logo")
         div.header__block-menu
           ul.header__menu
             each item in items
@@ -14,14 +17,15 @@ mixin header(obj,...items)
                 - var expand = "header__menu-li_expand";
               else
                 - var expand = "";
-              li(class="header__menu-li " +active+" "+expand)= item.menuItem
+              li(class="header__menu-li " +active+" "+expand)
+                a.header__menu-a(href= item.link)= item.menuItem
           div.header__block-login
             if obj.authorization == false
               +btn(
                 {
                   text : "Войти",
                   dopclass : "btn_border btn_header",
-                  link : "#",
+                  link : "/pages/signIn/signIn.pug",
                   arrow : false
                 }
                 )
@@ -29,7 +33,7 @@ mixin header(obj,...items)
                 {
                   text : "Зарегистрироваться",
                   dopclass : "btn_gradient btn_header",
-                  link : "#",
+                  link : "/pages/registration/registration.pug",
                   arrow : false
                 }
                 )

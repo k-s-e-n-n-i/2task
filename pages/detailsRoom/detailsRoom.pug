@@ -1,43 +1,13 @@
-include /blocks/elements/header/header.pug
-include /blocks/elements/footer/footer.pug
+include ../../blocks/elements/header/header.pug
+include ../../blocks/elements/footer/footer.pug
 
-include /blocks/elements/infoBlock/infoBlock.pug
-include /blocks/elements/listBlock/listBlock.pug
-include /blocks/elements/commentBlock/commentBlock.pug
-include /blocks/cards/formReservation/formReservation.pug
+include ../../blocks/elements/infoBlock/infoBlock.pug
+include ../../blocks/elements/listBlock/listBlock.pug
+include ../../blocks/elements/commentBlock/commentBlock.pug
+include ../../blocks/cards/formReservation/formReservation.pug
 
 
-+header(
-  {
-      authorization : false,
-      name : "",
-    },
-    {
-      menuItem : "О нас",
-      state : "active",
-      type : "main"
-    },
-    {
-      menuItem : "Услуги",
-      state : "",
-      type : "expand"
-    },
-    {
-      menuItem : "Вакансии",
-      state : "",
-      type : "main"
-    },
-    {
-      menuItem : "Новости",
-      state : "",
-      type : "main"
-    },
-    {
-      menuItem : "Соглашения",
-      state : "",
-      type : "expand"
-    }
-  )
+include ../globalHEAD.pug
 
 div.details-room
   div.details-room__block-images
@@ -56,19 +26,19 @@ div.details-room
         {
           label : "Комфорт",
           text : "Шумопоглощающие стены",
-          url : "blocks/elements/infoBlock/emoticon.svg",
+          url : "/blocks/elements/infoBlock/emoticon.svg",
           dopclass : "info-block__icon_emoticon"
         },
         {
           label : "Удобство",
           text : "Окно в каждой из спален",
-          url : "blocks/elements/infoBlock/city.svg",
+          url : "/blocks/elements/infoBlock/city.svg",
           dopclass : "info-block__icon_city"
         },
         {
           label : "Уют",
           text : "Номер оснащён камином",
-          url : "blocks/elements/infoBlock/whatshot.svg",
+          url : "/blocks/elements/infoBlock/whatshot.svg",
           dopclass : "info-block__icon_whatshot"
         }
         )
@@ -86,7 +56,7 @@ div.details-room
           label : "2 отзыва"
         },
         {
-          urlImg: "pages/detailsRoom/photo1.png",
+          urlImg: "/pages/detailsRoom/photo1.png",
           liked : true,
           qty : 12,
           name : "Мурад Сарафанов",
@@ -94,7 +64,7 @@ div.details-room
           text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
         },
         {
-          urlImg: "pages/detailsRoom/photo2.png",
+          urlImg: "/pages/detailsRoom/photo2.png",
           liked : false,
           qty : 2,
           name : "Патрисия Стёклышкова",
@@ -131,6 +101,7 @@ div.details-room
         }
         )
 
-+footer
+include ../globalFOOTER.pug
 
+script(src="/pages/detailsRoom/detailsRoom.js")
 script(src="/pages/detailsRoom/chart.js")

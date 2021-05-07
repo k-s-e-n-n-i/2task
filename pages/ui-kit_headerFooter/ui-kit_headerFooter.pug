@@ -1,9 +1,10 @@
-include /blocks/elements/footer/footer.pug
-include /blocks/elements/header/header.pug
-include /blocks/elements/footerSimple/footerSimple.pug
+include ../../blocks/elements/footer/footer.pug
+include ../../blocks/elements/header/header.pug
+include ../../blocks/elements/footerSimple/footerSimple.pug
 
 div.ui-kit-header-footer
-  img.ui-kit-header-footer__ico_logo(src="pages/ui-kit_headerFooter/ico_logo.svg" alt="logo")
+  a(href="/index.pug")
+    img.ui-kit-header-footer__ico_logo(src="/pages/ui-kit_headerFooter/ico_logo.svg" alt="logo")
   +header(
     {
       authorization : false,
@@ -11,26 +12,31 @@ div.ui-kit-header-footer
     },
     {
       menuItem : "О нас",
+      link : "#",
       state : "active",
       type : "main"
     },
     {
       menuItem : "Услуги",
+      link : "#",
       state : "",
       type : "expand"
     },
     {
       menuItem : "Вакансии",
+      link : "#",
       state : "",
       type : "main"
     },
     {
       menuItem : "Новости",
+      link : "#",
       state : "",
       type : "main"
     },
     {
       menuItem : "Соглашения",
+      link : "#",
       state : "",
       type : "expand"
     }
@@ -42,29 +48,36 @@ div.ui-kit-header-footer
     },
     {
       menuItem : "О нас",
+      link : "#",
       state : "active",
       type : "main"
     },
     {
       menuItem : "Услуги",
+      link : "#",
       state : "",
       type : "expand"
     },
     {
       menuItem : "Вакансии",
+      link : "#",
       state : "",
       type : "main"
     },
     {
       menuItem : "Новости",
+      link : "#",
       state : "",
       type : "main"
     },
     {
       menuItem : "Соглашения",
+      link : "#",
       state : "",
       type : "expand"
     }
     )
   +footer
   +footerSimple
+  
+script(src="/pages/ui-kit_headerFooter/ui-kit_headerFooter.js")

@@ -1,12 +1,13 @@
-include /blocks/cards/formSearchNum/formSearchNum.pug
-include /blocks/cards/formRegistration/formRegistration.pug
-include /blocks/cards/formReservation/formReservation.pug
-include /blocks/cards/formSignIn/formSignIn.pug
-include /blocks/cards/cardRoom/cardRoom.pug
-include /blocks/cards/calendar/calendar.pug
+include ../../blocks/cards/formSearchNum/formSearchNum.pug
+include ../../blocks/cards/formRegistration/formRegistration.pug
+include ../../blocks/cards/formReservation/formReservation.pug
+include ../../blocks/cards/formSignIn/formSignIn.pug
+include ../../blocks/cards/cardRoom/cardRoom.pug
+include ../../blocks/cards/calendar/calendar.pug
 
 div.ui-kit-cards
-  img.ui-kit-cards__ico-logo(src="pages/ui-kit_cards/ico_logo.svg" alt="logo")
+  a(href="/index.pug")
+    img.ui-kit-cards__ico-logo(src="/pages/ui-kit_cards/ico_logo.svg" alt="logo")
   div.ui-kit-cards__blk
     +formSearchNum
     +formRegistration(
@@ -46,3 +47,5 @@ div.ui-kit-cards
         rating : 4
       }
       )
+
+script(src="/pages/ui-kit_cards/ui-kit_cards.js")

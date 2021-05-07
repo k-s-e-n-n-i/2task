@@ -1,23 +1,24 @@
-include /blocks/elements/inputText/inputText.pug
-include /blocks/elements/dropdown/dropdownBlock.pug
-include /blocks/elements/dropdown/dropdownDates.pug
-include /blocks/elements/btn/btn.pug
-include /blocks/elements/checkboxList/checkboxList.pug
-include /blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
-include /blocks/elements/radiogroup/radiogroup.pug
-include /blocks/elements/toggleBlock/toggleBlock.pug
-include /blocks/elements/like/like.pug
-include /blocks/elements/rateBtn/rateBtn.pug
-include /blocks/elements/rangeSlider/rangeSlider.pug
-include /blocks/elements/link/link.pug
-include /blocks/elements/pagination/pagination.pug
-include /blocks/elements/listBlock/listBlock.pug
-include /blocks/elements/infoBlock/infoBlock.pug
-include /blocks/elements/commentBlock/commentBlock.pug
+include ../../blocks/elements/inputText/inputText.pug
+include ../../blocks/elements/dropdown/dropdownBlock.pug
+include ../../blocks/elements/dropdown/dropdownDates.pug
+include ../../blocks/elements/btn/btn.pug
+include ../../blocks/elements/checkboxList/checkboxList.pug
+include ../../blocks/elements/checkboxListExpandable/checkboxListExpandable.pug
+include ../../blocks/elements/radiogroup/radiogroup.pug
+include ../../blocks/elements/toggleBlock/toggleBlock.pug
+include ../../blocks/elements/like/like.pug
+include ../../blocks/elements/rateBtn/rateBtn.pug
+include ../../blocks/elements/rangeSlider/rangeSlider.pug
+include ../../blocks/elements/link/link.pug
+include ../../blocks/elements/pagination/pagination.pug
+include ../../blocks/elements/listBlock/listBlock.pug
+include ../../blocks/elements/infoBlock/infoBlock.pug
+include ../../blocks/elements/commentBlock/commentBlock.pug
 
 
 div.ui-kit-form-elements
-  img.ui-kit-form-elements__ico-logo(src="pages/ui-kit_formElements/ico_logo.svg" alt="logo")
+  a(href="/index.pug")
+    img.ui-kit-form-elements__ico-logo(src="/pages/ui-kit_formElements/ico_logo.svg" alt="logo")
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_1
     +inputText(
       {
@@ -464,13 +465,13 @@ div.ui-kit-form-elements
       {
         label : "Комфорт",
         text : "Шумопоглощающие стены",
-        url : "blocks/elements/infoBlock/emoticon.svg",
+        url : "/blocks/elements/infoBlock/emoticon.svg",
         dopclass : "info-block__icon_emoticon"
       },
       {
         label : "Удобство",
         text : "Окно в каждой из спален",
-        url : "blocks/elements/infoBlock/city.svg",
+        url : "/blocks/elements/infoBlock/city.svg",
         dopclass : "info-block__icon_city"
       }
     )
@@ -482,7 +483,7 @@ div.ui-kit-form-elements
         label : "2 отзыва"
       },
       {
-        urlImg: "pages/detailsRoom/photo1.png",
+        urlImg: "/pages/detailsRoom/photo1.png",
         liked : true,
         qty : 12,
         name : "Мурад Сарафанов",
@@ -490,3 +491,5 @@ div.ui-kit-form-elements
         text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
       }
       )
+
+script(src="/pages/ui-kit_formElements/ui-kit_formElements.js")

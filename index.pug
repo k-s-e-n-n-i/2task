@@ -1,21 +1,2 @@
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Document
-    meta(keywords="keywords", description="description")
-    
-  body
-    include pages/landingPage/landingPage.pug
-    include pages/searchRoom/searchRoom.pug
-    include pages/detailsRoom/detailsRoom.pug
-    include pages/registration/registration.pug
-    include pages/signIn/signIn.pug
-    
-    include pages/ui-kit_formElements/ui-kit_formElements.pug
-    include pages/ui-kit_colorType/ui-kit_colorType.pug
-    include pages/ui-kit_headerFooter/ui-kit_headerFooter.pug
-    include pages/ui-kit_cards/ui-kit_cards.pug
-        
-    script(src="./index.js")
+include pages/landingPage/landingPage.pug
+script(src="./index.js")

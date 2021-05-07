@@ -1,0 +1,48 @@
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Document
+    meta(keywords="keywords", description="description")
+
+  body
+    include ../blocks/elements/header/header.pug
+    +header(
+      {
+        authorization : false,
+        name : "",
+      },
+      {
+        menuItem : "О нас",
+        link : "/pages/ui-kit_formElements/ui-kit_formElements.pug",
+        state : "active",
+        type : "main"
+      },
+      {
+        menuItem : "Услуги",
+        link : "/pages/ui-kit_cards/ui-kit_cards.pug",
+        state : "",
+        type : "expand"
+      },
+      {
+        menuItem : "Вакансии",
+        link : "/pages/ui-kit_headerFooter/ui-kit_headerFooter.pug",
+        state : "",
+        type : "main"
+      },
+      {
+        menuItem : "Новости",
+        link : "/pages/ui-kit_colorType/ui-kit_colorType.pug",
+        state : "",
+        type : "main"
+      },
+      {
+        menuItem : "Соглашения",
+        link : "#",
+        state : "",
+        type : "expand"
+      }
+      )
+    
+  
