@@ -17,4 +17,4 @@ var t,e=arguments[3];!function(e,n){"object"==typeof exports&&"undefined"!=typeo
 },{"moment":"iROh"}],"G3lS":[function(require,module,exports) {
 "use strict";var t=e(require("jquery"));function e(t){return t&&t.__esModule?t:{default:t}}require("chart.js");var a=document.getElementById("oilChart"),o=new Chart(a,{type:"doughnut",data:{labels:["Великолепно","Хорошо","Удовлетворительно","Разочарован"],datasets:[{data:[130,65,65,0],backgroundColor:["#FFE39C","#BC9CFF","#6FCF97","#909090"],borderColor:"white",borderWidth:2}]},options:{rotation:.5*Math.PI,cutoutPercentage:90,circumference:2*Math.PI,legend:{position:"right",align:"end",labels:{usePointStyle:!0,boxWidth:9,padding:10,fontFamily:"Arial",fontSize:14}},animation:{animateRotate:!1,animateScale:!1},tooltips:{enabled:!1}}});Chart.defaults.global.elements.defaultFontFamily="sans-serif",Chart.defaults.global.defaultFontSize=18;
 },{"jquery":"HlZQ","chart.js":"IvHv"}]},{},["G3lS"], null)
-//# sourceMappingURL=chart.982bde6a.js.map
+//# sourceMappingURL=/2task/chart.982bde6a.js.map
