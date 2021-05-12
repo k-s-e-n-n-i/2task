@@ -1,8 +1,10 @@
 .ui-kit-form-elements{
   display: flex;
   flex-wrap: wrap;
-  padding: 123px 0 130px 8.4%;
+  padding: 123px 50px 130px 120px;
   position: relative;
+  box-sizing: border-box;
+  width: 1440px;
 
   .ui-kit-form-elements__ico-logo{
     width: 48px;

@@ -1,9 +1,10 @@
 .ui-kit-cards{
   display: flex;
-  flex-wrap: wrap;
   background: #F4F4F6;
-  padding: 130px 0 130px  8.4%;
+  padding: 130px 120px;
   position: relative;
+  width: 1440px;
+  box-sizing: border-box;
 
   .ui-kit-cards__ico-logo{
     width: 48px;

@@ -191,15 +191,11 @@ https://ksuvla.github.io/2task/
 
   **1.6. dropdown с датами.**
   ```
-  mixin dropdownDates(obj,...items)
+  mixin dropdownDates(...items)
   ```
   Пример вызова:
   ```
   +dropdownDates(
-    {
-      btnClean : false,           //наличие кнопки "Очистить": true, false
-      btnOk : false               //наличие кнопки "Принять": true, false
-    },
     { 
       topic : "Прибытие",         //заголовок первой даты
       activeText : "19.08.2019",  //отображаемая-выбранная дата

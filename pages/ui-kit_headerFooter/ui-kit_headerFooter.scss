@@ -1,8 +1,10 @@
 .ui-kit-header-footer{
   background: #F4F4F6;
   width: 100%;
-  padding: 100px 0 130px 0;
+  padding: 100px 0 140px 0;
   position: relative;
+  box-sizing: border-box;
+  width: 1440px;
 
   .ui-kit-header-footer__ico_logo{
     width: 48px;
@@ -35,6 +37,4 @@
       }
     }
   }
-
-  
 }

@@ -9,16 +9,21 @@ $colorGreen: #6FCF97;
 .ui-kit-color-type{
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 100px 9.7% 131px;
+  padding: 100px 140px 131px;
   position: relative;
+  width: 1440px;
+  box-sizing: border-box;
 
-  .ui-kit-color-type__ico-logo{
-    width: 48px;
-    height: 48px;
+  .ui-kit-color-type__link-logo{
     position:absolute;
+    width: 48px;
+    height: 48px;     
     left: 31px;
     top: 30px;
+
+    .ui-kit-color-type__ico-logo{
+      position: absolute;
+    }
   }
 
   .ui-kit-color-type__block-colors{

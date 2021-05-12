@@ -31,3 +31,6 @@ import '/blocks/elements/topicLabel/topicLabel.scss'
 
 /*form elements*/
 import '/pages/ui-kit_formElements/ui-kit_formElements.scss'
+
+import '/blocks/cards/calendar/calendar.scss'
+import '/blocks/cards/calendar/calendar.js'
