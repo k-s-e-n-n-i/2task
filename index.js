@@ -1,6 +1,7 @@
 import '/project/font/fonts.css'
 import '/project/styles/styles.scss'
 
+import './index.scss'
 
 /*form_elements*/
 import '/blocks/elements/btn/btn.scss'

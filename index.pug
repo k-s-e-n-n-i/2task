@@ -1,2 +1,73 @@
-include pages/landingPage/landingPage.pug
+//include pages/landingPage/landingPage.pug
+
+include /blocks/elements/link/link.pug
+
+div.start-page
+  h2 Pages:
+  div.start-page__links
+    +link(
+      {
+        text : "landing page",
+        url : "/pages/landingPage/landingPage.pug",
+        type : "ok"
+      }
+      )
+    +link(
+      {
+        text : "registration",
+        url : "/pages/registration/registration.pug",
+        type : "ok"
+      }
+      )
+    +link(
+      {
+        text : "sign in",
+        url : "/pages/signIn/signIn.pug",
+        type : "ok"
+      }
+      )
+    +link(
+      {
+        text : "search room",
+        url : "/pages/searchRoom/searchRoom.pug",
+        type : "ok"
+      }
+      )
+    +link(
+      {
+        text : "details room",
+        url : "/pages/detailsRoom/detailsRoom.pug",
+        type : "ok"
+      }
+      )
+        
+    +link(
+      {
+        text : "UI-Kit form elements",
+        url : "/pages/ui-kit_formElements/ui-kit_formElements.pug",
+        type : "ok"
+      }
+      )
+    +link(
+      {
+        text : "UI-Kit cards",
+        url : "/pages/ui-kit_cards/ui-kit_cards.pug",
+        type : "ok"
+      }
+      )
+    +link(
+      {
+        text : "UI-Kit header & footer",
+        url : "/pages/ui-kit_headerFooter/ui-kit_headerFooter.pug",
+        type : "ok"
+      }
+      )
+    +link(
+      {
+        text : "UI-Kit color & type",
+        url : "/pages/ui-kit_colorType/ui-kit_colorType.pug",
+        type : "ok"
+      }
+      )
+
 script(src="./index.js")
