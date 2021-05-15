@@ -26,13 +26,13 @@ npm run clean
 
 
 ## Используемые библиотеки
-JQuery - v3.6.0
-pg-calendar - v1.4.31
-chart.js - v2.9.4
+JQuery - v3.6.0  
+pg-calendar - v1.4.31  
+chart.js - v2.9.4  
 
 
 ## Версия node.js
-v14.5.0
+v14.5.0  
 
 
 ## Github pages 
