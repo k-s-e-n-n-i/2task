@@ -2,11 +2,10 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: local('MontserratRegular'), 
-  local('MontserratRegular'), 
-  url('../font/montserrat/MontserratRegular/MontserratRegular.eot') format('opentype'), 
-  url('../font/montserrat/MontserratRegular/MontserratRegular.woff') format('woff'), 
-  url('../font/montserrat/MontserratRegular/MontserratRegular.ttf') format('truetype');
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+  url('./Montserrat-Regular/Montserrat-Regular.woff2') format('woff2'), 
+  url('./Montserrat-Regular/Montserrat-Regular.woff') format('woff'), 
+  url('./Montserrat-Regular/Montserrat-Regular.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
   font-size: 13.7px;

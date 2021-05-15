@@ -16,6 +16,8 @@ include ../../blocks/elements/infoBlock/infoBlock.pug
 include ../../blocks/elements/commentBlock/commentBlock.pug
 
 
+include ../globalHEAD.pug
+
 div.ui-kit-form-elements
   a(href="/index.pug")
     img.ui-kit-form-elements__ico-logo(src="/pages/ui-kit_formElements/ico_logo.svg" alt="logo")
@@ -27,7 +29,7 @@ div.ui-kit-form-elements
         placeholder : "Email",
         inputText : "",
         state : "",
-        id : "blk_1",
+        id : "EmailBlk_1",
       }
       )
     +inputText(
@@ -37,7 +39,7 @@ div.ui-kit-form-elements
         placeholder : "This is pretty awesome",
         inputText : "This is pretty awesome",
         state : "focus",
-        id : "blk_1"
+        id : "FocusBlk_1"
       }
       )
     
