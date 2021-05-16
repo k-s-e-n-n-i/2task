@@ -57,6 +57,14 @@
       .dropdown-dates{
         margin-top: 39px;
         margin-bottom: 18px;
+
+        .calendar-block{
+    
+          .calendar-block__btns{
+            width: 301px;
+            transform: translateX(-1.2px);
+          }
+        }
       }
 
 

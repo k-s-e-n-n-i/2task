@@ -122,6 +122,17 @@
     }
   }
 
+  .dropdown-dates{
+
+    .calendar-block{
+
+      .calendar-block__btns{
+        width: 301px;
+        transform: translateX(-1.2px);
+      }
+    }
+  }
+
   .btn{
     width: 100%;
     height: 36px;

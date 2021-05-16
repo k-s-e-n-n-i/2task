@@ -47,8 +47,9 @@
 
     .calendar-block{
 
-      .calendar{
-        
+      .calendar-block__btns{
+        width: 301px;
+        transform: translateX(-1.2px);
       }
     }
   }
