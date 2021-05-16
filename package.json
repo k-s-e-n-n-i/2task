@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.pug --open",
+    "start": "parcel src/index.pug --open",
     "build": "npm run clean && parcel build index.pug -d docs --public-url /2task/",
     "clean": "rm -rf dist/* && rm -rf docs/*"
   },

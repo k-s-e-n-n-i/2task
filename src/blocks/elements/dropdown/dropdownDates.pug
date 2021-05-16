@@ -1,0 +1,12 @@
+include ../../../blocks/cards/calendar/calendar.pug
+
+mixin dropdownDates(...items)
+  div.dropdown-dates
+    div.dropdown-dates__dates
+      each item in items
+        div.dropdown-block
+          if item.topic != ""
+            h3= item.topic
+          div(class="dropdown-block__dropdown dropdown-block__dropdown_date")= item.activeText
+            img.dropdown-block__expand(src="/img/expand_more.svg" alt="expand_more.svg")
+    +calendar({state : "close"})
