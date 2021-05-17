@@ -1,6 +1,25 @@
 # Верстка макета Toxin
 
 
+## Github pages 
+https://ksuvla.github.io/2task/
+
+При запуске проекта отображается список ссылок на готовые страницы:  
+1. landing page  
+2. Registration  
+3. Sihn in  
+4. Search room  
+5. Details room  
+6. UI-Kit - Form elements  
+7. UI-Kit - Color & Type  
+8. UI-Kit - Headers & Footers  
+9. UI-Kit - Cards  
+
+
+## Исходники макетов
+Исходники, по которым выполнялась верстка, разположены в /src/sources-img-pages  
+
+
 ## Клонирование репозитория локально
 $ git clone https://github.com/KsuVla/2task
 
@@ -33,18 +52,3 @@ chart.js - v2.9.4
 
 ## Версия node.js
 v14.5.0  
-
-
-## Github pages 
-https://ksuvla.github.io/2task/
-
-При запуске проекта отображается список ссылок на готовые страницы:  
-1. landing page  
-2. Registration  
-3. Sihn in  
-4. Search room  
-5. Details room  
-6. UI-Kit - Form elements  
-7. UI-Kit - Color & Type  
-8. UI-Kit - Headers & Footers  
-9. UI-Kit - Cards  
