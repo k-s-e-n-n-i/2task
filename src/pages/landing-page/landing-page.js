@@ -5,7 +5,7 @@ import '/index.scss'
 /*form_elements*/
 import '/blocks/elements/btn/btn.scss'
 import '/blocks/elements/dropdown/dropdown.scss'
-import '/blocks/elements/dropdown/dropdown.js'
+import '/blocks/elements/dropdown/dropdown.ts'
 import '/blocks/elements/footer/footer.scss'
 import '/blocks/elements/header/header.scss'
 import '/blocks/elements/input-text/input-text.scss'

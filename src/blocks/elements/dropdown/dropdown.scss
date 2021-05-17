@@ -84,7 +84,8 @@
         width: 92px;
         margin-right: 7px;
 
-        .dropdown-block__inc-qty{
+        .dropdown-block__inc-qty-minus,
+        .dropdown-block__inc-qty-plus{
           border: 1px solid rgba(31, 32, 65, 0.25);
           border-radius: 50%;
           width: 30px;
@@ -95,6 +96,7 @@
           box-sizing: border-box;
           padding-top: 2px;
           cursor: pointer;
+          user-select: none;
 
           &.dropdown-block__inc-qty_disable{
             cursor: default;
