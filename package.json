@@ -13,8 +13,10 @@
   "license": "ISC",
   "devDependencies": {
     "jquery": "^3.6.0",
+    "posthtml-include": "^1.7.1",
     "pug": "^2.0.4",
-    "sass": "^1.25.0"
+    "sass": "^1.25.0",
+    "typescript": "^4.2.4"
   },
   "dependencies": {
     "chart.js": "^2.9.4",
