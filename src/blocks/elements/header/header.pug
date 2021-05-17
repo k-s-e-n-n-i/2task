@@ -19,6 +19,11 @@ mixin header(obj,...items)
                 - var expand = "";
               li(class="header__menu-li " +active+" "+expand)
                 a.header__menu-a(href= item.link)= item.menuItem
+                if item.submenu != false
+                  ul.header__submenu
+                    each sbm in item.submenu
+                      li.header__submenu-li
+                        a.header__submenu-a(href= sbm.link)= sbm.menuItem
           div.header__block-login
             if obj.authorization == false
               +btn(

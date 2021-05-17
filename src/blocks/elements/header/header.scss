@@ -41,6 +41,13 @@
             cursor: pointer;
             padding: 10px 0;
             margin: 5px 0 5px 20.5px;
+            position: relative;
+
+            &:hover{
+              > .header__submenu{
+                display: block;
+              }
+            }
 
             &.header__menu-li_active{
               font-weight: bold;
@@ -65,6 +72,38 @@
               color: rgba(31, 32, 65, 0.5);
               cursor: pointer;
               text-decoration: none;
+
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+
+            .header__submenu{
+              position: absolute;
+              min-width: 100px;
+              background: #fff;
+              border: 1px solid rgba(31, 32, 65, 0.05);
+              box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+              padding: 10px 20px;
+              right: 0;
+              border-width: 0 1px 1px 1px;
+              z-index: 1;
+              display: none;
+
+              .header__submenu-li{
+                display: block;
+
+                .header__submenu-a{
+                  color: rgba(31, 32, 65, 0.5);
+                  cursor: pointer;
+                  text-decoration: none;
+                  white-space: nowrap;
+
+                  &:hover{
+                    text-decoration: underline;
+                  }
+                }
+              }
             }
           }
         }
