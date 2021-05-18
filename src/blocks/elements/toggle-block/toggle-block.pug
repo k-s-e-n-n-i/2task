@@ -1,16 +1,9 @@
 mixin toggleBlock(obj)
   div.toggle-block
-    div.toggle-block__toggle
-      div.toggle-block__item
-        if obj.active == "off"
-          input.toggle-block__input(id="toggleGroup"+obj.id+"1" type="radio" name="toggleGroup"+obj.id checked)
-        else
-          input.toggle-block__input(id="toggleGroup"+obj.id+"1" type="radio" name="toggleGroup"+obj.id)
-        label.toggle-block__input-label.toggle-block__input-label_off(for="toggleGroup"+obj.id+"1")
-      div.toggle-block__item
-        if obj.active == "on"
-          input.toggle-block__input(id="toggleGroup"+obj.id+"2" type="radio" name="toggleGroup"+obj.id checked)
-        else
-          input.toggle-block__input(id="toggleGroup"+obj.id+"2" type="radio" name="toggleGroup"+obj.id)
-        label.toggle-block__input-label.toggle-block__input-label_on(for="toggleGroup"+obj.id+"2")
+    if obj.active == "off"
+      div.toggle-block__toggle.toggle-block__toggle_off
+        div.toggle-block__item
+    if obj.active == "on"
+      div.toggle-block__toggle.toggle-block__toggle_on
+        div.toggle-block__item
     p= obj.text

@@ -1,14 +1,23 @@
 import $ from "jquery"
 
-$(function() {
-  $('.toggle-block__input-label').on('click', handleToggleClick);
+$(function(){
+  $('.toggle-block').on('click', handleToggleClick);
 
   function handleToggleClick(){
-    if ($(this).hasClass('toggle-block__input-label_off')){
-      $(this).closest('.toggle-block__toggle').css('border-color','rgba(31, 32, 65, 0.25)');
+    let toggle = $(this).find('.toggle-block__toggle'),
+      flag = 0;
+
+    if (toggle.hasClass('toggle-block__toggle_off') && (flag == 0)){
+      console.log('hi 1')
+      toggle.removeClass('toggle-block__toggle_off');
+      toggle.addClass('toggle-block__toggle_on');
+      flag++;
     }
-    if ($(this).hasClass('toggle-block__input-label_on')){
-      $(this).closest('.toggle-block__toggle').css('border-color','#BC9CFF');
+    if (toggle.hasClass('toggle-block__toggle_on') && (flag == 0)){
+      console.log('hi 2')
+      toggle.removeClass('toggle-block__toggle_on')
+      toggle.addClass('toggle-block__toggle_off')
+      flag++;
     }
   }
 });
