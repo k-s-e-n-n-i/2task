@@ -17,13 +17,13 @@
     height: 10px;
     margin: 4px 0 5px 4px;
     cursor: pointer;
-    background-image: url('/blocks/elements/like/favorite_border.svg');
+    background-image: url('favorite_border.svg');
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: contain;
 
     &.like__ico_liked{
-      background-image: url('/blocks/elements/like/favorite.svg');
+      background-image: url('favorite.svg');
     }
   }
 

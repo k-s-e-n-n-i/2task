@@ -19,7 +19,7 @@
       width: 68.2%;
 
       .details-room__image-one{
-        background-image: url('/pages/details-room/image.png');
+        background-image: url('image.png');
         width: 100%;
         height: 33.7vw;
         background-size: cover;
@@ -40,11 +40,11 @@
         background-size: cover;	
 
         &.details-room__image-two_top{
-          background-image: url('/pages/details-room/image2.png');
+          background-image: url('image2.png');
         }
 
         &.details-room__image-two_bottom{
-          background-image: url('/pages/details-room/image3.png');
+          background-image: url('image3.png');
         }
       }
     }

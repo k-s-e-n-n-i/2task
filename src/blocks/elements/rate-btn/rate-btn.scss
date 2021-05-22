@@ -8,13 +8,13 @@
     height: 20px;
     margin: 0 2px;
     cursor: pointer;
-    background-image: url('/blocks/elements/rate-btn/star_border.svg');
+    background-image: url('star_border.svg');
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: contain;
 
     &.rate-btn__star_active{
-      background-image: url('/blocks/elements/rate-btn/star.svg');
+      background-image: url('star.svg');
     }
   }
 }
