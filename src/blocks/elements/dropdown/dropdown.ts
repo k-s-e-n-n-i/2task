@@ -1,4 +1,4 @@
-import $ from "jquery"
+import * as $ from "jquery"
 
 $(function() {
   $('.dropdown-block__dropdown').on('click', handleDropwownClick);
@@ -21,7 +21,7 @@ $(function() {
 
 
   function handleDropdownMinusClick(){
-    let qtyElem : object, 
+    let qtyElem : any, 
         qty : number = 0,
         newQty : number = 0, 
         min : number = 0;
@@ -46,7 +46,7 @@ $(function() {
   }
 
   function handleDropdownPlusClick(){
-    let qtyElem : object, 
+    let qtyElem : any, 
         qty : number = 0,
         newQty : number = 0,
         max : number = 10;
