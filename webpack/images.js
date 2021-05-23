@@ -1,12 +1,21 @@
 module.exports = function() {
-    return {
-        module: {
-            rules: [
-                {
-                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                    type: 'asset/resource',
-                },
-            ]
-        }
-    };
+	return {
+		module: {
+			rules: [
+				{
+					test: /\.(png|svg|jpg|jpeg|gif)$/i,
+					type: 'asset/resource',
+					/*loader: 'file-loader',
+					options: {	
+						name: images/[name].[ext]
+					}*/
+					/*use: [
+            'url-loader', 
+            'html-loader',
+            'file-loader',
+          ]*/
+				},
+			]
+		}
+	};
 };

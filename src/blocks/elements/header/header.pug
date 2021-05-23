@@ -5,7 +5,7 @@ mixin header(obj,...items)
     div.header__content-container
       div.header__links
         a(href="/landing-page.html")
-          img.header__logo(src="./logo.svg" alt="logo")
+          img.header__logo(src="logo.svg" alt="logo")
         div.header__block-menu
           ul.header__menu
             each item in items
@@ -30,7 +30,7 @@ mixin header(obj,...items)
                 {
                   text : "Войти",
                   dopclass : "btn_border btn_header",
-                  link : "/pages/sign-in/sign-in.pug",
+                  link : "/sign-in.html",
                   arrow : false
                 }
                 )
@@ -38,7 +38,7 @@ mixin header(obj,...items)
                 {
                   text : "Зарегистрироваться",
                   dopclass : "btn_gradient btn_header",
-                  link : "/pages/registration/registration.pug",
+                  link : "/registration.html",
                   arrow : false
                 }
                 )

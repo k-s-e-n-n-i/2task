@@ -26,10 +26,10 @@ mixin dropdownBlock(obj,...items)
 mixin dropdownBlock__dropdown(obj)
   if obj.state == "close"
     div(class="dropdown-block__dropdown")= obj.activeText
-      img.dropdown-block__expand(src="/img/expand-more.svg" alt="expand-more.svg")
+      img.dropdown-block__expand(src="../../../img/expand-more.svg" alt="expand-more.svg")
   else
     div(class="dropdown-block__dropdown dropdown-block__dropdown_items-show")= obj.activeText
-      img.dropdown-block__expand(src="/img/expand-more.svg" alt="expand-more.svg")
+      img.dropdown-block__expand(src="../../../img/expand-more.svg" alt="expand-more.svg")
 
 
 mixin dropdownBlock__itemsLine(obj,...items)
