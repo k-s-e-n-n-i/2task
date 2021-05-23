@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const devserver = require('./webpack/devserver');
@@ -38,60 +39,6 @@ const common = merge([
       'ui-kit-cards.js': PATHS.source + '/pages/ui-kit-cards/ui-kit-cards.js',
       'ui-kit-header-footer.js': PATHS.source + '/pages/ui-kit-header-footer/ui-kit-header-footer.js',
       'ui-kit-color-type.js': PATHS.source + '/pages/ui-kit-color-type/ui-kit-color-type.js',
-      
-      /*'js/index.js': PATHS.source + '/index.js',
-      'js/landing-page.js': PATHS.source + '/pages/landing-page/landing-page.js',
-      'js/registration.js': PATHS.source + '/pages/registration/registration.js',
-      'js/sign-in.js': PATHS.source + '/pages/sign-in/sign-in.js',
-      'js/search-room.js': PATHS.source + '/pages/search-room/search-room.js',
-      'js/details-room.js': PATHS.source + '/pages/details-room/details-room.js',
-      'js/ui-kit-form-elements.js': PATHS.source + '/pages/ui-kit-form-elements/ui-kit-form-elements.js',
-      'js/ui-kit-cards.js': PATHS.source + '/pages/ui-kit-cards/ui-kit-cards.js',
-      'js/ui-kit-header-footer.js': PATHS.source + '/pages/ui-kit-header-footer/ui-kit-header-footer.js',
-      'js/ui-kit-color-type.js': PATHS.source + '/pages/ui-kit-color-type/ui-kit-color-type.js',
-      'css/index.css': PATHS.source + '/index.scss',
-      'css/font/fonts.css' : PATHS.source + '/font/fonts.css',
-      'css/blocks/btn.css' : PATHS.source + '/blocks/elements/btn/btn.scss',
-      /*'css/blocks/checkbox-list.css' : PATHS.source + '/blocks/elements/checkbox-list/checkbox-list.scss',
-      'css/blocks/checkbox-list-expandable.css' : PATHS.source + '/blocks/elements/checkbox-list-expandable/checkbox-list-expandable.scss',
-      'js/blocks/checkbox-list-expandable.js' : PATHS.source + '/blocks/elements/checkbox-list-expandable/checkbox-list-expandable.js',
-      'css/blocks/comment-block.css' : PATHS.source + '/blocks/elements/comment-block/comment-block.scss',
-      'css/blocks/dropdown.css' : PATHS.source + '/blocks/elements/dropdown/dropdown.scss',
-      'js/blocks/dropdown.js' : PATHS.source + '/blocks/elements/dropdown/dropdown.js',
-      'css/blocks/footer.css' : PATHS.source + '/blocks/elements/footer/footer.scss',
-      'css/blocks/footerSimple.css' : PATHS.source + '/blocks/elements/footerSimple/footerSimple.scss',
-      'css/blocks/header.css' : PATHS.source + '/blocks/elements/header/header.scss',
-      /*'css/blocks/.css' : PATHS.source + '/blocks/elements/infoBlock/infoBlock.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/inputText/inputText.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/like/like.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/like/like.js',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/link/link.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/listBlock/listBlock.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/pagination/pagination.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/radiogroup/radiogroup.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/rangeSlider/rangeSlider.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/rateBtn/rateBtn.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/rateBtn/rateBtn.js',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/toggleBlock/toggleBlock.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/toggleBlock/toggleBlock.js',
-      'css/blocks/.css' : PATHS.source + '/blocks/elements/topicLabel/topicLabel.scss',
-      'css/pages/.css' : PATHS.source + '/pages/ui-kit_colorType/ui-kit_colorType.scss',
-      'css/pages/.css' : PATHS.source + '/pages/ui-kit_headerFooter/ui-kit_headerFooter.scss',
-      'css/pages/.css' : PATHS.source + '/pages/ui-kit_cards/ui-kit_cards.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/cards/form-search-num/form-search-num.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/cards/calendar/calendar.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/cards/calendar/calendar.js',
-      'css/blocks/.css' : PATHS.source + '/blocks/cards/form-registration/form-registration.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/cards/form-reservation/form-reservation.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/cards/form-sign-in/form-sign-in.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/cards/card-room/card-room.scss',
-      'css/blocks/.css' : PATHS.source + '/blocks/cards/card-room/card-room.js',
-      'css/pages/.css' : PATHS.source + '/pages/ui-kit_formElements/ui-kit_formElements.scss',
-      'css/pages/.css' : PATHS.source + '/pages/landingPage/landingPage.scss',
-      'css/pages/.css' : PATHS.source + '/pages/searchRoom/searchRoom.scss',
-      'css/pages/.css' : PATHS.source + '/pages/registration/registration.scss',
-      'css/pages/.css' : PATHS.source + '/pages/signIn/signIn.scss',
-      'css/pages/detailsRoom/detailsRoom.scss' : PATHS.source + '/pages/detailsRoom/detailsRoom.scss',*/
     },
     output: {
       path: PATHS.build,
@@ -151,7 +98,8 @@ const common = merge([
       }),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css'
-      })
+      }),
+      //new ExtractTextPlugin('./css/[name].css'),
     ],
   },
   pug(),
