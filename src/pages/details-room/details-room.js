@@ -26,3 +26,4 @@ import '../../blocks/cards/form-reservation/form-reservation.scss'
 
 /*pages*/
 import '../../pages/details-room/details-room.scss'
+import '../../pages/details-room/chart.js'

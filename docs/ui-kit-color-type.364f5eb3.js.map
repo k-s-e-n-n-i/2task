@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/ui-kit-color-type/ui-kit-color-type.js"],"names":[],"mappings":";;;;;;;AAKA,aALA,QAAA,mBACA,QAAA,eAIA,QAAA","file":"ui-kit-color-type.364f5eb3.js","sourceRoot":"..\\src","sourcesContent":["import '/font/fonts.css'\r\nimport '/index.scss'\r\n\r\n\r\n/*color_type*/\r\nimport '/pages/ui-kit-color-type/ui-kit-color-type.scss'"]}

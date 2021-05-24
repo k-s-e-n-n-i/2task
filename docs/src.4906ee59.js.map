@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;AAIA,aAJA,QAAA,mBACA,QAAA,gBAGA,QAAA","file":"src.4906ee59.js","sourceRoot":"..\\src","sourcesContent":["import '/font/fonts.css'\r\nimport './index.scss'\r\n\r\n/*form_elements*/\r\nimport '/blocks/elements/link/link.scss'"]}

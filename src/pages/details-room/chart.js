@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import 'chart.js';
 
+console.log('hi')
+
 let oilCanvas = document.getElementById("oilChart");
 
 let pieChart = new Chart(oilCanvas, {

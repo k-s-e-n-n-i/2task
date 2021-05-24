@@ -2,8 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const devserver = require('./webpack/devserver');
 const pug = require('./webpack/pug');
@@ -14,9 +12,6 @@ const css = require('./webpack/css');
 const images = require('./webpack/images');
 const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
-const extractCSS = require('./webpack/css.extract');
-//const uglifyJS = require('./webpack/js.uglify');
-const pugPluginAlias = require('pug-alias');
 
 
 const PATHS = {
@@ -104,13 +99,6 @@ const common = merge([
         chunks: ['ui-kit-color-type'],
         template: PATHS.source + '/pages/ui-kit-color-type/ui-kit-color-type.pug'
       }),
-      /*new pugPluginAlias({
-        '~Elements': 'src/blocks/elements/', 
-      })
-      /*new MiniCssExtractPlugin({
-        filename: 'css/[name].css'
-      }),*/
-      //new ExtractTextPlugin('./css/[name].css'),
     ],
   },
   pug(),
@@ -144,55 +132,6 @@ module.exports = function(env) {
   if (env.conf === 'production') {
     return merge([
       common,
-      //extractCSS()
     ])
   }
 };
-
-
-
-
-
-/*module.exports = {
-  mode: 'development',
-  entry: {
-    'index': PATHS.source + '/index1.js',
-    //'landing-page': PATHS.source + '/pages/landing-page/landing-page.js'
-  },
-  output: {
-    path: PATHS.build,
-    filename: '[name].js'
-  },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-    	title: 'Webpack app',
-      filename: 'index.html',
-      chunks: ['index'],
-      template: PATHS.source + '/index.pug'
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'landing-page.html',
-      chunks: ['landing-page'],
-      template: PATHS.source + '/pages/landing-page/landing-page.pug'
-    })
-  ],
-
-  module: {
-    rules: [
-    {
-      test: /\.pug$/,
-      loader: 'pug-loader',
-      options: {
-        pretty: true
-      }
-    }
-    ]
-  },
-  devServer: {
-    stats: 'errors-only'
-  }
-};*/
-
-
-
