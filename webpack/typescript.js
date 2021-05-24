@@ -3,11 +3,14 @@ module.exports = function(paths) {
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
+          test: /\.(tsx|ts|js)$/i,
           use: 'ts-loader',
-          exclude: /node_modules/
+          exclude: /node_modules/,
         },
       ],
+    },
+    resolve: {
+      extensions: [ '.tsx', '.ts', '.js' ],
     },
   };
 };

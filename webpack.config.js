@@ -16,7 +16,7 @@ const ts = require('./webpack/typescript');
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
-  build: path.join(__dirname, 'build')
+  build: path.join(__dirname, 'docs')
 };
 
 
@@ -24,6 +24,7 @@ const PATHS = {
 const common = merge([
   {
     mode: 'production',
+    devtool: 'inline-source-map',
     entry: {
       'index.js': PATHS.source + '/index.js',
       'landing-page.js': PATHS.source + '/pages/landing-page/landing-page.js',

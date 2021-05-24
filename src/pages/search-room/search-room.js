@@ -27,3 +27,4 @@ import '../../blocks/cards/card-room/card-room.js'
 
 /*pages*/
 import '../../pages/search-room/search-room.scss'
+import '../../pages/search-room/range-slider.js'
