@@ -4,11 +4,13 @@ module.exports = function() {
 			rules: [
 				{
 					test: /\.(png|svg|jpg|jpeg|gif)$/i,
-					type: 'asset/resource',
+					//type: 'asset/resource',
 					loader: 'file-loader',
+										
+					
 					/*options: {	
-						name: images/[name].[ext]
-					}*/
+						name: 'images/[name].[contenthash].[ext]'
+					}
 					/*use: [
             'url-loader', 
             'html-loader',

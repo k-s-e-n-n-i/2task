@@ -1,8 +1,8 @@
 mixin footerSimple  
   div.footer-simple
-    img.logo(src="/blocks/elements/footer-simple/logo.svg" alt="logo")
+    img.logo(src=require("@Elements/footer-simple/logo.svg").default alt="logo")
     p Copyright © 2018 Toxin отель. Все права защищены.
     div.footer_socBlock
-      img.footer__soc-network.footer__soc-network_twitter(src="/blocks/elements/footer-simple/twitter.svg" alt="twitter")
-      img.footer__soc-network.footer__soc-network_facebook(src="/blocks/elements/footer-simple/facebook.svg" alt="facebook")
-      img.footer__soc-network.footer__soc-network_instagram(src="/blocks/elements/footer-simple/instagram.svg" alt="instagram")
+      img.footer__soc-network.footer__soc-network_twitter(src=require("@Elements/footer-simple/twitter.svg").default alt="twitter")
+      img.footer__soc-network.footer__soc-network_facebook(src=require("@Elements/footer-simple/facebook.svg").default alt="facebook")
+      img.footer__soc-network.footer__soc-network_instagram(src=require("@Elements/footer-simple/instagram.svg").default alt="instagram")

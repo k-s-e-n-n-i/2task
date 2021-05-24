@@ -16,6 +16,7 @@ const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
 const extractCSS = require('./webpack/css.extract');
 //const uglifyJS = require('./webpack/js.uglify');
+const pugPluginAlias = require('pug-alias');
 
 
 const PATHS = {
@@ -43,6 +44,13 @@ const common = merge([
     output: {
       path: PATHS.build,
       filename: '[name]'
+    },
+    resolve: {
+      alias: {
+        '@Elements': path.resolve(__dirname, 'src/blocks/elements/'),
+        '@Img': path.resolve(__dirname, 'src/img/'),
+        '@Pages': path.resolve(__dirname, 'src/pages/'),
+      },
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -96,9 +104,12 @@ const common = merge([
         chunks: ['ui-kit-color-type'],
         template: PATHS.source + '/pages/ui-kit-color-type/ui-kit-color-type.pug'
       }),
-      new MiniCssExtractPlugin({
+      /*new pugPluginAlias({
+        '~Elements': 'src/blocks/elements/', 
+      })
+      /*new MiniCssExtractPlugin({
         filename: 'css/[name].css'
-      }),
+      }),*/
       //new ExtractTextPlugin('./css/[name].css'),
     ],
   },

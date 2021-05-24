@@ -6,7 +6,7 @@ include ../global-head.pug
 
 div.ui-kit-header-footer
   a(href="/index.html")
-    img.ui-kit-header-footer__ico-logo(src="/pages/ui-kit-header-footer/ico-logo.svg" alt="logo")
+    img.ui-kit-header-footer__ico-logo(src=require("@Pages/ui-kit-header-footer/ico-logo.svg").default alt="logo")
   +header(
     {
       authorization : false,

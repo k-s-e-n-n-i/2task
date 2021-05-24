@@ -5,7 +5,7 @@ mixin header(obj,...items)
     div.header__content-container
       div.header__links
         a(href="/landing-page.html")
-          img.header__logo(src="/src/blocks/elements/header/logo.svg" alt="logo")
+          img.header__logo(src=require("@Elements/header/logo.svg").default alt="logo")
         div.header__block-menu
           ul.header__menu
             each item in items

@@ -10,7 +10,7 @@ include ../global-head.pug
 
 div.ui-kit-color-type
   a.ui-kit-color-type__link-logo(href="/index.html")
-    img.ui-kit-color-type__ico-logo(src="/pages/ui-kit-color-type/ico-logo.svg" alt="logo")
+    img.ui-kit-color-type__ico-logo(src=require("@Pages/ui-kit-color-type/ico-logo.svg").default alt="logo")
   div.ui-kit-color-type__block-colors
     +colorType__itemColor(
       {

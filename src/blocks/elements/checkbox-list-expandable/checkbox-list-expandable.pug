@@ -5,10 +5,10 @@ mixin checkboxListExpandable(obj,...items)
     if obj.state == "close"
       div.checkbox-list-expandable__topicBlock
         h3= obj.topic
-        img(alt="expand-more.svg" class="checkbox-list-expandable__expand" src="../../../img/expand-more.svg")
+        img(alt="expand-more.svg" class="checkbox-list-expandable__expand" src=require("@Img/expand-more.svg").default)
       +checkboxList({ stateHide : "checkbox-list_hide" }, ...items)
     if obj.state == "open"
       div.checkbox-list-expandable__topicBlock
         h3= obj.topic
-        img(alt="expand-more.svg" class="checkbox-list-expandable__expand checkbox-list-expandable__expand_open" src="../../../img/expand-more.svg")
+        img(alt="expand-more.svg" class="checkbox-list-expandable__expand checkbox-list-expandable__expand_open" src=require("@Img/expand-more.svg").default)
       +checkboxList({ stateHide : "" },...items)
