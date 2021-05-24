@@ -107,7 +107,7 @@ const common = merge([
   css(),
   font(),
   images(),
-  ts()
+  ts(),
 ]);
 
 const developmentConfig = {

@@ -1,7 +1,5 @@
 import $ from 'jquery';
-import 'chart.js';
-
-console.log('hi')
+import Chart from 'chart.js';
 
 let oilCanvas = document.getElementById("oilChart");
 
