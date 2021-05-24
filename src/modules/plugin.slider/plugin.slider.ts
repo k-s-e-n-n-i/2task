@@ -1,14 +1,14 @@
 import * as $ from "jquery"
-//import {Model} from '/modules/plugin.slider/plugin.slider.model.ts';
-//import {View} from '/modules/plugin.slider/plugin.slider.view.ts';
-//import {Controller} from '/modules/plugin.slider/plugin.slider.controller.ts';
+import {Model} from '../../modules/plugin.slider/plugin.slider.model';
+import {View} from '../../modules/plugin.slider/plugin.slider.view';
+import {Controller} from '../../modules/plugin.slider/plugin.slider.controller';
 declare let jQuery: any;
 
 (function( $ ) {
-	$.fn.slider = function(options : object) {
+	$.fn.slider = function() {
 
     class Slider {
-      public element : any;
+      public element : HTMLElement;
       public idElement : string;
       public width : number;
       public type : string = 'interval';
@@ -24,7 +24,7 @@ declare let jQuery: any;
       public settings : string = 'on';
       public dataSlider : object = {};
 
-      constructor(elementObj : object,
+      constructor(elementObj : HTMLElement,
         idElementObj : string,
         widthObj : number,
         typeObj : string,
@@ -73,9 +73,39 @@ declare let jQuery: any;
       }
  
       runSlider(){
-        const model = new Model(this.dataSlider);
-        const view = new View(this.dataSlider, model);
-        const controller = new Controller(this.dataSlider, model, view);
+        const model = new Model(this.element, this.idElement);
+        const view = new View(
+          this.dataSlider,
+          this.element,
+          this.idElement,
+          this.type,
+          this.min,
+          this.max,
+          this.minStart,
+          this.maxStart,
+          this.orientation,
+          this.value,
+          this.scale,
+          this.scaleStep,
+          model
+        );
+        const controller = new Controller(
+          this.element,
+          this.idElement,
+          this.type,
+          this.min,
+          this.max,
+          this.minStart,
+          this.maxStart,
+          this.step,
+          this.orientation,
+          this.value,
+          this.scale,
+          this.scaleStep,
+          this.settings,
+          model, 
+          view
+        );
     
         model.rangeSlider.style.width = this.width +'px';
         

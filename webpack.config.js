@@ -46,6 +46,7 @@ const common = merge([
         '@Elements': path.resolve(__dirname, 'src/blocks/elements/'),
         '@Img': path.resolve(__dirname, 'src/img/'),
         '@Pages': path.resolve(__dirname, 'src/pages/'),
+        '@': path.resolve(__dirname, 'src/'),
       },
     },
     plugins: [
