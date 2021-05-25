@@ -33,3 +33,4 @@ import '../../blocks/cards/calendar/calendar.js'
 
 /*pages*/
 import '../../pages/ui-kit-form-elements/ui-kit-form-elements.scss'
+import '../../pages/ui-kit-form-elements/range-slider.js'

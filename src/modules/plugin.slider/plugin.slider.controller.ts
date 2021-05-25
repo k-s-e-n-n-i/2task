@@ -1,4 +1,10 @@
 import $ from "jquery"
+import {Options} from '../../modules/plugin.slider/plugin.slider';
+
+interface Coords {
+  top : number,
+  left : number
+}
 
 export class Controller {
   model : any;
@@ -17,36 +23,22 @@ export class Controller {
   value : string;
   settings : string;
 
-  constructor(elementObj : HTMLElement,
-    idElementObj : string,
-    typeObj : string,
-    minObj : number,
-    maxObj : number,
-    minStartObj : number,
-    maxStartObj : number,
-    stepObj : number,
-    orientationObj : string,
-    valueObj : string,
-    scaleObj : string,
-    scaleStepObj : number,
-    settingsObj : string,
-    model : any, 
-    view : any){
-      this.model = model;
-      this.view = view;
-      this.thisSlider = elementObj;
-      this.idElement = idElementObj;
-      this.min = minObj;
-      this.max = maxObj;
-      this.minStart = minStartObj;
-      this.maxStart = maxStartObj;
-      this.type = typeObj;
-      this.orientation = orientationObj;
-      this.scale = scaleObj;
-      this.scaleStep = scaleStepObj;
-      this.value = valueObj;
-      this.step = stepObj;  
-      this.settings = settingsObj;
+  constructor(option : Options, model : any, view : any){
+    this.model = model;
+    this.view = view;
+    this.thisSlider = option.element;
+    this.idElement = option.idElement;
+    this.min = option.min;
+    this.max = option.max;
+    this.minStart = option.minStart;
+    this.maxStart = option.maxStart;
+    this.step = option.step;
+    this.type = option.type;
+    this.orientation = option.orientation;
+    this.scale = option.scale;
+    this.scaleStep = option.scaleStep;
+    this.value = option.value;
+    this.settings = option.settings;
   }
 
 
@@ -96,12 +88,13 @@ export class Controller {
           break;
         }
         case 'y': {
+          let coords : Coords = contr.getCoords(contr.model.slider);
           if (contr.step == 1){
-            pos = e.pageY - contr.getCoords(contr.model.slider).top;
+            pos = e.pageY - coords.top;
             contr.movingRange(side, startPos, pos, widthRange);
           }else{
             masScale = contr.masStepsForMoving();
-            tempPos = e.pageY - contr.getCoords(contr.model.slider).top;
+            tempPos = e.pageY - coords.top;
             if (masScale.indexOf(tempPos) != -1){
               pos = tempPos;
               contr.movingRange(side, startPos, pos, widthRange);
@@ -120,8 +113,8 @@ export class Controller {
         thisClick.onmouseup = null;
     }; 
   }
-  getCoords(elem : HTMLElement) : object { // https://learn.javascript.ru/coordinates-document
-    let box : any = elem.getBoundingClientRect();
+  getCoords(elem : HTMLElement) : Coords { // https://learn.javascript.ru/coordinates-document
+    let box : Coords = elem.getBoundingClientRect();
     return {
       top: box.top + pageYOffset,
       left: box.left + pageXOffset

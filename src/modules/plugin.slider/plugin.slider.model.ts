@@ -1,4 +1,5 @@
 import $ from "jquery"
+import {Options} from '../../modules/plugin.slider/plugin.slider';
 
 export class Model {
   thisSlider : HTMLElement;
@@ -18,10 +19,9 @@ export class Model {
   labelMax : object;
   blockScaleVals : object;
 
-  constructor(elementObj : HTMLElement,
-    idElementObj : string){
-    this.thisSlider = elementObj;
-    this.idElement = idElementObj;
+  constructor(option : Options){
+    this.thisSlider = option.element;
+    this.idElement = option.idElement;
     this.rangeSlider = this.thisSlider.querySelector('.range-slider#'+this.idElement);
     this.slider = this.rangeSlider.querySelector('.range-slider__slider');
     this.range = this.slider.querySelector('.range-slider__range');

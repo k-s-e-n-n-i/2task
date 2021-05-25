@@ -1,4 +1,5 @@
 import $ from "jquery"
+import {Options} from '../../modules/plugin.slider/plugin.slider';
 
 export class View {
   model : any;
@@ -15,32 +16,20 @@ export class View {
   scaleStep : number;
   value : string;
 
-  constructor(dataSliderObj : object,
-    elementObj : HTMLElement,
-    idElementObj : string,
-    typeObj : string,
-    minObj : number,
-    maxObj : number,
-    minStartObj : number,
-    maxStartObj : number,
-    orientationObj : string,
-    valueObj : string,
-    scaleObj : string,
-    scaleStepObj : number,
-    model : any){
-      this.model = model;
-      this.dataSlider = dataSliderObj;
-      this.thisSlider = elementObj;
-      this.idElement = idElementObj;
-      this.min = minObj;
-      this.max = maxObj;
-      this.minStart = minStartObj;
-      this.maxStart = maxStartObj;
-      this.type = typeObj;
-      this.orientation = orientationObj;
-      this.scale = scaleObj;
-      this.scaleStep = scaleStepObj;
-      this.value = valueObj;
+  constructor(option : Options, model : any){
+    this.model = model;
+    this.dataSlider = option;
+    this.thisSlider = option.element;
+    this.idElement = option.idElement;
+    this.min = option.min;
+    this.max = option.max;
+    this.minStart = option.minStart;
+    this.maxStart = option.maxStart;
+    this.type = option.type;
+    this.orientation = option.orientation;
+    this.scale = option.scale;
+    this.scaleStep = option.scaleStep;
+    this.value = option.value;
   }
 
   drawRange() : void{

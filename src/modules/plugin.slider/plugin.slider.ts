@@ -4,8 +4,26 @@ import {View} from '../../modules/plugin.slider/plugin.slider.view';
 import {Controller} from '../../modules/plugin.slider/plugin.slider.controller';
 declare let jQuery: any;
 
+export interface Options {
+  element : HTMLElement;
+  idElement : string;
+  width : number;
+  type : string;
+  min : number;
+  max : number;
+  minStart : number;
+  maxStart : number;
+  step : number;
+  orientation : string;
+  value : string;
+  scale : string;
+  scaleStep : number;
+  settings : string;
+}
+
 (function( $ ) {
-	$.fn.slider = function() {
+  
+	$.fn.slider = function(options : Options) {
 
     class Slider {
       public element : HTMLElement;
@@ -22,101 +40,42 @@ declare let jQuery: any;
       public scale : string = 'on';
       public scaleStep : number;
       public settings : string = 'on';
-      public dataSlider : object = {};
+      public dataSlider : Options;
 
-      constructor(elementObj : HTMLElement,
-        idElementObj : string,
-        widthObj : number,
-        typeObj : string,
-        minObj : number,
-        maxObj : number,
-        minStartObj : number,
-        maxStartObj : number,
-        stepObj : number,
-        orientationObj : string,
-        valueObj : string,
-        scaleObj : string,
-        scaleStepObj : number,
-        settingsObj : string,){
-
-          this.element = elementObj;
-          this.idElement = idElementObj;
-          this.width = widthObj || 400;
-          this.type = typeObj || 'interval';
-          this.min = minObj || 0;
-          this.max = maxObj || 1000;
-          this.minStart = minStartObj || 0;
-          this.maxStart = maxStartObj || 500;
-          this.step = stepObj || 1;
-          this.orientation = orientationObj || 'horizontal';
-          this.value = valueObj || 'on';
-          this.scale = scaleObj || 'on';
-          this.scaleStep = scaleStepObj ||10;
-          this.settings = settingsObj || 'on';
-
-          this.dataSlider = {
-            element : elementObj,
-            idElement : idElementObj,
-            width : widthObj || 400,
-            type : typeObj || 'interval',
-            min : minObj || 0,
-            max : maxObj || 1000,
-            minStart : minStartObj || 0,
-            maxStart : maxStartObj || 500,
-            step : stepObj || 1,
-            orientation : orientationObj || 'horizontal',
-            value : valueObj || 'on',
-            scale : scaleObj || 'on',
-            scaleStep : scaleStepObj ||10,
-            settings : settingsObj || 'on',
-          };
+      constructor(option : Options){
+        this.dataSlider = {
+          element : option.element,
+          idElement : option.idElement,
+          width : option.width || 400,
+          type : option.type || 'interval',
+          min : option.min || 0,
+          max : option.max || 1000,
+          minStart : option.minStart || 0,
+          maxStart : option.maxStart || 500,
+          step : option.step || 1,
+          orientation : option.orientation || 'horizontal',
+          value : option.value || 'on',
+          scale : option.scale || 'on',
+          scaleStep : option.scaleStep ||10,
+          settings : option.settings || 'on',
+        };
       }
  
       runSlider(){
-        const model = new Model(this.element, this.idElement);
-        const view = new View(
-          this.dataSlider,
-          this.element,
-          this.idElement,
-          this.type,
-          this.min,
-          this.max,
-          this.minStart,
-          this.maxStart,
-          this.orientation,
-          this.value,
-          this.scale,
-          this.scaleStep,
-          model
-        );
-        const controller = new Controller(
-          this.element,
-          this.idElement,
-          this.type,
-          this.min,
-          this.max,
-          this.minStart,
-          this.maxStart,
-          this.step,
-          this.orientation,
-          this.value,
-          this.scale,
-          this.scaleStep,
-          this.settings,
-          model, 
-          view
-        );
+        const model = new Model(this.dataSlider);
+        const view = new View(this.dataSlider, model);
+        const controller = new Controller(this.dataSlider, model, view);
     
         model.rangeSlider.style.width = this.width +'px';
         
         controller.checkMinMaxStart();
-        if (this.settings == 'on'){
+        if (this.dataSlider.settings == 'on'){
           controller.writeDataInConfig();
         }
         view.drawRange();
     
         controller.moveRangeOnclickSlider();
-        if (this.settings == 'on'){
+        if (this.dataSlider.settings == 'on'){
           controller.applyConfig();
         }
     
@@ -134,20 +93,7 @@ declare let jQuery: any;
       };
     }
 
-    const slider = new Slider(this.element,
-      this.idElement,
-      this.width,
-      this.type,
-      this.min,
-      this.max,
-      this.minStart,
-      this.maxStart,
-      this.step,
-      this.orientation,
-      this.value,
-      this.scale,
-      this.scaleStep,
-      this.settings);
+    const slider = new Slider(options);
     slider.runSlider();
   }
 })(jQuery)

@@ -1,4 +1,4 @@
-import $ from 'jquery';
+//import $ from 'jquery';
 import Chart from 'chart.js';
 
 let oilCanvas = document.getElementById("oilChart");

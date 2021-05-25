@@ -1,5 +1,3 @@
-import $ from "jquery"
-
 $(function() {
   $('.checkbox-list-expandable').on('click', handleCheckboxlistClick);
 

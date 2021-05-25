@@ -1,6 +1,6 @@
-import "/jquery.global.js";
-import $ from 'jquery'
-import '/modules/plugin.slider/plugin.slider.ts';
+//import "/jquery.global.js";
+//import $ from 'jquery'
+import '../../modules/plugin.slider/plugin.slider.ts';
 
 $(function() {
   

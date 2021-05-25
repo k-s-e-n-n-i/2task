@@ -14,6 +14,7 @@ const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
 
 
+
 const PATHS = {
   source: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'docs')
@@ -100,6 +101,10 @@ const common = merge([
         filename: 'ui-kit-color-type.html',
         chunks: ['ui-kit-color-type'],
         template: PATHS.source + '/pages/ui-kit-color-type/ui-kit-color-type.pug'
+      }),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
       }),
     ],
   },

@@ -1,5 +1,3 @@
-import $ from "jquery"
-
 $(function(){
   $('.toggle-block').on('click', handleToggleClick);
 

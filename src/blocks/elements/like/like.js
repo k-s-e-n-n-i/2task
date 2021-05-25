@@ -1,5 +1,3 @@
-import $ from "jquery"
-
 $(function() {
   $('.like').on('click', handleLikeClick)
 

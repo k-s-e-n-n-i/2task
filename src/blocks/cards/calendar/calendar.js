@@ -1,5 +1,3 @@
-import "../../../jquery.global.js";
-import $ from 'jquery';
 import 'pg-calendar';
 
 $(document).ready(function() {

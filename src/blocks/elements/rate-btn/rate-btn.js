@@ -1,5 +1,3 @@
-import $ from "jquery"
-
 $(function() {
   $('.rate-btn__star').on('click', handleRatebtnClick)
 
