@@ -1,5 +1,3 @@
-//import '../../jquery.global.js'
-//import * as $ from 'jquery'
 import '../../modules/plugin.slider/plugin.slider.ts';
 
 $(function() {
