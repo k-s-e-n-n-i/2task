@@ -24,23 +24,19 @@ https://ksuvla.github.io/2task/
 $ git clone https://github.com/KsuVla/2task
 
 
-## npm команды для работы с проектом
+## yarn команды для работы с проектом
 Инициализировать проект: 
 ```
-npm install
+yarn install
 ```
 Запустить проект: 
 ```
-npm run start
+yarn run start
 ```
 
 Собрать проект (для Github pages): 
 ```
-npm run build
-```
-Очистить dist/ и docs/: 
-```
-npm run clean
+yarn run build
 ```
 
 

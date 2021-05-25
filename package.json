@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --env conf=development",
-    "build": "webpack --env conf=production",
-    "serv": "static build"
+    "build": "webpack --env conf=production"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.5",
