@@ -107,7 +107,7 @@ const common = merge([
         $: 'jquery',
         jQuery: 'jquery'
       }),
-      new CleanWebpackPlugin(),
+      //new CleanWebpackPlugin(),
     ],
   },
   pug(),
