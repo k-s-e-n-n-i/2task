@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const devserver = require('./webpack/devserver');
 const pug = require('./webpack/pug');
@@ -106,6 +107,7 @@ const common = merge([
         $: 'jquery',
         jQuery: 'jquery'
       }),
+      new CleanWebpackPlugin(),
     ],
   },
   pug(),
