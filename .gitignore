@@ -1,7 +1,4 @@
 node_modules
-dist
-.cache
 package-lock.json
-debug.log
-build
 yarn.lock
+docs
