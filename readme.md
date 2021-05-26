@@ -7,7 +7,7 @@ https://ksuvla.github.io/2task/
 При запуске проекта отображается список ссылок на готовые страницы:  
 1. landing page  
 2. Registration  
-3. Sihn in  
+3. Sign in  
 4. Search room  
 5. Details room  
 6. UI-Kit - Form elements  
@@ -17,7 +17,7 @@ https://ksuvla.github.io/2task/
 
 
 ## Исходники макетов
-Исходники, по которым выполнялась верстка, разположены в /src/sources-img-pages  
+Исходники, по которым выполнялась верстка, расположены в /src/sources-img-pages  
 
 
 ## Клонирование репозитория локально
