@@ -1,9 +1,0 @@
-mixin toggleBlock(obj)
-  div.toggle-block
-    if obj.active == "off"
-      div.toggle-block__toggle.toggle-block__toggle_off
-        div.toggle-block__item
-    if obj.active == "on"
-      div.toggle-block__toggle.toggle-block__toggle_on
-        div.toggle-block__item
-    p= obj.text

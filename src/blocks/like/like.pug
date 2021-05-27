@@ -1,9 +1,0 @@
-mixin like(obj)
-  if obj.liked == true
-    div(class="like like_liked")
-      div(class="like__ico like__ico_liked")
-      div(class="like__sum like__sum_liked")= obj.qty
-  else
-    div(class="like")
-      div(class="like__ico")
-      div(class="like__sum")= obj.qty

@@ -1,8 +1,0 @@
-mixin rateBtn(obj)
-  - var i = 0;
-  div.rate-btn
-    while i < obj.qty
-      if obj.active > i++
-        div(class="rate-btn__star rate-btn__star_active" id=i)
-      else	
-        div.rate-btn__star(id=i)
