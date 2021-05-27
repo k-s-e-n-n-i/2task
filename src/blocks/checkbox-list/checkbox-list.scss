@@ -1,5 +1,6 @@
 .checkbox-list{
   margin-top: 17px;
+  width: 230px;
 
   &.checkbox-list_hide{
     display: none;
@@ -39,7 +40,7 @@
       font-size: 14px;
       line-height: 20px;
       color: rgba(31, 32, 65, 0.5);
-      width: 210px;
+      width: auto;
 
       &:before{
         content: '';
