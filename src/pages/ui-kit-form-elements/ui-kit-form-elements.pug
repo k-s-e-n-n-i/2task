@@ -1,19 +1,19 @@
-include ../../blocks/elements/input-text/input-text.pug
-include ../../blocks/elements/dropdown/dropdownBlock.pug
-include ../../blocks/elements/dropdown/dropdownDates.pug
-include ../../blocks/elements/btn/btn.pug
-include ../../blocks/elements/checkbox-list/checkbox-list.pug
-include ../../blocks/elements/checkbox-list-expandable/checkbox-list-expandable.pug
-include ../../blocks/elements/radiogroup/radiogroup.pug
-include ../../blocks/elements/toggle-block/toggle-block.pug
-include ../../blocks/elements/like/like.pug
-include ../../blocks/elements/rate-btn/rate-btn.pug
-include ../../blocks/elements/range-slider/range-slider.pug
-include ../../blocks/elements/link/link.pug
-include ../../blocks/elements/pagination/pagination.pug
-include ../../blocks/elements/list-block/list-block.pug
-include ../../blocks/elements/info-block/info-block.pug
-include ../../blocks/elements/comment-block/comment-block.pug
+include ~@Blocks/input-text/input-text.pug
+include ~@Blocks/dropdown/dropdownBlock.pug
+include ~@Blocks/dropdown/dropdownDates.pug
+include ~@Blocks/btn/btn.pug
+include ~@Blocks/checkbox-list/checkbox-list.pug
+include ~@Blocks/checkbox-list-expandable/checkbox-list-expandable.pug
+include ~@Blocks/radiogroup/radiogroup.pug
+include ~@Blocks/toggle-block/toggle-block.pug
+include ~@Blocks/like/like.pug
+include ~@Blocks/rate-btn/rate-btn.pug
+include ~@Blocks/range-slider/range-slider.pug
+include ~@Blocks/link/link.pug
+include ~@Blocks/pagination/pagination.pug
+include ~@Blocks/list-block/list-block.pug
+include ~@Blocks/info-block/info-block.pug
+include ~@Blocks/comment-block/comment-block.pug
 
 
 include ../global-head.pug
@@ -461,13 +461,13 @@ div.ui-kit-form-elements
       {
         label : "Комфорт",
         text : "Шумопоглощающие стены",
-        url : require("@Elements/info-block/emoticon.svg").default,
+        url : require("@Blocks/info-block/emoticon.svg").default,
         dopclass : "info-block__icon_emoticon"
       },
       {
         label : "Удобство",
         text : "Окно в каждой из спален",
-        url : require("@Elements/info-block/city.svg").default,
+        url : require("@Blocks/info-block/city.svg").default,
         dopclass : "info-block__icon_city"
       }
     )

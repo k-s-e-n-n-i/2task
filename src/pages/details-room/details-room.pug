@@ -1,10 +1,10 @@
-include ../../blocks/elements/header/header.pug
-include ../../blocks/elements/footer/footer.pug
+include ~@Blocks/header/header.pug
+include ~@Blocks/footer/footer.pug
 
-include ../../blocks/elements/info-block/info-block.pug
-include ../../blocks/elements/list-block/list-block.pug
-include ../../blocks/elements/comment-block/comment-block.pug
-include ../../blocks/cards/form-reservation/form-reservation.pug
+include ~@Blocks/info-block/info-block.pug
+include ~@Blocks/list-block/list-block.pug
+include ~@Blocks/comment-block/comment-block.pug
+include ~@Blocks/form-reservation/form-reservation.pug
 
 
 include ../global-header.pug
@@ -26,19 +26,19 @@ div.details-room
         {
           label : "Комфорт",
           text : "Шумопоглощающие стены",
-          url : require("@Elements/info-block/emoticon.svg").default,
+          url : require("@Blocks/info-block/emoticon.svg").default,
           dopclass : "info-block__icon_emoticon"
         },
         {
           label : "Удобство",
           text : "Окно в каждой из спален",
-          url : require("@Elements/info-block/city.svg").default,
+          url : require("@Blocks/info-block/city.svg").default,
           dopclass : "info-block__icon_city"
         },
         {
           label : "Уют",
           text : "Номер оснащён камином",
-          url : require("@Elements/info-block/whatshot.svg").default,
+          url : require("@Blocks/info-block/whatshot.svg").default,
           dopclass : "info-block__icon_whatshot"
         }
         )

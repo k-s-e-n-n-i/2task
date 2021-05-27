@@ -1,0 +1,44 @@
+include ~@Blocks/btn/btn.pug
+include ~@Blocks/input-text/input-text.pug
+
+
+mixin footer
+  div.footer
+    div.footer__block-menu
+      div.footer__content-container
+        ul.footer__bottom-menu
+          li.footer__bottom-menu-logo-block
+            img.footer__logo(src=require("@Blocks/footer/logo.svg").default alt="logo")
+            p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+          +footer__menuColumn("Навигация","О нас","Новости","Служба поддержки","Услуги")
+          +footer__menuColumn("О нас","О сервисе","Наша команда","Вакансии","Инвесторы")
+          +footer__menuColumn("Служба поддержки","Соглашения","Сообщества","Связь с нами")
+          +footer__menuColumn("Подписка","Получайте специальные предложения и новости сервиса","subscription")
+    div.footer__copyright-block
+      div.footer__copyright-content
+        p Copyright © 2018 Toxin отель. Все права зачищены.
+        div.footer__soc-block
+          img.footer__soc-network(src=require("@Blocks/footer/twitter.svg").default alt="footer__soc-network_twitter")
+          img.footer__soc-network(src=require("@Blocks/footer/facebook.svg").default alt="footer__soc-network_facebook")
+          img.footer__soc-network(src=require("@Blocks/footer/instagram.svg").default alt="footer__soc-network_instagram")
+
+
+
+
+mixin footer__menuColumn(...items)
+  li.footer__menu-column
+    ul.footer__menu-list
+      each item in items
+        if item == "subscription"
+          +inputText(
+            {
+              topic : "",
+              label : "",
+              placeholder : "Email",
+              inputText : "",
+              id : "inputFooter",
+              type : "subscription"
+            }
+            )
+        else
+          li(class="footer__menu-li")= item

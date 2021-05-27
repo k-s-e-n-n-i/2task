@@ -79,8 +79,7 @@ const common = merge([
     },
     resolve: {
       alias: {
-        '@Elements': path.resolve(__dirname, 'src/blocks/elements/'),
-        '@Img': path.resolve(__dirname, 'src/img/'),
+        '@Blocks': path.resolve(__dirname, 'src/blocks/'),
         '@Pages': path.resolve(__dirname, 'src/pages/'),
         '@': path.resolve(__dirname, 'src/'),
       },

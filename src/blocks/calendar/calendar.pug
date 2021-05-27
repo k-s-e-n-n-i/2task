@@ -1,0 +1,28 @@
+include ~@Blocks/link/link.pug
+
+mixin calendar(obj)
+  if obj.state == "open"
+    div.calendar-block
+      +calendarBlock__calendar
+  else
+    div.calendar-block.calendar-block_hide
+      +calendarBlock__calendar
+
+
+mixin calendarBlock__calendar
+  div.calendar
+  div.calendar-block__btns
+    +link(
+      {
+        text : "Очистить",
+        url : '#',
+        type : "clean"
+      }
+      )
+    +link(
+      {
+        text : "Применить",
+        url : '#',
+        type : "ok"
+      }
+      )
