@@ -49,7 +49,9 @@ export class Controller {
     return 'y';
   }
   
-  moveAt(range : any, e : object, side : string) : void{
+  moveAt(range : any, e : any, side : string) : void{
+    document.body.classList.add('moving-slider');
+
     let startPos : number = parseInt(range.style.left),
       widthRange : number = this.model.getWidthRange();
     switch(side){//чтобы сверху был ползунок, который перемещали последним (если друг на друга наедут)
@@ -67,51 +69,56 @@ export class Controller {
 
     let thisClick : any = this.thisSlider, contr = this;
     thisClick.onmousemove = function(e : any) {
-      let pos : number,
-        tempPos : number,
-        masScale : number[];
-      switch(contr.defineOrientation(contr.orientation)) {
-        case 'x': {
-          if (contr.step == 1){
-            pos = e.pageX - parseInt(contr.model.slider.offsetLeft);
-            contr.movingRange(side, startPos, pos, widthRange);
-          }else{
-            masScale = contr.masStepsForMoving();
-            tempPos = e.pageX - parseInt(contr.model.slider.offsetLeft);
-            if (masScale.indexOf(tempPos) != -1){
-              pos = tempPos;
+      document.onmousemove = function(e : any) {
+        let pos : number,
+          tempPos : number,
+          masScale : number[];
+        switch(contr.defineOrientation(contr.orientation)) {
+          case 'x': {
+            if (contr.step == 1){
+              pos = e.pageX - parseInt(contr.model.slider.offsetLeft);
               contr.movingRange(side, startPos, pos, widthRange);
             }else{
-              pos = startPos;
+              masScale = contr.masStepsForMoving();
+              tempPos = e.pageX - parseInt(contr.model.slider.offsetLeft);
+              if (masScale.indexOf(tempPos) != -1){
+                pos = tempPos;
+                contr.movingRange(side, startPos, pos, widthRange);
+              }else{
+                pos = startPos;
+              }
             }
+            break;
           }
-          break;
-        }
-        case 'y': {
-          let coords : Coords = contr.getCoords(contr.model.slider);
-          if (contr.step == 1){
-            pos = e.pageY - coords.top;
-            contr.movingRange(side, startPos, pos, widthRange);
-          }else{
-            masScale = contr.masStepsForMoving();
-            tempPos = e.pageY - coords.top;
-            if (masScale.indexOf(tempPos) != -1){
-              pos = tempPos;
+          case 'y': {
+            let coords : Coords = contr.getCoords(contr.model.slider);
+            if (contr.step == 1){
+              pos = e.pageY - coords.top;
               contr.movingRange(side, startPos, pos, widthRange);
             }else{
-              pos = startPos;
+              masScale = contr.masStepsForMoving();
+              tempPos = e.pageY - coords.top;
+              if (masScale.indexOf(tempPos) != -1){
+                pos = tempPos;
+                contr.movingRange(side, startPos, pos, widthRange);
+              }else{
+                pos = startPos;
+              }
             }
+            break;
           }
-          break;
+          default : break;
         }
-        default : break;
       }
     };
 
-    thisClick.onmouseup = function(e : any) {
-        thisClick.onmousemove = null;
-        thisClick.onmouseup = null;
-    }; 
+    document.onmouseup = function(e : any) {
+      thisClick.onmousemove = null;
+      thisClick.onmouseup = null;
+      document.onmousemove = null;
+      document.onmouseup = null;
+      document.body.classList.remove('moving-slider');
+    };
   }
   getCoords(elem : HTMLElement) : Coords { // https://learn.javascript.ru/coordinates-document
     let box : Coords = elem.getBoundingClientRect();
@@ -124,6 +131,12 @@ export class Controller {
   movingRange(side : string, startPos : number, pos : number, widthRange : number) : void{
     let price : number,
       step: number = 0;
+    if (pos < 0){
+      pos = 0;
+    }
+    if (pos > this.model.getWidth()){
+      pos = this.model.getWidth();
+    }
     if ((pos >= 0) && (pos <= this.model.getWidth())){
       if (side == 'left'){	
         if ((this.model.getPosRangeRight() >= pos)&&(this.type != 'from0to')){
