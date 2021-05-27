@@ -35,6 +35,10 @@ const PLUGINSdate = [
   }),
 ];
 
+const ENTRYdate = {
+  'index.js': PATHS.source + '/index.js',
+};
+
 const PAGES = [
   'landing-page',
   'registration',
@@ -57,23 +61,18 @@ PAGES.map((event) => {
   )
 });
 
+PAGES.map((event) => {
+  return Object.assign(ENTRYdate,{
+    [event+'.js'] : PATHS.source + `/pages/${event}/${event}.js`,
+  })
+});
+
 
 const common = merge([
   {
     mode: 'production',
     devtool: 'inline-source-map',
-    entry: {
-      'index.js': PATHS.source + '/index.js',
-      'landing-page.js': PATHS.source + '/pages/landing-page/landing-page.js',
-      'registration.js': PATHS.source + '/pages/registration/registration.js',
-      'sign-in.js': PATHS.source + '/pages/sign-in/sign-in.js',
-      'search-room.js': PATHS.source + '/pages/search-room/search-room.js',
-      'details-room.js': PATHS.source + '/pages/details-room/details-room.js',
-      'ui-kit-form-elements.js': PATHS.source + '/pages/ui-kit-form-elements/ui-kit-form-elements.js',
-      'ui-kit-cards.js': PATHS.source + '/pages/ui-kit-cards/ui-kit-cards.js',
-      'ui-kit-header-footer.js': PATHS.source + '/pages/ui-kit-header-footer/ui-kit-header-footer.js',
-      'ui-kit-color-type.js': PATHS.source + '/pages/ui-kit-color-type/ui-kit-color-type.js',
-    },
+    entry: ENTRYdate,
     output: {
       path: PATHS.build,
       filename: '[name]'
