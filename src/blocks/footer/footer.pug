@@ -17,10 +17,16 @@ mixin footer
     div.footer__copyright-block
       div.footer__copyright-content
         p Copyright © 2018 Toxin отель. Все права зачищены.
-        div.footer__soc-block
-          img.footer__soc-network(src=require("@Blocks/footer/twitter.svg").default alt="footer__soc-network_twitter")
-          img.footer__soc-network(src=require("@Blocks/footer/facebook.svg").default alt="footer__soc-network_facebook")
-          img.footer__soc-network(src=require("@Blocks/footer/instagram.svg").default alt="footer__soc-network_instagram")
+        div.footer__soc-block  
+          span.footer__soc-network
+            a(href="#")
+              img(src=require("@Blocks/footer/twitter.svg").default alt="footer__soc-network_twitter")
+          span.footer__soc-network
+            a(href="#")
+              img(src=require("@Blocks/footer/facebook.svg").default alt="footer__soc-network_facebook")
+          span.footer__soc-network
+            a(href="#")
+              img(src=require("@Blocks/footer/instagram.svg").default alt="footer__soc-network_instagram")
 
 
 
@@ -41,4 +47,5 @@ mixin footer__menuColumn(...items)
             }
             )
         else
-          li(class="footer__menu-li")= item
+          li(class="footer__menu-li")
+            a= item

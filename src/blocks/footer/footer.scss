@@ -5,7 +5,6 @@
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     display: flex;
     justify-content: center;
-    z-index: -2;
     width: 100%;
     position: relative;
     background: #fff;
@@ -50,6 +49,12 @@
               cursor: pointer;              
               display: block;
               color: rgba(31, 32, 65, 0.5);
+              
+              &:hover{
+                > a{
+                  text-decoration: underline;
+                }
+              }
               
               &.menu_li__active{
                 font-weight: bold;
@@ -133,6 +138,7 @@
           height: 24px;
           width: 24px;
           padding-left: 20px;
+          cursor: pointer;
     
           &.footer__soc-network_twitter{
             margin-top: -1px;

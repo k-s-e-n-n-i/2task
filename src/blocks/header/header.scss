@@ -40,7 +40,7 @@
             color: rgba(31, 32, 65, 0.5);
             cursor: pointer;
             padding: 10px 0;
-            margin: 5px 0 5px 20.5px;
+            margin: 5px 0 5px 20px;
             position: relative;
 
             &:hover{
@@ -59,7 +59,7 @@
               &:after{
                 content: '';
                 display: inline-block;
-                width: 25px;
+                width: 22px;
                 height: 14px;
                 background-image: url('@Blocks/header/expand-more.svg');
                 background-repeat: no-repeat;

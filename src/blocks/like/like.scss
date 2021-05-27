@@ -34,6 +34,10 @@
     align-items: center;
     color: rgba(31, 32, 65, 0.25);
     cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 
     &.like__sum_liked{
       color: #BC9CFF;

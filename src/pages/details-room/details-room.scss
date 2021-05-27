@@ -24,6 +24,7 @@
         height: 33.7vw;
         background-size: cover;
         background-position: 50%;
+        cursor: pointer;
       }
     }
     
@@ -38,6 +39,7 @@
         padding: 0;
         height: 50%;
         background-size: cover;	
+        cursor: pointer;
 
         &.details-room__image-two_top{
           background-image: url('image2.png');
@@ -71,6 +73,10 @@
 
       .details-room__room-impression{
         position: relative;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
 
         h2{
           margin-bottom: 7px;

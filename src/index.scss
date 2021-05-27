@@ -49,3 +49,17 @@ body,p{
   font-size: 14px;
   line-height: 24px;
 }
+
+a{
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+  }
+}
+
+img{
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

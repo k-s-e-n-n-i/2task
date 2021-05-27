@@ -83,6 +83,10 @@
         align-items: center;
         width: 92px;
         margin-right: 7px;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
 
         .dropdown-block__inc-qty-minus,
         .dropdown-block__inc-qty-plus{
@@ -96,7 +100,6 @@
           box-sizing: border-box;
           padding-top: 2px;
           cursor: pointer;
-          user-select: none;
 
           &.dropdown-block__inc-qty_disable{
             cursor: default;
