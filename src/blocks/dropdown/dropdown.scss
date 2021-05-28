@@ -33,14 +33,17 @@
       border-radius: 4px 4px 0 0;
     }
 
-    .dropdown-block__expand{
-      width: 11px;
+    &::before{
+      content: '';
+      width: 15px;
       height: 11px;
       position: absolute;
-      bottom: 15px;
-      right: 16px;
+      bottom: 13px;
+      right: 12px;
       cursor: pointer;
       -webkit-user-select: none;
+      background-image: url('@Blocks/dropdown/expand-more.svg');
+      background-repeat: no-repeat;
     }
   }
 

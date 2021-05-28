@@ -1,7 +1,7 @@
 include ~@Blocks/link/link.pug
 
 mixin dropdownBlock(obj,...items)
-  div.dropdown-block
+  div.dropdown-block(name=  obj.name)
     if obj.topic != "" && obj.label !=""
       div.dropdown-block__labels
         h3= obj.topic
@@ -26,10 +26,8 @@ mixin dropdownBlock(obj,...items)
 mixin dropdownBlock__dropdown(obj)
   if obj.state == "close"
     div(class="dropdown-block__dropdown")= obj.activeText
-      img.dropdown-block__expand(src=require("@Blocks/dropdown/expand-more.svg").default alt="expand-more.svg")
   else
     div(class="dropdown-block__dropdown dropdown-block__dropdown_items-show")= obj.activeText
-      img.dropdown-block__expand(src=require("@Blocks/dropdown/expand-more.svg").default alt="expand-more.svg")
 
 
 mixin dropdownBlock__itemsLine(obj,...items)

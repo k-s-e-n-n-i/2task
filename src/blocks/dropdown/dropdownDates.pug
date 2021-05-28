@@ -8,5 +8,4 @@ mixin dropdownDates(...items)
           if item.topic != ""
             h3= item.topic
           div(class="dropdown-block__dropdown dropdown-block__dropdown_date")= item.activeText
-            img.dropdown-block__expand(src=require("@Blocks/dropdown/expand-more.svg").default alt="expand-more.svg")
     +calendar({state : "close"})
