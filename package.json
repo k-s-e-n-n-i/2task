@@ -40,7 +40,7 @@
   "dependencies": {
     "grunt-cli": "^1.4.3",
     "jquery": "^3.6.0",
-    "jquery.maskedinput": "^1.4.1",
+    "jquery-mask-plugin": "^1.14.16",
     "normalize.css": "^8.0.1"
   }
 }
