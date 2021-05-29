@@ -5,11 +5,16 @@ $(document).ready(function() {
     week: 1,
     lang: 'ru',
     multiple: true,
+    buttons: true,
   });
+
+  $('.pignose-calendar-button-cancel').html('Очистить');
+  $('.pignose-calendar-button-apply').html('Применить');
 });
 
 
 $(function() {
+
   $('.dropdown-block__dropdown').on('click', handleCalendarblockClick);
 
   function handleCalendarblockClick(){
