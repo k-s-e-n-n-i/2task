@@ -7,13 +7,13 @@ mixin inputText(obj)
     div.input-text.input-text_subscription
       +topicLabel(obj)
       if obj.state == "focus"
-        input(class="input-text__input input-text__input_hover" placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input input-text__input_hover" name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
       else
-        input(class="input-text__input" placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input" name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
   else  
     div.input-text
       +topicLabel(obj)
       if obj.state == "focus"
-        input(class="input-text__input input-text__input_hover" placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input input-text__input_hover" name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
       else
-        input(class="input-text__input" placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input" name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)

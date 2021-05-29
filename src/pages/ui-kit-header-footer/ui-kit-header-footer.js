@@ -8,6 +8,7 @@ import '../../blocks/footer/footer.scss'
 import '../../blocks/footer-simple/footer-simple.scss'
 import '../../blocks/header/header.scss'
 import '../../blocks/input-text/input-text.scss'
+//import '../../blocks/input-text/input-text.js'
 import '../../blocks/link/link.scss'
 import '../../blocks/topic-label/topic-label.scss'
 
