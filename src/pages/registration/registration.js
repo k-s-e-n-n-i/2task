@@ -1,6 +1,5 @@
 import '../../font/fonts.css'
 import '../../index.scss'
-import 'jquery.maskedinput';
 
 /*form_elements*/
 import '../../blocks/btn/btn.scss'

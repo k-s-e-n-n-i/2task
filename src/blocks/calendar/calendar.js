@@ -1,21 +1,18 @@
 import 'pg-calendar';
-//import './i18n.js';
-
-let dateGlobal;
 
 $(function() {
   $('.dropdown-dates .calendar').pignoseCalendar({     
       week: 1,
-      lang: 'ru',
+      lang: 'custom',
       multiple: true,
       buttons: true,
       format: 'DD.MM.YYYY',
-   
+      weeks: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      monthsLong: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      months: ['Янв', 'Февр', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сент', 'Окт', 'Нояб', 'Дек'],
       controls: {
-        ru: {
-          cancel: "Очистить",
-          ok: "Применить"
-        }
+        cancel: "Очистить",
+        ok: "Применить"
       },
       
       apply: function(date, context) { 
@@ -23,7 +20,7 @@ $(function() {
       },
 
       select: function(date, context) {
-        console.log(context.context.settings.controls.ok);
+        console.log(context.context.settings.controls.ok, date);
 
         if ((date[0] != null) && (date[0]._i != undefined)){
           $(this).closest('.dropdown-dates').find('.dropdown-block__dropdown')[0].innerText = date[0].format('DD.MM.YYYY');
@@ -37,9 +34,6 @@ $(function() {
         }
       }
   });
-
-  //$('.pignose-calendar-button-cancel').html('Очистить');
-  //$('.pignose-calendar-button-apply').html('Применить');
 
 
   $('.dropdown-dates .dropdown-block__dropdown').on('click', handleCalendarblockClick);
