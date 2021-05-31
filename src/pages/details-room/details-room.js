@@ -2,12 +2,15 @@ import '../../font/fonts.css'
 import '../../index.scss'
 
 
-/*form_elements*/
+/*blocks*/
 import '../../blocks/btn/btn.scss'
+import '../../blocks/calendar/calendar.scss'
+import '../../blocks/calendar/calendar.js'
 import '../../blocks/comment-block/comment-block.scss'
 import '../../blocks/dropdown/dropdown.scss'
 import '../../blocks/dropdown/dropdown.ts'
 import '../../blocks/footer/footer.scss'
+import '../../blocks/form-reservation/form-reservation.scss'
 import '../../blocks/header/header.scss'
 import '../../blocks/info-block/info-block.scss'
 import '../../blocks/input-text/input-text.scss'
@@ -17,12 +20,6 @@ import '../../blocks/like/like.js'
 import '../../blocks/link/link.scss'
 import '../../blocks/list-block/list-block.scss'
 import '../../blocks/topic-label/topic-label.scss'
-
-
-/*cards*/
-import '../../blocks/calendar/calendar.scss'
-import '../../blocks/calendar/calendar.js'
-import '../../blocks/form-reservation/form-reservation.scss'
 
 
 /*pages*/

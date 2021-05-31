@@ -2,7 +2,7 @@ import '../../font/fonts.css'
 import '../../index.scss'
 
 
-/*form_elements*/
+/*blocks*/
 import '../../blocks/btn/btn.scss'
 import '../../blocks/footer/footer.scss'
 import '../../blocks/footer-simple/footer-simple.scss'

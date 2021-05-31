@@ -2,8 +2,10 @@ import '../../font/fonts.css'
 import '../../index.scss'
 
 
-/*form_elements*/
+/*blocks*/
 import '../../blocks/btn/btn.scss'
+import '../../blocks/calendar/calendar.scss'
+import '../../blocks/calendar/calendar.js'
 import '../../blocks/checkbox-list/checkbox-list.scss'
 import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.scss'
 import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.js'
@@ -25,11 +27,6 @@ import '../../blocks/rate-btn/rate-btn.js'
 import '../../blocks/toggle-block/toggle-block.scss'
 import '../../blocks/toggle-block/toggle-block.js'
 import '../../blocks/topic-label/topic-label.scss'
-
-
-/*cards*/
-import '../../blocks/calendar/calendar.scss'
-import '../../blocks/calendar/calendar.js'
 
 
 /*pages*/

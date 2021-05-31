@@ -2,8 +2,12 @@ import '../../font/fonts.css'
 import '../../index.scss'
 
 
-/*form_elements*/
+/*blocks*/
 import '../../blocks/btn/btn.scss'
+import '../../blocks/calendar/calendar.scss'
+import '../../blocks/calendar/calendar.js'
+import '../../blocks/card-room/card-room.scss'
+import '../../blocks/card-room/card-room.js'
 import '../../blocks/checkbox-list/checkbox-list.scss'
 import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.scss'
 import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.js'
@@ -18,11 +22,6 @@ import '../../blocks/range-slider/range-slider.scss'
 import '../../blocks/rate-btn/rate-btn.scss'
 import '../../blocks/rate-btn/rate-btn.js'
 import '../../blocks/topic-label/topic-label.scss'
-
-
-/*cards*/
-import '../../blocks/card-room/card-room.scss'
-import '../../blocks/card-room/card-room.js'
 
 
 /*pages*/

@@ -1,5 +1,5 @@
 import './font/fonts.css'
 import './index.scss'
 
-/*form_elements*/
+/*blocks*/
 import './blocks/link/link.scss'
