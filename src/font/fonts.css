@@ -3,9 +3,9 @@
 @font-face {
   font-family: 'Montserrat';
   src: local('Montserrat Regular'), local('Montserrat-Regular'),
-  url('./montserrat-regular/montserrat-regular.woff2') format('woff2'), 
-  url('./montserrat-regular/montserrat-regular.woff') format('woff'), 
-  url('./montserrat-regular/montserrat-regular.ttf') format('truetype');
+  url('@/font/montserrat-regular/montserrat-regular.woff2') format('woff2'), 
+  url('@/font/montserrat-regular/montserrat-regular.woff') format('woff'), 
+  url('@/font/montserrat-regular/montserrat-regular.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
   font-size: 13.7px;
