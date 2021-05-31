@@ -66,6 +66,10 @@ $(function() {
 
   //------------------------------------------------------------------------------------
 
+  $('.ui-kit-cards__calendar-block .calendar').pignoseCalendar(mainOptions);
+
+  //------------------------------------------------------------------------------------
+
 
   $('.dropdown-block__dropdown').on('click', handleDateDropdownClick);
   
