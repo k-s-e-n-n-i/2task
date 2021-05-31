@@ -176,6 +176,9 @@
       .pignose-calendar-button-group{
         display: flex;
         justify-content: space-between;
+        box-shadow: 0px 10px 20px 0px rgba(31, 32, 65, 0.05);
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-width: 0 0 1px 0;
 
         .pignose-calendar-button{
           font-family: Montserrat, Arial, sans-serif;

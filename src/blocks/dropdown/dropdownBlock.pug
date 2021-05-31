@@ -1,18 +1,12 @@
 include ~@Blocks/link/link.pug
+include ~@Blocks/topic-label/topic-label.pug
+include ~@Blocks/calendar/calendar.pug
+
 
 mixin dropdownBlock(obj,...items)
   div.dropdown-block(name=  obj.name)
-    if obj.topic != "" && obj.label !=""
-      div.dropdown-block__labels
-        h3= obj.topic
-        p= obj.label
-      +dropdownBlock__dropdown(obj)
-    else 
-      if obj.topic != ""
-        h3= obj.topic
-      if obj.label != ""
-        p= obj.label  
-      +dropdownBlock__dropdown(obj)
+    +topicLabel(obj)
+    +dropdownBlock__dropdown(obj)
 
     if items != ""
       if obj.state == "close"
@@ -21,6 +15,9 @@ mixin dropdownBlock(obj,...items)
       else
         div.dropdown-block__dropdown-items
           +dropdownBlock__itemsLine(obj,...items)
+    
+    if obj.name == 'date'
+      +calendar({state : "close"})
       
 
 mixin dropdownBlock__dropdown(obj)
