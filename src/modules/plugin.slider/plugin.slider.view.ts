@@ -40,27 +40,11 @@ export class View {
     this.model.rangeRight.style.left = posRight +'px';
 
     switch(this.type) {
-      case 'interval' : {
-        posLeft = ( this.model.getWidth() / (this.max - this.min) ) * (this.minStart - this.min);
-        this.model.rangeLeft.style.left = posLeft+'px';
-        this.model.range.style.transform = 'translateX('+posLeft+'px)';
-        this.model.range.style.left = posLeft+'px';
-        this.model.range.style.width = (posRight - posLeft)+'px';
-        break;
-      }
-      case 'from0to' : {
+      case 'from0to' || 'one' : {
         this.model.rangeLeft.style.left = '0px';
         this.model.range.style.transform = 'translateX(-5px)';
         this.model.range.style.left = '0px';
         this.model.range.style.width = posRight+'px';
-        break;
-      }
-      case 'one' : {
-        posLeft = ( this.model.getWidth() / (this.max - this.min) ) * (this.minStart - this.min);
-        this.model.rangeLeft.style.left = posLeft+'px';
-        this.model.range.style.transform = 'translateX('+posLeft+'px)';
-        this.model.range.style.left = posLeft+'px';
-        this.model.range.style.width = (posRight - posLeft)+'px';
         break;
       }
       default : {
@@ -77,25 +61,26 @@ export class View {
   drawType() : void{
     switch(this.type) {
       case 'interval' : break;
-        this.model.rangeLeft.style.display = 'block';
+        this.model.rangeLeft.style.opacity = 1;
         this.model.rangeLeft.style.transform = 'translate('+this.model.getPosRangeLeft()+'px, 0px)';
-        this.model.range.style.display = 'block';
+        this.model.range.style.opacity = 1;
         this.model.range.style.transform = 'translate('+this.model.getPosRangeLeft()+'px, 0px)';
         this.model.range.style.width = this.model.getPosRangeRight() - this.model.getPosRangeLeft();
-        this.model.labelMin.style.display = 'block';
-        this.model.labelDash.style.display = 'block';
+        this.model.labelMin.style.opacity = 1;
+        this.model.labelDash.style.opacity = 1;
         break;
       case 'from0to' : {
-        this.model.rangeLeft.style.display = 'none';
+        this.model.rangeLeft.style.opacity = 0;
         this.model.range.style.transform = 'translate('+(-5)+'px, 0px)';
         this.model.range.style.width = this.model.getPosRangeRight();
         break;
       }
       case 'one' : {
-        this.model.rangeLeft.style.display = 'none';
-        this.model.range.style.display = 'none';
-        this.model.labelMin.style.display = 'none';
-        this.model.labelDash.style.display = 'none';
+        this.model.rangeLeft.style.opacity = 0;
+        this.model.range.style.opacity = 0;
+        this.model.range.style.transform = 'translate('+(-5)+'px, 0px)';
+        this.model.labelMin.style.opacity = 0;
+        this.model.labelDash.style.opacity = 0;
         break;
       }
       default : break;
@@ -172,39 +157,39 @@ export class View {
   drawValue() : void{
     switch(this.value) {
       case 'on' : {
-        this.model.labelBlock.style.display = 'flex';
+        this.model.labelBlock.style.opacity = 1;
         this.model.labelMax.innerHTML = this.maxStart;
 
         switch(this.type) {
           case 'interval' : {
             this.model.labelMin.innerHTML = this.minStart;
-            this.model.labelMin.style.display = 'block';
-            this.model.labelDash.style.display = 'block';
+            this.model.labelMin.style.opacity = 1;
+            this.model.labelDash.style.opacity = 1;
             break;
           }
           case 'from0to' : {
             this.model.labelMin.innerHTML = this.min;
-            this.model.labelMin.style.display = 'block';
-            this.model.labelDash.style.display = 'block';
+            this.model.labelMin.style.opacity = 1;
+            this.model.labelDash.style.opacity = 1;
             break;
           }
           case 'one' : {
             this.model.labelMin.innerHTML = this.minStart;
-            this.model.labelMin.style.display = 'none';
-            this.model.labelDash.style.display = 'none';
+            this.model.labelMin.style.opacity = 0;
+            this.model.labelDash.style.opacity = 0;
             break;
           }
           default : {//interval
             this.model.labelMin.innerHTML = this.minStart;
-            this.model.labelMin.style.display = 'block';
-            this.model.labelDash.style.display = 'block';
+            this.model.labelMin.style.opacity = 1;
+            this.model.labelDash.style.opacity = 1;
             break;
           }
         }
         break;
       }
       case 'off' : {
-        this.model.labelBlock.style.display = 'none';
+        this.model.labelBlock.style.opacity = 0;
         break;
       }
       default : break;

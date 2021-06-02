@@ -66,7 +66,7 @@ export interface Options {
         const view = new View(this.dataSlider, model);
         const controller = new Controller(this.dataSlider, model, view);
     
-        model.rangeSlider.style.width = this.width +'px';
+        model.rangeSlider.style.width = this.dataSlider.width +'px';
         
         controller.checkMinMaxStart();
         if (this.dataSlider.settings == 'on'){

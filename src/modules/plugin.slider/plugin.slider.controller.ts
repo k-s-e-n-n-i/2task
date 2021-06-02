@@ -386,14 +386,18 @@ export class Controller {
             typeId = this.id.substr(-1);
             switch(typeId) {
               case '1': type = 'interval'; break;
-                case '2': {
-                  type = 'from0to';
-                  contr.minStart = contr.min;
-                  break;
-                }
-                case '3': type = 'one'; break;
-                default : type = 'interval';
+              case '2': {
+                type = 'from0to';
+                contr.minStart = contr.min;
+                break;
               }
+              case '3': {
+                type = 'one'; 
+                contr.minStart = contr.min;
+                break;
+              }
+              default : type = 'interval';
+            }
             clear(contr.thisSlider, id);
             contr.type = type;
             contr.view.type = type;
@@ -402,9 +406,9 @@ export class Controller {
             orientationID = this.id.substr(-1);
             switch(orientationID) {
               case '1': orientation = 'horizontal'; break;
-                case '2': orientation = 'vertical'; break;
-                default : orientation = 'horizontal';
-              }
+              case '2': orientation = 'vertical'; break;
+              default : orientation = 'horizontal';
+            }
             clear(contr.thisSlider, id);
             contr.orientation = orientation;
             contr.view.orientation = orientation;
@@ -413,9 +417,9 @@ export class Controller {
             valueID = this.id.substr(-1);
             switch(valueID) {
               case '1': value = 'on'; break;
-                case '2': value = 'off'; break;
-                default : value = 'on';
-              }
+              case '2': value = 'off'; break;
+              default : value = 'on';
+            }
             clear(contr.thisSlider, id);
             contr.value = value;
             contr.view.value = value;
@@ -424,9 +428,9 @@ export class Controller {
             scaleID = this.id.substr(-1);
             switch(scaleID) {
               case '1': scale = 'on'; break;
-                case '2': scale = 'off'; break;
-                default : scale = 'on';
-              }
+              case '2': scale = 'off'; break;
+              default : scale = 'on';
+            }
             clear(contr.thisSlider, id);
             contr.scale = scale;
             contr.view.scale = scale;
@@ -451,8 +455,8 @@ export class Controller {
         blocksScale[i].remove();
       }	
 
-      thisSlider.querySelector('.range-slider#idSlider'+id+' .range-slider__left').style.display = 'inline-block';
-      thisSlider.querySelector('.range-slider#idSlider'+id+' .range-slider__range').style.display = 'inline-block';
+      thisSlider.querySelector('.range-slider#idSlider'+id+' .range-slider__left').style.opacity = 1;
+      thisSlider.querySelector('.range-slider#idSlider'+id+' .range-slider__range').style.opacity = 1;
     }
   }
   
@@ -479,7 +483,11 @@ export class Controller {
         this.writeDataSliderMin(this.min);
         break;
       }
-      case 'one'		: typeID = '3'; break;
+      case 'one'		: {
+        typeID = '3'; 
+        this.writeDataSliderMin(this.min);
+        break;
+      }
       default 		: typeID = '1';
     }
     switch(this.orientation) {

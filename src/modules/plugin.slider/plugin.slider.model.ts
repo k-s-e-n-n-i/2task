@@ -33,7 +33,7 @@ export class Model {
     this.settingsBlock = this.thisSlider.querySelector('.slider-config .slider-config__block');
     this.labelBlock = this.rangeSlider.querySelector('.range-slider__label-block');
     this.labelMin = this.rangeSlider.querySelector('span.range-slider__label-min');
-    this.labelDash = this.rangeSlider.querySelector('span.range-slider__label-min');
+    this.labelDash = this.rangeSlider.querySelector('span.range-slider__label-dash');
     this.labelMax = this.rangeSlider.querySelector('span.range-slider__label-max');
     this.blockScaleVals = this.slider.querySelectorAll('.range-slider__scale-val');
   }
