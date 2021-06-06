@@ -1,6 +1,7 @@
 import * as $ from "jquery"
+declare let jQuery: any;
 
-$(function() {
+$(function(){
   $('.dropdown-block__dropdown').on('click', handleDropwownClick);
 
   $('.dropdown-block__inc-qty-minus').on('click', handleDropdownMinusClick);
@@ -54,7 +55,7 @@ $(function() {
     let qtyElem : any, 
         qty : number = 0,
         newQty : number = 0,
-        max : number = 10;
+        max : number = 100;
     
     qtyElem = $(this).closest('.dropdown-block__block-qty').find('span');
     qty = parseInt(qtyElem.html());
@@ -85,7 +86,7 @@ $(function() {
     outputInDropdown($(this).closest('.dropdown-block'));
   }
 
-  function handleDropdownCleanClick() {
+  function handleDropdownCleanClick(){
     event.preventDefault();
     let items = $(this).closest('.dropdown-block__dropdown-items');
     items.find('.dropdown-block__block-qty').find('span').html('0');
@@ -95,7 +96,7 @@ $(function() {
   }
 
 
-  function outputInDropdown(dropdown : any) {
+  function outputInDropdown(dropdown : any){
     let str : string = '';
 
     if (dropdown.attr('name') == 'guests'){
@@ -111,17 +112,20 @@ $(function() {
     dropdown.find('.dropdown-block__dropdown').html(str);
   }
 
-  function countQtyGuests(dropdown : any) : string {
+  function countQtyGuests(dropdown : any) : string{
     let lines = dropdown.find('.dropdown-block__items-line'),
         str : string = '',
         sumGuests : number = 0,
         sumBaby : number = 0,
         qty : HTMLElement,
-        item : HTMLElement;
+        item : HTMLElement,
+        textGuest : string,
+        textBaby : string;
     
     for(let i = 0; i < lines.length; i++){
       qty = lines[i].querySelector('.dropdown-block__block-qty span');
       item = lines[i].querySelector('h3');
+
       if ((parseInt(qty.innerHTML) > 0) && (item.innerHTML != 'младенцы')){
         sumGuests = sumGuests + parseInt(qty.innerHTML);
       }
@@ -130,30 +134,36 @@ $(function() {
       }
     }
 
+    textGuest = declensionWords('гостя', sumGuests);
+    textBaby = declensionWords('младенца', sumBaby);
+
     if (sumGuests == 0){
       str = 'Сколько гостей';
     }
     if ((sumGuests != 0) && (sumBaby != 0)){
-      str = sumGuests + ' гостя, ' + sumBaby + ' младенец';
+      str = `${sumGuests} ${textGuest}, ${sumBaby} ${textBaby}`;
     }
     if ((sumGuests != 0) && (sumBaby == 0)){
-      str = sumGuests + ' гостя';
+      str = `${sumGuests} ${textGuest}`;
     }
 
     return str;
   }
 
-  function countQtyComfortRoom(dropdown : any) : string {
+  function countQtyComfortRoom(dropdown : any) : string{
     let lines = dropdown.find('.dropdown-block__items-line'),
         str : string = '',
         qty : HTMLElement,
-        item : HTMLElement;
+        item : HTMLElement,
+        textItem : string;
     
     for(let i = 0; i < lines.length; i++){
       qty = lines[i].querySelector('.dropdown-block__block-qty span');
       item = lines[i].querySelector('h3');
+      textItem = declensionWords(item.innerHTML, parseInt(qty.innerHTML))
+
       if (parseInt(qty.innerHTML) > 0){
-        str = str + qty.innerHTML + ' ' + item.innerHTML + ', ';
+        str = str + qty.innerHTML + ' ' + textItem + ', ';
       }
     }
 
@@ -165,4 +175,41 @@ $(function() {
     return str;
   }
   
+  function declensionWords(item : any, qty : any){
+    let words : any = {
+      bedroom : ['спальня','спальни','спален'],
+      bed : ['кровать','кровати','кроватей'],
+      bathroom : ['ванная комната', 'ванные комнаты','ванных комнат'],
+      guest : ['гость','гостя','гостей'],
+      baby : ['младенец','младенца','младенцев']
+    },
+    word : string = '';
+    
+    for(let key in words){
+      if (item.toLowerCase() == words[key][1].toLowerCase()){
+        if ( (qty <= 20) && (qty >= 5) ){
+          word = words[key][2];
+        }else{
+          if (qty%10 == 0 ||
+              qty%10 == 5 ||
+              qty%10 == 6 ||
+              qty%10 == 7 ||
+              qty%10 == 8 ||
+              qty%10 == 9){
+            word = words[key][2];
+          }
+          if (qty%10 == 1){
+            word = words[key][0];
+          }
+          if (qty%10 == 2 ||
+              qty%10 == 3 ||
+              qty%10 == 4){
+            word = words[key][1];
+          }
+        }
+      }
+    }
+    return word;
+  }
+
 });
