@@ -20,7 +20,7 @@
 
   .input-text__input{
     width: 100%;
-    color: rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 1);
     outline: none;
     font-size: 14px;
     border: 1px solid rgba(31, 32, 65, 0.25);
@@ -34,14 +34,11 @@
     font-style: normal;    
 
     &:hover,
+    &:focus,
     &.input-text__input_hover{
       color: rgba(31, 32, 65, 0.75);
       border: 1px solid rgba(31, 32, 65, 0.5);
       font-weight: bold;
-    }
-    &:focus{
-      color: rgba(31, 32, 65, 0.75);
-      border: 1px solid rgba(31, 32, 65, 0.5);
     }
   }
 
