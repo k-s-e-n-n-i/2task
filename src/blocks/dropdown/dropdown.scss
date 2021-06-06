@@ -133,6 +133,10 @@
 
       &.dropdown-block__btns_flex-end{
         justify-content: flex-end;
+
+        > .link_clean{
+          display: none;
+        }
       }
 
       .link_clean{

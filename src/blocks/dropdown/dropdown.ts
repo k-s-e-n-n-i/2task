@@ -55,7 +55,7 @@ $(function(){
     let qtyElem : any, 
         qty : number = 0,
         newQty : number = 0,
-        max : number = 100;
+        max : number = 10;
     
     qtyElem = $(this).closest('.dropdown-block__block-qty').find('span');
     qty = parseInt(qtyElem.html());
@@ -76,6 +76,9 @@ $(function(){
     }
 
     outputInDropdown($(this).closest('.dropdown-block'));
+
+    $(this).closest('.dropdown-block__dropdown-items').find('.dropdown-block__btns .link_clean').css('display','block');
+    $(this).closest('.dropdown-block__dropdown-items').find('.dropdown-block__btns').removeClass('dropdown-block__btns_flex-end');
   }
 
 
@@ -91,8 +94,12 @@ $(function(){
     let items = $(this).closest('.dropdown-block__dropdown-items');
     items.find('.dropdown-block__block-qty').find('span').html('0');
     items.find('.dropdown-block__inc-qty-minus').addClass('dropdown-block__inc-qty_disable');
+    items.find('.dropdown-block__inc-qty-plus').removeClass('dropdown-block__inc-qty_disable');
     
     outputInDropdown($(this).closest('.dropdown-block'));
+
+    $(this).css('display','none');
+    $(this).closest('.dropdown-block__btns').addClass('dropdown-block__btns_flex-end');
   }
 
 

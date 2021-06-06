@@ -45,29 +45,24 @@ mixin dropdownBlock__itemsLine(obj,...items)
   if obj.btnClean == true || obj.btnOk == true
     if obj.btnClean == false && obj.btnOk == true
       div.dropdown-block__btns.dropdown-block__btns_flex-end
-        +link(
-          {
-            text : "Применить",
-            url : '#',
-            type : "ok"
-          }
-          )
-
+        +links
     else
       div.dropdown-block__btns
-        if obj.btnClean == true
-          +link(
-            {
-              text : "Очистить",
-              url : '#',
-              type : "clean"
-            }
-            )
-        if obj.btnOk == true
-          +link(
-            {
-              text : "Применить",
-              url : '#',
-              type : "ok"
-            }
-            )
+        +links
+
+
+mixin links
+  +link(
+    {
+      text : "Очистить",
+      url : '#',
+      type : "clean"
+    }
+    )
+  +link(
+    {
+      text : "Применить",
+      url : '#',
+      type : "ok"
+    }
+    )
