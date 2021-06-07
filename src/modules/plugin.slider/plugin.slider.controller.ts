@@ -141,7 +141,11 @@ export class Controller {
       if (side == 'left'){	
         if ((this.model.getPosRangeRight() >= pos)&&(this.type != 'from0to')){
           step = startPos - pos;//длина перемещения левого указателя	
-          price = calcValue(pos, this);
+          if (this.model.getPosRangeRight() != pos){
+            price = calcValue(pos, this);
+          }else{
+            price = this.maxStart;
+          }
           this.model.rangeLeft.style.left = pos+'px';//позиция указателей
           this.model.range.style.transform = 'translate('+pos+'px, 0px)';
           startPos = pos;
@@ -157,7 +161,11 @@ export class Controller {
       if (side == 'right'){
         if (this.model.getPosRangeLeft() <= pos){
           step = pos - startPos;//длина перемещения правого указателя
-          price = calcValue(pos, this);
+          if (this.model.getPosRangeLeft() != pos){
+            price = calcValue(pos, this);
+          }else{
+            price = this.minStart;
+          }
           this.model.rangeRight.style.left = pos+'px';//позиция указателей
           this.drawValueMax(price);
           if (this.settings == 'on'){
