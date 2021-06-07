@@ -3,6 +3,10 @@
 
   .checkbox-list-expandable__topicBlock{
     position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 
     .checkbox-list-expandable__expand{
       width: 10px;

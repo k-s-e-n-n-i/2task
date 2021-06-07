@@ -16,6 +16,10 @@
     font-family: Montserrat, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 
     &:hover{
       color: rgba(31, 32, 65, 0.75);

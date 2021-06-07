@@ -73,10 +73,6 @@
 
       .details-room__room-impression{
         position: relative;
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
 
         h2{
           margin-bottom: 7px;
@@ -88,6 +84,10 @@
           position: absolute;
           width: 82px;
           height: 82px;
+          user-select: none;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
           
           .details-room__impression-qty-review{
             font-size: 25px;
