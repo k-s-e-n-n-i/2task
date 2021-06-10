@@ -1,4 +1,4 @@
-.like{
+.like {
   display: flex;
   justify-content: space-between;
   width: 38px;
@@ -8,11 +8,11 @@
   margin: 15px 10px 0 0;
   cursor: pointer;
 
-  &.like_liked{
-    border-color: #BC9CFF;
+  &.like_liked {
+    border-color: #bc9cff;
   }
 
-  .like__ico{
+  .like__ico {
     width: 10px;
     height: 10px;
     margin: 4px 0 5px 4px;
@@ -22,14 +22,14 @@
     background-position: 50%;
     background-size: contain;
 
-    &.like__ico_liked{
+    &.like__ico_liked {
       background-image: url('favorite.svg');
     }
   }
 
-  .like__sum{
-    margin: 4px 10px 3px 0;
-    font-size: 10px;
+  .like__sum {
+    margin: 4px 10px 5px 0;
+    font-size: 9.6px;
     display: flex;
     align-items: center;
     color: rgba(31, 32, 65, 0.25);
@@ -39,8 +39,8 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 
-    &.like__sum_liked{
-      color: #BC9CFF;
+    &.like__sum_liked {
+      color: #bc9cff;
     }
   }
 }

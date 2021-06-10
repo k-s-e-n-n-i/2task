@@ -1,4 +1,4 @@
-.ui-kit-form-elements{
+.ui-kit-form-elements {
   display: flex;
   flex-wrap: wrap;
   padding: 123px 50px 130px 120px;
@@ -6,43 +6,42 @@
   box-sizing: border-box;
   width: 1440px;
 
-  .ui-kit-form-elements__ico-logo{
+  .ui-kit-form-elements__ico-logo {
     width: 48px;
     height: 48px;
-    position:absolute;
+    position: absolute;
     left: 31px;
     top: 30px;
   }
 
-  h3{
+  h3 {
     font-size: 12.5px;
+    letter-spacing: -0.4px;
   }
 
-  .ui-kit-form-elements__blk{
+  .ui-kit-form-elements__blk {
     margin: 20px 20px 39px 20px;
     width: 320px;
 
-    .ui-kit-form-elements__flex-block{
+    .ui-kit-form-elements__flex-block {
       display: flex;
       width: 100%;
       justify-content: flex-start;
     }
 
-    &.ui-kit-form-elements__blk_1{
+    &.ui-kit-form-elements__blk_1 {
       margin-right: 106px;
 
-      .input-text{
+      .input-text {
         margin-bottom: 20px;
 
-        .input-text__input{
-          font-size: 13.5px;
+        .input-text__input {
+          //font-size: 13.5px;
         }
-  
-        &:nth-child(2){
 
-          .topic-label{
-
-            p{
+        &:nth-child(2) {
+          .topic-label {
+            p {
               line-height: 16px;
               font-size: 11.7px;
             }
@@ -50,115 +49,122 @@
         }
       }
 
-      .dropdown-block{
+      .dropdown-block {
         margin-bottom: 23px;
       }
 
-      .dropdown-dates{
+      .dropdown-dates {
         margin-top: 39px;
         margin-bottom: 18px;
 
-        .calendar-block{
-    
-          .calendar-block__btns{
+        .calendar-block {
+          .calendar-block__btns {
             width: 301px;
             transform: translateX(-1.2px);
           }
         }
       }
 
-
-      .ui-kit-form-elements__input-blk-narrow{
+      .ui-kit-form-elements__input-blk-narrow {
         width: 267px;
 
-        .input-text_subscription{
+        .input-text_subscription {
           margin: 41px 0;
-    
-          .input-text__input{
+
+          .input-text__input {
             width: 100%;
           }
         }
-      } 
+      }
     }
 
     //----------------------------------------------------
 
-    &.ui-kit-form-elements__blk_2{
+    &.ui-kit-form-elements__blk_2 {
       margin-right: 52px;
 
-      .checkbox-list{
-        margin-bottom: 28px;
+      .checkbox-list {
+        margin-bottom: 31px;
       }
-  
-      .radiogroup__radio-btn{
-        margin-bottom: 25px;
-  
-        .radiogroup__label{
+
+      .radiogroup__radio-btn {
+        margin-bottom: 26px;
+
+        .radiogroup__label {
           padding-left: 30px;
           margin: 16px 20px 16px 0;
         }
       }
-  
-      h3:nth-child(5){//Toggle
+
+      h3:nth-child(5) {
+        //Toggle
         font-size: 12px;
         line-height: 17px;
       }
-  
-      .toggle-block{
-        margin: 3px 0;
-        
-        &:nth-child(6){
+
+      .toggle-block {
+        //margin: 3px 0;
+
+        &:nth-child(6) {
           margin-top: 7px;
         }
-        &:nth-child(7){
-          margin-bottom: 42px;
+        &:nth-child(7) {
+          margin-bottom: 43px;
         }
       }
-  
-      .like{
-        margin: 16px 10px 40px 0;
+
+      .like {
+        margin: 16px 9px 40px 1px;
       }
-  
-      .rate-btn{
-        margin-top: 17px;
+
+      .rate-btn {
+        margin: 17px 19px 0 1px;
       }
     }
 
     //----------------------------------------------------
-    
-    &.ui-kit-form-elements__blk_3{
 
-      .btn{
+    &.ui-kit-form-elements__blk_3 {
+      .btn {
         margin: 16px 17px 14px 1px;
         height: 36px;
         line-height: 35px;
 
-        &.btn_gradient{
+        &.btn_gradient {
           width: 100px;
         }
-  
-        &.btn_border{
+
+        &.btn_border {
           width: 95px;
           height: 32px;
           line-height: 32px;
         }
 
-        &.btn_gradient_pay{
+        &.btn_gradient_pay {
           width: 100%;
           margin: 15px 20px 40px 0;
+
+          .btn__link {
+            letter-spacing: 0.1px;
+          }
+        }
+
+        .btn__link {
+          letter-spacing: -0.3px;
         }
       }
-  
-      .link{
-        font-size: 12.5px;
+
+      .link {
+        font-size: 12px;
         margin-top: 17px;
+        margin-left: 2px;
       }
-  
-      .pagination{
+
+      .pagination {
         margin: 16px 0 9px 1px;
 
         .pagination__num-block,
-        .pagination__label{
+        .pagination__label {
           justify-content: flex-start;
         }
 
@@ -168,19 +174,19 @@
       }
     }
 
-    &.ui-kit-form-elements__blk_slider{
+    &.ui-kit-form-elements__blk_slider {
       width: 320px;
 
-      .ui-kit-form-elements__slider-blk{
+      .ui-kit-form-elements__slider-blk {
         width: 266px;
 
-        .range-slider{
-          margin-bottom: 44px;
-    
-          .range-slider__topic-label{
+        .range-slider {
+          margin-bottom: 8px;
+
+          .range-slider__topic-label {
             align-items: flex-start;
-            
-            .range-slider__label-block{
+
+            .range-slider__label-block {
               margin: 2px 0 6px 0;
               font-size: 12px;
               line-height: 12px;
@@ -192,62 +198,60 @@
 
     //----------------------------------------------------
 
-    &.ui-kit-form-elements__blk_4{
+    &.ui-kit-form-elements__blk_4 {
       width: 265px;
       height: 261px;
       margin: 20px 161px 39px 20px;
 
-      .dropdown-block__dropdown-items{
+      .dropdown-block__dropdown-items {
         padding-bottom: 5px;
       }
     }
 
     &.ui-kit-form-elements__blk_4,
     &.ui-kit-form-elements__blk_5,
-    &.ui-kit-form-elements__blk_6{
-
-      .dropdown-block{
+    &.ui-kit-form-elements__blk_6 {
+      .dropdown-block {
         margin-bottom: 20px;
 
-        .topic-label{
+        .topic-label {
           display: flex;
           justify-content: space-between;
-      
+
           h3,
-          p{
+          p {
             margin: 0;
           }
 
-          h3{
+          h3 {
             font-size: 12px;
           }
 
-          p{
+          p {
             font-size: 12px;
             line-height: 15px;
             text-transform: uppercase;
-            color: #1F2041;
+            color: #1f2041;
           }
         }
 
-        .dropdown-block__dropdown{
+        .dropdown-block__dropdown {
           border-radius: 4px 4px 0 0;
         }
 
-        .dropdown-block__dropdown-items{
-          
-          .dropdown-block__items-line{
+        .dropdown-block__dropdown-items {
+          .dropdown-block__items-line {
             height: auto;
 
-            h3{
+            h3 {
               padding: 13px 13px 10px 14px;
               font-size: 12px;
             }
 
-            .dropdown-block__block-qty{
+            .dropdown-block__block-qty {
               margin: 6px 6px 0 0;
 
-              span{
+              span {
                 font-size: 12px;
                 margin-bottom: 3px;
               }
@@ -257,67 +261,62 @@
       }
     }
 
-    &.ui-kit-form-elements__blk_5{
+    &.ui-kit-form-elements__blk_5 {
       margin: 20px 52px 20px 20px;
-      
-      .dropdown-block__dropdown-items{
+
+      .dropdown-block__dropdown-items {
         padding-bottom: 0;
 
         .dropdown-block__btns {
           height: auto;
 
-          .link_ok{
-            margin: 20px 7px 11px 0;
-          }
-        }
-      }	
-    }
-
-    &.ui-kit-form-elements__blk_6{
-
-      .dropdown-block__dropdown-items{
-
-        .dropdown-block__btns{
-          height: auto;
-
-          .link_clean{
-            margin: 20px 0 11px 13px;
-          }
-
-          .link_ok{
+          .link_ok {
             margin: 20px 7px 11px 0;
           }
         }
       }
     }
-    
+
+    &.ui-kit-form-elements__blk_6 {
+      .dropdown-block__dropdown-items {
+        .dropdown-block__btns {
+          height: auto;
+
+          .link_clean {
+            margin: 20px 0 11px 13px;
+          }
+
+          .link_ok {
+            margin: 20px 7px 11px 0;
+          }
+        }
+      }
+    }
+
     //----------------------------------------------------
 
-    &.ui-kit-form-elements__blk_7{
+    &.ui-kit-form-elements__blk_7 {
       width: 265px;
       margin-right: 161px;
       margin: 20px 161px 5px 20px;
 
-      .checkbox-list-expandable{
+      .checkbox-list-expandable {
         margin: 0 0 50px 0;
 
-        h3{
+        h3 {
           font-size: 12.3px;
         }
 
-        .checkbox-list{
-
-          &.checkbox-list_hide{
-
-            + .checkbox-list-expandable__topicBlock{
-
-              .checkbox-list-expandable__expand{
+        .checkbox-list {
+          &.checkbox-list_hide {
+            + .checkbox-list-expandable__topicBlock {
+              .checkbox-list-expandable__expand {
                 transform: rotate(180deg);
               }
             }
           }
 
-          .checkbox-list__label{
+          .checkbox-list__label {
             padding: 0 0 10px 29px;
           }
         }
@@ -326,34 +325,33 @@
 
     //----------------------------------------------------
 
-    &.ui-kit-form-elements__blk_8{
+    &.ui-kit-form-elements__blk_8 {
       width: 260px;
       margin-right: 112px;
 
-      .checkbox-list{
+      .checkbox-list {
         margin-top: 15px;
 
-        .checkbox-list__item:nth-child(1){
+        .checkbox-list__item:nth-child(1) {
           width: 220px;
         }
-        
-        .checkbox-list__label{
+
+        .checkbox-list__label {
           padding: 1px 0 10px 30px;
           white-space: nowrap;
-        }	
+        }
       }
     }
 
     //----------------------------------------------------
 
-    &.ui-kit-form-elements__blk_9{
-
-      .list-block{
-        h3{
+    &.ui-kit-form-elements__blk_9 {
+      .list-block {
+        h3 {
           margin-bottom: 13px;
         }
 
-        .list-block__item:before{
+        .list-block__item:before {
           margin: 7px 12px 7px 0;
         }
       }
@@ -361,16 +359,16 @@
 
     //----------------------------------------------------
 
-    &.ui-kit-form-elements__blk_10{
+    &.ui-kit-form-elements__blk_10 {
       width: 278px;
       margin: 15px 149px 39px 20px;
 
-      .info-block{
+      .info-block {
         width: 100%;
         min-width: unset;
         margin: 0;
 
-        .info-block__item{
+        .info-block__item {
           margin: 25px 0 22px;
 
           .info-block__icon {
@@ -378,7 +376,7 @@
             margin-top: 0;
           }
 
-          .info-block__text p{
+          .info-block__text p {
             font-size: 14.5px;
             line-height: 14px;
             margin-bottom: 2px;
@@ -388,8 +386,8 @@
     }
 
     //----------------------------------------------------
-    
-    &.ui-kit-form-elements__blk_11{
+
+    &.ui-kit-form-elements__blk_11 {
       margin: 26px 20px 39px 20px;
       width: 755px;
     }

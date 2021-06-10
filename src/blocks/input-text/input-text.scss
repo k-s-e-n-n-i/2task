@@ -5,6 +5,10 @@
   &.input-text_subscription {
     margin-top: 10px;
 
+    .input-text__input {
+      letter-spacing: 0;
+    }
+
     &:after {
       content: '';
       width: 20px;
@@ -32,13 +36,22 @@
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
+    letter-spacing: 0.5px;
 
     &:hover,
     &:focus,
     &.input-text__input_hover {
       color: rgba(31, 32, 65, 0.75);
       border: 1px solid rgba(31, 32, 65, 0.5);
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      padding: 8px 15px 10px 15px;
+    }
+
+    &.input-text__input_date {
+      padding: 5px 14px 8px 14px;
+      letter-spacing: 0.1px;
     }
   }
 

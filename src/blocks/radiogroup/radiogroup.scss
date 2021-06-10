@@ -1,38 +1,40 @@
-.radiogroup{
+.radiogroup {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: flex-start;
 
-  .radiogroup__radio-btn{
+  .radiogroup__radio-btn {
     vertical-align: center;
-  
-    .radiogroup__input{
+
+    .radiogroup__input {
       margin: auto 10px auto 0;
       width: 20px;
       height: 20px;
       display: none;
-  
-      &:checked{
-  
-        + .radiogroup__label{
-          
-          &:after{
+
+      &:checked {
+        + .radiogroup__label {
+          &:after {
             content: '';
-            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
             display: inline-block;
             width: 12px;
             height: 12px;
             border-radius: 50%;
             position: absolute;
-            left: 4px;
+            left: 5px;
             top: 4px;
+          }
+
+          &:before {
+            border: 1px solid #bc9cff;
           }
         }
       }
     }
-  
-    .radiogroup__label{
+
+    .radiogroup__label {
       display: inline-block;
       cursor: pointer;
       position: relative;
@@ -41,8 +43,8 @@
       user-select: none;
       margin: 11px 20px 5px 0;
       padding-left: 30px;
-  
-      &:before{
+
+      &:before {
         content: '';
         background-color: #fff;
         display: inline-block;
@@ -52,7 +54,7 @@
         border: 1px solid rgba(31, 32, 65, 0.25);
         box-sizing: border-box;
         position: absolute;
-        left: 0;		
+        left: 1px;
       }
     }
   }

@@ -55,6 +55,21 @@
   }
 
   .dropdown-block {
+    .dropdown-block__dropdown {
+      padding: 9px 14px 7px 14px;
+
+      &:before {
+        width: 15px;
+        height: 11px;
+        bottom: 14px;
+        right: 12px;
+      }
+
+      &.dropdown-block__dropdown_date {
+        letter-spacing: -0.1px;
+      }
+    }
+
     .dropdown-block__dropdown-items {
       h3 {
         margin-top: 0px;

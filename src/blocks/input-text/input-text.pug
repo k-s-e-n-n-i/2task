@@ -3,17 +3,22 @@ include ~@Blocks/topic-label/topic-label.pug
 
 
 mixin inputText(obj)
+  if obj.name == 'date'
+    - var classDate = 'input-text__input_date'
+  else
+    - var classDate = ''
+
   if obj.type == "subscription"
     div.input-text.input-text_subscription
       +topicLabel(obj)
       if obj.state == "focus"
-        input(class="input-text__input input-text__input_hover" name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input input-text__input_hover " name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
       else
-        input(class="input-text__input" name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input " name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
   else  
     div.input-text
       +topicLabel(obj)
       if obj.state == "focus"
-        input(class="input-text__input input-text__input_hover" name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input input-text__input_hover "+classDate name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
       else
-        input(class="input-text__input" name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input "+classDate name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)

@@ -1,44 +1,42 @@
-.checkbox-list{
-  margin-top: 17px;
+.checkbox-list {
+  margin-top: 14px;
   width: 230px;
 
-  &.checkbox-list_hide{
+  &.checkbox-list_hide {
     display: none;
   }
 
-  .checkbox-list__item{
-
-    .checkbox-list__input{
+  .checkbox-list__item {
+    .checkbox-list__input {
       display: none;
 
-      &:checked + .checkbox-list__label{
-
-        &:after{
+      &:checked + .checkbox-list__label {
+        &:after {
           content: '';
           position: absolute;
           width: 4px;
           height: 6px;
           border-style: solid;
           border-width: 0 2px 2px 0;
-          border-color: #BC9CFF;
+          border-color: #bc9cff;
           transform: rotate(45deg);
           left: 7px;
-          top: 5px;
+          top: 6px;
         }
 
-        &:before{
-          border-color: #BC9CFF;
+        &:before {
+          border-color: #bc9cff;
         }
       }
     }
 
-    .checkbox-list__label{
+    .checkbox-list__label {
       display: inline-block;
       cursor: pointer;
       position: relative;
-      padding: 0 0 10px 30px;
+      padding: 2px 0 10px 30px;
       font-size: 14px;
-      line-height: 20px;
+      line-height: 18px;
       color: rgba(31, 32, 65, 0.5);
       width: auto;
       user-select: none;
@@ -46,11 +44,12 @@
       -webkit-user-select: none;
       -ms-user-select: none;
 
-      &:before{
+      &:before {
         content: '';
         display: inline-block;
         position: absolute;
-        left: 0;
+        left: 1px;
+        top: 1px;
         background-color: #fff;
         width: 20px;
         height: 20px;
@@ -59,7 +58,7 @@
         border-radius: 4px;
       }
 
-      &.checkbox-list__label_bold{			
+      &.checkbox-list__label_bold {
         color: rgba(31, 32, 65, 0.75);
         font-weight: bold;
         font-size: 14.5px;
@@ -67,18 +66,18 @@
       }
     }
 
-    p{
+    p {
       padding-left: 30px;
       color: rgba(31, 32, 65, 0.5);
       font-size: 12px;
       line-height: 14px;
       margin: -4px 0 10px 0;
 
-      &.checkbox-list__p_width200{
+      &.checkbox-list__p_width200 {
         width: 200px;
       }
 
-      &.checkbox-list__p_width225{
+      &.checkbox-list__p_width225 {
         width: 225px;
       }
     }

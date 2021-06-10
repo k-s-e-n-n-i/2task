@@ -1,15 +1,17 @@
-.topic-label{
+.topic-label {
   display: flex;
   justify-content: space-between;
 
-  h3,p{
+  h3,
+  p {
     margin: 0;
   }
 
-  p{
+  p {
     font-size: 12px;
     line-height: 11px;
     text-transform: uppercase;
-    color: #1F2041;
+    color: #1f2041;
+    letter-spacing: -0.1px;
   }
 }
