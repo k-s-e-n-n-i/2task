@@ -1,12 +1,12 @@
-$colorDarkShade100: rgba(31, 32, 65, 1) ;
+$colorDarkShade100: rgba(31, 32, 65, 1);
 $colorDarkShade75: rgba(31, 32, 65, 0.75);
 $colorDarkShade50: rgba(31, 32, 65, 0.5);
 $colorDarkShade25: rgba(31, 32, 65, 0.25);
 $colorDarkShade5: rgba(31, 32, 65, 0.05);
-$colorPurple: #BC9CFF;
-$colorGreen: #6FCF97;
+$colorPurple: #bc9cff;
+$colorGreen: #6fcf97;
 
-.ui-kit-color-type{
+.ui-kit-color-type {
   display: flex;
   justify-content: space-between;
   padding: 100px 140px 131px;
@@ -14,73 +14,73 @@ $colorGreen: #6FCF97;
   width: 1440px;
   box-sizing: border-box;
 
-  .ui-kit-color-type__link-logo{
-    position:absolute;
+  .ui-kit-color-type__link-logo {
+    position: absolute;
     width: 48px;
-    height: 48px;     
+    height: 48px;
     left: 31px;
     top: 30px;
 
-    .ui-kit-color-type__ico-logo{
+    .ui-kit-color-type__ico-logo {
       position: absolute;
     }
   }
 
-  .ui-kit-color-type__block-colors{
+  .ui-kit-color-type__block-colors {
     display: flex;
     flex-direction: column;
     margin: 35px 0 0 0;
     min-width: 300px;
 
-    .ui-kit-color-type__item-color{
+    .ui-kit-color-type__item-color {
       display: flex;
       align-items: center;
 
-      .ui-kit-color-type__color{
+      .ui-kit-color-type__color {
         display: flex;
         width: 70px;
         height: 70px;
         border-radius: 6px;
         margin: 10px 40px 10px 10px;
 
-        &.ui-kit-color-type__color_dark-shade-100{
+        &.ui-kit-color-type__color_dark-shade-100 {
           background: $colorDarkShade100;
         }
 
-        &.ui-kit-color-type__color_dark-shade-75{
+        &.ui-kit-color-type__color_dark-shade-75 {
           background: $colorDarkShade75;
         }
 
-        &.ui-kit-color-type__color_dark-shade-50{
+        &.ui-kit-color-type__color_dark-shade-50 {
           background: $colorDarkShade50;
         }
 
-        &.ui-kit-color-type__color_dark-shade-25{
+        &.ui-kit-color-type__color_dark-shade-25 {
           background: $colorDarkShade25;
         }
 
-        &.ui-kit-color-type__color_dark-shade-5{
+        &.ui-kit-color-type__color_dark-shade-5 {
           background: $colorDarkShade5;
         }
 
-        &.ui-kit-color-type__color_purple{
+        &.ui-kit-color-type__color_purple {
           background: $colorPurple;
         }
 
-        &.ui-kit-color-type__color_green{
+        &.ui-kit-color-type__color_green {
           background: $colorGreen;
         }
       }
 
-      .ui-kit-color-type__block-text{
+      .ui-kit-color-type__block-text {
         line-height: 29px;
 
-        .ui-kit-color-type__color-topic{
+        .ui-kit-color-type__color-topic {
           margin-bottom: 2px;
           font-size: 20px;
         }
 
-        .ui-kit-color-type__color-label{
+        .ui-kit-color-type__color-label {
           font-weight: normal;
           margin-top: 3px;
         }
@@ -88,55 +88,52 @@ $colorGreen: #6FCF97;
     }
   }
 
-  .ui-kit-color-type__block-types{
+  .ui-kit-color-type__block-types {
     display: flex;
     flex-direction: column;
     margin-top: 19px;
     min-width: 200px;
 
-    .ui-kit-color-type__item-type{
+    .ui-kit-color-type__item-type {
       display: flex;
       margin: 25px 0;
 
-      .ui-kit-color-type__type-tag{
+      .ui-kit-color-type__type-tag {
         display: flex;
         color: rgba(31, 32, 65, 0.25);
         margin-right: 30px;
-        font-family: Montserrat, Arial, sans-serif;
+        font-family: 'Montserrat', Arial, sans-serif;
         width: 40px;
         justify-content: flex-end;
-        align-items: left;			
+        align-items: left;
       }
 
-      .ui-kit-color-type__type-text{
-        width: 387px;					
+      .ui-kit-color-type__type-text {
+        width: 387px;
       }
 
-      h1{
-
-        &.ui-kit-color-type__type-text{
+      h1 {
+        &.ui-kit-color-type__type-text {
           font-size: 25.5px;
         }
       }
 
-      h2{
-
-        &.ui-kit-color-type__type-text{
+      h2 {
+        &.ui-kit-color-type__type-text {
           font-size: 20px;
         }
       }
 
-      h3{
-
-        &.ui-kit-color-type__type-text{
+      h3 {
+        &.ui-kit-color-type__type-text {
           font-size: 12.5px;
         }
       }
 
-      p{
+      p {
         margin: -1px 0;
-        
-        &.ui-kit-color-type__type-text{
+
+        &.ui-kit-color-type__type-text {
           width: 315px;
         }
       }

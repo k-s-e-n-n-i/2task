@@ -1,4 +1,4 @@
-.btn{
+.btn {
   border-radius: 22px;
   height: 26px;
   padding: 4px 0;
@@ -7,36 +7,36 @@
   position: relative;
   text-align: center;
 
-  &.btn_border{
+  &.btn_border {
     background-color: #fff;
-    border: 1px #BC9CFF solid;	
+    border: 1px #bc9cff solid;
 
     height: 22px;
     border-width: 2px;
 
-    .btn__link{
-      color: #BC9CFF;
+    .btn__link {
+      color: #bc9cff;
     }
   }
 
-  &.btn_gradient{
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    color: #ffffff;	
+  &.btn_gradient {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    color: #ffffff;
 
-    &.btn_gradient_pay{
+    &.btn_gradient_pay {
       width: 320px;
     }
   }
 
   &:hover,
   &:focus,
-  &.btn_hover{
+  &.btn_hover {
     opacity: 0.5;
   }
 
-  .btn__link{
+  .btn__link {
     color: #ffffff;
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -46,7 +46,7 @@
     -webkit-user-select: none;
   }
 
-  .btn__arrow{
+  .btn__arrow {
     position: absolute;
     bottom: 12px;
     right: 15px;
@@ -59,8 +59,8 @@
     right: 11px;
     background-repeat: no-repeat;
     background-image: url('@Blocks/btn/arrow.svg');
-    
-    &.btn__arrow_white{	
+
+    &.btn__arrow_white {
       background-image: url('@Blocks/btn/arrow-white.svg');
     }
   }

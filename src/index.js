@@ -1,5 +1,5 @@
-import './font/fonts.css'
-import './index.scss'
+import './font/fonts.css';
+import './index.scss';
 
 /*blocks*/
-import './blocks/link/link.scss'
+import './blocks/link/link.scss';
