@@ -77,7 +77,8 @@ $colorGreen: #6fcf97;
 
         .ui-kit-color-type__color-topic {
           margin-bottom: 2px;
-          font-size: 20px;
+          font-size: 19px;
+          letter-spacing: -0.2px;
         }
 
         .ui-kit-color-type__color-label {
@@ -106,6 +107,7 @@ $colorGreen: #6fcf97;
         width: 40px;
         justify-content: flex-end;
         align-items: left;
+        font-weight: 500;
       }
 
       .ui-kit-color-type__type-text {
@@ -114,19 +116,25 @@ $colorGreen: #6fcf97;
 
       h1 {
         &.ui-kit-color-type__type-text {
-          font-size: 25.5px;
+          font-size: 25px;
+          font-weight: 600;
+          letter-spacing: -0.3px;
         }
       }
 
       h2 {
         &.ui-kit-color-type__type-text {
           font-size: 20px;
+          font-weight: 600;
+          letter-spacing: -0.3px;
         }
       }
 
       h3 {
         &.ui-kit-color-type__type-text {
-          font-size: 12.5px;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.1px;
         }
       }
 
