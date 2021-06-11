@@ -71,7 +71,7 @@ $(function() {
   //------------------------------------------------------------------------------------
 
 
-  $('.dropdown-block__dropdown').on('click', handleDateDropdownClick);
+  $('.dropdown-dates .dropdown-block__dropdown').on('click', handleDateDropdownClick);
   
   function handleDateDropdownClick(){
     const block_calendar;
