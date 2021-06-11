@@ -224,7 +224,7 @@
           }
 
           h3 {
-            font-size: 12px;
+            //font-size: 12px;
           }
 
           p {
@@ -245,11 +245,11 @@
 
             h3 {
               padding: 13px 13px 10px 14px;
-              font-size: 12px;
+              //font-size: 12px;
             }
 
             .dropdown-block__block-qty {
-              margin: 6px 6px 0 0;
+              margin: 5px 5px 0 0;
 
               span {
                 font-size: 12px;
@@ -271,7 +271,7 @@
           height: auto;
 
           .link_ok {
-            margin: 20px 7px 11px 0;
+            margin: 20px 6px 11px 0;
           }
         }
       }
@@ -283,11 +283,11 @@
           height: auto;
 
           .link_clean {
-            margin: 20px 0 11px 13px;
+            margin: 20px 0 11px 14px;
           }
 
           .link_ok {
-            margin: 20px 7px 11px 0;
+            margin: 20px 6px 11px 0;
           }
         }
       }
@@ -304,7 +304,7 @@
         margin: 0 0 50px 0;
 
         h3 {
-          font-size: 12.3px;
+          //font-size: 12.3px;
         }
 
         .checkbox-list {
@@ -317,7 +317,7 @@
           }
 
           .checkbox-list__label {
-            padding: 0 0 10px 29px;
+            padding: 0 0 9px 29px;
           }
         }
       }
@@ -330,7 +330,7 @@
       margin-right: 112px;
 
       .checkbox-list {
-        margin-top: 15px;
+        margin-top: 14px;
 
         .checkbox-list__item:nth-child(1) {
           width: 220px;
@@ -339,6 +339,7 @@
         .checkbox-list__label {
           padding: 1px 0 10px 30px;
           white-space: nowrap;
+          letter-spacing: -0.4px;
         }
       }
     }
@@ -361,7 +362,7 @@
 
     &.ui-kit-form-elements__blk_10 {
       width: 278px;
-      margin: 15px 149px 39px 20px;
+      margin: 19px 149px 39px 20px;
 
       .info-block {
         width: 100%;
@@ -369,15 +370,15 @@
         margin: 0;
 
         .info-block__item {
-          margin: 25px 0 22px;
+          margin: 24px 0 22px;
 
           .info-block__icon {
-            margin-left: 3px;
+            margin-left: 4px;
             margin-top: 0;
           }
 
           .info-block__text p {
-            font-size: 14.5px;
+            //font-size: 14.5px;
             line-height: 14px;
             margin-bottom: 2px;
           }
