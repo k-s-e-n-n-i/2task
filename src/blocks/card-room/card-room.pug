@@ -30,7 +30,7 @@ mixin cardRoom(obj)
                 type : "lux"
               }
               )
-        p
+        p.card-room__price
           span= obj.price
           span= "₽"
           span= " в сутки"
@@ -41,6 +41,6 @@ mixin cardRoom(obj)
             active : obj.rating
           }
           )
-        p
+        p.card-room__review
           span= obj.review
           span= " Отзывов"

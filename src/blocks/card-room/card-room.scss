@@ -219,7 +219,7 @@
           }
 
           .link_lux {
-            margin: 0 0 0 -4px;
+            margin: 0 0 0 2px;
             letter-spacing: 0.4px;
             font-size: 11.5px;
           }
@@ -237,6 +237,14 @@
             font-size: 14px;
           }
         }
+      }
+
+      p.card-room__price {
+        margin: 3px 0 0 0;
+      }
+
+      p.card-room__review {
+        margin: 1px 0 0 0;
       }
 
       .rate-btn {

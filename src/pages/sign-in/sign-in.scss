@@ -1,4 +1,4 @@
-.sign-in{
+.sign-in {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -7,24 +7,24 @@
   background-size: cover;
   background-position: bottom;
 
-  .form-sign-in{
+  .form-sign-in {
     margin: auto;
+    margin-top: 12%;
 
-    h1{
-      margin-bottom: 13px;
+    h1 {
+      margin-bottom: 9px;
     }
-  }
-} 
-
-@media (max-width: 640px){
-  .sign-in{
-    background: none;
-    height: auto;
-  }
-  
-  .form-sign-in{
-    position: inherit;
-    margin: 20px auto!important;
   }
 }
 
+@media (max-width: 640px) {
+  .sign-in {
+    background: none;
+    height: auto;
+  }
+
+  .form-sign-in {
+    position: inherit;
+    margin: 20px auto !important;
+  }
+}

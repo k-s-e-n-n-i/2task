@@ -1,58 +1,81 @@
-.search-room{
+.search-room {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
 
   margin: 0 9.6% 0 9.7%;
 
-  .search-room__filters{
+  .search-room__filters {
     width: 266px;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     margin-right: 4.6%;
 
-    h3{
-      font-size: 12.4px;
+    h3 {
+      font-size: 12px;
+      letter-spacing: -0.1px;
     }
 
-    .dropdown-block{
+    .dropdown-block {
       width: 100%;
 
-      .dropdown-block__dropdown{
+      .dropdown-block__dropdown {
         width: 100%;
       }
-    }	
+    }
 
     .search-room__filter-date,
     .search-room__filters_additional,
-    .checkbox-list-expandable{
+    .checkbox-list-expandable {
       margin-top: 30px;
     }
 
-    .search-room__filter-guest{
+    .search-room__filter-guest {
       margin-top: 20px;
     }
 
-    .search-room__filter-comfort{
-      margin-top: 20px;
+    .search-room__slider-price {
+      margin-top: 26px;
 
-      .dropdown-block__dropdown-items{
+      p {
+        color: rgba(31, 32, 65, 0.5);
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+
+    .search-room__filter-features {
+      margin-top: 27px;
+
+      .checkbox-list {
+        margin-top: 16px;
+      }
+    }
+
+    .search-room__filter-availability {
+      margin-top: 21px;
+    }
+
+    .search-room__filter-comfort {
+      margin-top: 23px;
+
+      .dropdown-block__dropdown-items {
         padding-bottom: 5px;
         box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-        .dropdown-block__items-line{
+        .dropdown-block__items-line {
           height: 38px;
 
-          .dropdown-block__block-qty{
+          .dropdown-block__block-qty {
             margin: 6px 6px 0 0;
           }
 
-          h3{
+          h3 {
             font-size: 12.2px;
           }
 
-          span{
+          span {
             font-size: 12.2px;
             margin-top: -3px;
           }
@@ -60,42 +83,12 @@
       }
     }
 
-    .search-room__slider-price{
-      margin-top: 26px;
-    }
-
-    .search-room__filter-features{
-      margin-top: 27px;
-      
-      .checkbox-list{
-        margin-top: 16px;
-
-        .checkbox-list__label{
-          line-height: 20.5px;
-        }
-      }
-    }
-
-    .search-room__filter-availability{
-      margin-top: 18px;
-    }
-
-    .search-room__slider-price{
-
-      p{
-        color: rgba(31, 32, 65, 0.5);
-        font-size: 12px;
-        margin: 0;
-      }
-    }
-    
-    .checkbox-list-expandable{
-
-      h3{
+    .checkbox-list-expandable {
+      h3 {
         font-size: 12.2px;
       }
 
-      img{
+      img {
         right: 17px;
       }
 
@@ -105,41 +98,46 @@
     }
   }
 
-  .search-room__rooms{
+  .search-room__rooms {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 60px;
     width: 100%;
 
-    h1{
+    h1 {
       width: 100%;
       margin: 29px 0 10px 5px;
-      font-size: 25px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
     }
 
-    .pagination{
+    .card-room {
+      .card-room__number-price {
+      }
+    }
+    .pagination {
       margin: 22px 0 10px 0;
       padding-right: 9px;
 
-      .pagination__num-block{
+      .pagination__num-block {
         margin: 10px 0 7px;
       }
     }
   }
 }
 
-@media (max-width: 1170px){
-  .search-room{
-
-    .search-room__filters{
+@media (max-width: 1170px) {
+  .search-room {
+    .search-room__filters {
       margin-left: 20px;
     }
 
-    .search-room__rooms{
+    .search-room__rooms {
       justify-content: space-around;
 
-      h1{
+      h1 {
         text-align: center;
         padding: 0 15px;
       }
@@ -147,14 +145,13 @@
   }
 }
 
-@media (max-width: 680px){
-  .search-room{
-
+@media (max-width: 680px) {
+  .search-room {
     flex-wrap: wrap;
     justify-content: center;
-    
-    .search-room__filters{
+
+    .search-room__filters {
       margin: 0;
     }
-  }	
+  }
 }
