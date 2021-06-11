@@ -1,4 +1,4 @@
-.registration{
+.registration {
   display: flex;
   background-image: url('@Pages/registration/fon.png');
   height: 47.3vw;
@@ -7,29 +7,29 @@
   width: 100%;
   position: relative;
 
-  .registration__content-container{
+  .registration__content-container {
     position: relative;
-    margin: 0 auto;
+    margin-left: 37%;
     min-width: 320px;
     z-index: 1;
 
-    .form-registration{
+    .form-registration {
       margin: 19px auto;
     }
   }
 
-  .footer_shadow{
+  .footer_shadow {
     border-top: 0;
   }
 }
 
-@media (max-width: 1200px){
-  .registration{
+@media (max-width: 1200px) {
+  .registration {
     background: none;
     height: auto;
   }
 
-  .form-registration{
+  .form-registration {
     position: inherit;
-  }  
+  }
 }
