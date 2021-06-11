@@ -4,17 +4,19 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
   width: 380px;
   height: auto;
-  padding: 37px 30px 30px 28px;
-
+  padding: 39px 30px 30px 28px;
   display: flex;
   flex-wrap: wrap;
   z-index: 1;
 
   h1 {
     margin-bottom: 10px;
+  }
+
+  .input-text__input {
+    margin-top: 10px;
   }
 
   .btn {
@@ -26,13 +28,9 @@
     &.btn_border {
       width: 95px;
       height: 32px;
-      line-height: 36px;
+      line-height: 33px;
       margin: 0;
     }
-  }
-
-  .input-text__input {
-    margin-top: 10px;
   }
 
   .form-sign-in__login {
@@ -44,7 +42,8 @@
 
     p {
       font-size: 14px;
-      font-weight: 400;
+      font-weight: 600;
+      letter-spacing: 0.9px;
       font-family: 'Montserrat', Arial, sans-serif;
     }
   }

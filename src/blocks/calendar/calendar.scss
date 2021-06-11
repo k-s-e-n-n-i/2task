@@ -46,7 +46,7 @@
         .pignose-calendar-top-nav {
           width: 24px;
           height: 24px;
-          margin: 20px;
+          margin: 19px;
 
           .pignose-calendar-top-icon {
             width: 24px;
@@ -59,7 +59,6 @@
                 center;
               width: 24px;
               height: 24px;
-              font-size: 1;
             }
 
             &.icon-arrow-left {
@@ -81,6 +80,7 @@
             text-transform: none;
             color: #1f2041;
             font-weight: 700;
+            letter-spacing: -1px;
           }
 
           .pignose-calendar-top-year {
@@ -88,6 +88,7 @@
             line-height: 21px;
             font-weight: 700;
             color: #1f2041;
+            letter-spacing: -2px;
           }
         }
       }
@@ -180,7 +181,7 @@
         .pignose-calendar-button {
           font-family: 'Montserrat', Arial, sans-serif;
           font-style: normal;
-          font-weight: bold;
+          font-weight: 700;
           font-size: 12px;
           line-height: 15px;
           height: 15px;
@@ -192,7 +193,8 @@
 
           &.pignose-calendar-button-cancel {
             color: rgba(31, 32, 65, 0.5);
-            margin: 0 0 18px 20px;
+            margin: 0 0 18px 19px;
+            color: #bc9cff;
           }
 
           &.pignose-calendar-button-apply {

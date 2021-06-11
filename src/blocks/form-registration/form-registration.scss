@@ -1,61 +1,64 @@
-.form-registration{
-  background: #FFFFFF;
+.form-registration {
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
   width: 380px;
   height: auto;
-  padding: 38px 29px 26px 29px;
-  
+  padding: 39px 29px 26px 29px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   z-index: 1000000;
-  
-  h1{
+
+  h1 {
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 23px;
+    letter-spacing: 0.3px;
   }
 
-  h3{
-    margin: 21px 0 -5px;
-    font-size: 12.5px;
+  h3 {
+    margin: 20px 0 -5px;
+    font-size: 12px;
+    letter-spacing: -0.1px;
   }
 
-  .input-text__input{
+  .input-text__input {
     margin-top: 10px;
   }
 
-  .btn{
+  .toggle-block {
+    margin: 2px 0 5px;
+  }
 
-    &.btn_gradient{
+  .btn {
+    &.btn_gradient {
       width: 100%;
       height: 36px;
       line-height: 35px;
-      margin: 22px 0 27px 0;
+      margin: 18px 0 27px 0;
+
+      .btn__link {
+        padding-right: 5px;
+      }
     }
 
-    &.btn_border{
+    &.btn_border {
       width: 95px;
       height: 32px;
       line-height: 30px;
       margin: 0;
     }
-
-    .btn__link{
-      padding-right: 5px;
-    }
   }
 
-  .form-registration__login{
+  .form-registration__login {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 
-    p{
+    p {
       margin: 13px 0px;
     }
   }

@@ -1,82 +1,72 @@
-.ui-kit-cards{
+.ui-kit-cards {
   display: flex;
-  background: #F4F4F6;
+  background: #f4f4f6;
   padding: 130px 120px;
   position: relative;
   width: 1440px;
   box-sizing: border-box;
 
-  .ui-kit-cards__ico-logo{
+  .ui-kit-cards__ico-logo {
     width: 48px;
     height: 48px;
-    position:absolute;
+    position: absolute;
     left: 31px;
     top: 30px;
   }
 
-  .ui-kit-cards__blk{
+  .ui-kit-cards__blk {
     margin: 20px;
 
-    &.ui-kit-cards__blk_3{
+    &.ui-kit-cards__blk_3 {
       width: 320px;
     }
 
-    .form-search-num{
+    .form-search-num {
       position: relative;
       margin-bottom: 40px;
     }
 
-    .form-reservation{
-      margin-bottom: 40px;
+    .form-reservation {
+      margin-bottom: 38px;
 
-      .form-reservation__block{
-
-        p{
-
-          a{
-            margin: 0 0 0 -4px;
-          }
-        }
-
-        h2{
-
-          &:last-child{
+      .form-reservation__block {
+        h2 {
+          &:last-child {
             margin-right: -9px;
           }
         }
       }
     }
 
-    .form-reservation__block-prices{
-
-      .form-reservation__icon-info-price{
+    .form-reservation__block-prices {
+      .form-reservation__icon-info-price {
         position: absolute;
         left: 211px;
       }
     }
 
-    .ui-kit-cards__calendar-block{
+    .ui-kit-cards__calendar-block {
       height: 395px;
 
-      .calendar-block{
+      .calendar-block {
         margin-top: 0;
-          
-        .calendar{
+
+        .calendar {
           margin-left: 0;
           width: 320px;
           box-shadow: 0px 20px 20px rgba(31, 32, 65, 0.05);
 
-          .pignose-calendar-unit{
+          .pignose-calendar-unit {
             width: 39.5px;
           }
         }
       }
     }
 
-    .card-room{
+    .card-room {
       margin: 14px 2.5px 40px 0px;
 
-      .link_lux{
+      .link_lux {
         margin: 0 0 0 -4px;
       }
     }
@@ -85,7 +75,7 @@
   .form-search-num,
   .form-registration,
   .form-reservation,
-  .form-sign-in{
+  .form-sign-in {
     margin: 0;
   }
 }
