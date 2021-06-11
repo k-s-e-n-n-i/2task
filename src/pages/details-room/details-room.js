@@ -1,27 +1,26 @@
-import '../../font/fonts.css'
-import '../../index.scss'
-
+import '../../font/fonts.css';
+import '../../index.scss';
 
 /*blocks*/
-import '../../blocks/btn/btn.scss'
-import '../../blocks/calendar/calendar.scss'
-import '../../blocks/calendar/calendar.js'
-import '../../blocks/comment-block/comment-block.scss'
-import '../../blocks/dropdown/dropdown.scss'
-import '../../blocks/dropdown/dropdown.ts'
-import '../../blocks/footer/footer.scss'
-import '../../blocks/form-reservation/form-reservation.scss'
-import '../../blocks/header/header.scss'
-import '../../blocks/info-block/info-block.scss'
-import '../../blocks/input-text/input-text.scss'
-import '../../blocks/input-text/input-text.js'
-import '../../blocks/like/like.scss'
-import '../../blocks/like/like.js'
-import '../../blocks/link/link.scss'
-import '../../blocks/list-block/list-block.scss'
-import '../../blocks/topic-label/topic-label.scss'
+import '../../blocks/btn/btn.scss';
+import '../../blocks/comment-block/comment-block.scss';
+import '../../blocks/dropdown/dropdown.scss';
+import '../../blocks/dropdown/dropdown.ts';
+import '../../blocks/info-block/info-block.scss';
+import '../../blocks/input-text/input-text.scss';
+import '../../blocks/input-text/input-text.js';
+import '../../blocks/like/like.scss';
+import '../../blocks/like/like.js';
+import '../../blocks/link/link.scss';
+import '../../blocks/list-block/list-block.scss';
+import '../../blocks/topic-label/topic-label.scss';
 
+import '../../blocks/footer/footer.scss';
+import '../../blocks/header/header.scss';
+import '../../blocks/calendar/calendar.scss';
+import '../../blocks/calendar/calendar.js';
+import '../../blocks/form-reservation/form-reservation.scss';
 
 /*pages*/
-import '../../pages/details-room/details-room.scss'
-import '../../pages/details-room/chart.js'
+import '../../pages/details-room/details-room.scss';
+import '../../pages/details-room/chart.js';
