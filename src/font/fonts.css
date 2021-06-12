@@ -22,9 +22,9 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('Montserrat-extra-light.woff2') format('woff2'),
-    url('Montserrat-extra-light.woff') format('woff'),
-    url('Montserrat-extra-light.ttf') format('truetype');
+  src: url('montserrat-extra-light.woff2') format('woff2'),
+    url('montserrat-extra-light.woff') format('woff'),
+    url('montserrat-extra-light.ttf') format('truetype');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -52,9 +52,9 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('Montserrat-extra-light-italic.woff2') format('woff2'),
-    url('Montserrat-extra-light-italic.woff') format('woff'),
-    url('Montserrat-extra-light-italic.ttf') format('truetype');
+  src: url('montserrat-extra-light-italic.woff2') format('woff2'),
+    url('montserrat-extra-light-italic.woff') format('woff'),
+    url('montserrat-extra-light-italic.ttf') format('truetype');
   font-weight: 200;
   font-style: italic;
   font-display: swap;
