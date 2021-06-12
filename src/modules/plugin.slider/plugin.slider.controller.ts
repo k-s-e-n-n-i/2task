@@ -70,6 +70,7 @@ export class Controller {
 
     let thisClick: any = this.thisSlider,
       contr = this;
+
     thisClick.onmousemove = function (e: any) {
       document.onmousemove = function (e: any) {
         let pos: number, tempPos: number, masScale: number[];
@@ -138,6 +139,7 @@ export class Controller {
   ): void {
     let price: number,
       step: number = 0;
+
     if (pos < 0) {
       pos = 0;
     }
@@ -148,9 +150,8 @@ export class Controller {
       if (side == 'left') {
         if (this.model.getPosRangeRight() >= pos && this.type != 'from0to') {
           step = startPos - pos; //длина перемещения левого указателя
-          if (this.model.getPosRangeRight() != pos) {
+          if (this.model.getPosRangeRight() >= pos) {
             price = calcValue(pos, this);
-            //price = new Intl.NumberFormat('ru-RU').format(price);
           } else {
             price = this.maxStart;
           }
@@ -169,9 +170,8 @@ export class Controller {
       if (side == 'right') {
         if (this.model.getPosRangeLeft() <= pos) {
           step = pos - startPos; //длина перемещения правого указателя
-          if (this.model.getPosRangeLeft() != pos) {
+          if (this.model.getPosRangeLeft() <= pos) {
             price = calcValue(pos, this);
-            //price = new Intl.NumberFormat('ru-RU').format(price);
           } else {
             price = this.minStart;
           }
@@ -238,31 +238,41 @@ export class Controller {
     let thisClick: any = this.model.slider,
       contr: any = this;
 
-    thisClick.onmousedown = function (e: any) {
-      thisClick.onmouseup = function (e: any) {
-        let pos: number, startPos: number;
+    thisClick.onclick = function (e: any) {
+      let pos: number, startPos: number;
 
-        switch (contr.defineOrientation(contr.orientation)) {
-          case 'x': {
-            pos = e.pageX - parseInt(contr.model.slider.offsetLeft);
-            if (contr.step != 1) {
-              pos = contr.definePosStepClosestClick(pos);
-            }
-            break;
+      switch (contr.defineOrientation(contr.orientation)) {
+        case 'x': {
+          pos = e.pageX - parseInt(contr.model.slider.offsetLeft);
+          if (contr.step != 1) {
+            pos = contr.definePosStepClosestClick(pos);
           }
-          case 'y': {
-            pos = e.pageY - contr.getCoords(contr.model.slider).top;
-            if (contr.step != 1) {
-              pos = contr.definePosStepClosestClick(pos);
-            }
-            break;
-          }
+          break;
         }
-        switch (contr.type) {
-          case 'interval': {
-            let posL: number = contr.model.getPosRangeLeft(),
-              posR: number = contr.model.getPosRangeRight();
-            if (Math.abs(posL - pos) < Math.abs(posR - pos)) {
+        case 'y': {
+          pos = e.pageY - contr.getCoords(contr.model.slider).top;
+          if (contr.step != 1) {
+            pos = contr.definePosStepClosestClick(pos);
+          }
+          break;
+        }
+      }
+
+      switch (contr.type) {
+        case 'interval': {
+          let posL: number = contr.model.getPosRangeLeft(),
+            posR: number = contr.model.getPosRangeRight();
+
+          if (Math.abs(posL - pos) < Math.abs(posR - pos)) {
+            startPos = contr.model.getPosRangeLeft();
+            contr.movingRange(
+              'left',
+              contr.model.getPosRangeLeft(),
+              pos,
+              contr.model.getWidthRange()
+            );
+          } else {
+            if (Math.abs(posL - pos) == Math.abs(posR - pos) && pos < posL) {
               startPos = contr.model.getPosRangeLeft();
               contr.movingRange(
                 'left',
@@ -279,30 +289,30 @@ export class Controller {
                 contr.model.getWidthRange()
               );
             }
-            break;
           }
-          case 'from0to': {
-            startPos = contr.model.getPosRangeRight();
-            contr.movingRange(
-              'right',
-              contr.model.getPosRangeRight(),
-              pos,
-              contr.model.getWidthRange()
-            );
-            break;
-          }
-          case 'one': {
-            startPos = contr.model.getPosRangeRight();
-            contr.movingRange(
-              'right',
-              contr.model.getPosRangeRight(),
-              pos,
-              contr.model.getWidthRange()
-            );
-            break;
-          }
+          break;
         }
-      };
+        case 'from0to': {
+          startPos = contr.model.getPosRangeRight();
+          contr.movingRange(
+            'right',
+            contr.model.getPosRangeRight(),
+            pos,
+            contr.model.getWidthRange()
+          );
+          break;
+        }
+        case 'one': {
+          startPos = contr.model.getPosRangeRight();
+          contr.movingRange(
+            'right',
+            contr.model.getPosRangeRight(),
+            pos,
+            contr.model.getWidthRange()
+          );
+          break;
+        }
+      }
     };
   }
   definePosStepClosestClick(pos: number): number {
