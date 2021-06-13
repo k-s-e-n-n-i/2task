@@ -235,11 +235,18 @@ export class Controller {
   }
 
   moveRangeOnclickSlider(): void {
-    let thisClick: any = this.model.slider,
+    let thisClickSlider: any = this.model.slider,
+      thisClickRange: any = this.model.range,
       contr: any = this;
 
-    thisClick.onclick = function (e: any) {
+    thisClickSlider.addEventListener('mousedown', function (e: any) {
       let pos: number, startPos: number;
+
+      if (e.target != thisClickSlider) {
+        if (e.target != thisClickRange) {
+          return;
+        }
+      }
 
       switch (contr.defineOrientation(contr.orientation)) {
         case 'x': {
@@ -313,7 +320,7 @@ export class Controller {
           break;
         }
       }
-    };
+    });
   }
   definePosStepClosestClick(pos: number): number {
     let finalPos: number = 0,

@@ -73,12 +73,10 @@ export interface Options {
         }
         view.drawRange();
 
-        model.slider.addEventListener('click', function () {
-          controller.moveRangeOnclickSlider();
-          if (settings == 'on') {
-            controller.applyConfig();
-          }
-        });
+        controller.moveRangeOnclickSlider();
+        if (settings == 'on') {
+          controller.applyConfig();
+        }
 
         model.rangeLeft.addEventListener('mousedown', function (e: any) {
           controller.moveAt(model.rangeLeft, e, 'left');
