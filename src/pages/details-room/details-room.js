@@ -13,6 +13,8 @@ import '../../blocks/like/like.js';
 import '../../blocks/link/link.scss';
 import '../../blocks/list-block/list-block.scss';
 import '../../blocks/topic-label/topic-label.scss';
+import '../../blocks/chart/chart.scss';
+import '../../blocks/chart/chart.js';
 
 import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';
@@ -22,4 +24,3 @@ import '../../blocks/form-reservation/form-reservation.scss';
 
 /*pages*/
 import '../../pages/details-room/details-room.scss';
-import '../../pages/details-room/chart.js';

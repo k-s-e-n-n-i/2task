@@ -1,0 +1,50 @@
+.chart {
+  color: #bc9cff;
+  font-weight: 700;
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  .chart__qty {
+    font-size: 25px;
+    font-weight: 700;
+    position: absolute;
+    left: 45%;
+    top: 33%;
+  }
+
+  .chart__text {
+    font-weight: 600;
+    position: absolute;
+    left: 36%;
+    top: 75%;
+    letter-spacing: 0.4px;
+  }
+
+  .chart__legend {
+    position: absolute;
+    left: 151px;
+
+    .list-block {
+      margin-top: 42px;
+      .list-block__item {
+        margin: 0;
+        color: rgba(31, 32, 65, 0.75);
+
+        .list-block__point {
+          margin: 7px 4px 7px 0;
+        }
+      }
+    }
+  }
+}
+
+.chart-canvas {
+  width: 253px;
+  transform: translate(-66px);
+  margin-top: 20px;
+}

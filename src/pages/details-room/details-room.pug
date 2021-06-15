@@ -4,6 +4,7 @@ include ~@Blocks/footer/footer.pug
 include ~@Blocks/info-block/info-block.pug
 include ~@Blocks/list-block/list-block.pug
 include ~@Blocks/comment-block/comment-block.pug
+include ~@Blocks/chart/chart.pug
 include ~@Blocks/form-reservation/form-reservation.pug
 
 
@@ -45,10 +46,7 @@ div.details-room
 
       div.details-room__room-impression
         h2 Впечатления от номера
-        div.details-room__impression
-          p.details-room__impression-qty-review 260
-          p.details-room__impression-text голосов
-        canvas(id="oilChart" width="288" height="150")
+        +chart
 
       +commentBlock(
         {

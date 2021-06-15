@@ -84,37 +84,10 @@
 
       .details-room__room-impression {
         position: relative;
+        width: 288px;
 
         h2 {
           margin-bottom: 7px;
-        }
-
-        .details-room__impression {
-          color: #bc9cff;
-          font-weight: 700;
-          position: absolute;
-          width: 82px;
-          height: 82px;
-          user-select: none;
-          -moz-user-select: none;
-          -webkit-user-select: none;
-          -ms-user-select: none;
-
-          .details-room__impression-qty-review {
-            font-size: 25px;
-            font-weight: 700;
-            position: absolute;
-            left: 45%;
-            top: 33%;
-          }
-
-          .details-room__impression-text {
-            font-weight: 600;
-            position: absolute;
-            left: 36%;
-            top: 75%;
-            letter-spacing: 0.4px;
-          }
         }
       }
 
@@ -184,6 +157,10 @@
           width: 265px;
         }
       }
+    }
+
+    .chart__legend {
+      left: 132px;
     }
   }
 }
