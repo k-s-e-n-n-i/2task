@@ -25,15 +25,21 @@ $(function() {
         },
 
         select: function(date, context) {
-          if (date[0].format() != null){
+          
+
+          if (date[0] != null){
             $(this).closest('.dropdown-dates').find('.dropdown-block__dropdown')[0].innerText = date[0].format('DD.MM.YYYY');
+            activeUnits($(this));
           }else{
             $(this).closest('.dropdown-dates').find('.dropdown-block__dropdown')[0].innerText = 'ДД.ММ.ГГГГ';
+            activeUnits($(this));
           }
           if (date[1] != null){
             $(this).closest('.dropdown-dates').find('.dropdown-block__dropdown')[1].innerText = date[1].format('DD.MM.YYYY');
+            activeUnits($(this));
           }else{
             $(this).closest('.dropdown-dates').find('.dropdown-block__dropdown')[1].innerText = 'ДД.ММ.ГГГГ';
+            activeUnits($(this));
           }
         }
       }
@@ -51,13 +57,15 @@ $(function() {
         },
 
         select: function(date, context) {
-          if ((date[0].format() != null) && (date[1] != null)){
+          if ((date[0] != null) && (date[1] != null)){
             const month1 = context.context.settings.months[date[0].format('M')-1];
             const month2 = context.context.settings.months[date[1].format('M')-1];
 
             $(this).closest('.dropdown-block').find('.dropdown-block__dropdown').html(`${date[0].format('D')} ${month1} - ${date[1].format('D')} ${month2}`);
+            activeUnits($(this));
           }else{
             $(this).closest('.dropdown-block').find('.dropdown-block__dropdown').html('Выберите диапазон дат...');
+            activeUnits($(this));
           }
         }
       }
@@ -70,8 +78,23 @@ $(function() {
 
   //------------------------------------------------------------------------------------
 
+  function activeUnits (thisClick){
+    let calendar = thisClick.closest('.pignose-calendar-body');
+    let active_first = calendar.find('.pignose-calendar-unit-first-active');
+    let active_second = calendar.find('.pignose-calendar-unit-second-active');
 
-  $('.dropdown-dates .dropdown-block__dropdown').on('click', handleDateDropdownClick);
+    if ((active_first.length != 0) && (active_second.length != 0)){
+      active_first.addClass('active-first');
+      active_second.addClass('active-second');
+    }else{
+      calendar.find('.active-first').removeClass('active-first');
+      calendar.find('.active-second').removeClass('active-second');
+    }
+  }
+
+  //------------------------------------------------------------------------------------
+
+  $('.dropdown-block__dropdown').on('click', handleDateDropdownClick);
   
   function handleDateDropdownClick(){
     const block_calendar;
@@ -94,7 +117,6 @@ $(function() {
     
   }
 
-
   $('.pignose-calendar-button-cancel').on('click', handleCalendarCleanClick);
 
   function handleCalendarCleanClick(e){
@@ -110,7 +132,6 @@ $(function() {
       }
     }
   }
-
 
   $(document).on('click', closeCalendar);
 

@@ -158,6 +158,15 @@
                   border-radius: 50%;
                 }
               }
+
+              &.active-first,
+              &.active-second {
+                background: linear-gradient(180deg, #eee6ff 0%, #e6eafe 100%);
+
+                a {
+                  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+                }
+              }
             }
 
             &.pignose-calendar-unit-range {
