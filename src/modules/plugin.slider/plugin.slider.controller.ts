@@ -144,40 +144,42 @@ export class Controller {
     if (pos >= 0 && pos <= this.model.getWidth()) {
       if (side == 'left') {
         if (this.model.getPosRangeRight() >= pos && this.type != 'from0to') {
+          price = calcValue(pos, this);
           step = startPos - pos; //длина перемещения левого указателя
-          if (this.model.getPosRangeRight() >= pos) {
-            price = calcValue(pos, this);
-          } else {
-            price = this.maxStart;
-          }
           this.model.rangeLeft.style.left = pos + 'px'; //позиция указателей
           this.model.range.style.transform = 'translate(' + pos + 'px, 0px)';
-          startPos = pos;
-          this.drawValueMin(price);
-          if (this.settings == 'on') {
-            this.changeConfigInputMin(price);
-          }
-          this.writeDataSliderMin(price);
-          this.model.range.style.width = widthRange + step + 'px';
+        } else {
+          price = this.maxStart;
+          step = startPos - this.model.getPosRangeRight();
+          this.model.rangeLeft.style.left = this.model.getPosRangeRight() + 'px';
+          this.model.range.style.transform = 'translate(' + this.model.getPosRangeRight() + 'px, 0px)';
         }
+
+        this.drawValueMin(price);
+        if (this.settings == 'on') {
+          this.changeConfigInputMin(price);
+        }
+        this.writeDataSliderMin(price);
+        this.model.range.style.width = widthRange + step + 'px';
       }
 
       if (side == 'right') {
         if (this.model.getPosRangeLeft() <= pos) {
-          step = pos - startPos; //длина перемещения правого указателя
-          if (this.model.getPosRangeLeft() <= pos) {
-            price = calcValue(pos, this);
-          } else {
-            price = this.minStart;
-          }
-          this.model.rangeRight.style.left = pos + 'px'; //позиция указателей
-          this.drawValueMax(price);
-          if (this.settings == 'on') {
-            this.changeConfigInputMax(price);
-          }
-          this.writeDataSliderMax(price);
-          this.model.range.style.width = widthRange + step + 'px';
+          price = calcValue(pos, this);
+          step = pos - startPos;
+          this.model.rangeRight.style.left = pos + 'px';
+        } else {
+          price = this.minStart;
+          step = this.model.getPosRangeLeft() - startPos;
+          this.model.rangeRight.style.left = this.model.getPosRangeLeft() + 'px';
         }
+
+        this.drawValueMax(price);
+        if (this.settings == 'on') {
+          this.changeConfigInputMax(price);
+        }
+        this.writeDataSliderMax(price);
+        this.model.range.style.width = widthRange + step + 'px';
       }
     }
     function calcValue(pos: number, conrtThis: any): number {
