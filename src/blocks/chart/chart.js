@@ -42,15 +42,12 @@ let pieChart = new Chart(oilCanvas, {
   },
 });
 
-console.log(pieChart.data.labels);
 Chart.defaults.global.elements.defaultFontFamily = 'sans-serif';
 Chart.defaults.global.defaultFontSize = 18;
 
 let qtyLine = pieChart.data.labels.length;
 let items = pieChart.data.labels;
 let colors = pieChart.data.datasets[0].backgroundColor;
-
-console.log(colors);
 
 for (let i = 0; i < qtyLine; i++) {
   let liLegend = `<li class="list-block__item"><div class="list-block__point"></div><p>${items[i]}</p></li>`;
