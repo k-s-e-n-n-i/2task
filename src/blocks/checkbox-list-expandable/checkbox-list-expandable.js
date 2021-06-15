@@ -1,14 +1,14 @@
-$(function() {
+$(function () {
   $('.checkbox-list-expandable__topicBlock').on('click', handleCheckboxlistClick);
 
-  function handleCheckboxlistClick(){
+  function handleCheckboxlistClick() {
     var block_list = $(this).closest('.checkbox-list-expandable').find('.checkbox-list'),
       expend = $(this).closest('.checkbox-list-expandable').find('.checkbox-list-expandable__expand');
-    
-    if (block_list.hasClass('checkbox-list_hide')){
+
+    if (block_list.hasClass('checkbox-list_hide')) {
       block_list.removeClass('checkbox-list_hide');
       expend.addClass('checkbox-list-expandable__expand_open');
-    }else{
+    } else {
       block_list.addClass('checkbox-list_hide');
       expend.removeClass('checkbox-list-expandable__expand_open');
     }

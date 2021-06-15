@@ -11,9 +11,7 @@ $(function () {
   $('.dropdown-block__btns .link_clean').on('click', handleDropdownCleanClick);
 
   function handleDropwownClick() {
-    var block_list = $(this)
-      .closest('.dropdown-block')
-      .find('.dropdown-block__dropdown-items');
+    var block_list = $(this).closest('.dropdown-block').find('.dropdown-block__dropdown-items');
 
     if (block_list.hasClass('dropdown-block__dropdown-items_hide')) {
       block_list.removeClass('dropdown-block__dropdown-items_hide');
@@ -42,9 +40,7 @@ $(function () {
       $(this).addClass('dropdown-block__inc-qty_disable');
     } else {
       $(this).removeClass('dropdown-block__inc-qty_disable');
-      let plus = $(this)
-        .closest('.dropdown-block__block-qty')
-        .find('.dropdown-block__inc-qty-plus');
+      let plus = $(this).closest('.dropdown-block__block-qty').find('.dropdown-block__inc-qty-plus');
       if (plus.hasClass('dropdown-block__inc-qty_disable')) {
         plus.removeClass('dropdown-block__inc-qty_disable');
       }
@@ -71,9 +67,7 @@ $(function () {
       $(this).addClass('dropdown-block__inc-qty_disable');
     } else {
       $(this).removeClass('dropdown-block__inc-qty_disable');
-      let minus = $(this)
-        .closest('.dropdown-block__block-qty')
-        .find('.dropdown-block__inc-qty-minus');
+      let minus = $(this).closest('.dropdown-block__block-qty').find('.dropdown-block__inc-qty-minus');
       if (minus.hasClass('dropdown-block__inc-qty_disable')) {
         minus.removeClass('dropdown-block__inc-qty_disable');
       }
@@ -93,10 +87,7 @@ $(function () {
 
   function handleDropdownOkClick() {
     event.preventDefault();
-    $(this)
-      .closest('.dropdown-block')
-      .find('.dropdown-block__dropdown')
-      .click();
+    $(this).closest('.dropdown-block').find('.dropdown-block__dropdown').click();
 
     outputInDropdown($(this).closest('.dropdown-block'));
   }
@@ -105,19 +96,13 @@ $(function () {
     event.preventDefault();
     let items = $(this).closest('.dropdown-block__dropdown-items');
     items.find('.dropdown-block__block-qty').find('span').html('0');
-    items
-      .find('.dropdown-block__inc-qty-minus')
-      .addClass('dropdown-block__inc-qty_disable');
-    items
-      .find('.dropdown-block__inc-qty-plus')
-      .removeClass('dropdown-block__inc-qty_disable');
+    items.find('.dropdown-block__inc-qty-minus').addClass('dropdown-block__inc-qty_disable');
+    items.find('.dropdown-block__inc-qty-plus').removeClass('dropdown-block__inc-qty_disable');
 
     outputInDropdown($(this).closest('.dropdown-block'));
 
     $(this).css('display', 'none');
-    $(this)
-      .closest('.dropdown-block__btns')
-      .addClass('dropdown-block__btns_flex-end');
+    $(this).closest('.dropdown-block__btns').addClass('dropdown-block__btns_flex-end');
   }
 
   function outputInDropdown(dropdown: any) {

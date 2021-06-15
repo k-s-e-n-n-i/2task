@@ -35,9 +35,7 @@ export class View {
   drawRange(): void {
     let posLeft: number, posRight: number;
 
-    posRight =
-      (this.model.getWidth() / (this.max - this.min)) *
-      (this.maxStart - this.min);
+    posRight = (this.model.getWidth() / (this.max - this.min)) * (this.maxStart - this.min);
     this.model.rangeRight.style.left = posRight + 'px';
 
     switch (this.type) {
@@ -49,9 +47,7 @@ export class View {
         break;
       }
       default: {
-        posLeft =
-          (this.model.getWidth() / (this.max - this.min)) *
-          (this.minStart - this.min); //если мин не 0
+        posLeft = (this.model.getWidth() / (this.max - this.min)) * (this.minStart - this.min); //если мин не 0
         this.model.rangeLeft.style.left = posLeft + 'px';
         this.model.range.style.transform = 'translateX(' + posLeft + 'px)';
         this.model.range.style.left = posLeft + 'px';
@@ -66,13 +62,10 @@ export class View {
       case 'interval':
         break;
         this.model.rangeLeft.style.opacity = 1;
-        this.model.rangeLeft.style.transform =
-          'translate(' + this.model.getPosRangeLeft() + 'px, 0px)';
+        this.model.rangeLeft.style.transform = 'translate(' + this.model.getPosRangeLeft() + 'px, 0px)';
         this.model.range.style.opacity = 1;
-        this.model.range.style.transform =
-          'translate(' + this.model.getPosRangeLeft() + 'px, 0px)';
-        this.model.range.style.width =
-          this.model.getPosRangeRight() - this.model.getPosRangeLeft();
+        this.model.range.style.transform = 'translate(' + this.model.getPosRangeLeft() + 'px, 0px)';
+        this.model.range.style.width = this.model.getPosRangeRight() - this.model.getPosRangeLeft();
         this.model.labelMin.style.opacity = 1;
         this.model.labelDash.style.opacity = 1;
         break;
@@ -128,9 +121,7 @@ export class View {
           i = i + stepWidth;
           elemDivision.insertAdjacentHTML(
             'beforeend',
-            '<div class="range-slider__scale-val">' +
-              Math.floor(valDivision) +
-              '</div>'
+            '<div class="range-slider__scale-val">' + Math.floor(valDivision) + '</div>'
           );
           valDivision = valDivision + (this.max - this.min) / qtyDivision;
         }
@@ -153,8 +144,7 @@ export class View {
         break;
       }
       case 'vertical': {
-        this.model.slider.style.transform =
-          'translate(5px, 0) rotate(90deg) translateX(50%)';
+        this.model.slider.style.transform = 'translate(5px, 0) rotate(90deg) translateX(50%)';
         this.model.rangeSlider.style.height = this.model.getWidth() + 75 + 'px';
 
         blockVals = this.model.blockScaleVals;
@@ -175,40 +165,30 @@ export class View {
     switch (this.value) {
       case 'on': {
         this.model.labelBlock.style.opacity = 1;
-        this.model.labelMax.innerHTML = new Intl.NumberFormat('ru-RU').format(
-          this.maxStart
-        );
+        this.model.labelMax.innerHTML = new Intl.NumberFormat('ru-RU').format(this.maxStart);
 
         switch (this.type) {
           case 'interval': {
-            this.model.labelMin.innerHTML = new Intl.NumberFormat(
-              'ru-RU'
-            ).format(this.minStart);
+            this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.minStart);
             this.model.labelMin.style.opacity = 1;
             this.model.labelDash.style.opacity = 1;
             break;
           }
           case 'from0to': {
-            this.model.labelMin.innerHTML = new Intl.NumberFormat(
-              'ru-RU'
-            ).format(this.min);
+            this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.min);
             this.model.labelMin.style.opacity = 1;
             this.model.labelDash.style.opacity = 1;
             break;
           }
           case 'one': {
-            this.model.labelMin.innerHTML = new Intl.NumberFormat(
-              'ru-RU'
-            ).format(this.minStart);
+            this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.minStart);
             this.model.labelMin.style.opacity = 0;
             this.model.labelDash.style.opacity = 0;
             break;
           }
           default: {
             //interval
-            this.model.labelMin.innerHTML = new Intl.NumberFormat(
-              'ru-RU'
-            ).format(this.minStart);
+            this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.minStart);
             this.model.labelMin.style.opacity = 1;
             this.model.labelDash.style.opacity = 1;
             break;

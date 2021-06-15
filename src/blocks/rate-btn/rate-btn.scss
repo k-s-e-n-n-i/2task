@@ -1,9 +1,9 @@
-.rate-btn{
+.rate-btn {
   display: flex;
   justify-content: flex-start;
   margin: 15px 20px 0 0;
 
-  .rate-btn__star{
+  .rate-btn__star {
     width: 20px;
     height: 20px;
     margin: 0 2px;
@@ -13,7 +13,7 @@
     background-position: 50%;
     background-size: contain;
 
-    &.rate-btn__star_active{
+    &.rate-btn__star_active {
       background-image: url('star.svg');
     }
   }

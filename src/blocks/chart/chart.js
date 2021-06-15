@@ -56,9 +56,10 @@ for (let i = 0; i < qtyLine; i++) {
   let liLegend = `<li class="list-block__item"><div class="list-block__point"></div><p>${items[i]}</p></li>`;
 
   $('.chart__legend .list-block__list').append(liLegend);
-  $(
-    `.chart__legend .list-block__item:nth-child(${i + 1}) .list-block__point`
-  ).css('background-color', colors[i]);
+  $(`.chart__legend .list-block__item:nth-child(${i + 1}) .list-block__point`).css(
+    'background-color',
+    colors[i]
+  );
 }
 
 $('.chart__legend .list-block__item::before').css('width', '100px');

@@ -131,12 +131,7 @@ export class Controller {
     };
   }
 
-  movingRange(
-    side: string,
-    startPos: number,
-    pos: number,
-    widthRange: number
-  ): void {
+  movingRange(side: string, startPos: number, pos: number, widthRange: number): void {
     let price: number,
       step: number = 0;
 
@@ -187,23 +182,16 @@ export class Controller {
     }
     function calcValue(pos: number, conrtThis: any): number {
       let percent: number = pos / conrtThis.model.getWidth(),
-        price: number = (
-          (conrtThis.max - conrtThis.min) * percent +
-          conrtThis.min
-        ).toFixed();
+        price: number = ((conrtThis.max - conrtThis.min) * percent + conrtThis.min).toFixed();
       return price;
     }
   }
 
   drawValueMin(val: number): void {
-    this.model.elemValueMin.innerHTML = new Intl.NumberFormat('ru-RU').format(
-      val
-    );
+    this.model.elemValueMin.innerHTML = new Intl.NumberFormat('ru-RU').format(val);
   }
   drawValueMax(val: number): void {
-    this.model.elemValueMax.innerHTML = new Intl.NumberFormat('ru-RU').format(
-      val
-    );
+    this.model.elemValueMax.innerHTML = new Intl.NumberFormat('ru-RU').format(val);
   }
 
   writeDataSliderMin(val: number): void {
@@ -220,8 +208,7 @@ export class Controller {
       val = this.min;
     }
     this.thisSlider.querySelector(
-      `.slider-config .slider-config__block .input-text #inputTextminStart` +
-        this.idElement.substr(-1)
+      `.slider-config .slider-config__block .input-text #inputTextminStart` + this.idElement.substr(-1)
     ).value = val;
   }
   changeConfigInputMax(val: number): void {
@@ -229,8 +216,7 @@ export class Controller {
       val = this.max;
     }
     this.thisSlider.querySelector(
-      `.slider-config .slider-config__block .input-text #inputTextmaxStart` +
-        this.idElement.substr(-1)
+      `.slider-config .slider-config__block .input-text #inputTextmaxStart` + this.idElement.substr(-1)
     ).value = val;
   }
 
@@ -272,51 +258,26 @@ export class Controller {
 
           if (Math.abs(posL - pos) < Math.abs(posR - pos)) {
             startPos = contr.model.getPosRangeLeft();
-            contr.movingRange(
-              'left',
-              contr.model.getPosRangeLeft(),
-              pos,
-              contr.model.getWidthRange()
-            );
+            contr.movingRange('left', contr.model.getPosRangeLeft(), pos, contr.model.getWidthRange());
           } else {
             if (Math.abs(posL - pos) == Math.abs(posR - pos) && pos < posL) {
               startPos = contr.model.getPosRangeLeft();
-              contr.movingRange(
-                'left',
-                contr.model.getPosRangeLeft(),
-                pos,
-                contr.model.getWidthRange()
-              );
+              contr.movingRange('left', contr.model.getPosRangeLeft(), pos, contr.model.getWidthRange());
             } else {
               startPos = contr.model.getPosRangeRight();
-              contr.movingRange(
-                'right',
-                contr.model.getPosRangeRight(),
-                pos,
-                contr.model.getWidthRange()
-              );
+              contr.movingRange('right', contr.model.getPosRangeRight(), pos, contr.model.getWidthRange());
             }
           }
           break;
         }
         case 'from0to': {
           startPos = contr.model.getPosRangeRight();
-          contr.movingRange(
-            'right',
-            contr.model.getPosRangeRight(),
-            pos,
-            contr.model.getWidthRange()
-          );
+          contr.movingRange('right', contr.model.getPosRangeRight(), pos, contr.model.getWidthRange());
           break;
         }
         case 'one': {
           startPos = contr.model.getPosRangeRight();
-          contr.movingRange(
-            'right',
-            contr.model.getPosRangeRight(),
-            pos,
-            contr.model.getWidthRange()
-          );
+          contr.movingRange('right', contr.model.getPosRangeRight(), pos, contr.model.getWidthRange());
           break;
         }
       }
@@ -370,8 +331,7 @@ export class Controller {
         contr.model.settingsBlock.style.display = 'none';
       }
 
-      let inputS: any =
-        contr.thisSlider.getElementsByClassName('input-text__input');
+      let inputS: any = contr.thisSlider.getElementsByClassName('input-text__input');
       for (var i = 0; i < inputS.length; i++) {
         inputS[i].onblur = function () {
           let idInput = this.id,
@@ -383,19 +343,13 @@ export class Controller {
             step: number,
             scaleStep: number;
 
-          if (
-            idInput.indexOf('min', 0) != -1 &&
-            idInput.indexOf('minStart', 0) == -1
-          ) {
+          if (idInput.indexOf('min', 0) != -1 && idInput.indexOf('minStart', 0) == -1) {
             min = Number.parseInt(this.value);
             clear(contr.thisSlider, id);
             contr.min = min;
             contr.view.min = min;
           }
-          if (
-            idInput.indexOf('max', 0) != -1 &&
-            idInput.indexOf('maxStart', 0) == -1
-          ) {
+          if (idInput.indexOf('max', 0) != -1 && idInput.indexOf('maxStart', 0) == -1) {
             max = Number.parseInt(this.value);
             clear(contr.thisSlider, id);
             contr.max = max;
@@ -441,8 +395,7 @@ export class Controller {
         };
       }
 
-      let radioS: any =
-        contr.thisSlider.getElementsByClassName('radiogroup__input');
+      let radioS: any = contr.thisSlider.getElementsByClassName('radiogroup__input');
       for (var i = 0; i < radioS.length; i++) {
         radioS[i].onclick = function () {
           let id: number = contr.idElement.substr(-1),
@@ -543,20 +496,14 @@ export class Controller {
 
     function clear(thisSlider: any, id: number) {
       let blocksScale: any = thisSlider.querySelectorAll(
-        '.range-slider#idSlider' +
-          id +
-          ' .range-slider__slider .range-slider__scale'
+        '.range-slider#idSlider' + id + ' .range-slider__slider .range-slider__scale'
       );
       for (let i = 0; i < blocksScale.length; i++) {
         blocksScale[i].remove();
       }
 
-      thisSlider.querySelector(
-        '.range-slider#idSlider' + id + ' .range-slider__left'
-      ).style.opacity = 1;
-      thisSlider.querySelector(
-        '.range-slider#idSlider' + id + ' .range-slider__range'
-      ).style.opacity = 1;
+      thisSlider.querySelector('.range-slider#idSlider' + id + ' .range-slider__left').style.opacity = 1;
+      thisSlider.querySelector('.range-slider#idSlider' + id + ' .range-slider__range').style.opacity = 1;
     }
   }
 
@@ -576,12 +523,8 @@ export class Controller {
   }
 
   writeDataInConfig(): void {
-    this.model.elemValueMin.innerHTML = new Intl.NumberFormat('ru-RU').format(
-      this.minStart
-    );
-    this.model.elemValueMax.innerHTML = new Intl.NumberFormat('ru-RU').format(
-      this.maxStart
-    );
+    this.model.elemValueMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.minStart);
+    this.model.elemValueMax.innerHTML = new Intl.NumberFormat('ru-RU').format(this.maxStart);
 
     let typeID: string,
       orientationID: string,
@@ -646,13 +589,10 @@ export class Controller {
 
     this.thisSlider.querySelector(configItemMin + id).value = this.min;
     this.thisSlider.querySelector(configItemMax + id).value = this.max;
-    this.thisSlider.querySelector(configItemMinStart + id).value =
-      this.minStart;
-    this.thisSlider.querySelector(configItemMaxStart + id).value =
-      this.maxStart;
+    this.thisSlider.querySelector(configItemMinStart + id).value = this.minStart;
+    this.thisSlider.querySelector(configItemMaxStart + id).value = this.maxStart;
     this.thisSlider.querySelector(configItemStep + id).value = this.step;
-    this.thisSlider.querySelector(configItemScaleStep + id).value =
-      this.scaleStep;
+    this.thisSlider.querySelector(configItemScaleStep + id).value = this.scaleStep;
     this.thisSlider.querySelector(
       `.radiogroup__input[name=rbGroopType${id}]#rbrbGroopType${id}${id}${typeID}`
     ).checked = true;
