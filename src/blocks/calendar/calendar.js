@@ -94,7 +94,7 @@ $(function() {
 
   //------------------------------------------------------------------------------------
 
-  $('.dropdown-block__dropdown').on('click', handleDateDropdownClick);
+  $('.dropdown-block[name=date] .dropdown-block__dropdown').on('click', handleDateDropdownClick);
   
   function handleDateDropdownClick(){
     const block_calendar;
