@@ -10,19 +10,13 @@
   "devDependencies": {
     "@types/jquery": "^3.5.5",
     "@types/node": "^15.6.0",
-    "chart.js": "2.9.4",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "cleave.js": "^1.6.0",
     "css-loader": "^5.2.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
-    "mini-css-extract-plugin": "^1.6.0",
-    "ng2-charts": "^2.4.2",
     "node-sass": "^6.0.0",
-    "node-static": "^0.7.11",
-    "pg-calendar": "^1.4.31",
     "pug": "^3.0.2",
     "pug-alias": "^2.0.1",
     "pug-lexer": "^5.0.1",
@@ -39,8 +33,11 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "grunt-cli": "^1.4.3",
+    "chart.js": "2.9.4",
+    "cleave.js": "^1.6.0",
     "jquery": "^3.6.0",
-    "normalize.css": "^8.0.1"
+    "ng2-charts": "^2.4.2",
+    "normalize.css": "^8.0.1",
+    "pg-calendar": "^1.4.31"
   }
 }
