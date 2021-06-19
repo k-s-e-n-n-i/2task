@@ -259,15 +259,16 @@ div.ui-kit-form-elements
         }
         )
 
-    +btn(
-      {
-        text : "перейти к оплате",
-        link : "#",
-        arrow : true,
-        border: false,
-        hover: false
-      }
-      )
+    div.ui-kit-form-elements__flex-block.ui-kit-form-elements__flex-block_btn-pay
+      +btn(
+        {
+          text : "перейти к оплате",
+          link : "#",
+          arrow : true,
+          border: false,
+          hover: false
+        }
+        )
 
     h3 pagination
     +pagination(

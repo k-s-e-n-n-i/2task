@@ -77,7 +77,7 @@
     //----------------------------------------------------
 
     &.ui-kit-form-elements__blk_2 {
-      margin-right: 52px;
+      margin-right: 53px;
 
       .checkbox-list {
         margin-bottom: 31px;
@@ -121,27 +121,20 @@
     &.ui-kit-form-elements__blk_3 {
       .btn {
         margin: 16px 17px 14px 1px;
-        height: 36px;
+        height: 44px;
         line-height: 35px;
-        width: 100px;
+        width: 99px;
 
-        &.btn_border {
-          .btn__link {
-            line-height: 40px;
+        .btn__block {
+          &.btn__block_gradient_pay {
+            .btn__link {
+              letter-spacing: 0.1px;
+            }
           }
-        }
-
-        &.btn_gradient_pay {
-          width: 100%;
-          margin: 15px 20px 40px 0;
 
           .btn__link {
-            letter-spacing: 0.1px;
+            letter-spacing: -0.3px;
           }
-        }
-
-        .btn__link {
-          letter-spacing: -0.3px;
         }
       }
 
@@ -151,8 +144,16 @@
         margin-left: 2px;
       }
 
+      .ui-kit-form-elements__flex-block_btn-pay {
+        margin-bottom: 26px;
+      }
+
       .pagination {
-        margin: 16px 0 9px 1px;
+        margin: 16px 0 9px;
+
+        .pagination__num-block {
+          margin: 10px 0 6px;
+        }
 
         .pagination__num-block,
         .pagination__label {
