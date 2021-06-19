@@ -41,10 +41,13 @@
     }
 
     &.btn_border {
-      width: 95px;
-      height: 32px;
-      line-height: 30px;
+      width: 99px;
+      height: 36px;
       margin: 0;
+
+      .btn__link {
+        line-height: 40px;
+      }
     }
   }
 

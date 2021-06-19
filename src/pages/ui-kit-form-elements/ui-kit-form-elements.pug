@@ -207,17 +207,19 @@ div.ui-kit-form-elements
       +btn(
         {
           text : "CLICK ME",
-          dopclass : "btn_gradient",
           link : "#",
-          arrow : false
+          arrow : false,
+          border: false,
+          hover: false
         }
         )
       +btn(
         {
           text : "CLICK ME",
-          dopclass : "btn_gradient btn_hover",
           link : "#",
-          arrow : false
+          arrow : false,
+          border: false,
+          hover: true
         }
         )
   
@@ -225,17 +227,19 @@ div.ui-kit-form-elements
       +btn(
         {
           text : "CLICK ME",
-          dopclass : "btn_border",
           link : "#",
-          arrow : false
+          arrow : false,
+          border: true,
+          hover: false
         }
         )
       +btn(
         {
           text : "CLICK ME",
-          dopclass : "btn_border btn_hover",
           link : "#",
-          arrow : false
+          arrow : false,
+          border: true,
+          hover: true
         }
         )
 
@@ -258,9 +262,10 @@ div.ui-kit-form-elements
     +btn(
       {
         text : "перейти к оплате",
-        dopclass : "btn_gradient btn_gradient_pay",
         link : "#",
-        arrow : true
+        arrow : true,
+        border: false,
+        hover: false
       }
       )
 

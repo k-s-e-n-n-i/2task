@@ -3,24 +3,30 @@
   height: 26px;
   padding: 4px 0;
   cursor: pointer;
-  margin: 15px 20px 15px 0;
+  margin: 15px 0 15px 20px;
   position: relative;
   text-align: center;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 
   &.btn_border {
-    background-color: #fff;
-    border: 1px #bc9cff solid;
+    .btn__block-link {
+      content: '';
+      background: #fff;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      border-radius: 22px;
+      position: absolute;
+      left: 2px;
+      top: 2px;
 
-    height: 22px;
-    border-width: 2px;
-
-    .btn__link {
-      color: #bc9cff;
+      .btn__link {
+        color: #bc9cff;
+        line-height: 30px;
+      }
     }
   }
 
   &.btn_gradient {
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     color: #ffffff;
 
     &.btn_gradient_pay {

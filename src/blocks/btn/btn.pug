@@ -1,5 +1,28 @@
 mixin btn(obj)
-  div(class="btn " + obj.dopclass)
-    a.btn__link(href=obj.link)= obj.text
-    if obj.arrow == true
-      div.btn__arrow.btn__arrow_white
+  case obj.arrow
+    when true
+      case obj.hover
+        when true
+          - var arrow = 'btn_gradient_pay btn_hover '
+        when false
+          - var arrow = 'btn_gradient_pay '
+    when false
+      case obj.hover
+        when true
+          - var arrow = 'btn_hover '
+        when false
+          - var arrow = ''
+    default
+      - var arrow = ''
+
+  if obj.border == true
+    div(class='btn btn_border '+ arrow)
+      div.btn__block-link
+        a.btn__link(href=obj.link)= obj.text
+        if obj.arrow == true
+          div.btn__arrow.btn__arrow_white
+  else
+    div(class='btn btn_gradient '+ arrow)
+      a.btn__link(href=obj.link)= obj.text
+      if obj.arrow == true
+        div.btn__arrow.btn__arrow_white

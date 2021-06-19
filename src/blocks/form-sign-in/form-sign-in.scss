@@ -26,10 +26,13 @@
     margin: 21px 0 27px 0;
 
     &.btn_border {
-      width: 95px;
-      height: 32px;
-      line-height: 33px;
+      width: 99px;
+      height: 36px;
       margin: 0;
+
+      .btn__link {
+        line-height: 41px;
+      }
     }
   }
 

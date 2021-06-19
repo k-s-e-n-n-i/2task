@@ -30,9 +30,10 @@ mixin formSignIn
     +btn(
       {
         text : "Войти",
-        dopclass : "btn_gradient btn_gradient_pay",
         link : "#",
-        arrow : true
+        arrow : true,
+        border: false,
+        hover: false
       }
       )
 
@@ -41,8 +42,9 @@ mixin formSignIn
       +btn(
         {
           text : "Создать",
-          dopclass : "btn_border",
           link : "#",
-          arrow : false
+          arrow : false,
+          border: true,
+          hover: false
         }
         )

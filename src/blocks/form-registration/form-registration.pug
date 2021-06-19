@@ -88,9 +88,10 @@ mixin formRegistration(obj)
     +btn(
       {
         text : "Зарегистрироваться",
-        dopclass : "btn_gradient btn_gradient_pay",
         link : "#",
-        arrow : true
+        arrow : true,
+        border: false,
+        hover: false
       }
       )
     div.form-registration__login
@@ -98,8 +99,9 @@ mixin formRegistration(obj)
       +btn(
         {
           text : "Войти",
-          dopclass : "btn_border",
           link : "#",
-          arrow : false
+          arrow : false,
+          border: true,
+          hover: false
         }
         )

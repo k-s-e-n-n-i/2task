@@ -29,17 +29,19 @@ mixin header(obj,...items)
               +btn(
                 {
                   text : "Войти",
-                  dopclass : "btn_border btn_header",
                   link : "./sign-in.html",
-                  arrow : false
+                  arrow : false,
+                  border: true,
+                  hover: false
                 }
                 )
               +btn(
                 {
                   text : "Зарегистрироваться",
-                  dopclass : "btn_gradient btn_header",
                   link : "./registration.html",
-                  arrow : false
+                  arrow : false,
+                  border: false,
+                  hover: false
                 }
                 )
             else
