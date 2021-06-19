@@ -38,12 +38,10 @@ $(function () {
 
     if (qty == min + 1 || qty == min) {
       $(this).addClass('dropdown-block__inc-qty_disable');
-    } else {
-      $(this).removeClass('dropdown-block__inc-qty_disable');
-      let plus = $(this).closest('.dropdown-block__block-qty').find('.dropdown-block__inc-qty-plus');
-      if (plus.hasClass('dropdown-block__inc-qty_disable')) {
-        plus.removeClass('dropdown-block__inc-qty_disable');
-      }
+    }
+    let plus = $(this).closest('.dropdown-block__dropdown-items').find('.dropdown-block__inc-qty-plus');
+    for (let i = 0; i < plus.length; i++) {
+      plus.removeClass('dropdown-block__inc-qty_disable');
     }
 
     outputInDropdown($(this).closest('.dropdown-block'));
@@ -53,20 +51,36 @@ $(function () {
     let qtyElem: any,
       qty: number = 0,
       newQty: number = 0,
-      max: number = 10;
+      max: number,
+      spans,
+      allQty: number = 0;
+
+    if ($(this).closest('.dropdown-block').attr('name') == 'guests') {
+      max = 10;
+    } else {
+      max = 15;
+    }
+
+    spans = $(this).closest('.dropdown-block__dropdown-items').find('span');
+    for (let i = 0; i < spans.length; i++) {
+      allQty = allQty + parseInt(spans[i].innerHTML);
+    }
+    allQty++;
 
     qtyElem = $(this).closest('.dropdown-block__block-qty').find('span');
     qty = parseInt(qtyElem.html());
 
-    if (qty < max) {
+    if (allQty <= max) {
       newQty = qty + 1;
       qtyElem.html(newQty);
     }
 
-    if (qty == max - 1 || qty == max) {
-      $(this).addClass('dropdown-block__inc-qty_disable');
+    if (allQty == max || allQty - 1 == max) {
+      let plus = $(this).closest('.dropdown-block__dropdown-items').find('.dropdown-block__inc-qty-plus');
+      for (let i = 0; i < plus.length; i++) {
+        plus.addClass('dropdown-block__inc-qty_disable');
+      }
     } else {
-      $(this).removeClass('dropdown-block__inc-qty_disable');
       let minus = $(this).closest('.dropdown-block__block-qty').find('.dropdown-block__inc-qty-minus');
       if (minus.hasClass('dropdown-block__inc-qty_disable')) {
         minus.removeClass('dropdown-block__inc-qty_disable');
@@ -87,7 +101,7 @@ $(function () {
 
   function handleDropdownOkClick() {
     event.preventDefault();
-    $(this).closest('.dropdown-block').find('.dropdown-block__dropdown').click();
+    $(this).closest('.dropdown-block').find('.dropdown-block__dropdown').trigger('click');
 
     outputInDropdown($(this).closest('.dropdown-block'));
   }
