@@ -1,19 +1,24 @@
 .btn {
-  border-radius: 22px;
-  height: 26px;
-  padding: 4px 0;
-  cursor: pointer;
-  margin: 15px 0 15px 20px;
   position: relative;
-  text-align: center;
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  height: 26px;
+  margin: 15px 0 15px 20px;
 
-  &.btn_border {
-    .btn__block-link {
+  .btn__block {
+    border-radius: 22px;
+    padding: 4px 0;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    &.btn__block_border {
       content: '';
       background: #fff;
       width: calc(100% - 4px);
-      height: calc(100% - 4px);
+      height: calc(100% - 12px);
       border-radius: 22px;
       position: absolute;
       left: 2px;
@@ -21,53 +26,76 @@
 
       .btn__link {
         color: #bc9cff;
-        line-height: 30px;
+      }
+
+      &:hover,
+      &:focus,
+      &.btn_hover {
+        + .btn__border {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &.btn__block_gradient {
+      color: #ffffff;
+
+      &.btn__block_gradient_pay {
+        width: 320px;
+      }
+
+      &:hover,
+      &:focus,
+      &.btn_hover {
+        opacity: 0.5;
+      }
+    }
+
+    .btn__link {
+      color: #ffffff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      -webkit-user-select: none;
+    }
+
+    .btn__arrow {
+      position: absolute;
+      bottom: 12px;
+      right: 15px;
+      content: '';
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      position: absolute;
+      top: 13px;
+      right: 11px;
+      background-repeat: no-repeat;
+      background-image: url('@Blocks/btn/arrow.svg');
+
+      &.btn__arrow_white {
+        background-image: url('@Blocks/btn/arrow-white.svg');
       }
     }
   }
 
-  &.btn_gradient {
-    color: #ffffff;
-
-    &.btn_gradient_pay {
-      width: 320px;
-    }
-  }
-
-  &:hover,
-  &:focus,
-  &.btn_hover {
-    opacity: 0.5;
-  }
-
-  .btn__link {
-    color: #ffffff;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    -webkit-user-select: none;
-  }
-
-  .btn__arrow {
+  .btn__border {
+    border-radius: 22px;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     position: absolute;
-    bottom: 12px;
-    right: 15px;
-    content: '';
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 13px;
-    right: 11px;
-    background-repeat: no-repeat;
-    background-image: url('@Blocks/btn/arrow.svg');
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 
-    &.btn__arrow_white {
-      background-image: url('@Blocks/btn/arrow-white.svg');
+    &:hover,
+    &:focus,
+    &.btn_hover {
+      opacity: 0.5;
     }
   }
 }

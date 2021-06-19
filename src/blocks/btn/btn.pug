@@ -3,26 +3,33 @@ mixin btn(obj)
     when true
       case obj.hover
         when true
-          - var arrow = 'btn_gradient_pay btn_hover '
+          - var arrow = 'btn__block_gradient_pay '
+          - var hover = 'btn_hover '
         when false
-          - var arrow = 'btn_gradient_pay '
+          - var arrow = 'btn__block_gradient_pay '
+          - var hover = ''
     when false
       case obj.hover
         when true
-          - var arrow = 'btn_hover '
+          - var arrow = ''
+          - var hover = 'btn_hover '
         when false
           - var arrow = ''
+          - var hover = ''
     default
       - var arrow = ''
+      - var hover = ''
 
   if obj.border == true
-    div(class='btn btn_border '+ arrow)
-      div.btn__block-link
+    div.btn.btn_border
+      div(class='btn__block btn__block_border '+ arrow + hover)
         a.btn__link(href=obj.link)= obj.text
         if obj.arrow == true
           div.btn__arrow.btn__arrow_white
+      div(class='btn__border ' + hover)
   else
-    div(class='btn btn_gradient '+ arrow)
-      a.btn__link(href=obj.link)= obj.text
-      if obj.arrow == true
-        div.btn__arrow.btn__arrow_white
+    div.btn
+      div(class='btn__block btn__block_gradient '+ arrow + hover)
+        a.btn__link(href=obj.link)= obj.text
+        if obj.arrow == true
+          div.btn__arrow.btn__arrow_white
