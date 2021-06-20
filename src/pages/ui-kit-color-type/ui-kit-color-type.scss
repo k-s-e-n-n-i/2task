@@ -32,6 +32,10 @@ $colorGreen: #6fcf97;
     margin: 35px 0 0 0;
     min-width: 300px;
 
+    h2 {
+      color: rgba(31, 32, 65, 1);
+    }
+
     .ui-kit-color-type__item-color {
       display: flex;
       align-items: center;
@@ -136,6 +140,12 @@ $colorGreen: #6fcf97;
           font-weight: 600;
           letter-spacing: 0.1px;
         }
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: rgba(31, 32, 65, 1);
       }
 
       p {
