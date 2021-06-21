@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const devserver = require('./webpack/devserver');
 const pug = require('./webpack/pug');
@@ -14,24 +14,23 @@ const images = require('./webpack/images');
 const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
 const { plugins } = require('chart.js');
-
+const favicons = require('./webpack/favicons');
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
-  build: path.join(__dirname, 'docs')
+  build: path.join(__dirname, 'docs'),
 };
-
 
 const PLUGINSdate = [
   new webpack.ProvidePlugin({
     $: 'jquery',
-    jQuery: 'jquery'
+    jQuery: 'jquery',
   }),
   new HtmlWebpackPlugin({
     title: 'Webpack app',
     filename: 'index.html',
     chunks: ['index'],
-    template: PATHS.source + '/index.pug'
+    template: PATHS.source + '/index.pug',
   }),
 ];
 
@@ -48,7 +47,7 @@ const PAGES = [
   'ui-kit-form-elements',
   'ui-kit-cards',
   'ui-kit-header-footer',
-  'ui-kit-color-type'
+  'ui-kit-color-type',
 ];
 
 PAGES.map((event) => {
@@ -58,15 +57,14 @@ PAGES.map((event) => {
       chunks: [`${event}`],
       template: PATHS.source + `/pages/${event}/${event}.pug`,
     })
-  )
+  );
 });
 
 PAGES.map((event) => {
-  return Object.assign(ENTRYdate,{
-    [event+'.js'] : PATHS.source + `/pages/${event}/${event}.js`,
-  })
+  return Object.assign(ENTRYdate, {
+    [event + '.js']: PATHS.source + `/pages/${event}/${event}.js`,
+  });
 });
-
 
 const common = merge([
   {
@@ -75,7 +73,7 @@ const common = merge([
     entry: ENTRYdate,
     output: {
       path: PATHS.build,
-      filename: '[name]'
+      filename: '[name]',
     },
     resolve: {
       alias: {
@@ -96,37 +94,25 @@ const common = merge([
   ts(),
 ]);
 
-
 const developmentConfig = {
-	mode: 'development',
+  mode: 'development',
   devServer: {
     stats: 'errors-only',
-    port: 9000
+    port: 9000,
   },
-  
 };
 
 const productionConfig = {
   mode: 'production',
-  plugins: [
-    new CleanWebpackPlugin(),
-  ]
-}
+  plugins: [new CleanWebpackPlugin()],
+};
 
-
-module.exports = function(env) {
-
+module.exports = function (env) {
   if (env.conf === 'development') {
-    return merge([
-      common,
-      developmentConfig,
-    ])
+    return merge([common, developmentConfig]);
   }
-  
+
   if (env.conf === 'production') {
-    return merge([
-      common,
-      productionConfig,
-    ])
+    return merge([common, productionConfig]);
   }
 };
