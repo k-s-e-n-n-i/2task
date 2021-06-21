@@ -53,11 +53,8 @@
 
     &:last-child,
     &:first-child {
-      color: rgba(31, 32, 65, 0.75);
-
       .footer__menu-li {
         cursor: inherit;
-        color: rgba(31, 32, 65, 0.75);
       }
     }
 

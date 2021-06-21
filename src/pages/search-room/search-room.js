@@ -8,8 +8,6 @@ import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
 import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.js';
 import '../../blocks/dropdown/dropdown.scss';
 import '../../blocks/dropdown/dropdown.ts';
-import '../../blocks/footer/footer.scss';
-import '../../blocks/header/header.scss';
 import '../../blocks/input-text/input-text.scss';
 import '../../blocks/link/link.scss';
 import '../../blocks/pagination/pagination.scss';
@@ -22,6 +20,8 @@ import '../../blocks/calendar/calendar.scss';
 import '../../blocks/calendar/calendar.js';
 import '../../blocks/card-room/card-room.scss';
 import '../../blocks/card-room/card-room.js';
+import '../../blocks/footer/footer.scss';
+import '../../blocks/header/header.scss';
 
 /*pages*/
 import '../../pages/search-room/search-room.scss';

@@ -1,5 +1,5 @@
 .checkbox-list {
-  margin-top: 14px;
+  margin-top: 15px;
   width: 230px;
 
   &.checkbox-list_hide {
@@ -61,10 +61,9 @@
       &.checkbox-list__label_bold {
         color: rgba(31, 32, 65, 0.75);
         font-weight: 700;
-        font-size: 14.5px;
+        font-size: 14px;
         line-height: 18px;
         white-space: nowrap;
-        letter-spacing: -0.5px;
       }
     }
 

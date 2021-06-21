@@ -28,9 +28,8 @@
 
     p {
       .link_lux {
-        margin: 0 0 0 -7px;
-        letter-spacing: 0.4px;
-        font-size: 11.5px;
+        margin: 0 0 0 2px;
+        font-size: 12px;
       }
 
       &:nth-child(1) {
@@ -53,7 +52,6 @@
         span {
           &:nth-child(1) {
             font-size: 15px;
-            letter-spacing: -0.1px;
           }
         }
       }
