@@ -162,6 +162,8 @@
 
 @media (max-width: 1170px) {
   .header {
+    height: auto;
+
     .header__content-container {
       margin: 0;
     }
@@ -223,9 +225,5 @@
   .header__block-login {
     flex-wrap: wrap;
     justify-content: center;
-
-    .btn__block {
-      margin: 15px 10px !important;
-    }
   }
 }
