@@ -28,7 +28,7 @@
   }
 
   &__bottom-menu-logo-block {
-    max-width: 255px;
+    min-width: 255px;
 
     p {
       padding: 0;
@@ -40,6 +40,12 @@
     margin: 10px 0 3px;
   }
 
+  &__menu-column {
+    &:first-child {
+      min-width: 200px;
+    }
+  }
+
   &__menu-column,
   &__bottom-menu-logo-block {
     display: block;
@@ -47,7 +53,6 @@
 
     &:last-child,
     &:first-child {
-      min-width: 200px;
       color: rgba(31, 32, 65, 0.75);
 
       .footer__menu-li {
@@ -123,19 +128,18 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    color: rgba(31, 32, 65, 0.5);
     min-width: 400px;
-    max-width: 80.5%;
+    max-width: 80.7%;
     margin: 0 auto;
 
     p {
       margin: 23px 0;
-      font-weight: 500;
     }
   }
 
   &__soc-block {
     display: flex;
+    margin-right: 2px;
   }
 
   &__soc-network {
