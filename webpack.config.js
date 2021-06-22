@@ -14,7 +14,6 @@ const images = require('./webpack/images');
 const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
 const { plugins } = require('chart.js');
-const favicons = require('./webpack/favicons');
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
