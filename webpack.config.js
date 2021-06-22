@@ -35,6 +35,7 @@ const PLUGINSdate = [
 
 const ENTRYdate = {
   'index.js': PATHS.source + '/index.js',
+  'start-page.js': PATHS.source + '/pages/start-page/start-page.js',
 };
 
 const PAGES = [
