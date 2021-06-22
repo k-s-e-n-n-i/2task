@@ -9,7 +9,7 @@ include ~@Blocks/card-room/card-room.pug
 include ~@Blocks/pagination/pagination.pug
 
 
-include ../global-header.pug
+include ~@Blocks/global-head-with-header/global-head-with-header.pug
 
 div.search-room
   div.search-room__filters
@@ -316,6 +316,6 @@ div.search-room
         }
         )
 
-include ../global-footer.pug
+include ~@Blocks/global-footer/global-footer.pug
 
 script(src="./search-room.js")

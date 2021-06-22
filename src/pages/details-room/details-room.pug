@@ -8,7 +8,7 @@ include ~@Blocks/chart/chart.pug
 include ~@Blocks/form-reservation/form-reservation.pug
 
 
-include ../global-header.pug
+include ~@Blocks/global-head-with-header/global-head-with-header.pug
 
 div.details-room
   div.details-room__block-images
@@ -99,6 +99,6 @@ div.details-room
         }
         )
 
-include ../global-footer.pug
+include ~@Blocks/global-footer/global-footer.pug
 
 script(src="./details-room.js")

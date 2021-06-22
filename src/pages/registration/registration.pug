@@ -3,7 +3,7 @@ include ~@Blocks/footer/footer.pug
 include ~@Blocks/form-registration/form-registration.pug
 
 
-include ../global-header.pug
+include ~@Blocks/global-head-with-header/global-head-with-header.pug
 
 div.registration
   div.registration__content-container
@@ -13,6 +13,6 @@ div.registration
       }
       )
 
-include ../global-footer.pug
+include ~@Blocks/global-footer/global-footer.pug
 
 script(src="./registration.js")
