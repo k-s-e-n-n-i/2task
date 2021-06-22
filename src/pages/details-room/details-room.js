@@ -1,6 +1,3 @@
-import '../../font/fonts.css';
-import '../../index.scss';
-
 /*blocks*/
 import '../../blocks/btn/btn.scss';
 import '../../blocks/comment-block/comment-block.scss';
