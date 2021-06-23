@@ -15,10 +15,10 @@ mixin dropdownBlock(obj,...items)
       else
         div.dropdown-block__dropdown-items
           +dropdownBlock__itemsLine(obj,...items)
-    
+
     if obj.name == 'date'
       +calendar({state : "close"})
-      
+
 
 mixin dropdownBlock__dropdown(obj)
   if obj.state == "close"
@@ -33,15 +33,15 @@ mixin dropdownBlock__itemsLine(obj,...items)
       h3= item.text
       div.dropdown-block__block-qty
         if item.minus == "disable"
-          div(class="dropdown-block__inc-qty-minus dropdown-block__inc-qty_disable")= "-"
+          div(class="dropdown-block__inc-qty-minus dropdown-block__inc-qty_disable")= "-" 
         else
           div(class="dropdown-block__inc-qty-minus")= "-"
         span= item.qty
         if item.plus == "disable"
-          div(class="dropdown-block__inc-qty-plus dropdown-block__inc-qty_disable")= "-"
+          div(class="dropdown-block__inc-qty-plus dropdown-block__inc-qty_disable")= "-" 
         else
           div(class="dropdown-block__inc-qty-plus")= "+"
-  
+
   if obj.btnClean == true || obj.btnOk == true
     if obj.btnClean == false && obj.btnOk == true
       div.dropdown-block__btns.dropdown-block__btns_flex-end
@@ -58,11 +58,11 @@ mixin links
       url : '#',
       type : "clean"
     }
-    )
+  )
   +link(
     {
       text : "Применить",
       url : '#',
       type : "ok"
     }
-    )
+  )

@@ -2,61 +2,61 @@ include ../global-head/global-head.pug
 
 include ../header/header.pug
 +header(
-{
-  authorization : false,
-  name : "",
-},
-{
-  menuItem : "О нас",
-  link : "#",
-  state : "",
-  type : "main",
-  submenu : []
-},
-{
-  menuItem : "Услуги",
-  link : "#",
-  state : "",
-  type : "expand",
-  submenu : [
   {
-    menuItem : "Услуга №1",
-    link : "#",
+    authorization : false,
+    name : "",
   },
   {
-    menuItem : "Услуга №2",
+    menuItem : "О нас",
     link : "#",
-  },
-]
-},
-{
-  menuItem : "Вакансии",
-  link : "#",
-  state : "",
-  type : "main",
-  submenu : []
-},
-{
-  menuItem : "Новости",
-  link : "#",
-  state : "",
-  type : "main",
-  submenu : []
-},
-{
-  menuItem : "Соглашения",
-  link : "#",
-  state : "",
-  type : "expand",
-  submenu : [
-  {
-    menuItem : "Соглашение №1",
-    link : "#",
+    state : "",
+    type : "main",
+    submenu : []
   },
   {
-    menuItem : "Соглашение №2",
+    menuItem : "Услуги",
     link : "#",
+    state : "",
+    type : "expand",
+    submenu : [
+      {
+        menuItem : "Услуга №1",
+        link : "#",
+      },
+      {
+        menuItem : "Услуга №2",
+        link : "#",
+      },
+    ]
   },
-]
-}
+  {
+    menuItem : "Вакансии",
+    link : "#",
+    state : "",
+    type : "main",
+    submenu : []
+  },
+  {
+    menuItem : "Новости",
+    link : "#",
+    state : "",
+    type : "main",
+    submenu : []
+  },
+  {
+    menuItem : "Соглашения",
+    link : "#",
+    state : "",
+    type : "expand",
+    submenu : [
+      {
+        menuItem : "Соглашение №1",
+        link : "#",
+      },
+      {
+        menuItem : "Соглашение №2",
+        link : "#",
+      },
+    ]
+  }
 )

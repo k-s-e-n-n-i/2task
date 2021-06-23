@@ -17,19 +17,19 @@ mixin formRegistration(obj)
         id : "RegName",
         name : ""
       }
-      )
+    )
     +inputText(
-        {
-          topic : "",
-          label : "",
-          placeholder : "Фамилия",
-          inputText : "",
-          state : "",
-          id : "RegSurname",
-          name : ""
-        }
-        )
-      
+      {
+        topic : "",
+        label : "",
+        placeholder : "Фамилия",
+        inputText : "",
+        state : "",
+        id : "RegSurname",
+        name : ""
+      }
+    )
+
     +radiogroup(
       {
         nameGroup : "rbGroop"+obj.id,
@@ -42,7 +42,7 @@ mixin formRegistration(obj)
       {
         text : "Женщина"
       }
-      )
+    )
 
     +inputText(
       {
@@ -54,7 +54,7 @@ mixin formRegistration(obj)
         id : "RegDateBirth",
         name : "date"
       }
-      )
+    )
     +inputText(
       {
         topic : "данные для входа в сервис",
@@ -65,7 +65,7 @@ mixin formRegistration(obj)
         id : "RegEmail",
         name : ""
       }
-      )
+    )
     +inputText(
       {
         topic : "",
@@ -76,15 +76,15 @@ mixin formRegistration(obj)
         id : "registration",
         name : ""
       }
-      )
-    
+    )
+
     +toggleBlock(
       {
         text : "Получать спецпредложения",
         active : "off"
       }
-      )
-  
+    )
+
     +btn(
       {
         text : "Зарегистрироваться",
@@ -93,7 +93,7 @@ mixin formRegistration(obj)
         border: false,
         hover: false
       }
-      )
+    )
     div.form-registration__login
       p Уже есть аккаунт на Toxin
       +btn(
@@ -104,4 +104,4 @@ mixin formRegistration(obj)
           border: true,
           hover: false
         }
-        )
+      )

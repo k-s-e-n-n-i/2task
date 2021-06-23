@@ -15,12 +15,12 @@ mixin formReservation(obj)
             url : '#',
             type : "lux"
           }
-          )
+        )
       p
         span= obj.priceFrom
         span= "₽"
         span= " в сутки"
-          
+
     +dropdownDates(
       { 
         topic : "Прибытие",
@@ -30,8 +30,8 @@ mixin formReservation(obj)
         topic : "Выезд",
         activeText : "23.08.2019",
       }
-      ) 
-    
+    ) 
+
     +dropdownBlock(
       { 
         name : "guests",
@@ -60,8 +60,8 @@ mixin formReservation(obj)
         minus : "disable",
         plus : "active"
       }    
-      )  
-    
+    )  
+
     +formReservation__blockPrices(
       {
         textPrice : "9 990₽ х 4 суток",
@@ -78,7 +78,7 @@ mixin formReservation(obj)
         sumPrice : "300",
         iconInfo : true
       }
-      )
+    )
 
     div.form-reservation__block
       h2= "Итого"
@@ -93,7 +93,7 @@ mixin formReservation(obj)
         border: false,
         hover: false
       }
-      )
+    )
 
 
 mixin formReservation__blockPrices(...items)

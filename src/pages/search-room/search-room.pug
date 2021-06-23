@@ -24,8 +24,8 @@ div.search-room
           btnClean : false,
           btnOk : false
         }
-        )
-    
+      )
+
     div.search-room__filter-guest
       +dropdownBlock(
         { 
@@ -55,8 +55,8 @@ div.search-room
           minus : "active",
           plus : "active"
         }    
-        )
-    
+      )
+
     div.search-room__slider-price
       +rangeSlider(
         {
@@ -66,8 +66,8 @@ div.search-room
           id : "idSlider1",
           postText : "Стоимость за сутки пребывания в номере"
         }
-        )  
-    
+      )  
+
     div.search-room__filter-features
       h3 Правила дома
       +checkboxList(
@@ -93,7 +93,7 @@ div.search-room
           p__dopclass : ""
         }
       )
-    
+
     div.search-room__filter-availability
       h3 доступность
       +checkboxList(
@@ -113,7 +113,7 @@ div.search-room
           p__dopclass : "checkbox-list__p_width225"
         }
       )
-      
+
     div.search-room__filter-comfort
       +dropdownBlock(
         { 
@@ -143,7 +143,7 @@ div.search-room
           minus : "disable",
           plus : "active"
         }    
-        )
+      )
 
     +checkboxListExpandable(
       {
@@ -184,7 +184,7 @@ div.search-room
 
   div.search-room__rooms
     h1 Номера, которые мы для вас подобрали
-    
+
     +cardRoom(
       {
         id : 1,
@@ -194,7 +194,7 @@ div.search-room
         review : 145,
         rating : 5
       }
-      )
+    )
     +cardRoom(
       {
         id : 2,
@@ -204,7 +204,7 @@ div.search-room
         review : 65,
         rating : 4
       }
-      )
+    )
     +cardRoom(
       {
         id : 3,
@@ -214,8 +214,8 @@ div.search-room
         review : 35,
         rating : 3
       }
-      )
-    
+    )
+
     +cardRoom(
       {
         id : 4,
@@ -225,7 +225,7 @@ div.search-room
         review : 19,
         rating : 5
       }
-      )
+    )
     +cardRoom(
       {
         id : 5,
@@ -235,7 +235,7 @@ div.search-room
         review : 44,
         rating : 4
       }
-      )
+    )
     +cardRoom(
       {
         id : 6,
@@ -245,8 +245,8 @@ div.search-room
         review : 56,
         rating : 3
       }
-      )
-    
+    )
+
     +cardRoom(
       {
         id : 7,
@@ -256,7 +256,7 @@ div.search-room
         review : 45,
         rating : 5
       }
-      )
+    )
     +cardRoom(
       {
         id : 8,
@@ -266,7 +266,7 @@ div.search-room
         review : 39,
         rating : 4
       }
-      )
+    )
     +cardRoom(
       {
         id : 9,
@@ -276,8 +276,8 @@ div.search-room
         review : 77,
         rating : 3
       }
-      )
-    
+    )
+
     +cardRoom(
       {
         id : 10,
@@ -287,7 +287,7 @@ div.search-room
         review : 25,
         rating : 5
       }
-      )
+    )
     +cardRoom(
       {
         id : 11,
@@ -297,7 +297,7 @@ div.search-room
         review : 15,
         rating : 3
       }
-      )
+    )
     +cardRoom(
       {
         id : 12,
@@ -307,14 +307,14 @@ div.search-room
         review : 55,
         rating : 3
       }
-      )
+    )
 
     +pagination(
-        {
-          text : "1 – 12 из 100+ вариантов аренды",
-          max : 15
-        }
-        )
+      {
+        text : "1 – 12 из 100+ вариантов аренды",
+        max : 15
+      }
+    )
 
 include ~@Blocks/global-footer/global-footer.pug
 
