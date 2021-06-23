@@ -49,3 +49,18 @@
     }
   }
 }
+
+@media (max-width: 380px) {
+  .form-sign-in {
+    width: 100%;
+    padding: 20px;
+
+    .btn {
+      .btn__block {
+        &.btn__block_gradient_pay {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
