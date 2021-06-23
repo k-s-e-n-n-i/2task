@@ -191,6 +191,10 @@
       border-bottom: 0;
     }
 
+    &__content-container {
+      min-width: min-content;
+    }
+
     &__bottom-menu {
       display: flex;
       flex-direction: column;
@@ -212,9 +216,11 @@
       display: flex;
       flex-direction: column;
       margin: 0 auto;
+      min-width: min-content;
 
       p {
         margin: 6px 0 20px;
+        text-align: center;
       }
     }
 
