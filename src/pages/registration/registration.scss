@@ -27,6 +27,10 @@
   .registration {
     background: none;
     height: auto;
+
+    .registration__content-container {
+      margin: auto;
+    }
   }
 
   .form-registration {
