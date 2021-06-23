@@ -69,7 +69,7 @@ mixin formReservation(obj)
         iconInfo : false
       },
       {
-        textPrice : "Сбор за услуги: скидка 2 179₽",
+        textPrice : "Сбор за услуги: скидка <span>2 179₽</span>",
         sumPrice : "0",
         iconInfo : true
       },
@@ -101,7 +101,7 @@ mixin formReservation__blockPrices(...items)
     each item in items
       div.form-reservation__line-price
         div.form-reservation__text-price
-          p= item.textPrice
+          p !{item.textPrice}
           if item.iconInfo == true
             div.form-reservation__icon-info-price i
         p= item.sumPrice +"₽"

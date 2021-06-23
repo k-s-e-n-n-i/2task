@@ -165,3 +165,43 @@
     }
   }
 }
+
+@media (max-width: 380px) {
+  .form-reservation {
+    width: 100%;
+    padding: 20px;
+
+    .dropdown-dates {
+      &__dates {
+        flex-wrap: wrap;
+
+        .dropdown-block {
+          width: 100%;
+
+          .dropdown-block__dropdown_date {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    p {
+      min-width: 57px;
+      text-align: right;
+    }
+
+    &__text-price {
+      p {
+        text-align: left;
+      }
+    }
+
+    .btn {
+      .btn__block {
+        &.btn__block_gradient_pay {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
