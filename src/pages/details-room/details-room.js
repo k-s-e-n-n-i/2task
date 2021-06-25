@@ -15,6 +15,7 @@ import '../../blocks/chart/chart.js';
 
 import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';
+import '../../blocks/header/header.ts';
 import '../../blocks/calendar/calendar.scss';
 import '../../blocks/calendar/calendar.js';
 import '../../blocks/form-reservation/form-reservation.scss';

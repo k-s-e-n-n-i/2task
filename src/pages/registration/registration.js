@@ -10,6 +10,7 @@ import '../../blocks/topic-label/topic-label.scss';
 
 import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';
+import '../../blocks/header/header.ts';
 import '../../blocks/form-registration/form-registration.scss';
 
 /*pages*/

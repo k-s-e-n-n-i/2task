@@ -19,6 +19,7 @@ import '../../blocks/card-room/card-room.scss';
 import '../../blocks/card-room/card-room.js';
 import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';
+import '../../blocks/header/header.ts';
 
 /*pages*/
 import '../../pages/search-room/search-room.scss';

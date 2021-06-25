@@ -11,6 +11,7 @@ import '../../blocks/calendar/calendar.js';
 import '../../blocks/form-search-num/form-search-num.scss';
 import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';
+import '../../blocks/header/header.ts';
 
 /*pages*/
 import '../../pages/landing-page/landing-page.scss';
