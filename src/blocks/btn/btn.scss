@@ -1,11 +1,11 @@
 .btn {
   position: relative;
-  height: 26px;
+  height: 34px;
   margin: 15px 0 15px 20px;
 
-  .btn__block {
+  &__block {
+    height: 100%;
     border-radius: 22px;
-    padding: 4px 0;
     cursor: pointer;
     position: relative;
     text-align: center;
@@ -13,78 +13,80 @@
     position: absolute;
     width: 100%;
     z-index: 1;
+  }
 
-    &.btn__block_border {
-      content: '';
-      background: #fff;
-      width: calc(100% - 4px);
-      height: calc(100% - 12px);
-      border-radius: 22px;
-      position: absolute;
-      left: 2px;
-      top: 2px;
+  &__block_gradient {
+    color: #ffffff;
 
-      .btn__link {
-        color: #bc9cff;
-        font-weight: 700;
-      }
-
-      &:hover,
-      &:focus,
-      &.btn_hover {
-        + .btn__border {
-          opacity: 0.5;
-        }
-      }
+    &:hover,
+    &:focus,
+    &.btn_hover {
+      opacity: 0.5;
     }
+  }
 
-    &.btn__block_gradient {
-      color: #ffffff;
+  &__block_gradient_pay {
+    width: 320px;
+  }
 
-      &.btn__block_gradient_pay {
-        width: 320px;
-      }
+  &__link {
+    color: #ffffff;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-user-select: none;
+    line-height: 44px;
+  }
 
-      &:hover,
-      &:focus,
-      &.btn_hover {
-        opacity: 0.5;
-      }
-    }
+  &__arrow {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 13px;
+    right: 11px;
+    background-repeat: no-repeat;
+    background-image: url('@Blocks/btn/arrow.svg');
+  }
+
+  &__arrow_white {
+    background-image: url('@Blocks/btn/arrow-white.svg');
+  }
+
+  &__block_border {
+    content: '';
+    background: #fff;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
 
     .btn__link {
-      color: #ffffff;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 12px;
-      text-align: center;
-      text-transform: uppercase;
-      text-decoration: none;
-      -webkit-user-select: none;
+      color: #bc9cff;
+      font-weight: 700;
+      line-height: 40px;
     }
 
-    .btn__arrow {
-      position: absolute;
-      bottom: 12px;
-      right: 15px;
-      content: '';
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      position: absolute;
-      top: 13px;
-      right: 11px;
-      background-repeat: no-repeat;
-      background-image: url('@Blocks/btn/arrow.svg');
-
-      &.btn__arrow_white {
-        background-image: url('@Blocks/btn/arrow-white.svg');
+    &:hover,
+    &:focus,
+    &.btn_hover {
+      + .btn__border {
+        opacity: 0.5;
       }
     }
   }
 
-  .btn__border {
+  &__border {
     border-radius: 22px;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     position: absolute;

@@ -35,14 +35,11 @@
     margin: 31px 0 0 0;
     height: 44px;
 
-    .btn__block {
-      .btn__link {
-        padding-right: 5px;
-        font-size: 11px;
-        font-weight: 600;
-        line-height: 36px;
-        letter-spacing: 0.8px;
-      }
+    &__link {
+      padding-right: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
     }
   }
 
@@ -56,7 +53,7 @@
   }
 
   .dropdown-block {
-    .dropdown-block__dropdown {
+    &__dropdown {
       padding: 9px 14px 7px 14px;
 
       &:before {
@@ -65,36 +62,36 @@
         bottom: 14px;
         right: 12px;
       }
-
-      &.dropdown-block__dropdown_date {
-        letter-spacing: -0.1px;
-      }
     }
 
-    .dropdown-block__dropdown-items {
+    &__dropdown_date {
+      letter-spacing: -0.1px;
+    }
+
+    &__dropdown-items {
       h3 {
         margin-top: 0px;
       }
+    }
 
-      .dropdown-block__items-line {
-        height: 38px;
+    &__items-line {
+      height: 38px;
+    }
 
-        .dropdown-block__block-qty {
-          margin: 8px 6px 0 0;
+    &__block-qty {
+      margin: 8px 6px 0 0;
 
-          span {
-            font-size: 12px;
-          }
-        }
+      span {
+        font-size: 12px;
       }
+    }
 
-      .dropdown-block__btns {
-        .link {
-          margin: auto 14px 12px;
+    &__btns {
+      .link {
+        margin: auto 14px 12px;
 
-          &.link_ok {
-            margin: auto 6px 12px;
-          }
+        &.link_ok {
+          margin: auto 6px 12px;
         }
       }
     }

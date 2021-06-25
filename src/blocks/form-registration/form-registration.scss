@@ -39,21 +39,25 @@
     &.btn_border {
       width: 99px;
       margin: 0;
+    }
 
+    &__block_border {
       .btn__link {
-        line-height: 30px;
+        line-height: 40px;
       }
     }
 
-    .btn__block {
-      &.btn__block_gradient {
-        width: 100%;
-        line-height: 35px;
-      }
+    &__link {
+      line-height: 44px;
+    }
+
+    &__block_gradient {
+      width: 100%;
+      line-height: 35px;
     }
   }
 
-  .form-registration__login {
+  &__login {
     display: flex;
     align-items: center;
     justify-content: space-between;
