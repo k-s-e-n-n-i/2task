@@ -97,3 +97,30 @@
     }
   }
 }
+
+@media (max-width: 380px) {
+  .form-search-num {
+    width: 100%;
+    padding: 20px;
+
+    .dropdown-dates {
+      &__dates {
+        flex-wrap: wrap;
+
+        .dropdown-block {
+          width: 100%;
+
+          .dropdown-block__dropdown_date {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .btn {
+      &__block_gradient_pay {
+        width: 100%;
+      }
+    }
+  }
+}
