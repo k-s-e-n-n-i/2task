@@ -46,8 +46,6 @@ $(function() {
     )
   );
 
-  //------------------------------------------------------------------------------------
-
   $('.dropdown-block .calendar').pignoseCalendar(
     $.extend(
       mainOptions,
@@ -72,11 +70,7 @@ $(function() {
     )
   );
 
-  //------------------------------------------------------------------------------------
-
   $('.ui-kit-cards__calendar-block .calendar').pignoseCalendar(mainOptions);
-
-  //------------------------------------------------------------------------------------
 
   function activeUnits (thisClick){
     let calendar = thisClick.closest('.pignose-calendar-body');
@@ -91,8 +85,6 @@ $(function() {
       calendar.find('.active-second').removeClass('active-second');
     }
   }
-
-  //------------------------------------------------------------------------------------
 
   $('.dropdown-block[name=date] .dropdown-block__dropdown').on('click', handleDateDropdownClick);
   

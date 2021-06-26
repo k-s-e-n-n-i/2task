@@ -47,7 +47,7 @@ export class View {
         break;
       }
       default: {
-        posLeft = (this.model.getWidth() / (this.max - this.min)) * (this.minStart - this.min); //если мин не 0
+        posLeft = (this.model.getWidth() / (this.max - this.min)) * (this.minStart - this.min); // если мин не 0
         this.model.rangeLeft.style.left = posLeft + 'px';
         this.model.range.style.transform = 'translateX(' + posLeft + 'px)';
         this.model.range.style.left = posLeft + 'px';
@@ -187,7 +187,7 @@ export class View {
             break;
           }
           default: {
-            //interval
+            // interval
             this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.minStart);
             this.model.labelMin.style.opacity = 1;
             this.model.labelDash.style.opacity = 1;

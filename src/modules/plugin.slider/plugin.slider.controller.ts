@@ -54,7 +54,7 @@ export class Controller {
     let startPos: number = parseInt(range.style.left),
       widthRange: number = this.model.getWidthRange();
     switch (
-      side //чтобы сверху был ползунок, который перемещали последним (если друг на друга наедут)
+      side // чтобы сверху был ползунок, который перемещали последним (если друг на друга наедут)
     ) {
       case 'left': {
         this.model.rangeLeft.style.zindex = 15;
@@ -145,8 +145,8 @@ export class Controller {
       if (side == 'left') {
         if (this.model.getPosRangeRight() >= pos && this.type != 'from0to') {
           price = calcValue(pos, this);
-          step = startPos - pos; //длина перемещения левого указателя
-          this.model.rangeLeft.style.left = pos + 'px'; //позиция указателей
+          step = startPos - pos;
+          this.model.rangeLeft.style.left = pos + 'px';
           this.model.range.style.transform = 'translate(' + pos + 'px, 0px)';
         } else {
           price = this.maxStart;
@@ -311,12 +311,12 @@ export class Controller {
   }
   masStepsForMoving(): number[] {
     let qtyDivision: number = (this.max - this.min) / this.step,
-      widthOneDivision: number = this.model.getWidth() / (this.max - this.min), //одно деление
-      widthStep: number = widthOneDivision * this.step, //длина шага
+      widthOneDivision: number = this.model.getWidth() / (this.max - this.min),
+      widthStep: number = widthOneDivision * this.step,
       masScale: number[] = [];
 
     for (let i = 0; i <= qtyDivision; i++) {
-      masScale[i] = widthStep * i; //parseInt(w*i); //без parseInt, чтобы точность стоимости была выше
+      masScale[i] = widthStep * i; // parseInt(w*i); // без parseInt, чтобы точность стоимости была выше
     }
 
     return masScale;
