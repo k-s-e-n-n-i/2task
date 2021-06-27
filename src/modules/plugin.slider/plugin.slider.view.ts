@@ -60,14 +60,6 @@ export class View {
     switch (this.type) {
       case 'interval':
         break;
-        this.model.rangeLeft.style.opacity = 1;
-        this.model.rangeLeft.style.transform = 'translate(' + this.model.getPosRangeLeft() + 'px, 0px)';
-        this.model.range.style.opacity = 1;
-        this.model.range.style.transform = 'translate(' + this.model.getPosRangeLeft() + 'px, 0px)';
-        this.model.range.style.width = this.model.getPosRangeRight() - this.model.getPosRangeLeft();
-        this.model.labelMin.style.opacity = 1;
-        this.model.labelDash.style.opacity = 1;
-        break;
       case 'from0to': {
         this.model.rangeLeft.style.opacity = 0;
         this.model.range.style.transform = 'translate(' + -5 + 'px, 0px)';
