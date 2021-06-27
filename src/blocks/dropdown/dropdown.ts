@@ -96,14 +96,14 @@ $(function () {
       .removeClass('dropdown-block__btns_flex-end');
   }
 
-  function handleDropdownOkClick() {
+  function handleDropdownOkClick(event: any) {
     event.preventDefault();
     $(this).closest('.dropdown-block').find('.dropdown-block__dropdown').trigger('click');
 
     outputInDropdown($(this).closest('.dropdown-block'));
   }
 
-  function handleDropdownCleanClick() {
+  function handleDropdownCleanClick(event: any) {
     event.preventDefault();
     let items = $(this).closest('.dropdown-block__dropdown-items');
     items.find('.dropdown-block__block-qty').find('span').html('0');
