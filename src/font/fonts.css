@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: local('montserrat bold'), local('montserrat-bold'),
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
     url('./montserrat/montserrat-bold.woff2') format('woff2'),
     url('./montserrat/montserrat-bold.woff') format('woff'),
     url('./montserrat/montserrat-bold.ttf') format('truetype');
@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: local('montserrat'), local('montserrat regular'), local('montserrat-regular'),
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
     url('./montserrat/montserrat-regular.woff2') format('woff2'),
     url('./montserrat/montserrat-regular.woff') format('woff'),
     url('./montserrat/montserrat-regular.ttf') format('truetype');
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: local('montserrat medium'), local('montserrat-medium'),
+  src: local('Montserrat Medium'), local('Montserrat-Medium'),
     url('./montserrat/montserrat-medium.woff2') format('woff2'),
     url('./montserrat/montserrat-medium.woff') format('woff'),
     url('./montserrat/montserrat-medium.ttf') format('truetype');
@@ -35,7 +35,7 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: local('montserrat semi bold'), local('montserrat-semi-bold'),
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
     url('./montserrat/montserrat-semi-bold.woff2') format('woff2'),
     url('./montserrat/montserrat-semi-bold.woff') format('woff'),
     url('./montserrat/montserrat-semi-bold.ttf') format('truetype');
