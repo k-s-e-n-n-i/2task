@@ -9,7 +9,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 
-  .chart__qty {
+  &__qty {
     font-size: 25px;
     font-weight: 700;
     position: absolute;
@@ -17,7 +17,7 @@
     top: 33%;
   }
 
-  .chart__text {
+  &__text {
     font-weight: 600;
     position: absolute;
     left: 36%;
@@ -32,7 +32,7 @@
   margin-top: 20px;
 }
 
-.chart__legend {
+.chart-legend {
   position: absolute;
   left: 151px;
   top: 30px;
