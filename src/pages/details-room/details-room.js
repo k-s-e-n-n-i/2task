@@ -12,6 +12,7 @@ import '../../blocks/list-block/list-block.scss';
 import '../../blocks/topic-label/topic-label.scss';
 import '../../blocks/chart/chart.scss';
 import '../../blocks/chart/chart.js';
+import '../../blocks/footer-menu/footer-menu.scss';
 
 import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';

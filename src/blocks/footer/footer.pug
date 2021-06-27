@@ -1,16 +1,17 @@
 include ~@Blocks/btn/btn.pug
 include ~@Blocks/input-text/input-text.pug
+include ~@Blocks/footer-menu/footer-menu.pug
 
 
 mixin footer
-  div.footer
+  footer.footer
     div.footer__block-menu
       div.footer__content-container
         div.footer__logo-block
           img.footer__logo(src=require("@Blocks/footer/logo.svg").default alt="logo")
           p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
-        +footer__menu(
+        +footerMenu(
           {
             links : ["Навигация","О нас","Новости","Служба поддержки","Услуги"]
           },
@@ -50,13 +51,3 @@ mixin footer
           span.footer__soc-network
             a(href="#")
               img.footer__soc-network-instagram(src=require("@Blocks/footer/instagram.svg").default alt="instagram")
-
-
-mixin footer__menu(...items)
-  ul.footer__bottom-menu
-    each item in items
-      li.footer__menu-column
-        ul.footer__menu-list
-          each link in item.links
-            li(class="footer__menu-li")
-              a= link

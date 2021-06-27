@@ -1,0 +1,8 @@
+mixin footerMenu(...items)
+  ul.footer-menu__bottom-menu
+    each item in items
+      li.footer-menu__menu-column
+        ul.footer-menu__menu-list
+          each link in item.links
+            li(class="footer-menu__menu-li")
+              a= link

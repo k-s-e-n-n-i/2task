@@ -7,6 +7,7 @@ import '../../blocks/radiogroup/radiogroup.scss';
 import '../../blocks/toggle-block/toggle-block.scss';
 import '../../blocks/toggle-block/toggle-block.js';
 import '../../blocks/topic-label/topic-label.scss';
+import '../../blocks/footer-menu/footer-menu.scss';
 
 import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';

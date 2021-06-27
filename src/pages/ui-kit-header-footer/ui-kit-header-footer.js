@@ -1,5 +1,6 @@
 /*blocks*/
 import '../../blocks/btn/btn.scss';
+import '../../blocks/footer-menu/footer-menu.scss';
 import '../../blocks/footer/footer.scss';
 import '../../blocks/footer-simple/footer-simple.scss';
 import '../../blocks/header/header.scss';

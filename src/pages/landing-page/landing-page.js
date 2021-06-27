@@ -5,6 +5,7 @@ import '../../blocks/dropdown/dropdown.ts';
 import '../../blocks/input-text/input-text.scss';
 import '../../blocks/link/link.scss';
 import '../../blocks/topic-label/topic-label.scss';
+import '../../blocks/footer-menu/footer-menu.scss';
 
 import '../../blocks/calendar/calendar.scss';
 import '../../blocks/calendar/calendar.js';
