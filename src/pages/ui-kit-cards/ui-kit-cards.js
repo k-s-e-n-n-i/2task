@@ -2,9 +2,6 @@
 import '../../blocks/btn/btn.scss';
 import '../../blocks/dropdown/dropdown.scss';
 import '../../blocks/dropdown/dropdown.ts';
-import '../../blocks/footer/footer.scss';
-import '../../blocks/header/header.scss';
-import '../../blocks/header/header.ts';
 import '../../blocks/input-text/input-text.scss';
 import '../../blocks/input-text/input-text.js';
 import '../../blocks/link/link.scss';
