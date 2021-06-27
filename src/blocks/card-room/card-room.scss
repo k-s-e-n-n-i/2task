@@ -6,7 +6,7 @@
   border-radius: 4px;
   margin: 12px 2.5px 9px 7.4px;
 
-  .card-room__image-block {
+  &__image-block {
     width: 270px;
     height: 150px;
     position: relative;
@@ -16,237 +16,237 @@
         display: flex;
       }
     }
+  }
 
-    .card-room__image {
-      width: 100%;
-      height: 100%;
-      border-radius: 4px 4px 0 0;
-      background-size: cover;
-      position: absolute;
-      display: none;
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+    background-size: cover;
+    position: absolute;
+    display: none;
 
-      &.card-room__image_active {
-        display: block;
-      }
+    &.card-room__image_active {
+      display: block;
+    }
 
-      &:hover {
-        + .card-room__arrows {
-          display: flex;
-        }
-      }
-
-      &.images1 {
-        background-image: url('img/image1.png');
-      }
-      &.images2 {
-        background-image: url('img/image2.png');
-      }
-      &.images3 {
-        background-image: url('img/image3.png');
-      }
-      &.images4 {
-        background-image: url('img/image4.png');
-      }
-      &.images5 {
-        background-image: url('img/image5.png');
-      }
-      &.images6 {
-        background-image: url('img/image6.png');
-      }
-      &.images7 {
-        background-image: url('img/image7.png');
-      }
-      &.images8 {
-        background-image: url('img/image8.png');
-      }
-      &.images9 {
-        background-image: url('img/image9.png');
-      }
-      &.images10 {
-        background-image: url('img/image10.png');
-      }
-      &.images11 {
-        background-image: url('img/image11.png');
-      }
-      &.images12 {
-        background-image: url('img/image12.png');
+    &:hover {
+      + .card-room__arrows {
+        display: flex;
       }
     }
 
-    .card-room__arrows {
-      display: none;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      position: absolute;
-
-      .card-room__arrow-left {
-        width: 42px;
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.5) 0%,
-          rgba(0, 0, 0, 0) 99.99%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        border-radius: 4px 0 0 0;
-
-        &:after {
-          content: '';
-          width: 24px;
-          height: 24px;
-          background-image: url('@Blocks/card-room/expand-more.svg');
-          background-repeat: no-repeat;
-          position: absolute;
-          top: 38%;
-          cursor: pointer;
-          margin: auto 0;
-          transform: rotate(180deg);
-        }
-      }
-
-      .card-room__arrow-right {
-        width: 42px;
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.5) 0%,
-          rgba(0, 0, 0, 0) 99.99%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        transform: rotate(180deg);
-        border-radius: 0 0 0 4px;
-
-        &:after {
-          content: '';
-          width: 24px;
-          height: 24px;
-          background-image: url('@Blocks/card-room/expand-more.svg');
-          background-repeat: no-repeat;
-          position: absolute;
-          top: 38%;
-          right: 15;
-          cursor: pointer;
-          margin: auto 0;
-          transform: rotate(180deg);
-        }
-      }
+    &.images1 {
+      background-image: url('img/image1.png');
     }
-
-    .card-room__slider-pagination {
-      position: absolute;
-      bottom: 14px;
-      right: 14px;
-      display: flex;
-      flex-wrap: nowrap;
-
-      .card-room__slider-pagination-item {
-        width: 7.5px;
-        height: 7.5px;
-        margin: 0 2px 0 1px;
-        border-radius: 50%;
-        border: 1px solid #fff;
-        cursor: pointer;
-        box-sizing: border-box;
-        box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
-
-        &.card-room__slider-pagination-item_active {
-          background: #fff;
-        }
-      }
+    &.images2 {
+      background-image: url('img/image2.png');
+    }
+    &.images3 {
+      background-image: url('img/image3.png');
+    }
+    &.images4 {
+      background-image: url('img/image4.png');
+    }
+    &.images5 {
+      background-image: url('img/image5.png');
+    }
+    &.images6 {
+      background-image: url('img/image6.png');
+    }
+    &.images7 {
+      background-image: url('img/image7.png');
+    }
+    &.images8 {
+      background-image: url('img/image8.png');
+    }
+    &.images9 {
+      background-image: url('img/image9.png');
+    }
+    &.images10 {
+      background-image: url('img/image10.png');
+    }
+    &.images11 {
+      background-image: url('img/image11.png');
+    }
+    &.images12 {
+      background-image: url('img/image12.png');
     }
   }
 
-  .card-room__info-room {
+  &__arrows {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+  }
+
+  &__arrow-left {
+    width: 42px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 99.99%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    border-radius: 4px 0 0 0;
+
+    &:after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url('@Blocks/card-room/expand-more.svg');
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 38%;
+      cursor: pointer;
+      margin: auto 0;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__arrow-right {
+    width: 42px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 99.99%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(180deg);
+    border-radius: 0 0 0 4px;
+
+    &:after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url('@Blocks/card-room/expand-more.svg');
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 38%;
+      right: 15;
+      cursor: pointer;
+      margin: auto 0;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__slider-pagination {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__slider-pagination-item {
+    width: 7.5px;
+    height: 7.5px;
+    margin: 0 2px 0 1px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+
+    &.card-room__slider-pagination-item_active {
+      background: #fff;
+    }
+  }
+
+  &__info-room {
     margin: 20px;
+  }
 
-    .card-room__number-price {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      position: relative;
-      height: 27px;
+  &__number-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    height: 27px;
 
-      &.card-room__number-price_bottom-border {
-        padding-bottom: 8px;
-        border: 1px solid rgba(31, 32, 65, 0.1);
-        border-width: 0 0 1px 0;
-        margin: 0 0 6px 0;
+    &.card-room__number-price_bottom-border {
+      padding-bottom: 8px;
+      border: 1px solid rgba(31, 32, 65, 0.1);
+      border-width: 0 0 1px 0;
+      margin: 0 0 6px 0;
 
-        p {
-          &:nth-child(1) {
-            color: rgba(31, 32, 65, 1);
-            letter-spacing: -0.5px;
+      p {
+        &:nth-child(1) {
+          color: rgba(31, 32, 65, 1);
+          letter-spacing: -0.5px;
 
-            span {
-              &:nth-child(1) {
-                font-size: 14px;
-              }
+          span {
+            &:nth-child(1) {
+              font-size: 14px;
+            }
 
-              &:nth-child(2) {
-                font-size: 20px;
-              }
+            &:nth-child(2) {
+              font-size: 20px;
             }
           }
+        }
 
-          &:nth-child(2) {
-            color: rgba(31, 32, 65, 0.5);
-
-            span {
-              &:nth-child(1),
-              &:nth-child(2) {
-                font-weight: 600;
-                font-size: 14px;
-              }
-
-              &:nth-child(2) {
-                margin-right: 2px;
-              }
-
-              &:nth-child(3) {
-                font-size: 11px;
-              }
-            }
-          }
+        &:nth-child(2) {
+          color: rgba(31, 32, 65, 0.5);
 
           span {
             &:nth-child(1),
             &:nth-child(2) {
-              font-weight: 700;
+              font-weight: 600;
+              font-size: 14px;
+            }
+
+            &:nth-child(2) {
+              margin-right: 2px;
+            }
+
+            &:nth-child(3) {
+              font-size: 11px;
             }
           }
-
-          .link_lux {
-            letter-spacing: 0.4px;
-            font-size: 11.5px;
-          }
         }
-      }
-
-      p {
-        color: rgba(31, 32, 65, 0.5);
-        margin: 0;
 
         span {
-          line-height: 25px;
-          &:nth-child(1) {
-            font-weight: 600;
-            font-size: 14px;
+          &:nth-child(1),
+          &:nth-child(2) {
+            font-weight: 700;
           }
         }
-      }
 
-      p.card-room__price {
-        margin: 3px 0 0 0;
+        .link_lux {
+          letter-spacing: 0.4px;
+          font-size: 11.5px;
+        }
       }
+    }
 
-      p.card-room__review {
-        margin: 1px 0 0 0;
-      }
+    p {
+      color: rgba(31, 32, 65, 0.5);
+      margin: 0;
 
-      .rate-btn {
-        margin: 0;
+      span {
+        line-height: 25px;
+        &:nth-child(1) {
+          font-weight: 600;
+          font-size: 14px;
+        }
       }
+    }
+
+    p.card-room__price {
+      margin: 3px 0 0 0;
+    }
+
+    p.card-room__review {
+      margin: 1px 0 0 0;
+    }
+
+    .rate-btn {
+      margin: 0;
     }
   }
 }
