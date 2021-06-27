@@ -1,6 +1,3 @@
-import * as $ from 'jquery';
-declare let jQuery: any;
-
 $(function () {
   $('.dropdown-block__dropdown').on('click', handleDropwownClick);
 

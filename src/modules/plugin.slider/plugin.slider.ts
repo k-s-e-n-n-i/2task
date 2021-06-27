@@ -1,4 +1,3 @@
-import * as $ from 'jquery';
 import { Model } from '../../modules/plugin.slider/plugin.slider.model';
 import { View } from '../../modules/plugin.slider/plugin.slider.view';
 import { Controller } from '../../modules/plugin.slider/plugin.slider.controller';
@@ -78,11 +77,11 @@ export interface Options {
           controller.applyConfig();
         }
 
-        model.rangeLeft.addEventListener('mousedown', function (e: any) {
-          controller.moveAt(model.rangeLeft, e, 'left');
+        model.rangeLeft.addEventListener('mousedown', function () {
+          controller.moveAt(model.rangeLeft, 'left');
         });
-        model.rangeRight.addEventListener('mousedown', function (e: any) {
-          controller.moveAt(model.rangeRight, e, 'right');
+        model.rangeRight.addEventListener('mousedown', function () {
+          controller.moveAt(model.rangeRight, 'right');
         });
 
         view.drawType();

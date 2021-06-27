@@ -1,19 +1,16 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const devserver = require('./webpack/devserver');
 const pug = require('./webpack/pug');
 const html = require('./webpack/html');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
-
 const images = require('./webpack/images');
 const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
-const { plugins } = require('chart.js');
 
 const paths = {
   source: path.join(__dirname, 'src'),

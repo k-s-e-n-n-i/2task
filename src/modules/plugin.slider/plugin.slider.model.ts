@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { Options } from '../../modules/plugin.slider/plugin.slider';
 
 export class Model {

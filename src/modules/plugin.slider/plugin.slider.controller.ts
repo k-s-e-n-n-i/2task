@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { Options } from '../../modules/plugin.slider/plugin.slider';
 
 interface Coords {
@@ -48,7 +47,7 @@ export class Controller {
     return 'y';
   }
 
-  moveAt(range: any, e: any, side: string): void {
+  moveAt(range: any, side: string): void {
     document.body.classList.add('moving-slider');
 
     let startPos: number = parseInt(range.style.left),
@@ -71,7 +70,7 @@ export class Controller {
     let thisClick: any = this.thisSlider,
       contr = this;
 
-    thisClick.onmousemove = function (e: any) {
+    thisClick.onmousemove = function () {
       document.onmousemove = function (e: any) {
         let pos: number, tempPos: number, masScale: number[];
         switch (contr.defineOrientation(contr.orientation)) {
@@ -114,7 +113,7 @@ export class Controller {
       };
     };
 
-    document.onmouseup = function (e: any) {
+    document.onmouseup = function () {
       thisClick.onmousemove = null;
       thisClick.onmouseup = null;
       document.onmousemove = null;
@@ -326,7 +325,7 @@ export class Controller {
     let thisClick: any = this.model.checkboxSettings,
       contr: any = this;
 
-    thisClick.onclick = function (e: any) {
+    thisClick.onclick = function () {
       if (thisClick.checked == true) {
         contr.model.settingsBlock.style.display = 'block';
       } else {

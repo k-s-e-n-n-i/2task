@@ -1,6 +1,3 @@
-import * as $ from 'jquery';
-declare let jQuery: any;
-
 $(function () {
   $('.header__menu-mobile').on('click', handleMenuMobileClick);
 
