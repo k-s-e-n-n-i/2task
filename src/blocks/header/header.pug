@@ -1,13 +1,13 @@
 include ~@Blocks/btn/btn.pug
 
 mixin header(obj,...items)
-  div.header
+  header.header
     div.header__content-container
+      a.header__logo-link(href="./landing-page.html")
+        img.header__logo(src=require("@Blocks/header/logo.svg").default alt="logo")
+      div.header__menu-mobile
       div.header__links
-        a(href="./landing-page.html")
-          img.header__logo(src=require("@Blocks/header/logo.svg").default alt="logo")
-        div.header__menu-mobile
-        div.header__block-menu.header__block-menu_hidden
+        nav.header__block-menu.header__block-menu_hidden
           ul.header__menu
             each item in items
               if item.state == "active"
@@ -25,26 +25,26 @@ mixin header(obj,...items)
                     each sbm in item.submenu
                       li.header__submenu-li
                         a.header__submenu-a(href= sbm.link)= sbm.menuItem
-          div.header__block-login
-            if obj.authorization == false
-              +btn(
-                {
-                  text : "Войти",
-                  link : "./sign-in.html",
-                  arrow : false,
-                  border: true,
-                  hover: false
-                }
-              )
-              +btn(
-                {
-                  text : "Зарегистрироваться",
-                  link : "./registration.html",
-                  arrow : false,
-                  border: false,
-                  hover: false
-                }
-              )
-            else
-              div.header__block-login-hr
-              p= obj.name
+        div.header__block-login
+          if obj.authorization == false
+            +btn(
+              {
+                text : "Войти",
+                link : "./sign-in.html",
+                arrow : false,
+                border: true,
+                hover: false
+              }
+            )
+            +btn(
+              {
+                text : "Зарегистрироваться",
+                link : "./registration.html",
+                arrow : false,
+                border: false,
+                hover: false
+              }
+            )
+          else
+            div.header__block-login-hr
+            p= obj.name

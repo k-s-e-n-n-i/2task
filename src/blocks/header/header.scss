@@ -6,25 +6,22 @@
   height: 70px;
 
   &__content-container {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(31, 32, 65, 0.5);
     flex-grow: 1;
     max-width: 100%;
     min-width: 320px;
     margin: 0 9.7%;
   }
 
-  &__links {
-    display: flex;
-    justify-content: space-between;
-    color: rgba(31, 32, 65, 0.5);
+  &__logo-link {
+    height: 70px;
+  }
 
-    a {
-      height: 70px;
-
-      .header__logo {
-        height: 70px;
-        width: 106px;
-      }
-    }
+  &__logo {
+    height: 70px;
+    width: 106px;
   }
 
   &__menu-mobile {
@@ -38,6 +35,10 @@
     &.header__menu-mobile_cross {
       background-image: url('./cross.svg');
     }
+  }
+
+  &__links {
+    display: flex;
   }
 
   &__block-menu {
