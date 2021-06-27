@@ -22,14 +22,14 @@ mixin btn(obj)
 
   if obj.border == true
     div.btn.btn_border
-      div(class='btn__block btn__block_border '+ arrow + hover)
+      button(type = "button" class="btn__block btn__block_border " + hover)
         a.btn__link(href=obj.link)= obj.text
         if obj.arrow == true
           div.btn__arrow.btn__arrow_white
       div(class='btn__border ' + hover)
   else
     div.btn
-      div(class='btn__block btn__block_gradient '+ arrow + hover)
+      button(type = "button" class="btn__block btn__block_gradient " + arrow + hover)
         a.btn__link(href=obj.link)= obj.text
         if obj.arrow == true
           div.btn__arrow.btn__arrow_white
