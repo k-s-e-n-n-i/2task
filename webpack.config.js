@@ -15,12 +15,12 @@ const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
 const { plugins } = require('chart.js');
 
-const PATHS = {
+const paths = {
   source: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'docs'),
 };
 
-const PLUGINSdate = [
+const pluginsDate = [
   new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
@@ -29,16 +29,16 @@ const PLUGINSdate = [
     title: 'Webpack app',
     filename: 'index.html',
     chunks: ['index'],
-    template: PATHS.source + '/index.pug',
+    template: paths.source + '/index.pug',
   }),
 ];
 
-const ENTRYdate = {
-  'index.js': PATHS.source + '/index.js',
-  'start-page.js': PATHS.source + '/pages/start-page/start-page.js',
+const entryDate = {
+  'index.js': paths.source + '/index.js',
+  'start-page.js': paths.source + '/pages/start-page/start-page.js',
 };
 
-const PAGES = [
+const pages = [
   'landing-page',
   'registration',
   'sign-in',
@@ -50,19 +50,19 @@ const PAGES = [
   'ui-kit-color-type',
 ];
 
-PAGES.map((event) => {
-  return PLUGINSdate.push(
+pages.map((event) => {
+  return pluginsDate.push(
     new HtmlWebpackPlugin({
       filename: `${event}.html`,
       chunks: [`${event}`],
-      template: PATHS.source + `/pages/${event}/${event}.pug`,
+      template: paths.source + `/pages/${event}/${event}.pug`,
     })
   );
 });
 
-PAGES.map((event) => {
-  return Object.assign(ENTRYdate, {
-    [event + '.js']: PATHS.source + `/pages/${event}/${event}.js`,
+pages.map((event) => {
+  return Object.assign(entryDate, {
+    [event + '.js']: paths.source + `/pages/${event}/${event}.js`,
   });
 });
 
@@ -70,9 +70,9 @@ const common = merge([
   {
     mode: 'production',
     devtool: 'inline-source-map',
-    entry: ENTRYdate,
+    entry: entryDate,
     output: {
-      path: PATHS.build,
+      path: paths.build,
       filename: '[name]',
     },
     resolve: {
@@ -82,7 +82,7 @@ const common = merge([
         '@': path.resolve(__dirname, 'src/'),
       },
     },
-    plugins: PLUGINSdate,
+    plugins: pluginsDate,
   },
 
   pug(),
