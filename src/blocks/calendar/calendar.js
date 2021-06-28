@@ -111,5 +111,20 @@ $(function () {
       }
     }
   }
+
+  
+  $('.datepicker--buttons').append('<span class="datepicker--button-ok">Применить</span>');
+
+  $('.datepicker--button-ok').on('click', handleDateBtnOkClick);
+  
+  function handleDateBtnOkClick() {
+    if ($(this).closest('.dropdown-dates').length != 0){
+      $(this).closest('.dropdown-dates').find('.dropdown-block__dropdown:first').trigger('click');
+    }else{
+      if ($(this).closest('.dropdown-block').length != 0){
+        $(this).closest('.dropdown-block').find('.dropdown-block__dropdown').trigger('click');
+      }
+    }
+  }
 });
 

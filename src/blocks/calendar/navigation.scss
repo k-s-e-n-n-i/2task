@@ -108,7 +108,8 @@
   padding: 0 20px 10px 19px;
 }
 
-.datepicker--button {
+.datepicker--button,
+.datepicker--button-ok {
   cursor: pointer;
   flex: 1;
   display: inline-flex;
@@ -119,4 +120,8 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
+}
+
+.datepicker--button-ok {
+  margin-left: 115px;
 }
