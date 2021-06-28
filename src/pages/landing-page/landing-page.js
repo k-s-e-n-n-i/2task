@@ -7,7 +7,6 @@ import '../../blocks/link/link.scss';
 import '../../blocks/topic-label/topic-label.scss';
 import '../../blocks/footer-menu/footer-menu.scss';
 
-import '../../blocks/calendar/calendar.scss';
 import '../../blocks/calendar/calendar.js';
 import '../../blocks/form-search-num/form-search-num.scss';
 import '../../blocks/footer/footer.scss';

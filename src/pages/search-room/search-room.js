@@ -14,7 +14,6 @@ import '../../blocks/rate-btn/rate-btn.js';
 import '../../blocks/topic-label/topic-label.scss';
 import '../../blocks/footer-menu/footer-menu.scss';
 
-import '../../blocks/calendar/calendar.scss';
 import '../../blocks/calendar/calendar.js';
 import '../../blocks/card-room/card-room.scss';
 import '../../blocks/card-room/card-room.js';

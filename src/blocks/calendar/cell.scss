@@ -187,6 +187,16 @@
 .datepicker--cell-month {
   width: 33.33%;
   height: 25%;
+
+  &.-range-from-.-selected-:before,
+  &.-range-from-.-focus-:before {
+    border-radius: 10px 0 0 10px;
+  }
+
+  &.-range-to-.-selected-:before,
+  &.-range-to-.-focus-:before {
+    border-radius: 0 10px 10px 0;
+  }
 }
 
 //  Years
