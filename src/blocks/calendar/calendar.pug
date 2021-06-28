@@ -1,9 +1,5 @@
-include ~@Blocks/link/link.pug
-
 mixin calendar(obj)
   if obj.state == "open"
-    div.calendar-block
-      div.calendar
+    div.datepicker-here
   else
-    div.calendar-block.calendar-block_hide
-      div.calendar
+    div.datepicker-here.datepicker-here_hide

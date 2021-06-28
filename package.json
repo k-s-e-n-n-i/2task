@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@types/jquery": "^3.5.5",
+    "air-datepicker": "^2.2.3",
     "chart.js": "2.9.4",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "cleave.js": "^1.6.0",

@@ -1,0 +1,212 @@
+@import 'datepicker-config';
+
+/* -------------------------------------------------
+    Datepicker cells
+   ------------------------------------------------- */
+
+.datepicker--cells {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding-top: 0;
+  margin: 0 18px 12px 21px;
+  overflow: hidden;
+}
+
+.datepicker--cell {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: $datepickerDayCellSize;
+  z-index: 1;
+
+  height: 40px;
+  width: 40px;
+  float: left;
+  color: rgba(31, 32, 65, 0.5);
+
+  &.-focus- {
+    background: linear-gradient(180deg, #eee6ff 0%, #e6eafe 100%);
+  }
+
+  &.-current- {
+    color: #fff;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+    &.-focus- {
+      color: #fff;
+    }
+
+    &.-in-range- {
+    }
+
+    &.-other-month- {
+      color: rgba(31, 32, 65, 1);
+    }
+  }
+
+  &.-in-range- {
+    background: linear-gradient(180deg, #eee6ff 0%, #e6eafe 100%);
+    color: rgba(31, 32, 65, 0.5);
+    border-radius: 0;
+
+    &.-focus- {
+    }
+  }
+
+  &.-disabled- {
+    cursor: default;
+
+    &.-focus- {
+    }
+
+    &.-in-range- {
+    }
+
+    &.-current- {
+      &.-focus- {
+      }
+    }
+  }
+
+  &.-range-from- {
+    border-radius: 50% 0 0 50%;
+    color: #fff;
+    background: linear-gradient(180deg, #eee6ff 0%, #e6eafe 100%);
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      position: absolute;
+      z-index: -1;
+    }
+  }
+  &.-range-to- {
+    border-radius: 0 50% 50% 0;
+    color: #fff;
+    background: linear-gradient(180deg, #eee6ff 0%, #e6eafe 100%);
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  &.-range-from-.-range-to- {
+    color: #fff;
+    background: linear-gradient(180deg, #eee6ff 0%, #e6eafe 100%);
+  }
+
+  &.-selected- {
+    color: #fff;
+    border: none;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: linear-gradient(180deg, #eee6ff 0%, #e6eafe 100%);
+
+    &.-current- {
+      color: #fff;
+    }
+
+    &.-focus- {
+    }
+  }
+
+  &:empty {
+    cursor: default;
+  }
+}
+
+//  Day names
+// -------------------------------------------------
+
+.datepicker--days-names {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  font-weight: 500;
+}
+
+.datepicker--day-name {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+
+  font-size: 11px;
+  width: 38px;
+  height: 40px;
+  color: #bc9cff;
+  text-transform: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//  Day cell
+// -------------------------------------------------
+
+.datepicker--cell-day {
+  width: 40px;
+  border-radius: 50%;
+
+  &.-other-month- {
+    @extend %otherMonth;
+    color: rgba(31, 32, 65, 0.25);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+//  Months
+// -------------------------------------------------
+
+.datepicker--months {
+}
+
+.datepicker--cells-months {
+  height: $datepickerMinBodyHeight;
+}
+
+//  Month cell
+// -------------------------
+
+.datepicker--cell-month {
+  width: 33.33%;
+  height: 25%;
+}
+
+//  Years
+// -------------------------------------------------
+
+.datepicker--years {
+  height: $datepickerMinBodyHeight;
+}
+
+.datepicker--cells-years {
+  height: $datepickerMinBodyHeight;
+}
+//  Year cell
+// -------------------------
+
+.datepicker--cell-year {
+  width: 100% / $datepickerYearsPerRow;
+  height: 33.33%;
+
+  &.-other-decade- {
+    @extend %otherMonth;
+  }
+}

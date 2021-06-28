@@ -145,5 +145,56 @@ $(function() {
       }
     }    
   }
-
 });
+
+import 'air-datepicker';
+import './datepicker.scss';
+import './datepicker-config.scss';
+import './cell.scss';
+import './navigation.scss';
+
+$(function () {
+  const mainOptions = {
+    range: true,
+    clearButton: true,
+    todayButtonL: true,
+    prevHtml: '<span class="datepicker--nav-action-prev"></span>',
+    nextHtml: '<span class="datepicker--nav-action-next"></span>',
+    button: '<span class="datepicker--button" data-action="#{action}">#{label}</span><span class="datepicker--button-ok">Применить</span>',
+    navTitles: {
+      days: 'MM <i>yyyy</i>'
+    },
+    showEvent: 'focus'
+  }
+    
+  let datepicker = $('.dropdown-block .datepicker-here').datepicker(mainOptions);
+  let datepickerDates = $('.dropdown-dates .datepicker-here').datepicker(mainOptions);
+
+  $('.ui-kit-cards__calendar-block .datepicker-here').datepicker(mainOptions);
+
+  $('.dropdown-block[name=date] .dropdown-block__dropdown').on('click', handleDateDropdownClick2);
+  
+  function handleDateDropdownClick2() {
+    const block_calendar, dpic;
+
+    if ($(this).closest('.dropdown-dates').length != 0){
+      block_calendar = $(this).closest('.dropdown-dates').find('.datepicker-here');
+      dpic = datepickerDates;
+    }else{
+      if ($(this).closest('.dropdown-block').length != 0){
+        block_calendar = $(this).closest('.dropdown-block').find('.datepicker-here');
+        dpic = datepicker;
+      }
+    }
+
+    if (block_calendar.hasClass('datepicker-here_hide')){
+      block_calendar.removeClass('datepicker-here_hide').addClass('datepicker-here_open');
+      dpic.show();
+    }else{
+      block_calendar.addClass('datepicker-here_hide').removeClass('datepicker-here_open');
+      dpic.hide();
+    }
+    
+  }
+});
+
