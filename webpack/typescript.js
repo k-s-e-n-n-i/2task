@@ -1,4 +1,4 @@
-module.exports = function(paths) {
+module.exports = function () {
   return {
     module: {
       rules: [
@@ -10,7 +10,7 @@ module.exports = function(paths) {
       ],
     },
     resolve: {
-      extensions: [ '.tsx', '.ts', '.js' ],
+      extensions: ['.tsx', '.ts', '.js'],
     },
   };
 };
