@@ -11,32 +11,34 @@ mixin footer
           img.footer__logo(src=require("@Blocks/footer/logo.svg").default alt="logo")
           p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
-        +footerMenu(
-          {
-            links : ["Навигация","О нас","Новости","Служба поддержки","Услуги"]
-          },
-          {
-            links : ["О нас","О сервисе","Наша команда","Вакансии","Инвесторы"]
-          },
-          {
-            links : ["Служба поддержки","Соглашения","Сообщества","Связь с нами"]
-          }
-        )
-
-        div.footer__subscription
-          p.footer__block-topic Подписка
-          p Получайте специальные предложения и новости сервиса
-          +inputText(
+        div.footer__footer-menu
+          +footerMenu(
             {
-              topic : "",
-              label : "",
-              placeholder : "Email",
-              inputText : "",
-              id : "inputFooter",
-              type : "subscription",
-              name : ""
+              links : ["Навигация","О нас","Новости","Служба поддержки","Услуги"]
+            },
+            {
+              links : ["О нас","О сервисе","Наша команда","Вакансии","Инвесторы"]
+            },
+            {
+              links : ["Служба поддержки","Соглашения","Сообщества","Связь с нами"]
             }
           )
+
+        div.footer__subscription
+          p.footer__subscription-topic Подписка
+          p.footer__subscription-text Получайте специальные предложения и новости сервиса
+          div.footer__subscription-input
+            +inputText(
+              {
+                topic : "",
+                label : "",
+                placeholder : "Email",
+                inputText : "",
+                id : "inputFooter",
+                type : "subscription",
+                name : ""
+              }
+            )
 
     div.footer__copyright-block
       div.footer__copyright-content

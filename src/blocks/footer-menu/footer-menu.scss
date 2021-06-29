@@ -1,11 +1,9 @@
 .footer-menu {
-  &__bottom-menu {
-    display: flex;
-    margin: 0;
-    padding: 0 0 0 45px;
-    font-size: 14px;
-    color: rgba(31, 32, 65, 0.5);
-  }
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.5);
 
   &__menu-column {
     display: block;
