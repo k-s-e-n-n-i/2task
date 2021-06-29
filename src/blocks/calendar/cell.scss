@@ -219,4 +219,14 @@
   &.-other-decade- {
     @extend %otherMonth;
   }
+
+  &.-range-from-.-selected-:before,
+  &.-range-from-.-focus-:before {
+    border-radius: 10px 0 0 10px;
+  }
+
+  &.-range-to-.-selected-:before,
+  &.-range-to-.-focus-:before {
+    border-radius: 0 10px 10px 0;
+  }
 }
