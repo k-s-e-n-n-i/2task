@@ -27,24 +27,26 @@ mixin header(obj,...items)
                         a.header__submenu-a(href= sbm.link)= sbm.menuItem
         div.header__block-login
           if obj.authorization == false
-            +btn(
-              {
-                text : "Войти",
-                link : "./sign-in.html",
-                arrow : false,
-                border: true,
-                hover: false
-              }
-            )
-            +btn(
-              {
-                text : "Зарегистрироваться",
-                link : "./registration.html",
-                arrow : false,
-                border: false,
-                hover: false
-              }
-            )
+            div.header__btn.header__btn_border
+              +btn(
+                {
+                  text : "Войти",
+                  link : "./sign-in.html",
+                  arrow : false,
+                  border: true,
+                  hover: false
+                }
+              )
+            div.header__btn.header__btn_gradient
+              +btn(
+                {
+                  text : "Зарегистрироваться",
+                  link : "./registration.html",
+                  arrow : false,
+                  border: false,
+                  hover: false
+                }
+              )
           else
             div.header__block-login-hr
             p= obj.name
