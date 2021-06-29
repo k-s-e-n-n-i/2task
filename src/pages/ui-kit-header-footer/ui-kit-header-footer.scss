@@ -6,7 +6,7 @@
   box-sizing: border-box;
   width: 1440px;
 
-  .ui-kit-header-footer__ico-logo {
+  &__ico-logo {
     width: 48px;
     height: 48px;
     position: absolute;
@@ -14,33 +14,9 @@
     top: 30px;
   }
 
-  .header {
+  &__header,
+  &__footer {
     margin-top: 40px;
     margin-bottom: 40px;
-  }
-
-  .footer {
-    margin-top: 40px;
-    margin-bottom: 40px;
-
-    .footer__block-menu {
-      z-index: 200;
-
-      .footer__bottom-menu {
-        padding-top: 88px;
-
-        .footer__logo-block {
-          p {
-            margin: 8px 0;
-          }
-        }
-      }
-    }
-
-    .footer__copyright-content {
-      p {
-        margin: 25px 0 23px 0;
-      }
-    }
   }
 }

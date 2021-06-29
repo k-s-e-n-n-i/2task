@@ -7,125 +7,128 @@ include ~@Blocks/global-head/global-head.pug
 div.ui-kit-header-footer
   a(href="./index.html")
     img.ui-kit-header-footer__ico-logo(src=require("@Pages/ui-kit-header-footer/ico-logo.svg").default alt="logo")
-  +header(
-    {
-      authorization : false,
-      name : "",
-    },
-    {
-      menuItem : "О нас",
-      link : "#",
-      state : "active",
-      type : "main",
-      submenu : false
-    },
-    {
-      menuItem : "Услуги",
-      link : "#",
-      state : "",
-      type : "expand",
-      submenu : [
-        {
-          menuItem : "Услуга №1",
-          link : "#",
-        },
-        {
-          menuItem : "Услуга №2",
-          link : "#",
-        },
-      ]
-    },
-    {
-      menuItem : "Вакансии",
-      link : "#",
-      state : "",
-      type : "main",
-      submenu : []
-    },
-    {
-      menuItem : "Новости",
-      link : "#",
-      state : "",
-      type : "main",
-      submenu : []
-    },
-    {
-      menuItem : "Соглашения",
-      link : "#",
-      state : "",
-      type : "expand",
-      submenu : [
-        {
-          menuItem : "Соглашение №1",
-          link : "#",
-        },
-        {
-          menuItem : "Соглашение №2",
-          link : "#",
-        },
-      ]
-    }
-  )
-  +header(
-    {
-      authorization : true,
-      name : "Юлий Цезарь"
-    },
-    {
-      menuItem : "О нас",
-      link : "#",
-      state : "active",
-      type : "main",
-      submenu : []
-    },
-    {
-      menuItem : "Услуги",
-      link : "#",
-      state : "",
-      type : "expand",
-      submenu : [
-        {
-          menuItem : "Услуга №1",
-          link : "#",
-        },
-        {
-          menuItem : "Услуга №2",
-          link : "#",
-        },
-      ]
-    },
-    {
-      menuItem : "Вакансии",
-      link : "#",
-      state : "",
-      type : "main",
-      submenu : []
-    },
-    {
-      menuItem : "Новости",
-      link : "#",
-      state : "",
-      type : "main",
-      submenu : []
-    },
-    {
-      menuItem : "Соглашения",
-      link : "#",
-      state : "",
-      type : "expand",
-      submenu : [
-        {
-          menuItem : "Соглашение №1",
-          link : "#",
-        },
-        {
-          menuItem : "Соглашение №2",
-          link : "#",
-        },
-      ]
-    }
-  )
-  +footer
+  div.ui-kit-header-footer__header
+    +header(
+      {
+        authorization : false,
+        name : "",
+      },
+      {
+        menuItem : "О нас",
+        link : "#",
+        state : "active",
+        type : "main",
+        submenu : false
+      },
+      {
+        menuItem : "Услуги",
+        link : "#",
+        state : "",
+        type : "expand",
+        submenu : [
+          {
+            menuItem : "Услуга №1",
+            link : "#",
+          },
+          {
+            menuItem : "Услуга №2",
+            link : "#",
+          },
+        ]
+      },
+      {
+        menuItem : "Вакансии",
+        link : "#",
+        state : "",
+        type : "main",
+        submenu : []
+      },
+      {
+        menuItem : "Новости",
+        link : "#",
+        state : "",
+        type : "main",
+        submenu : []
+      },
+      {
+        menuItem : "Соглашения",
+        link : "#",
+        state : "",
+        type : "expand",
+        submenu : [
+          {
+            menuItem : "Соглашение №1",
+            link : "#",
+          },
+          {
+            menuItem : "Соглашение №2",
+            link : "#",
+          },
+        ]
+      }
+    )
+  div.ui-kit-header-footer__header
+    +header(
+      {
+        authorization : true,
+        name : "Юлий Цезарь"
+      },
+      {
+        menuItem : "О нас",
+        link : "#",
+        state : "active",
+        type : "main",
+        submenu : []
+      },
+      {
+        menuItem : "Услуги",
+        link : "#",
+        state : "",
+        type : "expand",
+        submenu : [
+          {
+            menuItem : "Услуга №1",
+            link : "#",
+          },
+          {
+            menuItem : "Услуга №2",
+            link : "#",
+          },
+        ]
+      },
+      {
+        menuItem : "Вакансии",
+        link : "#",
+        state : "",
+        type : "main",
+        submenu : []
+      },
+      {
+        menuItem : "Новости",
+        link : "#",
+        state : "",
+        type : "main",
+        submenu : []
+      },
+      {
+        menuItem : "Соглашения",
+        link : "#",
+        state : "",
+        type : "expand",
+        submenu : [
+          {
+            menuItem : "Соглашение №1",
+            link : "#",
+          },
+          {
+            menuItem : "Соглашение №2",
+            link : "#",
+          },
+        ]
+      }
+    )
+  div.ui-kit-header-footer__footer
+    +footer
   +footerSimple
 
 script(src="./ui-kit-header-footer.js")
