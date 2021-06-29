@@ -6,8 +6,8 @@ mixin header(obj,...items)
       a.header__logo-link(href="./landing-page.html")
         img.header__logo(src=require("@Blocks/header/logo.svg").default alt="logo")
       div.header__menu-mobile
-      div.header__links
-        nav.header__block-menu.header__block-menu_hidden
+      div.header__links.header__links_hidden
+        nav.header__block-menu
           ul.header__menu
             each item in items
               if item.state == "active"
