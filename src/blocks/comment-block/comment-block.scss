@@ -2,7 +2,7 @@
   width: 100%;
   margin: 13px 0 33px 0;
 
-  .comment-block__title {
+  &__title {
     display: flex;
     justify-content: space-between;
     margin: 0;
@@ -17,66 +17,66 @@
     }
   }
 
-  .comment-block__comment {
+  &__comment {
     margin: 23px 0;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    .comment-block__person {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
+  &__person {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
-      .comment-block__photo {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 10px;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        border: 2px solid #ffffff;
-        filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
-      }
+  &__photo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+  }
 
-      .comment-block__name-time {
-        display: flex;
-        flex-direction: column;
-        margin-left: 10px;
+  &__name-time {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
 
-        .comment-block__name {
-          font-weight: 700;
-          margin: 0;
-        }
+    p {
+      font-size: 14px;
+    }
+  }
 
-        .comment-block__time {
-          margin-bottom: 12px;
-          margin: 0;
-        }
+  &__name {
+    font-weight: 700;
+    margin: 0;
+  }
 
-        p {
-          font-size: 14px;
-        }
-      }
+  &__time {
+    margin-bottom: 12px;
+    margin: 0;
+  }
+
+  &__comment-text {
+    display: flex;
+
+    .like {
+      margin: 2px 0 0 3px;
     }
 
-    .comment-block__comment-text {
-      display: flex;
-
-      .like {
-        margin: 2px 0 0 3px;
-      }
-
-      .comment-block__text {
-        margin: 0;
-        margin-left: 15px;
-      }
-
-      p {
-        width: 86.5%;
-        font-size: 14px;
-      }
+    p {
+      width: 86.5%;
+      font-size: 14px;
     }
+  }
+
+  &__text {
+    margin: 0;
+    margin-left: 15px;
   }
 }
