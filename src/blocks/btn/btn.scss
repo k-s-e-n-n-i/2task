@@ -1,7 +1,6 @@
 .btn {
   position: relative;
-  height: 34px;
-  margin: 15px 0 15px 20px;
+  height: 100%;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   border-radius: 22px;
 
@@ -34,14 +33,14 @@
     color: #ffffff;
     font-family: 'Montserrat', Arial, sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 12px;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
-    line-height: 42px;
+    line-height: 16px;
   }
 
   &__arrow {
@@ -75,8 +74,6 @@
 
     .btn__link {
       color: #bc9cff;
-      font-weight: 700;
-      line-height: 40px;
     }
   }
 
