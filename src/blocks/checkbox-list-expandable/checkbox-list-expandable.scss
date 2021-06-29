@@ -1,25 +1,12 @@
 .checkbox-list-expandable {
   margin: 50px 0 17px 0;
 
-  .checkbox-list-expandable__topicBlock {
+  &__topicBlock {
     position: relative;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-
-    .checkbox-list-expandable__expand {
-      width: 12px;
-      height: 10px;
-      position: absolute;
-      bottom: 2px;
-      right: 15px;
-      cursor: pointer;
-
-      &.checkbox-list-expandable__expand_open {
-        transform: rotate(180deg);
-      }
-    }
 
     h3 {
       margin: 0;
@@ -28,15 +15,28 @@
     }
   }
 
+  &__expand {
+    width: 12px;
+    height: 10px;
+    position: absolute;
+    bottom: 2px;
+    right: 15px;
+    cursor: pointer;
+
+    &.checkbox-list-expandable__expand_open {
+      transform: rotate(180deg);
+    }
+  }
+
   .checkbox-list {
-    .checkbox-list__label {
+    &__label {
       &:before {
         left: 0;
         top: 0;
       }
     }
 
-    .checkbox-list__input {
+    &__input {
       &:checked + .checkbox-list__label {
         &:after {
           top: 4px;
