@@ -47,17 +47,18 @@ div.ui-kit-form-elements
         }
       )
 
-    +dropdown(
-      { 
-        name : "guests",
-        topic : "Dropdown",
-        label : "",
-        activeText : "Сколько гостей",
-        state : "close",
-        btnClean : false,
-        btnOk : false
-      }
-    )
+    .ui-kit-form-elements__dropdown
+      +dropdown(
+        { 
+          name : "guests",
+          topic : "Dropdown",
+          label : "",
+          activeText : "Сколько гостей",
+          state : "close",
+          btnClean : false,
+          btnOk : false
+        }
+      )
 
     .ui-kit-form-elements__input-text
       +inputText(
@@ -72,31 +73,33 @@ div.ui-kit-form-elements
         }
       )
 
-    +dropdownDates(
-      { 
-        topic : "date Dropdown",
-        activeText : "ДД.ММ.ГГГГ",
-      },
-      { 
-        topic : "date Dropdown",
-        activeText : "19.08.2019",
-      }
-    ) 
+    .ui-kit-form-elements__dropdown-dates
+      +dropdownDates(
+        { 
+          topic : "date Dropdown",
+          activeText : "ДД.ММ.ГГГГ",
+        },
+        { 
+          topic : "date Dropdown",
+          activeText : "19.08.2019",
+        }
+      ) 
 
     div.ui-kit-form-elements__input-blk-narrow
-      +dropdown(
-        { 
-          name : "date",
-          topic : "filter date dropdown",
-          label : "",
-          activeText : "19 авг - 23 авг",
-          state : "close",
-          btnClean : false,
-          btnOk : false
-        }
-      )
+      .ui-kit-form-elements__dropdown
+        +dropdown(
+          { 
+            name : "date",
+            topic : "filter date dropdown",
+            label : "",
+            activeText : "19 авг - 23 авг",
+            state : "close",
+            btnClean : false,
+            btnOk : false
+          }
+        )
 
-      .ui-kit-form-elements__input-text
+      .ui-kit-form-elements__input-text.ui-kit-form-elements__input-text_subscription
         +inputText(
           {
             topic : "subscription text field",
@@ -111,88 +114,97 @@ div.ui-kit-form-elements
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_2
     h3 Checkbox Buttons
-    +checkboxList(
-      { 
-        stateHide : ""
-      },
-      {
-        label : "Можно курить", 
-        id : 11,
-        p : "", 
-        p__dopclass : ""
-      },
-      {
-        label : "Можно с питомцами", 
-        id : 12,
-        p : "", 
-        p__dopclass : ""
-      },
-      {
-        label : "Можно пригласить гостей (до 10 человек)", 
-        id : 13,
-        p : "", 
-        p__dopclass : ""
-      }
-    )
+    .ui-kit-form-elements__checkbox-list
+      +checkboxList(
+        { 
+          stateHide : ""
+        },
+        {
+          label : "Можно курить", 
+          id : 11,
+          p : "", 
+          p__dopclass : ""
+        },
+        {
+          label : "Можно с питомцами", 
+          id : 12,
+          p : "", 
+          p__dopclass : ""
+        },
+        {
+          label : "Можно пригласить гостей (до 10 человек)", 
+          id : 13,
+          p : "", 
+          p__dopclass : ""
+        }
+      )
 
     h3 Radio Buttons
-    +radiogroup(
-      {
-        nameGroup : "rbGroopUiFormEl",
-        idMainBlock : "UiFormEl"
-      },
-      {
-        text : "Мужчина",
-        check : "checked"
-      },
-      {
-        text : "Женщина"
-      }
-    )
+    .ui-kit-form-elements__radiogroup
+      +radiogroup(
+        {
+          nameGroup : "rbGroopUiFormEl",
+          idMainBlock : "UiFormEl"
+        },
+        {
+          text : "Мужчина",
+          check : "checked"
+        },
+        {
+          text : "Женщина"
+        }
+      )
 
     h3 Toggle
-    +toggleBlock(
-      {
-        text : "Получать спецпредложения",
-        active : "on"
-      }
-    )
-    +toggleBlock(
-      {
-        text : "Получать спецпредложения",
-        active : "off"
-      }
-    )
+    .ui-kit-form-elements__toggle-group
+      .ui-kit-form-elements__toggle-block
+        +toggleBlock(
+          {
+            text : "Получать спецпредложения",
+            active : "on"
+          }
+        )
+      .ui-kit-form-elements__toggle-block
+        +toggleBlock(
+          {
+            text : "Получать спецпредложения",
+            active : "off"
+          }
+        )
 
     h3 like button
-    div.ui-kit-form-elements__flex-block
-      +like(
-        {
-          qty : 2,
-          liked : false
-        }
-      )
-      +like(
-        {
-          qty : 12,
-          liked : true
-        }
-      )
+    div.ui-kit-form-elements__like-group
+      .ui-kit-form-elements__like
+        +like(
+          {
+            qty : 2,
+            liked : false
+          }
+        )
+      .ui-kit-form-elements__like
+        +like(
+          {
+            qty : 12,
+            liked : true
+          }
+        )
 
     h3 rate button
-    div.ui-kit-form-elements__flex-block
-      +rateBtn(
-        {
-          qty : 5,
-          active : 4
-        }
-      )
-      +rateBtn(
-        {
-          qty : 5,
-          active : 5
-        }
-      )
+    div.ui-kit-form-elements__rate-btn-group
+      .ui-kit-form-elements__rate-btn
+        +rateBtn(
+          {
+            qty : 5,
+            active : 4
+          }
+        )
+      .ui-kit-form-elements__rate-btn
+        +rateBtn(
+          {
+            qty : 5,
+            active : 5
+          }
+        )
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_3.ui-kit-form-elements__blk_slider
     div.ui-kit-form-elements__slider-blk
@@ -248,20 +260,22 @@ div.ui-kit-form-elements
       )
 
     div.ui-kit-form-elements__flex-block
-      +link(
-        {
-          text : "CLICK ME",
-          url : "#",
-          type : "main"
-        }
-      )
-      +link(
-        {
-          text : "CLICK ME",
-          url : "#",
-          type : "clean"
-        }
-      )
+      .ui-kit-form-elements__link
+        +link(
+          {
+            text : "CLICK ME",
+            url : "#",
+            type : "main"
+          }
+        )
+      .ui-kit-form-elements__link
+        +link(
+          {
+            text : "CLICK ME",
+            url : "#",
+            type : "clean"
+          }
+        )
 
     div.ui-kit-form-elements__flex-block.ui-kit-form-elements__flex-block_btn-pay
       +btn(
