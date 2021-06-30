@@ -65,6 +65,7 @@ $(function () {
 
 
   $('.dropdown[name=date] .dropdown__dropdown').on('click', handleDateDropdownClick);
+  $('.dropdown-dates .dropdown-dates__dropdown').on('click', handleDateDropdownClick);
 
   function handleDateDropdownClick() {
     const block_calendar, dpic;
