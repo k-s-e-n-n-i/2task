@@ -5,6 +5,8 @@ mixin topicLabel(obj)
       p= obj.label
   else 
     if obj.topic != ""
-      h3= obj.topic
+      div.topic-label
+        h3= obj.topic
     if obj.label != ""
-      p= obj.label
+      div.topic-label
+        p= obj.label
