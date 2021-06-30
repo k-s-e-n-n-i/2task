@@ -4,19 +4,17 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  height: 15px;
   color: #bc9cff;
   text-transform: uppercase;
   cursor: pointer;
-  margin: 15px 20px 15px 0;
   -webkit-user-select: none;
   text-decoration: none;
 
-  &.link_clean {
+  &_clean {
     color: rgba(31, 32, 65, 0.5);
   }
 
-  &.link_lux {
+  &_lux {
     margin: 0 0 0 3px;
   }
 
