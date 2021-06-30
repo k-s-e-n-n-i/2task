@@ -14,8 +14,8 @@
     top: 30px;
   }
 
-  h3 {
-    font-size: 12px;
+  &__input-text {
+    margin-bottom: 20px;
   }
 
   .ui-kit-form-elements__blk {
@@ -30,19 +30,6 @@
 
     &.ui-kit-form-elements__blk_1 {
       margin-right: 106px;
-
-      .input-text {
-        margin-bottom: 20px;
-
-        &:nth-child(2) {
-          .topic-label {
-            p {
-              line-height: 16px;
-              font-size: 11.7px;
-            }
-          }
-        }
-      }
 
       .dropdown {
         margin-bottom: 23px;

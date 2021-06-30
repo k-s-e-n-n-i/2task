@@ -22,28 +22,30 @@ div.ui-kit-form-elements
   a(href="./index.html")
     img.ui-kit-form-elements__ico-logo(src=require("@Pages/ui-kit-form-elements/ico-logo.svg").default alt="logo")
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_1
-    +inputText(
-      {
-        topic : "Text Field",
-        label : "Default",
-        placeholder : "Email",
-        inputText : "",
-        state : "",
-        id : "EmailBlk_1",
-        name : ""
-      }
-    )
-    +inputText(
-      {
-        topic : "Text Field",
-        label : "Hover / Focus",
-        placeholder : "This is pretty awesome",
-        inputText : "This is pretty awesome",
-        state : "focus",
-        id : "FocusBlk_1",
-        name : ""
-      }
-    )
+    .ui-kit-form-elements__input-text
+      +inputText(
+        {
+          topic : "Text Field",
+          label : "Default",
+          placeholder : "Email",
+          inputText : "",
+          state : "",
+          id : "EmailBlk_1",
+          name : ""
+        }
+      )
+    .ui-kit-form-elements__input-text
+      +inputText(
+        {
+          topic : "Text Field",
+          label : "Hover / Focus",
+          placeholder : "This is pretty awesome",
+          inputText : "This is pretty awesome",
+          state : "focus",
+          id : "FocusBlk_1",
+          name : ""
+        }
+      )
 
     +dropdown(
       { 
@@ -57,17 +59,18 @@ div.ui-kit-form-elements
       }
     )
 
-    +inputText(
-      {
-        topic : "masked Text Field",
-        label : "",
-        placeholder : "ДД.ММ.ГГГГ",
-        inputText : "",
-        state : "",
-        id : "blk_3",
-        name : "date"
-      }
-    )
+    .ui-kit-form-elements__input-text
+      +inputText(
+        {
+          topic : "masked Text Field",
+          label : "",
+          placeholder : "ДД.ММ.ГГГГ",
+          inputText : "",
+          state : "",
+          id : "blk_3",
+          name : "date"
+        }
+      )
 
     +dropdownDates(
       { 
@@ -93,17 +96,18 @@ div.ui-kit-form-elements
         }
       )
 
-      +inputText(
-        {
-          topic : "subscription text field",
-          label : "",
-          placeholder : "Email",
-          inputText : "",
-          id : "blk_4",
-          type : "subscription",
-          name : ""
-        }
-      )
+      .ui-kit-form-elements__input-text
+        +inputText(
+          {
+            topic : "subscription text field",
+            label : "",
+            placeholder : "Email",
+            inputText : "",
+            id : "blk_4",
+            type : "subscription",
+            name : ""
+          }
+        )
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_2
     h3 Checkbox Buttons
