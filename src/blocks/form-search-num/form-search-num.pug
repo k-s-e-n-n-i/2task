@@ -1,22 +1,23 @@
-include ~@Blocks/dropdown/dropdownBlock.pug
-include ~@Blocks/dropdown/dropdownDates.pug
+include ~@Blocks/dropdown/dropdown.pug
+include ~@Blocks/dropdown-dates/dropdown-dates.pug
 include ~@Blocks/btn/btn.pug
 
 mixin formSearchNum
   form.form-search-num
     h1 Найдём номера под ваши пожелания
-    +dropdownDates(
-      { 
-        topic : "Прибытие",
-        activeText : "ДД.ММ.ГГГГ",
-      },
-      { 
-        topic : "Выезд",
-        activeText : "ДД.ММ.ГГГГ",
-      }
-    ) 
+    .form-search-num__dropdown-dates
+      +dropdownDates(
+        { 
+          topic : "Прибытие",
+          activeText : "ДД.ММ.ГГГГ",
+        },
+        { 
+          topic : "Выезд",
+          activeText : "ДД.ММ.ГГГГ",
+        }
+      ) 
 
-    +dropdownBlock(
+    +dropdown(
       { 
         name : "guests",
         topic : "Гости",
@@ -46,12 +47,13 @@ mixin formSearchNum
       }    
     )
 
-    +btn(
-      {
-        text : "подобрать номер",
-        link : "./search-room.html",
-        arrow : true,
-        border: false,
-        hover: false
-      }
-    )
+    .form-search-num__btn
+      +btn(
+        {
+          text : "подобрать номер",
+          link : "./search-room.html",
+          arrow : true,
+          border: false,
+          hover: false
+        }
+      )

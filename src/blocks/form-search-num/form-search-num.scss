@@ -1,8 +1,6 @@
 .form-search-num {
   width: 380px;
   background: #fff;
-  margin-top: 70px;
-  position: absolute;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -13,10 +11,9 @@
   flex-wrap: wrap;
   z-index: 1;
 
-  > .dropdown-block {
-    h3 {
-      margin-top: 21px;
-    }
+  &__dropdown-dates {
+    margin: 22px 0 21px 0;
+    width: 100%;
   }
 
   h1 {
@@ -26,73 +23,10 @@
     letter-spacing: -0.7px;
   }
 
-  h3 {
-    margin-top: 22px;
-  }
-
-  .btn {
+  &__btn {
     width: 100%;
-    margin: 31px 0 0 0;
     height: 44px;
-
-    &__link {
-      padding-right: 4px;
-      font-weight: 600;
-    }
-  }
-
-  .dropdown-dates {
-    .calendar-block {
-      .calendar-block__btns {
-        width: 301px;
-        transform: translateX(-1.2px);
-      }
-    }
-  }
-
-  .dropdown-block {
-    &__dropdown {
-      padding: 9px 14px 7px 14px;
-
-      &:before {
-        width: 15px;
-        height: 11px;
-        bottom: 14px;
-        right: 12px;
-      }
-    }
-
-    &__dropdown_date {
-      letter-spacing: -0.1px;
-    }
-
-    &__dropdown-items {
-      h3 {
-        margin-top: 0px;
-      }
-    }
-
-    &__items-line {
-      height: 38px;
-    }
-
-    &__block-qty {
-      margin: 8px 6px 0 0;
-
-      span {
-        font-size: 12px;
-      }
-    }
-
-    &__btns {
-      .link {
-        margin: auto 14px 12px;
-
-        &.link_ok {
-          margin: auto 6px 12px;
-        }
-      }
-    }
+    margin: 31px 0 0 0;
   }
 }
 
@@ -100,25 +34,5 @@
   .form-search-num {
     width: 100%;
     padding: 20px;
-
-    .dropdown-dates {
-      &__dates {
-        flex-wrap: wrap;
-
-        .dropdown-block {
-          width: 100%;
-
-          .dropdown-block__dropdown_date {
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    .btn {
-      &__block_gradient_pay {
-        width: 100%;
-      }
-    }
   }
 }
