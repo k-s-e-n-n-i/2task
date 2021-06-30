@@ -2,10 +2,6 @@
   position: relative;
   width: 100%;
 
-  &.dropdown[name='date'] {
-    width: auto;
-  }
-
   &.dropdown_flex-end {
     justify-content: flex-end;
   }
@@ -33,21 +29,6 @@
     &:hover {
       color: rgba(31, 32, 65, 0.75);
       border: 1px solid rgba(31, 32, 65, 0.5);
-    }
-
-    &.dropdown__dropdown_date {
-      width: 150px;
-      -webkit-appearance: none;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 8px 14px;
-
-      &:before {
-        width: 15px;
-        height: 11px;
-        bottom: 14px;
-        right: 11px;
-      }
     }
 
     &.dropdown__dropdown_items-show {

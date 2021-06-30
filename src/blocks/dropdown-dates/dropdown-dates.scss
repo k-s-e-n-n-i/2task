@@ -3,4 +3,50 @@
   justify-content: space-between;
   width: 100%;
   position: relative;
+
+  &__date-block {
+    position: relative;
+    width: auto;
+  }
+
+  &__dropdown {
+    position: relative;
+    width: 150px;
+    height: 44px;
+    padding: 8px 14px;
+    margin-top: 5px;
+    margin: 5px 0 0 0;
+    color: rgba(31, 32, 65, 0.75);
+    border-radius: 4px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      width: 15px;
+      height: 11px;
+      bottom: 14px;
+      right: 11px;
+      position: absolute;
+      cursor: pointer;
+      -webkit-user-select: none;
+      background-image: url('@Blocks/dropdown/expand-more.svg');
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__calendar {
+    margin-top: 64px;
+    position: absolute;
+  }
 }
