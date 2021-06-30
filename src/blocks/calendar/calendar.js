@@ -18,7 +18,7 @@ $(function () {
     monthsShort: ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек'],
   }
 
-  let datepicker = $('.dropdown-block .datepicker-here').datepicker(
+  let datepicker = $('.dropdown .datepicker-here').datepicker(
     $.extend(
       mainOptions,
       {
@@ -29,9 +29,9 @@ $(function () {
             let date1 = date[0].getDate() + ' ' + mainOptions.monthsShort[date[0].getMonth()];
             let date2 = date[1].getDate() + ' ' + mainOptions.monthsShort[date[1].getMonth()];
 
-            inst.$datepicker.closest('.dropdown-block').find('.dropdown-block__dropdown').html(date1 + ' - ' +date2);
+            inst.$datepicker.closest('.dropdown').find('.dropdown__dropdown').html(date1 + ' - ' +date2);
           } else {
-            inst.$datepicker.closest('.dropdown-block').find('.dropdown-block__dropdown').html('Выберите диапазон дат...');
+            inst.$datepicker.closest('.dropdown').find('.dropdown__dropdown').html('Выберите диапазон дат...');
           }
         }
       }
@@ -46,15 +46,15 @@ $(function () {
           let dates = formattedDate.split(',');
 
           if ((dates[0] != undefined) && (dates[0] != '')){
-            inst.$datepicker.closest('.dropdown-dates').find('.dropdown-block__dropdown:first').html(dates[0]);
+            inst.$datepicker.closest('.dropdown-dates').find('.dropdown__dropdown:first').html(dates[0]);
           } else {
-            inst.$datepicker.closest('.dropdown-dates').find('.dropdown-block__dropdown:first').html('ДД.ММ.ГГГГ');
+            inst.$datepicker.closest('.dropdown-dates').find('.dropdown__dropdown:first').html('ДД.ММ.ГГГГ');
           }
 
           if ((dates[1] != undefined) && (dates[1] != '')){
-            inst.$datepicker.closest('.dropdown-dates').find('.dropdown-block__dropdown:last').html(dates[1]);
+            inst.$datepicker.closest('.dropdown-dates').find('.dropdown__dropdown:last').html(dates[1]);
           } else {
-            inst.$datepicker.closest('.dropdown-dates').find('.dropdown-block__dropdown:last').html('ДД.ММ.ГГГГ');
+            inst.$datepicker.closest('.dropdown-dates').find('.dropdown__dropdown:last').html('ДД.ММ.ГГГГ');
           }
         }
       }
@@ -64,7 +64,7 @@ $(function () {
   $('.ui-kit-cards__calendar-block .datepicker-here').datepicker(mainOptions);
 
 
-  $('.dropdown-block[name=date] .dropdown-block__dropdown').on('click', handleDateDropdownClick);
+  $('.dropdown[name=date] .dropdown__dropdown').on('click', handleDateDropdownClick);
 
   function handleDateDropdownClick() {
     const block_calendar, dpic;
@@ -73,8 +73,8 @@ $(function () {
       block_calendar = $(this).closest('.dropdown-dates').find('.datepicker-here');
       dpic = datepickerDates;
     }else{
-      if ($(this).closest('.dropdown-block').length != 0){
-        block_calendar = $(this).closest('.dropdown-block').find('.datepicker-here');
+      if ($(this).closest('.dropdown').length != 0){
+        block_calendar = $(this).closest('.dropdown').find('.datepicker-here');
         dpic = datepicker;
       }
     }
@@ -92,7 +92,7 @@ $(function () {
 
   function closeCalendar(e){
     const thisClick = $(e.target);
-    const elDropdown = thisClick.hasClass('dropdown-block__dropdown') == true;
+    const elDropdown = thisClick.hasClass('dropdown__dropdown') == true;
     const open = $('.datepicker-here').hasClass('datepicker-here_open');
 
     if (!elDropdown && open){
@@ -103,10 +103,10 @@ $(function () {
 
       if (!itCalendar && !cell && !nav && !navDate){
         if ($('.datepicker-here_open').closest('.dropdown-dates').length != 0){
-          $('.datepicker-here_open').closest('.dropdown-dates').find('.dropdown-block__dropdown:first').trigger('click');
+          $('.datepicker-here_open').closest('.dropdown-dates').find('.dropdown__dropdown:first').trigger('click');
         }
-        if ($('.datepicker-here_open').closest('.dropdown-block').length != 0){
-          $('.datepicker-here_open').closest('.dropdown-block').find('.dropdown-block__dropdown').trigger('click');
+        if ($('.datepicker-here_open').closest('.dropdown').length != 0){
+          $('.datepicker-here_open').closest('.dropdown').find('.dropdown__dropdown').trigger('click');
         }
       }
     }
@@ -119,10 +119,10 @@ $(function () {
   
   function handleDateBtnOkClick() {
     if ($(this).closest('.dropdown-dates').length != 0){
-      $(this).closest('.dropdown-dates').find('.dropdown-block__dropdown:first').trigger('click');
+      $(this).closest('.dropdown-dates').find('.dropdown__dropdown:first').trigger('click');
     }else{
-      if ($(this).closest('.dropdown-block').length != 0){
-        $(this).closest('.dropdown-block').find('.dropdown-block__dropdown').trigger('click');
+      if ($(this).closest('.dropdown').length != 0){
+        $(this).closest('.dropdown').find('.dropdown__dropdown').trigger('click');
       }
     }
   }

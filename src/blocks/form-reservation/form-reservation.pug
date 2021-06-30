@@ -1,6 +1,6 @@
 include ~@Blocks/link/link.pug
-include ~@Blocks/dropdown/dropdownBlock.pug
 include ~@Blocks/dropdown/dropdownDates.pug
+include ~@Blocks/dropdown/dropdown.pug
 include ~@Blocks/btn/btn.pug
 
 mixin formReservation(obj)
@@ -32,7 +32,7 @@ mixin formReservation(obj)
       }
     ) 
 
-    +dropdownBlock(
+    +dropdown(
       { 
         name : "guests",
         topic : "Гости",
