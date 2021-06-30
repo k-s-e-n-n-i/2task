@@ -7,28 +7,30 @@ mixin formRegistration(obj)
   form.form-registration
     h1 Регистрация аккаунта
 
-    +inputText(
-      {
-        topic : "",
-        label : "",
-        placeholder : "Имя",
-        inputText : "",
-        state : "",
-        id : "RegName",
-        name : ""
-      }
-    )
-    +inputText(
-      {
-        topic : "",
-        label : "",
-        placeholder : "Фамилия",
-        inputText : "",
-        state : "",
-        id : "RegSurname",
-        name : ""
-      }
-    )
+    .form-registration__input-text
+      +inputText(
+        {
+          topic : "",
+          label : "",
+          placeholder : "Имя",
+          inputText : "",
+          state : "",
+          id : "RegName",
+          name : ""
+        }
+      )
+    .form-registration__input-text
+      +inputText(
+        {
+          topic : "",
+          label : "",
+          placeholder : "Фамилия",
+          inputText : "",
+          state : "",
+          id : "RegSurname",
+          name : ""
+        }
+      )
 
     +radiogroup(
       {
@@ -44,64 +46,70 @@ mixin formRegistration(obj)
       }
     )
 
-    +inputText(
-      {
-        topic : "Дата рождения",
-        label : "",
-        placeholder : "ДД.ММ.ГГГГ",
-        inputText : "",
-        state : "",
-        id : "RegDateBirth",
-        name : "date"
-      }
-    )
-    +inputText(
-      {
-        topic : "данные для входа в сервис",
-        label : "",
-        placeholder : "Email",
-        inputText : "",
-        state : "",
-        id : "RegEmail",
-        name : ""
-      }
-    )
-    +inputText(
-      {
-        topic : "",
-        label : "",
-        placeholder : "Пароль",
-        inputText : "",
-        state : "",
-        id : "registration",
-        name : ""
-      }
-    )
+    .form-registration__input-text.form-registration__input-text_new-block
+      +inputText(
+        {
+          topic : "Дата рождения",
+          label : "",
+          placeholder : "ДД.ММ.ГГГГ",
+          inputText : "",
+          state : "",
+          id : "RegDateBirth",
+          name : "date"
+        }
+      )
+    .form-registration__input-text.form-registration__input-text_new-block
+      +inputText(
+        {
+          topic : "данные для входа в сервис",
+          label : "",
+          placeholder : "Email",
+          inputText : "",
+          state : "",
+          id : "RegEmail",
+          name : ""
+        }
+      )
+    .form-registration__input-text
+      +inputText(
+        {
+          topic : "",
+          label : "",
+          placeholder : "Пароль",
+          inputText : "",
+          state : "",
+          id : "registration",
+          name : ""
+        }
+      )
 
-    +toggleBlock(
-      {
-        text : "Получать спецпредложения",
-        active : "off"
-      }
-    )
+    .form-registration__toggle-block
+      +toggleBlock(
+        {
+          text : "Получать спецпредложения",
+          active : "off"
+        }
+      )
 
-    +btn(
-      {
-        text : "Зарегистрироваться",
-        link : "#",
-        arrow : true,
-        border: false,
-        hover: false
-      }
-    )
-    div.form-registration__login
-      p Уже есть аккаунт на Toxin
+    .form-registration__btn
       +btn(
         {
-          text : "Войти",
+          text : "Зарегистрироваться",
           link : "#",
-          arrow : false,
-          border: true,
+          arrow : true,
+          border: false,
           hover: false
         }
       )
+    div.form-registration__login
+      p Уже есть аккаунт на Toxin
+      .form-registration__btn.form-registration__btn_border
+        +btn(
+          {
+            text : "Войти",
+            link : "#",
+            arrow : false,
+            border: true,
+            hover: false
+          }
+        )

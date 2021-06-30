@@ -18,43 +18,27 @@
     letter-spacing: 0.6px;
   }
 
-  h3 {
-    margin: 20px 0 -5px;
-    font-size: 12px;
-  }
-
-  .input-text__input {
+  &__input-text {
     margin-top: 10px;
+
+    &.form-registration__input-text_new-block {
+      margin-top: 20px;
+    }
   }
 
-  .toggle-block {
+  &__toggle-block {
     margin: 2px 0 5px;
   }
 
-  .btn {
+  &__btn {
     width: 100%;
     height: 43px;
     margin: 18px 0 27px 0;
+  }
 
-    &.btn_border {
-      width: 99px;
-      margin: 0;
-    }
-
-    &__block_border {
-      .btn__link {
-        line-height: 35px;
-      }
-    }
-
-    &__link {
-      line-height: 44px;
-    }
-
-    &__block_gradient {
-      width: 100%;
-      line-height: 35px;
-    }
+  &__btn_border {
+    width: 99px;
+    margin: 0;
   }
 
   &__login {
@@ -66,5 +50,11 @@
     p {
       margin: 13px 0px;
     }
+  }
+}
+
+@media (max-width: 380px) {
+  .form-registration {
+    width: 100%;
   }
 }

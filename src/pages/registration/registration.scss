@@ -7,29 +7,27 @@
   width: 100%;
   position: relative;
 
-  .registration__content-container {
+  &__form-registration {
     position: relative;
-    margin-left: 37%;
-    min-width: 320px;
+    margin: auto;
     z-index: 1;
-
-    .form-registration {
-      margin: 19px auto;
-    }
   }
 }
 
 @media (max-width: 1200px) {
   .registration {
-    background: none;
     height: auto;
 
-    .registration__content-container {
-      margin: auto;
+    &__form-registration {
+      margin: 20px auto;
     }
   }
+}
 
-  .form-registration {
-    position: inherit;
+@media (max-width: 380px) {
+  .registration {
+    &__form-registration {
+      width: 100%;
+    }
   }
 }
