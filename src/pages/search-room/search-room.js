@@ -5,6 +5,7 @@ import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
 import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.js';
 import '../../blocks/dropdown/dropdown.scss';
 import '../../blocks/dropdown/dropdown.ts';
+import '../../blocks/dropdown-dates/dropdown-dates.scss';
 import '../../blocks/input-text/input-text.scss';
 import '../../blocks/link/link.scss';
 import '../../blocks/pagination/pagination.scss';

@@ -1,0 +1,10 @@
+include ~@Blocks/calendar/calendar.pug
+
+mixin dropdownDates(...items)
+  div.dropdown-dates
+    each item in items
+      div.dropdown(name='date')
+        if item.topic != ""
+          h3= item.topic
+        div(class="dropdown__dropdown dropdown__dropdown_date")= item.activeText
+    +calendar({state : "close"})
