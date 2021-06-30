@@ -27,6 +27,10 @@
 
   &__block_gradient_pay {
     width: 320px;
+
+    .btn__link {
+      padding-right: 5px;
+    }
   }
 
   &__link {
