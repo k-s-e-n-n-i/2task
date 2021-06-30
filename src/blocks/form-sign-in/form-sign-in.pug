@@ -4,47 +4,51 @@ include ~@Blocks/btn/btn.pug
 mixin formSignIn
   form.form-sign-in
     h1 Войти
-    +inputText(
-      {
-        topic : "",
-        label : "",
-        placeholder : "Email",
-        inputText : "",
-        state : "",
-        id : "SignInEmail",
-        name : ""
-      }
-    )
-    +inputText(
-      {
-        topic : "",
-        label : "",
-        placeholder : "Пароль",
-        inputText : "",
-        state : "",
-        id : "SignInPassword",
-        name : ""
-      }
-    )
+    .form-sign-in__input-text
+      +inputText(
+        {
+          topic : "",
+          label : "",
+          placeholder : "Email",
+          inputText : "",
+          state : "",
+          id : "SignInEmail",
+          name : ""
+        }
+      )
+    .form-sign-in__input-text
+      +inputText(
+        {
+          topic : "",
+          label : "",
+          placeholder : "Пароль",
+          inputText : "",
+          state : "",
+          id : "SignInPassword",
+          name : ""
+        }
+      )
 
-    +btn(
-      {
-        text : "Войти",
-        link : "#",
-        arrow : true,
-        border: false,
-        hover: false
-      }
-    )
-
-    div.form-sign-in__login
-      p Нет аккаунта на Toxin?
+    .form-sign-in__btn
       +btn(
         {
-          text : "Создать",
+          text : "Войти",
           link : "#",
-          arrow : false,
-          border: true,
+          arrow : true,
+          border: false,
           hover: false
         }
       )
+
+    div.form-sign-in__login
+      p Нет аккаунта на Toxin?
+      .form-sign-in__btn.form-sign-in__btn_border
+        +btn(
+          {
+            text : "Создать",
+            link : "#",
+            arrow : false,
+            border: true,
+            hover: false
+          }
+        )
