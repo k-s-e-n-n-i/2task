@@ -206,8 +206,8 @@ div.ui-kit-form-elements
           }
         )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_3.ui-kit-form-elements__blk_slider
-    div.ui-kit-form-elements__slider-blk
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_3
+    div.ui-kit-form-elements__slider
       +rangeSlider(
         {
           topic : "Range Slider",
@@ -219,47 +219,51 @@ div.ui-kit-form-elements
       )
 
     h3 buttons
-    div.ui-kit-form-elements__flex-block
-      +btn(
-        {
-          text : "CLICK ME",
-          link : "#",
-          arrow : false,
-          border: false,
-          hover: false
-        }
-      )
-      +btn(
-        {
-          text : "CLICK ME",
-          link : "#",
-          arrow : false,
-          border: false,
-          hover: true
-        }
-      )
+    .ui-kit-form-elements__btn-group
+      .ui-kit-form-elements__btn
+        +btn(
+          {
+            text : "CLICK ME",
+            link : "#",
+            arrow : false,
+            border: false,
+            hover: false
+          }
+        )
+      .ui-kit-form-elements__btn
+        +btn(
+          {
+            text : "CLICK ME",
+            link : "#",
+            arrow : false,
+            border: false,
+            hover: true
+          }
+        )
 
-    div.ui-kit-form-elements__flex-block
-      +btn(
-        {
-          text : "CLICK ME",
-          link : "#",
-          arrow : false,
-          border: true,
-          hover: false
-        }
-      )
-      +btn(
-        {
-          text : "CLICK ME",
-          link : "#",
-          arrow : false,
-          border: true,
-          hover: true
-        }
-      )
+    .ui-kit-form-elements__btn-group.ui-kit-form-elements__btn-group_border
+      .ui-kit-form-elements__btn
+        +btn(
+          {
+            text : "CLICK ME",
+            link : "#",
+            arrow : false,
+            border: true,
+            hover: false
+          }
+        )
+      .ui-kit-form-elements__btn
+        +btn(
+          {
+            text : "CLICK ME",
+            link : "#",
+            arrow : false,
+            border: true,
+            hover: true
+          }
+        )
 
-    div.ui-kit-form-elements__flex-block
+    div.ui-kit-form-elements__link-group
       .ui-kit-form-elements__link
         +link(
           {
@@ -277,7 +281,7 @@ div.ui-kit-form-elements
           }
         )
 
-    div.ui-kit-form-elements__flex-block.ui-kit-form-elements__flex-block_btn-pay
+    div.ui-kit-form-elements__btn.ui-kit-form-elements__btn_arrow
       +btn(
         {
           text : "перейти к оплате",
@@ -289,54 +293,57 @@ div.ui-kit-form-elements
       )
 
     h3 pagination
-    +pagination(
-      {
-        text : "1 – 12 из 100+ вариантов аренды",
-        max : 15
-      }
-    )
+    .ui-kit-form-elements__pagination
+      +pagination(
+        {
+          text : "1 – 12 из 100+ вариантов аренды",
+          max : 15
+        }
+      )
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_4
-    +dropdown(
-      { 
-        name : "room",
-        topic : "Dropdown",
-        label : "Default",
-        activeText : "2 спальни, 2 кровати...",
-        state : "close",
-        btnClean : false,
-        btnOk : false
-      }
-    )
-    +dropdown(
-      { 
-        name : "room",
-        topic : "Dropdown",
-        label : "expanded",
-        activeText : "2 спальни, 2 кровати...",
-        state : "open",
-        btnClean : false,
-        btnOk : false
-      },
-      {
-        text : "спальни",
-        qty : 2,
-        minus : "active",
-        plus : "active"
-      },
-      {
-        text : "кровати",
-        qty : 2,
-        minus : "active",
-        plus : "active"
-      },
-      {
-        text : "ванные комнаты",
-        qty : 0,
-        minus : "disable",
-        plus : "active"
-      }
-    )
+    .ui-kit-form-elements__dropdown
+      +dropdown(
+        { 
+          name : "room",
+          topic : "Dropdown",
+          label : "Default",
+          activeText : "2 спальни, 2 кровати...",
+          state : "close",
+          btnClean : false,
+          btnOk : false
+        }
+      )
+    .ui-kit-form-elements__dropdown
+      +dropdown(
+        { 
+          name : "room",
+          topic : "Dropdown",
+          label : "expanded",
+          activeText : "2 спальни, 2 кровати...",
+          state : "open",
+          btnClean : false,
+          btnOk : false
+        },
+        {
+          text : "спальни",
+          qty : 2,
+          minus : "active",
+          plus : "active"
+        },
+        {
+          text : "кровати",
+          qty : 2,
+          minus : "active",
+          plus : "active"
+        },
+        {
+          text : "ванные комнаты",
+          qty : 0,
+          minus : "disable",
+          plus : "active"
+        }
+      )
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_5
     +dropdown(
@@ -401,96 +408,91 @@ div.ui-kit-form-elements
     )
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_7
-    +checkboxListExpandable(
-      {
-        topic: "expandable checkbox list",
-        state : "close",
-      },
-      {
-        label : "Тест", 
-        id : 2100,
-        p : ""
-      }
-    )
-    +checkboxListExpandable(
-      {
-        topic: "expandable checkbox list",
-        state : "open",
-      },
-      {
-        label : "Завтрак", 
-        id : 21,
-        p : ""
-      },
-      {
-        label : "Письменный стол", 
-        id : 22,
-        p : ""
-      },
-      {
-        label : "Стул для кормления", 
-        id : 23,
-        p : ""
-      },
-      {
-        label : "Кроватка", 
-        id : 24,
-        p : ""
-      },
-      {
-        label : "Телевизор", 
-        id : 25,
-        p : ""
-      },
-      {
-        label : "Шампунь", 
-        id : 26,
-        p : ""
-      }
-    )
+    .ui-kit-form-elements__checkbox-list-expandable
+      +checkboxListExpandable(
+        {
+          topic: "expandable checkbox list",
+          state : "close",
+        },
+        {
+          label : "Тест", 
+          id : 2100,
+          p : ""
+        }
+      )
+    .ui-kit-form-elements__checkbox-list-expandable
+      +checkboxListExpandable(
+        {
+          topic: "expandable checkbox list",
+          state : "open",
+        },
+        {
+          label : "Завтрак", 
+          id : 21,
+          p : ""
+        },
+        {
+          label : "Письменный стол", 
+          id : 22,
+          p : ""
+        },
+        {
+          label : "Стул для кормления", 
+          id : 23,
+          p : ""
+        },
+        {
+          label : "Кроватка", 
+          id : 24,
+          p : ""
+        },
+        {
+          label : "Телевизор", 
+          id : 25,
+          p : ""
+        },
+        {
+          label : "Шампунь", 
+          id : 26,
+          p : ""
+        }
+      )
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_8
     h3 Rich Checkbox Buttons
-    +checkboxList(
-      { 
-        stateHide : ""
-      },
-      {
-        label : "Широкий коридор", 
-        id : 31,
-        p : "Ширина коридоров в номере не менее 91 см.", 
-        p__dopclass : "checkbox-list__p_width200"
-      },
-      {
-        label : "Помощник для инвалидов", 
-        id : 32,
-        p : "На 1 этаже вас встретит специалист и проводит до номера.", 
-        p__dopclass : "checkbox-list__p_width225"
-      }
-    )
+    .ui-kit-form-elements__checkbox-list
+      +checkboxList(
+        { 
+          stateHide : ""
+        },
+        {
+          label : "Широкий коридор", 
+          id : 31,
+          p : "Ширина коридоров в номере не менее 91 см.", 
+          p__dopclass : "checkbox-list__p_width200"
+        },
+        {
+          label : "Помощник для инвалидов", 
+          id : 32,
+          p : "На 1 этаже вас встретит специалист и проводит до номера.", 
+          p__dopclass : "checkbox-list__p_width225"
+        }
+      )
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_9
-    +listBlock(
-      {
-        topic : "bullet list",
-        tagTopic : "h3"
-      },
-      {
-        text : "Нельзя с питомцами"
-      },
-      {
-        text : "Без вечеринок и мероприятий"
-      },
-      {
-        text : "Время прибытия — после 13:00, а выезд до 12:00"
-      }
-    )
+    h3 bullet list
+    .ui-kit-form-elements__list-block
+      +listBlock(
+        {
+          list : ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
+        }
+      )
 
   div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_10
     +infoBlock(
       {
         topic : "",
-        qtyHR : 2
+        qtyHR : 1
       },
       {
         label : "Комфорт",
@@ -506,20 +508,21 @@ div.ui-kit-form-elements
       }
     )
 
-  div.ui-kit-form-elements__blk.width.ui-kit-form-elements__blk_11
-    +commentBlock(
-      {
-        topic : "",
-        label : "2 отзыва"
-      },
-      {
-        urlImg: require("@Pages/details-room/photo1.png").default,
-        liked : true,
-        qty : 12,
-        name : "Мурад Сарафанов",
-        time : "5 дней назад",
-        text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
-      }
-    )
+  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_11
+    .ui-kit-form-elements__comment-block
+      +commentBlock(
+        {
+          topic : "",
+          label : "2 отзыва"
+        },
+        {
+          urlImg: require("@Pages/details-room/photo1.png").default,
+          liked : true,
+          qty : 12,
+          name : "Мурад Сарафанов",
+          time : "5 дней назад",
+          text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
+        }
+      )
 
 script(src="./ui-kit-form-elements.js")
