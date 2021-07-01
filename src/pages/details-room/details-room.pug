@@ -19,77 +19,60 @@ div.details-room
       div.details-room__image-two.details-room__image-two_bottom
   div.details-room__content-block
     div.details-room__room-info
-      +infoBlock(
-        {
-          topic : "Сведения о номере",
-          qtyHR : 2
-        },
-        {
-          label : "Комфорт",
-          text : "Шумопоглощающие стены",
-          url : require("@Blocks/info-block/emoticon.svg").default,
-          dopclass : "info-block__icon_emoticon"
-        },
-        {
-          label : "Удобство",
-          text : "Окно в каждой из спален",
-          url : require("@Blocks/info-block/city.svg").default,
-          dopclass : "info-block__icon_city"
-        },
-        {
-          label : "Уют",
-          text : "Номер оснащён камином",
-          url : require("@Blocks/info-block/whatshot.svg").default,
-          dopclass : "info-block__icon_whatshot"
-        }
-      )
+      .details-room__info-block
+        h2 Сведения о номере
+        +infoBlock(
+          {
+            qtyHR : 2
+          },
+          {
+            label : "Комфорт",
+            text : "Шумопоглощающие стены",
+            url : require("@Blocks/info-block/emoticon.svg").default,
+            dopclass : "info-block__icon_emoticon"
+          },
+          {
+            label : "Удобство",
+            text : "Окно в каждой из спален",
+            url : require("@Blocks/info-block/city.svg").default,
+            dopclass : "info-block__icon_city"
+          },
+          {
+            label : "Уют",
+            text : "Номер оснащён камином",
+            url : require("@Blocks/info-block/whatshot.svg").default,
+            dopclass : "info-block__icon_whatshot"
+          }
+        )
 
       div.details-room__room-impression
         h2 Впечатления от номера
-        +chart
+        +chart({ list: [] })
 
-      +commentBlock(
-        {
-          topic : "Отзывы посетителей номера",
-          label : "2 отзыва"
-        },
-        {
-          urlImg: require("@Pages/details-room/photo1.png").default,
-          liked : true,
-          qty : 12,
-          name : "Мурад Сарафанов",
-          time : "5 дней назад",
-          text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
-        },
-        {
-          urlImg: require("@Pages/details-room/photo2.png").default,
-          liked : false,
-          qty : 2,
-          name : "Патрисия Стёклышкова",
-          time : "Неделю назад",
-          text : `Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.`
-        }
-      )
+      .details-room__comment-block
+        +commentBlock(
+          {
+            topic : "Отзывы посетителей номера",
+            label : "2 отзыва"
+          },
+          {
+            urlImg: require("@Pages/details-room/photo1.png").default,
+            liked : true,
+            qty : 12,
+            name : "Мурад Сарафанов",
+            time : "5 дней назад",
+            text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
+          },
+          {
+            urlImg: require("@Pages/details-room/photo2.png").default,
+            liked : false,
+            qty : 2,
+            name : "Патрисия Стёклышкова",
+            time : "Неделю назад",
+            text : `Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.`
+          }
+        )
 
-      +listBlock(
-        {
-          topic : "Правила",
-          tagTopic : "h2"
-        },
-        {
-          text : "Нельзя с питомцами"
-        },
-        {
-          text : "Без вечеринок и мероприятий"
-        },
-        {
-          text : "Время прибытия — после 13:00, а выезд до 12:00"
-        }
-      )
-
-      div.details-room__info-cancel
-        h2 Отмена
-        p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
     div.details-room__form-reservation
       +formReservation(
         {
@@ -98,6 +81,19 @@ div.details-room
           priceFinal : "38 081"
         }
       )
+
+  .details-room__content-block-bottom
+    .details-room__list-block
+      h2 Правила
+      +listBlock(
+        {
+          list : ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
+        }
+      )
+
+    .details-room__info-cancel
+      h2 Отмена
+      p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
 include ~@Blocks/global-footer/global-footer.pug
 

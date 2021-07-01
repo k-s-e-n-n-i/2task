@@ -1,14 +1,14 @@
-.details-room__block-images,
-.details-room__image-one,
-.details-room__blk-image-one,
-.details-room__blk-image-two {
-  margin: 0;
-  padding: 0;
-}
-
 .details-room {
   position: relative;
   width: 100%;
+
+  &__block-images,
+  &__image-one,
+  &__blk-image-one,
+  &__blk-image-two {
+    margin: 0;
+    padding: 0;
+  }
 
   &__block-images {
     display: flex;
@@ -42,20 +42,20 @@
     height: 50%;
     background-size: cover;
     cursor: pointer;
+  }
 
-    &.details-room__image-two_top {
-      background-image: url('image2.png');
-    }
+  &__image-two_top {
+    background-image: url('image2.png');
+  }
 
-    &.details-room__image-two_bottom {
-      background-image: url('image3.png');
-    }
+  &__image-two_bottom {
+    background-image: url('image3.png');
   }
 
   &__content-block {
     display: flex;
     justify-content: space-between;
-    margin: 70px 9.7% 60px;
+    margin: 70px 9.7% 5px;
     max-width: 100%;
     min-width: 320px;
   }
@@ -69,57 +69,46 @@
       font-weight: 700;
       font-size: 19px;
       line-height: 22px;
-      margin-bottom: 24px;
     }
+  }
 
-    .info-block {
-      .info-block__item {
-        margin: 23px 0 22px;
+  &__info-block {
+    margin-right: 80px;
 
-        &:last-child {
-          margin: 19px 0 22px;
-        }
-      }
-    }
-
-    .comment-block {
-      margin: 13px 0 33px 0;
-
-      .comment-block__comment {
-        margin: 20px 0 23px;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        .comment-block__person {
-          .comment-block__photo {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 2px solid #ffffff;
-            filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
-          }
-        }
-      }
-    }
-
-    .list-block {
-      width: 361px;
-
-      h2 {
-        margin: 0 0 20px 20px;
-        font-size: 19.4px;
-      }
+    h2 {
+      margin-bottom: 23px;
     }
   }
 
   &__room-impression {
     position: relative;
-    width: 288px;
+    width: 320px;
 
     h2 {
       margin-bottom: 7px;
+    }
+  }
+
+  &__comment-block {
+    margin: 9px 0 20px 0;
+  }
+
+  &__content-block-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 11px 9.7% 63px;
+    max-width: 100%;
+    min-width: 320px;
+    flex-basis: 1;
+  }
+
+  &__list-block {
+    width: 260px;
+    margin-right: 101px;
+
+    h2 {
+      margin-left: 20px;
+      margin-bottom: 18px;
     }
   }
 
@@ -127,115 +116,69 @@
     width: 340px;
 
     h2 {
-      margin: 0 0 20px 0;
-    }
-  }
-
-  &__form-reservation {
-    .form-reservation {
-      .dropdown-dates {
-        h3 {
-          margin: 18px 0 0 0;
-        }
-      }
+      margin-bottom: 18px;
     }
   }
 }
 
 @media (max-width: 1350px) {
   .details-room {
-    &__room-info {
-      .list-block {
-        width: 265px;
-      }
+    &__list-block {
+      width: 265px;
     }
 
-    .chart-legend {
-      left: 132px;
+    &__form-reservation {
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 1315px) {
+  .details-room {
+    &__room-impression {
+      margin: 20px 0 30px;
     }
   }
 }
 
 @media (max-width: 1220px) {
   .details-room {
-    &__room-info {
-      .list-block {
-        h2 {
-          margin-left: 0;
-        }
+    &__list-block {
+      h2 {
+        margin-left: 0;
       }
     }
-  }
-}
 
-@media (max-width: 1170px) {
-  .details-room {
-    &__room-info,
-    &__form-reservation {
-      margin: 0 20px;
-    }
-
-    &__content-block {
-      .form-reservation {
-        margin-right: 20px;
-      }
+    &__info-cancel {
+      margin-top: 20px;
     }
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 960px) {
   .details-room {
-    .comment-block__title {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 65px;
-    }
-
-    .list-block {
-      margin-bottom: 20px;
-    }
-  }
-}
-
-@media (max-width: 890px) {
-  .details-room {
-    &__content-block {
+    &__content-block,
+    &__content-block-bottom {
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
       margin: 20px auto;
-
-      .form-reservation {
-        margin: 20px auto 0;
-      }
     }
 
     &__room-info {
-      .info-block,
-      &__room-impression,
-      .comment-block,
-      .list-block,
-      &__info-cancel {
-        margin: 20px auto;
-      }
-
-      .comment-block {
-        margin-bottom: 20px;
-
-        .comment-block__title {
-          flex-wrap: wrap;
-          height: auto;
-          margin-bottom: 20px;
-
-          h2 {
-            margin-bottom: 10px;
-          }
-        }
-      }
+      width: 100%;
     }
 
-    &__room-impression {
-      margin-bottom: 20px;
+    &__info-block,
+    &__room-impression,
+    &__comment-block,
+    &__list-block,
+    &__info-cancel {
+      margin: 20px;
+      width: 100%;
+    }
+
+    &__form-reservation {
+      margin: 20px;
     }
   }
 }
@@ -260,23 +203,14 @@
       margin: 1px auto;
       width: 100%;
     }
-
-    .info-block {
-      min-width: min-content;
-    }
-
-    .chart-legend {
-      position: relative;
-      left: 0;
-      top: 0;
-    }
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
   .details-room {
     &__form-reservation {
       margin: 0;
+      width: 100%;
     }
   }
 }
