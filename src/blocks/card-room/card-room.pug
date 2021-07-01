@@ -3,25 +3,24 @@ include ~@Blocks/rate-btn/rate-btn.pug
 
 mixin cardRoom(obj)
   div.card-room
-    a
-      div.card-room__image-block
-        div.card-room__image.card-room__image_active(id=obj.id)
-        div.card-room__image(id=obj.id+1)
-        div.card-room__image(id=obj.id+2)
-        div.card-room__image(id=obj.id+3)
-        div.card-room__arrows
-          div.card-room__arrow-left
-          div.card-room__arrow-right
-        div.card-room__slider-pagination
-          div.card-room__slider-pagination-item.card-room__slider-pagination-item_active(id="pag1")
-          div.card-room__slider-pagination-item(id="pag2")
-          div.card-room__slider-pagination-item(id="pag3")
-          div.card-room__slider-pagination-item(id="pag4")
+    div.card-room__image-block
+      div.card-room__image.card-room__image_active(id=obj.id)
+      div.card-room__image(id=obj.id+1)
+      div.card-room__image(id=obj.id+2)
+      div.card-room__image(id=obj.id+3)
+      div.card-room__arrows
+        div.card-room__arrow-left
+        div.card-room__arrow-right
+      div.card-room__slider-pagination
+        div.card-room__slider-pagination-item.card-room__slider-pagination-item_active(id="pag1")
+        div.card-room__slider-pagination-item(id="pag2")
+        div.card-room__slider-pagination-item(id="pag3")
+        div.card-room__slider-pagination-item(id="pag4")
     div.card-room__info-room
       div.card-room__number-price.card-room__number-price_bottom-border
-        p
+        p.card-room__number
           span= "№ "
-          span= obj.number+" "
+          span= obj.number
           if obj.markLink != ""
             +link(
               {

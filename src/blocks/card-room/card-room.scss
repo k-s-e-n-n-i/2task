@@ -4,11 +4,10 @@
   background: #ffffff;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
-  margin: 12px 2.5px 9px 7.4px;
 
   &__image-block {
     width: 270px;
-    height: 150px;
+    height: 151px;
     position: relative;
 
     &:hover {
@@ -25,10 +24,6 @@
     background-size: cover;
     position: absolute;
     display: none;
-
-    &.card-room__image_active {
-      display: block;
-    }
 
     &:hover {
       + .card-room__arrows {
@@ -72,6 +67,10 @@
     &.images12 {
       background-image: url('img/image12.png');
     }
+  }
+
+  &__image_active {
+    display: block;
   }
 
   &__arrows {
@@ -150,14 +149,14 @@
     cursor: pointer;
     box-sizing: border-box;
     box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+  }
 
-    &.card-room__slider-pagination-item_active {
-      background: #fff;
-    }
+  &__slider-pagination-item_active {
+    background: #fff;
   }
 
   &__info-room {
-    margin: 20px;
+    padding: 20px 16px 20px 20px;
   }
 
   &__number-price {
@@ -167,86 +166,54 @@
     width: 100%;
     position: relative;
     height: 27px;
+  }
 
-    &.card-room__number-price_bottom-border {
-      padding-bottom: 8px;
-      border: 1px solid rgba(31, 32, 65, 0.1);
-      border-width: 0 0 1px 0;
-      margin: 0 0 6px 0;
+  .card-room__number {
+    color: rgba(31, 32, 65, 1);
+    margin: 0;
+    letter-spacing: -0.5px;
 
-      p {
-        &:nth-child(1) {
-          color: rgba(31, 32, 65, 1);
-          letter-spacing: -0.5px;
+    span {
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 700;
 
-          span {
-            &:nth-child(1) {
-              font-size: 14px;
-            }
-
-            &:nth-child(2) {
-              font-size: 20px;
-            }
-          }
-        }
-
-        &:nth-child(2) {
-          color: rgba(31, 32, 65, 0.5);
-
-          span {
-            &:nth-child(1),
-            &:nth-child(2) {
-              font-weight: 600;
-              font-size: 14px;
-            }
-
-            &:nth-child(2) {
-              margin-right: 2px;
-            }
-
-            &:nth-child(3) {
-              font-size: 11px;
-            }
-          }
-        }
-
-        span {
-          &:nth-child(1),
-          &:nth-child(2) {
-            font-weight: 700;
-          }
-        }
-
-        .link_lux {
-          letter-spacing: 0.4px;
-          font-size: 11.5px;
-        }
+      &:nth-child(2) {
+        font-size: 20px;
+        margin-right: 1px;
       }
     }
+  }
 
-    p {
-      color: rgba(31, 32, 65, 0.5);
-      margin: 0;
+  .card-room__price {
+    margin: 3px 0 0 0;
+    color: rgba(31, 32, 65, 0.5);
 
-      span {
-        line-height: 25px;
-        &:nth-child(1) {
-          font-weight: 600;
-          font-size: 14px;
-        }
+    span {
+      &:nth-child(1),
+      &:nth-child(2) {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 700;
+      }
+
+      &:nth-child(3) {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-right: 2px;
       }
     }
+  }
 
-    p.card-room__price {
-      margin: 3px 0 0 0;
-    }
+  .card-room__review {
+    margin-right: 5px;
+  }
 
-    p.card-room__review {
-      margin: 1px 0 0 0;
-    }
-
-    .rate-btn {
-      margin: 0;
-    }
+  &__number-price_bottom-border {
+    padding-bottom: 8px;
+    border: 1px solid rgba(31, 32, 65, 0.1);
+    border-width: 0 0 1px 0;
+    margin: 0 0 6px 0;
   }
 }
