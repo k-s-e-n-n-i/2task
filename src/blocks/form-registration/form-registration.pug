@@ -32,19 +32,20 @@ mixin formRegistration(obj)
         }
       )
 
-    +radiogroup(
-      {
-        nameGroup : "rbGroop"+obj.id,
-        idMainBlock : obj.id
-      },
-      {
-        text : "Мужчина",
-        check : "checked"
-      },
-      {
-        text : "Женщина"
-      }
-    )
+    .form-registration__radiogroup
+      +radiogroup(
+        {
+          nameGroup : "rbGroop"+obj.id,
+          idMainBlock : obj.id
+        },
+        {
+          text : "Мужчина",
+          check : "checked"
+        },
+        {
+          text : "Женщина"
+        }
+      )
 
     .form-registration__input-text.form-registration__input-text_new-block
       +inputText(
