@@ -13,11 +13,13 @@ div.ui-kit-cards
     img.ui-kit-cards__ico-logo(src=require("@Pages/ui-kit-cards/ico-logo.svg").default alt="logo")
   div.ui-kit-cards__blk
     +formSearchNum
-    +formRegistration(
-      {
-        id : "Uikit"
-      }
-    )
+    .ui-kit-cards__form-registration
+      +formRegistration(
+        {
+          id : "Uikit"
+        }
+      )
+
   div.ui-kit-cards__blk
     +formReservation(
       {
@@ -26,29 +28,34 @@ div.ui-kit-cards
         priceFinal : "38 081"
       }
     )
-    +formSignIn
-  div.ui-kit-cards__blk.ui-kit-cards__blk_3
+    .ui-kit-cards__form-registration
+      +formSignIn
+
+  div.ui-kit-cards__blk
     div.ui-kit-cards__calendar-block
       +calendar({state : "open"})
-    +cardRoom(
-      {
-        id : 1,
-        number : 888,
-        price : "9 990",
-        markLink : "люкс",
-        review : 145,
-        rating : 5
-      }
-    )
-    +cardRoom(
-      {
-        id : 2,
-        number : 840,
-        price : "9 990",
-        markLink : "",
-        review : 65,
-        rating : 4
-      }
-    )
+
+    .ui-kit-cards__card-room
+      +cardRoom(
+        {
+          id : 1,
+          number : 888,
+          price : "9 990",
+          markLink : "люкс",
+          review : 145,
+          rating : 5
+        }
+      )
+    .ui-kit-cards__card-room
+      +cardRoom(
+        {
+          id : 2,
+          number : 840,
+          price : "9 990",
+          markLink : "",
+          review : 65,
+          rating : 4
+        }
+      )
 
 script(src="./ui-kit-cards.js")

@@ -6,7 +6,7 @@
   width: 1440px;
   box-sizing: border-box;
 
-  .ui-kit-cards__ico-logo {
+  &__ico-logo {
     width: 48px;
     height: 48px;
     position: absolute;
@@ -14,58 +14,20 @@
     top: 30px;
   }
 
-  .ui-kit-cards__blk {
+  &__blk {
     margin: 20px;
-
-    &.ui-kit-cards__blk_3 {
-      width: 320px;
-    }
-
-    .form-search-num {
-      position: relative;
-      margin-bottom: 40px;
-    }
-
-    .form-reservation {
-      margin-bottom: 38px;
-
-      .form-reservation__block {
-        h2 {
-          &:last-child {
-            margin-right: -9px;
-          }
-        }
-      }
-    }
-
-    .form-reservation__block-prices {
-      .form-reservation__icon-info-price {
-        position: absolute;
-        left: 211px;
-      }
-    }
-
-    .ui-kit-cards__calendar-block {
-      height: 395px;
-
-      .datepicker-inline {
-        margin-top: 0;
-      }
-    }
-
-    .card-room {
-      margin: 14px 2.5px 40px 0px;
-
-      .link_lux {
-        margin: 0 0 0 -4px;
-      }
-    }
   }
 
-  .form-search-num,
-  .form-registration,
-  .form-reservation,
-  .form-sign-in {
-    margin: 0;
+  &__form-registration,
+  &__form-sign-in {
+    margin-top: 39px;
+  }
+
+  &__calendar-block {
+    height: 369px;
+  }
+
+  &__card-room {
+    margin: 39px 0 41px 0;
   }
 }
