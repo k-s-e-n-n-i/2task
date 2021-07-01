@@ -2,7 +2,7 @@ import '../../modules/plugin.slider/plugin.slider.ts';
 
 $(function () {
   $('.ui-kit-form-elements').slider({
-    element: document.querySelector('.ui-kit-form-elements__slider-blk'),
+    element: document.querySelector('.ui-kit-form-elements__slider'),
     idElement: 'idSlider2',
     width: 266,
     type: 'interval',
