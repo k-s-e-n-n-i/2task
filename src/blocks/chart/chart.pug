@@ -1,4 +1,4 @@
-mixin chart
+mixin chart(obj)
   div.chart
     p.chart__qty 260
     p.chart__text голосов
@@ -6,9 +6,5 @@ mixin chart
   div.chart-canvas
     canvas(id="oilChart")
   div.chart-legend
-    +listBlock(
-      {
-        topic : "",
-        tagTopic : ""
-      }
-    )
+    ul.chart-legend__list
+

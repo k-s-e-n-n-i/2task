@@ -50,13 +50,13 @@ let items = pieChart.data.labels;
 let colors = pieChart.data.datasets[0].backgroundColor;
 
 for (let i = 0; i < qtyLine; i++) {
-  let liLegend = `<li class="list-block__item"><div class="list-block__point"></div><p>${items[i]}</p></li>`;
+  let liLegend = `<li class="chart-legend__item"><div class="chart-legend__point"></div><p>${items[i]}</p></li>`;
 
-  $('.chart-legend .list-block__list').append(liLegend);
-  $(`.chart-legend .list-block__item:nth-child(${i + 1}) .list-block__point`).css(
+  $('.chart-legend .chart-legend__list').append(liLegend);
+  $(`.chart-legend .chart-legend__item:nth-child(${i + 1}) .chart-legend__point`).css(
     'background-color',
     colors[i]
   );
 }
 
-$('.chart-legend .list-block__item::before').css('width', '100px');
+$('.chart-legend .chart-legend__item::before').css('width', '100px');
