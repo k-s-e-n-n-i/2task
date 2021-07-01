@@ -7,11 +7,11 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   cursor: pointer;
 
-  &.like_liked {
+  &_liked {
     border-color: #bc9cff;
   }
 
-  .like__ico {
+  &__ico {
     width: 10px;
     height: 10px;
     margin: 4px 0 5px 4px;
@@ -20,13 +20,13 @@
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: contain;
-
-    &.like__ico_liked {
-      background-image: url('favorite.svg');
-    }
   }
 
-  .like__sum {
+  &__ico_liked {
+    background-image: url('favorite.svg');
+  }
+
+  &__sum {
     margin: 4px 10px 5px 0;
     font-size: 9.6px;
     display: flex;
@@ -37,9 +37,9 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+  }
 
-    &.like__sum_liked {
-      color: #bc9cff;
-    }
+  &__sum_liked {
+    color: #bc9cff;
   }
 }
