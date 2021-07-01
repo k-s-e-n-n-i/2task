@@ -6,31 +6,33 @@ include ~@Blocks/btn/btn.pug
 mixin formReservation(obj)
   form.form-reservation
     div.form-reservation__block
-      p
+      .form-reservation__number
         span= "№ "
         span= obj.number +" "
-        +link(
-          {
-            text : "люкс",
-            url : '#',
-            type : "lux"
-          }
-        )
-      p
+        .form-reservation__link-lux
+          +link(
+            {
+              text : "люкс",
+              url : '#',
+              type : "lux"
+            }
+          )
+      .form-reservation__number-price
         span= obj.priceFrom
         span= "₽"
         span= " в сутки"
 
-    +dropdownDates(
-      { 
-        topic : "Прибытие",
-        activeText : "19.08.2019",
-      },
-      { 
-        topic : "Выезд",
-        activeText : "23.08.2019",
-      }
-    ) 
+    .form-reservation__dropdown-dates
+      +dropdownDates(
+        { 
+          topic : "Прибытие",
+          activeText : "19.08.2019",
+        },
+        { 
+          topic : "Выезд",
+          activeText : "23.08.2019",
+        }
+      ) 
 
     +dropdown(
       { 
@@ -85,15 +87,16 @@ mixin formReservation(obj)
       span.form-reservation__dashed
       h2= obj.priceFinal +"₽"
 
-    +btn(
-      {
-        text : "Забронировать",
-        link : "#",
-        arrow : true,
-        border: false,
-        hover: false
-      }
-    )
+    .form-reservation__btn
+      +btn(
+        {
+          text : "Забронировать",
+          link : "#",
+          arrow : true,
+          border: false,
+          hover: false
+        }
+      )
 
 
 mixin formReservation__blockPrices(...items)
