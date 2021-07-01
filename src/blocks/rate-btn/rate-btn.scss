@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
 
-  .rate-btn__star {
+  &__star {
     width: 20px;
     height: 20px;
     margin: 0 2px;
@@ -11,9 +11,9 @@
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: contain;
+  }
 
-    &.rate-btn__star_active {
-      background-image: url('star.svg');
-    }
+  &__star_active {
+    background-image: url('star.svg');
   }
 }
