@@ -1,5 +1,5 @@
 $(function () {
-  $('.checkbox-list-expandable__topicBlock').on('click', handleCheckboxlistClick);
+  $('.checkbox-list-expandable__topic-block').on('click', handleCheckboxlistClick);
 
   function handleCheckboxlistClick() {
     var block_list = $(this).closest('.checkbox-list-expandable').find('.checkbox-list'),

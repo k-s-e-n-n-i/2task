@@ -1,8 +1,7 @@
 .checkbox-list-expandable {
-  margin: 50px 0 17px 0;
-
-  &__topicBlock {
+  &__topic-block {
     position: relative;
+    margin-bottom: 14px;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -25,23 +24,6 @@
 
     &.checkbox-list-expandable__expand_open {
       transform: rotate(180deg);
-    }
-  }
-
-  .checkbox-list {
-    &__label {
-      &:before {
-        left: 0;
-        top: 0;
-      }
-    }
-
-    &__input {
-      &:checked + .checkbox-list__label {
-        &:after {
-          top: 4px;
-        }
-      }
     }
   }
 }
