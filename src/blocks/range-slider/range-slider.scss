@@ -1,13 +1,18 @@
 .range-slider {
   width: 100%;
 
-  .range-slider__topic-label {
+  &__topic-label {
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
-  .range-slider__slider {
+  &__label-block {
+    margin: 0 0 6px 0;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &__slider {
     width: calc(100% - 11px);
     height: 6px;
     margin: 18px 0 10px;
@@ -28,57 +33,57 @@
       transform: translate(-5px, 0);
       height: 6px;
     }
-
-    .range-slider__scale {
-      position: absolute;
-      z-index: -1;
-
-      .range-slider__scale-line {
-        width: 1px;
-        height: 10px;
-        background: rgba(31, 32, 65, 0.25);
-      }
-
-      .range-slider__scale-val {
-        transform: translateX(-50%);
-        font-size: 10px;
-      }
-    }
-
-    .range-slider__range {
-      height: calc(100% + 0px);
-      width: 85px;
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border-radius: 3px;
-      box-sizing: border-box;
-      transform: translate(78px, 0px);
-    }
-
-    .range-slider__left,
-    .range-slider__right {
-      width: 12px;
-      height: 12px;
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border: 2px solid #fff;
-      border-radius: 50px;
-      display: inline-block;
-      position: absolute;
-      cursor: pointer;
-      top: 7px;
-    }
-
-    .range-slider__left {
-      left: 78px;
-      transform: translate(-50%, -12px);
-    }
-
-    .range-slider__right {
-      left: 163px;
-      transform: translate(-50%, -12px);
-    }
   }
 
-  .range-slider__postText {
+  &__range {
+    height: calc(100% + 0px);
+    width: 85px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border-radius: 3px;
+    box-sizing: border-box;
+    transform: translate(78px, 0px);
+  }
+
+  &__left,
+  &__right {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border: 2px solid #fff;
+    border-radius: 50px;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    top: 7px;
+  }
+
+  &__left {
+    left: 78px;
+    transform: translate(-50%, -12px);
+  }
+
+  &__right {
+    left: 163px;
+    transform: translate(-50%, -12px);
+  }
+
+  &__scale {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__scale-line {
+    width: 1px;
+    height: 10px;
+    background: rgba(31, 32, 65, 0.25);
+  }
+
+  &__scale-val {
+    transform: translateX(-50%);
+    font-size: 10px;
+  }
+
+  &__postText {
     margin-top: 5px;
   }
 }
