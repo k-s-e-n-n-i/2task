@@ -74,8 +74,12 @@
   }
 
   &__items-line {
+    &:last-child {
+      padding-bottom: 5px;
+    }
+
     h3 {
-      padding: 13px 15px;
+      padding: 11px 14px;
       margin: 0;
     }
 
@@ -90,7 +94,7 @@
     justify-content: space-between;
     align-items: center;
     width: 92px;
-    margin-right: 7px;
+    margin-right: 5px;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -124,7 +128,7 @@
   }
 
   &__btns {
-    height: 48px;
+    height: auto;
 
     &.dropdown__btns_flex-end {
       justify-content: flex-end;
@@ -136,12 +140,13 @@
   }
 
   &__btns-link {
+    margin: 13px 0 8px 0;
     &.dropdown__btns-link_clean {
-      margin: 13px;
+      margin-left: 13px;
     }
 
     &.dropdown__btns-link_ok {
-      margin: 13px 7px;
+      margin-right: 7px;
     }
   }
 }
