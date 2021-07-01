@@ -1,27 +1,27 @@
 .list-block {
   width: 361px;
 
-  .list-block__list {
+  &__list {
     margin: 0;
     padding: 0;
   }
 
-  .list-block__item {
+  &__item {
     position: relative;
     margin: 10px 0;
     display: flex;
-
-    .list-block__point {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      margin: 7px 11px 7px 0;
-      background: rgba(31, 32, 65, 0.25);
-    }
 
     p {
       width: 240px;
       margin: 0;
     }
+  }
+
+  &__point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 7px 10px 7px 0;
+    background: rgba(31, 32, 65, 0.25);
   }
 }
