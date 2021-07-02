@@ -1,13 +1,29 @@
 .btn {
   position: relative;
   height: 100%;
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   border-radius: 22px;
 
-  &:hover,
-  &:focus,
-  &.btn_hover {
+  &_hover,
+  &__border_hover {
     opacity: 0.5;
+  }
+
+  &_gradient {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  &_border {
+    &:hover,
+    &:focus {
+      > .btn__border {
+        opacity: 0.5;
+      }
+    }
   }
 
   &__block {

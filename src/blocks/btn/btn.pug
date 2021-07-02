@@ -5,31 +5,36 @@ mixin btn(obj)
         when true
           - var arrow = 'btn__block_gradient_arrow '
           - var hover = 'btn_hover '
+          - var btn__border_hover = 'btn__border_hover '
         when false
           - var arrow = 'btn__block_gradient_arrow '
           - var hover = ''
+          - var btn__border_hover = ''
     when false
       case obj.hover
         when true
           - var arrow = ''
           - var hover = 'btn_hover '
+          - var btn__border_hover = 'btn__border_hover '
         when false
           - var arrow = ''
           - var hover = ''
+          - var btn__border_hover = ''
     default
       - var arrow = ''
       - var hover = ''
+      - var btn__border_hover = ''
 
   if obj.border == true
-    div.btn.btn_border
-      button(type = "button" class="btn__block btn__block_border " + hover)
+    div(class="btn btn_border ")
+      button(type = "button" class="btn__block btn__block_border ")
         a.btn__link(href=obj.link)= obj.text
         if obj.arrow == true
           div.btn__arrow.btn__arrow_white
-      div(class='btn__border ' + hover)
+      div(class='btn__border ' + btn__border_hover)
   else
-    div.btn
-      button(type = "button" class="btn__block btn__block_gradient " + arrow + hover)
+    div(class="btn btn_gradient " + hover)
+      button(type = "button" class="btn__block btn__block_gradient " + arrow)
         a.btn__link(href=obj.link)= obj.text
         if obj.arrow == true
           div.btn__arrow.btn__arrow_white
