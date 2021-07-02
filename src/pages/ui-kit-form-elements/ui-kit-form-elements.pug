@@ -20,7 +20,7 @@ include ~@Blocks/global-head/global-head.pug
 
 main.ui-kit-form-elements
   a(href="./index.html")
-    img.ui-kit-form-elements__ico-logo(src=require("@Pages/ui-kit-form-elements/ico-logo.svg").default alt="logo")
+    img.ui-kit-form-elements__ico-logo(src=require("@Pages/ui-kit-form-elements/img/ico-logo.svg").default alt="logo")
   .ui-kit-form-elements__blk.ui-kit-form-elements__blk_1
     .ui-kit-form-elements__input-text
       +inputText(
@@ -496,13 +496,13 @@ main.ui-kit-form-elements
       {
         label : "Комфорт",
         text : "Шумопоглощающие стены",
-        url : require("@Blocks/info-block/emoticon.svg").default,
+        url : require("@Pages/ui-kit-form-elements/img/emoticon.svg").default,
         dopclass : "info-block__icon_emoticon"
       },
       {
         label : "Удобство",
         text : "Окно в каждой из спален",
-        url : require("@Blocks/info-block/city.svg").default,
+        url : require("@Pages/ui-kit-form-elements/img/city.svg").default,
         dopclass : "info-block__icon_city"
       }
     )
@@ -515,7 +515,7 @@ main.ui-kit-form-elements
           label : "2 отзыва"
         },
         {
-          urlImg: require("@Pages/details-room/photo1.png").default,
+          urlImg: require("@Pages/ui-kit-form-elements/img/photo1.png").default,
           liked : true,
           qty : 12,
           name : "Мурад Сарафанов",

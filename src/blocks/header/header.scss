@@ -27,12 +27,12 @@
     display: none;
     width: 24px;
     height: 20px;
-    background-image: url('./menu.svg');
+    background-image: url('./img/menu.svg');
     background-repeat: no-repeat;
     background-position: center;
 
     &.header__menu-mobile_cross {
-      background-image: url('./cross.svg');
+      background-image: url('./img/cross.svg');
     }
   }
 
@@ -92,7 +92,7 @@
       display: inline-block;
       width: 22px;
       height: 14px;
-      background-image: url('@Blocks/header/expand-more.svg');
+      background-image: url('@Blocks/header/img/expand-more.svg');
       background-repeat: no-repeat;
       background-position: 50% 90%;
       cursor: pointer;
