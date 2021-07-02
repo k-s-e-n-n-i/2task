@@ -1,4 +1,3 @@
-/*blocks*/
 import '../../blocks/btn/btn.scss';
 import '../../blocks/comment-block/comment-block.scss';
 import '../../blocks/dropdown/dropdown.scss';
@@ -21,5 +20,4 @@ import '../../blocks/header/header.ts';
 import '../../blocks/calendar/calendar.js';
 import '../../blocks/form-reservation/form-reservation.scss';
 
-/*pages*/
 import '../../pages/details-room/details-room.scss';

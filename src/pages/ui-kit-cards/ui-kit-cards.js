@@ -1,4 +1,3 @@
-/*blocks*/
 import '../../blocks/btn/btn.scss';
 import '../../blocks/dropdown/dropdown.scss';
 import '../../blocks/dropdown/dropdown.ts';
@@ -21,5 +20,4 @@ import '../../blocks/form-reservation/form-reservation.scss';
 import '../../blocks/form-search-num/form-search-num.scss';
 import '../../blocks/form-sign-in/form-sign-in.scss';
 
-/*pages*/
 import '../../pages/ui-kit-cards/ui-kit-cards.scss';

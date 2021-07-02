@@ -1,4 +1,3 @@
-/*blocks*/
 import '../../blocks/btn/btn.scss';
 import '../../blocks/checkbox-list/checkbox-list.scss';
 import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
@@ -22,6 +21,5 @@ import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';
 import '../../blocks/header/header.ts';
 
-/*pages*/
 import '../../pages/search-room/search-room.scss';
 import '../../pages/search-room/range-slider.js';

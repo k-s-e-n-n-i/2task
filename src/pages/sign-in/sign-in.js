@@ -1,4 +1,3 @@
-/*blocks*/
 import '../../blocks/btn/btn.scss';
 import '../../blocks/input-text/input-text.scss';
 import '../../blocks/link/link.scss';
@@ -10,5 +9,4 @@ import '../../blocks/header/header.scss';
 import '../../blocks/header/header.ts';
 import '../../blocks/form-sign-in/form-sign-in.scss';
 
-/*pages*/
 import '../../pages/sign-in/sign-in.scss';

@@ -1,4 +1,3 @@
-/*blocks*/
 import '../../blocks/btn/btn.scss';
 import '../../blocks/checkbox-list/checkbox-list.scss';
 import '../../blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
@@ -25,6 +24,5 @@ import '../../blocks/topic-label/topic-label.scss';
 
 import '../../blocks/calendar/calendar.js';
 
-/*pages*/
 import '../../pages/ui-kit-form-elements/ui-kit-form-elements.scss';
 import '../../pages/ui-kit-form-elements/range-slider.js';

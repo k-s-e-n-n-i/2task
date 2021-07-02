@@ -1,4 +1,3 @@
-/*blocks*/
 import '../../blocks/btn/btn.scss';
 import '../../blocks/dropdown/dropdown.scss';
 import '../../blocks/dropdown/dropdown.ts';
@@ -14,5 +13,4 @@ import '../../blocks/footer/footer.scss';
 import '../../blocks/header/header.scss';
 import '../../blocks/header/header.ts';
 
-/*pages*/
 import '../../pages/landing-page/landing-page.scss';

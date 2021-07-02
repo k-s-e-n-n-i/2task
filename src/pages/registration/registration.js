@@ -1,4 +1,3 @@
-/*blocks*/
 import '../../blocks/btn/btn.scss';
 import '../../blocks/input-text/input-text.scss';
 import '../../blocks/input-text/input-text.js';
@@ -14,5 +13,4 @@ import '../../blocks/header/header.scss';
 import '../../blocks/header/header.ts';
 import '../../blocks/form-registration/form-registration.scss';
 
-/*pages*/
 import '../../pages/registration/registration.scss';
