@@ -1,9 +1,9 @@
 mixin infoBlock(obj,...items)
-  div.info-block
+  .info-block
     each item, index in items
-      div.info-block__item
+      .info-block__item
         img(src=item.url class="info-block__icon "+item.dopclass alt="icon")
-        div.info-block__text
+        .info-block__text
           p
             b= item.label
           p= item.text

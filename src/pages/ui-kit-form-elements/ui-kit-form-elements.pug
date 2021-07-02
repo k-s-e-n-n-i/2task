@@ -18,10 +18,10 @@ include ~@Blocks/comment-block/comment-block.pug
 
 include ~@Blocks/global-head/global-head.pug
 
-div.ui-kit-form-elements
+.ui-kit-form-elements
   a(href="./index.html")
     img.ui-kit-form-elements__ico-logo(src=require("@Pages/ui-kit-form-elements/ico-logo.svg").default alt="logo")
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_1
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_1
     .ui-kit-form-elements__input-text
       +inputText(
         {
@@ -85,7 +85,7 @@ div.ui-kit-form-elements
         }
       ) 
 
-    div.ui-kit-form-elements__input-blk-narrow
+    .ui-kit-form-elements__input-blk-narrow
       .ui-kit-form-elements__dropdown
         +dropdown(
           { 
@@ -112,7 +112,7 @@ div.ui-kit-form-elements
           }
         )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_2
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_2
     h3 Checkbox Buttons
     .ui-kit-form-elements__checkbox-list
       +checkboxList(
@@ -173,7 +173,7 @@ div.ui-kit-form-elements
         )
 
     h3 like button
-    div.ui-kit-form-elements__like-group
+    .ui-kit-form-elements__like-group
       .ui-kit-form-elements__like
         +like(
           {
@@ -190,7 +190,7 @@ div.ui-kit-form-elements
         )
 
     h3 rate button
-    div.ui-kit-form-elements__rate-btn-group
+    .ui-kit-form-elements__rate-btn-group
       .ui-kit-form-elements__rate-btn
         +rateBtn(
           {
@@ -206,8 +206,8 @@ div.ui-kit-form-elements
           }
         )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_3
-    div.ui-kit-form-elements__slider
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_3
+    .ui-kit-form-elements__slider
       +rangeSlider(
         {
           topic : "Range Slider",
@@ -263,7 +263,7 @@ div.ui-kit-form-elements
           }
         )
 
-    div.ui-kit-form-elements__link-group
+    .ui-kit-form-elements__link-group
       .ui-kit-form-elements__link
         +link(
           {
@@ -281,7 +281,7 @@ div.ui-kit-form-elements
           }
         )
 
-    div.ui-kit-form-elements__btn.ui-kit-form-elements__btn_arrow
+    .ui-kit-form-elements__btn.ui-kit-form-elements__btn_arrow
       +btn(
         {
           text : "перейти к оплате",
@@ -301,7 +301,7 @@ div.ui-kit-form-elements
         }
       )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_4
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_4
     .ui-kit-form-elements__dropdown
       +dropdown(
         { 
@@ -345,7 +345,7 @@ div.ui-kit-form-elements
         }
       )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_5
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_5
     +dropdown(
       { 
         name : "guests",
@@ -376,7 +376,7 @@ div.ui-kit-form-elements
       }    
     )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_6
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_6
     +dropdown(
       { 
         name : "guests",
@@ -407,7 +407,7 @@ div.ui-kit-form-elements
       }    
     )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_7
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_7
     .ui-kit-form-elements__checkbox-list-expandable
       +checkboxListExpandable(
         {
@@ -458,7 +458,7 @@ div.ui-kit-form-elements
         }
       )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_8
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_8
     h3 Rich Checkbox Buttons
     .ui-kit-form-elements__checkbox-list
       +checkboxList(
@@ -479,7 +479,7 @@ div.ui-kit-form-elements
         }
       )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_9
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_9
     h3 bullet list
     .ui-kit-form-elements__list-block
       +listBlock(
@@ -488,7 +488,7 @@ div.ui-kit-form-elements
         }
       )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_10
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_10
     +infoBlock(
       {
         qtyHR : 1
@@ -507,7 +507,7 @@ div.ui-kit-form-elements
       }
     )
 
-  div.ui-kit-form-elements__blk.ui-kit-form-elements__blk_11
+  .ui-kit-form-elements__blk.ui-kit-form-elements__blk_11
     .ui-kit-form-elements__comment-block
       +commentBlock(
         {

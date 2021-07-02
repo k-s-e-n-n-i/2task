@@ -10,15 +10,15 @@ include ~@Blocks/form-reservation/form-reservation.pug
 
 include ~@Blocks/global-head-with-header/global-head-with-header.pug
 
-div.details-room
-  div.details-room__block-images
-    div.details-room__blk-image-one
-      div.details-room__image-one
-    div.details-room__blk-image-two
-      div.details-room__image-two.details-room__image-two_top
-      div.details-room__image-two.details-room__image-two_bottom
-  div.details-room__content-block
-    div.details-room__room-info
+.details-room
+  .details-room__block-images
+    .details-room__blk-image-one
+      .details-room__image-one
+    .details-room__blk-image-two
+      .details-room__image-two.details-room__image-two_top
+      .details-room__image-two.details-room__image-two_bottom
+  .details-room__content-block
+    .details-room__room-info
       .details-room__info-block
         h2 Сведения о номере
         +infoBlock(
@@ -45,7 +45,7 @@ div.details-room
           }
         )
 
-      div.details-room__room-impression
+      .details-room__room-impression
         h2 Впечатления от номера
         +chart({ list: [] })
 
@@ -73,7 +73,7 @@ div.details-room
           }
         )
 
-    div.details-room__form-reservation
+    .details-room__form-reservation
       +formReservation(
         {
           number : 888,

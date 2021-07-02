@@ -1,15 +1,15 @@
 mixin rangeSlider(obj)
-  div(class="range-slider" id= obj.id)
-    div.range-slider__topic-label
+  .range-slider(id= obj.id)
+    .range-slider__topic-label
       h3= obj.topic
       p.range-slider__label-block
         span.range-slider__label-min= obj.labelMin
         span.range-slider__label-dash= "₽ - "
         span.range-slider__label-max= obj.labelMax
         span= "₽"
-    div.range-slider__slider
-      div.range-slider__range
-      div.range-slider__left
-      div.range-slider__right
+    .range-slider__slider
+      .range-slider__range
+      .range-slider__left
+      .range-slider__right
     if obj.postText != ""
       p.range-slider__postText Стоимость за сутки пребывания в номере

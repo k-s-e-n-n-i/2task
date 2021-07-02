@@ -30,11 +30,11 @@ mixin btn(obj)
       button(type = "button" class="btn__block btn__block_border ")
         a.btn__link(href=obj.link)= obj.text
         if obj.arrow == true
-          div.btn__arrow.btn__arrow_white
+          .btn__arrow.btn__arrow_white
       div(class='btn__border ' + btn__border_hover)
   else
     div(class="btn btn_gradient " + hover)
       button(type = "button" class="btn__block btn__block_gradient " + arrow)
         a.btn__link(href=obj.link)= obj.text
         if obj.arrow == true
-          div.btn__arrow.btn__arrow_white
+          .btn__arrow.btn__arrow_white

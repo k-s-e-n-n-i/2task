@@ -2,11 +2,11 @@ include ~@Blocks/btn/btn.pug
 
 mixin header(obj,...items)
   header.header
-    div.header__content-container
+    .header__content-container
       a.header__logo-link(href="./landing-page.html")
         img.header__logo(src=require("@Blocks/header/logo.svg").default alt="logo")
-      div.header__menu-mobile
-      div.header__links.header__links_hidden
+      .header__menu-mobile
+      .header__links.header__links_hidden
         nav.header__block-menu
           ul.header__menu
             each item in items
@@ -25,9 +25,9 @@ mixin header(obj,...items)
                     each sbm in item.submenu
                       li.header__submenu-li
                         a.header__submenu-a(href= sbm.link)= sbm.menuItem
-        div.header__block-login
+        .header__block-login
           if obj.authorization == false
-            div.header__btn.header__btn_border
+            .header__btn.header__btn_border
               +btn(
                 {
                   text : "Войти",
@@ -37,7 +37,7 @@ mixin header(obj,...items)
                   hover: false
                 }
               )
-            div.header__btn.header__btn_gradient
+            .header__btn.header__btn_gradient
               +btn(
                 {
                   text : "Зарегистрироваться",
@@ -48,5 +48,5 @@ mixin header(obj,...items)
                 }
               )
           else
-            div.header__block-login-hr
+            .header__block-login-hr
             p= obj.name

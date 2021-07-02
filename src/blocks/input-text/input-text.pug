@@ -9,14 +9,14 @@ mixin inputText(obj)
     - var classDate = ''
 
   if obj.type == "subscription"
-    div.input-text.input-text_subscription
+    .input-text.input-text_subscription
       +topicLabel(obj)
       if obj.state == "focus"
         input(class="input-text__input input-text__input_hover " name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
       else
         input(class="input-text__input " name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
   else  
-    div.input-text
+    .input-text
       +topicLabel(obj)
       if obj.state == "focus"
         input(class="input-text__input input-text__input_hover "+classDate name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)

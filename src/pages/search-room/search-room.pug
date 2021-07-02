@@ -11,9 +11,9 @@ include ~@Blocks/pagination/pagination.pug
 
 include ~@Blocks/global-head-with-header/global-head-with-header.pug
 
-div.search-room
-  div.search-room__filters
-    div.search-room__filter-date
+.search-room
+  .search-room__filters
+    .search-room__filter-date
       +dropdown(
         { 
           name : "date",
@@ -26,7 +26,7 @@ div.search-room
         }
       )
 
-    div.search-room__filter-guest
+    .search-room__filter-guest
       +dropdown(
         { 
           name : "guests",
@@ -57,7 +57,7 @@ div.search-room
         }    
       )
 
-    div.search-room__range-slider
+    .search-room__range-slider
       +rangeSlider(
         {
           topic : "диапазон цены",
@@ -68,7 +68,7 @@ div.search-room
         }
       )  
 
-    div.search-room__filter-features
+    .search-room__filter-features
       h3 Правила дома
       +checkboxList(
         { 
@@ -94,7 +94,7 @@ div.search-room
         }
       )
 
-    div.search-room__filter-availability
+    .search-room__filter-availability
       h3 доступность
       +checkboxList(
         { 
@@ -114,7 +114,7 @@ div.search-room
         }
       )
 
-    div.search-room__filter-comfort
+    .search-room__filter-comfort
       +dropdown(
         { 
           name : "room",
@@ -183,7 +183,7 @@ div.search-room
         }
       )
 
-  div.search-room__rooms
+  .search-room__rooms
     h1 Номера, которые мы для вас подобрали
 
     .search-room__card-room

@@ -1,6 +1,6 @@
 mixin radiogroup(obj,...items)
-  div.radiogroup
+  .radiogroup
     each item,index in items
-      div.radiogroup__radio-btn
+      .radiogroup__radio-btn
         input.radiogroup__input(id="rb"+obj.nameGroup + obj.idMainBlock+(index+1) type="radio" name=obj.nameGroup checked= item.check)
         label.radiogroup__label(for="rb"+obj.nameGroup + obj.idMainBlock+(index+1))= item.text

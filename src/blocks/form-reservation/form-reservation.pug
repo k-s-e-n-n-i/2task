@@ -5,7 +5,7 @@ include ~@Blocks/btn/btn.pug
 
 mixin formReservation(obj)
   form.form-reservation
-    div.form-reservation__block
+    .form-reservation__block
       .form-reservation__number
         span= "№ "
         span= obj.number +" "
@@ -82,7 +82,7 @@ mixin formReservation(obj)
       }
     )
 
-    div.form-reservation__block
+    .form-reservation__block
       h2= "Итого"
       span.form-reservation__dashed
       h2= obj.priceFinal +"₽"
@@ -100,11 +100,11 @@ mixin formReservation(obj)
 
 
 mixin formReservation__blockPrices(...items)
-  div.form-reservation__block-prices
+  .form-reservation__block-prices
     each item in items
-      div.form-reservation__line-price
-        div.form-reservation__text-price
+      .form-reservation__line-price
+        .form-reservation__text-price
           p !{item.textPrice}
           if item.iconInfo == true
-            div.form-reservation__icon-info-price i
+            .form-reservation__icon-info-price i
         p= item.sumPrice +"₽"

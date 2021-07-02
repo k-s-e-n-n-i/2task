@@ -1,17 +1,17 @@
 mixin colorType__itemColor(obj)
-  div.ui-kit-color-type__item-color
+  .ui-kit-color-type__item-color
     div(class="ui-kit-color-type__color " +obj.classColor)
-    div.ui-kit-color-type__block-text
+    .ui-kit-color-type__block-text
       h2.ui-kit-color-type__color-topic= obj.topic
       h2.ui-kit-color-type__color-label= obj.label
 
 
 include ~@Blocks/global-head/global-head.pug
 
-div.ui-kit-color-type
+.ui-kit-color-type
   a.ui-kit-color-type__link-logo(href="./index.html")
     img.ui-kit-color-type__ico-logo(src=require("@Pages/ui-kit-color-type/ico-logo.svg").default alt="logo")
-  div.ui-kit-color-type__block-colors
+  .ui-kit-color-type__block-colors
     +colorType__itemColor(
       {
         classColor : "ui-kit-color-type__color_dark-shade-100",
@@ -62,17 +62,17 @@ div.ui-kit-color-type
       }
     )
 
-  div.ui-kit-color-type__block-types
-    div.ui-kit-color-type__item-type
+  .ui-kit-color-type__block-types
+    .ui-kit-color-type__item-type
       h1.ui-kit-color-type__type-tag= "H1"
       h1.ui-kit-color-type__type-text= "This one is the sub-section or widget title"
-    div.ui-kit-color-type__item-type
+    .ui-kit-color-type__item-type
       h2.ui-kit-color-type__type-tag= "H2"
       h2.ui-kit-color-type__type-text= "Next one is the item title inside widgets"
-    div.ui-kit-color-type__item-type
+    .ui-kit-color-type__item-type
       h3.ui-kit-color-type__type-tag= "H3"
       h3.ui-kit-color-type__type-text= "This is a label or CTA text"
-    div.ui-kit-color-type__item-type
+    .ui-kit-color-type__item-type
       p.ui-kit-color-type__type-tag= "Body"
       p.ui-kit-color-type__type-text= "This is the body text which is used for most of the design, like paragraphs, lists, etc."
 

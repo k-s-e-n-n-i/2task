@@ -4,16 +4,16 @@ include ~@Blocks/calendar/calendar.pug
 
 
 mixin dropdown(obj,...items)
-  div.dropdown(name=  obj.name)
+  .dropdown(name=  obj.name)
     +topicLabel(obj)
     +dropdown__dropdown(obj)
 
     if items != ""
       if obj.state == "close"
-        div.dropdown__dropdown-items.dropdown__dropdown-items_hide
+        .dropdown__dropdown-items.dropdown__dropdown-items_hide
           +dropdown__itemsLine(obj,...items)
       else
-        div.dropdown__dropdown-items
+        .dropdown__dropdown-items
           +dropdown__itemsLine(obj,...items)
 
     if obj.name == 'date'
@@ -22,32 +22,32 @@ mixin dropdown(obj,...items)
 
 mixin dropdown__dropdown(obj)
   if obj.state == "close"
-    div(class="dropdown__dropdown")= obj.activeText
+    .dropdown__dropdown= obj.activeText
   else
-    div(class="dropdown__dropdown dropdown__dropdown_items-show")= obj.activeText
+    .dropdown__dropdown.dropdown__dropdown_items-show= obj.activeText
 
 
 mixin dropdown__itemsLine(obj,...items)
   each item in items
-    div.dropdown__items-line
+    .dropdown__items-line
       h3= item.text
-      div.dropdown__block-qty
+      .dropdown__block-qty
         if item.minus == "disable"
-          div(class="dropdown__inc-qty-minus dropdown__inc-qty_disable")= "-" 
+          .dropdown__inc-qty-minus.dropdown__inc-qty_disable= "-" 
         else
-          div(class="dropdown__inc-qty-minus")= "-"
+          .dropdown__inc-qty-minus= "-"
         span= item.qty
         if item.plus == "disable"
-          div(class="dropdown__inc-qty-plus dropdown__inc-qty_disable")= "-" 
+          .dropdown__inc-qty-plus.dropdown__inc-qty_disable= "-" 
         else
-          div(class="dropdown__inc-qty-plus")= "+"
+          .dropdown__inc-qty-plus= "+"
 
   if obj.btnClean == true || obj.btnOk == true
     if obj.btnClean == false && obj.btnOk == true
-      div.dropdown__btns.dropdown__btns_flex-end
+      .dropdown__btns.dropdown__btns_flex-end
         +links
     else
-      div.dropdown__btns
+      .dropdown__btns
         +links
 
 

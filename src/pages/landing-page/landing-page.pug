@@ -4,11 +4,11 @@ include ~@Blocks/form-search-num/form-search-num.pug
 
 include ~@Blocks/global-head-with-header/global-head-with-header.pug
 
-div.landing-page
-  div.landing-page__content-container
+.landing-page
+  .landing-page__content-container
     .landing-page__form-search-num
       +formSearchNum
-  div(class="landing-page__content-container landing-page__content-container_flex-end")
+  .landing-page__content-container.landing-page__content-container_flex-end
     p.landing-page__label Лучшие номера для вашей работы, отдыха и просто вдохновения
 
 include ~@Blocks/global-footer/global-footer.pug

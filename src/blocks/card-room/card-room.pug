@@ -2,22 +2,22 @@ include ~@Blocks/link/link.pug
 include ~@Blocks/rate-btn/rate-btn.pug
 
 mixin cardRoom(obj)
-  div.card-room
-    div.card-room__image-block
-      div.card-room__image.card-room__image_active(id=obj.id)
-      div.card-room__image(id=obj.id+1)
-      div.card-room__image(id=obj.id+2)
-      div.card-room__image(id=obj.id+3)
-      div.card-room__arrows
-        div.card-room__arrow-left
-        div.card-room__arrow-right
-      div.card-room__slider-pagination
-        div.card-room__slider-pagination-item.card-room__slider-pagination-item_active(id="pag1")
-        div.card-room__slider-pagination-item(id="pag2")
-        div.card-room__slider-pagination-item(id="pag3")
-        div.card-room__slider-pagination-item(id="pag4")
-    div.card-room__info-room
-      div.card-room__number-price.card-room__number-price_bottom-border
+  .card-room
+    .card-room__image-block
+      .card-room__image.card-room__image_active(id=obj.id)
+      .card-room__image(id=obj.id+1)
+      .card-room__image(id=obj.id+2)
+      .card-room__image(id=obj.id+3)
+      .card-room__arrows
+        .card-room__arrow-left
+        .card-room__arrow-right
+      .card-room__slider-pagination
+        .card-room__slider-pagination-item.card-room__slider-pagination-item_active(id="pag1")
+        .card-room__slider-pagination-item(id="pag2")
+        .card-room__slider-pagination-item(id="pag3")
+        .card-room__slider-pagination-item(id="pag4")
+    .card-room__info-room
+      .card-room__number-price.card-room__number-price_bottom-border
         p.card-room__number
           span= "№ "
           span= obj.number
@@ -33,7 +33,7 @@ mixin cardRoom(obj)
           span= obj.price
           span= "₽"
           span= " в сутки"
-      div.card-room__number-price
+      .card-room__number-price
         +rateBtn(
           {
             qty : 5,

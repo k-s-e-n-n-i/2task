@@ -5,13 +5,13 @@ include ~@Blocks/footer-menu/footer-menu.pug
 
 mixin footer
   footer.footer
-    div.footer__block-menu
-      div.footer__content-container
-        div.footer__logo-block
+    .footer__block-menu
+      .footer__content-container
+        .footer__logo-block
           img.footer__logo(src=require("@Blocks/footer/logo.svg").default alt="logo")
           p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
-        div.footer__footer-menu
+        .footer__footer-menu
           +footerMenu(
             {
               links : ["Навигация","О нас","Новости","Служба поддержки","Услуги"]
@@ -24,10 +24,10 @@ mixin footer
             }
           )
 
-        div.footer__subscription
+        .footer__subscription
           p.footer__subscription-topic Подписка
           p.footer__subscription-text Получайте специальные предложения и новости сервиса
-          div.footer__subscription-input
+          .footer__subscription-input
             +inputText(
               {
                 topic : "",
@@ -40,10 +40,10 @@ mixin footer
               }
             )
 
-    div.footer__copyright-block
-      div.footer__copyright-content
+    .footer__copyright-block
+      .footer__copyright-content
         p Copyright © 2018 Toxin отель. Все права защищены.
-        div.footer__soc-block  
+        .footer__soc-block  
           span.footer__soc-network
             a(href="#")
               img.footer__soc-network-twitter(src=require("@Blocks/footer/twitter.svg").default alt="twitter")

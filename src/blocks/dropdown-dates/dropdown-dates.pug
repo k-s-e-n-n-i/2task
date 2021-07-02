@@ -1,11 +1,11 @@
 include ~@Blocks/calendar/calendar.pug
 
 mixin dropdownDates(...items)
-  div.dropdown-dates
+  .dropdown-dates
     each item in items
       .dropdown-dates__date-block(name='date')
         if item.topic != ""
           h3= item.topic
-        div(class="dropdown-dates__dropdown")= item.activeText
+        .dropdown-dates__dropdown= item.activeText
     .dropdown-dates__calendar
       +calendar({state : "close"})

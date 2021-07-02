@@ -1,11 +1,11 @@
 mixin pagination(obj)
-  div(class="pagination")
-    div.pagination__num-block
-      div.pagination__num.pagination__num_active= 1
-      div.pagination__num= 2
-      div.pagination__num= 3
-      div.pagination__num= "..."
-      div.pagination__num= obj.max
-      div.pagination__num.pagination__num_next
-        div(class="pagination__arrow pagination__arrow_white")
-    div(class="pagination__label ")= obj.text
+  .pagination
+    .pagination__num-block
+      .pagination__num.pagination__num_active= 1
+      .pagination__num= 2
+      .pagination__num= 3
+      .pagination__num= "..."
+      .pagination__num= obj.max
+      .pagination__num.pagination__num_next
+        .pagination__arrow.pagination__arrow_white
+    .pagination__label= obj.text

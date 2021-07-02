@@ -8,10 +8,10 @@ include ~@Blocks/calendar/calendar.pug
 
 include ~@Blocks/global-head/global-head.pug
 
-div.ui-kit-cards
+.ui-kit-cards
   a(href="./index.html")
     img.ui-kit-cards__ico-logo(src=require("@Pages/ui-kit-cards/ico-logo.svg").default alt="logo")
-  div.ui-kit-cards__blk
+  .ui-kit-cards__blk
     +formSearchNum
     .ui-kit-cards__form-registration
       +formRegistration(
@@ -20,7 +20,7 @@ div.ui-kit-cards
         }
       )
 
-  div.ui-kit-cards__blk
+  .ui-kit-cards__blk
     +formReservation(
       {
         number : 888,
@@ -31,8 +31,8 @@ div.ui-kit-cards
     .ui-kit-cards__form-registration
       +formSignIn
 
-  div.ui-kit-cards__blk
-    div.ui-kit-cards__calendar-block
+  .ui-kit-cards__blk
+    .ui-kit-cards__calendar-block
       +calendar({state : "open"})
 
     .ui-kit-cards__card-room
