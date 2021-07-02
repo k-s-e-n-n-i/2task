@@ -2,7 +2,6 @@
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
-
   margin: 0 9.6% 0 9.7%;
 
   &__filters {
@@ -11,38 +10,9 @@
     flex-direction: column;
     flex-shrink: 0;
     margin-right: 4.6%;
-
-    h3 {
-      font-size: 12px;
-    }
-
-    .dropdown {
-      width: 100%;
-
-      .dropdown__dropdown {
-        width: 100%;
-      }
-    }
-
-    .checkbox-list-expandable {
-      margin-top: 30px;
-
-      img {
-        right: 17px;
-      }
-
-      .checkbox-list {
-        margin-top: 18px;
-
-        &__label {
-          padding: 2px 0 9px 30px;
-        }
-      }
-    }
   }
 
-  &__filter-date,
-  &__filters_additional {
+  &__filter-date {
     margin-top: 30px;
   }
 
@@ -50,8 +20,8 @@
     margin-top: 20px;
   }
 
-  &__slider-price {
-    margin-top: 26px;
+  &__range-slider {
+    margin-top: 31px;
 
     p {
       color: rgba(31, 32, 65, 0.5);
@@ -61,50 +31,34 @@
   }
 
   &__filter-features {
-    margin-top: 27px;
+    margin-top: 21px;
 
-    .checkbox-list {
-      margin-top: 13px;
+    h3 {
+      margin-bottom: 14px;
     }
   }
 
   &__filter-availability {
     margin-top: 21px;
+
+    h3 {
+      margin-bottom: 14px;
+    }
   }
 
   &__filter-comfort {
-    margin-top: 21px;
+    margin-top: 22px;
+  }
 
-    .dropdown {
-      &__dropdown-items {
-        padding-bottom: 5px;
-        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-      }
-
-      &__items-line {
-        height: 38px;
-
-        h3 {
-          font-size: 12.2px;
-        }
-
-        span {
-          font-size: 12.2px;
-          margin-top: -3px;
-        }
-      }
-
-      &__block-qty {
-        margin: 6px 6px 0 0;
-      }
-    }
+  &__checkbox-list-expandable {
+    margin-top: 30px;
   }
 
   &__rooms {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 62px;
+    padding-bottom: 70px;
     width: 100%;
 
     h1 {
@@ -113,15 +67,16 @@
       font-size: 24px;
       font-weight: 700;
     }
+  }
 
-    .pagination {
-      margin: 22px 0 10px 0;
-      padding-right: 9px;
+  &__card-room {
+    margin: 12px 3px 9px 7px;
+  }
 
-      &__num-block {
-        margin: 10px 0 7px;
-      }
-    }
+  &__pagination {
+    margin: 31px auto auto auto;
+    padding-right: 10px;
+    width: 100%;
   }
 }
 

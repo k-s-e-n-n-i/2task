@@ -2,7 +2,7 @@ import '../../modules/plugin.slider/plugin.slider.ts';
 
 $(function () {
   $('.search-room').slider({
-    element: document.querySelector('.search-room__slider-price'),
+    element: document.querySelector('.search-room__range-slider'),
     idElement: 'idSlider1',
     width: 266,
     type: 'interval',
