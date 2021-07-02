@@ -1,9 +1,8 @@
 mixin link(obj)
   case obj.type
-    when "lux"
-      a(class="link link_lux" href= obj.url)= obj.text
     when "clean"
       a(class="link link_clean" href= obj.url)= obj.text
+    when "lux"
     when "ok"
       a(class="link link_ok" href= obj.url)= obj.text
     default
