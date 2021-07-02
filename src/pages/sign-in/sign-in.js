@@ -1,12 +1,12 @@
-import '../../blocks/btn/btn.scss';
-import '../../blocks/input-text/input-text.scss';
-import '../../blocks/link/link.scss';
-import '../../blocks/topic-label/topic-label.scss';
-import '../../blocks/footer-menu/footer-menu.scss';
+import '@Blocks/btn/btn.scss';
+import '@Blocks/input-text/input-text.scss';
+import '@Blocks/link/link.scss';
+import '@Blocks/topic-label/topic-label.scss';
+import '@Blocks/footer-menu/footer-menu.scss';
 
-import '../../blocks/footer/footer.scss';
-import '../../blocks/header/header.scss';
-import '../../blocks/header/header.ts';
-import '../../blocks/form-sign-in/form-sign-in.scss';
+import '@Blocks/footer/footer.scss';
+import '@Blocks/header/header.scss';
+import '@Blocks/header/header.ts';
+import '@Blocks/form-sign-in/form-sign-in.scss';
 
-import '../../pages/sign-in/sign-in.scss';
+import '@Pages/sign-in/sign-in.scss';

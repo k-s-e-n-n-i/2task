@@ -1,8 +1,8 @@
 import 'air-datepicker';
-import './datepicker.scss';
-import './datepicker-config.scss';
-import './cell.scss';
-import './navigation.scss';
+import '@Blocks/calendar/datepicker.scss';
+import '@Blocks/calendar/datepicker-config.scss';
+import '@Blocks/calendar/cell.scss';
+import '@Blocks/calendar/navigation.scss';
 
 $(function () {
   const mainOptions = {

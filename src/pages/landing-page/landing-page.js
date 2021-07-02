@@ -1,16 +1,16 @@
-import '../../blocks/btn/btn.scss';
-import '../../blocks/dropdown/dropdown.scss';
-import '../../blocks/dropdown/dropdown.ts';
-import '../../blocks/dropdown-dates/dropdown-dates.scss';
-import '../../blocks/input-text/input-text.scss';
-import '../../blocks/link/link.scss';
-import '../../blocks/topic-label/topic-label.scss';
-import '../../blocks/footer-menu/footer-menu.scss';
+import '@Blocks/btn/btn.scss';
+import '@Blocks/dropdown/dropdown.scss';
+import '@Blocks/dropdown/dropdown.ts';
+import '@Blocks/dropdown-dates/dropdown-dates.scss';
+import '@Blocks/input-text/input-text.scss';
+import '@Blocks/link/link.scss';
+import '@Blocks/topic-label/topic-label.scss';
+import '@Blocks/footer-menu/footer-menu.scss';
 
-import '../../blocks/calendar/calendar.js';
-import '../../blocks/form-search-num/form-search-num.scss';
-import '../../blocks/footer/footer.scss';
-import '../../blocks/header/header.scss';
-import '../../blocks/header/header.ts';
+import '@Blocks/calendar/calendar.js';
+import '@Blocks/form-search-num/form-search-num.scss';
+import '@Blocks/footer/footer.scss';
+import '@Blocks/header/header.scss';
+import '@Blocks/header/header.ts';
 
-import '../../pages/landing-page/landing-page.scss';
+import '@Pages/landing-page/landing-page.scss';

@@ -1,16 +1,16 @@
-import '../../blocks/btn/btn.scss';
-import '../../blocks/input-text/input-text.scss';
-import '../../blocks/input-text/input-text.js';
-import '../../blocks/link/link.scss';
-import '../../blocks/radiogroup/radiogroup.scss';
-import '../../blocks/toggle-block/toggle-block.scss';
-import '../../blocks/toggle-block/toggle-block.js';
-import '../../blocks/topic-label/topic-label.scss';
-import '../../blocks/footer-menu/footer-menu.scss';
+import '@Blocks/btn/btn.scss';
+import '@Blocks/input-text/input-text.scss';
+import '@Blocks/input-text/input-text.js';
+import '@Blocks/link/link.scss';
+import '@Blocks/radiogroup/radiogroup.scss';
+import '@Blocks/toggle-block/toggle-block.scss';
+import '@Blocks/toggle-block/toggle-block.js';
+import '@Blocks/topic-label/topic-label.scss';
+import '@Blocks/footer-menu/footer-menu.scss';
 
-import '../../blocks/footer/footer.scss';
-import '../../blocks/header/header.scss';
-import '../../blocks/header/header.ts';
-import '../../blocks/form-registration/form-registration.scss';
+import '@Blocks/footer/footer.scss';
+import '@Blocks/header/header.scss';
+import '@Blocks/header/header.ts';
+import '@Blocks/form-registration/form-registration.scss';
 
-import '../../pages/registration/registration.scss';
+import '@Pages/registration/registration.scss';

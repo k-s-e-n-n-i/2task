@@ -1,11 +1,11 @@
-import '../../blocks/btn/btn.scss';
-import '../../blocks/footer-menu/footer-menu.scss';
-import '../../blocks/footer/footer.scss';
-import '../../blocks/footer-simple/footer-simple.scss';
-import '../../blocks/header/header.scss';
-import '../../blocks/header/header.ts';
-import '../../blocks/input-text/input-text.scss';
-import '../../blocks/link/link.scss';
-import '../../blocks/topic-label/topic-label.scss';
+import '@Blocks/btn/btn.scss';
+import '@Blocks/footer-menu/footer-menu.scss';
+import '@Blocks/footer/footer.scss';
+import '@Blocks/footer-simple/footer-simple.scss';
+import '@Blocks/header/header.scss';
+import '@Blocks/header/header.ts';
+import '@Blocks/input-text/input-text.scss';
+import '@Blocks/link/link.scss';
+import '@Blocks/topic-label/topic-label.scss';
 
-import '../../pages/ui-kit-header-footer/ui-kit-header-footer.scss';
+import '@Pages/ui-kit-header-footer/ui-kit-header-footer.scss';

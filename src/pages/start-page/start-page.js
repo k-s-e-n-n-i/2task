@@ -1,1 +1,1 @@
-import '../../blocks/link/link.scss';
+import '@Blocks/link/link.scss';
