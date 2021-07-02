@@ -7,7 +7,7 @@
   }
 
   &__label-block {
-    margin: 0 0 6px 0;
+    margin: 0;
     font-size: 12px;
     line-height: 14px;
   }
@@ -15,7 +15,7 @@
   &__slider {
     width: calc(100% - 11px);
     height: 6px;
-    margin: 18px 0 10px;
+    margin: 22px 0 10px;
     transform: translate(5px, 0);
     position: relative;
 
@@ -84,7 +84,9 @@
   }
 
   &__postText {
-    margin-top: 5px;
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 12px;
+    margin: 0;
   }
 }
 
