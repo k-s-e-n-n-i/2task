@@ -1,5 +1,6 @@
 .footer-menu {
   display: flex;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-size: 14px;
@@ -43,5 +44,11 @@
       padding: 10px 0 7px;
       letter-spacing: 0.3px;
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer-menu {
+    justify-content: space-between;
   }
 }
