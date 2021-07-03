@@ -16,6 +16,7 @@
 
 .datepicker-here {
   position: absolute;
+  width: 100%;
 }
 
 .datepicker-here_hide {
@@ -30,7 +31,7 @@
 
   font-family: 'Montserrat';
   font-size: 12px;
-  width: 322px;
+  width: 100%;
   z-index: 5;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
@@ -66,6 +67,7 @@
   position: absolute;
   z-index: 100;
   border-radius: 4px;
+  width: 100%;
 
   .datepicker {
     position: static;
