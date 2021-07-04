@@ -11,6 +11,7 @@ const css = require('./webpack/css');
 const images = require('./webpack/images');
 const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
+const extract = require('./webpack/css.extract');
 
 const paths = {
   source: path.join(__dirname, 'src'),
@@ -84,11 +85,12 @@ const common = merge([
 
   pug(),
   html(),
-  sass(),
+  //sass(),
   css(),
   font(),
   images(),
   ts(),
+  //extract(),
 ]);
 
 const developmentConfig = {
