@@ -4,7 +4,10 @@ module.exports = function () {
       rules: [
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          loader: 'file-loader',
+          type: 'asset/resource',
+          generator: {
+            filename: 'img/[name][ext]',
+          },
         },
       ],
     },
