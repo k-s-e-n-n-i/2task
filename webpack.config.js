@@ -71,7 +71,7 @@ const common = merge([
     entry: entryDate,
     output: {
       path: paths.build,
-      filename: '[name]',
+      filename: 'js/[name]',
     },
     resolve: {
       alias: {
