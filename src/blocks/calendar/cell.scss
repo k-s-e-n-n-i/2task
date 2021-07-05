@@ -1,3 +1,4 @@
+@use "sass:math";
 @import 'datepicker-config';
 
 /* -------------------------------------------------
@@ -213,7 +214,7 @@
 // -------------------------
 
 .datepicker--cell-year {
-  width: 100% / $datepickerYearsPerRow;
+  width: math.div(100%, $datepickerYearsPerRow);
   height: 33.33%;
 
   &.-other-decade- {

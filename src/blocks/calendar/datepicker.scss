@@ -91,7 +91,7 @@
 
 //  Pointer
 // -------------------------------------------------
-$pointerHalfSize: $datepickerPointerSize / 2 - 1;
+$pointerHalfSize: calc(math.div($datepickerPointerSize, 2) - 1);
 
 .datepicker--pointer {
   position: absolute;
