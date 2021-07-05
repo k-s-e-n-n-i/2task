@@ -1,5 +1,7 @@
 mixin link(obj)
   case obj.type
+    when "gray"
+      a(class="link link_gray" href= obj.url)= obj.text
     when "clean"
       a(class="link link_clean" href= obj.url)= obj.text
     when "lux"
