@@ -53,16 +53,7 @@
     }
   }
 
-  ::-webkit-input-placeholder {
-    color: rgba(31, 32, 65, 0.25);
-  }
-  :-ms-input-placeholder {
-    color: rgba(31, 32, 65, 0.25);
-  }
-  ::-moz-placeholder {
-    color: rgba(31, 32, 65, 0.25);
-  }
-  :-moz-placeholder {
+  ::placeholder {
     color: rgba(31, 32, 65, 0.25);
   }
 }

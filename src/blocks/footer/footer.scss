@@ -60,9 +60,6 @@
     display: block;
     color: rgba(31, 32, 65, 0.5);
     user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 
     &:hover {
       > a {

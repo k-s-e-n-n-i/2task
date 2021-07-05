@@ -22,9 +22,6 @@
     font-weight: normal;
     font-style: normal;
     user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 
     &:hover {
       color: rgba(31, 32, 65, 0.75);
@@ -44,7 +41,7 @@
       bottom: 13px;
       right: 12px;
       cursor: pointer;
-      -webkit-user-select: none;
+      user-select: none;
       background-image: url('@Blocks/dropdown/img/expand-more-dropdown.svg');
       background-repeat: no-repeat;
     }
@@ -96,9 +93,6 @@
     width: 92px;
     margin-right: 5px;
     user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 
     span {
       font-weight: bold;

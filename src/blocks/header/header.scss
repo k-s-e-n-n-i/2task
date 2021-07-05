@@ -70,9 +70,6 @@
     margin: 5px 0 5px 20px;
     position: relative;
     user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 
     &:hover {
       > .header__submenu {

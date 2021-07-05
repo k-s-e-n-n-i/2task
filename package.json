@@ -9,12 +9,15 @@
   },
   "devDependencies": {
     "@types/node": "^15.12.4",
+    "autoprefixer": "^10.2.6",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-prettier": "^3.4.0",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.0.0",
+    "postcss": "^8.3.5",
+    "postcss-loader": "^6.1.1",
     "prettier": "^2.3.2",
     "webpack-dev-server": "^3.11.2"
   },
