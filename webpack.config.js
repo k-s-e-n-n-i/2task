@@ -7,11 +7,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const pug = require('./webpack/pug');
 const html = require('./webpack/html');
 const sass = require('./webpack/sass');
-const css = require('./webpack/css');
 const images = require('./webpack/images');
 const font = require('./webpack/font');
 const ts = require('./webpack/typescript');
-const extract = require('./webpack/css.extract');
 
 const paths = {
   source: path.join(__dirname, 'src'),
@@ -85,12 +83,10 @@ const common = merge([
 
   pug(),
   html(),
-  //sass(),
-  css(),
+  sass(),
   font(),
   images(),
   ts(),
-  //extract(),
 ]);
 
 const developmentConfig = {
