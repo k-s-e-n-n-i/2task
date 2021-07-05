@@ -4,7 +4,7 @@ mixin header(obj,...items)
   header.header
     .header__content-container
       a.header__logo-link(href="./landing-page.html")
-        img.header__logo(src="./img/logo.svg" alt="logo")
+        img.header__logo(src=require("@Blocks/header/img/logo.svg").default alt="logo")
       .header__menu-mobile
       .header__links.header__links_hidden
         nav.header__block-menu
