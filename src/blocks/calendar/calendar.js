@@ -44,15 +44,21 @@ $(function () {
         let dates = formattedDate.split(',');
 
         if (dates[0] != undefined && dates[0] != '') {
-          inst.$datepicker.closest('.dropdown-dates').find('.dropdown__dropdown:first').html(dates[0]);
+          inst.$datepicker.closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').html(dates[0]);
         } else {
-          inst.$datepicker.closest('.dropdown-dates').find('.dropdown__dropdown:first').html('ДД.ММ.ГГГГ');
+          inst.$datepicker
+            .closest('.dropdown-dates')
+            .find('.dropdown-dates__dropdown:first')
+            .html('ДД.ММ.ГГГГ');
         }
 
         if (dates[1] != undefined && dates[1] != '') {
-          inst.$datepicker.closest('.dropdown-dates').find('.dropdown__dropdown:last').html(dates[1]);
+          inst.$datepicker.closest('.dropdown-dates').find('.dropdown-dates__dropdown:last').html(dates[1]);
         } else {
-          inst.$datepicker.closest('.dropdown-dates').find('.dropdown__dropdown:last').html('ДД.ММ.ГГГГ');
+          inst.$datepicker
+            .closest('.dropdown-dates')
+            .find('.dropdown-dates__dropdown:last')
+            .html('ДД.ММ.ГГГГ');
         }
       },
     })
@@ -123,7 +129,7 @@ $(function () {
 
   function handleDateBtnOkClick() {
     if ($(this).closest('.dropdown-dates').length != 0) {
-      $(this).closest('.dropdown-dates').find('.dropdown__dropdown:first').trigger('click');
+      $(this).closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').trigger('click');
     } else {
       if ($(this).closest('.dropdown').length != 0) {
         $(this).closest('.dropdown').find('.dropdown__dropdown').trigger('click');
