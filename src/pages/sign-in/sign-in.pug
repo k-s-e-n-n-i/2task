@@ -1,14 +1,10 @@
-include ~@Blocks/header/header.pug
-include ~@Blocks/footer/footer.pug
-include ~@Blocks/form-sign-in/form-sign-in.pug
+extends ~@Blocks/layout/layout.pug
 
+block content
+  include ~@Blocks/form-sign-in/form-sign-in.pug
 
-include ~@Blocks/global-head-with-header/global-head-with-header.pug
+  main.sign-in
+    .sign-in__form-sign-in
+      +formSignIn
 
-main.sign-in
-  .sign-in__form-sign-in
-    +formSignIn
-
-include ~@Blocks/global-footer/global-footer.pug
-
-script(src="./js/sign-in.js")
+  script(src="./js/sign-in.js")

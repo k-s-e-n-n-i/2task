@@ -1,16 +1,13 @@
-include ~@Blocks/header/header.pug
-include ~@Blocks/footer/footer.pug
-include ~@Blocks/form-search-num/form-search-num.pug
+extends ~@Blocks/layout/layout.pug
 
-include ~@Blocks/global-head-with-header/global-head-with-header.pug
+block content
+  include ~@Blocks/form-search-num/form-search-num.pug
 
-main.landing-page
-  .landing-page__content-container
-    .landing-page__form-search-num
-      +formSearchNum
-  .landing-page__content-container.landing-page__content-container_flex-end
-    p.landing-page__label Лучшие номера для вашей работы, отдыха и просто вдохновения
+  main.landing-page
+    .landing-page__content-container
+      .landing-page__form-search-num
+        +formSearchNum
+    .landing-page__content-container.landing-page__content-container_flex-end
+      p.landing-page__label Лучшие номера для вашей работы, отдыха и просто вдохновения
 
-include ~@Blocks/global-footer/global-footer.pug
-
-script(src="./js/landing-page.js")
+  script(src="./js/landing-page.js")

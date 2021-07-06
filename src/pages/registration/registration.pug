@@ -1,18 +1,14 @@
-include ~@Blocks/header/header.pug
-include ~@Blocks/footer/footer.pug
-include ~@Blocks/form-registration/form-registration.pug
+extends ~@Blocks/layout/layout.pug
 
+block content
+  include ~@Blocks/form-registration/form-registration.pug
 
-include ~@Blocks/global-head-with-header/global-head-with-header.pug
+  main.registration
+    .registration__form-registration
+      +formRegistration(
+        {
+          id : "Main"
+        }
+      )
 
-main.registration
-  .registration__form-registration
-    +formRegistration(
-      {
-        id : "Main"
-      }
-    )
-
-include ~@Blocks/global-footer/global-footer.pug
-
-script(src="./js/registration.js")
+  script(src="./js/registration.js")

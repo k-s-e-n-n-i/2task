@@ -1,61 +1,65 @@
+extends ~@Blocks/layout/layout.pug
 
-include ~@Blocks/form-search-num/form-search-num.pug
-include ~@Blocks/form-registration/form-registration.pug
-include ~@Blocks/form-reservation/form-reservation.pug
-include ~@Blocks/form-sign-in/form-sign-in.pug
-include ~@Blocks/card-room/card-room.pug
-include ~@Blocks/calendar/calendar.pug
+block header
 
-include ~@Blocks/global-head/global-head.pug
+block footer
 
-main.ui-kit-cards
-  a(href="./index.html")
-    img.ui-kit-cards__ico-logo(src=require("@Pages/ui-kit-cards/img/ico-logo.svg").default alt="logo")
-  .ui-kit-cards__blk
-    +formSearchNum
-    .ui-kit-cards__form-registration
-      +formRegistration(
+block content
+  include ~@Blocks/form-search-num/form-search-num.pug
+  include ~@Blocks/form-registration/form-registration.pug
+  include ~@Blocks/form-reservation/form-reservation.pug
+  include ~@Blocks/form-sign-in/form-sign-in.pug
+  include ~@Blocks/card-room/card-room.pug
+  include ~@Blocks/calendar/calendar.pug
+
+  main.ui-kit-cards
+    a(href="./index.html")
+      img.ui-kit-cards__ico-logo(src=require("@Pages/ui-kit-cards/img/ico-logo.svg").default alt="logo")
+    .ui-kit-cards__blk
+      +formSearchNum
+      .ui-kit-cards__form-registration
+        +formRegistration(
+          {
+            id : "Uikit"
+          }
+        )
+
+    .ui-kit-cards__blk
+      +formReservation(
         {
-          id : "Uikit"
-        }
-      )
-
-  .ui-kit-cards__blk
-    +formReservation(
-      {
-        number : 888,
-        priceFrom : "9 990",
-        priceFinal : "38 081"
-      }
-    )
-    .ui-kit-cards__form-registration
-      +formSignIn
-
-  .ui-kit-cards__blk
-    .ui-kit-cards__calendar-block
-      +calendar({state : "open"})
-
-    .ui-kit-cards__card-room
-      +cardRoom(
-        {
-          id : 1,
           number : 888,
-          price : "9 990",
-          markLink : "люкс",
-          review : 145,
-          rating : 5
+          priceFrom : "9 990",
+          priceFinal : "38 081"
         }
       )
-    .ui-kit-cards__card-room
-      +cardRoom(
-        {
-          id : 2,
-          number : 840,
-          price : "9 990",
-          markLink : "",
-          review : 65,
-          rating : 4
-        }
-      )
+      .ui-kit-cards__form-registration
+        +formSignIn
 
-script(src="./js/ui-kit-cards.js")
+    .ui-kit-cards__blk
+      .ui-kit-cards__calendar-block
+        +calendar({state : "open"})
+
+      .ui-kit-cards__card-room
+        +cardRoom(
+          {
+            id : 1,
+            number : 888,
+            price : "9 990",
+            markLink : "люкс",
+            review : 145,
+            rating : 5
+          }
+        )
+      .ui-kit-cards__card-room
+        +cardRoom(
+          {
+            id : 2,
+            number : 840,
+            price : "9 990",
+            markLink : "",
+            review : 65,
+            rating : 4
+          }
+        )
+
+  script(src="./js/ui-kit-cards.js")
