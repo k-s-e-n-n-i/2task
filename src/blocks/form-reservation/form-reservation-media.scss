@@ -1,0 +1,16 @@
+@media (max-width: 380px) {
+  .form-reservation {
+    width: 100%;
+    padding: 20px;
+
+    &__dropdown-dates {
+      flex-wrap: wrap;
+    }
+
+    &__text-price {
+      p {
+        text-align: left;
+      }
+    }
+  }
+}
