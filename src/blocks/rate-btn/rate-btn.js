@@ -4,7 +4,7 @@ $(function () {
   function handleRatebtnClick() {
     $(this).closest('.rate-btn').find('.rate-btn__star').removeClass('rate-btn__star_active');
 
-    var num = parseInt($(this).attr('id'));
+    const num = parseInt($(this).attr('id'));
 
     for (let i = 1; i <= num; i++) {
       $(this)

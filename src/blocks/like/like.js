@@ -2,7 +2,7 @@ $(function () {
   $('.like').on('click', handleLikeClick);
 
   function handleLikeClick() {
-    var sum = parseInt($(this).find('.like__sum').html());
+    const sum = parseInt($(this).find('.like__sum').html());
 
     if ($(this).hasClass('like_liked')) {
       $(this).removeClass('like_liked');

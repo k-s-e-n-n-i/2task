@@ -8,7 +8,7 @@ $(function () {
   $('.dropdown__btns .link_clean').on('click', handleDropdownCleanClick);
 
   function handleDropwownClick() {
-    var block_list = $(this).closest('.dropdown').find('.dropdown__dropdown-items');
+    const block_list = $(this).closest('.dropdown').find('.dropdown__dropdown-items');
 
     if (block_list.hasClass('dropdown__dropdown-items_hide')) {
       block_list.removeClass('dropdown__dropdown-items_hide');

@@ -333,7 +333,7 @@ export class Controller {
       }
 
       let inputS: any = contr.thisSlider.getElementsByClassName('input-text__input');
-      for (var i = 0; i < inputS.length; i++) {
+      for (let i = 0; i < inputS.length; i++) {
         inputS[i].onblur = function () {
           let idInput = this.id,
             id: number = contr.idElement.substr(-1),
@@ -397,7 +397,7 @@ export class Controller {
       }
 
       let radioS: any = contr.thisSlider.getElementsByClassName('radiogroup__input');
-      for (var i = 0; i < radioS.length; i++) {
+      for (let i = 0; i < radioS.length; i++) {
         radioS[i].onclick = function () {
           let id: number = contr.idElement.substr(-1),
             idStr: string = this.name,
