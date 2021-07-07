@@ -1,6 +1,8 @@
 include ~@Blocks/btn/btn.pug
 
 mixin header(obj,...items)
+  - let active
+  - let expand
   header.header
     .header__content-container
       a.header__logo-link(href="./landing-page.html")
@@ -11,13 +13,13 @@ mixin header(obj,...items)
           ul.header__menu
             each item in items
               if item.state == "active"
-                - var active = "header__menu-li_active";
+                - active = "header__menu-li_active";
               else
-                - var active = "";
+                - active = "";
               if item.type == "expand"
-                - var expand = "header__menu-li_expand";
+                - expand = "header__menu-li_expand";
               else
-                - var expand = "";
+                - expand = "";
               li(class="header__menu-li " +active+" "+expand)
                 a.header__menu-a(href= item.link)= item.menuItem
                 if item.submenu != false

@@ -3,10 +3,11 @@ include ~@Blocks/topic-label/topic-label.pug
 
 
 mixin inputText(obj)
+  - let classDate
   if obj.name == 'date'
-    - var classDate = 'input-text__input_date'
+    - classDate = 'input-text__input_date'
   else
-    - var classDate = ''
+    - classDate = ''
 
   if obj.type == "subscription"
     .input-text.input-text_subscription
