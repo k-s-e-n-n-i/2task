@@ -3,11 +3,11 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   position: relative;
   background: #fff;
-  height: 70px;
 
   &__content-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: rgba(31, 32, 65, 0.5);
     flex-grow: 1;
     max-width: 100%;
@@ -15,11 +15,10 @@
   }
 
   &__logo-link {
-    height: 70px;
+    padding-top: 6px;
   }
 
   &__logo {
-    height: 70px;
     width: 106px;
   }
 
@@ -59,15 +58,14 @@
     flex-wrap: wrap;
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 23px 0;
   }
 
   &__menu-li {
     display: block;
     color: rgba(31, 32, 65, 0.5);
     cursor: pointer;
-    padding: 10px 0;
-    margin: 5px 0 5px 20px;
+    margin-left: 20px;
     position: relative;
     user-select: none;
 
@@ -142,7 +140,7 @@
 
   &__btn {
     height: 34px;
-    margin: 15px 0 15px 20px;
+    margin-left: 20px;
 
     &.header__btn_border {
       width: 87px;
@@ -155,7 +153,7 @@
 
   &__block-login-hr {
     width: 1px;
-    height: 30px;
+    height: 45%;
     background: rgba(31, 32, 65, 0.1);
     margin: 0 20px;
   }
