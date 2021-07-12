@@ -143,4 +143,10 @@
       margin-right: 7px;
     }
   }
+
+  &__calendar {
+    margin-top: 5px;
+    position: absolute;
+    width: calc(100% + 2px);
+  }
 }

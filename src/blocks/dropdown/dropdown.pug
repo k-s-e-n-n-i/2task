@@ -17,7 +17,8 @@ mixin dropdown(obj,...items)
           +dropdown__itemsLine(obj,...items)
 
     if obj.name == 'date'
-      +calendar({state : "close"})
+      .dropdown__calendar
+        +calendar({state : "close"})
 
 
 mixin dropdown__dropdown(obj)
