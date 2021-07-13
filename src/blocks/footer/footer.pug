@@ -1,9 +1,8 @@
 include ~@Blocks/btn/btn.pug
 include ~@Blocks/input-text/input-text.pug
-include ~@Blocks/footer-menu/footer-menu.pug
 
 
-mixin footer
+mixin footer(...items)
   footer.footer
     .footer__block-menu
       .footer__content-container
@@ -11,18 +10,13 @@ mixin footer
           img.footer__logo(src=require("@Blocks/footer/img/logo.svg").default alt="logo")
           p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
-        .footer__footer-menu
-          +footerMenu(
-            {
-              links : ["Навигация","О нас","Новости","Служба поддержки","Услуги"]
-            },
-            {
-              links : ["О нас","О сервисе","Наша команда","Вакансии","Инвесторы"]
-            },
-            {
-              links : ["Служба поддержки","Соглашения","Сообщества","Связь с нами"]
-            }
-          )
+        ul.footer__footer-menu
+          each item in items
+            li.footer__menu-column
+              ul.footer__menu-list
+                each column in item.column
+                  li.footer__menu-li
+                    a.footer__menu-a(href=column.link)= column.text
 
         .footer__subscription
           p.footer__subscription-topic Подписка

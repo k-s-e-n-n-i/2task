@@ -13,10 +13,6 @@
 
 @media (max-width: 1280px) {
   .footer {
-    &__logo-block {
-      margin-right: 15px;
-    }
-
     &__logo {
       max-width: none;
     }
@@ -51,12 +47,13 @@
     }
 
     &__logo {
-      margin: 10px 30px 3px 0;
+      margin: auto 30px auto 0;
     }
 
     &__footer-menu {
       margin: 25px 0;
       width: 100%;
+      justify-content: space-between;
     }
   }
 }

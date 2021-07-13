@@ -136,7 +136,76 @@ block content
         }
       )
     .ui-kit-header-footer__footer
-      +footer
+      +footer(
+        {
+          column : [
+            {
+              text : "Навигация",
+              link : "#"
+            },
+            {
+              text : "О нас",
+              link : "#"
+            },
+            {
+              text : "Новости",
+              link : "#"
+            },
+            {
+              text : "Служба поддержки",
+              link : "#"
+            },
+            {
+              text : "Услуги",
+              link : "#"
+            }
+          ]
+        },
+        {
+          column : [
+            {
+              text : "О нас",
+              link : "#"
+            },
+            {
+              text : "О сервисе",
+              link : "#"
+            },
+            {
+              text : "Наша команда",
+              link : "#"
+            },
+            {
+              text : "Вакансии",
+              link : "#"
+            },
+            {
+              text : "Инвесторы",
+              link : "#"
+            }
+          ]
+        },
+        {
+          column : [
+            {
+              text : "Служба поддержки",
+              link : "#"
+            },
+            {
+              text : "Соглашения",
+              link : "#"
+            },
+            {
+              text : "Сообщества",
+              link : "#"
+            },
+            {
+              text : "Связь с нами",
+              link : "#"
+            }
+          ]
+        }
+      )
     +footerSimple
 
   script(src="./js/ui-kit-header-footer.js")

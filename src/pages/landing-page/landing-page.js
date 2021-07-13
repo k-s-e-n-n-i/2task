@@ -6,8 +6,6 @@ import '@Blocks/dropdown-dates/dropdown-dates-media.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/link/link.scss';
 import '@Blocks/topic-label/topic-label.scss';
-import '@Blocks/footer-menu/footer-menu.scss';
-import '@Blocks/footer-menu/footer-menu-media.scss';
 
 import '@Blocks/calendar/calendar.js';
 import '@Blocks/form-search-num/form-search-num.scss';

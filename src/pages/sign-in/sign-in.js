@@ -2,8 +2,6 @@ import '@Blocks/btn/btn.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/link/link.scss';
 import '@Blocks/topic-label/topic-label.scss';
-import '@Blocks/footer-menu/footer-menu.scss';
-import '@Blocks/footer-menu/footer-menu-media.scss';
 
 import '@Blocks/footer/footer.scss';
 import '@Blocks/footer/footer-media.scss';

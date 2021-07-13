@@ -85,4 +85,73 @@ html(lang="ru")
 
     block footer
       include ~@Blocks/footer/footer.pug
-      +footer
+      +footer(
+        {
+          column : [
+            {
+              text : "Навигация",
+              link : "#"
+            },
+            {
+              text : "О нас",
+              link : "#"
+            },
+            {
+              text : "Новости",
+              link : "#"
+            },
+            {
+              text : "Служба поддержки",
+              link : "#"
+            },
+            {
+              text : "Услуги",
+              link : "#"
+            }
+          ]
+        },
+        {
+          column : [
+            {
+              text : "О нас",
+              link : "#"
+            },
+            {
+              text : "О сервисе",
+              link : "#"
+            },
+            {
+              text : "Наша команда",
+              link : "#"
+            },
+            {
+              text : "Вакансии",
+              link : "#"
+            },
+            {
+              text : "Инвесторы",
+              link : "#"
+            }
+          ]
+        },
+        {
+          column : [
+            {
+              text : "Служба поддержки",
+              link : "#"
+            },
+            {
+              text : "Соглашения",
+              link : "#"
+            },
+            {
+              text : "Сообщества",
+              link : "#"
+            },
+            {
+              text : "Связь с нами",
+              link : "#"
+            }
+          ]
+        }
+      )
