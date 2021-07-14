@@ -11,10 +11,10 @@
     min-width: 320px;
     margin: 0 9.7%;
     display: flex;
+  }
 
-    &.landing-page__content-container_flex-end {
-      justify-content: flex-end;
-    }
+  &__content-container_flex-end {
+    justify-content: flex-end;
   }
 
   &__form-search-num {

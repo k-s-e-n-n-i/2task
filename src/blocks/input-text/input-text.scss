@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
 
-  &.input-text_subscription {
+  &_subscription {
     margin-top: 10px;
 
     .input-text__input {
@@ -47,10 +47,10 @@
       letter-spacing: -0.4px;
       padding: 8px 15px 10px 14px;
     }
+  }
 
-    &.input-text__input_date {
-      padding: 5px 14px 8px 15px;
-    }
+  &__input_date {
+    padding: 5px 14px 8px 15px;
   }
 
   ::placeholder {

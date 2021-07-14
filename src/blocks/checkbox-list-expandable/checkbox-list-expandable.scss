@@ -18,9 +18,9 @@
     bottom: 2px;
     right: 15px;
     cursor: pointer;
+  }
 
-    &.checkbox-list-expandable__expand_open {
-      transform: rotate(180deg);
-    }
+  &__expand_open {
+    transform: rotate(180deg);
   }
 }
