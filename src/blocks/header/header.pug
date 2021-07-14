@@ -23,7 +23,7 @@ mixin header(obj,...items)
               li(class="header__menu-li " +active+" "+expand)
                 a.header__menu-a(href= item.link)= item.menuItem
                 if item.submenu != false
-                  ul.header__submenu
+                  ul.header__submenu.header__submenu-hide
                     each sbm in item.submenu
                       li.header__submenu-li
                         a.header__submenu-a(href= sbm.link)= sbm.menuItem
