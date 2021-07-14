@@ -86,7 +86,10 @@ $(function () {
 
     outputInDropdown($(this).closest('.dropdown'));
 
-    $(this).closest('.dropdown__dropdown-items').find('.dropdown__btns .link_clean').css('display', 'block');
+    $(this)
+      .closest('.dropdown__dropdown-items')
+      .find('.dropdown__btns .link_clean')
+      .css('display', 'initial');
     $(this)
       .closest('.dropdown__dropdown-items')
       .find('.dropdown__btns')
