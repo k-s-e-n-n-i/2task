@@ -4,9 +4,18 @@
   width: 100%;
   position: relative;
 
+  @media screen and (max-width: 380px) {
+    flex-wrap: wrap;
+  }
+
   &__date-block {
     position: relative;
     width: auto;
+
+    @media screen and (max-width: 380px) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
   }
 
   &__dropdown {
@@ -37,6 +46,11 @@
       user-select: none;
       background-image: url('@Blocks/dropdown-dates/img/expand-more-dropdown-dates.svg');
       background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width: 380px) {
+      width: 100%;
+      margin-bottom: 10px;
     }
   }
 

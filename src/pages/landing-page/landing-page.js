@@ -2,7 +2,6 @@ import '@Blocks/btn/btn.scss';
 import '@Blocks/dropdown/dropdown.scss';
 import '@Blocks/dropdown/dropdown.ts';
 import '@Blocks/dropdown-dates/dropdown-dates.scss';
-import '@Blocks/dropdown-dates/dropdown-dates-media.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/link/link.scss';
 import '@Blocks/topic-label/topic-label.scss';

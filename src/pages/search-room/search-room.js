@@ -5,7 +5,6 @@ import '@Blocks/checkbox-list-expandable/checkbox-list-expandable.js';
 import '@Blocks/dropdown/dropdown.scss';
 import '@Blocks/dropdown/dropdown.ts';
 import '@Blocks/dropdown-dates/dropdown-dates.scss';
-import '@Blocks/dropdown-dates/dropdown-dates-media.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/link/link.scss';
 import '@Blocks/pagination/pagination.scss';
