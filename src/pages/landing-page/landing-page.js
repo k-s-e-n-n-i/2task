@@ -13,7 +13,6 @@ import '@Blocks/form-search-num/form-search-num-media.scss';
 import '@Blocks/footer/footer.scss';
 import '@Blocks/footer/footer-media.scss';
 import '@Blocks/header/header.scss';
-import '@Blocks/header/header-media.scss';
 import '@Blocks/header/header.ts';
 
 import '@Pages/landing-page/landing-page.scss';

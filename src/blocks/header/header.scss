@@ -12,6 +12,16 @@
     flex-grow: 1;
     max-width: 100%;
     margin: 0 9.7%;
+
+    @media screen and (max-width: 1170px) {
+      margin: 0 20px;
+    }
+
+    @media screen and (max-width: 960px) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
   }
 
   &__logo-link {
@@ -33,16 +43,32 @@
     &.header__menu-mobile_cross {
       background-image: url('./img/cross.svg');
     }
+
+    @media screen and (max-width: 960px) {
+      display: block;
+      margin: auto 0;
+    }
   }
 
   &__links {
     display: flex;
   }
 
+  &__links_hidden {
+    @media screen and (max-width: 960px) {
+      display: none;
+    }
+  }
+
   &__links_mobile {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @media screen and (max-width: 960px) {
+      flex-basis: 100%;
+      flex-direction: column;
+    }
   }
 
   &__block-menu {
@@ -51,6 +77,11 @@
     align-items: center;
     margin: 0;
     padding: 0;
+
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__menu {
@@ -59,6 +90,10 @@
     align-items: center;
     margin: 0;
     padding: 23px 0;
+
+    @media screen and (max-width: 530px) {
+      flex-direction: column;
+    }
   }
 
   &__menu-li {
@@ -68,6 +103,16 @@
     margin-left: 20px;
     position: relative;
     user-select: none;
+
+    @media screen and (max-width: 960px) {
+      &:nth-child(1) {
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (max-width: 530px) {
+      margin: 5px 0;
+    }
   }
 
   &__menu-li_active {
@@ -138,19 +183,28 @@
   &__block-login {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 530px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__btn {
     height: 34px;
     margin-left: 20px;
 
-    &.header__btn_border {
-      width: 87px;
+    @media screen and (max-width: 960px) {
+      margin: 10px 10px 20px 10px;
     }
+  }
 
-    &.header__btn_gradient {
-      width: 196px;
-    }
+  &__btn_border {
+    width: 87px;
+  }
+
+  &__btn_gradient {
+    width: 196px;
   }
 
   &__block-login-hr {
@@ -158,5 +212,9 @@
     height: 45%;
     background: rgba(31, 32, 65, 0.1);
     margin: 0 20px;
+
+    @media screen and (max-width: 960px) {
+      display: none;
+    }
   }
 }
