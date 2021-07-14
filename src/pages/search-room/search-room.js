@@ -18,7 +18,6 @@ import '@Blocks/calendar/calendar.js';
 import '@Blocks/card-room/card-room.scss';
 import '@Blocks/card-room/card-room.js';
 import '@Blocks/footer/footer.scss';
-import '@Blocks/footer/footer-media.scss';
 import '@Blocks/header/header.scss';
 import '@Blocks/header/header.ts';
 
