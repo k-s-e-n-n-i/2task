@@ -11,6 +11,11 @@
   flex-wrap: wrap;
   z-index: 1;
 
+  @media screen and (max-width: 380px) {
+    width: 100%;
+    padding: 20px;
+  }
+
   &__dropdown-dates {
     margin: 22px 0 21px 0;
     width: 100%;
