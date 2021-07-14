@@ -18,6 +18,5 @@ import '@Blocks/header/header.scss';
 import '@Blocks/header/header.ts';
 import '@Blocks/calendar/calendar.js';
 import '@Blocks/form-reservation/form-reservation.scss';
-import '@Blocks/form-reservation/form-reservation-media.scss';
 
 import '@Pages/details-room/details-room.scss';

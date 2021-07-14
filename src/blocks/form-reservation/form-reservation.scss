@@ -12,6 +12,11 @@
   padding: 43px 29px 30px 28px;
   display: flex;
 
+  @media screen and (max-width: 380px) {
+    width: 100%;
+    padding: 20px;
+  }
+
   p {
     margin: 0;
   }
@@ -83,6 +88,10 @@
 
   &__dropdown-dates {
     margin-bottom: 20px;
+
+    @media screen and (max-width: 380px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__block-prices {
@@ -112,6 +121,12 @@
     p {
       font-weight: 500;
       letter-spacing: -0.1px;
+    }
+
+    @media screen and (max-width: 380px) {
+      p {
+        text-align: left;
+      }
     }
   }
 
