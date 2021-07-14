@@ -103,31 +103,8 @@ $colorGreen: #6fcf97;
     display: flex;
     margin: 26px 0 24px;
 
-    h1 {
-      &.ui-kit-color-type__type-text {
-        font-size: 24px;
-        font-weight: bold;
-      }
-    }
-
-    h2 {
-      &.ui-kit-color-type__type-text {
-        font-size: 19px;
-        font-weight: bold;
-      }
-    }
-
-    h3 {
-      &.ui-kit-color-type__type-text {
-        font-size: 12px;
-        font-weight: bold;
-      }
-    }
-
-    h1,
-    h2,
-    h3 {
-      color: rgba(31, 32, 65, 1);
+    &:last-child {
+      margin: 24px 0;
     }
 
     p {
@@ -153,5 +130,11 @@ $colorGreen: #6fcf97;
 
   &__type-text {
     width: 387px;
+
+    h1,
+    h2,
+    h3 {
+      color: rgba(31, 32, 65, 1);
+    }
   }
 }
