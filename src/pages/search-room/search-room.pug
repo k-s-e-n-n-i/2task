@@ -1,16 +1,15 @@
 extends ~@Blocks/layout/layout.pug
+include ~@Blocks/dropdown/dropdown.pug
+include ~@Blocks/range-slider/range-slider.pug
+include ~@Blocks/checkbox-list/checkbox-list.pug
+include ~@Blocks/checkbox-list-expandable/checkbox-list-expandable.pug
+include ~@Blocks/card-room/card-room.pug
+include ~@Blocks/pagination/pagination.pug
 
 block links
   link(rel="stylesheet" type="text/css" href="./css/search-room.js.css")
 
 block content
-  include ~@Blocks/dropdown/dropdown.pug
-  include ~@Blocks/range-slider/range-slider.pug
-  include ~@Blocks/checkbox-list/checkbox-list.pug
-  include ~@Blocks/checkbox-list-expandable/checkbox-list-expandable.pug
-  include ~@Blocks/card-room/card-room.pug
-  include ~@Blocks/pagination/pagination.pug
-
   main.search-room
     .search-room__filters
       .search-room__filter-date

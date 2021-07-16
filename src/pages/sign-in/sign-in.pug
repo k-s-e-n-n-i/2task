@@ -1,11 +1,10 @@
 extends ~@Blocks/layout/layout.pug
+include ~@Blocks/form-sign-in/form-sign-in.pug
 
 block links
   link(rel="stylesheet" type="text/css" href="./css/sign-in.js.css")
 
 block content
-  include ~@Blocks/form-sign-in/form-sign-in.pug
-
   main.sign-in
     .sign-in__form-sign-in
       +formSignIn

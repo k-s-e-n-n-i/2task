@@ -1,4 +1,7 @@
 extends ~@Blocks/layout/layout.pug
+include ~@Blocks/footer/footer.pug
+include ~@Blocks/header/header.pug
+include ~@Blocks/footer-simple/footer-simple.pug
 
 block viewport
   meta(name="viewport" content="width=1440, initial-scale=1.0")
@@ -7,14 +10,9 @@ block links
   link(rel="stylesheet" type="text/css" href="./css/ui-kit-header-footer.js.css")
 
 block header
-
 block footer
 
 block content
-  include ~@Blocks/footer/footer.pug
-  include ~@Blocks/header/header.pug
-  include ~@Blocks/footer-simple/footer-simple.pug
-
   main.ui-kit-header-footer
     a(href="./index.html")
       img.ui-kit-header-footer__ico-logo(src=require("@Pages/ui-kit-header-footer/img/ico-logo.svg").default alt="logo")

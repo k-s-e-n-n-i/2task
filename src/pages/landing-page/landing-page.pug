@@ -1,11 +1,10 @@
 extends ~@Blocks/layout/layout.pug
+include ~@Blocks/form-search-num/form-search-num.pug
 
 block links
   link(rel="stylesheet" type="text/css" href="./css/landing-page.js.css")
 
 block content
-  include ~@Blocks/form-search-num/form-search-num.pug
-
   main.landing-page
     .landing-page__content-container
       .landing-page__form-search-num

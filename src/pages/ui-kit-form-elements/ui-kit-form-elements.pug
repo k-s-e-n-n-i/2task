@@ -1,4 +1,20 @@
 extends ~@Blocks/layout/layout.pug
+include ~@Blocks/input-text/input-text.pug
+include ~@Blocks/dropdown/dropdown.pug
+include ~@Blocks/dropdown-dates/dropdown-dates.pug
+include ~@Blocks/btn/btn.pug
+include ~@Blocks/checkbox-list/checkbox-list.pug
+include ~@Blocks/checkbox-list-expandable/checkbox-list-expandable.pug
+include ~@Blocks/radiogroup/radiogroup.pug
+include ~@Blocks/toggle-block/toggle-block.pug
+include ~@Blocks/like/like.pug
+include ~@Blocks/rate-btn/rate-btn.pug
+include ~@Blocks/range-slider/range-slider.pug
+include ~@Blocks/link/link.pug
+include ~@Blocks/pagination/pagination.pug
+include ~@Blocks/list-block/list-block.pug
+include ~@Blocks/info-block/info-block.pug
+include ~@Blocks/comment-block/comment-block.pug
 
 block viewport
   meta(name="viewport" content="width=1440, initial-scale=1.0")
@@ -7,27 +23,9 @@ block links
   link(rel="stylesheet" type="text/css" href="./css/ui-kit-form-elements.js.css")
 
 block header
-
 block footer
 
 block content
-  include ~@Blocks/input-text/input-text.pug
-  include ~@Blocks/dropdown/dropdown.pug
-  include ~@Blocks/dropdown-dates/dropdown-dates.pug
-  include ~@Blocks/btn/btn.pug
-  include ~@Blocks/checkbox-list/checkbox-list.pug
-  include ~@Blocks/checkbox-list-expandable/checkbox-list-expandable.pug
-  include ~@Blocks/radiogroup/radiogroup.pug
-  include ~@Blocks/toggle-block/toggle-block.pug
-  include ~@Blocks/like/like.pug
-  include ~@Blocks/rate-btn/rate-btn.pug
-  include ~@Blocks/range-slider/range-slider.pug
-  include ~@Blocks/link/link.pug
-  include ~@Blocks/pagination/pagination.pug
-  include ~@Blocks/list-block/list-block.pug
-  include ~@Blocks/info-block/info-block.pug
-  include ~@Blocks/comment-block/comment-block.pug
-
   main.ui-kit-form-elements
     a(href="./index.html")
       img.ui-kit-form-elements__ico-logo(src=require("@Pages/ui-kit-form-elements/img/ico-logo.svg").default alt="logo")

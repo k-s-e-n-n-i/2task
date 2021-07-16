@@ -1,11 +1,10 @@
 extends ~@Blocks/layout/layout.pug
+include ~@Blocks/form-registration/form-registration.pug
 
 block links
   link(rel="stylesheet" type="text/css" href="./css/registration.js.css")
 
 block content
-  include ~@Blocks/form-registration/form-registration.pug
-
   main.registration
     .registration__form-registration
       +formRegistration(

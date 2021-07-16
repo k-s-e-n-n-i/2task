@@ -1,3 +1,6 @@
+include ~@Blocks/header/header.pug
+include ~@Blocks/footer/footer.pug
+
 html(lang="ru")
   head
     block viewport
@@ -20,7 +23,6 @@ html(lang="ru")
 
   body
     block header
-      include ~@Blocks/header/header.pug
       +header(
         {
           authorization : false,
@@ -84,7 +86,6 @@ html(lang="ru")
     block content
 
     block footer
-      include ~@Blocks/footer/footer.pug
       +footer(
         {
           column : [

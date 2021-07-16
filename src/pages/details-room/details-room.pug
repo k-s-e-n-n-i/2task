@@ -1,15 +1,14 @@
 extends ~@Blocks/layout/layout.pug
+include ~@Blocks/info-block/info-block.pug
+include ~@Blocks/list-block/list-block.pug
+include ~@Blocks/comment-block/comment-block.pug
+include ~@Blocks/chart/chart.pug
+include ~@Blocks/form-reservation/form-reservation.pug
 
 block links
   link(rel="stylesheet" type="text/css" href="./css/details-room.js.css")
 
 block content
-  include ~@Blocks/info-block/info-block.pug
-  include ~@Blocks/list-block/list-block.pug
-  include ~@Blocks/comment-block/comment-block.pug
-  include ~@Blocks/chart/chart.pug
-  include ~@Blocks/form-reservation/form-reservation.pug
-
   main.details-room
     .details-room__block-images
       .details-room__blk-image-one
