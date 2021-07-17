@@ -7,26 +7,20 @@
   width: 100%;
   position: relative;
 
+  @media screen and (max-width: 1200px) {
+    height: auto;
+  }
+
   &__form-registration {
     position: relative;
     margin: auto;
     z-index: 1;
-  }
-}
 
-@media (max-width: 1200px) {
-  .registration {
-    height: auto;
-
-    &__form-registration {
+    @media screen and (max-width: 1200px) {
       margin: 20px auto;
     }
-  }
-}
 
-@media (max-width: 380px) {
-  .registration {
-    &__form-registration {
+    @media screen and (max-width: 380px) {
       width: 100%;
     }
   }
