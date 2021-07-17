@@ -31,7 +31,7 @@ const pluginsDate = [
 
 const entryDate = {
   'index.js': paths.source + '/index.js',
-  'start-page.js': paths.source + '/pages/start-page/start-page.js',
+  'layout.js': paths.source + '/blocks/layout/layout.js',
 };
 
 const pages = [

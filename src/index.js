@@ -1,2 +1,2 @@
-import '../webpack/favicons.js';
 import '@/index.scss';
+import '@Blocks/link/link.scss';
