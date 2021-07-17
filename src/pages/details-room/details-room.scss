@@ -18,6 +18,10 @@
 
   &__blk-image-one {
     width: 68.2%;
+
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
   }
 
   &__image-one {
@@ -27,6 +31,11 @@
     background-size: cover;
     background-position: 50%;
     cursor: pointer;
+
+    @media screen and (max-width: 640px) {
+      height: 48vw;
+      margin: 1px auto;
+    }
   }
 
   &__blk-image-two {
@@ -34,6 +43,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
   }
 
   &__image-two {
@@ -42,6 +55,12 @@
     height: 50%;
     background-size: cover;
     cursor: pointer;
+
+    @media screen and (max-width: 640px) {
+      height: 48vw;
+      margin: 1px auto;
+      width: 100%;
+    }
   }
 
   &__image-two_top {
@@ -58,12 +77,22 @@
     margin: 70px 9.7% 5px;
     max-width: 100%;
     min-width: 320px;
+
+    @media screen and (max-width: 960px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px auto;
+    }
   }
 
   &__room-info {
     width: 65%;
     display: flex;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 960px) {
+      width: 100%;
+    }
 
     h2 {
       font-weight: 700;
@@ -75,6 +104,11 @@
   &__info-block {
     margin-right: 80px;
 
+    @media screen and (max-width: 960px) {
+      margin: 20px;
+      width: 100%;
+    }
+
     h2 {
       margin-bottom: 23px;
     }
@@ -84,6 +118,15 @@
     position: relative;
     width: 320px;
 
+    @media screen and (max-width: 1315px) {
+      margin: 20px 0 30px;
+    }
+
+    @media screen and (max-width: 960px) {
+      margin: 20px;
+      width: 100%;
+    }
+
     h2 {
       margin-bottom: 7px;
     }
@@ -91,6 +134,11 @@
 
   &__comment-block {
     margin: 9px 0 20px 0;
+
+    @media screen and (max-width: 960px) {
+      margin: 20px;
+      width: 100%;
+    }
   }
 
   &__content-block-bottom {
@@ -100,11 +148,32 @@
     max-width: 100%;
     min-width: 320px;
     flex-basis: 1;
+
+    @media screen and (max-width: 960px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px auto;
+    }
   }
 
   &__list-block {
     width: 260px;
     margin-right: 101px;
+
+    @media screen and (max-width: 1350px) {
+      width: 265px;
+    }
+
+    @media screen and (max-width: 1220px) {
+      h2 {
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (max-width: 960px) {
+      margin: 20px;
+      width: 100%;
+    }
 
     h2 {
       margin-left: 20px;
@@ -115,100 +184,30 @@
   &__info-cancel {
     width: 340px;
 
+    @media screen and (max-width: 1220px) {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 960px) {
+      margin: 20px;
+      width: 100%;
+    }
+
     h2 {
       margin-bottom: 18px;
     }
   }
-}
 
-@media (max-width: 1350px) {
-  .details-room {
-    &__list-block {
-      width: 265px;
-    }
-
-    &__form-reservation {
+  &__form-reservation {
+    @media screen and (max-width: 1350px) {
       height: auto;
     }
-  }
-}
 
-@media (max-width: 1315px) {
-  .details-room {
-    &__room-impression {
-      margin: 20px 0 30px;
-    }
-  }
-}
-
-@media (max-width: 1220px) {
-  .details-room {
-    &__list-block {
-      h2 {
-        margin-left: 0;
-      }
-    }
-
-    &__info-cancel {
-      margin-top: 20px;
-    }
-  }
-}
-
-@media (max-width: 960px) {
-  .details-room {
-    &__content-block,
-    &__content-block-bottom {
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 20px auto;
-    }
-
-    &__room-info {
-      width: 100%;
-    }
-
-    &__info-block,
-    &__room-impression,
-    &__comment-block,
-    &__list-block,
-    &__info-cancel {
-      margin: 20px;
-      width: 100%;
-    }
-
-    &__form-reservation {
+    @media screen and (max-width: 960px) {
       margin: 20px;
     }
-  }
-}
 
-@media (max-width: 640px) {
-  .details-room {
-    &__blk-image-one {
-      width: 100%;
-    }
-
-    &__image-one {
-      height: 48vw;
-      margin: 1px auto;
-    }
-
-    &__blk-image-two {
-      width: 100%;
-    }
-
-    &__image-two {
-      height: 48vw;
-      margin: 1px auto;
-      width: 100%;
-    }
-  }
-}
-
-@media (max-width: 380px) {
-  .details-room {
-    &__form-reservation {
+    @media screen and (max-width: 380px) {
       margin: 0;
       width: 100%;
     }
