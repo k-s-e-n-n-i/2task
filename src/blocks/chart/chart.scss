@@ -34,6 +34,12 @@
   left: 151px;
   top: 71px;
 
+  @media screen and (max-width: 400px) {
+    position: relative;
+    left: 0;
+    top: 20px;
+  }
+
   &__list {
     margin: 0;
     padding: 0;
@@ -57,13 +63,5 @@
     border-radius: 50%;
     margin: 7px 4px 7px 0;
     background: rgba(31, 32, 65, 0.25);
-  }
-}
-
-@media (max-width: 400px) {
-  .chart-legend {
-    position: relative;
-    left: 0;
-    top: 20px;
   }
 }
