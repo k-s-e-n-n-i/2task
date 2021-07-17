@@ -6,28 +6,21 @@
   background-size: cover;
   background-position: bottom;
   position: relative;
-
   width: 100%;
+
+  @media screen and (max-width: 800px) {
+    height: auto;
+  }
 
   &__form-sign-in {
     position: relative;
     margin: auto;
-  }
-}
 
-@media (max-width: 800px) {
-  .sign-in {
-    height: auto;
-
-    &__form-sign-in {
+    @media screen and (max-width: 800px) {
       margin: 20px auto;
     }
-  }
-}
 
-@media (max-width: 380px) {
-  .sign-in {
-    &__form-sign-in {
+    @media screen and (max-width: 380px) {
       width: 100%;
     }
   }
