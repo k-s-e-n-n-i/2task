@@ -7,6 +7,15 @@
     margin: 0;
     height: 22px;
 
+    @media screen and (max-width: 540px) {
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+
+      h2 {
+        margin-right: 10px;
+      }
+    }
+
     h2 {
       line-height: 21px;
     }
@@ -78,18 +87,5 @@
   &__text {
     margin: 0;
     margin-left: 15px;
-  }
-}
-
-@media (max-width: 540px) {
-  .comment-block {
-    &__title {
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-
-      h2 {
-        margin-right: 10px;
-      }
-    }
   }
 }
