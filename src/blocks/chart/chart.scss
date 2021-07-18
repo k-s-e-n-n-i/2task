@@ -2,23 +2,19 @@
   color: #bc9cff;
   font-weight: 700;
   position: absolute;
-  width: 82px;
-  height: 82px;
+  top: 82px;
+  left: 30px;
   user-select: none;
 
   &__qty {
     font-size: 25px;
     font-weight: 700;
-    position: absolute;
-    left: 45%;
-    top: 33%;
+    text-align: center;
   }
 
   &__text {
     font-weight: 600;
-    position: absolute;
-    left: 36%;
-    top: 75%;
+    text-align: center;
     letter-spacing: 0.4px;
   }
 }
