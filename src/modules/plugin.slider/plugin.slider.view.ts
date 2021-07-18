@@ -126,12 +126,10 @@ export class View {
   }
 
   drawOrientation(): void {
-    let blockVals: any,
-      heightBlockSlider: string = '80px';
+    let blockVals: any;
     switch (this.orientation) {
       case 'horizontal': {
         this.model.slider.style.transform = 'translate(5px, 0) rotate(0deg)';
-        this.model.rangeSlider.style.height = heightBlockSlider;
         break;
       }
       case 'vertical': {
@@ -146,7 +144,6 @@ export class View {
       }
       default: {
         this.model.slider.style.transform = 'translate(5px, 0) rotate(0deg)';
-        this.model.rangeSlider.style.height = heightBlockSlider;
         break;
       }
     }

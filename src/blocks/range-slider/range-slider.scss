@@ -22,21 +22,20 @@
     &:hover {
       cursor: pointer;
     }
+  }
 
-    &:before {
-      content: '';
-      border: 1px solid rgba(31, 32, 65, 0.25);
-      border-radius: 3px;
-      box-sizing: border-box;
-      position: absolute;
-      width: calc(100% + 11px);
-      transform: translate(-5px, 0);
-      height: 6px;
-    }
+  &__all-width {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 3px;
+    box-sizing: border-box;
+    position: absolute;
+    width: calc(100% + 11px);
+    transform: translate(-5px, 0);
+    height: 100%;
   }
 
   &__range {
-    height: calc(100% + 0px);
+    height: 100%;
     width: 85px;
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     border-radius: 3px;
