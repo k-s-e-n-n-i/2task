@@ -35,10 +35,6 @@
   &__btn_border {
     width: 99px;
     margin: 0;
-
-    @media screen and (max-width: 380px) {
-      width: 99px;
-    }
   }
 
   &__login {
