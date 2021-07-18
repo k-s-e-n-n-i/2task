@@ -5,7 +5,6 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   width: 380px;
-  height: min-content;
   padding: 39px 30px 30px 28px;
   display: flex;
   flex-direction: column;
@@ -26,7 +25,6 @@
 
   &__btn {
     width: 100%;
-    height: 44px;
     margin: 20px 0 29px 0;
 
     @media screen and (max-width: 380px) {
@@ -48,7 +46,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 46px;
 
     p {
       font-size: 14px;
