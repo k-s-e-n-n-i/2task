@@ -1,13 +1,13 @@
 include ~@Blocks/link/link.pug
 include ~@Blocks/rate-btn/rate-btn.pug
 
-mixin cardRoom(obj)
+mixin cardRoom({ id, number, price, markLink = '', review, rating })
   .card-room
     .card-room__image-block
-      .card-room__image.card-room__image_active(id=obj.id)
-      .card-room__image(id=obj.id+1)
-      .card-room__image(id=obj.id+2)
-      .card-room__image(id=obj.id+3)
+      .card-room__image.card-room__image_active(id=id)
+      .card-room__image(id=id+1)
+      .card-room__image(id=id+2)
+      .card-room__image(id=id+3)
       .card-room__arrows
         .card-room__arrow-left
         .card-room__arrow-right
@@ -20,26 +20,26 @@ mixin cardRoom(obj)
       .card-room__number-price.card-room__number-price_bottom-border
         p.card-room__number
           span= "№ "
-          span= obj.number
-          if obj.markLink != ""
+          span= number
+          if markLink != ""
             +link(
               {
-                text : obj.markLink,
+                text : markLink,
                 url : '#',
                 type : "lux"
               }
             )
         p.card-room__price
-          span= obj.price
+          span= price
           span= "₽"
           span= " в сутки"
       .card-room__number-price
         +rateBtn(
           {
             qty : 5,
-            active : obj.rating
+            active : rating
           }
         )
         p.card-room__review
-          span= obj.review
+          span= review
           span= " Отзывов"
