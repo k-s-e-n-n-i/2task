@@ -1,7 +1,18 @@
-mixin checkboxList(obj,...items)
-  div(class="checkbox-list "+obj.stateHide)
+mixin checkboxList({ stateHide = false, haveAdditionalText = false}, { items = { label : 'Текст', id, additionalText : '', widthAdditionalText : '' } })
+
+  - let widthTextClass = ''
+  - let hideClass = ''
+  if stateHide == true
+    - hideClass = 'checkbox-list_hide'
+
+  div(class="checkbox-list " + hideClass)
     each item in items
-      if item.p ==""
+      if item.widthAdditionalText == 200
+        - widthTextClass = 'checkbox-list__p_width200'
+      if item.widthAdditionalText == 225
+        - widthTextClass = 'checkbox-list__p_width225'
+
+      if haveAdditionalText == ''
         .checkbox-list__item
           input.checkbox-list__input(id="check" + item.id type="checkbox")
           label.checkbox-list__label(for="check" + item.id)= item.label
@@ -9,4 +20,4 @@ mixin checkboxList(obj,...items)
         .checkbox-list__item
           input.checkbox-list__input(id="check" + item.id type="checkbox")
           label.checkbox-list__label.checkbox-list__label_bold(for="check" + item.id)= item.label
-          p(class=item.p__dopclass)= item.p
+          p(class=widthTextClass)= item.additionalText

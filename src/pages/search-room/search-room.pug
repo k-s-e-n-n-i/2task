@@ -70,46 +70,44 @@ block content
       .search-room__filter-features
         h3 Правила дома
         +checkboxList(
-          { 
-            stateHide : ""
-          },
+          { },
           {
-            label : "Можно курить", 
-            id : 51,
-            p : "", 
-            p__dopclass : ""
-          },
-          {
-            label : "Можно с питомцами", 
-            id : 52,
-            p : "", 
-            p__dopclass : ""
-          },
-          {
-            label : "Можно пригласить гостей (до 10 человек)", 
-            id : 53,
-            p : "", 
-            p__dopclass : ""
+            items : [
+              {
+                label : "Можно курить", 
+                id : 51,
+              },
+              {
+                label : "Можно с питомцами", 
+                id : 52,
+              },
+              {
+                label : "Можно пригласить гостей (до 10 человек)", 
+                id : 53,
+              }
+            ]
           }
         )
 
       .search-room__filter-availability
         h3 доступность
         +checkboxList(
-          { 
-            stateHide : ""
-          },
+          { haveAdditionalText : true},
           {
-            label : "Широкий коридор", 
-            id : 61,
-            p : "Ширина коридоров в номере не менее 91 см.", 
-            p__dopclass : "checkbox-list__p_width200"
-          },
-          {
-            label : "Помощник для инвалидов", 
-            id : 62,
-            p : "На 1 этаже вас встретит специалист и проводит до номера.", 
-            p__dopclass : "checkbox-list__p_width225"
+            items : [
+              {
+                label : "Широкий коридор", 
+                id : 61,
+                additionalText : "Ширина коридоров в номере не менее 91 см.",
+                widthAdditionalText : 200,
+              },
+              {
+                label : "Помощник для инвалидов", 
+                id : 62,
+                additionalText : "На 1 этаже вас встретит специалист и проводит до номера.", 
+                widthAdditionalText : 225,
+              },
+            ]
           }
         )
 
@@ -148,37 +146,34 @@ block content
         +checkboxListExpandable(
           {
             topic: "дополнительные удобства",
-            state : "close",
           },
           {
-            label : "Завтрак", 
-            id : 71,
-            p : ""
-          },
-          {
-            label : "Письменный стол", 
-            id : 72,
-            p : ""
-          },
-          {
-            label : "Стул для кормления", 
-            id : 73,
-            p : ""
-          },
-          {
-            label : "Кроватка", 
-            id : 74,
-            p : ""
-          },
-          {
-            label : "Телевизор", 
-            id : 75,
-            p : ""
-          },
-          {
-            label : "Шампунь", 
-            id : 76,
-            p : ""
+            items : [
+              {
+                label : "Завтрак", 
+                id : 71,
+              },
+              {
+                label : "Письменный стол", 
+                id : 72,
+              },
+              {
+                label : "Стул для кормления", 
+                id : 73,
+              },
+              {
+                label : "Кроватка", 
+                id : 74,
+              },
+              {
+                label : "Телевизор", 
+                id : 75,
+              },
+              {
+                label : "Шампунь", 
+                id : 76,
+              }
+            ]
           }
         )
 

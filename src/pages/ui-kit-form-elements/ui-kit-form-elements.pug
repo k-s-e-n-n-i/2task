@@ -124,26 +124,22 @@ block content
       h3 Checkbox Buttons
       .ui-kit-form-elements__checkbox-list
         +checkboxList(
-          { 
-            stateHide : ""
-          },
+          { },
           {
-            label : "Можно курить", 
-            id : 11,
-            p : "", 
-            p__dopclass : ""
-          },
-          {
-            label : "Можно с питомцами", 
-            id : 12,
-            p : "", 
-            p__dopclass : ""
-          },
-          {
-            label : "Можно пригласить гостей (до 10 человек)", 
-            id : 13,
-            p : "", 
-            p__dopclass : ""
+            items : [
+              {
+                label : "Можно курить", 
+                id : 11,
+              },
+              {
+                label : "Можно с питомцами", 
+                id : 12,
+              },
+              {
+                label : "Можно пригласить гостей (до 10 человек)", 
+                id : 13,
+              }
+            ]
           }
         )
 
@@ -404,13 +400,15 @@ block content
       .ui-kit-form-elements__checkbox-list-expandable
         +checkboxListExpandable(
           {
-            topic: "expandable checkbox list",
-            state : "close",
+            topic : "expandable checkbox list",
           },
           {
-            label : "Тест", 
-            id : 2100,
-            p : ""
+            items : [
+              {
+                label : "Тест", 
+                id : 2100,
+              }
+            ]
           }
         )
       .ui-kit-form-elements__checkbox-list-expandable
@@ -420,34 +418,32 @@ block content
             state : "open",
           },
           {
-            label : "Завтрак", 
-            id : 21,
-            p : ""
-          },
-          {
-            label : "Письменный стол", 
-            id : 22,
-            p : ""
-          },
-          {
-            label : "Стул для кормления", 
-            id : 23,
-            p : ""
-          },
-          {
-            label : "Кроватка", 
-            id : 24,
-            p : ""
-          },
-          {
-            label : "Телевизор", 
-            id : 25,
-            p : ""
-          },
-          {
-            label : "Шампунь", 
-            id : 26,
-            p : ""
+            items : [
+              {
+                label : "Завтрак", 
+                id : 21,
+              },
+              {
+                label : "Письменный стол", 
+                id : 22,
+              },
+              {
+                label : "Стул для кормления", 
+                id : 23,
+              },
+              {
+                label : "Кроватка", 
+                id : 24,
+              },
+              {
+                label : "Телевизор", 
+                id : 25,
+              },
+              {
+                label : "Шампунь", 
+                id : 26,
+              }
+            ]
           }
         )
 
@@ -455,20 +451,22 @@ block content
       h3 Rich Checkbox Buttons
       .ui-kit-form-elements__checkbox-list
         +checkboxList(
-          { 
-            stateHide : ""
-          },
+          { haveAdditionalText : true},
           {
-            label : "Широкий коридор", 
-            id : 31,
-            p : "Ширина коридоров в номере не менее 91 см.", 
-            p__dopclass : "checkbox-list__p_width200"
-          },
-          {
-            label : "Помощник для инвалидов", 
-            id : 32,
-            p : "На 1 этаже вас встретит специалист и проводит до номера.", 
-            p__dopclass : "checkbox-list__p_width225"
+            items : [
+              {
+                label : "Широкий коридор", 
+                id : 31,
+                additionalText : "Ширина коридоров в номере не менее 91 см.",
+                widthAdditionalText : 200,
+              },
+              {
+                label : "Помощник для инвалидов", 
+                id : 32,
+                additionalText : "На 1 этаже вас встретит специалист и проводит до номера.", 
+                widthAdditionalText : 225,
+              },
+            ]
           }
         )
 
