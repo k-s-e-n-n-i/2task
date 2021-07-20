@@ -106,6 +106,7 @@
 .datepicker--buttons {
   display: flex;
   padding: 0 20px 10px 19px;
+  position: relative;
 }
 
 .datepicker--button,
@@ -123,5 +124,6 @@
 }
 
 .datepicker--button-ok {
-  margin-left: 40%;
+  position: absolute;
+  right: 20px;
 }
