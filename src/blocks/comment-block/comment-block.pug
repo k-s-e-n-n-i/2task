@@ -1,11 +1,11 @@
 include ~@Blocks/like/like.pug
 
-mixin commentBlock(obj,...items)
+mixin commentBlock({ topic = '', label = ''}, { items = {urlImg : '#', liked : false, qty, name : 'Фамилия Имя', time : '', text : ''} })
   .comment-block
-    if obj.topic != ""
+    if topic != ""
       .comment-block__title
-        h2= obj.topic
-        p= obj.label
+        h2= topic
+        p= label
     each item in items
       .comment-block__comment
         .comment-block__person

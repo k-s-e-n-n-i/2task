@@ -501,17 +501,18 @@ block content
     .ui-kit-form-elements__blk.ui-kit-form-elements__blk_11
       .ui-kit-form-elements__comment-block
         +commentBlock(
+          { },
           {
-            topic : "",
-            label : "2 отзыва"
-          },
-          {
-            urlImg: require("@Pages/ui-kit-form-elements/img/photo1.png").default,
-            liked : true,
-            qty : 12,
-            name : "Мурад Сарафанов",
-            time : "5 дней назад",
-            text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
+            items : [
+              {
+                urlImg: require("@Pages/ui-kit-form-elements/img/photo1.png").default,
+                liked : true,
+                qty : 12,
+                name : "Мурад Сарафанов",
+                time : "5 дней назад",
+                text : `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
+              }
+            ]
           }
         )
 
