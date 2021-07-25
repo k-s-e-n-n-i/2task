@@ -7,13 +7,15 @@ mixin formSearchNum
     h1 Найдём номера под ваши пожелания
     .form-search-num__dropdown-dates
       +dropdownDates(
-        { 
-          topic : "Прибытие",
-          activeText : "ДД.ММ.ГГГГ",
-        },
-        { 
-          topic : "Выезд",
-          activeText : "ДД.ММ.ГГГГ",
+        {
+          items : [
+            { 
+              topic : "Прибытие",
+            },
+            { 
+              topic : "Выезд",
+            }
+          ]
         }
       ) 
 

@@ -81,13 +81,16 @@ block content
 
       .ui-kit-form-elements__dropdown-dates
         +dropdownDates(
-          { 
-            topic : "date Dropdown",
-            activeText : "ДД.ММ.ГГГГ",
-          },
-          { 
-            topic : "date Dropdown",
-            activeText : "19.08.2019",
+          {
+            items : [
+              { 
+                topic : "date Dropdown",
+              },
+              { 
+                topic : "date Dropdown",
+                activeDate : "19.08.2019",
+              }
+            ]
           }
         ) 
 

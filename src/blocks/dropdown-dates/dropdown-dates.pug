@@ -1,11 +1,19 @@
 include ~@Blocks/calendar/calendar.pug
 
-mixin dropdownDates(...items)
+mixin dropdownDates({ items = [{},{}] })
+  - let topic = ''
+  - let activeDate = 'ДД.ММ.ГГГГ'
+
   .dropdown-dates
     each item in items
+      if item.topic != undefined
+        - topic = item.topic
+      if item.activeDate != undefined
+        - activeDate = item.activeDate
+
       .dropdown-dates__date-block(name='date')
-        if item.topic != ""
-          h3= item.topic
-        .dropdown-dates__dropdown= item.activeText
+        if topic != ""
+          h3= topic
+        .dropdown-dates__dropdown= activeDate
     .dropdown-dates__calendar
       +calendar({})
