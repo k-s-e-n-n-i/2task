@@ -53,6 +53,7 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     z-index: 5;
     position: absolute;
+    width: calc(100% - 2px);
   }
 
   &__dropdown-items_hide {

@@ -121,9 +121,10 @@ $(function () {
 
     if (dropdown.attr('name') == 'guests') {
       str = countQtyGuests(dropdown);
-    }
-    if (dropdown.attr('name') == 'room') {
+    } else if (dropdown.attr('name') == 'room') {
       str = countQtyComfortRoom(dropdown);
+    } else {
+      str = 'Тип элемента неопределен';
     }
 
     if (str.length > 19) {
