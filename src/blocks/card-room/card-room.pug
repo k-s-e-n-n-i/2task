@@ -1,7 +1,7 @@
 include ~@Blocks/link/link.pug
 include ~@Blocks/rate-btn/rate-btn.pug
 
-mixin cardRoom({ id, number, price, markLink = '', review, rating })
+mixin cardRoom({ id, number, price, markLink = '', review = 0, rating = 0 })
   .card-room
     .card-room__image-block
       .card-room__image.card-room__image_active(id=id)
