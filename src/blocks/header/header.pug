@@ -1,34 +1,46 @@
 include ~@Blocks/btn/btn.pug
 
-mixin header(obj,...items)
+mixin header({ authorization = false, name = 'Имя', items = [] })
   - let active
   - let expand
+
   header.header
     .header__content-container
       a.header__logo-link(href="./landing-page.html")
         img.header__logo(src=require("@Blocks/header/img/logo.svg").default alt="logo")
       .header__menu-mobile
       .header__links.header__links_hidden
-        nav.header__block-menu
-          ul.header__menu
-            each item in items
-              if item.state == "active"
-                - active = "header__menu-li_active";
-              else
-                - active = "";
-              if item.type == "expand"
-                - expand = "header__menu-li_expand";
-              else
-                - expand = "";
-              li(class="header__menu-li " +active+" "+expand)
-                a.header__menu-a(href= item.link)= item.menuItem
-                if item.submenu != false
-                  ul.header__submenu.header__submenu-hide
-                    each sbm in item.submenu
-                      li.header__submenu-li
-                        a.header__submenu-a(href= sbm.link)= sbm.menuItem
+        if items != []
+          nav.header__block-menu
+            ul.header__menu
+              each item in items
+                - let menuItem = item.menuItem || 'Пункт меню'
+                - let link = item.link || '#'
+                - let state = item.state || ''
+                - let type = item.type || ''
+                - let submenu = item.submenu || false
+
+                if state == "active"
+                  - active = "header__menu-li_active";
+                else
+                  - active = "";
+                if type == "expand"
+                  - expand = "header__menu-li_expand";
+                else
+                  - expand = "";
+
+                li(class="header__menu-li " +active+" "+expand)
+                  a.header__menu-a(href= link)= menuItem
+                  if submenu != false
+                    ul.header__submenu.header__submenu-hide
+                      each sbm in item.submenu
+                        - let sbmItem = sbm.menuItem || 'Пункт меню'
+                        - let sbmLink = sbm.link || '#'
+
+                        li.header__submenu-li
+                          a.header__submenu-a(href= sbmLink)= sbmItem
         .header__block-login
-          if obj.authorization == false
+          if authorization == false
             .header__btn.header__btn_border
               +btn(
                 {
@@ -48,4 +60,4 @@ mixin header(obj,...items)
               )
           else
             .header__block-login-hr
-            p= obj.name
+            p= name

@@ -24,6 +24,10 @@
     }
   }
 
+  &__logo {
+    padding: 15px 0;
+  }
+
   &__menu-mobile {
     display: none;
     width: 24px;
@@ -81,7 +85,6 @@
     flex-wrap: wrap;
     align-items: center;
     margin: 0;
-    padding: 23px 0;
 
     @media screen and (max-width: 530px) {
       flex-direction: column;

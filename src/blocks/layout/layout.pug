@@ -24,60 +24,40 @@ html(lang="ru")
     block header
       +header(
         {
-          authorization : false,
-          name : "",
-        },
-        {
-          menuItem : "О нас",
-          link : "#",
-          state : "",
-          type : "main",
-          submenu : []
-        },
-        {
-          menuItem : "Услуги",
-          link : "#",
-          state : "",
-          type : "expand",
-          submenu : [
+          items : [
             {
-              menuItem : "Услуга №1",
-              link : "#",
+              menuItem : "О нас",
             },
             {
-              menuItem : "Услуга №2",
-              link : "#",
-            },
-          ]
-        },
-        {
-          menuItem : "Вакансии",
-          link : "#",
-          state : "",
-          type : "main",
-          submenu : []
-        },
-        {
-          menuItem : "Новости",
-          link : "#",
-          state : "",
-          type : "main",
-          submenu : []
-        },
-        {
-          menuItem : "Соглашения",
-          link : "#",
-          state : "",
-          type : "expand",
-          submenu : [
-            {
-              menuItem : "Соглашение №1",
-              link : "#",
+              menuItem : "Услуги",
+              type : "expand",
+              submenu : [
+                {
+                  menuItem : "Услуга №1",
+                },
+                {
+                  menuItem : "Услуга №2",
+                },
+              ]
             },
             {
-              menuItem : "Соглашение №2",
-              link : "#",
+              menuItem : "Вакансии",
             },
+            {
+              menuItem : "Новости",
+            },
+            {
+              menuItem : "Соглашения",
+              type : "expand",
+              submenu : [
+                {
+                  menuItem : "Соглашение №1",
+                },
+                {
+                  menuItem : "Соглашение №2",
+                },
+              ]
+            }
           ]
         }
       )

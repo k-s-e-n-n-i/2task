@@ -19,60 +19,41 @@ block content
     .ui-kit-header-footer__header
       +header(
         {
-          authorization : false,
-          name : "",
-        },
-        {
-          menuItem : "О нас",
-          link : "#",
-          state : "active",
-          type : "main",
-          submenu : false
-        },
-        {
-          menuItem : "Услуги",
-          link : "#",
-          state : "",
-          type : "expand",
-          submenu : [
+          items: [
             {
-              menuItem : "Услуга №1",
-              link : "#",
+              menuItem : "О нас",
+              state : "active",
             },
             {
-              menuItem : "Услуга №2",
-              link : "#",
-            },
-          ]
-        },
-        {
-          menuItem : "Вакансии",
-          link : "#",
-          state : "",
-          type : "main",
-          submenu : []
-        },
-        {
-          menuItem : "Новости",
-          link : "#",
-          state : "",
-          type : "main",
-          submenu : []
-        },
-        {
-          menuItem : "Соглашения",
-          link : "#",
-          state : "",
-          type : "expand",
-          submenu : [
-            {
-              menuItem : "Соглашение №1",
-              link : "#",
+              menuItem : "Услуги",
+              type : "expand",
+              submenu : [
+                {
+                  menuItem : "Услуга №1",
+                },
+                {
+                  menuItem : "Услуга №2",
+                },
+              ]
             },
             {
-              menuItem : "Соглашение №2",
-              link : "#",
+              menuItem : "Вакансии",
             },
+            {
+              menuItem : "Новости",
+            },
+            {
+              menuItem : "Соглашения",
+              type : "expand",
+              submenu : [
+                {
+                  menuItem : "Соглашение №1",
+                },
+                {
+                  menuItem : "Соглашение №2",
+                },
+              ]
+            }
           ]
         }
       )
@@ -80,59 +61,42 @@ block content
       +header(
         {
           authorization : true,
-          name : "Юлий Цезарь"
-        },
-        {
-          menuItem : "О нас",
-          link : "#",
-          state : "active",
-          type : "main",
-          submenu : []
-        },
-        {
-          menuItem : "Услуги",
-          link : "#",
-          state : "",
-          type : "expand",
-          submenu : [
+          name : "Юлий Цезарь",
+          items : [
             {
-              menuItem : "Услуга №1",
-              link : "#",
+              menuItem : "О нас",
+              state : "active",
             },
             {
-              menuItem : "Услуга №2",
-              link : "#",
-            },
-          ]
-        },
-        {
-          menuItem : "Вакансии",
-          link : "#",
-          state : "",
-          type : "main",
-          submenu : []
-        },
-        {
-          menuItem : "Новости",
-          link : "#",
-          state : "",
-          type : "main",
-          submenu : []
-        },
-        {
-          menuItem : "Соглашения",
-          link : "#",
-          state : "",
-          type : "expand",
-          submenu : [
-            {
-              menuItem : "Соглашение №1",
-              link : "#",
+              menuItem : "Услуги",
+              type : "expand",
+              submenu : [
+                {
+                  menuItem : "Услуга №1",
+                },
+                {
+                  menuItem : "Услуга №2",
+                },
+              ]
             },
             {
-              menuItem : "Соглашение №2",
-              link : "#",
+              menuItem : "Вакансии",
             },
+            {
+              menuItem : "Новости",
+            },
+            {
+              menuItem : "Соглашения",
+              type : "expand",
+              submenu : [
+                {
+                  menuItem : "Соглашение №1",
+                },
+                {
+                  menuItem : "Соглашение №2",
+                },
+              ]
+            }
           ]
         }
       )
