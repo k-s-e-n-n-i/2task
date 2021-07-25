@@ -3,7 +3,7 @@ include ~@Blocks/radiogroup/radiogroup.pug
 include ~@Blocks/toggle-block/toggle-block.pug
 include ~@Blocks/btn/btn.pug
 
-mixin formRegistration(obj)
+mixin formRegistration({ id })
   form.form-registration
     h1 Регистрация аккаунта
 
@@ -35,8 +35,8 @@ mixin formRegistration(obj)
     .form-registration__radiogroup
       +radiogroup(
         {
-          nameGroup : "rbGroop"+obj.id,
-          idMainBlock : obj.id
+          nameGroup : "rbGroop"+id,
+          idMainBlock : id
         },
         {
           text : "Мужчина",
