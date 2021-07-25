@@ -1,6 +1,6 @@
 include ~@Blocks/like/like.pug
 
-mixin commentBlock({ topic = '', label = ''}, { items = {urlImg : '#', liked : false, qty, name : 'Фамилия Имя', time : '', text : ''} })
+mixin commentBlock({ topic = '', label = '', items = [{urlImg : '#', liked : false, qty : 0, name : 'Фамилия Имя', time : '', text : ''}] })
   .comment-block
     if topic != ""
       .comment-block__title
