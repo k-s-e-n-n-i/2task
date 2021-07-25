@@ -1,9 +1,11 @@
-mixin like(obj)
-  if obj.liked == true
+
+
+mixin like({ qty = 0, liked = false})
+  if liked == true
     .like.like_liked
       .like__ico.like__ico_liked
-      .like__sum.like__sum_liked= obj.qty
+      .like__sum.like__sum_liked= qty
   else
     .like
       .like__ico
-      .like__sum= obj.qty
+      .like__sum= qty
