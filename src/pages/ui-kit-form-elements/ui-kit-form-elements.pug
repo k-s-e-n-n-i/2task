@@ -60,9 +60,7 @@ block content
           { 
             name : "guests",
             topic : "Dropdown",
-            label : "",
             activeText : "Сколько гостей",
-            state : "close",
             btnClean : false,
             btnOk : false
           }
@@ -99,9 +97,7 @@ block content
             { 
               name : "date",
               topic : "filter date dropdown",
-              label : "",
               activeText : "19 авг - 23 авг",
-              state : "close",
               btnClean : false,
               btnOk : false
             }
@@ -297,7 +293,6 @@ block content
             topic : "Dropdown",
             label : "Default",
             activeText : "2 спальни, 2 кровати...",
-            state : "close",
             btnClean : false,
             btnOk : false
           }
@@ -311,25 +306,20 @@ block content
             activeText : "2 спальни, 2 кровати...",
             state : "open",
             btnClean : false,
-            btnOk : false
-          },
-          {
-            text : "спальни",
-            qty : 2,
-            minus : "active",
-            plus : "active"
-          },
-          {
-            text : "кровати",
-            qty : 2,
-            minus : "active",
-            plus : "active"
-          },
-          {
-            text : "ванные комнаты",
-            qty : 0,
-            minus : "disable",
-            plus : "active"
+            btnOk : false,
+            items : [
+              {
+                text : "спальни",
+                qty : 2,
+              },
+              {
+                text : "кровати",
+                qty : 2,
+              },
+              {
+                text : "ванные комнаты",
+              }
+            ]
           }
         )
 
@@ -338,30 +328,21 @@ block content
         { 
           name : "guests",
           topic : "Dropdown",
-          label : "",
           activeText : "Сколько гостей",
           state : "open",
           btnClean : false,
-          btnOk : true
-        },
-        {
-          text : "взрослые",
-          qty : 0,
-          minus : "disable",
-          plus : "active"
-        },
-        {
-          text : "дети",
-          qty : 0,
-          minus : "disable",
-          plus : "active"
-        },
-        {
-          text : "младенцы",
-          qty : 0,
-          minus : "disable",
-          plus : "active"
-        }    
+          items : [
+            {
+              text : "взрослые",
+            },
+            {
+              text : "дети",
+            },
+            {
+              text : "младенцы",
+            }
+          ]
+        }
       )
 
     .ui-kit-form-elements__blk.ui-kit-form-elements__blk_6
@@ -369,30 +350,22 @@ block content
         { 
           name : "guests",
           topic : "Dropdown",
-          label : "",
           activeText : "3 гостя",
           state : "open",
-          btnClean : true,
-          btnOk : true
-        },
-        {
-          text : "взрослые",
-          qty : 2,
-          minus : "active",
-          plus : "active"
-        },
-        {
-          text : "дети",
-          qty : 1,
-          minus : "active",
-          plus : "active"
-        },
-        {
-          text : "младенцы",
-          qty : 0,
-          minus : "disable",
-          plus : "active"
-        }    
+          items : [
+            {
+              text : "взрослые",
+              qty : 2,
+            },
+            {
+              text : "дети",
+              qty : 1,
+            },
+            {
+              text : "младенцы",
+            }
+          ]
+        }
       )
 
     .ui-kit-form-elements__blk.ui-kit-form-elements__blk_7

@@ -17,9 +17,7 @@ block content
           { 
             name : "date",
             topic : "даты пребывания в отеле",
-            label : "",
             activeText : "19 авг - 23 авг",
-            state : "close",
             btnClean : false,
             btnOk : false
           }
@@ -30,30 +28,22 @@ block content
           { 
             name : "guests",
             topic : "Гости",
-            label : "",
             activeText : "3 гостя, 1 младенец",
-            state : "close",
             btnClean : false,
-            btnOk : true
-          },
-          {
-            text : "взрослые",
-            qty : 3,
-            minus : "active",
-            plus : "active"
-          },
-          {
-            text : "дети",
-            qty : 0,
-            minus : "disable",
-            plus : "active"
-          },
-          {
-            text : "младенцы",
-            qty : 1,
-            minus : "active",
-            plus : "active"
-          }    
+            items : [
+              {
+                text : "взрослые",
+                qty : 3,
+              },
+              {
+                text : "дети",
+              },
+              {
+                text : "младенцы",
+                qty : 1,
+              }
+            ]
+          }
         )
 
       .search-room__range-slider
@@ -116,30 +106,23 @@ block content
           { 
             name : "room",
             topic : "удобства номера",
-            label : "",
             activeText : "2 спальни, 2 кровати...",
-            state : "close",
             btnClean : false,
-            btnOk : false
-          },
-          {
-            text : "спальни",
-            qty : 2,
-            minus : "active",
-            plus : "active"
-          },
-          {
-            text : "кровати",
-            qty : 2,
-            minus : "active",
-            plus : "active"
-          },
-          {
-            text : "ванные комнаты",
-            qty : 0,
-            minus : "disable",
-            plus : "active"
-          }    
+            btnOk : false,
+            items : [
+              {
+                text : "спальни",
+                qty : 2,
+              },
+              {
+                text : "кровати",
+                qty : 2,
+              },
+              {
+                text : "ванные комнаты",
+              }
+            ]
+          }
         )
 
       .search-room__checkbox-list-expandable

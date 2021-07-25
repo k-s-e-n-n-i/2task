@@ -38,30 +38,20 @@ mixin formReservation(obj)
       { 
         name : "guests",
         topic : "Гости",
-        label : "",
         activeText : "3 гостя",
-        state : "close",
-        btnClean : true,
-        btnOk : true
-      },
-      {
-        text : "взрослые",
-        qty : 3,
-        minus : "active",
-        plus : "active"
-      },
-      {
-        text : "дети",
-        qty : 0,
-        minus : "disable",
-        plus : "active"
-      },
-      {
-        text : "младенцы",
-        qty : 0,
-        minus : "disable",
-        plus : "active"
-      }    
+        items : [
+          {
+            text : "взрослые",
+            qty : 3,
+          },
+          {
+            text : "дети",
+          },
+          {
+            text : "младенцы",
+          }
+        ]
+      }
     )  
 
     +formReservation__blockPrices(

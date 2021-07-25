@@ -25,26 +25,21 @@ mixin formSearchNum
         activeText : "Сколько гостей",
         state : "close",
         btnClean : true,
-        btnOk : true
-      },
-      {
-        text : "взрослые",
-        qty : 2,
-        minus : "active",
-        plus : "active"
-      },
-      {
-        text : "дети",
-        qty : 1,
-        minus : "active",
-        plus : "active"
-      },
-      {
-        text : "младенцы",
-        qty : 0,
-        minus : "disable",
-        plus : "active"
-      }    
+        btnOk : true,
+        items : [
+          {
+            text : "взрослые",
+            qty : 2,
+          },
+          {
+            text : "дети",
+            qty : 1,
+          },
+          {
+            text : "младенцы",
+          }
+        ]
+      }
     )
 
     .form-search-num__btn

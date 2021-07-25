@@ -2,48 +2,51 @@ include ~@Blocks/link/link.pug
 include ~@Blocks/topic-label/topic-label.pug
 include ~@Blocks/calendar/calendar.pug
 
-mixin dropdown(obj,...items)
-  .dropdown(name=  obj.name)
-    +topicLabel(obj)
-    +dropdown__dropdown(obj)
+mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', state = 'close', btnClean = true, btnOk = true, items = [] })
+  .dropdown(name= name)
+    +topicLabel({ topic, label })
+    +dropdown__dropdown({ state, activeText })
 
     if items != ""
-      if obj.state == "close"
+      if state == "close"
         .dropdown__dropdown-items.dropdown__dropdown-items_hide
-          +dropdown__itemsLine(obj,...items)
+          +dropdown__itemsLine(btnClean, btnOk, items)
       else
         .dropdown__dropdown-items
-          +dropdown__itemsLine(obj,...items)
+          +dropdown__itemsLine(btnClean, btnOk, items)
 
-    if obj.name == 'date'
+    if name == 'date'
       .dropdown__calendar
         +calendar({})
 
 
-mixin dropdown__dropdown(obj)
-  if obj.state == "close"
-    .dropdown__dropdown= obj.activeText
+mixin dropdown__dropdown({ state, activeText })
+  if state == "close"
+    .dropdown__dropdown= activeText
   else
-    .dropdown__dropdown.dropdown__dropdown_items-show= obj.activeText
+    .dropdown__dropdown.dropdown__dropdown_items-show= activeText
 
 
-mixin dropdown__itemsLine(obj,...items)
+mixin dropdown__itemsLine(btnClean, btnOk, items)
+  - let minQty = 0
+
   each item in items
     .dropdown__items-line
       h3= item.text
       .dropdown__block-qty
-        if item.minus == "disable"
-          .dropdown__inc-qty-minus.dropdown__inc-qty_disable= "-" 
+        if item.minus == "disable" || item.qty == minQty || item.qty == undefined
+          .dropdown__inc-qty-minus.dropdown__inc-qty_disable= "-"
+          span= minQty
         else
           .dropdown__inc-qty-minus= "-"
-        span= item.qty
+          span= item.qty
         if item.plus == "disable"
           .dropdown__inc-qty-plus.dropdown__inc-qty_disable= "-" 
         else
           .dropdown__inc-qty-plus= "+"
 
-  if obj.btnClean == true || obj.btnOk == true
-    if obj.btnClean == false && obj.btnOk == true
+  if btnClean == true || btnOk == true
+    if btnClean == false && btnOk == true
       .dropdown__btns.dropdown__btns_flex-end
         +links
     else
