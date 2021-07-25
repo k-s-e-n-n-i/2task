@@ -3,12 +3,12 @@ include ~@Blocks/dropdown/dropdown.pug
 include ~@Blocks/dropdown-dates/dropdown-dates.pug
 include ~@Blocks/btn/btn.pug
 
-mixin formReservation(obj)
+mixin formReservation({ number = 0, priceFrom = 0, priceFinal = 0 })
   form.form-reservation
     .form-reservation__block
       .form-reservation__number
         span= "№ "
-        span= obj.number +" "
+        span= number +" "
         .form-reservation__link-lux
           +link(
             {
@@ -18,7 +18,7 @@ mixin formReservation(obj)
             }
           )
       .form-reservation__number-price
-        span= obj.priceFrom
+        span= priceFrom
         span= "₽"
         span= " в сутки"
 
@@ -60,26 +60,30 @@ mixin formReservation(obj)
 
     +formReservation__blockPrices(
       {
-        textPrice : "9 990₽ х 4 суток",
-        sumPrice : "39 960",
-        iconInfo : false
-      },
-      {
-        textPrice : "Сбор за услуги: скидка <span>2 179₽</span>",
-        sumPrice : "0",
-        iconInfo : true
-      },
-      {
-        textPrice : "Сбор за доп. услуги",
-        sumPrice : "300",
-        iconInfo : true
+        items : [
+          {
+            textPrice : "9 990₽ х 4 суток",
+            sumPrice : "39 960",
+            iconInfo : false
+          },
+          {
+            textPrice : "Сбор за услуги: скидка <span>2 179₽</span>",
+            sumPrice : "0",
+            iconInfo : true
+          },
+          {
+            textPrice : "Сбор за доп. услуги",
+            sumPrice : "300",
+            iconInfo : true
+          }
+        ]
       }
     )
 
     .form-reservation__block
       h2= "Итого"
       span.form-reservation__dashed
-      h2= obj.priceFinal +"₽"
+      h2= priceFinal +"₽"
 
     .form-reservation__btn
       +btn(
@@ -90,7 +94,7 @@ mixin formReservation(obj)
       )
 
 
-mixin formReservation__blockPrices(...items)
+mixin formReservation__blockPrices({ items = [{}] })
   .form-reservation__block-prices
     each item in items
       .form-reservation__line-price
