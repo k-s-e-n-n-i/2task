@@ -123,7 +123,6 @@ block content
       h3 Checkbox Buttons
       .ui-kit-form-elements__checkbox-list
         +checkboxList(
-          { },
           {
             items : [
               {
@@ -376,8 +375,6 @@ block content
         +checkboxListExpandable(
           {
             topic : "expandable checkbox list",
-          },
-          {
             items : [
               {
                 label : "Тест", 
@@ -391,8 +388,6 @@ block content
           {
             topic: "expandable checkbox list",
             state : "open",
-          },
-          {
             items : [
               {
                 label : "Завтрак", 
@@ -426,8 +421,8 @@ block content
       h3 Rich Checkbox Buttons
       .ui-kit-form-elements__checkbox-list
         +checkboxList(
-          { haveAdditionalText : true},
           {
+            haveAdditionalText : true,
             items : [
               {
                 label : "Широкий коридор", 
@@ -438,7 +433,7 @@ block content
               {
                 label : "Помощник для инвалидов", 
                 id : 32,
-                additionalText : "На 1 этаже вас встретит специалист и проводит до номера.", 
+                additionalText : "На 1 этаже вас встретит специалист и проводит до номера.",
                 widthAdditionalText : 225,
               },
             ]

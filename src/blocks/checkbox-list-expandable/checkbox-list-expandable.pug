@@ -1,17 +1,16 @@
 include ~@Blocks/checkbox-list/checkbox-list.pug
 
-mixin checkboxListExpandable({ topic = 'Текст', state = 'hide'}, { items = { label : 'Текст', id, additionalText : '', widthAdditionalText : '' } })
-
+mixin checkboxListExpandable({ topic = 'Текст', state = 'hide', items = [{ label : 'Текст', id, additionalText : '', widthAdditionalText : '' }] })
   .checkbox-list-expandable
     if state == 'open'
       .checkbox-list-expandable__topic-block
         h3= topic
         img.checkbox-list-expandable__expand.checkbox-list-expandable__expand_open(alt="expand-more-checkbox.svg" src=require("@Blocks/checkbox-list-expandable/img/expand-more-checkbox.svg").default)
       .checkbox-list-expandable__checkbox-list
-        +checkboxList({ }, { items })
+        +checkboxList({ items : items })
     else
       .checkbox-list-expandable__topic-block
         h3= topic
         img.checkbox-list-expandable__expand(alt="expand-more-checkbox.svg" src=require("@Blocks/checkbox-list-expandable/img/expand-more-checkbox.svg").default)
       .checkbox-list-expandable__checkbox-list
-        +checkboxList({ stateHide : true }, { items })
+        +checkboxList({ stateHide : true, items : items })

@@ -60,7 +60,6 @@ block content
       .search-room__filter-features
         h3 Правила дома
         +checkboxList(
-          { },
           {
             items : [
               {
@@ -82,8 +81,8 @@ block content
       .search-room__filter-availability
         h3 доступность
         +checkboxList(
-          { haveAdditionalText : true},
           {
+            haveAdditionalText : true,
             items : [
               {
                 label : "Широкий коридор", 
@@ -129,8 +128,6 @@ block content
         +checkboxListExpandable(
           {
             topic: "дополнительные удобства",
-          },
-          {
             items : [
               {
                 label : "Завтрак", 
