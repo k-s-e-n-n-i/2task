@@ -1,11 +1,11 @@
-mixin pagination(obj)
+mixin pagination({ text = '', max })
   .pagination
     .pagination__num-block
       .pagination__num.pagination__num_active= 1
       .pagination__num= 2
       .pagination__num= 3
       .pagination__num= "..."
-      .pagination__num= obj.max
+      .pagination__num= max
       .pagination__num.pagination__num_next
         .pagination__arrow.pagination__arrow_white
-    .pagination__label= obj.text
+    .pagination__label= text
