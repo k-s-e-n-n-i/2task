@@ -1,16 +1,16 @@
-mixin rangeSlider(obj)
-  .range-slider(id= obj.id)
+mixin rangeSlider({ topic = '', labelMin, labelMax, id, postText = '' })
+  .range-slider(id= id)
     .range-slider__topic-label
-      h3= obj.topic
+      h3= topic
       p.range-slider__label-block
-        span.range-slider__label-min= obj.labelMin
+        span.range-slider__label-min= labelMin
         span.range-slider__label-dash= "₽ - "
-        span.range-slider__label-max= obj.labelMax
+        span.range-slider__label-max= labelMax
         span= "₽"
     .range-slider__slider
       .range-slider__all-width
       .range-slider__range
       .range-slider__left
       .range-slider__right
-    if obj.postText != ""
+    if postText != ""
       p.range-slider__postText Стоимость за сутки пребывания в номере
