@@ -1,23 +1,23 @@
 include ~@Blocks/topic-label/topic-label.pug
 
-mixin inputText(obj)
+mixin inputText({ topic = '', label = '', placeholder = 'Введите данные...', inputText = '', state = '', id, type = '', name = '' })
   - let classDate
-  if obj.name == 'date'
+  if name == 'date'
     - classDate = 'input-text__input_date'
   else
     - classDate = ''
 
-  if obj.type == "subscription"
+  if type == "subscription"
     .input-text.input-text_subscription
-      +topicLabel(obj)
-      if obj.state == "focus"
-        input(class="input-text__input input-text__input_hover " name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+      +topicLabel({ topic, label })
+      if state == "focus"
+        input(class="input-text__input input-text__input_hover " name=name placeholder=placeholder id="inputText" + id value= inputText)
       else
-        input(class="input-text__input " name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input " name=name placeholder=placeholder id="inputText" + id value= inputText)
   else  
     .input-text
-      +topicLabel(obj)
-      if obj.state == "focus"
-        input(class="input-text__input input-text__input_hover "+classDate name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+      +topicLabel({ topic, label })
+      if state == "focus"
+        input(class="input-text__input input-text__input_hover "+classDate name=name placeholder=placeholder id="inputText" + id value= inputText)
       else
-        input(class="input-text__input "+classDate name=obj.name placeholder=obj.placeholder id="inputText" + obj.id value= obj.inputText)
+        input(class="input-text__input "+classDate name=name placeholder=placeholder id="inputText" + id value= inputText)
