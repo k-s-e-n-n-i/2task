@@ -1,7 +1,7 @@
-mixin listBlock(obj)
+mixin listBlock({ list = ['Элемент списка'] })
   .list-block
     ul.list-block__list
-      each item in obj.list
+      each item in list
         li.list-block__item
           .list-block__point
           p= item
