@@ -1,17 +1,10 @@
 @import 'datepicker-config';
 
-/* -------------------------------------------------
-    Navigation
-   ------------------------------------------------- */
-
 .datepicker--nav {
-  min-height: $datepickerNavigationHeight;
-
   border: none;
   box-shadow: none;
   background: #fff;
-  padding: 0px 0 41px 0;
-  height: 20px;
+  padding: 0 0 3.5% 0;
   display: flex;
   justify-content: space-between;
 
@@ -30,21 +23,12 @@
 
 .datepicker--nav-action {
   user-select: none;
-
   width: 24px;
   height: 24px;
   margin: 19px;
 
-  &:hover {
-  }
-
   &.-disabled- {
     visibility: hidden;
-  }
-
-  svg {
-    width: 32px;
-    height: 32px;
   }
 
   path {
@@ -58,23 +42,19 @@
 .datepicker--nav-action-next {
   display: block;
   background: url('@Blocks/calendar/img/arrow.svg') no-repeat center;
-  width: 24px;
-  height: 24px;
+  width: 100%;
+  height: 100%;
 }
 .datepicker--nav-action-prev {
   transform: rotate(180deg);
 }
 
 .datepicker--nav-title {
-  padding: 0 8px;
-
-  padding: 30px 0;
+  padding: 5.9% 5px 5.9% 0;
   display: flex;
   justify-content: center;
-
   font-size: 20px;
   line-height: 21px;
-  padding-right: 5px;
   margin: 0 2px;
   text-transform: none;
   color: #1f2041;
@@ -91,21 +71,15 @@
     color: #1f2041;
   }
 
-  &:hover {
-  }
-
   &.-disabled- {
     cursor: default;
     background: none;
   }
 }
 
-//  Buttons
-// -------------------------------------------------
-
 .datepicker--buttons {
   display: flex;
-  padding: 0 20px 10px 19px;
+  padding: 6px 20px 13px 20px;
   position: relative;
 }
 
@@ -115,8 +89,6 @@
   flex: 1;
   display: inline-flex;
   align-items: center;
-  height: 32px;
-
   color: #bc9cff;
   text-transform: uppercase;
   font-weight: 700;
