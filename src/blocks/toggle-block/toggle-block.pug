@@ -1,9 +1,9 @@
-mixin toggleBlock(obj)
+mixin toggleBlock({ text = '', active = 'off' })
   .toggle-block
-    if obj.active == "off"
+    if active == "off"
       .toggle-block__toggle.toggle-block__toggle_off
         .toggle-block__item
-    if obj.active == "on"
+    if active == "on"
       .toggle-block__toggle.toggle-block__toggle_on
         .toggle-block__item
-    p= obj.text
+    p= text
