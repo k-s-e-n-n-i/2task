@@ -26,14 +26,16 @@ mixin formRegistration({ id })
       +radiogroup(
         {
           nameGroup : "rbGroop"+id,
-          idMainBlock : id
-        },
-        {
-          text : "Мужчина",
-          check : "checked"
-        },
-        {
-          text : "Женщина"
+          idMainBlock : id,
+          items : [
+            {
+              text : "Мужчина",
+              check : "checked"
+            },
+            {
+              text : "Женщина"
+            }
+          ]
         }
       )
 
