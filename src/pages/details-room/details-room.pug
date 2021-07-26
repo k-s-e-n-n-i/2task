@@ -22,25 +22,27 @@ block content
           h2 Сведения о номере
           +infoBlock(
             {
-              qtyHR : 2
-            },
-            {
-              label : "Комфорт",
-              text : "Шумопоглощающие стены",
-              url : require("@Pages/details-room/img/emoticon.svg").default,
-              dopclass : "info-block__icon_emoticon"
-            },
-            {
-              label : "Удобство",
-              text : "Окно в каждой из спален",
-              url : require("@Pages/details-room/img/city.svg").default,
-              dopclass : "info-block__icon_city"
-            },
-            {
-              label : "Уют",
-              text : "Номер оснащён камином",
-              url : require("@Pages/details-room/img/whatshot.svg").default,
-              dopclass : "info-block__icon_whatshot"
+              qtyHR : 2,
+              items : [
+                {
+                  label : "Комфорт",
+                  text : "Шумопоглощающие стены",
+                  url : require("@Pages/details-room/img/emoticon.svg").default,
+                  dopclass : "info-block__icon_emoticon"
+                },
+                {
+                  label : "Удобство",
+                  text : "Окно в каждой из спален",
+                  url : require("@Pages/details-room/img/city.svg").default,
+                  dopclass : "info-block__icon_city"
+                },
+                {
+                  label : "Уют",
+                  text : "Номер оснащён камином",
+                  url : require("@Pages/details-room/img/whatshot.svg").default,
+                  dopclass : "info-block__icon_whatshot"
+                }
+              ]
             }
           )
 

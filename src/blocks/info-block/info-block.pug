@@ -1,11 +1,16 @@
-mixin infoBlock(obj,...items)
+mixin infoBlock({ qtyHR = 1, items = [{ label : 'Заголовок', text : 'Текст', url : '#', dopclass : '' }] })
   .info-block
     each item, index in items
+      - let label = item.label || ''
+      - let text = item.text || ''
+      - let url = item.url || '#'
+      - let dopclass = item.dopclass || ''
+
       .info-block__item
-        img(src=item.url class="info-block__icon "+item.dopclass alt="icon")
+        img(src=url class="info-block__icon "+dopclass alt="icon")
         .info-block__text
           p
-            b= item.label
-          p= item.text
-      if index < obj.qtyHR
+            b= label
+          p= text
+      if index < qtyHR
         hr.info-block__hr
