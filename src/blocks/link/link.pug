@@ -1,11 +1,10 @@
-mixin link(obj)
-  case obj.type
+mixin link({ text = 'Ссылка', url = '#', type = '' })
+  case type
     when "gray"
-      a(class="link link_gray" href= obj.url)= obj.text
+      a(class="link link_gray" href= url)= text
     when "clean"
-      a(class="link link_clean" href= obj.url)= obj.text
-    when "lux"
+      a(class="link link_clean" href= url)= text
     when "ok"
-      a(class="link link_ok" href= obj.url)= obj.text
+      a(class="link link_ok" href= url)= text
     default
-      a(class="link" href= obj.url)= obj.text
+      a(class="link" href= url)= text
