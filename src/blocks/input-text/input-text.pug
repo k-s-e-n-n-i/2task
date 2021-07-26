@@ -9,14 +9,14 @@ mixin inputText({ topic = '', label = '', placeholder = 'Введите данн
 
   if type == "subscription"
     .input-text.input-text_subscription
-      +topicLabel({ topic, label })
+      +topicLabel({ topic : topic, label : label })
       if state == "focus"
         input(class="input-text__input input-text__input_hover " name=name placeholder=placeholder id="inputText" + id value= inputText)
       else
         input(class="input-text__input " name=name placeholder=placeholder id="inputText" + id value= inputText)
   else  
     .input-text
-      +topicLabel({ topic, label })
+      +topicLabel({ topic : topic, label : label })
       if state == "focus"
         input(class="input-text__input input-text__input_hover "+classDate name=name placeholder=placeholder id="inputText" + id value= inputText)
       else

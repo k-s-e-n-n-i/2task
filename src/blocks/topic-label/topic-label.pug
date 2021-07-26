@@ -1,12 +1,12 @@
-mixin topicLabel(obj)
-  if obj.topic != "" && obj.label !=""
+mixin topicLabel({ topic = '', label = '' })
+  if topic != "" && label !=""
     .topic-label
-      h3= obj.topic
-      p= obj.label
+      h3= topic
+      p= label
   else 
-    if obj.topic != ""
+    if topic != ""
       .topic-label
-        h3= obj.topic
-    if obj.label != ""
+        h3= topic
+    if label != ""
       .topic-label
-        p= obj.label
+        p= label

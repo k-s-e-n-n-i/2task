@@ -4,7 +4,7 @@ include ~@Blocks/calendar/calendar.pug
 
 mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', state = 'close', btnClean = true, btnOk = true, items = [] })
   .dropdown(name= name)
-    +topicLabel({ topic, label })
+    +topicLabel({ topic : topic, label : label })
     +dropdown__dropdown({ state, activeText })
 
     if items != ""
