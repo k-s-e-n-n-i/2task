@@ -2,7 +2,7 @@ include ~@Blocks/link/link.pug
 include ~@Blocks/topic-label/topic-label.pug
 include ~@Blocks/calendar/calendar.pug
 
-mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', state = 'close', btnClean = true, btnOk = true, items = [{ text : 'Наименование'}] })
+mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', state = 'close', btnClean = true, btnOk = true, items = [] })
   .dropdown(name= name)
     +topicLabel({ topic, label })
     +dropdown__dropdown({ state, activeText })
