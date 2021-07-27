@@ -158,19 +158,19 @@
   width: 33.33%;
 
   &.-range-from-,
-  &.-range-to- {
-    &:before {
-      padding: 22.7% 0;
+  &.-range-to-,
+  &.-in-range- {
+    &:before,
+    &:after {
+      padding: 22.8% 0;
     }
   }
 
-  &.-range-from-.-selected-:before,
-  &.-range-from-.-focus-:before {
+  &.-range-from-:before {
     border-radius: 10px 0 0 10px;
   }
 
-  &.-range-to-.-selected-:before,
-  &.-range-to-.-focus-:before {
+  &.-range-to-:before {
     border-radius: 0 10px 10px 0;
   }
 
@@ -199,26 +199,26 @@
   }
 
   &.-range-from-,
-  &.-range-to- {
-    &:before {
+  &.-range-to-,
+  &.-in-range- {
+    &:before,
+    &:after {
       padding: 41% 0;
     }
   }
 
-  &.-range-from-.-selected-:before,
-  &.-range-from-.-focus-:before {
+  &.-range-from-:before {
     border-radius: 10px 0 0 10px;
   }
 
-  &.-range-to-.-selected-:before,
-  &.-range-to-.-focus-:before {
+  &.-range-to-:before {
     border-radius: 0 10px 10px 0;
   }
 
   &.-current- {
     &:before {
       border-radius: 2px;
-      padding: 22.8% 0;
+      padding: 41% 0;
     }
   }
 }
