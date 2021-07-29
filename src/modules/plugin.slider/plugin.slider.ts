@@ -67,7 +67,7 @@ export interface Options {
         model.rangeSlider.style.width = this.dataSlider.width + 'px';
 
         controller.checkMinMaxStart();
-        if (this.dataSlider.settings == 'on') {
+        if (settings == 'on') {
           controller.writeDataInConfig();
         }
         view.drawRange();

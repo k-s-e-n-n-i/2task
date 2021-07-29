@@ -223,17 +223,21 @@ export class Controller {
 
   moveRangeOnclickSlider(): void {
     let thisClickSlider: any = this.model.slider,
-      thisClickRange: any = this.model.range,
       contr: any = this;
 
-    thisClickSlider.addEventListener('mousedown', function (e: any) {
+    if (contr.step != 1) {
+      thisClickSlider.onmousedown = function () {
+        thisClickSlider.onmouseup = function (e: any) {
+          onclickSlider(e);
+        };
+      };
+    } else {
+      thisClickSlider.addEventListener('mousedown', function (e: any) {
+        onclickSlider(e);
+      });
+    }
+    function onclickSlider(e: any) {
       let pos: number, startPos: number;
-
-      if (e.target != thisClickSlider) {
-        if (e.target != thisClickRange) {
-          return;
-        }
-      }
 
       switch (contr.defineOrientation(contr.orientation)) {
         case 'x': {
@@ -282,7 +286,7 @@ export class Controller {
           break;
         }
       }
-    });
+    }
   }
   definePosStepClosestClick(pos: number): number {
     let finalPos: number = 0,
