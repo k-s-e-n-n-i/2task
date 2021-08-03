@@ -123,7 +123,7 @@ $(function () {
     }
   }
 
-  $('.datepicker--buttons').append('<span class="datepicker--button-ok">Применить</span>');
+  $('.datepicker--buttons').append('<span class="datepicker--button datepicker--button-ok">Применить</span>');
 
   $('.datepicker--button-ok').on('click', handleDateBtnOkClick);
 

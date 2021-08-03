@@ -78,23 +78,16 @@
 
 .datepicker--buttons {
   display: flex;
+  justify-content: space-between;
   padding: 6px 20px 13px 20px;
-  position: relative;
 }
 
-.datepicker--button,
-.datepicker--button-ok {
+.datepicker--button {
   cursor: pointer;
-  flex: 1;
   display: inline-flex;
   align-items: center;
   color: #bc9cff;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
-}
-
-.datepicker--button-ok {
-  position: absolute;
-  right: 20px;
 }
