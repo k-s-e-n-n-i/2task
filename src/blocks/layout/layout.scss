@@ -42,6 +42,13 @@
   font-display: swap;
 }
 
+body,
+p,
+form {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   font-style: normal;
@@ -50,6 +57,8 @@ body {
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
   min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -87,13 +96,6 @@ p {
   line-height: 24px;
 }
 
-body,
-p,
-form {
-  margin: 0;
-  padding: 0;
-}
-
 a {
   cursor: pointer;
   :hover {
@@ -103,6 +105,7 @@ a {
 
 img {
   user-select: none;
+  max-width: 1920px;
 }
 
 span {

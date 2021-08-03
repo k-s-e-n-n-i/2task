@@ -27,13 +27,13 @@
   &__image-one {
     background-image: url('./img/galery-photo-number-1.png');
     width: 100%;
-    height: 33.7vw;
+    height: 0;
+    padding-bottom: 49.4%;
     background-size: cover;
     background-position: 50%;
     cursor: pointer;
 
     @media screen and (max-width: 640px) {
-      height: 48vw;
       margin: 1px auto;
     }
   }
@@ -68,7 +68,7 @@
   }
 
   &__image-two_bottom {
-    background-image: url('./img/galery-photo-number-1.png');
+    background-image: url('./img/galery-photo-number-3.png');
   }
 
   &__content-block {

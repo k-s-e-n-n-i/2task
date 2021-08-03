@@ -2,21 +2,27 @@
   display: flex;
   justify-content: center;
   background-image: url('@Pages/sign-in/img/sign-in-background.png');
-  height: 48.7vw;
+  height: 0;
+  padding-bottom: 48.7%;
   background-size: cover;
   background-position: bottom;
   position: relative;
   width: 100%;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 850px) {
     height: auto;
+    padding-bottom: 0;
   }
 
   &__form-sign-in {
     position: relative;
-    margin: auto;
+    margin: 11.85% auto;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1200px) {
+      margin: 5% auto;
+    }
+
+    @media screen and (max-width: 850px) {
       margin: 20px auto;
     }
 
