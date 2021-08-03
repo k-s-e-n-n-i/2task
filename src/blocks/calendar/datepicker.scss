@@ -1,9 +1,5 @@
 @import 'datepicker-config';
 
-/* -------------------------------------------------
-    Datepicker
-   ------------------------------------------------- */
-
 .datepickers-container {
   position: absolute;
   left: 0;
@@ -88,8 +84,6 @@
   }
 }
 
-//  Pointer
-// -------------------------------------------------
 $pointerHalfSize: calc(math.div($datepickerPointerSize, 2) - 1);
 
 .datepicker--pointer {
@@ -100,9 +94,6 @@ $pointerHalfSize: calc(math.div($datepickerPointerSize, 2) - 1);
   width: $datepickerPointerSize;
   height: $datepickerPointerSize;
   z-index: -1;
-
-  //  Main axis
-  // -------------------------
 
   .-top-left- &,
   .-top-center- &,
@@ -132,9 +123,6 @@ $pointerHalfSize: calc(math.div($datepickerPointerSize, 2) - 1);
     transform: rotate(45deg);
   }
 
-  //  Secondary axis
-  // -------------------------
-
   .-top-left- &,
   .-bottom-left- & {
     left: $datepickerPointerOffset;
@@ -161,9 +149,6 @@ $pointerHalfSize: calc(math.div($datepickerPointerSize, 2) - 1);
     top: calc(50% - #{$datepickerPointerSize} / 2);
   }
 }
-
-//  Body
-// -------------------------------------------------
 
 .datepicker--body {
   display: none;

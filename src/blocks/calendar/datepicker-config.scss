@@ -40,31 +40,13 @@ $datepickerNavigationButtonsOffset: 2px !default;
 $datepickerPointerSize: 10px !default;
 $datepickerPointerOffset: 10px !default;
 
-// Transitions
 $datepickerTransitionSpeed: 0.3s !default;
 $datepickerTransitionEase: ease !default;
 $datepickerTransitionOffset: 8px !default;
 
-// Objects
 %otherMonth {
-  &:hover {
-  }
-
-  &.-disabled- {
-    &.-focus- {
-    }
-  }
-
   &.-selected- {
     color: #fff;
-
-    &.-focus- {
-    }
-  }
-
-  &.-in-range- {
-    &.-focus- {
-    }
   }
 
   &:empty {
