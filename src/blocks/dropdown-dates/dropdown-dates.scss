@@ -55,6 +55,7 @@
   &__calendar {
     margin-top: 70px;
     position: absolute;
-    width: calc(100% + 2px);
+    left: 1px;
+    width: 100%;
   }
 }
