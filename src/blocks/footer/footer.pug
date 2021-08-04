@@ -1,5 +1,6 @@
 include ~@Blocks/btn/btn.pug
 include ~@Blocks/input-text/input-text.pug
+include ~@Blocks/social/social.pug
 
 mixin footer({ items = [{}] })
   footer.footer
@@ -32,13 +33,24 @@ mixin footer({ items = [{}] })
     .footer__copyright-block
       .footer__copyright-content
         p Copyright © 2018 Toxin отель. Все права защищены.
-        .footer__soc-block  
-          span.footer__soc-network
-            a(href="#")
-              img.footer__soc-network-twitter(src=require("@Blocks/footer/img/twitter.svg").default alt="twitter")
-          span.footer__soc-network
-            a(href="#")
-              img.footer__soc-network-facebook(src=require("@Blocks/footer/img/facebook.svg").default alt="facebook")
-          span.footer__soc-network
-            a(href="#")
-              img.footer__soc-network-instagram(src=require("@Blocks/footer/img/instagram.svg").default alt="instagram")
+        +social(
+          {
+            items : [
+              {
+                name : 'twitter',
+                icon : require('@Blocks/social/img/twitter.svg').default,
+                link : '#'
+              },
+              {
+                name : 'facebook',
+                icon : require('@Blocks/social/img/facebook.svg').default,
+                link : '#'
+              },
+              {
+                name : 'instagram',
+                icon : require('@Blocks/social/img/instagram.svg').default,
+                link : '#'
+              }
+            ]
+          }
+        )

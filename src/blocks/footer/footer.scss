@@ -224,28 +224,4 @@
       }
     }
   }
-
-  &__soc-block {
-    display: flex;
-    margin-right: 2px;
-
-    @media screen and (max-width: 768px) {
-      padding: 0 0 120px 0;
-    }
-  }
-
-  &__soc-network {
-    padding-left: 21px;
-    cursor: pointer;
-  }
-
-  &__soc-network-twitter {
-    margin-top: 2px;
-  }
-
-  &__soc-network-facebook,
-  &__soc-network-instagram {
-    margin-top: 1px;
-    margin-left: 1px;
-  }
 }

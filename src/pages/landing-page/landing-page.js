@@ -5,6 +5,7 @@ import '@Blocks/dropdown-dates/dropdown-dates.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/link/link.scss';
 import '@Blocks/topic-label/topic-label.scss';
+import '@Blocks/social/social.scss';
 
 import '@Blocks/calendar/calendar.js';
 import '@Blocks/form-search-num/form-search-num.scss';

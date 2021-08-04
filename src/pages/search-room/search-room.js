@@ -12,6 +12,7 @@ import '@Blocks/range-slider/range-slider.scss';
 import '@Blocks/rate-btn/rate-btn.scss';
 import '@Blocks/rate-btn/rate-btn.js';
 import '@Blocks/topic-label/topic-label.scss';
+import '@Blocks/social/social.scss';
 
 import '@Blocks/calendar/calendar.js';
 import '@Blocks/card-room/card-room.scss';
