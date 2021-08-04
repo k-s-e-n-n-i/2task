@@ -1,0 +1,7 @@
+mixin social({ items = [] })
+  if items.length != 0
+    .social
+      each item in items
+        span.social__item
+          a(href= item.link)
+            img(class='social__item-'+ item.name src= item.icon alt= item.name)

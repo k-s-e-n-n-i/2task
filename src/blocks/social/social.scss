@@ -1,0 +1,27 @@
+.social {
+  display: flex;
+  margin-right: 2px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 0 120px 0;
+  }
+
+  &__item {
+    padding-left: 21px;
+    cursor: pointer;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  &__item-twitter {
+    margin-top: 2px;
+  }
+
+  &__item-facebook,
+  &__item-instagram {
+    margin-top: 1px;
+    margin-left: 1px;
+  }
+}
