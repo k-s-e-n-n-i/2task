@@ -10,7 +10,7 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
         img.header__logo(src=require("@Blocks/header/img/logo.svg").default alt="logo")
       .header__menu-mobile
       .header__links.header__links_hidden
-        if items != []
+        if items.length != 0
           nav.header__block-menu
             ul.header__menu
               each item in items

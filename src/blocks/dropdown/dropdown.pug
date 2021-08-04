@@ -7,7 +7,7 @@ mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText
     +topicLabel({ topic : topic, label : label })
     +dropdown__dropdown({ state, activeText })
 
-    if items != ""
+    if items.length != 0
       if state == "close"
         .dropdown__dropdown-items.dropdown__dropdown-items_hide
           +dropdown__itemsLine(btnClean, btnOk, items)
