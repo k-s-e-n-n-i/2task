@@ -15,8 +15,9 @@ mixin footer({ items = [{}] })
             li.footer__menu-column
               ul.footer__menu-list
                 each itemLink in column
+                  - let link = itemLink.link || './link-stub'
                   li.footer__menu-li
-                    a.footer__menu-a(href=itemLink.link)= itemLink.text
+                    a.footer__menu-a(href=link)= itemLink.text
 
         .footer__subscription
           p.footer__subscription-topic Подписка
@@ -39,17 +40,14 @@ mixin footer({ items = [{}] })
               {
                 name : 'twitter',
                 icon : require('@Blocks/social/img/twitter.svg').default,
-                link : '#'
               },
               {
                 name : 'facebook',
                 icon : require('@Blocks/social/img/facebook.svg').default,
-                link : '#'
               },
               {
                 name : 'instagram',
                 icon : require('@Blocks/social/img/instagram.svg').default,
-                link : '#'
               }
             ]
           }

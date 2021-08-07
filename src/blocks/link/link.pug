@@ -1,4 +1,4 @@
-mixin link({ text = 'Ссылка', url = '#', type = '' })
+mixin link({ text = 'Ссылка', url = './link-stub', type = '' })
   case type
     when "gray"
       a(class="link link_gray" href= url)= text

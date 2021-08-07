@@ -15,7 +15,7 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
             ul.header__menu
               each item in items
                 - let menuItem = item.menuItem || 'Пункт меню'
-                - let link = item.link || '#'
+                - let link = item.link || './link-stub'
                 - let state = item.state || ''
                 - let type = item.type || ''
                 - let submenu = item.submenu || false
@@ -35,7 +35,7 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
                     ul.header__submenu
                       each sbm in item.submenu
                         - let sbmItem = sbm.menuItem || 'Пункт меню'
-                        - let sbmLink = sbm.link || '#'
+                        - let sbmLink = sbm.link || './link-stub'
 
                         li.header__submenu-li
                           a.header__submenu-a(href= sbmLink)= sbmItem
