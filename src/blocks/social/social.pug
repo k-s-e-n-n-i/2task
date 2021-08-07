@@ -2,7 +2,7 @@ mixin social({ items = [] })
   if items.length != 0
     .social
       each item in items
-        - let link = item.link || './link-stub'
+        - const link = item.link || './link-stub'
         span.social__item
           a(href= link)
             img(class='social__item-'+ item.name src= item.icon alt= item.name)

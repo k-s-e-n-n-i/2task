@@ -1,10 +1,10 @@
 mixin infoBlock({ qtyHR = 1, items = [{ label : 'Заголовок', text : 'Текст', url : '#', dopclass : '' }] })
   .info-block
     each item, index in items
-      - let label = item.label || ''
-      - let text = item.text || ''
-      - let url = item.url || '#'
-      - let dopclass = item.dopclass || ''
+      - const label = item.label || ''
+      - const text = item.text || ''
+      - const url = item.url || '#'
+      - const dopclass = item.dopclass || ''
 
       .info-block__item
         img(src=url class="info-block__icon "+dopclass alt="icon")

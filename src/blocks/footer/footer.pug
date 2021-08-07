@@ -15,7 +15,7 @@ mixin footer({ items = [{}] })
             li.footer__menu-column
               ul.footer__menu-list
                 each itemLink in column
-                  - let link = itemLink.link || './link-stub'
+                  - const link = itemLink.link || './link-stub'
                   li.footer__menu-li
                     a.footer__menu-a(href=link)= itemLink.text
 

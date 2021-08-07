@@ -14,11 +14,11 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
           nav.header__block-menu
             ul.header__menu
               each item in items
-                - let menuItem = item.menuItem || 'Пункт меню'
-                - let link = item.link || './link-stub'
-                - let state = item.state || ''
-                - let type = item.type || ''
-                - let submenu = item.submenu || false
+                - const menuItem = item.menuItem || 'Пункт меню'
+                - const link = item.link || './link-stub'
+                - const state = item.state || ''
+                - const type = item.type || ''
+                - const submenu = item.submenu || false
 
                 if state == "active"
                   - active = "header__menu-li_active";
@@ -34,8 +34,8 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
                   if submenu != false
                     ul.header__submenu
                       each sbm in item.submenu
-                        - let sbmItem = sbm.menuItem || 'Пункт меню'
-                        - let sbmLink = sbm.link || './link-stub'
+                        - const sbmItem = sbm.menuItem || 'Пункт меню'
+                        - const sbmLink = sbm.link || './link-stub'
 
                         li.header__submenu-li
                           a.header__submenu-a(href= sbmLink)= sbmItem

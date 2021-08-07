@@ -1,15 +1,10 @@
 include ~@Blocks/calendar/calendar.pug
 
 mixin dropdownDates({ items = [{},{}] })
-  - let topic = ''
-  - let activeDate = 'ДД.ММ.ГГГГ'
-
   .dropdown-dates
     each item in items
-      if item.topic != undefined
-        - topic = item.topic
-      if item.activeDate != undefined
-        - activeDate = item.activeDate
+      - const topic = item.topic || ''
+      - const activeDate = item.activeDate || 'ДД.ММ.ГГГГ'
 
       .dropdown-dates__date-block(name='date')
         if topic != ""
