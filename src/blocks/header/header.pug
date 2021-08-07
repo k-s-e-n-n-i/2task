@@ -32,7 +32,7 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
                 li(class="header__menu-li " +active+" "+expand)
                   a.header__menu-a(href= link)= menuItem
                   if submenu != false
-                    ul.header__submenu.header__submenu-hide
+                    ul.header__submenu
                       each sbm in item.submenu
                         - let sbmItem = sbm.menuItem || 'Пункт меню'
                         - let sbmLink = sbm.link || '#'
