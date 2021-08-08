@@ -8,9 +8,9 @@ mixin checkboxList({ stateHide = false, haveAdditionalText = false, items = [{ l
   div(class="checkbox-list " + hideClass)
     each item in items
       if item.widthAdditionalText == 200
-        - widthTextClass = 'checkbox-list__p_width200'
+        - widthTextClass = 'checkbox-list__additional-text_width200'
       if item.widthAdditionalText == 225
-        - widthTextClass = 'checkbox-list__p_width225'
+        - widthTextClass = 'checkbox-list__additional-text_width225'
 
       if haveAdditionalText == ''
         .checkbox-list__item
