@@ -1,12 +1,12 @@
 mixin topicLabel({ topic = '', label = '' })
   if topic != "" && label !=""
     .topic-label
-      h3= topic
-      p= label
+      h3.topic-label__topic= topic
+      p.topic-label__additional-text= label
   else 
     if topic != ""
       .topic-label
-        h3= topic
+        h3.topic-label__topic= topic
     if label != ""
       .topic-label
-        p= label
+        p.topic-label__additional-text= label

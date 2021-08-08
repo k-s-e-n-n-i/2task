@@ -3,12 +3,7 @@
   justify-content: space-between;
   margin-bottom: 5px;
 
-  h3,
-  p {
-    margin: 0;
-  }
-
-  p {
+  &__additional-text {
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
