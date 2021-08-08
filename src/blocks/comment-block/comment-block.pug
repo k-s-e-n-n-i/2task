@@ -14,10 +14,11 @@ mixin commentBlock({ topic = '', label = '', items = [{urlImg : '#', liked : fal
             p.comment-block__name= item.name
             p.comment-block__time= item.time
         .comment-block__comment-text
-          +like(
-            {
-              qty : item.qty,
-              liked : item.liked
-            }
-          )
+          .comment-block__like
+            +like(
+              {
+                qty : item.qty,
+                liked : item.liked
+              }
+            )
           p.comment-block__text= item.text
