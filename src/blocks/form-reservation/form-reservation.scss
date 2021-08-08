@@ -53,10 +53,6 @@
         line-height: 24px;
       }
     }
-
-    a {
-      margin: 0 0 0 5px;
-    }
   }
 
   &__number-price {
@@ -80,6 +76,7 @@
 
   &__link-lux {
     line-height: 20px;
+    margin: 0 0 0 5px;
   }
 
   &__dropdown-dates {
