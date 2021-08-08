@@ -3,12 +3,10 @@
     position: relative;
     margin-bottom: 17px;
     user-select: none;
+  }
 
-    h3 {
-      margin: 0;
-      cursor: pointer;
-      font-size: 12px;
-    }
+  &__topic {
+    cursor: pointer;
   }
 
   &__expand {

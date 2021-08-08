@@ -4,13 +4,13 @@ mixin checkboxListExpandable({ topic = 'Текст', state = 'hide', items = [{ 
   .checkbox-list-expandable
     if state == 'open'
       .checkbox-list-expandable__topic-block
-        h3= topic
+        h3.checkbox-list-expandable__topic= topic
         img.checkbox-list-expandable__expand.checkbox-list-expandable__expand_open(alt="expand-more-checkbox.svg" src=require("@Blocks/checkbox-list-expandable/img/expand-more-checkbox.svg").default)
       .checkbox-list-expandable__checkbox-list
         +checkboxList({ items : items })
     else
       .checkbox-list-expandable__topic-block
-        h3= topic
+        h3.checkbox-list-expandable__topic= topic
         img.checkbox-list-expandable__expand(alt="expand-more-checkbox.svg" src=require("@Blocks/checkbox-list-expandable/img/expand-more-checkbox.svg").default)
       .checkbox-list-expandable__checkbox-list
         +checkboxList({ stateHide : true, items : items })

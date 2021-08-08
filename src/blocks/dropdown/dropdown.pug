@@ -32,7 +32,7 @@ mixin dropdown__itemsLine(btnClean, btnOk, items)
 
   each item in items
     .dropdown__items-line
-      h3= item.text
+      h3.dropdown__record-name= item.text
       .dropdown__block-qty
         if item.minus == "disable" || item.qty == minQty || item.qty == undefined
           .dropdown__inc-qty-minus.dropdown__inc-qty_disable= "-"
