@@ -71,18 +71,18 @@
 
     @media screen and (max-width: 1170px) {
       justify-content: space-around;
-
-      h1 {
-        text-align: center;
-        padding: 0 15px;
-      }
     }
+  }
 
-    h1 {
-      width: 100%;
-      margin: 29px 0 10px 5px;
-      font-size: 24px;
-      font-weight: 700;
+  &__topic-rooms {
+    width: 100%;
+    margin: 29px 0 10px 5px;
+    font-size: 24px;
+    font-weight: 700;
+
+    @media screen and (max-width: 1170px) {
+      text-align: center;
+      padding: 0 15px;
     }
   }
 

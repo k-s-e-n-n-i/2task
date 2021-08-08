@@ -23,12 +23,13 @@
     position: relative;
     align-items: baseline;
     margin-bottom: 18px;
+  }
 
-    h2 {
-      white-space: nowrap;
-      font-size: 19px;
-      font-weight: 700;
-    }
+  &__total-text,
+  &__total-price {
+    white-space: nowrap;
+    font-size: 19px;
+    font-weight: 700;
   }
 
   &__number {

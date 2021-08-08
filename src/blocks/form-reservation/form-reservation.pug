@@ -79,9 +79,9 @@ mixin formReservation({ number = 0, priceFrom = 0, priceFinal = 0 })
     )
 
     .form-reservation__block
-      h2= "Итого"
+      h2.form-reservation__total-text= "Итого"
       span.form-reservation__dashed
-      h2= priceFinal +"₽"
+      h2.form-reservation__total-price= priceFinal +"₽"
 
     .form-reservation__btn
       +btn(

@@ -19,7 +19,7 @@ block content
     .details-room__content-block
       .details-room__room-info
         .details-room__info-block
-          h2 Сведения о номере
+          h2.details-room__topic-block Сведения о номере
           +infoBlock(
             {
               qtyHR : 2,
@@ -47,7 +47,7 @@ block content
           )
 
         .details-room__room-impression
-          h2 Впечатления от номера
+          h2.details-room__topic-block Впечатления от номера
           +chart({ qty : 260 })
 
         .details-room__comment-block
@@ -86,7 +86,7 @@ block content
 
     .details-room__content-block-bottom
       .details-room__list-block
-        h2 Правила
+        h2.details-room__topic-block Правила
         +listBlock(
           {
             list : ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
@@ -94,7 +94,7 @@ block content
         )
 
       .details-room__info-cancel
-        h2 Отмена
+        h2.details-room__topic-block Отмена
         p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
   script(src="./js/details-room.js")
