@@ -40,12 +40,12 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
 
-    p {
-      font-size: 14px;
-      font-weight: 400;
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: rgba(0, 0, 0, 1);
-    }
+  &__login-text {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: rgba(0, 0, 0, 1);
   }
 }

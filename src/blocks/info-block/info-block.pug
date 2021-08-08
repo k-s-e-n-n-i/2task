@@ -8,9 +8,9 @@ mixin infoBlock({ qtyHR = 1, items = [{ label : 'Заголовок', text : 'Т
 
       .info-block__item
         img(src=url class="info-block__icon "+dopclass alt="icon")
-        .info-block__text
-          p
+        .info-block__text-block
+          p.info-block__topic
             b= label
-          p= text
+          p.info-block__text= text
       if index < qtyHR
         hr.info-block__hr

@@ -16,10 +16,6 @@
     padding: 20px;
   }
 
-  p {
-    margin: 0;
-  }
-
   &__block {
     display: flex;
     justify-content: space-between;
@@ -116,16 +112,14 @@
 
   &__text-price {
     display: flex;
+  }
 
-    p {
-      font-weight: 500;
-      letter-spacing: -0.1px;
-    }
+  &__name-service {
+    font-weight: 500;
+    letter-spacing: -0.1px;
 
     @media screen and (max-width: 380px) {
-      p {
-        text-align: left;
-      }
+      text-align: left;
     }
   }
 

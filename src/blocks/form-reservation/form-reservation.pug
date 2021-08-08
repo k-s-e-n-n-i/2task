@@ -97,7 +97,7 @@ mixin formReservation__blockPrices({ items = [{}] })
     each item in items
       .form-reservation__line-price
         .form-reservation__text-price
-          p !{item.textPrice}
+          p.form-reservation__name-service !{item.textPrice}
           if item.iconInfo == true
             .form-reservation__icon-info-price i
         p= item.sumPrice +"₽"

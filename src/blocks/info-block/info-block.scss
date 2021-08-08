@@ -19,16 +19,15 @@
     margin: 0 18px 2px 7px;
   }
 
-  &__text {
+  &__text-block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
 
-    p {
-      margin: 0;
-      font-size: 14px;
-      line-height: 20px;
-    }
+  &__topic,
+  &__text {
+    line-height: 20px;
   }
 
   &__hr {
