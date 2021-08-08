@@ -48,30 +48,29 @@
     min-width: 255px;
     max-width: 255px;
 
-    p {
-      padding: 0;
-      margin: 14px 0;
-    }
-
     @media screen and (max-width: 1000px) {
       margin: 0;
       max-width: none;
       width: 100%;
       flex-wrap: nowrap;
       flex-direction: row;
-
-      p {
-        margin: auto 0;
-      }
     }
 
     @media screen and (max-width: 768px) {
       min-width: min-content;
       margin: 0;
+    }
+  }
 
-      p {
-        display: none;
-      }
+  &__logo-text {
+    margin: 14px 0;
+
+    @media screen and (max-width: 1000px) {
+      margin: auto 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
     }
   }
 
@@ -203,10 +202,6 @@
     max-width: 80.7%;
     margin: 0 auto;
 
-    p {
-      margin: 23px 0;
-    }
-
     @media screen and (max-width: 1280px) {
       margin: 23px 20px;
       max-width: 100%;
@@ -217,11 +212,15 @@
       flex-direction: column;
       margin: 0 auto;
       min-width: min-content;
+    }
+  }
 
-      p {
-        margin: 6px 0 20px;
-        text-align: center;
-      }
+  &__copyright-text {
+    margin: 23px 0;
+
+    @media screen and (max-width: 768px) {
+      margin: 6px 0 20px;
+      text-align: center;
     }
   }
 }

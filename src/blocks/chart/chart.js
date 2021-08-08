@@ -50,7 +50,7 @@ let items = pieChart.data.labels;
 let colors = pieChart.data.datasets[0].backgroundColor;
 
 for (let i = 0; i < qtyLine; i++) {
-  let liLegend = `<li class="chart-legend__item"><div class="chart-legend__point"></div><p>${items[i]}</p></li>`;
+  let liLegend = `<li class="chart-legend__item"><div class="chart-legend__point"></div><p class='chart-legend__item-text'>${items[i]}</p></li>`;
 
   $('.chart-legend .chart-legend__list').append(liLegend);
   $(`.chart-legend .chart-legend__item:nth-child(${i + 1}) .chart-legend__point`).css(

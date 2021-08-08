@@ -20,4 +20,4 @@ mixin checkboxList({ stateHide = false, haveAdditionalText = false, items = [{ l
         .checkbox-list__item
           input.checkbox-list__input(id="check" + item.id type="checkbox")
           label.checkbox-list__label.checkbox-list__label_bold(for="check" + item.id)= item.label
-          p(class=widthTextClass)= item.additionalText
+          p(class='checkbox-list__additional-text ' + widthTextClass)= item.additionalText

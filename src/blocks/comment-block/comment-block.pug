@@ -4,8 +4,8 @@ mixin commentBlock({ topic = '', label = '', items = [{urlImg : '#', liked : fal
   .comment-block
     if topic != ""
       .comment-block__title
-        h2= topic
-        p= label
+        h2.comment-block__name-records= topic
+        p.comment-block__qty-records= label
     each item in items
       .comment-block__comment
         .comment-block__person

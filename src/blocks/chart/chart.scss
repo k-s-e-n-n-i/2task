@@ -46,11 +46,11 @@
     display: flex;
     margin: 0;
     color: rgba(31, 32, 65, 0.75);
+  }
 
-    p {
-      width: 160px;
-      margin: 0;
-    }
+  &__item-text {
+    width: 160px;
+    margin: 0;
   }
 
   &__point {
