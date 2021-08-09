@@ -1,7 +1,7 @@
 $(function () {
   $('.header__menu-mobile').on('click', handleMenuMobileClick);
 
-  function handleMenuMobileClick() {
+  function handleMenuMobileClick(this: HTMLElement) {
     let menu = $(this).closest('.header__content-container').find('.header__links');
     let menuIcon = $(this);
 
@@ -11,7 +11,7 @@ $(function () {
 
   $('.header__menu-li_expand').on('click', handleSubmenuClick);
 
-  function handleSubmenuClick() {
+  function handleSubmenuClick(this: HTMLElement) {
     $(this).find('.header__submenu').toggleClass('header__submenu-open');
   }
 });

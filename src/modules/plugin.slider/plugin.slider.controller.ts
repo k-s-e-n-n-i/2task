@@ -236,8 +236,10 @@ export class Controller {
         onclickSlider(e);
       });
     }
+
     function onclickSlider(e: any) {
-      let pos: number, startPos: number;
+      let pos: number = 0,
+        startPos: number;
 
       switch (contr.defineOrientation(contr.orientation)) {
         case 'x': {

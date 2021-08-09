@@ -7,7 +7,7 @@ $(function () {
   $('.dropdown__btns .link_ok').on('click', handleDropdownOkClick);
   $('.dropdown__btns .link_clean').on('click', handleDropdownCleanClick);
 
-  function handleDropwownClick() {
+  function handleDropwownClick(this: HTMLElement) {
     const block_list = $(this).closest('.dropdown').find('.dropdown__dropdown-items');
 
     if (block_list.hasClass('dropdown__dropdown-items_hide')) {
@@ -19,7 +19,7 @@ $(function () {
     }
   }
 
-  function handleDropdownMinusClick() {
+  function handleDropdownMinusClick(this: HTMLElement) {
     let qtyElem: any,
       qty: number = 0,
       newQty: number = 0,
@@ -44,7 +44,7 @@ $(function () {
     outputInDropdown($(this).closest('.dropdown'));
   }
 
-  function handleDropdownPlusClick() {
+  function handleDropdownPlusClick(this: HTMLElement) {
     let qtyElem: any,
       qty: number = 0,
       newQty: number = 0,
@@ -96,14 +96,14 @@ $(function () {
       .removeClass('dropdown__btns_flex-end');
   }
 
-  function handleDropdownOkClick(event: any) {
+  function handleDropdownOkClick(this: HTMLElement, event: any) {
     event.preventDefault();
     $(this).closest('.dropdown').find('.dropdown__dropdown').trigger('click');
 
     outputInDropdown($(this).closest('.dropdown'));
   }
 
-  function handleDropdownCleanClick(event: any) {
+  function handleDropdownCleanClick(this: HTMLElement, event: any) {
     event.preventDefault();
     let items = $(this).closest('.dropdown__dropdown-items');
     items.find('.dropdown__block-qty').find('span').html('0');

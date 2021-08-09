@@ -23,19 +23,19 @@ export interface Options {
 (function ($) {
   $.fn.slider = function (options: Options) {
     class Slider {
-      public element: HTMLElement;
-      public idElement: string;
-      public width: number;
+      public element: HTMLElement = $('body');
+      public idElement: string = 'idSliderStub';
+      public width: number = 400;
       public type: string = 'interval';
-      public min: number;
-      public max: number;
-      public minStart: number;
-      public maxStart: number;
-      public step: number;
+      public min: number = 0;
+      public max: number = 1000;
+      public minStart: number = 0;
+      public maxStart: number = 500;
+      public step: number = 1;
       public orientation: string = 'horizontal';
       public value: string = 'on';
       public scale: string = 'on';
-      public scaleStep: number;
+      public scaleStep: number = 10;
       public settings: string = 'on';
       public dataSlider: Options;
 
