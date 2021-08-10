@@ -30,8 +30,8 @@ const pluginsDate = [
 ];
 
 const entryDate = {
-  'index.js': paths.source + '/index.js',
-  'layout.js': paths.source + '/blocks/layout/layout.js',
+  'index.js': paths.source + '/index.ts',
+  'layout.js': paths.source + '/blocks/layout/layout.ts',
 };
 
 const pages = [
@@ -58,7 +58,7 @@ pages.map((event) => {
 
 pages.map((event) => {
   return Object.assign(entryDate, {
-    [event + '.js']: paths.source + `/pages/${event}/${event}.js`,
+    [event + '.js']: paths.source + `/pages/${event}/${event}.ts`,
   });
 });
 
