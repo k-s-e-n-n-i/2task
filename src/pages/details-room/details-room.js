@@ -6,7 +6,7 @@ import '@Blocks/dropdown-dates/dropdown-dates.scss';
 import '@Blocks/info-block/info-block.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/like/like.scss';
-import '@Blocks/like/like.js';
+import '@Blocks/like/like.ts';
 import '@Blocks/link/link.scss';
 import '@Blocks/list-block/list-block.scss';
 import '@Blocks/topic-label/topic-label.scss';

@@ -4,7 +4,7 @@ import '@Blocks/input-text/input-text.js';
 import '@Blocks/link/link.scss';
 import '@Blocks/radiogroup/radiogroup.scss';
 import '@Blocks/toggle-block/toggle-block.scss';
-import '@Blocks/toggle-block/toggle-block.js';
+import '@Blocks/toggle-block/toggle-block.ts';
 import '@Blocks/topic-label/topic-label.scss';
 import '@Blocks/social/social.scss';
 

@@ -1,6 +1,6 @@
 $(function () {
-  let kol = $('.card-room .card-room__image').length;
-  for (let i = 1; i <= kol; i++) {
+  let kol: number = $('.card-room .card-room__image').length;
+  for (let i: number = 1; i <= kol; i++) {
     $('.card-room')
       .find('#' + i + '.card-room__image')
       .addClass('images' + i);
@@ -9,15 +9,19 @@ $(function () {
   $('.card-room__arrow-left').on('click', handlePaginationClick);
   $('.card-room__arrow-right').on('click', handlePaginationClick);
 
-  function handlePaginationClick() {
-    let paginationBlock = $(this).closest('.card-room__image-block').find('.card-room__slider-pagination'),
-      paginationActive = paginationBlock.find('.card-room__slider-pagination-item_active'),
-      num = parseInt(paginationActive.attr('id').substr(-1)),
-      imageActive = $(this).closest('.card-room__image-block').find('.card-room__image_active'),
-      numFirstImg = parseInt(
-        $(this).closest('.card-room__image-block').find('.card-room__image:first').attr('id')
-      ),
-      numImg = parseInt(imageActive.attr('id'));
+  function handlePaginationClick(this: HTMLElement) {
+    let paginationBlock: any = $(this)
+      .closest('.card-room__image-block')
+      .find('.card-room__slider-pagination');
+    let paginationActive: any = paginationBlock.find('.card-room__slider-pagination-item_active');
+    let num: number = parseInt(paginationActive.attr('id').substr(-1));
+    let imageActive: any = $(this).closest('.card-room__image-block').find('.card-room__image_active');
+    let numFirstImgStr: any = $(this)
+      .closest('.card-room__image-block')
+      .find('.card-room__image:first')
+      .attr('id');
+    let numFirstImg: number = parseInt(numFirstImgStr);
+    let numImg: number = parseInt(imageActive.attr('id'));
 
     if ($(this).hasClass('card-room__arrow-left')) {
       num = num - 1;
