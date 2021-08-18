@@ -47,7 +47,7 @@ yarn run build
 ## Используемые библиотеки
 
 JQuery - v3.6.0  
-pg-calendar - v1.4.31  
+air-datepicker - v2.2.3  
 chart.js - v2.9.4  
 ng2-charts - v2.4.2  
 cleave.js - v1.6.0
