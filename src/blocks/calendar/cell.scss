@@ -103,6 +103,10 @@
     }
   }
 
+  &.-focus- {
+    background: rgba(31, 32, 65, 0.05);
+  }
+
   &:empty {
     cursor: default;
   }
