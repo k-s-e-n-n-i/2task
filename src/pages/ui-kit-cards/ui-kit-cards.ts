@@ -3,7 +3,7 @@ import '@Blocks/dropdown/dropdown.scss';
 import '@Blocks/dropdown/dropdown.ts';
 import '@Blocks/dropdown-dates/dropdown-dates.scss';
 import '@Blocks/input-text/input-text.scss';
-import '@Blocks/input-text/input-text.js';
+import '@Blocks/input-text/input-text.ts';
 import '@Blocks/link/link.scss';
 import '@Blocks/radiogroup/radiogroup.scss';
 import '@Blocks/rate-btn/rate-btn.scss';

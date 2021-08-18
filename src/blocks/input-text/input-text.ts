@@ -1,4 +1,4 @@
-import 'cleave.js';
+import Cleave from 'cleave.js';
 
 new Cleave('.input-text__input_date', {
   date: true,

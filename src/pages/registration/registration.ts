@@ -1,6 +1,6 @@
 import '@Blocks/btn/btn.scss';
 import '@Blocks/input-text/input-text.scss';
-import '@Blocks/input-text/input-text.js';
+import '@Blocks/input-text/input-text.ts';
 import '@Blocks/link/link.scss';
 import '@Blocks/radiogroup/radiogroup.scss';
 import '@Blocks/toggle-block/toggle-block.scss';

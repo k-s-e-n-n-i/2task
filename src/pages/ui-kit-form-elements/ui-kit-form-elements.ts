@@ -8,7 +8,7 @@ import '@Blocks/dropdown/dropdown.ts';
 import '@Blocks/dropdown-dates/dropdown-dates.scss';
 import '@Blocks/info-block/info-block.scss';
 import '@Blocks/input-text/input-text.scss';
-import '@Blocks/input-text/input-text.js';
+import '@Blocks/input-text/input-text.ts';
 import '@Blocks/like/like.scss';
 import '@Blocks/like/like.ts';
 import '@Blocks/link/link.scss';
