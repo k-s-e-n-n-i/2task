@@ -11,7 +11,7 @@ import '@Blocks/link/link.scss';
 import '@Blocks/list-block/list-block.scss';
 import '@Blocks/topic-label/topic-label.scss';
 import '@Blocks/chart/chart.scss';
-import '@Blocks/chart/chart.js';
+import '@Blocks/chart/chart.ts';
 import '@Blocks/social/social.scss';
 
 import '@Blocks/footer/footer.scss';
