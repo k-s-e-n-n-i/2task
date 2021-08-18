@@ -7,7 +7,7 @@ import '@Blocks/link/link.scss';
 import '@Blocks/topic-label/topic-label.scss';
 import '@Blocks/social/social.scss';
 
-import '@Blocks/calendar/calendar.js';
+import '@Blocks/calendar/calendar.ts';
 import '@Blocks/form-search-num/form-search-num.scss';
 import '@Blocks/footer/footer.scss';
 import '@Blocks/header/header.scss';

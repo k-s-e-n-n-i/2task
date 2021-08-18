@@ -36,6 +36,12 @@
     &.-other-month- {
       color: rgba(31, 32, 65, 1);
     }
+
+    &.-in-range- {
+      &:before {
+        border-radius: 0;
+      }
+    }
   }
 
   &.-in-range- {
@@ -131,10 +137,6 @@
   &.-other-month- {
     @extend %otherMonth;
     color: rgba(31, 32, 65, 0.25);
-
-    &:hover {
-      color: #fff;
-    }
   }
 
   &.-range-from- {

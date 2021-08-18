@@ -1,8 +1,12 @@
 import 'air-datepicker';
-import '@Blocks/calendar/datepicker.scss';
-import '@Blocks/calendar/datepicker-config.scss';
 import '@Blocks/calendar/cell.scss';
+import '@Blocks/calendar/datepicker-config.scss';
+import '@Blocks/calendar/datepicker.scss';
 import '@Blocks/calendar/navigation.scss';
+
+interface jQuery extends JQuery<HTMLElement> {
+  datepicker(set: object): HTMLElement;
+}
 
 $(function () {
   const mainOptions = {
@@ -18,9 +22,9 @@ $(function () {
     monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
   };
 
-  $('.dropdown .datepicker-here').datepicker(
+  ($('.dropdown .datepicker-here') as jQuery).datepicker(
     $.extend(mainOptions, {
-      onSelect: function onSelect(formattedDate, date, inst) {
+      onSelect: function onSelect(formattedDate: string, date: Date[], inst: any) {
         let dates = formattedDate.split(',');
 
         if (dates[0] != undefined && dates[1] != undefined) {
@@ -38,9 +42,13 @@ $(function () {
     })
   );
 
-  $('.dropdown-dates .datepicker-here').datepicker(
+  ($('.dropdown-dates .datepicker-here') as jQuery).datepicker(
     $.extend(mainOptions, {
-      onSelect: function onSelect(formattedDate, date, inst) {
+      onSelect: function onSelect(
+        formattedDate: string,
+        date: object,
+        inst: object & { $datepicker: JQuery<HTMLElement> }
+      ) {
         let dates = formattedDate.split(',');
 
         if (dates[0] != undefined && dates[0] != '') {
@@ -64,12 +72,12 @@ $(function () {
     })
   );
 
-  $('.ui-kit-cards__calendar-block .datepicker-here').datepicker(mainOptions);
+  ($('.ui-kit-cards__calendar-block .datepicker-here') as jQuery).datepicker(mainOptions);
 
   $('.dropdown[name=date] .dropdown__dropdown').on('click', handleDateDropdownClick);
   $('.dropdown-dates .dropdown-dates__dropdown').on('click', handleDateDropdownClick);
 
-  function handleDateDropdownClick() {
+  function handleDateDropdownClick(this: HTMLElement) {
     let calendarBlock;
 
     if ($(this).closest('.dropdown-dates').length != 0) {
@@ -80,18 +88,20 @@ $(function () {
       }
     }
 
-    if (calendarBlock.hasClass('datepicker-here_hide')) {
-      calendarBlock.removeClass('datepicker-here_hide').addClass('datepicker-here_open');
-      calendarBlock.show();
-    } else {
-      calendarBlock.addClass('datepicker-here_hide').removeClass('datepicker-here_open');
-      calendarBlock.hide();
+    if (calendarBlock != undefined) {
+      if (calendarBlock.hasClass('datepicker-here_hide')) {
+        calendarBlock.removeClass('datepicker-here_hide').addClass('datepicker-here_open');
+        calendarBlock.show();
+      } else {
+        calendarBlock.addClass('datepicker-here_hide').removeClass('datepicker-here_open');
+        calendarBlock.hide();
+      }
     }
   }
 
   $(document).on('click', closeCalendar);
 
-  function closeCalendar(e) {
+  function closeCalendar(e: any) {
     const thisClick = $(e.target);
     const elDropdown =
       thisClick.hasClass('dropdown__dropdown') == true ||
@@ -127,7 +137,7 @@ $(function () {
 
   $('.datepicker--button-ok').on('click', handleDateBtnOkClick);
 
-  function handleDateBtnOkClick() {
+  function handleDateBtnOkClick(this: HTMLElement) {
     if ($(this).closest('.dropdown-dates').length != 0) {
       $(this).closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').trigger('click');
     } else {

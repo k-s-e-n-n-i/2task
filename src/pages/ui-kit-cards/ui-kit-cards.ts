@@ -12,7 +12,7 @@ import '@Blocks/toggle-block/toggle-block.scss';
 import '@Blocks/toggle-block/toggle-block.ts';
 import '@Blocks/topic-label/topic-label.scss';
 
-import '@Blocks/calendar/calendar.js';
+import '@Blocks/calendar/calendar.ts';
 import '@Blocks/card-room/card-room.scss';
 import '@Blocks/card-room/card-room.ts';
 import '@Blocks/form-registration/form-registration.scss';

@@ -22,7 +22,7 @@ import '@Blocks/toggle-block/toggle-block.scss';
 import '@Blocks/toggle-block/toggle-block.ts';
 import '@Blocks/topic-label/topic-label.scss';
 
-import '@Blocks/calendar/calendar.js';
+import '@Blocks/calendar/calendar.ts';
 
 import '@Pages/ui-kit-form-elements/ui-kit-form-elements.scss';
 import '@Pages/ui-kit-form-elements/range-slider.js';

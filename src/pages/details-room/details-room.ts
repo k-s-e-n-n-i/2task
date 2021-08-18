@@ -17,7 +17,7 @@ import '@Blocks/social/social.scss';
 import '@Blocks/footer/footer.scss';
 import '@Blocks/header/header.scss';
 import '@Blocks/header/header.ts';
-import '@Blocks/calendar/calendar.js';
+import '@Blocks/calendar/calendar.ts';
 import '@Blocks/form-reservation/form-reservation.scss';
 
 import '@Pages/details-room/details-room.scss';
