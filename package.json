@@ -18,6 +18,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@types/cleave.js": "^1.4.5",
     "@types/jquery": "^3.5.5",
     "air-datepicker": "^2.2.3",
     "autoprefixer": "^10.3.1",
