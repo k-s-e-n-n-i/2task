@@ -1,16 +1,16 @@
 import '@Blocks/btn/btn.scss';
 import '@Blocks/input-text/input-text.scss';
-import '@Blocks/input-text/input-text.ts';
+import '@Blocks/input-text/input-text';
 import '@Blocks/link/link.scss';
 import '@Blocks/radiogroup/radiogroup.scss';
 import '@Blocks/toggle-block/toggle-block.scss';
-import '@Blocks/toggle-block/toggle-block.ts';
+import '@Blocks/toggle-block/toggle-block';
 import '@Blocks/topic-label/topic-label.scss';
 import '@Blocks/social/social.scss';
 
 import '@Blocks/footer/footer.scss';
 import '@Blocks/header/header.scss';
-import '@Blocks/header/header.ts';
+import '@Blocks/header/header';
 import '@Blocks/form-registration/form-registration.scss';
 
 import '@Pages/registration/registration.scss';

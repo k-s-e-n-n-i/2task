@@ -1,4 +1,4 @@
-import '@/modules/plugin.slider/plugin.slider.ts';
+import '@/modules/plugin.slider/plugin.slider';
 
 $(function () {
   $('.search-room').slider({

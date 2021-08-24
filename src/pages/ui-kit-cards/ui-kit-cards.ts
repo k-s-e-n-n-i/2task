@@ -1,20 +1,20 @@
 import '@Blocks/btn/btn.scss';
 import '@Blocks/dropdown/dropdown.scss';
-import '@Blocks/dropdown/dropdown.ts';
+import '@Blocks/dropdown/dropdown';
 import '@Blocks/dropdown-dates/dropdown-dates.scss';
 import '@Blocks/input-text/input-text.scss';
-import '@Blocks/input-text/input-text.ts';
+import '@Blocks/input-text/input-text';
 import '@Blocks/link/link.scss';
 import '@Blocks/radiogroup/radiogroup.scss';
 import '@Blocks/rate-btn/rate-btn.scss';
-import '@Blocks/rate-btn/rate-btn.ts';
+import '@Blocks/rate-btn/rate-btn';
 import '@Blocks/toggle-block/toggle-block.scss';
-import '@Blocks/toggle-block/toggle-block.ts';
+import '@Blocks/toggle-block/toggle-block';
 import '@Blocks/topic-label/topic-label.scss';
 
-import '@Blocks/calendar/calendar.ts';
+import '@Blocks/calendar/calendar';
 import '@Blocks/card-room/card-room.scss';
-import '@Blocks/card-room/card-room.ts';
+import '@Blocks/card-room/card-room';
 import '@Blocks/form-registration/form-registration.scss';
 import '@Blocks/form-reservation/form-reservation.scss';
 import '@Blocks/form-search-num/form-search-num.scss';
