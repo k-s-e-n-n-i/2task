@@ -1,10 +1,9 @@
 .landing-page {
   background-image: url('./img/landing-page-background.png');
-  height: 0;
-  padding-bottom: 57.6%;
   background-size: cover;
   background-position: bottom;
   width: 100%;
+  min-height: 830px;
   position: relative;
 
   @media screen and (max-width: 820px) {
@@ -14,8 +13,10 @@
 
   &__content-container {
     min-width: 320px;
-    margin: 0 9.7%;
+    min-height: 830px;
+    margin: 0 9.3% 0 9.7%;
     display: flex;
+    justify-content: space-between;
 
     @media screen and (max-width: 1170px) {
       margin-left: 20px;
@@ -28,10 +29,6 @@
     }
   }
 
-  &__content-container_flex-end {
-    justify-content: flex-end;
-  }
-
   &__form-search-num {
     margin-top: 70px;
 
@@ -42,13 +39,12 @@
   }
 
   &__background-text {
-    position: absolute;
-    right: 9.3%;
-    bottom: 2.5%;
     max-width: 297px;
     text-align: right;
     color: rgba(31, 32, 65, 0.75);
     user-select: none;
+    align-self: flex-end;
+    margin-bottom: 20px;
 
     @media screen and (max-width: 1170px) {
       padding-right: 20px;
