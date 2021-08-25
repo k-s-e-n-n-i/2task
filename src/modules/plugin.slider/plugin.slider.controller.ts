@@ -81,7 +81,7 @@ export class Controller {
             } else {
               masScale = contr.masStepsForMoving();
               tempPos = e.pageX - parseInt(contr.model.slider.offsetLeft);
-              if (masScale.indexOf(tempPos) != -1) {
+              if (masScale.includes(tempPos)) {
                 pos = tempPos;
                 contr.movingRange(side, startPos, pos, widthRange);
               } else {
@@ -98,7 +98,7 @@ export class Controller {
             } else {
               masScale = contr.masStepsForMoving();
               tempPos = e.pageY - coords.top;
-              if (masScale.indexOf(tempPos) != -1) {
+              if (masScale.includes(tempPos)) {
                 pos = tempPos;
                 contr.movingRange(side, startPos, pos, widthRange);
               } else {
@@ -350,19 +350,19 @@ export class Controller {
             step: number,
             scaleStep: number;
 
-          if (idInput.indexOf('min', 0) != -1 && idInput.indexOf('minStart', 0) == -1) {
+          if (idInput.includes('min') && !idInput.includes('minStart')) {
             min = Number.parseInt(this.value);
             clear(contr.thisSlider, id);
             contr.min = min;
             contr.view.min = min;
           }
-          if (idInput.indexOf('max', 0) != -1 && idInput.indexOf('maxStart', 0) == -1) {
+          if (idInput.includes('max') && !idInput.includes('maxStart')) {
             max = Number.parseInt(this.value);
             clear(contr.thisSlider, id);
             contr.max = max;
             contr.view.max = max;
           }
-          if (idInput.indexOf('minStart', 0) != -1) {
+          if (idInput.includes('minStart')) {
             minStart = Number.parseInt(this.value);
             clear(contr.thisSlider, id);
             if (minStart <= contr.maxStart) {
@@ -370,7 +370,7 @@ export class Controller {
               contr.view.minStart = minStart;
             }
           }
-          if (idInput.indexOf('maxStart', 0) != -1) {
+          if (idInput.includes('maxStart')) {
             maxStart = Number.parseInt(this.value);
             clear(contr.thisSlider, id);
             if (maxStart >= contr.minStart) {
@@ -378,13 +378,13 @@ export class Controller {
               contr.view.maxStart = maxStart;
             }
           }
-          if (idInput.indexOf('scaleStep', 0) != -1) {
+          if (idInput.includes('scaleStep')) {
             scaleStep = Number.parseInt(this.value);
             clear(contr.thisSlider, id);
             contr.scaleStep = scaleStep;
             contr.view.scaleStep = scaleStep;
           }
-          if (idInput.indexOf('step', 0) != -1) {
+          if (idInput.includes('step')) {
             step = Number.parseInt(this.value);
             clear(contr.thisSlider, id);
             contr.step = step;
@@ -416,7 +416,7 @@ export class Controller {
             valueID: string,
             scaleID: string;
 
-          if (idStr.indexOf('Type', 0) != -1) {
+          if (idStr.includes('Type')) {
             typeId = this.id.substr(-1);
             switch (typeId) {
               case '1':
@@ -439,7 +439,7 @@ export class Controller {
             contr.type = type;
             contr.view.type = type;
           }
-          if (idStr.indexOf('Orientation', 0) != -1) {
+          if (idStr.includes('Orientation')) {
             orientationID = this.id.substr(-1);
             switch (orientationID) {
               case '1':
@@ -455,7 +455,7 @@ export class Controller {
             contr.orientation = orientation;
             contr.view.orientation = orientation;
           }
-          if (idStr.indexOf('Value', 0) != -1) {
+          if (idStr.includes('Value')) {
             valueID = this.id.substr(-1);
             switch (valueID) {
               case '1':
@@ -471,7 +471,7 @@ export class Controller {
             contr.value = value;
             contr.view.value = value;
           }
-          if (idStr.indexOf('Scale', 0) != -1) {
+          if (idStr.includes('Scale')) {
             scaleID = this.id.substr(-1);
             switch (scaleID) {
               case '1':
