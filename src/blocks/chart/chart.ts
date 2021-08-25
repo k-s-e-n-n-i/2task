@@ -52,18 +52,18 @@ Chart.defaults.global.defaultFontSize = 18;
 settings.labels.length ? outputLegend(settings.labels, settings.backgroundColor) : false;
 
 function outputLegend(items: string[], colors: string[]) {
-  for (let i = 0; i < items.length; i++) {
-    let liLegend = `<li class="chart-legend__item"><div class="chart-legend__point"></div><p class='chart-legend__item-text'>${items[i]}</p></li>`;
+  items.forEach(function (item) {
+    let liLegend = `<li class="chart-legend__item"><div class="chart-legend__point"></div><p class='chart-legend__item-text'>${item}</p></li>`;
 
     $('.chart-legend .chart-legend__list').append(liLegend);
-  }
+  });
 
   if (colors.length != 0) {
-    for (let i = 0; i < items.length; i++) {
+    items.forEach(function (item, i) {
       $(`.chart-legend .chart-legend__item:nth-child(${i + 1}) .chart-legend__point`).css(
         'background-color',
         colors[i]
       );
-    }
+    });
   }
 }
