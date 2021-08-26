@@ -1,7 +1,7 @@
 import '@/modules/plugin.slider/plugin.slider';
 
 $(function () {
-  $('.search-room').slider({
+  $('.js-search-room').slider({
     element: document.querySelector('.search-room__range-slider'),
     idElement: 'idSlider1',
     width: 266,

@@ -1,7 +1,7 @@
 import '@/modules/plugin.slider/plugin.slider';
 
 $(function () {
-  $('.ui-kit-form-elements').slider({
+  $('.js-ui-kit-form-elements').slider({
     element: document.querySelector('.ui-kit-form-elements__slider'),
     idElement: 'idSlider2',
     width: 266,
