@@ -3,11 +3,15 @@
     "es6": true
   },
   "rules": {
-    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "fsd/hof-name-prefix": "error",
+    "fsd/no-heavy-constructor": "error",
+    "fsd/jq-cache-dom-elements": "error",
+    "fsd/jq-use-js-prefix-in-selector": "error",
+    "fsd/no-function-declaration-in-event-listener": "error",
+    "fsd/split-conditionals": "error"
   },
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier", "fsd"],
   "parserOptions": {
     "sourceType": "module"
   }

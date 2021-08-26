@@ -10,8 +10,11 @@
   "devDependencies": {
     "@types/node": "^15.12.4",
     "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-fsd": "^1.0.1",
+    "eslint-plugin-import": "2.22.1",
     "eslint-plugin-prettier": "^3.4.0",
     "file-loader": "^6.2.0",
     "prettier": "^2.3.2",
