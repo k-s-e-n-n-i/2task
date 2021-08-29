@@ -3,8 +3,8 @@ mixin link({ text = 'Ссылка', url = './link-stub', type = '' })
     when "gray"
       a(class="link link_gray" href= url)= text
     when "clean"
-      a(class="link link_clean" href= url)= text
+      a(class="link link_clean js-link_clean" href= url)= text
     when "ok"
-      a(class="link link_ok" href= url)= text
+      a(class="link link_ok js-link_ok" href= url)= text
     default
       a(class="link" href= url)= text

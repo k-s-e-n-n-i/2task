@@ -7,7 +7,7 @@ let settings = {
   backgroundColor: ['#FFE39C', '#6FCF97', '#BC9CFF', '#909090'],
 };
 
-let pieChart = new Chart(oilCanvas, {
+new Chart(oilCanvas, {
   type: 'doughnut',
   data: {
     labels: settings.labels,
@@ -55,12 +55,12 @@ function outputLegend(items: string[], colors: string[]) {
   items.forEach(function (item) {
     let liLegend = `<li class="chart-legend__item"><div class="chart-legend__point"></div><p class='chart-legend__item-text'>${item}</p></li>`;
 
-    $('.chart-legend .chart-legend__list').append(liLegend);
+    $('.js-chart-legend .js-chart-legend__list').append(liLegend);
   });
 
   if (colors.length != 0) {
     items.forEach(function (item, i) {
-      $(`.chart-legend .chart-legend__item:nth-child(${i + 1}) .chart-legend__point`).css(
+      $(`.js-chart-legend .chart-legend__item:nth-child(${i + 1}) .chart-legend__point`).css(
         'background-color',
         colors[i]
       );

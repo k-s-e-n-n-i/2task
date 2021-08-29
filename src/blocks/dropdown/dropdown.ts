@@ -1,11 +1,11 @@
 $(function () {
-  $('.dropdown__dropdown').on('click', handleDropwownClick);
+  $('.js-dropdown__dropdown').on('click', handleDropwownClick);
 
-  $('.dropdown__inc-qty-minus').on('click', handleDropdownMinusClick);
-  $('.dropdown__inc-qty-plus').on('click', handleDropdownPlusClick);
+  $('.js-dropdown__inc-qty-minus').on('click', handleDropdownMinusClick);
+  $('.js-dropdown__inc-qty-plus').on('click', handleDropdownPlusClick);
 
-  $('.dropdown__btns .link_ok').on('click', handleDropdownOkClick);
-  $('.dropdown__btns .link_clean').on('click', handleDropdownCleanClick);
+  $('.js-dropdown__btns .js-link_ok').on('click', handleDropdownOkClick);
+  $('.js-dropdown__btns .js-link_clean').on('click', handleDropdownCleanClick);
 
   function handleDropwownClick(this: HTMLElement) {
     const block_list = $(this).closest('.dropdown').find('.dropdown__dropdown-items');
@@ -211,20 +211,21 @@ $(function () {
         if (qty <= 20 && qty >= 5) {
           word = words[key][2];
         } else {
-          if (
+          const it5to10 =
             qty % 10 == 0 ||
             qty % 10 == 5 ||
             qty % 10 == 6 ||
             qty % 10 == 7 ||
             qty % 10 == 8 ||
-            qty % 10 == 9
-          ) {
+            qty % 10 == 9;
+          if (it5to10) {
             word = words[key][2];
           }
           if (qty % 10 == 1) {
             word = words[key][0];
           }
-          if (qty % 10 == 2 || qty % 10 == 3 || qty % 10 == 4) {
+          const it2to4 = qty % 10 == 2 || qty % 10 == 3 || qty % 10 == 4;
+          if (it2to4) {
             word = words[key][1];
           }
         }
