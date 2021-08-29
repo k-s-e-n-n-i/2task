@@ -1,5 +1,5 @@
 $(function () {
-  $('.rate-btn__star').on('click', handleRatebtnClick);
+  $('.js-rate-btn__star').on('click', handleRatebtnClick);
 
   function handleRatebtnClick(this: HTMLElement) {
     $(this).closest('.rate-btn').find('.rate-btn__star').removeClass('rate-btn__star_active');

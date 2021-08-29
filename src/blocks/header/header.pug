@@ -8,7 +8,7 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
     .header__content-container
       a.header__logo-link(href="./landing-page.html")
         img.header__logo(src=require("@Blocks/header/img/logo.svg").default alt="logo")
-      .header__menu-mobile
+      .header__menu-mobile.js-header__menu-mobile
       .header__links.header__links_hidden
         if items.length != 0
           nav.header__block-menu
@@ -25,7 +25,7 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
                 else
                   - active = "";
                 if type == "expand"
-                  - expand = "header__menu-li_expand";
+                  - expand = "header__menu-li_expand js-header__menu-li_expand";
                 else
                   - expand = "";
 

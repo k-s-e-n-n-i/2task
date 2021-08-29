@@ -1,5 +1,5 @@
 $(function () {
-  $('.like').on('click', handleLikeClick);
+  $('.js-like').on('click', handleLikeClick);
 
   function handleLikeClick(this: HTMLElement) {
     const sum: number = parseInt($(this).find('.like__sum').html());

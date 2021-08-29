@@ -1,5 +1,5 @@
 $(function () {
-  $('.toggle-block').on('click', handleToggleClick);
+  $('.js-toggle-block').on('click', handleToggleClick);
 
   function handleToggleClick(this: HTMLElement) {
     let toggle = $(this).find('.toggle-block__toggle'),

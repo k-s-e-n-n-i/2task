@@ -3,6 +3,6 @@ mixin rateBtn({ qty = 5, active = 0})
   .rate-btn
     while i < qty
       if active > i++
-        .rate-btn__star.rate-btn__star_active(id=i)
+        .rate-btn__star.js-rate-btn__star.rate-btn__star_active(id=i)
       else	
-        .rate-btn__star(id=i)
+        .rate-btn__star.js-rate-btn__star(id=i)
