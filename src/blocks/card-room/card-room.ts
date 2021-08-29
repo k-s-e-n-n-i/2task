@@ -1,13 +1,13 @@
 $(function () {
-  let kol: number = $('.card-room .card-room__image').length;
+  let kol: number = $('.js-card-room .js-card-room__image').length;
   for (let i: number = 1; i <= kol; i++) {
-    $('.card-room')
+    $('.js-card-room')
       .find('#' + i + '.card-room__image')
       .addClass('images' + i);
   }
 
-  $('.card-room__arrow-left').on('click', handlePaginationClick);
-  $('.card-room__arrow-right').on('click', handlePaginationClick);
+  $('.js-card-room__arrow-left').on('click', handlePaginationClick);
+  $('.js-card-room__arrow-right').on('click', handlePaginationClick);
 
   function handlePaginationClick(this: HTMLElement) {
     let paginationBlock: any = $(this)

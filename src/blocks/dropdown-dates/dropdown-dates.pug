@@ -1,7 +1,7 @@
 include ~@Blocks/calendar/calendar.pug
 
 mixin dropdownDates({ items = [{},{}] })
-  .dropdown-dates
+  .dropdown-dates.js-dropdown-dates
     each item in items
       - const topic = item.topic || ''
       - const activeDate = item.activeDate || 'ДД.ММ.ГГГГ'
@@ -9,6 +9,6 @@ mixin dropdownDates({ items = [{},{}] })
       .dropdown-dates__date-block(name='date')
         if topic != ""
           h3= topic
-        .dropdown-dates__dropdown= activeDate
+        .dropdown-dates__dropdown.js-dropdown-dates__dropdown= activeDate
     .dropdown-dates__calendar
       +calendar({})

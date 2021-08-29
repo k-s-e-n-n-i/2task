@@ -22,7 +22,7 @@ $(function () {
     monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
   };
 
-  ($('.dropdown .datepicker-here') as jQuery).datepicker(
+  ($('.js-dropdown .js-datepicker-here') as jQuery).datepicker(
     $.extend(mainOptions, {
       onSelect: function onSelect(formattedDate: string, date: Date[], inst: any) {
         let dates = formattedDate.split(',');
@@ -42,7 +42,7 @@ $(function () {
     })
   );
 
-  ($('.dropdown-dates .datepicker-here') as jQuery).datepicker(
+  ($('.js-dropdown-dates .js-datepicker-here') as jQuery).datepicker(
     $.extend(mainOptions, {
       onSelect: function onSelect(
         formattedDate: string,
@@ -72,10 +72,10 @@ $(function () {
     })
   );
 
-  ($('.ui-kit-cards__calendar-block .datepicker-here') as jQuery).datepicker(mainOptions);
+  ($('.js-ui-kit-cards__calendar-block .js-datepicker-here') as jQuery).datepicker(mainOptions);
 
-  $('.dropdown[name=date] .dropdown__dropdown').on('click', handleDateDropdownClick);
-  $('.dropdown-dates .dropdown-dates__dropdown').on('click', handleDateDropdownClick);
+  $('.js-dropdown[name=date] .js-dropdown__dropdown').on('click', handleDateDropdownClick);
+  $('.js-dropdown-dates .js-dropdown-dates__dropdown').on('click', handleDateDropdownClick);
 
   function handleDateDropdownClick(this: HTMLElement) {
     let calendarBlock;
@@ -90,10 +90,10 @@ $(function () {
 
     if (calendarBlock != undefined) {
       if (calendarBlock.hasClass('datepicker-here_hide')) {
-        calendarBlock.removeClass('datepicker-here_hide').addClass('datepicker-here_open');
+        calendarBlock.removeClass('datepicker-here_hide').addClass('js-datepicker-here_open');
         calendarBlock.show();
       } else {
-        calendarBlock.addClass('datepicker-here_hide').removeClass('datepicker-here_open');
+        calendarBlock.addClass('datepicker-here_hide').removeClass('js-datepicker-here_open');
         calendarBlock.hide();
       }
     }
@@ -106,11 +106,11 @@ $(function () {
     const elDropdown =
       thisClick.hasClass('dropdown__dropdown') == true ||
       thisClick.hasClass('dropdown-dates__dropdown') == true;
-    const open = $('.datepicker-here').hasClass('datepicker-here_open');
+    const open = $('.js-datepicker-here').hasClass('js-datepicker-here_open');
 
     if (!elDropdown && open) {
       const itCalendar =
-        thisClick.closest('.datepicker').length != 0 || thisClick.hasClass('datepicker-here_open');
+        thisClick.closest('.datepicker').length != 0 || thisClick.hasClass('js-datepicker-here_open');
       const cell = thisClick.hasClass('datepicker--cell');
       const navDate =
         thisClick.hasClass('datepicker--nav-title') ||
@@ -118,24 +118,26 @@ $(function () {
       const nav =
         thisClick.hasClass('datepicker--nav-action-prev') ||
         thisClick.hasClass('datepicker--nav-action-next');
+      const itCalendarOpen = $('.js-datepicker-here_open');
 
-      if (!itCalendar && !cell && !nav && !navDate) {
-        if ($('.datepicker-here_open').closest('.dropdown-dates').length != 0) {
-          $('.datepicker-here_open')
-            .closest('.dropdown-dates')
-            .find('.dropdown-dates__dropdown:first')
-            .trigger('click');
+      const clickedNotCalendar = !itCalendar && !cell && !nav && !navDate;
+
+      if (clickedNotCalendar) {
+        if (itCalendarOpen.closest('.dropdown-dates').length != 0) {
+          itCalendarOpen.closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').trigger('click');
         }
-        if ($('.datepicker-here_open').closest('.dropdown').length != 0) {
-          $('.datepicker-here_open').closest('.dropdown').find('.dropdown__dropdown').trigger('click');
+        if (itCalendarOpen.closest('.dropdown').length != 0) {
+          itCalendarOpen.closest('.dropdown').find('.dropdown__dropdown').trigger('click');
         }
       }
     }
   }
 
-  $('.datepicker--buttons').append('<span class="datepicker--button datepicker--button-ok">Применить</span>');
+  $('.datepicker--buttons').append(
+    '<span class="datepicker--button js-datepicker--button-ok">Применить</span>'
+  );
 
-  $('.datepicker--button-ok').on('click', handleDateBtnOkClick);
+  $('.js-datepicker--button-ok').on('click', handleDateBtnOkClick);
 
   function handleDateBtnOkClick(this: HTMLElement) {
     if ($(this).closest('.dropdown-dates').length != 0) {

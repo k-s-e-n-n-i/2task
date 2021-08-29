@@ -2,15 +2,15 @@ include ~@Blocks/link/link.pug
 include ~@Blocks/rate-btn/rate-btn.pug
 
 mixin cardRoom({ id, number, price, markLink = '', review = 0, rating = 0 })
-  .card-room
+  .card-room.js-card-room
     .card-room__image-block
-      .card-room__image.card-room__image_active(id=id)
-      .card-room__image(id=id+1)
-      .card-room__image(id=id+2)
-      .card-room__image(id=id+3)
+      .card-room__image.js-card-room__image.card-room__image_active(id=id)
+      .card-room__image.js-card-room__image(id=id+1)
+      .card-room__image.js-card-room__image(id=id+2)
+      .card-room__image.js-card-room__image(id=id+3)
       .card-room__arrows
-        .card-room__arrow-left
-        .card-room__arrow-right
+        .card-room__arrow-left.js-card-room__arrow-left
+        .card-room__arrow-right.js-card-room__arrow-right
       .card-room__slider-pagination
         .card-room__slider-pagination-item.card-room__slider-pagination-item_active(id="pag1")
         .card-room__slider-pagination-item(id="pag2")
