@@ -38,6 +38,10 @@
       justify-content: center;
       padding: 110px 0 1px;
     }
+
+    @media screen and (max-width: 320px) {
+      padding-top: 40px;
+    }
   }
 
   &__logo-block {
