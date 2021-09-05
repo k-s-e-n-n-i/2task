@@ -1,5 +1,5 @@
 $(function () {
-  let kol: number = $('.js-card-room .js-card-room__image').length;
+  const kol: number = $('.js-card-room .js-card-room__image').length;
   for (let i: number = 1; i <= kol; i++) {
     $('.js-card-room')
       .find('#' + i + '.card-room__image')
@@ -10,18 +10,24 @@ $(function () {
   $('.js-card-room__arrow-right').on('click', handlePaginationClick);
 
   function handlePaginationClick(this: HTMLElement) {
-    let paginationBlock: any = $(this)
+    const paginationBlock: JQuery<HTMLElement> = $(this)
       .closest('.card-room__image-block')
       .find('.card-room__slider-pagination');
-    let paginationActive: any = paginationBlock.find('.card-room__slider-pagination-item_active');
-    let num: number = parseInt(paginationActive.attr('id').substr(-1));
-    let imageActive: any = $(this).closest('.card-room__image-block').find('.card-room__image_active');
-    let numFirstImgStr: any = $(this)
+    const paginationActive: JQuery<HTMLElement> = paginationBlock.find(
+      '.card-room__slider-pagination-item_active'
+    );
+    const imageActive: JQuery<HTMLElement> = $(this)
       .closest('.card-room__image-block')
-      .find('.card-room__image:first')
-      .attr('id');
-    let numFirstImg: number = parseInt(numFirstImgStr);
-    let numImg: number = parseInt(imageActive.attr('id'));
+      .find('.card-room__image_active');
+    const numFirstImgStr: string =
+      $(this).closest('.card-room__image-block').find('.card-room__image:first').attr('id') || '0';
+
+    let num: number;
+    const paginationActiveId = paginationActive.attr('id');
+    paginationActiveId ? (num = parseInt(paginationActiveId.substr(-1))) : (num = 0);
+
+    const numFirstImg: number = parseInt(numFirstImgStr);
+    let numImg: number = parseInt(imageActive.attr('id') || '0');
 
     if ($(this).hasClass('card-room__arrow-left')) {
       num = num - 1;
