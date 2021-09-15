@@ -1,9 +1,10 @@
 import { Options } from '../../modules/plugin.slider/plugin.slider';
+import { Model } from '../../modules/plugin.slider/plugin.slider.model';
 
 export class View {
-  model: any;
+  model: Model;
   dataSlider: object;
-  thisSlider: any;
+  thisSlider: HTMLElement;
   idElement: string;
   min: number;
   max: number;
@@ -15,7 +16,7 @@ export class View {
   scaleStep: number;
   value: string;
 
-  constructor(option: Options, model: any) {
+  constructor(option: Options, model: Model) {
     this.model = model;
     this.dataSlider = option;
     this.thisSlider = option.element;
@@ -61,17 +62,17 @@ export class View {
       case 'interval':
         break;
       case 'from0to': {
-        this.model.rangeLeft.style.opacity = 0;
+        this.model.rangeLeft.style.opacity = '0';
         this.model.range.style.transform = 'translate(' + -5 + 'px, 0px)';
-        this.model.range.style.width = this.model.getPosRangeRight();
+        this.model.range.style.width = this.model.getPosRangeRight().toString();
         break;
       }
       case 'one': {
-        this.model.rangeLeft.style.opacity = 0;
-        this.model.range.style.opacity = 0;
+        this.model.rangeLeft.style.opacity = '0';
+        this.model.range.style.opacity = '0';
         this.model.range.style.transform = 'translate(' + -5 + 'px, 0px)';
-        this.model.labelMin.style.opacity = 0;
-        this.model.labelDash.style.opacity = 0;
+        this.model.labelMin.style.opacity = '0';
+        this.model.labelDash.style.opacity = '0';
         break;
       }
       default:
@@ -86,8 +87,9 @@ export class View {
           valDivision: number = this.min,
           posDivision: number,
           stepWidth: number,
-          elemDivision: any,
-          blockScale: any;
+          elemScaleLine: HTMLElement,
+          elemDivision: HTMLElement,
+          blockScale: string;
 
         if (this.scaleStep > 0) {
           qtyDivision = this.scaleStep;
@@ -104,9 +106,11 @@ export class View {
             <div class="range-slider__scale-line" id="scale${posDivision}"></div>
             </div>`;
           this.model.slider.insertAdjacentHTML('beforeend', blockScale);
-          elemDivision = this.model.slider
-            .querySelector('.range-slider__scale-line#scale' + posDivision)
-            .closest('.range-slider__scale');
+          elemScaleLine = this.getElementBySelector(
+            this.model.slider,
+            '.range-slider__scale-line#scale' + posDivision
+          );
+          elemDivision = this.getElementClosest(elemScaleLine, '.range-slider__scale');
           elemDivision.style.left = posDivision + 'px';
           this.model.rangeSlider.style.marginBottom = '35px';
           i = i + stepWidth;
@@ -126,7 +130,7 @@ export class View {
   }
 
   drawOrientation(): void {
-    let blockVals: any;
+    let blockVals: NodeList;
     switch (this.orientation) {
       case 'horizontal': {
         this.model.slider.style.transform = 'translate(5px, 0) rotate(0deg)';
@@ -136,9 +140,10 @@ export class View {
         this.model.slider.style.transform = 'translate(5px, 0) rotate(90deg) translateX(50%)';
         this.model.rangeSlider.style.height = this.model.getWidth() + 75 + 'px';
 
-        blockVals = this.model.blockScaleVals;
+        blockVals = this.model.slider.querySelectorAll('.range-slider__scale-val');
         for (let i = 0; i < blockVals.length; i++) {
-          blockVals[i].style.transform = 'translate(5px, 0) rotate(-90deg)';
+          const valElem: HTMLElement = <HTMLElement>blockVals[i];
+          valElem.style.transform = 'translate(-30%, 10px) rotate(-90deg)';
         }
         break;
       }
@@ -152,44 +157,68 @@ export class View {
   drawValue(): void {
     switch (this.value) {
       case 'on': {
-        this.model.labelBlock.style.opacity = 1;
+        this.model.labelBlock.style.opacity = '1';
         this.model.labelMax.innerHTML = new Intl.NumberFormat('ru-RU').format(this.maxStart);
 
         switch (this.type) {
           case 'interval': {
             this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.minStart);
-            this.model.labelMin.style.opacity = 1;
-            this.model.labelDash.style.opacity = 1;
+            this.model.labelMin.style.opacity = '1';
+            this.model.labelDash.style.opacity = '1';
             break;
           }
           case 'from0to': {
             this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.min);
-            this.model.labelMin.style.opacity = 1;
-            this.model.labelDash.style.opacity = 1;
+            this.model.labelMin.style.opacity = '1';
+            this.model.labelDash.style.opacity = '1';
             break;
           }
           case 'one': {
             this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.minStart);
-            this.model.labelMin.style.opacity = 0;
-            this.model.labelDash.style.opacity = 0;
+            this.model.labelMin.style.opacity = '0';
+            this.model.labelDash.style.opacity = '0';
             break;
           }
           default: {
             // interval
             this.model.labelMin.innerHTML = new Intl.NumberFormat('ru-RU').format(this.minStart);
-            this.model.labelMin.style.opacity = 1;
-            this.model.labelDash.style.opacity = 1;
+            this.model.labelMin.style.opacity = '1';
+            this.model.labelDash.style.opacity = '1';
             break;
           }
         }
         break;
       }
       case 'off': {
-        this.model.labelBlock.style.opacity = 0;
+        this.model.labelBlock.style.opacity = '0';
         break;
       }
       default:
         break;
     }
+  }
+
+  getElementBySelector(item: HTMLElement, selector: string): HTMLElement {
+    const element = item.querySelector(selector);
+
+    if (!(element instanceof HTMLElement)) {
+      throw new Error(
+        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
+      );
+    }
+
+    return element;
+  }
+
+  getElementClosest(item: HTMLElement, selector: string): HTMLElement {
+    const element = item.closest(selector);
+
+    if (!(element instanceof HTMLElement)) {
+      throw new Error(
+        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
+      );
+    }
+
+    return element;
   }
 }

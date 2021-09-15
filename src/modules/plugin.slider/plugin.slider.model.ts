@@ -10,33 +10,26 @@ export class Model {
   rangeRight: HTMLElement;
   elemValueMin: HTMLElement;
   elemValueMax: HTMLElement;
-  checkboxSettings: HTMLElement;
-  settingsBlock: HTMLElement;
   labelBlock: HTMLElement;
   labelMin: HTMLElement;
   labelDash: HTMLElement;
   labelMax: HTMLElement;
-  blockScaleVals: object;
 
   constructor(option: Options) {
     this.thisSlider = option.element;
     this.idElement = option.idElement;
-    this.rangeSlider = option.element.querySelector('.range-slider#' + this.idElement) as HTMLElement;
-    this.slider = this.rangeSlider.querySelector('.range-slider__slider') as HTMLElement;
-    this.range = this.slider.querySelector('.range-slider__range') as HTMLElement;
-    this.rangeLeft = this.slider.querySelector('.range-slider__left') as HTMLElement;
-    this.rangeRight = this.slider.querySelector('.range-slider__right') as HTMLElement;
-    this.elemValueMin = this.thisSlider.querySelector('.range-slider__label-min') as HTMLElement;
-    this.elemValueMax = this.thisSlider.querySelector('.range-slider__label-max') as HTMLElement;
-    this.checkboxSettings = this.thisSlider.querySelector(
-      '.slider-config .checkbox-list__input'
-    ) as HTMLElement;
-    this.settingsBlock = this.thisSlider.querySelector('.slider-config .slider-config__block') as HTMLElement;
-    this.labelBlock = this.rangeSlider.querySelector('.range-slider__label-block') as HTMLElement;
-    this.labelMin = this.rangeSlider.querySelector('span.range-slider__label-min') as HTMLElement;
-    this.labelDash = this.rangeSlider.querySelector('span.range-slider__label-dash') as HTMLElement;
-    this.labelMax = this.rangeSlider.querySelector('span.range-slider__label-max') as HTMLElement;
-    this.blockScaleVals = this.slider.querySelectorAll('.range-slider__scale-val');
+    this.rangeSlider = this.getElementBySelector(this.thisSlider, '.range-slider#' + this.idElement);
+    this.slider = this.getElementBySelector(this.rangeSlider, '.range-slider__slider');
+    this.range = this.getElementBySelector(this.slider, '.range-slider__range');
+    this.rangeLeft = this.getElementBySelector(this.slider, '.range-slider__left');
+    this.rangeRight = this.getElementBySelector(this.slider, '.range-slider__right');
+    this.elemValueMin = this.getElementBySelector(this.thisSlider, '.range-slider__label-min');
+    this.elemValueMax = this.getElementBySelector(this.thisSlider, '.range-slider__label-max');
+    //this.settingsBlock = this.getElementBySelector(this.thisSlider, '.slider-config .slider-config__block');
+    this.labelBlock = this.getElementBySelector(this.rangeSlider, '.range-slider__label-block');
+    this.labelMin = this.getElementBySelector(this.rangeSlider, 'span.range-slider__label-min');
+    this.labelDash = this.getElementBySelector(this.rangeSlider, 'span.range-slider__label-dash');
+    this.labelMax = this.getElementBySelector(this.rangeSlider, 'span.range-slider__label-max');
   }
 
   getWidth(): number {
@@ -50,5 +43,17 @@ export class Model {
   }
   getPosRangeRight(): number {
     return parseInt(getComputedStyle(this.rangeRight).left);
+  }
+
+  getElementBySelector(item: HTMLElement, selector: string): HTMLElement {
+    const element = item.querySelector(selector);
+
+    if (!(element instanceof HTMLElement)) {
+      throw new Error(
+        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
+      );
+    }
+
+    return element;
   }
 }
