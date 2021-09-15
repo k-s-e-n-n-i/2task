@@ -1,12 +1,9 @@
 import 'air-datepicker';
+import { AirDatepickerInstance } from '@blu3r4y/air-datepicker-types';
 import '@Blocks/calendar/cell.scss';
 import '@Blocks/calendar/datepicker-config.scss';
 import '@Blocks/calendar/datepicker.scss';
 import '@Blocks/calendar/navigation.scss';
-
-interface jQuery extends JQuery<HTMLElement> {
-  datepicker(set: object): HTMLElement;
-}
 
 $(function () {
   const mainOptions = {
@@ -22,48 +19,55 @@ $(function () {
     monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
   };
 
-  ($('.js-dropdown .js-datepicker-here') as jQuery).datepicker(
+  const datepickerDropdown = $('.js-dropdown .js-datepicker-here').datepicker(
     $.extend(mainOptions, {
-      onSelect: function onSelect(formattedDate: string, date: Date[], inst: any) {
+      onSelect: function onSelect(formattedDate: string) {
         let dates = formattedDate.split(',');
 
         if (dates[0] != undefined && dates[1] != undefined) {
-          let date1 = date[0].getDate() + ' ' + mainOptions.monthsShort[date[0].getMonth()];
-          let date2 = date[1].getDate() + ' ' + mainOptions.monthsShort[date[1].getMonth()];
+          let date1 =
+            parseInt(dates[0].substr(0, 2)) + ' ' + mainOptions.monthsShort[parseInt(dates[0].substr(3, 2))];
+          let date2 =
+            parseInt(dates[1].substr(0, 2)) + ' ' + mainOptions.monthsShort[parseInt(dates[1].substr(3, 2))];
 
-          inst.$datepicker
+          datepickerDropdown
             .closest('.dropdown')
             .find('.dropdown__dropdown')
             .html(date1 + ' - ' + date2);
         } else {
-          inst.$datepicker.closest('.dropdown').find('.dropdown__dropdown').html('Выберите диапазон дат...');
+          datepickerDropdown
+            .closest('.dropdown')
+            .find('.dropdown__dropdown')
+            .html('Выберите диапазон дат...');
         }
       },
     })
   );
 
-  ($('.js-dropdown-dates .js-datepicker-here') as jQuery).datepicker(
+  const datepickerDropdownDates = $('.js-dropdown-dates .js-datepicker-here').datepicker(
     $.extend(mainOptions, {
-      onSelect: function onSelect(
-        formattedDate: string,
-        date: object,
-        inst: object & { $datepicker: JQuery<HTMLElement> }
-      ) {
+      onSelect: function onSelect(formattedDate: string) {
         let dates = formattedDate.split(',');
 
         if (dates[0] != undefined && dates[0] != '') {
-          inst.$datepicker.closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').html(dates[0]);
+          datepickerDropdownDates
+            .closest('.dropdown-dates')
+            .find('.dropdown-dates__dropdown:first')
+            .html(dates[0]);
         } else {
-          inst.$datepicker
+          datepickerDropdownDates
             .closest('.dropdown-dates')
             .find('.dropdown-dates__dropdown:first')
             .html('ДД.ММ.ГГГГ');
         }
 
         if (dates[1] != undefined && dates[1] != '') {
-          inst.$datepicker.closest('.dropdown-dates').find('.dropdown-dates__dropdown:last').html(dates[1]);
+          datepickerDropdownDates
+            .closest('.dropdown-dates')
+            .find('.dropdown-dates__dropdown:last')
+            .html(dates[1]);
         } else {
-          inst.$datepicker
+          datepickerDropdownDates
             .closest('.dropdown-dates')
             .find('.dropdown-dates__dropdown:last')
             .html('ДД.ММ.ГГГГ');
@@ -72,7 +76,7 @@ $(function () {
     })
   );
 
-  ($('.js-ui-kit-cards__calendar-block .js-datepicker-here') as jQuery).datepicker(mainOptions);
+  $('.js-ui-kit-cards__calendar-block .js-datepicker-here').datepicker(mainOptions);
 
   $('.js-dropdown[name=date] .js-dropdown__dropdown').on('click', handleDateDropdownClick);
   $('.js-dropdown-dates .js-dropdown-dates__dropdown').on('click', handleDateDropdownClick);
@@ -101,7 +105,7 @@ $(function () {
 
   $(document).on('click', closeCalendar);
 
-  function closeCalendar(e: any) {
+  function closeCalendar(e: JQuery.ClickEvent) {
     const thisClick = $(e.target);
     const elDropdown =
       thisClick.hasClass('dropdown__dropdown') == true ||

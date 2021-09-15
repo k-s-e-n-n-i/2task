@@ -8,6 +8,7 @@
     "build": "webpack --env conf=production"
   },
   "devDependencies": {
+    "@blu3r4y/air-datepicker-types": "^2.0.2",
     "@types/node": "^15.12.4",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
