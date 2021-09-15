@@ -1,4 +1,16 @@
 $(function () {
+  const getElementBySelector = (lineItem: HTMLElement, selector: string): HTMLElement => {
+    const element = lineItem.querySelector(selector);
+
+    if (!(element instanceof HTMLElement)) {
+      throw new Error(
+        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
+      );
+    }
+
+    return element;
+  };
+
   $('.js-dropdown__dropdown').on('click', handleDropwownClick);
 
   $('.js-dropdown__inc-qty-minus').on('click', handleDropdownMinusClick);
@@ -20,7 +32,7 @@ $(function () {
   }
 
   function handleDropdownMinusClick(this: HTMLElement) {
-    let qtyElem: any,
+    let qtyElem: JQuery<HTMLElement>,
       qty: number = 0,
       newQty: number = 0,
       min: number = 0;
@@ -30,7 +42,7 @@ $(function () {
 
     if (qty > min) {
       newQty = qty - 1;
-      qtyElem.html(newQty);
+      qtyElem.text(newQty);
     }
 
     if (qty == min + 1 || qty == min) {
@@ -45,7 +57,7 @@ $(function () {
   }
 
   function handleDropdownPlusClick(this: HTMLElement) {
-    let qtyElem: any,
+    let qtyElem: JQuery<HTMLElement>,
       qty: number = 0,
       newQty: number = 0,
       max: number,
@@ -69,7 +81,7 @@ $(function () {
 
     if (allQty <= max) {
       newQty = qty + 1;
-      qtyElem.html(newQty);
+      qtyElem.text(newQty);
     }
 
     if (allQty == max || allQty - 1 == max) {
@@ -96,14 +108,14 @@ $(function () {
       .removeClass('dropdown__btns_flex-end');
   }
 
-  function handleDropdownOkClick(this: HTMLElement, event: any) {
+  function handleDropdownOkClick(this: HTMLElement, event: JQuery.Event) {
     event.preventDefault();
     $(this).closest('.dropdown').find('.dropdown__dropdown').trigger('click');
 
     outputInDropdown($(this).closest('.dropdown'));
   }
 
-  function handleDropdownCleanClick(this: HTMLElement, event: any) {
+  function handleDropdownCleanClick(this: HTMLElement, event: JQuery.Event) {
     event.preventDefault();
     let items = $(this).closest('.dropdown__dropdown-items');
     items.find('.dropdown__block-qty').find('span').html('0');
@@ -116,7 +128,7 @@ $(function () {
     $(this).closest('.dropdown__btns').addClass('dropdown__btns_flex-end');
   }
 
-  function outputInDropdown(dropdown: any) {
+  function outputInDropdown(dropdown: JQuery<HTMLElement>) {
     let str: string = '';
 
     if (dropdown.attr('name') == 'guests') {
@@ -133,7 +145,7 @@ $(function () {
     dropdown.find('.dropdown__dropdown').html(str);
   }
 
-  function countQtyGuests(dropdown: any): string {
+  function countQtyGuests(dropdown: JQuery<HTMLElement>): string {
     let lines = dropdown.find('.dropdown__items-line'),
       str: string = '',
       sumGuests: number = 0,
@@ -144,8 +156,8 @@ $(function () {
       textBaby: string;
 
     for (let i = 0; i < lines.length; i++) {
-      qty = lines[i].querySelector('.dropdown__block-qty span');
-      item = lines[i].querySelector('h3');
+      qty = getElementBySelector(lines[i], '.dropdown__block-qty span');
+      item = getElementBySelector(lines[i], 'h3');
 
       if (parseInt(qty.innerHTML) > 0 && item.innerHTML != 'младенцы') {
         sumGuests = sumGuests + parseInt(qty.innerHTML);
@@ -171,7 +183,7 @@ $(function () {
     return str;
   }
 
-  function countQtyComfortRoom(dropdown: any): string {
+  function countQtyComfortRoom(dropdown: JQuery<HTMLElement>): string {
     let lines = dropdown.find('.dropdown__items-line'),
       str: string = '',
       qty: HTMLElement,
@@ -179,8 +191,8 @@ $(function () {
       textItem: string;
 
     for (let i = 0; i < lines.length; i++) {
-      qty = lines[i].querySelector('.dropdown__block-qty span');
-      item = lines[i].querySelector('h3');
+      qty = getElementBySelector(lines[i], '.dropdown__block-qty span');
+      item = getElementBySelector(lines[i], 'h3');
       textItem = declensionWords(item.innerHTML, parseInt(qty.innerHTML));
 
       if (parseInt(qty.innerHTML) > 0) {
@@ -196,41 +208,37 @@ $(function () {
     return str;
   }
 
-  function declensionWords(item: any, qty: any) {
-    let words: any = {
-        bedroom: ['спальня', 'спальни', 'спален'],
-        bed: ['кровать', 'кровати', 'кроватей'],
-        bathroom: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
-        guest: ['гость', 'гостя', 'гостей'],
-        baby: ['младенец', 'младенца', 'младенцев'],
-      },
-      word: string = '';
+  function declensionWords(item: string, qty: number) {
+    const words: string[][] = [
+      ['спальня', 'спальни', 'спален'],
+      ['кровать', 'кровати', 'кроватей'],
+      ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+      ['гость', 'гостя', 'гостей'],
+      ['младенец', 'младенца', 'младенцев'],
+    ];
+    let word: string = '';
+    const it5to10 =
+      qty % 10 == 0 || qty % 10 == 5 || qty % 10 == 6 || qty % 10 == 7 || qty % 10 == 8 || qty % 10 == 9;
+    const it2to4 = qty % 10 == 2 || qty % 10 == 3 || qty % 10 == 4;
 
-    for (let key in words) {
-      if (item.toLowerCase() == words[key][1].toLowerCase()) {
+    words.forEach((itemMas) => {
+      if (item.toLowerCase() == itemMas[1].toLowerCase()) {
         if (qty <= 20 && qty >= 5) {
-          word = words[key][2];
+          word = itemMas[2];
         } else {
-          const it5to10 =
-            qty % 10 == 0 ||
-            qty % 10 == 5 ||
-            qty % 10 == 6 ||
-            qty % 10 == 7 ||
-            qty % 10 == 8 ||
-            qty % 10 == 9;
           if (it5to10) {
-            word = words[key][2];
+            word = itemMas[2];
           }
           if (qty % 10 == 1) {
-            word = words[key][0];
+            word = itemMas[0];
           }
-          const it2to4 = qty % 10 == 2 || qty % 10 == 3 || qty % 10 == 4;
           if (it2to4) {
-            word = words[key][1];
+            word = itemMas[1];
           }
         }
       }
-    }
+    });
+
     return word;
   }
 });
