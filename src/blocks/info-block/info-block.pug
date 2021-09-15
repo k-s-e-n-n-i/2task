@@ -1,13 +1,23 @@
-mixin infoBlock({ qtyHR = 1, items = [{ label : 'Заголовок', text : 'Текст', url : '#', dopclass : '' }] })
+mixin infoBlock({ qtyHR = 1, items = [{ label : 'Заголовок', text : 'Текст', url : '#', pictureName : '' }] })
   .info-block
     each item, index in items
       - const label = item.label || ''
       - const text = item.text || ''
       - const url = item.url || '#'
-      - const dopclass = item.dopclass || ''
+      - let dopclass
+
+      case item.pictureName
+        when 'emoticon'
+          - dopclass = 'info-block__icon_emoticon '
+        when 'city'
+          - dopclass = 'info-block__icon_city '
+        when 'whatshot'
+          - dopclass = 'info-block__icon_whatshot '
+        default
+          - dopclass = ''
 
       .info-block__item
-        img(src=url class="info-block__icon "+dopclass alt="icon")
+        img(src=url class='info-block__icon '+ dopclass alt='icon')
         .info-block__text-block
           p.info-block__topic
             b= label
