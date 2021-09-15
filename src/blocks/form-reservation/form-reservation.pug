@@ -62,17 +62,17 @@ mixin formReservation({ number = 0, priceFrom = 0, priceFinal = 0 })
           {
             textPrice : "9 990₽ х 4 суток",
             sumPrice : "39 960",
-            iconInfo : false
+            hasIconInfo : false
           },
           {
             textPrice : "Сбор за услуги: скидка <span>2 179₽</span>",
             sumPrice : "0",
-            iconInfo : true
+            hasIconInfo : true
           },
           {
             textPrice : "Сбор за доп. услуги",
             sumPrice : "300",
-            iconInfo : true
+            hasIconInfo : true
           }
         ]
       }
@@ -98,6 +98,6 @@ mixin formReservation__blockPrices({ items = [{}] })
       .form-reservation__line-price
         .form-reservation__service
           p.form-reservation__name-service !{item.textPrice}
-          if item.iconInfo == true
+          if item.hasIconInfo == true
             .form-reservation__icon-info-price i
         p= item.sumPrice +"₽"
