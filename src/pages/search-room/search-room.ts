@@ -1,4 +1,4 @@
-import '@Blocks/btn/btn.scss';
+import '@Blocks/button/button.scss';
 import '@Blocks/checkbox-list/checkbox-list.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable';

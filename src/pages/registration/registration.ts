@@ -1,4 +1,4 @@
-import '@Blocks/btn/btn.scss';
+import '@Blocks/button/button.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/input-text/input-text';
 import '@Blocks/link/link.scss';

@@ -1,4 +1,4 @@
-import '@Blocks/btn/btn.scss';
+import '@Blocks/button/button.scss';
 import '@Blocks/footer/footer.scss';
 import '@Blocks/footer-simple/footer-simple.scss';
 import '@Blocks/header/header.scss';
