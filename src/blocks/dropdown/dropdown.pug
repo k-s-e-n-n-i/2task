@@ -2,7 +2,7 @@ include ~@Blocks/link/link.pug
 include ~@Blocks/topic-label/topic-label.pug
 include ~@Blocks/calendar/calendar.pug
 
-mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', state = 'close', btnClean = true, btnOk = true, items = [] })
+mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', state = 'close', hasBtnClean = true, hasBtnOk = true, items = [] })
   .dropdown.js-dropdown(name= name)
     +topicLabel({ topic : topic, label : label })
     +dropdown__dropdown({ state, activeText })
@@ -10,10 +10,10 @@ mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText
     if items.length != 0
       if state == "close"
         .dropdown__dropdown-items.dropdown__dropdown-items_hide
-          +dropdown__itemsLine(btnClean, btnOk, items)
+          +dropdown__itemsLine(hasBtnClean, hasBtnOk, items)
       else
         .dropdown__dropdown-items
-          +dropdown__itemsLine(btnClean, btnOk, items)
+          +dropdown__itemsLine(hasBtnClean, hasBtnOk, items)
 
     if name == 'date'
       .dropdown__calendar
@@ -27,7 +27,7 @@ mixin dropdown__dropdown({ state, activeText })
     .dropdown__dropdown.js-dropdown__dropdown.dropdown__dropdown_items-show= activeText
 
 
-mixin dropdown__itemsLine(btnClean, btnOk, items)
+mixin dropdown__itemsLine(hasBtnClean, hasBtnOk, items)
   - const minQty = 0
 
   each item in items
@@ -45,8 +45,8 @@ mixin dropdown__itemsLine(btnClean, btnOk, items)
         else
           .dropdown__inc-qty-plus.js-dropdown__inc-qty-plus= "+"
 
-  if btnClean == true || btnOk == true
-    if btnClean == false && btnOk == true
+  if hasBtnClean || hasBtnOk
+    if !hasBtnClean && hasBtnOk
       .dropdown__btns.js-dropdown__btns.dropdown__btns_flex-end
         +links
     else
