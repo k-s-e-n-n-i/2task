@@ -3,7 +3,7 @@ include ~@Blocks/dropdown-dates/dropdown-dates.pug
 include ~@Blocks/btn/btn.pug
 
 mixin formSearchNum
-  form.form-search-num
+  form(action="./search-room.html").form-search-num
     h1.form-search-num__topic Найдём номера под ваши пожелания
     .form-search-num__dropdown-dates
       +dropdownDates(

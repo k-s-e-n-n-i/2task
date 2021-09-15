@@ -22,14 +22,12 @@ mixin btn({ height = 'wide', text = '', link = './link-stub', arrow = false, bor
 
   if border == true
     div(class='btn btn_border ' + heightClass)
-      form(action=link)
-        button(type="submit" class='btn__block btn__block_border '+heightNarrowBlockClass)= text
-          if arrow == true
-            .btn__arrow.btn__arrow_white
-        div(class='btn__border ' + borderHoverClass)
+      button(type="submit" class='btn__block btn__block_border '+heightNarrowBlockClass)= text
+        if arrow == true
+          .btn__arrow.btn__arrow_white
+      div(class='btn__border ' + borderHoverClass)
   else
     div(class='btn btn_gradient ' + hoverClass + heightClass)
-      form(action=link)
-        button(type="submit" class='btn__block ' + arrowClass)= text
-          if arrow == true
-            .btn__arrow.btn__arrow_white
+      button(type="submit" class='btn__block ' + arrowClass)= text
+        if arrow == true
+          .btn__arrow.btn__arrow_white
