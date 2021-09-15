@@ -1,8 +1,8 @@
 include ~@Blocks/button/button.pug
 
-mixin header({ authorization = false, name = 'Имя', items = [] })
-  - let active
-  - let expand
+mixin header({ authorized = false, name = 'Имя', items = [] })
+  - let activeClass
+  - let expandClass
 
   header.header
     .header__content-container
@@ -21,15 +21,15 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
                 - const submenu = item.submenu || false
 
                 if state == "active"
-                  - active = "header__menu-li_active";
+                  - activeClass = "header__menu-li_active";
                 else
-                  - active = "";
+                  - activeClass = "";
                 if type == "expand"
-                  - expand = "header__menu-li_expand js-header__menu-li_expand";
+                  - expandClass = "header__menu-li_expand js-header__menu-li_expand";
                 else
-                  - expand = "";
+                  - expandClass = "";
 
-                li(class="header__menu-li " +active+" "+expand)
+                li(class="header__menu-li " + activeClass + " "+ expandClass)
                   a.header__menu-a(href= link)= menuItem
                   if submenu != false
                     ul.header__submenu
@@ -40,7 +40,7 @@ mixin header({ authorization = false, name = 'Имя', items = [] })
                         li.header__submenu-li
                           a.header__submenu-a(href= sbmLink)= sbmItem
         .header__block-login
-          if authorization == false
+          if !authorized
             .header__btn.header__btn_border
               form(action="./sign-in.html")
                 +button(
