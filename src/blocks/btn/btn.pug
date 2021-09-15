@@ -1,33 +1,33 @@
-mixin btn({ height = 'wide', text = '', link = './link-stub', arrow = false, border = false, hover = false })
+mixin button({ height = 'wide', text = '', link = './link-stub', hasArrow = false, hasBorder = false, hasHover = false })
   - let arrowClass = ''
   - let hoverClass = ''
   - let borderHoverClass = ''
-  - let heightClass = 'btn_wide'
+  - let heightClass = 'button_wide'
   - let heightNarrowBlockClass = ''
 
-  if (arrow == true)
-    - arrowClass = 'btn__block_with-arrow '
-  if (hover == true)
-    - hoverClass = 'btn_hover '
-    - borderHoverClass = 'btn__border_hover '
-  if (height == 'narrow') && (border == false)
-    - heightClass = 'btn_with-narrow-gradient '
-  if (height == 'wide') && (border == false)
-    - heightClass = 'btn_with-wide-gradient '
-  if (height == 'narrow') && (border == true)
-    - heightClass = 'btn_with-narrow-border '
-    - heightNarrowBlockClass = 'btn__block_with-narrow-border '
-  if (height == 'wide') && (border == true)
-    - heightClass = 'btn_with-wide-border '
+  if hasArrow
+    - arrowClass = 'button__block_with-arrow '
+  if hasHover
+    - hoverClass = 'button_hover '
+    - borderHoverClass = 'button__border_hover '
+  if (height == 'narrow') && !hasBorder
+    - heightClass = 'button_with-narrow-gradient '
+  if (height == 'wide') && !hasBorder
+    - heightClass = 'button_with-wide-gradient '
+  if (height == 'narrow') && hasBorder
+    - heightClass = 'button_with-narrow-border '
+    - heightNarrowBlockClass = 'button__block_with-narrow-border '
+  if (height == 'wide') && hasBorder
+    - heightClass = 'button_with-wide-border '
 
-  if border == true
-    div(class='btn btn_border ' + heightClass)
-      button(type="submit" class='btn__block btn__block_border '+heightNarrowBlockClass)= text
-        if arrow == true
-          .btn__arrow.btn__arrow_white
-      div(class='btn__border ' + borderHoverClass)
+  if hasBorder
+    div(class='button button_border ' + heightClass)
+      button(type="submit" class='button__block button__block_border '+heightNarrowBlockClass)= text
+        if hasArrow
+          .button__arrow.button__arrow_white
+      div(class='button__border ' + borderHoverClass)
   else
-    div(class='btn btn_gradient ' + hoverClass + heightClass)
-      button(type="submit" class='btn__block ' + arrowClass)= text
-        if arrow == true
-          .btn__arrow.btn__arrow_white
+    div(class='button button_gradient ' + hoverClass + heightClass)
+      button(type="submit" class='button__block ' + arrowClass)= text
+        if hasArrow
+          .button__arrow.button__arrow_white

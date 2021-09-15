@@ -20,19 +20,19 @@ mixin formSignIn
       )
 
     .form-sign-in__btn
-      +btn(
+      +button(
         {
           text : "Войти",
-          arrow : true,
+          hasArrow : true,
         }
       )
 
     .form-sign-in__login
       p.form-sign-in__login-text Нет аккаунта на Toxin?
       .form-sign-in__btn.form-sign-in__btn_border
-        +btn(
+        +button(
           {
             text : "Создать",
-            border: true,
+            hasBorder: true,
           }
         )

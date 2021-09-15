@@ -84,10 +84,10 @@ mixin formReservation({ number = 0, priceFrom = 0, priceFinal = 0 })
       h2.form-reservation__total-price= priceFinal +"₽"
 
     .form-reservation__btn
-      +btn(
+      +button(
         {
           text : "Забронировать",
-          arrow : true,
+          hasArrow : true,
         }
       )
 

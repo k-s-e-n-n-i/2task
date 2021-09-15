@@ -72,18 +72,18 @@ mixin formRegistration({ id })
       )
 
     .form-registration__btn
-      +btn(
+      +button(
         {
           text : "Зарегистрироваться",
-          arrow : true,
+          hasArrow : true,
         }
       )
     .form-registration__login
       p.form-registration__login-text Уже есть аккаунт на Toxin
       .form-registration__btn.form-registration__btn_border
-        +btn(
+        +button(
           {
             text : "Войти",
-            border: true,
+            hasBorder: true,
           }
         )
