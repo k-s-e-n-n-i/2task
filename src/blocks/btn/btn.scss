@@ -3,6 +3,7 @@
   border-radius: 22px;
   z-index: 1;
   padding: 2px 0;
+  cursor: pointer;
 
   &_hover,
   &__border_hover {
@@ -12,37 +13,21 @@
   &_gradient {
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 
-    &.btn_narrow {
-      padding: 8px 14px;
-    }
-
-    &.btn_wide {
-      padding: 13px;
-    }
-
     &:hover,
     &:focus {
       opacity: 0.5;
     }
   }
 
+  &_with-narrow-gradient {
+    padding: 8px 14px;
+  }
+
+  &_with-wide-gradient {
+    padding: 13px;
+  }
+
   &_border {
-    &.btn_narrow {
-      min-width: 87px;
-
-      > .btn__block_border {
-        padding: 7px 10px;
-      }
-    }
-
-    &.btn_wide {
-      min-width: 99px;
-
-      > .btn__block_border {
-        padding: 12px 15px;
-      }
-    }
-
     &:hover,
     &:focus {
       > .btn__border {
@@ -51,27 +36,29 @@
     }
   }
 
-  &__block {
-    border-radius: 22px;
-    cursor: pointer;
-    text-align: center;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    width: 100%;
-    z-index: 1;
-    border: 0;
-  }
+  &_with-narrow-border {
+    min-width: 87px;
 
-  &__block_gradient {
-    color: #ffffff;
-  }
-
-  &__block_gradient_arrow {
-    .btn__link {
-      padding-right: 5px;
+    > .btn__block_border {
+      padding: 7px 10px;
     }
   }
 
-  &__link {
+  &_with-wide-border {
+    min-width: 99px;
+
+    > .btn__block_border {
+      padding: 12px 15px;
+    }
+  }
+
+  &__block {
+    border-radius: 22px;
+    cursor: pointer;
+    background: transparent;
+    width: 100%;
+    z-index: 1;
+    border: 0;
     color: #ffffff;
     font-family: 'Montserrat', Arial, sans-serif;
     font-style: normal;
@@ -82,6 +69,23 @@
     text-decoration: none;
     user-select: none;
     line-height: 16px;
+  }
+
+  &__block_border {
+    background: #fff;
+    width: calc(100% - 4px);
+    border-radius: 22px;
+    margin: 0 2px;
+    padding: 12px 0;
+    color: #bc9cff;
+  }
+
+  &__block_with-narrow-border {
+    padding: 7px 0;
+  }
+
+  &__block_with-arrow {
+    padding-right: 5px;
   }
 
   &__arrow {
@@ -101,17 +105,6 @@
 
   &__arrow_white {
     background-image: url('@Blocks/btn/img/arrow-white.svg');
-  }
-
-  &__block_border {
-    background: #fff;
-    width: calc(100% - 4px);
-    border-radius: 22px;
-    margin: 0 2px;
-
-    .btn__link {
-      color: #bc9cff;
-    }
   }
 
   &__border {

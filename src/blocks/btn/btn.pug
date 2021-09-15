@@ -3,25 +3,33 @@ mixin btn({ height = 'wide', text = '', link = './link-stub', arrow = false, bor
   - let hoverClass = ''
   - let borderHoverClass = ''
   - let heightClass = 'btn_wide'
+  - let heightNarrowBlockClass = ''
 
   if (arrow == true)
-    - arrowClass = 'btn__block_gradient_arrow '
+    - arrowClass = 'btn__block_with-arrow '
   if (hover == true)
     - hoverClass = 'btn_hover '
     - borderHoverClass = 'btn__border_hover '
-  if (height == 'narrow')
-    - heightClass = 'btn_narrow '
+  if (height == 'narrow') && (border == false)
+    - heightClass = 'btn_with-narrow-gradient '
+  if (height == 'wide') && (border == false)
+    - heightClass = 'btn_with-wide-gradient '
+  if (height == 'narrow') && (border == true)
+    - heightClass = 'btn_with-narrow-border '
+    - heightNarrowBlockClass = 'btn__block_with-narrow-border '
+  if (height == 'wide') && (border == true)
+    - heightClass = 'btn_with-wide-border '
 
   if border == true
     div(class='btn btn_border ' + heightClass)
-      button(type = 'button' class='btn__block btn__block_border ')
-        a.btn__link(href=link)= text
-        if arrow == true
-          .btn__arrow.btn__arrow_white
-      div(class='btn__border ' + borderHoverClass)
+      form(action=link)
+        button(type="submit" class='btn__block btn__block_border '+heightNarrowBlockClass)= text
+          if arrow == true
+            .btn__arrow.btn__arrow_white
+        div(class='btn__border ' + borderHoverClass)
   else
     div(class='btn btn_gradient ' + hoverClass + heightClass)
-      button(type = 'button' class='btn__block btn__block_gradient ' + arrowClass)
-        a.btn__link(href=link)= text
-        if arrow == true
-          .btn__arrow.btn__arrow_white
+      form(action=link)
+        button(type="submit" class='btn__block ' + arrowClass)= text
+          if arrow == true
+            .btn__arrow.btn__arrow_white
