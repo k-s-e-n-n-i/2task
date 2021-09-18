@@ -126,12 +126,6 @@
     display: block;
     user-select: none;
 
-    &:hover {
-      > .header__menu-a {
-        text-decoration: underline;
-      }
-    }
-
     &:first-child {
       padding: 10px 0 7px;
 
@@ -155,6 +149,11 @@
     color: rgba(31, 32, 65, 0.5);
     user-select: none;
     text-decoration: none;
+    width: max-content;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__subscription {
