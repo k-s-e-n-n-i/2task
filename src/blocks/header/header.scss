@@ -85,6 +85,7 @@
     flex-wrap: wrap;
     align-items: center;
     margin: 0;
+    padding: 0;
 
     @media screen and (max-width: 530px) {
       flex-direction: column;
@@ -94,7 +95,6 @@
   &__menu-li {
     display: block;
     color: rgba(31, 32, 65, 0.5);
-    cursor: pointer;
     margin-left: 20px;
     position: relative;
     user-select: none;
@@ -125,6 +125,12 @@
       background-repeat: no-repeat;
       background-position: 50% 90%;
       cursor: pointer;
+    }
+
+    > .header__menu-a {
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
@@ -158,6 +164,7 @@
 
   &__submenu-li {
     display: block;
+    width: max-content;
   }
 
   &__submenu-a {
@@ -165,6 +172,7 @@
     cursor: pointer;
     text-decoration: none;
     white-space: nowrap;
+    width: max-content;
 
     &:hover {
       text-decoration: underline;

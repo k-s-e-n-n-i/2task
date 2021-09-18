@@ -30,8 +30,8 @@ mixin header({ authorized = false, name = 'Имя', items = [] })
                   - expandClass = "";
 
                 li(class="header__menu-li " + activeClass + " "+ expandClass)
-                  a.header__menu-a(href= link)= menuItem
                   if submenu != false
+                    a.header__menu-a= menuItem
                     ul.header__submenu
                       each sbm in item.submenu
                         - const sbmItem = sbm.menuItem || 'Пункт меню'
@@ -39,6 +39,8 @@ mixin header({ authorized = false, name = 'Имя', items = [] })
 
                         li.header__submenu-li
                           a.header__submenu-a(href= sbmLink)= sbmItem
+                  else
+                    a.header__menu-a(href= link)= menuItem
         .header__block-login
           if !authorized
             .header__btn.header__btn_border
