@@ -11,7 +11,27 @@ $(function () {
 
   $('.js-header__menu-li_expand').on('click', handleSubmenuClick);
 
-  function handleSubmenuClick(this: HTMLElement) {
-    $(this).find('.header__submenu').toggleClass('header__submenu-open');
+  function handleSubmenuClick(e: JQuery.ClickEvent) {
+    const itSubmenu = $(e.target).hasClass('header__submenu') || $(e.target).hasClass('header__submenu-li');
+
+    if (itSubmenu) {
+      e.stopPropagation();
+    } else {
+      $(e.target)
+        .closest('.header__menu-li_expand')
+        .find('.header__submenu')
+        .toggleClass('header__submenu_open');
+    }
+  }
+
+  $(document).on('click', closeHeaderSubmenu);
+
+  function closeHeaderSubmenu(e: JQuery.ClickEvent) {
+    const elementsSubmenu = $(e.target).closest('.header__menu-li_expand').length != 0;
+    const openSubmenu = $('.header__submenu').hasClass('header__submenu_open');
+
+    if (!elementsSubmenu && openSubmenu) {
+      $('.header__submenu').removeClass('header__submenu_open');
+    }
   }
 });
