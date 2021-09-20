@@ -187,16 +187,16 @@
   }
 
   &.-range-from-:before {
-    border-radius: 10px 0 0 10px;
+    border-radius: 0.1vw 0 0 0.1vw;
   }
 
   &.-range-to-:before {
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 0.1vw 0.1vw 0;
   }
 
   &.-current- {
     &:before {
-      border-radius: 2px;
+      border-radius: 0.1vw;
       padding: 22.8% 0;
     }
   }
@@ -233,16 +233,16 @@
   }
 
   &.-range-from-:before {
-    border-radius: 10px 0 0 10px;
+    border-radius: 0.1vw 0 0 0.1vw;
   }
 
   &.-range-to-:before {
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 0.1vw 0.1vw 0;
   }
 
   &.-current- {
     &:before {
-      border-radius: 2px;
+      border-radius: 0.1vw;
       padding: 41% 0;
     }
   }

@@ -1,6 +1,6 @@
 .button {
   position: relative;
-  border-radius: 22px;
+  border-radius: 10vw;
   z-index: 1;
   padding: 2px 0;
   cursor: pointer;
@@ -53,7 +53,7 @@
   }
 
   &__block {
-    border-radius: 22px;
+    border-radius: 10vw;
     cursor: pointer;
     background: transparent;
     width: 100%;
@@ -74,7 +74,7 @@
   &__block_border {
     background: #fff;
     width: calc(100% - 4px);
-    border-radius: 22px;
+    border-radius: 10vw;
     margin: 0 2px;
     padding: 12px 0;
     color: #bc9cff;
@@ -108,7 +108,7 @@
   }
 
   &__border {
-    border-radius: 22px;
+    border-radius: 10vw;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     position: absolute;
     left: 0;

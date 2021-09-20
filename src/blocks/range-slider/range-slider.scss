@@ -26,7 +26,7 @@
 
   &__all-width {
     border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 3px;
+    border-radius: 0.3vw;
     box-sizing: border-box;
     position: absolute;
     width: calc(100% + 11px);
@@ -37,7 +37,7 @@
   &__range {
     height: 100%;
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-    border-radius: 3px;
+    border-radius: 0.3vw;
     box-sizing: border-box;
   }
 
@@ -47,7 +47,7 @@
     height: 12px;
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     border: 2px solid #fff;
-    border-radius: 50px;
+    border-radius: 50%;
     display: inline-block;
     position: absolute;
     cursor: pointer;
