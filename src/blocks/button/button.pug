@@ -1,33 +1,19 @@
-mixin button({ height = 'wide', text = '', link = './link-stub', hasArrow = false, hasBorder = false, hasHover = false })
-  - let arrowClass = ''
+mixin button({ height = 'wide', text = '', link = './link-stub', hasBorder = false, hasHover = false })
+  - let typeButtonClass = 'button_gradient '
+  - let heightClass = ''
   - let hoverClass = ''
-  - let borderHoverClass = ''
-  - let heightClass = 'button_wide'
-  - let heightNarrowBlockClass = ''
-
-  if hasArrow
-    - arrowClass = 'button__block_with-arrow '
-  if hasHover
-    - hoverClass = 'button_hover '
-    - borderHoverClass = 'button__border_hover '
-  if (height == 'narrow') && !hasBorder
-    - heightClass = 'button_with-narrow-gradient '
-  if (height == 'wide') && !hasBorder
-    - heightClass = 'button_with-wide-gradient '
-  if (height == 'narrow') && hasBorder
-    - heightClass = 'button_with-narrow-border '
-    - heightNarrowBlockClass = 'button__block_with-narrow-border '
-  if (height == 'wide') && hasBorder
-    - heightClass = 'button_with-wide-border '
 
   if hasBorder
-    div(class='button button_border ' + heightClass)
-      button(type="submit" class='button__block button__block_border '+heightNarrowBlockClass)= text
-        if hasArrow
-          .button__arrow.button__arrow_white
-      div(class='button__border ' + borderHoverClass)
-  else
-    div(class='button button_gradient ' + hoverClass + heightClass)
-      button(type="submit" class='button__block ' + arrowClass)= text
-        if hasArrow
-          .button__arrow.button__arrow_white
+    - typeButtonClass = 'button_border '
+
+  if (height == 'narrow') && !hasBorder
+    - heightClass = 'button_narrow '
+  if (height == 'narrow') && hasBorder
+    - heightClass = 'button_border_narrow '
+
+  if hasHover && hasBorder
+    - hoverClass = 'button_border_hover '
+  if hasHover && !hasBorder
+    - hoverClass = 'button_gradient_hover '
+
+  button(class='button ' + typeButtonClass + heightClass + hoverClass type="submit")= text

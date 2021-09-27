@@ -1,120 +1,75 @@
 .button {
   position: relative;
-  border-radius: 10vw;
-  z-index: 1;
-  padding: 2px 0;
   cursor: pointer;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  user-select: none;
+  line-height: 16px;
+  border: 0;
+  border-radius: 100vw;
+  color: #ffffff;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  padding: 14px 19px;
+  z-index: 0;
+  min-width: 99px;
 
-  &_hover,
-  &__border_hover {
-    opacity: 0.5;
+  &_narrow {
+    padding: 9px 20px;
   }
 
   &_gradient {
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-
-    &:hover,
-    &:focus {
+    &_hover,
+    &:hover {
       opacity: 0.5;
     }
   }
 
-  &_with-narrow-gradient {
-    padding: 8px 14px;
-  }
-
-  &_with-wide-gradient {
-    padding: 13px;
-  }
-
   &_border {
-    &:hover,
-    &:focus {
-      > .button__border {
+    color: #bc9cff;
+    background: transparent;
+    padding: 14px 19px;
+    box-sizing: border-box;
+
+    &:after {
+      content: '';
+      width: auto;
+      height: auto;
+      border-radius: 100vw;
+      background: #ffffff;
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      right: 2px;
+      bottom: 2px;
+      z-index: -1;
+    }
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 100vw;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -2;
+    }
+
+    &_narrow {
+      padding: 9px 21px;
+    }
+
+    &_hover,
+    &:hover {
+      &:before {
         opacity: 0.5;
       }
     }
-  }
-
-  &_with-narrow-border {
-    min-width: 87px;
-
-    > .button__block_border {
-      padding: 7px 10px;
-    }
-  }
-
-  &_with-wide-border {
-    min-width: 99px;
-
-    > .button__block_border {
-      padding: 12px 15px;
-    }
-  }
-
-  &__block {
-    border-radius: 10vw;
-    cursor: pointer;
-    background: transparent;
-    width: 100%;
-    z-index: 1;
-    border: 0;
-    color: #ffffff;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    user-select: none;
-    line-height: 16px;
-  }
-
-  &__block_border {
-    background: #fff;
-    width: calc(100% - 4px);
-    border-radius: 10vw;
-    margin: 0 2px;
-    padding: 12px 0;
-    color: #bc9cff;
-  }
-
-  &__block_with-narrow-border {
-    padding: 7px 0;
-  }
-
-  &__block_with-arrow {
-    padding-right: 5px;
-  }
-
-  &__arrow {
-    position: absolute;
-    bottom: 12px;
-    right: 15px;
-    content: '';
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 13px;
-    right: 11px;
-    background-repeat: no-repeat;
-    background-image: url('@Blocks/button/img/arrow.svg');
-  }
-
-  &__arrow_white {
-    background-image: url('@Blocks/button/img/arrow-white.svg');
-  }
-
-  &__border {
-    border-radius: 10vw;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
   }
 }
