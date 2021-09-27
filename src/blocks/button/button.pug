@@ -1,4 +1,4 @@
-mixin button({ height = 'wide', text = '', link = './link-stub', hasBorder = false, hasHover = false })
+mixin button({ height = 'wide', text = '', hasBorder = false, hasHover = false })
   - let typeButtonClass = 'button_gradient '
   - let heightClass = ''
   - let hoverClass = ''
@@ -16,4 +16,4 @@ mixin button({ height = 'wide', text = '', link = './link-stub', hasBorder = fal
   if hasHover && !hasBorder
     - hoverClass = 'button_gradient_hover '
 
-  button(class='button ' + typeButtonClass + heightClass + hoverClass type="submit")= text
+  button(class='button ' + typeButtonClass + heightClass + hoverClass type='submit')= text

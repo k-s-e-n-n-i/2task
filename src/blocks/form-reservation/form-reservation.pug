@@ -5,7 +5,7 @@ include ~@Blocks/button/button.pug
 include ~@Blocks/button-with-arrow/button-with-arrow.pug
 
 mixin formReservation({ number = 0, priceFrom = 0, priceFinal = 0 })
-  form.form-reservation
+  form.form-reservation(action='./link-stub')
     .form-reservation__block
       .form-reservation__number
         span= "№ "

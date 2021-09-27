@@ -210,13 +210,13 @@ block content
 
       h3 buttons
       .ui-kit-form-elements__btn-group
-        .ui-kit-form-elements__btn
+        form.ui-kit-form-elements__btn(action='./link-stub')
           +button(
             {
               text : "CLICK ME",
             }
           )
-        .ui-kit-form-elements__btn
+        form.ui-kit-form-elements__btn(action='./link-stub')
           +button(
             {
               text : "CLICK ME",
@@ -225,14 +225,14 @@ block content
           )
 
       .ui-kit-form-elements__btn-group.ui-kit-form-elements__btn-group_border
-        .ui-kit-form-elements__btn
+        form.ui-kit-form-elements__btn(action='./link-stub')
           +button(
             {
               text : "CLICK ME",
               hasBorder: true,
             }
           )
-        .ui-kit-form-elements__btn
+        form.ui-kit-form-elements__btn(action='./link-stub')
           +button(
             {
               text : "CLICK ME",
@@ -256,7 +256,7 @@ block content
             }
           )
 
-      .ui-kit-form-elements__btn.ui-kit-form-elements__btn_arrow
+      form.ui-kit-form-elements__btn.ui-kit-form-elements__btn_arrow(action='./link-stub')
         +buttonArrow(
           {
             text : "перейти к оплате",
