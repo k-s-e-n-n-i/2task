@@ -1,4 +1,5 @@
 import '@Blocks/button/button.scss';
+import '@Blocks/button-with-arrow/button-with-arrow.scss';
 import '@Blocks/checkbox-list/checkbox-list.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable';

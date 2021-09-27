@@ -1,4 +1,5 @@
 import '@Blocks/button/button.scss';
+import '@Blocks/button-with-arrow/button-with-arrow.scss';
 import '@Blocks/comment-block/comment-block.scss';
 import '@Blocks/dropdown/dropdown.scss';
 import '@Blocks/dropdown/dropdown';

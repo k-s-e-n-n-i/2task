@@ -1,6 +1,7 @@
 include ~@Blocks/dropdown/dropdown.pug
 include ~@Blocks/dropdown-dates/dropdown-dates.pug
 include ~@Blocks/button/button.pug
+include ~@Blocks/button-with-arrow/button-with-arrow.pug
 
 mixin formSearchNum
   form(action="./search-room.html").form-search-num
@@ -41,10 +42,9 @@ mixin formSearchNum
     )
 
     .form-search-num__btn
-      +button(
+      +buttonArrow(
         {
           text : "подобрать номер",
           link : "./search-room.html",
-          hasArrow : true,
         }
       )

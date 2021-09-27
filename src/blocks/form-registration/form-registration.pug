@@ -2,6 +2,7 @@ include ~@Blocks/input-text/input-text.pug
 include ~@Blocks/radiogroup/radiogroup.pug
 include ~@Blocks/toggle-block/toggle-block.pug
 include ~@Blocks/button/button.pug
+include ~@Blocks/button-with-arrow/button-with-arrow.pug
 
 mixin formRegistration({ id })
   form.form-registration
@@ -72,10 +73,9 @@ mixin formRegistration({ id })
       )
 
     .form-registration__btn
-      +button(
+      +buttonArrow(
         {
           text : "Зарегистрироваться",
-          hasArrow : true,
         }
       )
     .form-registration__login

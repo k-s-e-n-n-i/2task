@@ -1,0 +1,7 @@
+mixin buttonArrow({ text = '', link = './link-stub', hasHover = false })
+  - let hoverClass = ''
+  
+  if hasHover
+    - hoverClass = 'button-with-arrow_hover '
+
+  button(class='button-with-arrow ' + hoverClass type="submit")= text
