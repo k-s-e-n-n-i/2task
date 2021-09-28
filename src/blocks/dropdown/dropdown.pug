@@ -33,7 +33,7 @@ mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText
                 - plusDisabledClass = 'dropdown__inc-qty_disable'
 
               div(class='dropdown__inc-qty-minus js-dropdown__inc-qty-minus ' + minusDisabledClass)= "-"
-              span= count
+              span.dropdown__inc-qty-number= count
               div(class='dropdown__inc-qty-plus js-dropdown__inc-qty-plus' + plusDisabledClass)= "+" 
 
         if hasBtnClean || hasBtnOk

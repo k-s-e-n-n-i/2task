@@ -59,6 +59,7 @@
     z-index: 5;
     position: absolute;
     width: calc(100% - 2px);
+    padding-bottom: 5px;
   }
 
   &__dropdown-items_hide {
@@ -73,16 +74,6 @@
     width: 100%;
   }
 
-  &__items-line {
-    &:last-child {
-      padding-bottom: 5px;
-    }
-
-    span {
-      color: rgba(31, 32, 65, 1);
-    }
-  }
-
   &__record-name {
     padding: 11px 14px;
     margin: 0;
@@ -95,11 +86,12 @@
     width: 92px;
     margin-right: 5px;
     user-select: none;
+  }
 
-    span {
-      font-weight: bold;
-      font-size: 12px;
-    }
+  &__inc-qty-number {
+    color: rgba(31, 32, 65, 1);
+    font-weight: bold;
+    font-size: 12px;
   }
 
   &__inc-qty-minus,
@@ -124,7 +116,7 @@
   }
 
   &__btns-link {
-    margin: 19px 0 12px 0;
+    margin: 19px 0 7px 0;
   }
 
   &__btns-link_clean {
