@@ -27,21 +27,21 @@ $(function () {
   }
 
   function handleDropdownDecreaseValueClick(this: HTMLElement) {
-    let qtyElem: JQuery<HTMLElement>,
-      qty: number = 0,
-      newQty: number = 0,
+    let numberElement: JQuery<HTMLElement>,
+      number: number = 0,
+      newNumber: number = 0,
       min: number = 0,
-      allQty: number = 0;
+      allNumber: number = 0;
 
-    qtyElem = $(this).closest('.dropdown__number-change-block').find('span');
-    qty = parseInt(qtyElem.html());
+    numberElement = $(this).closest('.dropdown__number-change-block').find('.dropdown__number');
+    number = parseInt(numberElement.html());
 
-    if (qty > min) {
-      newQty = qty - 1;
-      qtyElem.text(newQty);
+    if (number > min) {
+      newNumber = number - 1;
+      numberElement.text(newNumber);
     }
 
-    if (qty == min + 1 || qty == min) {
+    if (number == min + 1 || number == min) {
       $(this).addClass('dropdown__number-change_disable');
     }
     let plus = $(this).closest('.dropdown__items').find('.dropdown__number-change_incremented ');
@@ -51,12 +51,12 @@ $(function () {
 
     outputInDropdown($(this).closest('.dropdown'));
 
-    const spans = $(this).closest('.dropdown__items').find('span');
+    const spans = $(this).closest('.dropdown__items').find('.dropdown__number');
     for (let i = 0; i < spans.length; i++) {
-      allQty = allQty + parseInt(spans[i].innerHTML);
+      allNumber = allNumber + parseInt(spans[i].innerHTML);
     }
 
-    if (allQty == 0) {
+    if (allNumber == 0) {
       $(this)
         .closest('.dropdown__items')
         .find('.dropdown__btn-link_clean')
@@ -65,12 +65,12 @@ $(function () {
   }
 
   function handleDropdownIncreaseValueClick(this: HTMLElement) {
-    let qtyElem: JQuery<HTMLElement>,
-      qty: number = 0,
-      newQty: number = 0,
+    let numberElement: JQuery<HTMLElement>,
+      number: number = 0,
+      newNumber: number = 0,
       max: number,
       spans,
-      allQty: number = 0;
+      allNumber: number = 0;
 
     if ($(this).closest('.dropdown').attr('name') == 'guests') {
       max = 10;
@@ -78,21 +78,21 @@ $(function () {
       max = 15;
     }
 
-    spans = $(this).closest('.dropdown__items').find('span');
+    spans = $(this).closest('.dropdown__items').find('.dropdown__number');
     for (let i = 0; i < spans.length; i++) {
-      allQty = allQty + parseInt(spans[i].innerHTML);
+      allNumber = allNumber + parseInt(spans[i].innerHTML);
     }
-    allQty++;
+    allNumber++;
 
-    qtyElem = $(this).closest('.dropdown__number-change-block').find('span');
-    qty = parseInt(qtyElem.html());
+    numberElement = $(this).closest('.dropdown__number-change-block').find('.dropdown__number');
+    number = parseInt(numberElement.html());
 
-    if (allQty <= max) {
-      newQty = qty + 1;
-      qtyElem.text(newQty);
+    if (allNumber <= max) {
+      newNumber = number + 1;
+      numberElement.text(newNumber);
     }
 
-    if (allQty == max || allQty - 1 == max) {
+    if (allNumber == max || allNumber - 1 == max) {
       let plus = $(this).closest('.dropdown__items').find('.dropdown__number-change_incremented ');
       for (let i = 0; i < plus.length; i++) {
         plus.addClass('dropdown__number-change_disable');
@@ -124,7 +124,7 @@ $(function () {
   function handleDropdownCleanClick(this: HTMLElement, event: JQuery.Event) {
     event.preventDefault();
     let items = $(this).closest('.dropdown__items');
-    items.find('.dropdown__number-change-block').find('span').html('0');
+    items.find('.dropdown__number-change-block .dropdown__number').html('0');
     items.find('.dropdown__number-change_decremented').addClass('dropdown__number-change_disable');
     items.find('.dropdown__number-change_incremented').removeClass('dropdown__number-change_disable');
 
@@ -152,20 +152,20 @@ $(function () {
       str: string = '',
       sumGuests: number = 0,
       sumBaby: number = 0,
-      qty: HTMLElement,
+      number: HTMLElement,
       item: HTMLElement,
       textGuest: string,
       textBaby: string;
 
     for (let i = 0; i < lines.length; i++) {
-      qty = getElementBySelector(lines[i], '.dropdown__number-change-block span');
+      number = getElementBySelector(lines[i], '.dropdown__number-change-block .dropdown__number');
       item = getElementBySelector(lines[i], 'h3');
 
-      if (parseInt(qty.innerHTML) > 0 && item.innerHTML != 'младенцы') {
-        sumGuests = sumGuests + parseInt(qty.innerHTML);
+      if (parseInt(number.innerHTML) > 0 && item.innerHTML != 'младенцы') {
+        sumGuests = sumGuests + parseInt(number.innerHTML);
       }
-      if (parseInt(qty.innerHTML) > 0 && item.innerHTML == 'младенцы') {
-        sumBaby = sumBaby + parseInt(qty.innerHTML);
+      if (parseInt(number.innerHTML) > 0 && item.innerHTML == 'младенцы') {
+        sumBaby = sumBaby + parseInt(number.innerHTML);
       }
     }
 
@@ -188,17 +188,17 @@ $(function () {
   function countQtyComfortRoom(dropdown: JQuery<HTMLElement>): string {
     let lines = dropdown.find('.dropdown__items-line'),
       str: string = '',
-      qty: HTMLElement,
+      number: HTMLElement,
       item: HTMLElement,
       textItem: string;
 
     for (let i = 0; i < lines.length; i++) {
-      qty = getElementBySelector(lines[i], '.dropdown__number-change-block span');
+      number = getElementBySelector(lines[i], '.dropdown__number-change-block .dropdown__number');
       item = getElementBySelector(lines[i], 'h3');
-      textItem = declensionWords(item.innerHTML, parseInt(qty.innerHTML));
+      textItem = declensionWords(item.innerHTML, parseInt(number.innerHTML));
 
-      if (parseInt(qty.innerHTML) > 0) {
-        str = str + qty.innerHTML + ' ' + textItem + ', ';
+      if (parseInt(number.innerHTML) > 0) {
+        str = str + number.innerHTML + ' ' + textItem + ', ';
       }
     }
 
@@ -210,7 +210,7 @@ $(function () {
     return str;
   }
 
-  function declensionWords(item: string, qty: number) {
+  function declensionWords(item: string, number: number) {
     const words: string[][] = [
       ['спальня', 'спальни', 'спален'],
       ['кровать', 'кровати', 'кроватей'],
@@ -220,18 +220,23 @@ $(function () {
     ];
     let word: string = '';
     const it5to10 =
-      qty % 10 == 0 || qty % 10 == 5 || qty % 10 == 6 || qty % 10 == 7 || qty % 10 == 8 || qty % 10 == 9;
-    const it2to4 = qty % 10 == 2 || qty % 10 == 3 || qty % 10 == 4;
+      number % 10 == 0 ||
+      number % 10 == 5 ||
+      number % 10 == 6 ||
+      number % 10 == 7 ||
+      number % 10 == 8 ||
+      number % 10 == 9;
+    const it2to4 = number % 10 == 2 || number % 10 == 3 || number % 10 == 4;
 
     words.forEach((itemMas) => {
       if (item.toLowerCase() == itemMas[1].toLowerCase()) {
-        if (qty <= 20 && qty >= 5) {
+        if (number <= 20 && number >= 5) {
           word = itemMas[2];
         } else {
           if (it5to10) {
             word = itemMas[2];
           }
-          if (qty % 10 == 1) {
+          if (number % 10 == 1) {
             word = itemMas[0];
           }
           if (it2to4) {
