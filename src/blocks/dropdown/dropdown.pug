@@ -5,67 +5,60 @@ include ~@Blocks/calendar/calendar.pug
 mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', state = 'close', hasBtnClean = true, hasBtnOk = true, items = [] })
   .dropdown.js-dropdown(name= name)
     +topicLabel({ topic : topic, label : label })
-    +dropdown__dropdown({ state, activeText })
+    - let dropdownOpenClass = ''
+    - let dropdownItemsHiddenClass = ''
+
+    if state == 'close'
+      - dropdownItemsHiddenClass = 'dropdown__dropdown-items_hide'
+    else
+      - dropdownOpenClass = 'dropdown__dropdown_items-show'
 
     if items.length != 0
-      if state == "close"
-        .dropdown__dropdown-items.dropdown__dropdown-items_hide
-          +dropdown__itemsLine(hasBtnClean, hasBtnOk, items)
-      else
-        .dropdown__dropdown-items
-          +dropdown__itemsLine(hasBtnClean, hasBtnOk, items)
+      div(class='dropdown__dropdown js-dropdown__dropdown ' + dropdownOpenClass)= activeText
+      div(class='dropdown__dropdown-items ' + dropdownItemsHiddenClass)
+        - const minNumber = 0
+
+        each item in items
+          .dropdown__items-line
+            h3.dropdown__record-name= item.text
+            .dropdown__block-qty
+              - let minusDisabledClass = ''
+              - let plusDisabledClass = ''
+              - let count = item.number
+
+              if item.minus == "disable" || item.number == minNumber || item.number == undefined
+                - minusDisabledClass = 'dropdown__inc-qty_disable'
+                - count = minNumber
+              if item.plus == "disable"
+                - plusDisabledClass = 'dropdown__inc-qty_disable'
+
+              div(class='dropdown__inc-qty-minus js-dropdown__inc-qty-minus ' + minusDisabledClass)= "-"
+              span= count
+              div(class='dropdown__inc-qty-plus js-dropdown__inc-qty-plus' + plusDisabledClass)= "+" 
+
+        if hasBtnClean || hasBtnOk
+          - let btnCleanHiddenClass = ''
+          if !hasBtnClean
+            - btnCleanHiddenClass = 'dropdown__btns-link_clean_hidden'
+
+          .dropdown__btns.js-dropdown__btns
+            div(class='dropdown__btns-link dropdown__btns-link_clean ' + btnCleanHiddenClass)
+              +link(
+                {
+                  text : "Очистить",
+                  type : "clean"
+                }
+              )
+            .dropdown__btns-link.dropdown__btns-link_ok
+              +link(
+                {
+                  text : "Применить",
+                  type : "ok"
+                }
+              )
+    else
+      .dropdown__dropdown.js-dropdown__dropdown= activeText
 
     if name == 'date'
       .dropdown__calendar
         +calendar({})
-
-
-mixin dropdown__dropdown({ state, activeText })
-  if state == "close"
-    .dropdown__dropdown.js-dropdown__dropdown= activeText
-  else
-    .dropdown__dropdown.js-dropdown__dropdown.dropdown__dropdown_items-show= activeText
-
-
-mixin dropdown__itemsLine(hasBtnClean, hasBtnOk, items)
-  - const minQty = 0
-
-  each item in items
-    .dropdown__items-line
-      h3.dropdown__record-name= item.text
-      .dropdown__block-qty
-        if item.minus == "disable" || item.qty == minQty || item.qty == undefined
-          .dropdown__inc-qty-minus.js-dropdown__inc-qty-minus.dropdown__inc-qty_disable= "-"
-          span= minQty
-        else
-          .dropdown__inc-qty-minus.js-dropdown__inc-qty-minus= "-"
-          span= item.qty
-        if item.plus == "disable"
-          .dropdown__inc-qty-plus.js-dropdown__inc-qty-plus.dropdown__inc-qty_disable= "-" 
-        else
-          .dropdown__inc-qty-plus.js-dropdown__inc-qty-plus= "+"
-
-  if hasBtnClean || hasBtnOk
-    if !hasBtnClean && hasBtnOk
-      .dropdown__btns.js-dropdown__btns.dropdown__btns_flex-end
-        +links
-    else
-      .dropdown__btns.js-dropdown__btns
-        +links
-
-
-mixin links
-  .dropdown__btns-link.dropdown__btns-link_clean
-    +link(
-      {
-        text : "Очистить",
-        type : "clean"
-      }
-    )
-  .dropdown__btns-link.dropdown__btns-link_ok
-    +link(
-      {
-        text : "Применить",
-        type : "ok"
-      }
-    )

@@ -13,13 +13,17 @@
     width: 100%;
     cursor: pointer;
     border: 1px solid rgba(31, 32, 65, 0.25);
+    border-width: 1px;
     box-sizing: border-box;
-    padding: 9px 14px;
+    padding: 9px 30px 9px 14px;
     margin: 5px 0 0 0;
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     user-select: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     &:hover {
       color: rgba(31, 32, 65, 0.75);
@@ -51,6 +55,7 @@
     background: #fff;
     border-radius: 0 0 0.3vw 0.3vw;
     border: 1px solid rgba(31, 32, 65, 0.5);
+    border-width: 0 1px 1px 1px;
     z-index: 5;
     position: absolute;
     width: calc(100% - 2px);
@@ -118,20 +123,16 @@
     color: rgba(31, 32, 65, 0.15);
   }
 
-  &__btns_flex-end {
-    justify-content: flex-end;
-
-    > .dropdown__btns-link_clean {
-      display: none;
-    }
-  }
-
   &__btns-link {
     margin: 19px 0 12px 0;
   }
 
   &__btns-link_clean {
     margin-left: 14px;
+  }
+
+  &__btns-link_clean_hidden {
+    visibility: hidden;
   }
 
   &__btns-link_ok {

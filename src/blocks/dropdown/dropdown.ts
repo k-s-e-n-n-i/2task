@@ -35,7 +35,8 @@ $(function () {
     let qtyElem: JQuery<HTMLElement>,
       qty: number = 0,
       newQty: number = 0,
-      min: number = 0;
+      min: number = 0,
+      allQty: number = 0;
 
     qtyElem = $(this).closest('.dropdown__block-qty').find('span');
     qty = parseInt(qtyElem.html());
@@ -54,6 +55,18 @@ $(function () {
     }
 
     outputInDropdown($(this).closest('.dropdown'));
+
+    const spans = $(this).closest('.dropdown__dropdown-items').find('span');
+    for (let i = 0; i < spans.length; i++) {
+      allQty = allQty + parseInt(spans[i].innerHTML);
+    }
+
+    if (allQty == 0) {
+      $(this)
+        .closest('.dropdown__dropdown-items')
+        .find('.dropdown__btns-link_clean')
+        .addClass('dropdown__btns-link_clean_hidden');
+    }
   }
 
   function handleDropdownPlusClick(this: HTMLElement) {
@@ -100,12 +113,8 @@ $(function () {
 
     $(this)
       .closest('.dropdown__dropdown-items')
-      .find('.dropdown__btns .link_clean')
-      .css('display', 'initial');
-    $(this)
-      .closest('.dropdown__dropdown-items')
-      .find('.dropdown__btns')
-      .removeClass('dropdown__btns_flex-end');
+      .find('.dropdown__btns-link_clean')
+      .removeClass('dropdown__btns-link_clean_hidden');
   }
 
   function handleDropdownOkClick(this: HTMLElement, event: JQuery.Event) {
@@ -124,8 +133,7 @@ $(function () {
 
     outputInDropdown($(this).closest('.dropdown'));
 
-    $(this).css('display', 'none');
-    $(this).closest('.dropdown__btns').addClass('dropdown__btns_flex-end');
+    $(this).closest('.dropdown__btns-link_clean').addClass('dropdown__btns-link_clean_hidden');
   }
 
   function outputInDropdown(dropdown: JQuery<HTMLElement>) {
@@ -139,9 +147,6 @@ $(function () {
       str = 'Тип элемента неопределен';
     }
 
-    if (str.length > 19) {
-      str = str.substr(0, 20) + '...';
-    }
     dropdown.find('.dropdown__dropdown').html(str);
   }
 
