@@ -11,34 +11,29 @@ $(function () {
     return element;
   };
 
-  $('.js-dropdown__dropdown').on('click', handleDropwownClick);
+  $('.js-dropdown__field').on('click', handleDropwownClick);
 
-  $('.js-dropdown__inc-qty-minus').on('click', handleDropdownMinusClick);
-  $('.js-dropdown__inc-qty-plus').on('click', handleDropdownPlusClick);
+  $('.js-dropdown__number-change_decremented ').on('click', handleDropdownDecreaseValueClick);
+  $('.js-dropdown__number-change_incremented ').on('click', handleDropdownIncreaseValueClick);
 
   $('.js-dropdown__btns .js-link_ok').on('click', handleDropdownOkClick);
   $('.js-dropdown__btns .js-link_clean').on('click', handleDropdownCleanClick);
 
   function handleDropwownClick(this: HTMLElement) {
-    const block_list = $(this).closest('.dropdown').find('.dropdown__dropdown-items');
+    const dropdownItems = $(this).closest('.dropdown').find('.dropdown__items');
 
-    if (block_list.hasClass('dropdown__dropdown-items_hide')) {
-      block_list.removeClass('dropdown__dropdown-items_hide');
-      $(this).addClass('dropdown__dropdown_items-show');
-    } else {
-      block_list.addClass('dropdown__dropdown-items_hide');
-      $(this).removeClass('dropdown__dropdown_items-show');
-    }
+    dropdownItems.toggleClass('dropdown__items_hidden');
+    $(this).toggleClass('dropdown__field_actived');
   }
 
-  function handleDropdownMinusClick(this: HTMLElement) {
+  function handleDropdownDecreaseValueClick(this: HTMLElement) {
     let qtyElem: JQuery<HTMLElement>,
       qty: number = 0,
       newQty: number = 0,
       min: number = 0,
       allQty: number = 0;
 
-    qtyElem = $(this).closest('.dropdown__block-qty').find('span');
+    qtyElem = $(this).closest('.dropdown__number-change-block').find('span');
     qty = parseInt(qtyElem.html());
 
     if (qty > min) {
@@ -47,29 +42,29 @@ $(function () {
     }
 
     if (qty == min + 1 || qty == min) {
-      $(this).addClass('dropdown__inc-qty_disable');
+      $(this).addClass('dropdown__number-change_disable');
     }
-    let plus = $(this).closest('.dropdown__dropdown-items').find('.dropdown__inc-qty-plus');
+    let plus = $(this).closest('.dropdown__items').find('.dropdown__number-change_incremented ');
     for (let i = 0; i < plus.length; i++) {
-      plus.removeClass('dropdown__inc-qty_disable');
+      plus.removeClass('dropdown__number-change_disable');
     }
 
     outputInDropdown($(this).closest('.dropdown'));
 
-    const spans = $(this).closest('.dropdown__dropdown-items').find('span');
+    const spans = $(this).closest('.dropdown__items').find('span');
     for (let i = 0; i < spans.length; i++) {
       allQty = allQty + parseInt(spans[i].innerHTML);
     }
 
     if (allQty == 0) {
       $(this)
-        .closest('.dropdown__dropdown-items')
-        .find('.dropdown__btns-link_clean')
-        .addClass('dropdown__btns-link_clean_hidden');
+        .closest('.dropdown__items')
+        .find('.dropdown__btn-link_clean')
+        .addClass('dropdown__btn-link_clean_hidden');
     }
   }
 
-  function handleDropdownPlusClick(this: HTMLElement) {
+  function handleDropdownIncreaseValueClick(this: HTMLElement) {
     let qtyElem: JQuery<HTMLElement>,
       qty: number = 0,
       newQty: number = 0,
@@ -83,13 +78,13 @@ $(function () {
       max = 15;
     }
 
-    spans = $(this).closest('.dropdown__dropdown-items').find('span');
+    spans = $(this).closest('.dropdown__items').find('span');
     for (let i = 0; i < spans.length; i++) {
       allQty = allQty + parseInt(spans[i].innerHTML);
     }
     allQty++;
 
-    qtyElem = $(this).closest('.dropdown__block-qty').find('span');
+    qtyElem = $(this).closest('.dropdown__number-change-block').find('span');
     qty = parseInt(qtyElem.html());
 
     if (allQty <= max) {
@@ -98,42 +93,44 @@ $(function () {
     }
 
     if (allQty == max || allQty - 1 == max) {
-      let plus = $(this).closest('.dropdown__dropdown-items').find('.dropdown__inc-qty-plus');
+      let plus = $(this).closest('.dropdown__items').find('.dropdown__number-change_incremented ');
       for (let i = 0; i < plus.length; i++) {
-        plus.addClass('dropdown__inc-qty_disable');
+        plus.addClass('dropdown__number-change_disable');
       }
     } else {
-      let minus = $(this).closest('.dropdown__block-qty').find('.dropdown__inc-qty-minus');
-      if (minus.hasClass('dropdown__inc-qty_disable')) {
-        minus.removeClass('dropdown__inc-qty_disable');
+      let minus = $(this)
+        .closest('.dropdown__number-change-block')
+        .find('.dropdown__number-change_decremented ');
+      if (minus.hasClass('dropdown__number-change_disable')) {
+        minus.removeClass('dropdown__number-change_disable');
       }
     }
 
     outputInDropdown($(this).closest('.dropdown'));
 
     $(this)
-      .closest('.dropdown__dropdown-items')
-      .find('.dropdown__btns-link_clean')
-      .removeClass('dropdown__btns-link_clean_hidden');
+      .closest('.dropdown__items')
+      .find('.dropdown__btn-link_clean')
+      .removeClass('dropdown__btn-link_clean_hidden');
   }
 
   function handleDropdownOkClick(this: HTMLElement, event: JQuery.Event) {
     event.preventDefault();
-    $(this).closest('.dropdown').find('.dropdown__dropdown').trigger('click');
+    $(this).closest('.dropdown').find('.dropdown__field').trigger('click');
 
     outputInDropdown($(this).closest('.dropdown'));
   }
 
   function handleDropdownCleanClick(this: HTMLElement, event: JQuery.Event) {
     event.preventDefault();
-    let items = $(this).closest('.dropdown__dropdown-items');
-    items.find('.dropdown__block-qty').find('span').html('0');
-    items.find('.dropdown__inc-qty-minus').addClass('dropdown__inc-qty_disable');
-    items.find('.dropdown__inc-qty-plus').removeClass('dropdown__inc-qty_disable');
+    let items = $(this).closest('.dropdown__items');
+    items.find('.dropdown__number-change-block').find('span').html('0');
+    items.find('.dropdown__number-change_decremented').addClass('dropdown__number-change_disable');
+    items.find('.dropdown__number-change_incremented').removeClass('dropdown__number-change_disable');
 
     outputInDropdown($(this).closest('.dropdown'));
 
-    $(this).closest('.dropdown__btns-link_clean').addClass('dropdown__btns-link_clean_hidden');
+    $(this).closest('.dropdown__btn-link_clean').addClass('dropdown__btn-link_clean_hidden');
   }
 
   function outputInDropdown(dropdown: JQuery<HTMLElement>) {
@@ -147,7 +144,7 @@ $(function () {
       str = 'Тип элемента неопределен';
     }
 
-    dropdown.find('.dropdown__dropdown').html(str);
+    dropdown.find('.dropdown__field').html(str);
   }
 
   function countQtyGuests(dropdown: JQuery<HTMLElement>): string {
@@ -161,7 +158,7 @@ $(function () {
       textBaby: string;
 
     for (let i = 0; i < lines.length; i++) {
-      qty = getElementBySelector(lines[i], '.dropdown__block-qty span');
+      qty = getElementBySelector(lines[i], '.dropdown__number-change-block span');
       item = getElementBySelector(lines[i], 'h3');
 
       if (parseInt(qty.innerHTML) > 0 && item.innerHTML != 'младенцы') {
@@ -196,7 +193,7 @@ $(function () {
       textItem: string;
 
     for (let i = 0; i < lines.length; i++) {
-      qty = getElementBySelector(lines[i], '.dropdown__block-qty span');
+      qty = getElementBySelector(lines[i], '.dropdown__number-change-block span');
       item = getElementBySelector(lines[i], 'h3');
       textItem = declensionWords(item.innerHTML, parseInt(qty.innerHTML));
 

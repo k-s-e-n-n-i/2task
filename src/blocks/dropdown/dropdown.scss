@@ -6,7 +6,7 @@
     justify-content: flex-end;
   }
 
-  &__dropdown {
+  &__field {
     position: relative;
     color: rgba(31, 32, 65, 0.75);
     border-radius: 0.3vw;
@@ -44,12 +44,12 @@
     }
   }
 
-  &__dropdown_items-show {
+  &__field_actived {
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 0.3vw 0.3vw 0 0;
   }
 
-  &__dropdown-items {
+  &__items {
     display: flex;
     flex-wrap: wrap;
     background: #fff;
@@ -62,7 +62,7 @@
     padding-bottom: 5px;
   }
 
-  &__dropdown-items_hide {
+  &__items_hidden {
     display: none;
   }
 
@@ -79,7 +79,7 @@
     margin: 0;
   }
 
-  &__block-qty {
+  &__number-change-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,14 +88,13 @@
     user-select: none;
   }
 
-  &__inc-qty-number {
+  &__number {
     color: rgba(31, 32, 65, 1);
     font-weight: bold;
     font-size: 12px;
   }
 
-  &__inc-qty-minus,
-  &__inc-qty-plus {
+  &__number-change {
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 50%;
     width: 30px;
@@ -109,25 +108,25 @@
     margin-top: 4px;
   }
 
-  &__inc-qty_disable {
+  &__number-change_disable {
     cursor: default;
     border-color: rgba(31, 32, 65, 0.15);
     color: rgba(31, 32, 65, 0.15);
   }
 
-  &__btns-link {
+  &__btn-link {
     margin: 19px 0 7px 0;
   }
 
-  &__btns-link_clean {
+  &__btn-link_clean {
     margin-left: 14px;
   }
 
-  &__btns-link_clean_hidden {
+  &__btn-link_clean_hidden {
     visibility: hidden;
   }
 
-  &__btns-link_ok {
+  &__btn-link_ok {
     margin-right: 6px;
   }
 

@@ -9,47 +9,47 @@ mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText
     - let dropdownItemsHiddenClass = ''
 
     if state == 'close'
-      - dropdownItemsHiddenClass = 'dropdown__dropdown-items_hide'
+      - dropdownItemsHiddenClass = 'dropdown__items_hidden'
     else
-      - dropdownOpenClass = 'dropdown__dropdown_items-show'
+      - dropdownOpenClass = 'dropdown__field_actived'
 
     if items.length != 0
-      div(class='dropdown__dropdown js-dropdown__dropdown ' + dropdownOpenClass)= activeText
-      div(class='dropdown__dropdown-items ' + dropdownItemsHiddenClass)
+      div(class='dropdown__field js-dropdown__field ' + dropdownOpenClass)= activeText
+      div(class='dropdown__items ' + dropdownItemsHiddenClass)
         - const minNumber = 0
 
         each item in items
           .dropdown__items-line
             h3.dropdown__record-name= item.text
-            .dropdown__block-qty
+            .dropdown__number-change-block
               - let minusDisabledClass = ''
               - let plusDisabledClass = ''
               - let count = item.number
 
               if item.minus == "disable" || item.number == minNumber || item.number == undefined
-                - minusDisabledClass = 'dropdown__inc-qty_disable'
+                - minusDisabledClass = 'dropdown__number-change_disable'
                 - count = minNumber
               if item.plus == "disable"
-                - plusDisabledClass = 'dropdown__inc-qty_disable'
+                - plusDisabledClass = 'dropdown__number-change_disable'
 
-              div(class='dropdown__inc-qty-minus js-dropdown__inc-qty-minus ' + minusDisabledClass)= "-"
-              span.dropdown__inc-qty-number= count
-              div(class='dropdown__inc-qty-plus js-dropdown__inc-qty-plus' + plusDisabledClass)= "+" 
+              div(class='dropdown__number-change dropdown__number-change_decremented js-dropdown__number-change_decremented ' + minusDisabledClass)= "-"
+              span.dropdown__number= count
+              div(class='dropdown__number-change dropdown__number-change_incremented js-dropdown__number-change_incremented ' + plusDisabledClass)= "+" 
 
         if hasBtnClean || hasBtnOk
           - let btnCleanHiddenClass = ''
           if !hasBtnClean
-            - btnCleanHiddenClass = 'dropdown__btns-link_clean_hidden'
+            - btnCleanHiddenClass = 'dropdown__btn-link_clean_hidden'
 
           .dropdown__btns.js-dropdown__btns
-            div(class='dropdown__btns-link dropdown__btns-link_clean ' + btnCleanHiddenClass)
+            div(class='dropdown__btn-link dropdown__btn-link_clean ' + btnCleanHiddenClass)
               +link(
                 {
                   text : "Очистить",
                   type : "clean"
                 }
               )
-            .dropdown__btns-link.dropdown__btns-link_ok
+            .dropdown__btn-link.dropdown__btn-link_ok
               +link(
                 {
                   text : "Применить",
@@ -57,7 +57,7 @@ mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText
                 }
               )
     else
-      .dropdown__dropdown.js-dropdown__dropdown= activeText
+      .dropdown__field.js-dropdown__field= activeText
 
     if name == 'date'
       .dropdown__calendar
