@@ -1,4 +1,59 @@
 $(function () {
+  class Dropdown {
+    it: HTMLElement;
+    items: HTMLElement;
+    incrementElements: NodeListOf<Element>;
+    decrementElements: NodeListOf<Element>;
+    lines: NodeListOf<Element>;
+    records: NodeListOf<Element>;
+    numbers: NodeListOf<Element>;
+    constructor(dropdown: HTMLElement) {
+      this.it = dropdown;
+      this.items = getElementBySelector(dropdown, '.dropdown__items');
+      this.incrementElements = this.items.querySelectorAll('.dropdown__number-change_incremented');
+      this.decrementElements = this.items.querySelectorAll('.dropdown__number-change_decremented');
+      this.lines = this.items.querySelectorAll('.dropdown__items-line');
+      this.records = this.items.querySelectorAll('.dropdown__record-name');
+      this.numbers = this.items.querySelectorAll('.dropdown__number');
+    }
+  }
+
+  class DropdownNumberChange {
+    numberElement: HTMLElement;
+    number: number;
+    numberChange: HTMLElement;
+    incrementElement: HTMLElement;
+    decrementElement: HTMLElement;
+    constructor(numberChange: HTMLElement) {
+      this.numberElement = getElementBySelector(
+        getElementClosest(numberChange, '.dropdown__number-change-block'),
+        '.dropdown__number'
+      );
+      this.number = parseInt(this.numberElement.innerHTML);
+      this.numberChange = numberChange;
+      this.incrementElement = getElementBySelector(
+        getElementClosest(numberChange, '.dropdown__number-change-block'),
+        '.dropdown__number-change_incremented'
+      );
+      this.decrementElement = getElementBySelector(
+        getElementClosest(numberChange, '.dropdown__number-change-block'),
+        '.dropdown__number-change_decremented'
+      );
+    }
+  }
+
+  const getElementClosest = (item: HTMLElement, selector: string): HTMLElement => {
+    const element = item.closest(selector);
+
+    if (!(element instanceof HTMLElement)) {
+      throw new Error(
+        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
+      );
+    }
+
+    return element;
+  };
+
   const getElementBySelector = (lineItem: HTMLElement, selector: string): HTMLElement => {
     const element = lineItem.querySelector(selector);
 
@@ -13,112 +68,102 @@ $(function () {
 
   $('.js-dropdown__field').on('click', handleDropwownClick);
 
-  $('.js-dropdown__number-change_decremented ').on('click', handleDropdownDecreaseValueClick);
-  $('.js-dropdown__number-change_incremented ').on('click', handleDropdownIncreaseValueClick);
+  $('.js-dropdown__number-change_decremented').on('click', handleDropdownDecreaseValueClick);
+  $('.js-dropdown__number-change_incremented').on('click', handleDropdownIncreaseValueClick);
 
   $('.js-dropdown__btns .js-link_ok').on('click', handleDropdownOkClick);
   $('.js-dropdown__btns .js-link_clean').on('click', handleDropdownCleanClick);
 
   function handleDropwownClick(this: HTMLElement) {
-    const dropdownItems = $(this).closest('.dropdown').find('.dropdown__items');
-
-    dropdownItems.toggleClass('dropdown__items_hidden');
-    $(this).toggleClass('dropdown__field_actived');
+    const dropdown = new Dropdown(getElementClosest(this, '.dropdown'));
+    dropdown.items.classList.toggle('dropdown__items_hidden');
+    this.classList.toggle('dropdown__field_actived');
   }
 
   function handleDropdownDecreaseValueClick(this: HTMLElement) {
-    let numberElement: JQuery<HTMLElement>,
-      number: number = 0,
-      newNumber: number = 0,
-      min: number = 0,
-      allNumber: number = 0;
+    const dropNumChange = new DropdownNumberChange(this);
+    const drop = new Dropdown(getElementClosest(this, '.dropdown'));
 
-    numberElement = $(this).closest('.dropdown__number-change-block').find('.dropdown__number');
-    number = parseInt(numberElement.html());
+    let number: number = 0,
+      newNumber: number = 0;
+    const min: number = 0;
+
+    number = dropNumChange.number;
 
     if (number > min) {
       newNumber = number - 1;
-      numberElement.text(newNumber);
+      dropNumChange.numberElement.textContent = newNumber.toString();
     }
 
     if (number == min + 1 || number == min) {
-      $(this).addClass('dropdown__number-change_disable');
+      dropNumChange.numberChange.classList.add('dropdown__number-change_disable');
     }
-    let plus = $(this).closest('.dropdown__items').find('.dropdown__number-change_incremented ');
+    let plus = drop.incrementElements;
+
     for (let i = 0; i < plus.length; i++) {
-      plus.removeClass('dropdown__number-change_disable');
+      plus[i].classList.remove('dropdown__number-change_disable');
     }
 
-    outputInDropdown($(this).closest('.dropdown'));
+    outputInDropdown(drop.it);
 
-    const spans = $(this).closest('.dropdown__items').find('.dropdown__number');
-    for (let i = 0; i < spans.length; i++) {
-      allNumber = allNumber + parseInt(spans[i].innerHTML);
+    let allNumber: number = 0;
+    for (let i = 0; i < drop.numbers.length; i++) {
+      allNumber = allNumber + parseInt(drop.numbers[i].innerHTML);
     }
 
     if (allNumber == 0) {
-      $(this)
-        .closest('.dropdown__items')
-        .find('.dropdown__btn-link_clean')
-        .addClass('dropdown__btn-link_clean_hidden');
+      getElementBySelector(drop.items, '.dropdown__btn-link_clean').classList.add(
+        'dropdown__btn-link_clean_hidden'
+      );
     }
   }
 
   function handleDropdownIncreaseValueClick(this: HTMLElement) {
-    let numberElement: JQuery<HTMLElement>,
-      number: number = 0,
-      newNumber: number = 0,
-      max: number,
-      spans,
-      allNumber: number = 0;
+    const dropNumChange = new DropdownNumberChange(this);
+    const drop = new Dropdown(getElementClosest(this, '.dropdown'));
 
-    if ($(this).closest('.dropdown').attr('name') == 'guests') {
-      max = 10;
-    } else {
-      max = 15;
-    }
+    let max: number;
+    drop.it.getAttribute('name') == 'guests' ? (max = 10) : (max = 15);
 
-    spans = $(this).closest('.dropdown__items').find('.dropdown__number');
-    for (let i = 0; i < spans.length; i++) {
-      allNumber = allNumber + parseInt(spans[i].innerHTML);
+    let allNumber: number = 0;
+    for (let i = 0; i < drop.numbers.length; i++) {
+      allNumber = allNumber + parseInt(drop.numbers[i].innerHTML);
     }
     allNumber++;
 
-    numberElement = $(this).closest('.dropdown__number-change-block').find('.dropdown__number');
-    number = parseInt(numberElement.html());
+    let newNumber: number = 0;
+    const number: number = dropNumChange.number || 0;
+    const numberElement: HTMLElement = dropNumChange.numberElement;
 
     if (allNumber <= max) {
       newNumber = number + 1;
-      numberElement.text(newNumber);
+      numberElement.innerHTML = newNumber.toString();
     }
 
     if (allNumber == max || allNumber - 1 == max) {
-      let plus = $(this).closest('.dropdown__items').find('.dropdown__number-change_incremented ');
-      for (let i = 0; i < plus.length; i++) {
-        plus.addClass('dropdown__number-change_disable');
+      const plusList = drop.incrementElements;
+      for (let i = 0; i < plusList.length; i++) {
+        plusList[i].classList.add('dropdown__number-change_disable');
       }
     } else {
-      let minus = $(this)
-        .closest('.dropdown__number-change-block')
-        .find('.dropdown__number-change_decremented ');
-      if (minus.hasClass('dropdown__number-change_disable')) {
-        minus.removeClass('dropdown__number-change_disable');
+      const minus = dropNumChange.decrementElement;
+      if (minus.classList.contains('dropdown__number-change_disable')) {
+        minus.classList.remove('dropdown__number-change_disable');
       }
     }
 
-    outputInDropdown($(this).closest('.dropdown'));
+    outputInDropdown(drop.it);
 
-    $(this)
-      .closest('.dropdown__items')
-      .find('.dropdown__btn-link_clean')
-      .removeClass('dropdown__btn-link_clean_hidden');
+    getElementBySelector(drop.items, '.dropdown__btn-link_clean').classList.remove(
+      'dropdown__btn-link_clean_hidden'
+    );
   }
 
   function handleDropdownOkClick(this: HTMLElement, event: JQuery.Event) {
     event.preventDefault();
     $(this).closest('.dropdown').find('.dropdown__field').trigger('click');
 
-    outputInDropdown($(this).closest('.dropdown'));
+    outputInDropdown(getElementClosest(this, '.dropdown'));
   }
 
   function handleDropdownCleanClick(this: HTMLElement, event: JQuery.Event) {
@@ -128,84 +173,73 @@ $(function () {
     items.find('.dropdown__number-change_decremented').addClass('dropdown__number-change_disable');
     items.find('.dropdown__number-change_incremented').removeClass('dropdown__number-change_disable');
 
-    outputInDropdown($(this).closest('.dropdown'));
+    outputInDropdown(getElementClosest(this, '.dropdown'));
 
     $(this).closest('.dropdown__btn-link_clean').addClass('dropdown__btn-link_clean_hidden');
   }
 
-  function outputInDropdown(dropdown: JQuery<HTMLElement>) {
+  function outputInDropdown(dropdown: HTMLElement) {
     let str: string = '';
 
-    if (dropdown.attr('name') == 'guests') {
+    if (dropdown.getAttribute('name') == 'guests') {
       str = countQtyGuests(dropdown);
-    } else if (dropdown.attr('name') == 'room') {
+    } else if (dropdown.getAttribute('name') == 'room') {
       str = countQtyComfortRoom(dropdown);
     } else {
       str = 'Тип элемента неопределен';
     }
 
-    dropdown.find('.dropdown__field').html(str);
+    getElementBySelector(dropdown, '.dropdown__field').innerHTML = str;
   }
 
-  function countQtyGuests(dropdown: JQuery<HTMLElement>): string {
-    let lines = dropdown.find('.dropdown__items-line'),
-      str: string = '',
-      sumGuests: number = 0,
-      sumBaby: number = 0,
-      number: HTMLElement,
-      item: HTMLElement,
-      textGuest: string,
-      textBaby: string;
+  function countQtyGuests(dropdown: HTMLElement): string {
+    const drop = new Dropdown(dropdown);
+    let sumGuests: number = 0,
+      sumBaby: number = 0;
 
-    for (let i = 0; i < lines.length; i++) {
-      number = getElementBySelector(lines[i], '.dropdown__number-change-block .dropdown__number');
-      item = getElementBySelector(lines[i], 'h3');
+    for (let i = 0; i < drop.records.length; i++) {
+      const number: number = parseInt(drop.numbers[i].innerHTML);
+      const record: string = drop.records[i].innerHTML;
 
-      if (parseInt(number.innerHTML) > 0 && item.innerHTML != 'младенцы') {
-        sumGuests = sumGuests + parseInt(number.innerHTML);
+      if (number > 0 && record != 'младенцы') {
+        sumGuests = sumGuests + number;
       }
-      if (parseInt(number.innerHTML) > 0 && item.innerHTML == 'младенцы') {
-        sumBaby = sumBaby + parseInt(number.innerHTML);
+      if (number > 0 && record == 'младенцы') {
+        sumBaby = sumBaby + number;
       }
     }
 
-    textGuest = declensionWords('гостя', sumGuests);
-    textBaby = declensionWords('младенца', sumBaby);
+    const textGuest: string = declensionWords('гостя', sumGuests);
+    const textBaby: string = declensionWords('младенца', sumBaby);
+    let str: string = '';
 
-    if (sumGuests == 0) {
-      str = 'Сколько гостей';
-    }
-    if (sumGuests != 0 && sumBaby != 0) {
-      str = `${sumGuests} ${textGuest}, ${sumBaby} ${textBaby}`;
-    }
-    if (sumGuests != 0 && sumBaby == 0) {
-      str = `${sumGuests} ${textGuest}`;
-    }
+    sumGuests == 0 ? (str = 'Сколько гостей') : (str = str);
+    sumGuests != 0 && sumBaby != 0
+      ? (str = `${sumGuests} ${textGuest}, ${sumBaby} ${textBaby}`)
+      : (str = str);
+    sumGuests != 0 && sumBaby == 0 ? (str = `${sumGuests} ${textGuest}`) : (str = str);
 
     return str;
   }
 
-  function countQtyComfortRoom(dropdown: JQuery<HTMLElement>): string {
-    let lines = dropdown.find('.dropdown__items-line'),
-      str: string = '',
-      number: HTMLElement,
-      item: HTMLElement,
+  function countQtyComfortRoom(dropdown: HTMLElement): string {
+    const drop = new Dropdown(dropdown);
+    let str: string = '',
       textItem: string;
 
-    for (let i = 0; i < lines.length; i++) {
-      number = getElementBySelector(lines[i], '.dropdown__number-change-block .dropdown__number');
-      item = getElementBySelector(lines[i], 'h3');
-      textItem = declensionWords(item.innerHTML, parseInt(number.innerHTML));
+    for (let i = 0; i < drop.records.length; i++) {
+      const number: number = parseInt(drop.numbers[i].innerHTML);
+      const record: string = drop.records[i].innerHTML;
 
-      if (parseInt(number.innerHTML) > 0) {
-        str = str + number.innerHTML + ' ' + textItem + ', ';
+      textItem = declensionWords(record, number);
+
+      if (number > 0) {
+        str = str + number + ' ' + textItem + ', ';
       }
     }
 
     str = str.substr(0, str.length - 2);
-    if (str == '') {
-      str = 'Выберите удобства';
-    }
+    str == '' ? (str = 'Выберите удобства') : (str = str);
 
     return str;
   }
