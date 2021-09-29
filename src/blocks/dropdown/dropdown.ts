@@ -267,41 +267,48 @@ $(function () {
   }
 
   function declensionWords(item: string, number: number) {
-    const words: string[][] = [
-      ['спальня', 'спальни', 'спален'],
-      ['кровать', 'кровати', 'кроватей'],
-      ['ванная комната', 'ванные комнаты', 'ванных комнат'],
-      ['гость', 'гостя', 'гостей'],
-      ['младенец', 'младенца', 'младенцев'],
-    ];
-    let word: string = '';
-    const it5to10 =
-      number % 10 == 0 ||
-      number % 10 == 5 ||
-      number % 10 == 6 ||
-      number % 10 == 7 ||
-      number % 10 == 8 ||
-      number % 10 == 9;
-    const it2to4 = number % 10 == 2 || number % 10 == 3 || number % 10 == 4;
+    let itemMas: string[] = [];
 
-    words.forEach((itemMas) => {
-      if (item.toLowerCase() == itemMas[1].toLowerCase()) {
-        if (number <= 20 && number >= 5) {
-          word = itemMas[2];
-        } else {
-          if (it5to10) {
-            word = itemMas[2];
-          }
-          if (number % 10 == 1) {
-            word = itemMas[0];
-          }
-          if (it2to4) {
-            word = itemMas[1];
-          }
-        }
-      }
-    });
+    switch (item.toLowerCase()) {
+      case 'спальни':
+        itemMas = ['спальня', 'спальни', 'спален'];
+        break;
+      case 'кровати':
+        itemMas = ['кровать', 'кровати', 'кроватей'];
+        break;
+      case 'ванные комнаты':
+        itemMas = ['ванная комната', 'ванные комнаты', 'ванных комнат'];
+        break;
+      case 'готя':
+        itemMas = ['гость', 'гостя', 'гостей'];
+        break;
+      case 'младенца':
+        itemMas = ['младенец', 'младенца', 'младенцев'];
+        break;
+      default:
+        itemMas = [
+          'Ошибка: не определена категория',
+          'Ошибка: не определена категория',
+          'Ошибка: не определена категория',
+        ];
+    }
 
-    return word;
+    return declOfNum(number, itemMas);
+  }
+
+  function declOfNum(n: number, textForms: string[]) {
+    // взято https://realadmin.ru/coding/sklonenie-na-javascript.html
+    n = Math.abs(n) % 100;
+    let n1 = n % 10;
+    if (n > 10 && n < 20) {
+      return textForms[2];
+    }
+    if (n1 > 1 && n1 < 5) {
+      return textForms[1];
+    }
+    if (n1 == 1) {
+      return textForms[0];
+    }
+    return textForms[2];
   }
 });
