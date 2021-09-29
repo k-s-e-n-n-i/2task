@@ -97,8 +97,8 @@ $(function () {
     const dropNumChange = new DropdownNumberChange(this);
     const drop = new Dropdown(getElementClosest(this, '.dropdown'));
 
-    let number: number = 0,
-      newNumber: number = 0;
+    let number: number = 0;
+    let newNumber: number = 0;
     const min: number = 0;
 
     number = dropNumChange.number;
@@ -111,8 +111,8 @@ $(function () {
     if (number == min + 1 || number == min) {
       dropNumChange.numberChange.classList.add('dropdown__number-change_disable');
     }
-    let plus = drop.incrementElements;
 
+    const plus = drop.incrementElements;
     for (let i = 0; i < plus.length; i++) {
       plus[i].classList.remove('dropdown__number-change_disable');
     }
@@ -279,7 +279,7 @@ $(function () {
       case 'ванные комнаты':
         itemMas = ['ванная комната', 'ванные комнаты', 'ванных комнат'];
         break;
-      case 'готя':
+      case 'гостя':
         itemMas = ['гость', 'гостя', 'гостей'];
         break;
       case 'младенца':
@@ -299,7 +299,7 @@ $(function () {
   function declOfNum(n: number, textForms: string[]) {
     // взято https://realadmin.ru/coding/sklonenie-na-javascript.html
     n = Math.abs(n) % 100;
-    let n1 = n % 10;
+    const n1 = n % 10;
     if (n > 10 && n < 20) {
       return textForms[2];
     }
