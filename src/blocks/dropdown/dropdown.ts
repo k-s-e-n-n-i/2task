@@ -88,9 +88,12 @@ $(function () {
   $('.js-dropdown__btns .js-link_clean').on('click', handleDropdownCleanClick);
 
   function handleDropwownClick(this: HTMLElement) {
-    const drop = new Dropdown(getElementClosest(this, '.dropdown'));
-    drop.items.classList.toggle('dropdown__items_hidden');
-    this.classList.toggle('dropdown__field_actived');
+    const dropEl = getElementClosest(this, '.dropdown');
+    if (dropEl.getAttribute('name') != 'date') {
+      const drop = new Dropdown(dropEl);
+      drop.items.classList.toggle('dropdown__items_hidden');
+      this.classList.toggle('dropdown__field_actived');
+    }
   }
 
   function handleDropdownDecreaseValueClick(this: HTMLElement) {

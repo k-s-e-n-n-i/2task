@@ -32,13 +32,10 @@ $(function () {
 
           datepickerDropdown
             .closest('.dropdown')
-            .find('.dropdown__dropdown')
+            .find('.dropdown__field')
             .html(date1 + ' - ' + date2);
         } else {
-          datepickerDropdown
-            .closest('.dropdown')
-            .find('.dropdown__dropdown')
-            .html('Выберите диапазон дат...');
+          datepickerDropdown.closest('.dropdown').find('.dropdown__field').html('Выберите диапазон дат...');
         }
       },
     })
@@ -78,7 +75,7 @@ $(function () {
 
   $('.js-ui-kit-cards__calendar-block .js-datepicker-here').datepicker(mainOptions);
 
-  $('.js-dropdown[name=date] .js-dropdown__dropdown').on('click', handleDateDropdownClick);
+  $('.js-dropdown[name=date] .js-dropdown__field').on('click', handleDateDropdownClick);
   $('.js-dropdown-dates .js-dropdown-dates__dropdown').on('click', handleDateDropdownClick);
 
   function handleDateDropdownClick(this: HTMLElement) {
@@ -108,8 +105,7 @@ $(function () {
   function closeCalendar(e: JQuery.ClickEvent) {
     const thisClick = $(e.target);
     const elDropdown =
-      thisClick.hasClass('dropdown__dropdown') == true ||
-      thisClick.hasClass('dropdown-dates__dropdown') == true;
+      thisClick.hasClass('dropdown__field') == true || thisClick.hasClass('dropdown-dates__dropdown') == true;
     const open = $('.js-datepicker-here').hasClass('js-datepicker-here_open');
 
     if (!elDropdown && open) {
@@ -131,7 +127,7 @@ $(function () {
           itCalendarOpen.closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').trigger('click');
         }
         if (itCalendarOpen.closest('.dropdown').length != 0) {
-          itCalendarOpen.closest('.dropdown').find('.dropdown__dropdown').trigger('click');
+          itCalendarOpen.closest('.dropdown').find('.dropdown__field').trigger('click');
         }
       }
     }
@@ -148,7 +144,7 @@ $(function () {
       $(this).closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').trigger('click');
     } else {
       if ($(this).closest('.dropdown').length != 0) {
-        $(this).closest('.dropdown').find('.dropdown__dropdown').trigger('click');
+        $(this).closest('.dropdown').find('.dropdown__field').trigger('click');
       }
     }
   }
