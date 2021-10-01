@@ -3,6 +3,10 @@
     display: none;
   }
 
+  &__item {
+    margin: 6px 0;
+  }
+
   &__additional-text {
     padding-left: 30px;
     color: rgba(31, 32, 65, 0.5);
@@ -46,7 +50,7 @@
     display: inline-block;
     cursor: pointer;
     position: relative;
-    padding: 2px 0 10px 30px;
+    padding: 2px 0 0 30px;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
@@ -74,5 +78,6 @@
     font-size: 14px;
     line-height: 18px;
     white-space: nowrap;
+    padding: 2px 0 10px 30px;
   }
 }
