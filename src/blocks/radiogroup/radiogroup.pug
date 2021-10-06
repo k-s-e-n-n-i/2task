@@ -1,6 +1,5 @@
 mixin radiogroup({ nameGroup, idMainBlock, items = [{ text : 'Кнопка 1', check : 'checked'},{ text : 'Кнопка 2' }] })
   .radiogroup
     each item,index in items
-      .radiogroup__radio-btn
-        input.radiogroup__input(id="rb"+nameGroup + idMainBlock+(index+1) type="radio" name=nameGroup checked= item.check)
-        label.radiogroup__label(for="rb"+nameGroup + idMainBlock+(index+1))= item.text
+      input.radiogroup__input(id="rb"+nameGroup + idMainBlock+(index+1) type="radio" name=nameGroup checked= item.check)
+      label.radiogroup__label(for="rb"+nameGroup + idMainBlock+(index+1))= item.text
