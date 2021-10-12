@@ -1,7 +1,7 @@
 .ui-kit-form-elements {
   display: flex;
   flex-wrap: wrap;
-  padding: 123px 50px 130px 120px;
+  padding: 143px 50px 130px 140px;
   position: relative;
   box-sizing: border-box;
   width: 1440px;
@@ -18,13 +18,14 @@
     justify-content: flex-start;
   }
 
-  &__blk {
-    margin: 20px 20px 59px 20px;
-    width: 320px;
+  &__grid-blocks {
+    display: grid;
+    grid-template-columns: 446px 393px 320px;
+    grid-template-rows: 733px 320px 349px 200px;
   }
 
-  &__blk_1 {
-    margin-right: 106px;
+  &__cell {
+    width: 320px;
   }
 
   &__input-text {
@@ -45,10 +46,6 @@
 
   &__input-text_subscription {
     margin-top: 41px;
-  }
-
-  &__blk_2 {
-    margin-right: 53px;
   }
 
   &__checkbox-list {
@@ -80,10 +77,6 @@
 
   &__rate-btn {
     margin: 0 20px 0 0;
-  }
-
-  &__blk_3 {
-    width: 320px;
   }
 
   &__slider {
@@ -125,51 +118,33 @@
     margin: 16px 0 0 0;
   }
 
-  &__blk_4 {
+  &__cell_with-dropdowns-comfort {
     width: 266px;
-    height: 261px;
-    margin-right: 161px;
-    margin-bottom: 39px;
 
     .ui-kit-form-elements__dropdown {
       margin-bottom: 20px;
     }
   }
 
-  &__blk_5 {
-    margin-right: 52px;
-  }
-
-  &__blk_7 {
+  &__cell_with-checkboxlists {
     width: 265px;
-    margin-right: 161px;
-    margin-bottom: 10px;
   }
 
   &__checkbox-list-expandable {
-    margin: 0 0 50px 0;
-  }
-
-  &__blk_8 {
-    width: 260px;
-    margin-right: 113px;
+    margin-bottom: 50px;
   }
 
   &__list-block {
     margin-top: 14px;
   }
 
-  &__blk_9 {
+  &__cell_with-list {
     width: 260px;
   }
 
-  &__blk_10 {
-    width: 278px;
-    margin-right: 149px;
-    margin-bottom: 39px;
-  }
-
-  &__blk_11 {
+  &__cell_with-comment-block {
+    grid-column-start: 2;
+    grid-column-end: 4;
     width: 755px;
   }
 
