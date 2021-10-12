@@ -18,20 +18,18 @@
   z-index: 0;
   min-width: 99px;
 
+  &:hover {
+    opacity: 0.5;
+  }
+
   &_narrow {
     padding: 9px 20px;
   }
 
-  &_gradient {
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-
-  &_border {
+  &_with-border {
     color: #bc9cff;
     background: transparent;
-    padding: 14px 19px;
+    padding: 14px 18px;
     box-sizing: border-box;
 
     &:after {
@@ -66,6 +64,8 @@
     }
 
     &:hover {
+      opacity: 1;
+
       &:before {
         opacity: 0.5;
       }

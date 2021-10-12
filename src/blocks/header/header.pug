@@ -43,7 +43,7 @@ mixin header({ authorized = false, name = 'Имя', items = [] })
                     a.header__menu-a(href= link)= menuItem
         .header__block-login
           if !authorized
-            .header__btn.header__btn_border
+            .header__button.header__button_with-border
               +button(
                 {
                   height : "narrow",
@@ -52,7 +52,7 @@ mixin header({ authorized = false, name = 'Имя', items = [] })
                   link : './sign-in.html',
                 }
               )
-            .header__btn.header__btn_gradient
+            .header__button
               +button(
                 {
                   height : "narrow",
