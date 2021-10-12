@@ -3,29 +3,31 @@ include ~@Blocks/button/button.pug
 include ~@Blocks/button-with-arrow/button-with-arrow.pug
 
 mixin formSignIn
-  form.form-sign-in(action='./link-stub')
+  .form-sign-in
     h1.form-sign-in__topic Войти
-    .form-sign-in__input-text
-      +inputText(
-        {
-          placeholder : "Email",
-          id : "SignInEmail",
-        }
-      )
-    .form-sign-in__input-text
-      +inputText(
-        {
-          placeholder : "Пароль",
-          id : "SignInPassword",
-        }
-      )
 
-    .form-sign-in__btn
-      +buttonArrow(
-        {
-          text : "Войти",
-        }
-      )
+    form.form-sign-in__date-to-send(action='./link-stub')
+      .form-sign-in__input-text
+        +inputText(
+          {
+            placeholder : "Email",
+            id : "SignInEmail",
+          }
+        )
+      .form-sign-in__input-text
+        +inputText(
+          {
+            placeholder : "Пароль",
+            id : "SignInPassword",
+          }
+        )
+
+      .form-sign-in__btn
+        +buttonArrow(
+          {
+            text : "Войти",
+          }
+        )
 
     .form-sign-in__login
       p.form-sign-in__login-text Нет аккаунта на Toxin?
@@ -33,6 +35,7 @@ mixin formSignIn
         +button(
           {
             text : "Создать",
+            link : './registration.html',
             hasBorder: true,
           }
         )

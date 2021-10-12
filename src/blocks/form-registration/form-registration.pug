@@ -5,85 +5,88 @@ include ~@Blocks/button/button.pug
 include ~@Blocks/button-with-arrow/button-with-arrow.pug
 
 mixin formRegistration({ id })
-  form.form-registration(action='./link-stub')
+  .form-registration
     h1.form-registration__topic Регистрация аккаунта
 
-    .form-registration__input-text
-      +inputText(
-        {
-          placeholder : "Имя",
-          id : "RegName",
-        }
-      )
-    .form-registration__input-text
-      +inputText(
-        {
-          placeholder : "Фамилия",
-          id : "RegSurname",
-        }
-      )
+    form.form-registration__date-to-send(action='./link-stub')
+      .form-registration__input-text
+        +inputText(
+          {
+            placeholder : "Имя",
+            id : "RegName",
+          }
+        )
+      .form-registration__input-text
+        +inputText(
+          {
+            placeholder : "Фамилия",
+            id : "RegSurname",
+          }
+        )
 
-    .form-registration__radiogroup
-      +radiogroup(
-        {
-          nameGroup : "rbGroop"+id,
-          idMainBlock : id,
-          items : [
-            {
-              text : "Мужчина",
-              check : "checked"
-            },
-            {
-              text : "Женщина"
-            }
-          ]
-        }
-      )
+      .form-registration__radiogroup
+        +radiogroup(
+          {
+            nameGroup : "rbGroop"+id,
+            idMainBlock : id,
+            items : [
+              {
+                text : "Мужчина",
+                check : "checked"
+              },
+              {
+                text : "Женщина"
+              }
+            ]
+          }
+        )
 
-    .form-registration__input-text.form-registration__input-text_new-block
-      +inputText(
-        {
-          topic : "Дата рождения",
-          placeholder : "ДД.ММ.ГГГГ",
-          id : "RegDateBirth",
-          name : "date"
-        }
-      )
-    .form-registration__input-text.form-registration__input-text_new-block
-      +inputText(
-        {
-          topic : "данные для входа в сервис",
-          placeholder : "Email",
-          id : "RegEmail",
-        }
-      )
-    .form-registration__input-text
-      +inputText(
-        {
-          placeholder : "Пароль",
-          id : "registration",
-        }
-      )
+      .form-registration__input-text.form-registration__input-text_new-block
+        +inputText(
+          {
+            topic : "Дата рождения",
+            placeholder : "ДД.ММ.ГГГГ",
+            id : "RegDateBirth",
+            name : "date"
+          }
+        )
+      .form-registration__input-text.form-registration__input-text_new-block
+        +inputText(
+          {
+            topic : "данные для входа в сервис",
+            placeholder : "Email",
+            id : "RegEmail",
+          }
+        )
+      .form-registration__input-text
+        +inputText(
+          {
+            placeholder : "Пароль",
+            id : "registration",
+          }
+        )
 
-    .form-registration__toggle-block
-      +toggleBlock(
-        {
-          text : "Получать спецпредложения",
-        }
-      )
+      .form-registration__toggle-block
+        +toggleBlock(
+          {
+            text : "Получать спецпредложения",
+          }
+        )
 
-    .form-registration__btn
-      +buttonArrow(
-        {
-          text : "Зарегистрироваться",
-        }
-      )
+      .form-registration__btn
+        +buttonArrow(
+          {
+            text : "Зарегистрироваться",
+          }
+        )
+
     .form-registration__login
       p.form-registration__login-text Уже есть аккаунт на Toxin
       .form-registration__btn.form-registration__btn_border
         +button(
           {
             text : "Войти",
+            link : './sign-in.html',
             hasBorder: true,
           }
         )
