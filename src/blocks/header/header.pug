@@ -44,22 +44,22 @@ mixin header({ authorized = false, name = 'Имя', items = [] })
         .header__block-login
           if !authorized
             .header__btn.header__btn_border
-              form(action="./sign-in.html")
-                +button(
-                  {
-                    height : "narrow",
-                    text : "Войти",
-                    hasBorder: true,
-                  }
-                )
+              +button(
+                {
+                  height : "narrow",
+                  text : "Войти",
+                  hasBorder: true,
+                  link : './sign-in.html',
+                }
+              )
             .header__btn.header__btn_gradient
-              form(action="./registration.html")
-                +button(
-                  {
-                    height : "narrow",
-                    text : "Зарегистрироваться",
-                  }
-                )
+              +button(
+                {
+                  height : "narrow",
+                  text : "Зарегистрироваться",
+                  link : './registration.html',
+                }
+              )
           else
             .header__login-vertical-line
             p= name

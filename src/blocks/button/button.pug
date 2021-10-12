@@ -1,4 +1,4 @@
-mixin button({ height = 'wide', text = '', hasBorder = false })
+mixin button({ height = 'wide', text = '', link = './link-stub', hasBorder = false })
   - let typeButtonClass = 'button_gradient '
   - let heightClass = ''
 
@@ -10,4 +10,4 @@ mixin button({ height = 'wide', text = '', hasBorder = false })
   if (height == 'narrow') && hasBorder
     - heightClass = 'button_border_narrow '
 
-  button(class='button ' + typeButtonClass + heightClass type='submit')= text
+  button(class='button ' + typeButtonClass + heightClass type='submit' onclick="document.location='" + link + "'")= text
