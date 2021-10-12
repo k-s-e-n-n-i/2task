@@ -23,7 +23,6 @@
   }
 
   &_gradient {
-    &_hover,
     &:hover {
       opacity: 0.5;
     }
@@ -66,7 +65,6 @@
       min-width: auto;
     }
 
-    &_hover,
     &:hover {
       &:before {
         opacity: 0.5;
