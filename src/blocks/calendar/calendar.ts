@@ -19,133 +19,185 @@ $(function () {
     monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
   };
 
-  const datepickerDropdown = $('.js-dropdown .js-datepicker-here').datepicker(
-    $.extend(mainOptions, {
-      onSelect: function onSelect(formattedDate: string) {
-        let dates = formattedDate.split(',');
+  class CalendarDropdown {
+    datepicker: JQuery<HTMLElement>;
+    dropdown: JQuery<HTMLElement>;
+    field: JQuery<HTMLElement>;
 
-        if (dates[0] != undefined && dates[1] != undefined) {
-          let date1 =
-            parseInt(dates[0].substr(0, 2)) + ' ' + mainOptions.monthsShort[parseInt(dates[0].substr(3, 2))];
-          let date2 =
-            parseInt(dates[1].substr(0, 2)) + ' ' + mainOptions.monthsShort[parseInt(dates[1].substr(3, 2))];
-
-          datepickerDropdown
-            .closest('.dropdown')
-            .find('.dropdown__field')
-            .html(date1 + ' - ' + date2);
-        } else {
-          datepickerDropdown.closest('.dropdown').find('.dropdown__field').html('Выберите диапазон дат...');
-        }
-      },
-    })
-  );
-
-  const datepickerDropdownDates = $('.js-dropdown-dates .js-datepicker-here').datepicker(
-    $.extend(mainOptions, {
-      onSelect: function onSelect(formattedDate: string) {
-        let dates = formattedDate.split(',');
-
-        if (dates[0] != undefined && dates[0] != '') {
-          datepickerDropdownDates
-            .closest('.dropdown-dates')
-            .find('.dropdown-dates__dropdown:first')
-            .html(dates[0]);
-        } else {
-          datepickerDropdownDates
-            .closest('.dropdown-dates')
-            .find('.dropdown-dates__dropdown:first')
-            .html('ДД.ММ.ГГГГ');
-        }
-
-        if (dates[1] != undefined && dates[1] != '') {
-          datepickerDropdownDates
-            .closest('.dropdown-dates')
-            .find('.dropdown-dates__dropdown:last')
-            .html(dates[1]);
-        } else {
-          datepickerDropdownDates
-            .closest('.dropdown-dates')
-            .find('.dropdown-dates__dropdown:last')
-            .html('ДД.ММ.ГГГГ');
-        }
-      },
-    })
-  );
-
-  $('.js-ui-kit-cards__calendar-block .js-datepicker-here').datepicker(mainOptions);
-
-  $('.js-dropdown[name=date] .js-dropdown__field').on('click', handleDateDropdownClick);
-  $('.js-dropdown-dates .js-dropdown-dates__dropdown').on('click', handleDateDropdownClick);
-
-  function handleDateDropdownClick(this: HTMLElement) {
-    let calendarBlock;
-
-    if ($(this).closest('.dropdown-dates').length != 0) {
-      calendarBlock = $(this).closest('.dropdown-dates').find('.datepicker-here');
-    } else {
-      if ($(this).closest('.dropdown').length != 0) {
-        calendarBlock = $(this).closest('.dropdown').find('.datepicker-here');
-      }
+    constructor(datepicker: JQuery<HTMLElement>) {
+      this.datepicker = datepicker;
+      this.dropdown = datepicker.closest('.dropdown');
+      this.field = datepicker.closest('.dropdown').find('.dropdown__field');
     }
 
-    if (calendarBlock != undefined) {
-      if (calendarBlock.hasClass('datepicker-here_hide')) {
-        calendarBlock.removeClass('datepicker-here_hide').addClass('js-datepicker-here_open');
-        calendarBlock.show();
-      } else {
-        calendarBlock.addClass('datepicker-here_hide').removeClass('js-datepicker-here_open');
-        calendarBlock.hide();
+    init() {
+      const thisItem = this;
+      this.datepicker.datepicker(
+        $.extend(mainOptions, {
+          onSelect: function onSelect(formattedDate: string) {
+            let dates = formattedDate.split(',');
+
+            if (dates[0] != undefined && dates[1] != undefined) {
+              let date1 =
+                parseInt(dates[0].substr(0, 2)) +
+                ' ' +
+                mainOptions.monthsShort[parseInt(dates[0].substr(3, 2))];
+              let date2 =
+                parseInt(dates[1].substr(0, 2)) +
+                ' ' +
+                mainOptions.monthsShort[parseInt(dates[1].substr(3, 2))];
+
+              thisItem.field.html(date1 + ' - ' + date2);
+            } else {
+              thisItem.field.html('Выберите диапазон дат...');
+            }
+          },
+        })
+      );
+
+      this.datepicker
+        .find('.datepicker--buttons')
+        .append('<span class="datepicker--button js-datepicker--button-ok">Применить</span>');
+
+      const buttonOk = this.datepicker.find('.js-datepicker--button-ok');
+
+      this.field.on('click', () => {
+        this.handleDateDropdownClick();
+      });
+
+      buttonOk.on('click', () => {
+        this.handleDateBtnOkClick();
+      });
+
+      $(document).on('click', (event) => {
+        this.closeCalendar(event);
+      });
+    }
+
+    handleDateDropdownClick() {
+      this.datepicker.toggleClass('datepicker-here_hide js-datepicker-here_open');
+    }
+
+    handleDateBtnOkClick() {
+      this.field.trigger('click');
+    }
+
+    closeCalendar(event: JQuery.ClickEvent) {
+      const clickInField = this.field.find(`.${$(event.target).attr('class')}`).length != 0;
+      const clickToField = $(event.target).hasClass('dropdown__field');
+
+      const clickDatapicker =
+        this.dropdown.find(`.dropdown__calendar .${$(event.target).attr('class')?.split(' ')[0]}`).length !=
+        0;
+
+      if (!(clickInField || clickToField || clickDatapicker)) {
+        this.datepicker.removeClass('js-datepicker-here_open').addClass('datepicker-here_hide');
       }
     }
   }
 
-  $(document).on('click', closeCalendar);
+  class CalendarDropdownDates {
+    datepicker: JQuery<HTMLElement>;
+    dropdownDates: JQuery<HTMLElement>;
+    dropdownFirst: JQuery<HTMLElement>;
+    dropdownLast: JQuery<HTMLElement>;
+    fields: JQuery<HTMLElement>;
 
-  function closeCalendar(e: JQuery.ClickEvent) {
-    const thisClick = $(e.target);
-    const elDropdown =
-      thisClick.hasClass('dropdown__field') == true || thisClick.hasClass('dropdown-dates__dropdown') == true;
-    const open = $('.js-datepicker-here').hasClass('js-datepicker-here_open');
+    constructor(datepicker: JQuery<HTMLElement>) {
+      this.datepicker = datepicker;
+      this.dropdownDates = datepicker.closest('.dropdown-dates');
+      this.dropdownFirst = datepicker.closest('.dropdown-dates').find('.dropdown-dates__dropdown:first');
+      this.dropdownLast = datepicker.closest('.dropdown-dates').find('.dropdown-dates__dropdown:last');
+      this.fields = datepicker.closest('.dropdown-dates').find('.js-dropdown-dates__dropdown');
+    }
 
-    if (!elDropdown && open) {
-      const itCalendar =
-        thisClick.closest('.datepicker').length != 0 || thisClick.hasClass('js-datepicker-here_open');
-      const cell = thisClick.hasClass('datepicker--cell');
-      const navDate =
-        thisClick.hasClass('datepicker--nav-title') ||
-        thisClick.closest('.datepicker--nav-title').length != 0;
-      const nav =
-        thisClick.hasClass('datepicker--nav-action-prev') ||
-        thisClick.hasClass('datepicker--nav-action-next');
-      const itCalendarOpen = $('.js-datepicker-here_open');
+    init() {
+      const thisItem = this;
+      thisItem.datepicker.datepicker(
+        $.extend(mainOptions, {
+          onSelect: function onSelect(formattedDate: string) {
+            let dates = formattedDate.split(',');
 
-      const clickedNotCalendar = !itCalendar && !cell && !nav && !navDate;
+            if (dates[0] != undefined && dates[0] != '') {
+              thisItem.dropdownFirst.html(dates[0]);
+            } else {
+              thisItem.dropdownFirst.html('ДД.ММ.ГГГГ');
+            }
 
-      if (clickedNotCalendar) {
-        if (itCalendarOpen.closest('.dropdown-dates').length != 0) {
-          itCalendarOpen.closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').trigger('click');
-        }
-        if (itCalendarOpen.closest('.dropdown').length != 0) {
-          itCalendarOpen.closest('.dropdown').find('.dropdown__field').trigger('click');
-        }
+            if (dates[1] != undefined && dates[1] != '') {
+              thisItem.dropdownLast.html(dates[1]);
+            } else {
+              thisItem.dropdownLast.html('ДД.ММ.ГГГГ');
+            }
+          },
+        })
+      );
+
+      this.datepicker
+        .find('.datepicker--buttons')
+        .append('<span class="datepicker--button js-datepicker--button-ok">Применить</span>');
+
+      const buttonOk = this.datepicker.find('.js-datepicker--button-ok');
+
+      this.fields.on('click', () => {
+        this.handleDateDropdownClick();
+      });
+
+      buttonOk.on('click', () => {
+        this.handleDateBtnOkClick();
+      });
+
+      $(document).on('click', (event) => {
+        this.closeCalendar(event);
+      });
+    }
+
+    handleDateDropdownClick() {
+      this.datepicker.toggleClass('datepicker-here_hide js-datepicker-here_open');
+    }
+
+    handleDateBtnOkClick() {
+      this.dropdownFirst.trigger('click');
+    }
+
+    closeCalendar(event: JQuery.ClickEvent) {
+      const clickInFields =
+        this.dropdownFirst.find(`.${$(event.target).attr('class')}`).length != 0 ||
+        this.dropdownLast.find(`.${$(event.target).attr('class')}`).length != 0;
+      const clickToField = $(event.target).hasClass('dropdown-dates__dropdown');
+
+      const clickDatapicker =
+        this.dropdownDates.find(`.dropdown-dates__calendar .${$(event.target).attr('class')?.split(' ')[0]}`)
+          .length != 0;
+
+      if (!(clickInFields || clickToField || clickDatapicker)) {
+        this.datepicker.removeClass('js-datepicker-here_open').addClass('datepicker-here_hide');
       }
     }
   }
 
-  $('.datepicker--buttons').append(
-    '<span class="datepicker--button js-datepicker--button-ok">Применить</span>'
-  );
+  class CalendarBlank {
+    datepicker: JQuery<HTMLElement>;
 
-  $('.js-datepicker--button-ok').on('click', handleDateBtnOkClick);
+    constructor(datepicker: JQuery<HTMLElement>) {
+      this.datepicker = datepicker;
+    }
 
-  function handleDateBtnOkClick(this: HTMLElement) {
-    if ($(this).closest('.dropdown-dates').length != 0) {
-      $(this).closest('.dropdown-dates').find('.dropdown-dates__dropdown:first').trigger('click');
-    } else {
-      if ($(this).closest('.dropdown').length != 0) {
-        $(this).closest('.dropdown').find('.dropdown__field').trigger('click');
-      }
+    init() {
+      const thisItem = this;
+      thisItem.datepicker.datepicker(mainOptions);
     }
   }
+
+  $('.js-dropdown .js-datepicker-here').each((i, item) => {
+    new CalendarDropdown($(item)).init();
+  });
+
+  $('.js-dropdown-dates .js-datepicker-here').each((i, item) => {
+    new CalendarDropdownDates($(item)).init();
+  });
+
+  $('.js-ui-kit-cards__calendar-block .js-datepicker-here').each((i, item) => {
+    new CalendarBlank($(item)).init();
+  });
 });
