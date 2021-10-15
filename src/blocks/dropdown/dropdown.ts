@@ -19,53 +19,264 @@ $(function () {
       this.records = this.items.querySelectorAll('.dropdown__record-name');
       this.numbers = this.items.querySelectorAll('.dropdown__number');
     }
+
+    init() {
+      const thisClick = this;
+      thisClick.field.addEventListener('click', () => {
+        thisClick.handleDropwownClick();
+      });
+
+      this.decrementElements.forEach((item, i) => {
+        this.decrementElements[i].addEventListener('click', () => {
+          this.handleDropdownDecreaseValueClick(i, item);
+        });
+      });
+
+      this.incrementElements.forEach((item, i) => {
+        this.incrementElements[i].addEventListener('click', () => {
+          this.handleDropdownIncreaseValueClick(i);
+        });
+      });
+    }
+
+    handleDropwownClick() {
+      this.items.classList.toggle('dropdown__items_hidden');
+      this.field.classList.toggle('dropdown__field_actived');
+    }
+
+    handleDropdownDecreaseValueClick(i: number, numberChange: Element) {
+      let number: number = 0;
+      let newNumber: number = 0;
+      const min: number = 0;
+
+      number = parseInt(this.numbers[i].innerHTML);
+
+      if (number > min) {
+        newNumber = number - 1;
+        this.numbers[i].textContent = newNumber.toString();
+      }
+
+      if (number == min + 1 || number == min) {
+        numberChange.classList.add('dropdown__number-change_disable');
+      }
+
+      const plusList = this.incrementElements;
+      for (let i = 0; i < plusList.length; i++) {
+        plusList[i].classList.remove('dropdown__number-change_disable');
+      }
+
+      this.outputInDropdown();
+    }
+
+    handleDropdownIncreaseValueClick(iRecord: number) {
+      let max: number;
+      this.it.getAttribute('name') == 'guests' ? (max = 10) : (max = 15);
+
+      let allNumber: number = 0;
+      for (let i = 0; i < this.numbers.length; i++) {
+        allNumber = allNumber + parseInt(this.numbers[i].innerHTML);
+      }
+      allNumber++;
+
+      let newNumber: number = 0;
+      const number: number = parseInt(this.numbers[iRecord].innerHTML) || 0;
+      const numberElement: Element = this.numbers[iRecord];
+
+      if (allNumber <= max) {
+        newNumber = number + 1;
+        numberElement.innerHTML = newNumber.toString();
+      }
+
+      if (allNumber == max || allNumber - 1 == max) {
+        const plusList = this.incrementElements;
+        for (let i = 0; i < plusList.length; i++) {
+          plusList[i].classList.add('dropdown__number-change_disable');
+        }
+      } else {
+        const minus = this.decrementElements[iRecord];
+        minus.classList.remove('dropdown__number-change_disable');
+      }
+
+      this.outputInDropdown();
+    }
+
+    outputInDropdown() {
+      let str: string = '';
+
+      switch (this.it.getAttribute('name')) {
+        case 'guests':
+          str = this.countQtyGuests();
+          break;
+        case 'room':
+          str = this.countQtyComfortRoom();
+          break;
+        default:
+          str = 'Тип элемента не определен';
+      }
+
+      this.field.innerHTML = str;
+    }
+
+    countQtyGuests(): string {
+      let sumGuests: number = 0;
+      let sumBaby: number = 0;
+
+      for (let i = 0; i < this.records.length; i++) {
+        const number: number = parseInt(this.numbers[i].innerHTML);
+        const record: string = this.records[i].innerHTML;
+
+        number > 0 && record != 'младенцы' ? (sumGuests = sumGuests + number) : (sumGuests = sumGuests);
+        number > 0 && record == 'младенцы' ? (sumBaby = sumBaby + number) : (sumBaby = sumBaby);
+      }
+
+      const textGuest: string = this.declensionWords('гостя', sumGuests);
+      const textBaby: string = this.declensionWords('младенца', sumBaby);
+      let str: string = '';
+
+      sumGuests == 0 ? (str = 'Сколько гостей') : (str = str);
+      sumGuests != 0 && sumBaby != 0
+        ? (str = `${sumGuests} ${textGuest}, ${sumBaby} ${textBaby}`)
+        : (str = str);
+      sumGuests != 0 && sumBaby == 0 ? (str = `${sumGuests} ${textGuest}`) : (str = str);
+
+      return str;
+    }
+
+    countQtyComfortRoom(): string {
+      let str: string = '';
+      let textItem: string;
+
+      for (let i = 0; i < this.records.length; i++) {
+        const number: number = parseInt(this.numbers[i].innerHTML);
+        const record: string = this.records[i].innerHTML;
+
+        textItem = this.declensionWords(record, number);
+
+        number > 0 ? (str = str + number + ' ' + textItem + ', ') : (str = str);
+      }
+
+      str = str.substr(0, str.length - 2);
+      str == '' ? (str = 'Выберите удобства') : (str = str);
+
+      return str;
+    }
+
+    declensionWords(item: string, number: number) {
+      let itemMas: string[] = [];
+
+      switch (item.toLowerCase()) {
+        case 'спальни':
+          itemMas = ['спальня', 'спальни', 'спален'];
+          break;
+        case 'кровати':
+          itemMas = ['кровать', 'кровати', 'кроватей'];
+          break;
+        case 'ванные комнаты':
+          itemMas = ['ванная комната', 'ванные комнаты', 'ванных комнат'];
+          break;
+        case 'гостя':
+          itemMas = ['гость', 'гостя', 'гостей'];
+          break;
+        case 'младенца':
+          itemMas = ['младенец', 'младенца', 'младенцев'];
+          break;
+        default:
+          itemMas = [
+            'Ошибка: не определена категория',
+            'Ошибка: не определена категория',
+            'Ошибка: не определена категория',
+          ];
+      }
+
+      return this.declOfNum(number, itemMas);
+    }
+
+    declOfNum(n: number, textForms: string[]) {
+      // взято https://realadmin.ru/coding/sklonenie-na-javascript.html
+      n = Math.abs(n) % 100;
+      const n1 = n % 10;
+      if (n > 10 && n < 20) {
+        return textForms[2];
+      }
+      if (n1 > 1 && n1 < 5) {
+        return textForms[1];
+      }
+      if (n1 == 1) {
+        return textForms[0];
+      }
+      return textForms[2];
+    }
   }
 
   class DropdownWithButtons extends Dropdown {
-    clean: HTMLElement;
+    buttonClean: HTMLElement;
+    buttonOk: HTMLElement;
 
     constructor(dropdown: HTMLElement) {
       super(dropdown);
-      this.clean = getElementBySelector(dropdown, '.dropdown__btn-link_clean');
+      this.buttonClean = getElementBySelector(dropdown, '.js-dropdown__btns .dropdown__btn-link_clean');
+      this.buttonOk = getElementBySelector(dropdown, '.js-dropdown__btns .dropdown__btn-link_ok');
+    }
+
+    initWithButtons() {
+      const thisClick = this;
+      thisClick.buttonOk.addEventListener('click', (event) => {
+        thisClick.handleDropdownOkClick(event);
+      });
+
+      thisClick.buttonClean.addEventListener('click', (event) => {
+        thisClick.handleDropdownCleanClick(event);
+      });
+
+      this.decrementElements.forEach((item, i) => {
+        this.decrementElements[i].addEventListener('click', () => {
+          this.handleDropdownWithButtonsDecreaseValueClick();
+        });
+      });
+
+      this.incrementElements.forEach((item, i) => {
+        this.incrementElements[i].addEventListener('click', () => {
+          this.handleDropdownWithButtonsIncreaseValueClick();
+        });
+      });
+    }
+
+    handleDropdownOkClick(event: Event) {
+      event.preventDefault();
+      this.field.click();
+      this.outputInDropdown();
+    }
+
+    handleDropdownCleanClick(event: Event) {
+      event.preventDefault();
+
+      for (let i = 0; i < this.numbers.length; i++) {
+        this.numbers[i].innerHTML = '0';
+        this.decrementElements[i].classList.add('dropdown__number-change_disable');
+        this.incrementElements[i].classList.remove('dropdown__number-change_disable');
+      }
+
+      this.outputInDropdown();
+
+      this.buttonClean.classList.add('dropdown__btn-link_clean_hidden');
+    }
+
+    handleDropdownWithButtonsDecreaseValueClick() {
+      let allNumber: number = 0;
+
+      for (let i = 0; i < this.numbers.length; i++) {
+        allNumber = allNumber + parseInt(this.numbers[i].innerHTML);
+      }
+
+      if (allNumber == 0) {
+        this.buttonClean.classList.add('dropdown__btn-link_clean_hidden');
+      }
+    }
+
+    handleDropdownWithButtonsIncreaseValueClick() {
+      this.buttonClean.classList.remove('dropdown__btn-link_clean_hidden');
     }
   }
-
-  class DropdownNumberChange {
-    numberElement: HTMLElement;
-    number: number;
-    numberChange: HTMLElement;
-    incrementElement: HTMLElement;
-    decrementElement: HTMLElement;
-
-    constructor(numberChange: HTMLElement) {
-      this.numberElement = getElementBySelector(
-        getElementClosest(numberChange, '.dropdown__number-change-block'),
-        '.dropdown__number'
-      );
-      this.number = parseInt(this.numberElement.innerHTML);
-      this.numberChange = numberChange;
-      this.incrementElement = getElementBySelector(
-        getElementClosest(numberChange, '.dropdown__number-change-block'),
-        '.dropdown__number-change_incremented'
-      );
-      this.decrementElement = getElementBySelector(
-        getElementClosest(numberChange, '.dropdown__number-change-block'),
-        '.dropdown__number-change_decremented'
-      );
-    }
-  }
-
-  const getElementClosest = (item: HTMLElement, selector: string): HTMLElement => {
-    const element = item.closest(selector);
-
-    if (!(element instanceof HTMLElement)) {
-      throw new Error(
-        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
-      );
-    }
-
-    return element;
-  };
 
   const getElementBySelector = (lineItem: HTMLElement, selector: string): HTMLElement => {
     const element = lineItem.querySelector(selector);
@@ -79,239 +290,21 @@ $(function () {
     return element;
   };
 
-  $('.js-dropdown__field').on('click', handleDropwownClick);
-
-  $('.js-dropdown__number-change_decremented').on('click', handleDropdownDecreaseValueClick);
-  $('.js-dropdown__number-change_incremented').on('click', handleDropdownIncreaseValueClick);
-
-  $('.js-dropdown__btns .js-link_ok').on('click', handleDropdownOkClick);
-  $('.js-dropdown__btns .js-link_clean').on('click', handleDropdownCleanClick);
-
-  function handleDropwownClick(this: HTMLElement) {
-    const dropEl = getElementClosest(this, '.dropdown');
-    if (dropEl.getAttribute('name') != 'date') {
-      const drop = new Dropdown(dropEl);
-      drop.items.classList.toggle('dropdown__items_hidden');
-      this.classList.toggle('dropdown__field_actived');
-    }
-  }
-
-  function handleDropdownDecreaseValueClick(this: HTMLElement) {
-    const dropNumChange = new DropdownNumberChange(this);
-    const drop = new Dropdown(getElementClosest(this, '.dropdown'));
-
-    let number: number = 0;
-    let newNumber: number = 0;
-    const min: number = 0;
-
-    number = dropNumChange.number;
-
-    if (number > min) {
-      newNumber = number - 1;
-      dropNumChange.numberElement.textContent = newNumber.toString();
-    }
-
-    if (number == min + 1 || number == min) {
-      dropNumChange.numberChange.classList.add('dropdown__number-change_disable');
-    }
-
-    const plus = drop.incrementElements;
-    for (let i = 0; i < plus.length; i++) {
-      plus[i].classList.remove('dropdown__number-change_disable');
-    }
-
-    outputInDropdown(drop);
-
-    let allNumber: number = 0;
-    for (let i = 0; i < drop.numbers.length; i++) {
-      allNumber = allNumber + parseInt(drop.numbers[i].innerHTML);
-    }
-
-    if (allNumber == 0) {
-      if (drop.it.getAttribute('name') == 'guests') {
-        const dropWithButtons = new DropdownWithButtons(drop.it);
-        dropWithButtons.clean.classList.add('dropdown__btn-link_clean_hidden');
-      }
-    }
-  }
-
-  function handleDropdownIncreaseValueClick(this: HTMLElement) {
-    const dropNumChange = new DropdownNumberChange(this);
-    const drop = new Dropdown(getElementClosest(this, '.dropdown'));
-
-    let max: number;
-    drop.it.getAttribute('name') == 'guests' ? (max = 10) : (max = 15);
-
-    let allNumber: number = 0;
-    for (let i = 0; i < drop.numbers.length; i++) {
-      allNumber = allNumber + parseInt(drop.numbers[i].innerHTML);
-    }
-    allNumber++;
-
-    let newNumber: number = 0;
-    const number: number = dropNumChange.number || 0;
-    const numberElement: HTMLElement = dropNumChange.numberElement;
-
-    if (allNumber <= max) {
-      newNumber = number + 1;
-      numberElement.innerHTML = newNumber.toString();
-    }
-
-    if (allNumber == max || allNumber - 1 == max) {
-      const plusList = drop.incrementElements;
-      for (let i = 0; i < plusList.length; i++) {
-        plusList[i].classList.add('dropdown__number-change_disable');
-      }
-    } else {
-      const minus = dropNumChange.decrementElement;
-      if (minus.classList.contains('dropdown__number-change_disable')) {
-        minus.classList.remove('dropdown__number-change_disable');
-      }
-    }
-
-    outputInDropdown(drop);
-
-    if (drop.it.getAttribute('name') == 'guests') {
-      const dropWithButtons = new DropdownWithButtons(drop.it);
-      dropWithButtons.clean.classList.remove('dropdown__btn-link_clean_hidden');
-    }
-  }
-
-  function handleDropdownOkClick(this: HTMLElement, event: JQuery.Event) {
-    const drop = new Dropdown(getElementClosest(this, '.dropdown'));
-
-    event.preventDefault();
-    drop.field.click();
-    outputInDropdown(drop);
-  }
-
-  function handleDropdownCleanClick(this: HTMLElement, event: JQuery.Event) {
-    const drop = new Dropdown(getElementClosest(this, '.dropdown'));
-    event.preventDefault();
-
-    for (let i = 0; i < drop.numbers.length; i++) {
-      drop.numbers[i].innerHTML = '0';
-      drop.decrementElements[i].classList.add('dropdown__number-change_disable');
-      drop.incrementElements[i].classList.remove('dropdown__number-change_disable');
-    }
-
-    outputInDropdown(drop);
-
-    if (drop.it.getAttribute('name') == 'guests') {
-      const dropWithButtons = new DropdownWithButtons(drop.it);
-      dropWithButtons.clean.classList.add('dropdown__btn-link_clean_hidden');
-    }
-  }
-
-  function outputInDropdown(drop: Dropdown) {
-    let str: string = '';
-
-    if (drop.it.getAttribute('name') == 'guests') {
-      str = countQtyGuests(drop.it);
-    } else if (drop.it.getAttribute('name') == 'room') {
-      str = countQtyComfortRoom(drop.it);
-    } else {
-      str = 'Тип элемента неопределен';
-    }
-
-    drop.field.innerHTML = str;
-  }
-
-  function countQtyGuests(dropdown: HTMLElement): string {
-    const drop = new Dropdown(dropdown);
-    let sumGuests: number = 0;
-    let sumBaby: number = 0;
-
-    for (let i = 0; i < drop.records.length; i++) {
-      const number: number = parseInt(drop.numbers[i].innerHTML);
-      const record: string = drop.records[i].innerHTML;
-
-      if (number > 0 && record != 'младенцы') {
-        sumGuests = sumGuests + number;
-      }
-      if (number > 0 && record == 'младенцы') {
-        sumBaby = sumBaby + number;
-      }
-    }
-
-    const textGuest: string = declensionWords('гостя', sumGuests);
-    const textBaby: string = declensionWords('младенца', sumBaby);
-    let str: string = '';
-
-    sumGuests == 0 ? (str = 'Сколько гостей') : (str = str);
-    sumGuests != 0 && sumBaby != 0
-      ? (str = `${sumGuests} ${textGuest}, ${sumBaby} ${textBaby}`)
-      : (str = str);
-    sumGuests != 0 && sumBaby == 0 ? (str = `${sumGuests} ${textGuest}`) : (str = str);
-
-    return str;
-  }
-
-  function countQtyComfortRoom(dropdown: HTMLElement): string {
-    const drop = new Dropdown(dropdown);
-    let str: string = '';
-    let textItem: string;
-
-    for (let i = 0; i < drop.records.length; i++) {
-      const number: number = parseInt(drop.numbers[i].innerHTML);
-      const record: string = drop.records[i].innerHTML;
-
-      textItem = declensionWords(record, number);
-
-      if (number > 0) {
-        str = str + number + ' ' + textItem + ', ';
-      }
-    }
-
-    str = str.substr(0, str.length - 2);
-    str == '' ? (str = 'Выберите удобства') : (str = str);
-
-    return str;
-  }
-
-  function declensionWords(item: string, number: number) {
-    let itemMas: string[] = [];
-
-    switch (item.toLowerCase()) {
-      case 'спальни':
-        itemMas = ['спальня', 'спальни', 'спален'];
+  $('.js-dropdown').each((i, item) => {
+    switch (item.getAttribute('name')) {
+      case 'date':
         break;
-      case 'кровати':
-        itemMas = ['кровать', 'кровати', 'кроватей'];
-        break;
-      case 'ванные комнаты':
-        itemMas = ['ванная комната', 'ванные комнаты', 'ванных комнат'];
-        break;
-      case 'гостя':
-        itemMas = ['гость', 'гостя', 'гостей'];
-        break;
-      case 'младенца':
-        itemMas = ['младенец', 'младенца', 'младенцев'];
-        break;
-      default:
-        itemMas = [
-          'Ошибка: не определена категория',
-          'Ошибка: не определена категория',
-          'Ошибка: не определена категория',
-        ];
+      default: {
+        if (item.querySelector('.dropdown__btns')) {
+          const itemDrop = new DropdownWithButtons(item);
+          itemDrop.init();
+          itemDrop.initWithButtons();
+          break;
+        } else {
+          new Dropdown(item).init();
+          break;
+        }
+      }
     }
-
-    return declOfNum(number, itemMas);
-  }
-
-  function declOfNum(n: number, textForms: string[]) {
-    // взято https://realadmin.ru/coding/sklonenie-na-javascript.html
-    n = Math.abs(n) % 100;
-    const n1 = n % 10;
-    if (n > 10 && n < 20) {
-      return textForms[2];
-    }
-    if (n1 > 1 && n1 < 5) {
-      return textForms[1];
-    }
-    if (n1 == 1) {
-      return textForms[0];
-    }
-    return textForms[2];
-  }
+  });
 });
