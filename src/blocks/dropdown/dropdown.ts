@@ -8,6 +8,7 @@ $(function () {
     lines: NodeListOf<Element>;
     records: NodeListOf<Element>;
     numbers: NodeListOf<Element>;
+    hasButtons: boolean;
     buttonClean: HTMLElement | null = null;
     buttonOk: HTMLElement | null = null;
 
@@ -21,6 +22,7 @@ $(function () {
       this.records = this.items.querySelectorAll('.dropdown__record-name');
       this.numbers = this.items.querySelectorAll('.dropdown__number');
 
+      this.hasButtons = hasButtons;
       if (hasButtons) {
         this.buttonClean = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_clean');
         this.buttonOk = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_ok');
@@ -43,6 +45,10 @@ $(function () {
           this.handleDropdownIncreaseValueClick(i);
         });
       });
+
+      if (this.hasButtons == null) {
+        return;
+      }
 
       this.buttonOk?.addEventListener('click', (event) => {
         this.handleDropdownOkClick(event);
@@ -81,7 +87,7 @@ $(function () {
 
       this.outputInDropdown();
 
-      if (this.buttonClean) {
+      if (this.hasButtons) {
         let allNumber: number = 0;
 
         for (let i = 0; i < this.numbers.length; i++) {
@@ -89,7 +95,7 @@ $(function () {
         }
 
         if (allNumber == 0) {
-          this.buttonClean.classList.add('dropdown__btn-link_clean_hidden');
+          this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
         }
       }
     }
@@ -125,8 +131,8 @@ $(function () {
 
       this.outputInDropdown();
 
-      if (this.buttonClean) {
-        this.buttonClean.classList.remove('dropdown__btn-link_clean_hidden');
+      if (this.hasButtons) {
+        this.buttonClean?.classList.remove('dropdown__btn-link_clean_hidden');
       }
     }
 
