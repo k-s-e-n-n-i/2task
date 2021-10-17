@@ -27,29 +27,26 @@ $(function () {
     constructor(datepicker: JQuery<HTMLElement>) {
       this.datepicker = datepicker;
       this.dropdown = datepicker.closest('.dropdown');
-      this.field = datepicker.closest('.dropdown').find('.dropdown__field');
+      this.field = this.dropdown.find('.dropdown__field');
     }
 
     init() {
-      const thisItem = this;
       this.datepicker.datepicker(
         $.extend(mainOptions, {
-          onSelect: function onSelect(formattedDate: string) {
-            let dates = formattedDate.split(',');
+          onSelect: (formattedDate: string) => {
+            const dates = formattedDate.split(',');
 
             if (dates[0] != undefined && dates[1] != undefined) {
-              let date1 =
-                parseInt(dates[0].substr(0, 2)) +
-                ' ' +
-                mainOptions.monthsShort[parseInt(dates[0].substr(3, 2))];
-              let date2 =
-                parseInt(dates[1].substr(0, 2)) +
-                ' ' +
-                mainOptions.monthsShort[parseInt(dates[1].substr(3, 2))];
+              const date1 = `${parseInt(dates[0].substr(0, 2))} ${
+                mainOptions.monthsShort[parseInt(dates[0].substr(3, 2))]
+              }`;
+              const date2 = `${parseInt(dates[1].substr(0, 2))} ${
+                mainOptions.monthsShort[parseInt(dates[1].substr(3, 2))]
+              }`;
 
-              thisItem.field.html(date1 + ' - ' + date2);
+              this.field.html(`${date1} - ${date2}`);
             } else {
-              thisItem.field.html('Выберите диапазон дат...');
+              this.field.html('Выберите диапазон дат...');
             }
           },
         })
@@ -83,16 +80,27 @@ $(function () {
     }
 
     closeCalendar(event: JQuery.ClickEvent) {
-      const clickInField = this.field.find(`.${$(event.target).attr('class')}`).length != 0;
+      const eventElementClass = $(event.target).attr('class');
+      const clickInField = this.field.find(`.${eventElementClass}`).length != 0;
+
+      if (clickInField) {
+        return;
+      }
+
       const clickToField = $(event.target).hasClass('dropdown__field');
 
-      const clickDatapicker =
-        this.dropdown.find(`.dropdown__calendar .${$(event.target).attr('class')?.split(' ')[0]}`).length !=
-        0;
-
-      if (!(clickInField || clickToField || clickDatapicker)) {
-        this.datepicker.removeClass('js-datepicker-here_open').addClass('datepicker-here_hide');
+      if (clickToField) {
+        return;
       }
+
+      const eventFirstClass = eventElementClass?.split(' ')[0];
+      const clickInDatepicker = this.dropdown.find(`.dropdown__calendar .${eventFirstClass}`).length != 0;
+
+      if (clickInDatepicker) {
+        return;
+      }
+
+      this.datepicker.removeClass('js-datepicker-here_open').addClass('datepicker-here_hide');
     }
   }
 
@@ -106,28 +114,27 @@ $(function () {
     constructor(datepicker: JQuery<HTMLElement>) {
       this.datepicker = datepicker;
       this.dropdownDates = datepicker.closest('.dropdown-dates');
-      this.dropdownFirst = datepicker.closest('.dropdown-dates').find('.dropdown-dates__dropdown:first');
-      this.dropdownLast = datepicker.closest('.dropdown-dates').find('.dropdown-dates__dropdown:last');
-      this.fields = datepicker.closest('.dropdown-dates').find('.js-dropdown-dates__dropdown');
+      this.fields = this.dropdownDates.find('.js-dropdown-dates__dropdown');
+      this.dropdownFirst = this.fields.first();
+      this.dropdownLast = this.fields.last();
     }
 
     init() {
-      const thisItem = this;
-      thisItem.datepicker.datepicker(
+      this.datepicker.datepicker(
         $.extend(mainOptions, {
-          onSelect: function onSelect(formattedDate: string) {
-            let dates = formattedDate.split(',');
+          onSelect: (formattedDate: string) => {
+            const dates = formattedDate.split(',');
 
             if (dates[0] != undefined && dates[0] != '') {
-              thisItem.dropdownFirst.html(dates[0]);
+              this.dropdownFirst.html(dates[0]);
             } else {
-              thisItem.dropdownFirst.html('ДД.ММ.ГГГГ');
+              this.dropdownFirst.html('ДД.ММ.ГГГГ');
             }
 
             if (dates[1] != undefined && dates[1] != '') {
-              thisItem.dropdownLast.html(dates[1]);
+              this.dropdownLast.html(dates[1]);
             } else {
-              thisItem.dropdownLast.html('ДД.ММ.ГГГГ');
+              this.dropdownLast.html('ДД.ММ.ГГГГ');
             }
           },
         })
@@ -161,18 +168,30 @@ $(function () {
     }
 
     closeCalendar(event: JQuery.ClickEvent) {
+      const eventElementClass = $(event.target).attr('class');
       const clickInFields =
-        this.dropdownFirst.find(`.${$(event.target).attr('class')}`).length != 0 ||
-        this.dropdownLast.find(`.${$(event.target).attr('class')}`).length != 0;
+        this.dropdownFirst.find(`.${eventElementClass}`).length != 0 ||
+        this.dropdownLast.find(`.${eventElementClass}`).length != 0;
+
+      if (clickInFields) {
+        return;
+      }
+
       const clickToField = $(event.target).hasClass('dropdown-dates__dropdown');
 
-      const clickDatapicker =
-        this.dropdownDates.find(`.dropdown-dates__calendar .${$(event.target).attr('class')?.split(' ')[0]}`)
-          .length != 0;
-
-      if (!(clickInFields || clickToField || clickDatapicker)) {
-        this.datepicker.removeClass('js-datepicker-here_open').addClass('datepicker-here_hide');
+      if (clickToField) {
+        return;
       }
+
+      const eventFirstClass = eventElementClass?.split(' ')[0];
+      const clickInDatepicker =
+        this.dropdownDates.find(`.dropdown-dates__calendar .${eventFirstClass}`).length != 0;
+
+      if (clickInDatepicker) {
+        return;
+      }
+
+      this.datepicker.removeClass('js-datepicker-here_open').addClass('datepicker-here_hide');
     }
   }
 
@@ -184,8 +203,7 @@ $(function () {
     }
 
     init() {
-      const thisItem = this;
-      thisItem.datepicker.datepicker(mainOptions);
+      this.datepicker.datepicker(mainOptions);
     }
   }
 
