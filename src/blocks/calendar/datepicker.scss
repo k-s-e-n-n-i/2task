@@ -1,3 +1,4 @@
+@use "sass:math";
 @import 'datepicker-config';
 
 .datepickers-container {
@@ -84,7 +85,7 @@
   }
 }
 
-$pointerHalfSize: calc(math.div($datepickerPointerSize, 2) - 1);
+$pointerHalfSize: calc(math.div($datepickerPointerSize, 2) - 1px);
 
 .datepicker--pointer {
   position: absolute;
