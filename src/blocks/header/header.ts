@@ -1,37 +1,103 @@
-$(function () {
-  $('.js-header__menu-mobile').on('click', handleMenuMobileClick);
+class ItemMenuWithSubmenu {
+  itemMenu: Element;
+  submenu: HTMLElement;
 
-  function handleMenuMobileClick(this: HTMLElement) {
-    let menu = $(this).closest('.header__content-container').find('.header__links');
-    let menuIcon = $(this);
-
-    menu.toggleClass('header__links_mobile header__links_hidden');
-    menuIcon.toggleClass('header__menu-mobile_cross');
+  constructor(itemMenu: Element) {
+    this.itemMenu = itemMenu;
+    this.submenu = this.getElementBySelector(itemMenu, '.header__submenu');
   }
 
-  $('.js-header__menu-li_expand').on('click', handleSubmenuClick);
+  init(): void {
+    this.itemMenu.addEventListener('click', (event) => {
+      this.handleItemMenuWithSubmenuClick(event);
+    });
+  }
 
-  function handleSubmenuClick(e: JQuery.ClickEvent) {
-    const itSubmenu = $(e.target).hasClass('header__submenu') || $(e.target).hasClass('header__submenu-li');
-
-    if (itSubmenu) {
-      e.stopPropagation();
-    } else {
-      $(e.target)
-        .closest('.header__menu-li_expand')
-        .find('.header__submenu')
-        .toggleClass('header__submenu_open');
+  handleItemMenuWithSubmenuClick(event: Event) {
+    if (
+      event.target instanceof Node &&
+      (event.target == this.submenu || this.submenu.contains(event.target))
+    ) {
+      return;
     }
+    this.submenu.classList.toggle('header__submenu_open');
   }
 
-  $(document).on('click', closeHeaderSubmenu);
-
-  function closeHeaderSubmenu(e: JQuery.ClickEvent) {
-    const elementsSubmenu = $(e.target).closest('.header__menu-li_expand').length != 0;
-    const openSubmenu = $('.header__submenu').hasClass('header__submenu_open');
-
-    if (!elementsSubmenu && openSubmenu) {
-      $('.header__submenu').removeClass('header__submenu_open');
+  hideSubmenu(event: Event): void {
+    if (
+      event.target instanceof Node &&
+      (event.target == this.itemMenu || this.itemMenu.contains(event.target))
+    ) {
+      return;
     }
+    this.submenu.classList.remove('header__submenu_open');
   }
+
+  getElementBySelector(lineItem: Element, selector: string): HTMLElement {
+    const element = lineItem.querySelector(selector);
+
+    if (!(element instanceof HTMLElement)) {
+      throw new Error(
+        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
+      );
+    }
+
+    return element;
+  }
+}
+
+const arrayMenus: ItemMenuWithSubmenu[] = [];
+document.querySelectorAll('.js-header__menu-li_expand').forEach((item) => {
+  if (item.querySelector('.header__submenu')) {
+    const menu = new ItemMenuWithSubmenu(item);
+    arrayMenus.push(menu);
+    menu.init();
+  }
+});
+
+document.addEventListener('click', (event: MouseEvent) => {
+  arrayMenus.forEach((item: ItemMenuWithSubmenu) => {
+    item.hideSubmenu(event);
+  });
+});
+
+class MenuMobile {
+  header: Element;
+  menuMobile: HTMLElement;
+  headerNav: HTMLElement;
+
+  constructor(header: Element) {
+    this.header = header;
+    this.menuMobile = this.getElementBySelector(header, '.js-header__menu-mobile');
+    this.headerNav = this.getElementBySelector(header, '.header__links');
+  }
+
+  init() {
+    this.menuMobile.addEventListener('click', () => {
+      this.handleMenuMobileClick();
+    });
+  }
+
+  handleMenuMobileClick() {
+    this.headerNav.classList.toggle('header__links_mobile');
+    this.headerNav.classList.toggle('header__links_hidden');
+    this.menuMobile.classList.toggle('header__menu-mobile_cross');
+  }
+
+  getElementBySelector(lineItem: Element, selector: string): HTMLElement {
+    const element = lineItem.querySelector(selector);
+
+    if (!(element instanceof HTMLElement)) {
+      throw new Error(
+        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
+      );
+    }
+
+    return element;
+  }
+}
+
+document.querySelectorAll('.header').forEach((item) => {
+  console.log(item);
+  new MenuMobile(item).init();
 });

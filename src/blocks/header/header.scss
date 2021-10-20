@@ -120,6 +120,8 @@
   }
 
   &__menu-li_expand {
+    cursor: pointer;
+
     &:after {
       content: '';
       display: inline-block;
@@ -128,7 +130,6 @@
       background-image: url('@Blocks/header/img/expand-more-header.svg');
       background-repeat: no-repeat;
       background-position: 50% 90%;
-      cursor: pointer;
     }
 
     > .header__menu-a {
@@ -193,7 +194,7 @@
     }
   }
 
-  &__btn {
+  &__button {
     margin-left: 20px;
 
     @media screen and (max-width: 960px) {
