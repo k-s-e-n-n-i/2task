@@ -2,6 +2,8 @@ import { Options } from '../../modules/plugin.slider/plugin.slider';
 import { Model } from '../../modules/plugin.slider/plugin.slider.model';
 import { View } from '../../modules/plugin.slider/plugin.slider.view';
 
+import { getElementBySelector } from '../../blocks/layout/layout';
+
 interface Coords {
   top: number;
   left: number;
@@ -341,7 +343,7 @@ export class Controller {
 
     if (this.settings == 'on') {
       thisClick = contr.getElementInputBySelector(contr.thisSlider, '.slider-config .checkbox-list__input');
-      settingsBlock = contr.getElementBySelector(contr.thisSlider, '.slider-config .slider-config__block');
+      settingsBlock = getElementBySelector(contr.thisSlider, '.slider-config .slider-config__block');
 
       thisClick.onclick = function () {
         if (thisClick.checked == true) {
@@ -518,12 +520,12 @@ export class Controller {
         blocksScale[i].remove();
       }
 
-      const rangeLeftElem: HTMLElement = contr.getElementBySelector(
+      const rangeLeftElem: HTMLElement = getElementBySelector(
         thisSlider,
         '.range-slider#idSlider' + id + ' .range-slider__left'
       );
       rangeLeftElem.style.opacity = '1';
-      const rangeElem: HTMLElement = contr.getElementBySelector(
+      const rangeElem: HTMLElement = getElementBySelector(
         thisSlider,
         '.range-slider#idSlider' + id + ' .range-slider__range'
       );
@@ -665,17 +667,6 @@ export class Controller {
     configRadioElemScale.checked = true;
   }
 
-  getElementBySelector(item: HTMLElement, selector: string): HTMLElement {
-    const element = item.querySelector(selector);
-
-    if (!(element instanceof HTMLElement)) {
-      throw new Error(
-        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
-      );
-    }
-
-    return element;
-  }
   getElementInputBySelector(item: HTMLElement, selector: string): HTMLInputElement {
     const element = item.querySelector(selector);
 

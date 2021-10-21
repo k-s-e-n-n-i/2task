@@ -1,3 +1,5 @@
+import { getElementBySelector } from '../layout/layout';
+
 class Dropdown {
   it: Element;
   field: HTMLElement;
@@ -262,18 +264,6 @@ class Dropdown {
     this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
   }
 }
-
-const getElementBySelector = (lineItem: Element, selector: string): HTMLElement => {
-  const element = lineItem.querySelector(selector);
-
-  if (!(element instanceof HTMLElement)) {
-    throw new Error(
-      `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
-    );
-  }
-
-  return element;
-};
 
 document.querySelectorAll('.js-dropdown').forEach((item: Element) => {
   switch (item.getAttribute('name')) {

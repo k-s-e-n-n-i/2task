@@ -1,6 +1,8 @@
 import { Options } from '../../modules/plugin.slider/plugin.slider';
 import { Model } from '../../modules/plugin.slider/plugin.slider.model';
 
+import { getElementBySelector } from '../../blocks/layout/layout';
+
 export class View {
   model: Model;
   dataSlider: object;
@@ -106,7 +108,7 @@ export class View {
             <div class="range-slider__scale-line" id="scale${posDivision}"></div>
             </div>`;
           this.model.slider.insertAdjacentHTML('beforeend', blockScale);
-          elemScaleLine = this.getElementBySelector(
+          elemScaleLine = getElementBySelector(
             this.model.slider,
             '.range-slider__scale-line#scale' + posDivision
           );
@@ -196,18 +198,6 @@ export class View {
       default:
         break;
     }
-  }
-
-  getElementBySelector(item: HTMLElement, selector: string): HTMLElement {
-    const element = item.querySelector(selector);
-
-    if (!(element instanceof HTMLElement)) {
-      throw new Error(
-        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
-      );
-    }
-
-    return element;
   }
 
   getElementClosest(item: HTMLElement, selector: string): HTMLElement {

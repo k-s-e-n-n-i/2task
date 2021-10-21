@@ -1,10 +1,12 @@
+import { getElementBySelector } from '../layout/layout';
+
 class ItemMenuWithSubmenu {
   itemMenu: Element;
   submenu: HTMLElement;
 
   constructor(itemMenu: Element) {
     this.itemMenu = itemMenu;
-    this.submenu = this.getElementBySelector(itemMenu, '.header__submenu');
+    this.submenu = getElementBySelector(itemMenu, '.header__submenu');
   }
 
   init(): void {
@@ -32,18 +34,6 @@ class ItemMenuWithSubmenu {
     }
     this.submenu.classList.remove('header__submenu_open');
   }
-
-  getElementBySelector(lineItem: Element, selector: string): HTMLElement {
-    const element = lineItem.querySelector(selector);
-
-    if (!(element instanceof HTMLElement)) {
-      throw new Error(
-        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
-      );
-    }
-
-    return element;
-  }
 }
 
 const arrayMenus: ItemMenuWithSubmenu[] = [];
@@ -68,8 +58,8 @@ class MenuMobile {
 
   constructor(header: Element) {
     this.header = header;
-    this.menuMobile = this.getElementBySelector(header, '.js-header__menu-mobile');
-    this.headerNav = this.getElementBySelector(header, '.header__links');
+    this.menuMobile = getElementBySelector(header, '.js-header__menu-mobile');
+    this.headerNav = getElementBySelector(header, '.header__links');
   }
 
   init() {
@@ -83,21 +73,8 @@ class MenuMobile {
     this.headerNav.classList.toggle('header__links_hidden');
     this.menuMobile.classList.toggle('header__menu-mobile_cross');
   }
-
-  getElementBySelector(lineItem: Element, selector: string): HTMLElement {
-    const element = lineItem.querySelector(selector);
-
-    if (!(element instanceof HTMLElement)) {
-      throw new Error(
-        `The element of selector "${selector}" is not a HTMLElement. Make sure a <div id="${selector}""> element is present in the document.`
-      );
-    }
-
-    return element;
-  }
 }
 
 document.querySelectorAll('.header').forEach((item) => {
-  console.log(item);
   new MenuMobile(item).init();
 });
