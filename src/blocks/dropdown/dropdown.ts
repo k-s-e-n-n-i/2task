@@ -263,18 +263,40 @@ class Dropdown {
 
     this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
   }
+
+  hideDropdown(event: Event): void {
+    if (
+      event.target instanceof Node &&
+      (event.target == this.field || event.target == this.items || this.items.contains(event.target))
+    ) {
+      return;
+    }
+    this.field.classList.remove('dropdown__field_actived');
+    this.items.classList.add('dropdown__items_hidden');
+  }
 }
 
+const arrayDropdown: Dropdown[] = [];
 document.querySelectorAll('.js-dropdown').forEach((item: Element) => {
   switch (item.getAttribute('name')) {
     case 'date':
       break;
     default: {
       if (item.querySelector('.dropdown__btns')) {
-        new Dropdown(item, true).init();
+        const dropdown = new Dropdown(item, true);
+        arrayDropdown.push(dropdown);
+        dropdown.init();
       } else {
-        new Dropdown(item, false).init();
+        const dropdown = new Dropdown(item, false);
+        arrayDropdown.push(dropdown);
+        dropdown.init();
       }
     }
   }
+});
+
+document.addEventListener('click', (event: Event) => {
+  arrayDropdown.forEach((item: Dropdown) => {
+    item.hideDropdown(event);
+  });
 });
