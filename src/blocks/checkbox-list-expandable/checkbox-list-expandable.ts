@@ -1,16 +1,28 @@
-$(function () {
-  $('.js-checkbox-list-expandable__topic-block').on('click', handleCheckboxlistClick);
+import { getElementBySelector } from '../layout/layout';
 
-  function handleCheckboxlistClick(this: HTMLElement) {
-    const block_list = $(this).closest('.checkbox-list-expandable').find('.checkbox-list'),
-      expend = $(this).closest('.checkbox-list-expandable').find('.checkbox-list-expandable__expand');
+class CheckboxList {
+  topic: HTMLElement;
+  checkboxList: HTMLElement;
+  expend: HTMLElement;
 
-    if (block_list.hasClass('checkbox-list_hide')) {
-      block_list.removeClass('checkbox-list_hide');
-      expend.addClass('checkbox-list-expandable__expand_open');
-    } else {
-      block_list.addClass('checkbox-list_hide');
-      expend.removeClass('checkbox-list-expandable__expand_open');
-    }
+  constructor(checkbox: Element) {
+    this.topic = getElementBySelector(checkbox, '.js-checkbox-list-expandable__topic-block');
+    this.checkboxList = getElementBySelector(checkbox, '.checkbox-list');
+    this.expend = getElementBySelector(checkbox, '.checkbox-list-expandable__expand');
   }
+
+  init() {
+    this.topic.addEventListener('click', () => {
+      this.handleCheckboxlistClick();
+    });
+  }
+
+  handleCheckboxlistClick() {
+    this.checkboxList.classList.toggle('checkbox-list_hide');
+    this.expend.classList.toggle('checkbox-list-expandable__expand_open');
+  }
+}
+
+document.querySelectorAll('.checkbox-list-expandable').forEach((item: Element) => {
+  new CheckboxList(item).init();
 });
