@@ -1,65 +1,62 @@
+import { getElementBySelector } from '../layout/layout';
+
 $(function () {
-  const kol: number = $('.js-card-room .js-card-room__image').length;
-  for (let i: number = 1; i <= kol; i++) {
-    $('.js-card-room')
-      .find('#' + i + '.card-room__image')
-      .addClass('images' + i);
-  }
+  class CardRoom {
+    cardRoom: HTMLElement;
+    left: HTMLElement;
+    right: HTMLElement;
+    paginationItems: NodeListOf<HTMLElement>;
+    images: NodeListOf<HTMLElement>;
+    numberImages: number;
 
-  $('.js-card-room__arrow-left').on('click', handlePaginationClick);
-  $('.js-card-room__arrow-right').on('click', handlePaginationClick);
+    constructor(cardRoom: HTMLElement) {
+      this.cardRoom = cardRoom;
+      this.left = getElementBySelector(this.cardRoom, '.js-card-room__arrow-left');
+      this.right = getElementBySelector(this.cardRoom, '.js-card-room__arrow-right');
 
-  function handlePaginationClick(this: HTMLElement) {
-    const paginationBlock: JQuery<HTMLElement> = $(this)
-      .closest('.card-room__image-block')
-      .find('.card-room__slider-pagination');
-    const paginationActive: JQuery<HTMLElement> = paginationBlock.find(
-      '.card-room__slider-pagination-item_active'
-    );
-    const imageActive: JQuery<HTMLElement> = $(this)
-      .closest('.card-room__image-block')
-      .find('.card-room__image_active');
-    const numFirstImgStr: string =
-      $(this).closest('.card-room__image-block').find('.card-room__image:first').attr('id') || '0';
+      this.paginationItems = this.cardRoom.querySelectorAll('.card-room__slider-pagination-item');
+      this.images = this.cardRoom.querySelectorAll('.card-room__image');
 
-    let num: number;
-    const paginationActiveId = paginationActive.attr('id');
-    paginationActiveId ? (num = parseInt(paginationActiveId.substr(-1))) : (num = 0);
-
-    const numFirstImg: number = parseInt(numFirstImgStr);
-    let numImg: number = parseInt(imageActive.attr('id') || '0');
-
-    if ($(this).hasClass('card-room__arrow-left')) {
-      num = num - 1;
-      if (num == 0) {
-        num = 4;
-      }
-
-      numImg = numImg - 1;
-      if (numImg <= numFirstImg) {
-        numImg = numFirstImg + 3;
-      }
+      this.numberImages = this.images.length;
     }
 
-    if ($(this).hasClass('card-room__arrow-right')) {
-      num = num + 1;
-      if (num == 5) {
-        num = 1;
-      }
-
-      numImg = numImg + 1;
-      if (numImg == numFirstImg + 4) {
-        numImg = numFirstImg;
-      }
+    init() {
+      this.left.addEventListener('click', () => {
+        this.handlePaginationClick(this.left);
+      });
+      this.right.addEventListener('click', () => {
+        this.handlePaginationClick(this.right);
+      });
     }
 
-    paginationActive.removeClass('card-room__slider-pagination-item_active');
-    paginationBlock.find(`#pag${num}`).addClass('card-room__slider-pagination-item_active');
+    handlePaginationClick(elementClick: HTMLElement) {
+      let num: number = 0;
 
-    imageActive.removeClass('card-room__image_active');
-    imageActive
-      .closest('.card-room__image-block')
-      .find(`.card-room__image#${numImg}`)
-      .addClass('card-room__image_active');
+      this.paginationItems.forEach((item, i) => {
+        if (item.classList.contains('card-room__slider-pagination-item_active')) {
+          num = i;
+          item.classList.remove('card-room__slider-pagination-item_active');
+        }
+      });
+      this.images[num].classList.remove('card-room__image_active');
+
+      if (elementClick.classList.contains('card-room__arrow-left')) {
+        num - 1 < 0 ? (num = this.numberImages) : (num = num);
+
+        this.paginationItems[num - 1].classList.add('card-room__slider-pagination-item_active');
+        this.images[num - 1].classList.add('card-room__image_active');
+      }
+
+      if (elementClick.classList.contains('card-room__arrow-right')) {
+        num + 1 >= this.numberImages ? (num = -1) : (num = num);
+
+        this.paginationItems[num + 1].classList.add('card-room__slider-pagination-item_active');
+        this.images[num + 1].classList.add('card-room__image_active');
+      }
+    }
   }
+
+  $('.js-card-room').each((i, item) => {
+    new CardRoom(item).init();
+  });
 });

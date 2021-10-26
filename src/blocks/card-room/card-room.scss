@@ -28,12 +28,6 @@
         display: flex;
       }
     }
-
-    @for $i from 1 to 13 {
-      &.images#{$i} {
-        background-image: url('img/image#{$i}.png');
-      }
-    }
   }
 
   &__image_active {
