@@ -1,10 +1,11 @@
-mixin chart({ qty = 0 })
+mixin chart({ number = 0, id = '' })
   .chart
-    p.chart__qty= qty
-    p.chart__text голосов
+    .chart__rating
+      p.chart__rating-number= number
+      p.chart__rating-text голосов
 
-  .chart-canvas
-    canvas(id="oilChart")
-  .chart-legend.js-chart-legend
-    ul.chart-legend__list.js-chart-legend__list
+    .chart__canvas
+      canvas
+    .chart__legend.js-chart__legend
+      ul.chart__legend-list.js-chart__legend-list
 

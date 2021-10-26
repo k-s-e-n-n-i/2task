@@ -1,63 +1,66 @@
 .chart {
-  color: #bc9cff;
-  font-weight: 700;
-  position: absolute;
-  top: 82px;
-  left: 30px;
-  user-select: none;
+  position: relative;
 
-  &__qty {
-    font-size: 25px;
+  &__rating {
+    color: #bc9cff;
     font-weight: 700;
-    text-align: center;
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    user-select: none;
+
+    &-number {
+      font-size: 25px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    &-text {
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.4px;
+    }
   }
 
-  &__text {
-    font-weight: 600;
-    text-align: center;
-    letter-spacing: 0.4px;
-  }
-}
-
-.chart-canvas {
-  width: 253px;
-  transform: translate(-66px);
-  margin-top: 20px;
-}
-
-.chart-legend {
-  position: absolute;
-  left: 151px;
-  top: 71px;
-
-  @media screen and (max-width: 400px) {
-    position: relative;
-    left: 0;
-    top: 20px;
+  &__canvas {
+    width: 253px;
+    transform: translate(-66px);
   }
 
-  &__list {
-    margin: 0;
-    padding: 0;
-  }
+  &__legend {
+    position: absolute;
+    left: 151px;
+    top: 29px;
 
-  &__item {
-    position: relative;
-    display: flex;
-    margin: 0;
-    color: rgba(31, 32, 65, 0.75);
-  }
+    @media screen and (max-width: 400px) {
+      position: relative;
+      left: 0;
+      top: 20px;
+    }
 
-  &__item-text {
-    width: 160px;
-    margin: 0;
-  }
+    &-list {
+      margin: 0;
+      padding: 0;
+    }
 
-  &__point {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 7px 4px 7px 0;
-    background: rgba(31, 32, 65, 0.25);
+    &-item {
+      position: relative;
+      display: flex;
+      margin: 0;
+      color: rgba(31, 32, 65, 0.75);
+    }
+
+    &-item-text {
+      width: 160px;
+      margin: 0;
+    }
+
+    &-point {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 7px 4px 7px 0;
+      background: rgba(31, 32, 65, 0.25);
+    }
   }
 }

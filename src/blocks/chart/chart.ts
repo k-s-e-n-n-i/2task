@@ -1,83 +1,115 @@
+import { getElementBySelector } from '../layout/layout';
 import * as Chart from 'chart.js';
 
-const getCanvasElementById = (id: string): HTMLCanvasElement => {
-  const canvas = document.getElementById(id);
+const getCanvasElement = (item: Element, selector: string): HTMLCanvasElement => {
+  const canvas = item.querySelector(selector);
 
   if (!(canvas instanceof HTMLCanvasElement)) {
     throw new Error(
-      `The element of id "${id}" is not a HTMLCanvasElement. Make sure a <canvas id="${id}""> element is present in the document.`
+      `The element of id "${selector}" is not a HTMLCanvasElement. Make sure a <canvas id="${selector}""> element is present in the document.`
     );
   }
 
   return canvas;
 };
 
-if (document.getElementById('oilChart')) {
-  let oilCanvas: HTMLCanvasElement = getCanvasElementById('oilChart');
+class ChartBlock {
+  chart: Element;
+  canvas: HTMLCanvasElement;
+  labels: string[];
+  backgroundColor: string[];
+  legendList: HTMLElement;
 
-  let settings = {
-    labels: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
-    backgroundColor: ['#FFE39C', '#6FCF97', '#BC9CFF', '#909090'],
-  };
+  constructor(chart: Element, labels: string[], backgroundColor: string[]) {
+    this.chart = chart;
+    this.canvas = getCanvasElement(chart, 'canvas');
+    this.labels = labels;
+    this.backgroundColor = backgroundColor;
 
-  new Chart(oilCanvas, {
-    type: 'doughnut',
-    data: {
-      labels: settings.labels,
-      datasets: [
-        {
-          data: [130, 65, 65, 0],
-          backgroundColor: settings.backgroundColor,
-          borderColor: 'white',
-          borderWidth: 2,
+    this.legendList = getElementBySelector(this.chart, '.chart__legend-list');
+  }
+
+  init() {
+    new Chart(this.canvas, {
+      type: 'doughnut',
+      data: {
+        labels: this.labels,
+        datasets: [
+          {
+            data: [130, 65, 65, 0],
+            backgroundColor: this.backgroundColor,
+            borderColor: 'white',
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        rotation: 0.5 * Math.PI,
+        cutoutPercentage: 90,
+        circumference: 2 * Math.PI,
+
+        legend: {
+          display: false,
+          position: 'right',
+          align: 'end',
+          labels: {
+            usePointStyle: true,
+            boxWidth: 9,
+            padding: 10,
+            fontFamily: 'Arial',
+            fontSize: 14,
+          },
         },
-      ],
-    },
-    options: {
-      rotation: 0.5 * Math.PI,
-      cutoutPercentage: 90,
-      circumference: 2 * Math.PI,
-
-      legend: {
-        display: false,
-        position: 'right',
-        align: 'end',
-        labels: {
-          usePointStyle: true,
-          boxWidth: 9,
-          padding: 10,
-          fontFamily: 'Arial',
-          fontSize: 14,
+        animation: {
+          animateRotate: false,
+          animateScale: false,
+        },
+        tooltips: {
+          enabled: false,
         },
       },
-      animation: {
-        animateRotate: false,
-        animateScale: false,
-      },
-      tooltips: {
-        enabled: false,
-      },
-    },
-  });
-
-  Chart.defaults.global.defaultFontSize = 18;
-
-  settings.labels.length ? outputLegend(settings.labels, settings.backgroundColor) : false;
-}
-
-function outputLegend(items: string[], colors: string[]) {
-  items.forEach(function (item) {
-    let liLegend = `<li class="chart-legend__item"><div class="chart-legend__point"></div><p class='chart-legend__item-text'>${item}</p></li>`;
-
-    $('.js-chart-legend .js-chart-legend__list').append(liLegend);
-  });
-
-  if (colors.length != 0) {
-    items.forEach(function (item, i) {
-      $(`.js-chart-legend .chart-legend__item:nth-child(${i + 1}) .chart-legend__point`).css(
-        'background-color',
-        colors[i]
-      );
     });
+
+    Chart.defaults.global.defaultFontSize = 18;
+
+    this.labels.length != 0 ? this.outputLegend() : false;
+  }
+
+  outputLegend() {
+    this.labels.forEach((item) => {
+      const liLegend = document.createElement('li');
+      liLegend.className = 'chart__legend-item';
+
+      const divPoint = document.createElement('div');
+      divPoint.className = 'chart__legend-point';
+
+      const text = document.createElement('p');
+      text.className = 'chart__legend-item-text';
+      text.innerHTML = `${item}`;
+
+      liLegend.append(divPoint);
+      liLegend.append(text);
+
+      this.legendList.append(liLegend);
+    });
+
+    if (this.backgroundColor.length != 0) {
+      this.labels.forEach((item, i) => {
+        const point = getElementBySelector(
+          this.legendList,
+          `.chart__legend-item:nth-child(${i + 1}) .chart__legend-point`
+        );
+        point.style.backgroundColor = this.backgroundColor[i];
+      });
+    }
   }
 }
+
+let settings = {
+  labels: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
+  backgroundColor: ['#FFE39C', '#6FCF97', '#BC9CFF', '#909090'],
+};
+
+document.querySelectorAll('.chart').forEach((item: Element) => {
+  new ChartBlock(item, settings.labels, settings.backgroundColor).init();
+});
