@@ -2,7 +2,6 @@ include ~@Blocks/link/link.pug
 include ~@Blocks/dropdown/dropdown.pug
 include ~@Blocks/dropdown-dates/dropdown-dates.pug
 include ~@Blocks/button/button.pug
-include ~@Blocks/button-to-send/button-to-send.pug
 
 mixin formReservation({ number = 0, priceFrom = 0, priceFinal = 0 })
   form.form-reservation(action='./link-stub')
@@ -85,7 +84,12 @@ mixin formReservation({ number = 0, priceFrom = 0, priceFinal = 0 })
       h2.form-reservation__total-price= priceFinal +"₽"
 
     .form-reservation__button
-      +buttonToSend({ text : 'Забронировать' })
+      +button(
+        {
+          text : 'Забронировать',
+          typeButton : 'submit',
+        }
+      )
 
 
 mixin formReservation__blockPrices({ items = [{}] })

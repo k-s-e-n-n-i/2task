@@ -1,6 +1,5 @@
 include ~@Blocks/input-text/input-text.pug
 include ~@Blocks/button/button.pug
-include ~@Blocks/button-to-send/button-to-send.pug
 
 mixin formSignIn
   .form-sign-in
@@ -23,7 +22,12 @@ mixin formSignIn
         )
 
       .form-sign-in__button
-        +buttonToSend({ text : 'Войти' })
+        +button(
+          {
+            text : 'Войти',
+            typeButton : 'submit',
+          }
+        )
 
     .form-sign-in__login
       p.form-sign-in__login-text Нет аккаунта на Toxin?

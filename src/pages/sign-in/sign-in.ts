@@ -1,5 +1,4 @@
 import '@Blocks/button/button.scss';
-import '@Blocks/button-to-send/button-to-send.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/link/link.scss';
 import '@Blocks/topic-label/topic-label.scss';

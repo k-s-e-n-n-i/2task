@@ -2,7 +2,6 @@ include ~@Blocks/input-text/input-text.pug
 include ~@Blocks/radiogroup/radiogroup.pug
 include ~@Blocks/toggle-block/toggle-block.pug
 include ~@Blocks/button/button.pug
-include ~@Blocks/button-to-send/button-to-send.pug
 
 mixin formRegistration({ id })
   .form-registration
@@ -74,7 +73,12 @@ mixin formRegistration({ id })
         )
 
       .form-registration__button
-        +buttonToSend({ text : 'Зарегистрироваться' })
+        +button(
+          { 
+            text : 'Зарегистрироваться',
+            typeButton : 'submit',
+          }
+        )
 
     .form-registration__login
       p.form-registration__login-text Уже есть аккаунт на Toxin

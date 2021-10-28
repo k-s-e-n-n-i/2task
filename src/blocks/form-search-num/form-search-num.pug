@@ -1,7 +1,6 @@
 include ~@Blocks/dropdown/dropdown.pug
 include ~@Blocks/dropdown-dates/dropdown-dates.pug
 include ~@Blocks/button/button.pug
-include ~@Blocks/button-to-send/button-to-send.pug
 
 mixin formSearchNum
   form.form-search-num(action='./link-stub')
@@ -42,4 +41,9 @@ mixin formSearchNum
     )
 
     .form-search-num__button
-      +buttonToSend({ text : 'подобрать номер' })
+      +button(
+        {
+          text : 'подобрать номер',
+          typeButton : 'submit',
+        }
+      )

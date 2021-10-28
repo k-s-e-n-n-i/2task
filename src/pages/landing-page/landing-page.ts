@@ -1,5 +1,4 @@
 import '@Blocks/button/button.scss';
-import '@Blocks/button-to-send/button-to-send.scss';
 import '@Blocks/dropdown/dropdown.scss';
 import '@Blocks/dropdown/dropdown';
 import '@Blocks/dropdown-dates/dropdown-dates.scss';

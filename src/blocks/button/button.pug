@@ -1,5 +1,6 @@
-mixin button({ height = 'wide', text = '', link = './link-stub', hasBorder = false })
+mixin button({ height = 'wide', text = '', link = '', typeButton = 'button', id='', hasBorder = false })
   - let buttonWithBorderClass = ''
+  - let buttonWithArrowClass = ''
   - let heightClass = ''
 
   if hasBorder
@@ -10,4 +11,10 @@ mixin button({ height = 'wide', text = '', link = './link-stub', hasBorder = fal
   if (height == 'narrow') && hasBorder
     - heightClass = 'button_with-border_narrow '
 
-  button(class='button ' + buttonWithBorderClass + heightClass type='submit' onclick="document.location='" + link + "'")= text
+  if (typeButton == 'submit') && (link == '')
+    - buttonWithArrowClass = 'button_with-arrow'
+
+  if link != ''
+    button(class='button ' + buttonWithBorderClass + heightClass type=typeButton onclick="document.location='" + link + "'")= text
+  else
+    button(class='button ' + buttonWithBorderClass + heightClass + buttonWithArrowClass type=typeButton id=id)= text

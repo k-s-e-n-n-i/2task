@@ -1,5 +1,4 @@
 import '@Blocks/button/button.scss';
-import '@Blocks/button-to-send/button-to-send.scss';
 import '@Blocks/checkbox-list/checkbox-list.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable';

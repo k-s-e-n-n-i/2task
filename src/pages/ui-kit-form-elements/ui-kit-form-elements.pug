@@ -3,7 +3,6 @@ include ~@Blocks/input-text/input-text.pug
 include ~@Blocks/dropdown/dropdown.pug
 include ~@Blocks/dropdown-dates/dropdown-dates.pug
 include ~@Blocks/button/button.pug
-include ~@Blocks/button-to-send/button-to-send.pug
 include ~@Blocks/checkbox-list/checkbox-list.pug
 include ~@Blocks/checkbox-list-expandable/checkbox-list-expandable.pug
 include ~@Blocks/radiogroup/radiogroup.pug
@@ -267,7 +266,12 @@ block content
             )
 
         form.ui-kit-form-elements__button.ui-kit-form-elements__button_arrow(action='./link-stub')
-          +buttonToSend({ text : 'перейти к оплате' })
+          +button(
+            {
+              text : 'перейти к оплате',
+              typeButton : 'submit',
+            }
+          )
 
         h3 pagination
         .ui-kit-form-elements__pagination
