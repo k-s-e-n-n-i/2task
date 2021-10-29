@@ -1,234 +1,325 @@
 import { getElementBySelector } from '../layout/layout';
 
-class Dropdown {
-  it: Element;
-  field: HTMLElement;
-  items: HTMLElement;
-  incrementElements: NodeListOf<Element>;
-  decrementElements: NodeListOf<Element>;
-  lines: NodeListOf<Element>;
-  records: NodeListOf<Element>;
-  numbers: NodeListOf<Element>;
+export interface Options {
+  dropdown: HTMLElement | null;
   hasButtons: boolean;
+  valueDefault: string;
+  maxSum: number;
+  wordsFormSum: string[];
+  countSum: boolean;
+  items: Items[];
+}
+export interface Items {
+  text: string;
+  number: number;
+  countAdditionally: boolean;
+  wordsForm: string[];
+}
+
+class Dropdown {
+  opt: Options;
+  it: HTMLElement | null = null;
+  field: HTMLElement | null = null;
+  items: HTMLElement | null = null;
+  incrementElements: NodeListOf<Element> | null = null;
+  decrementElements: NodeListOf<Element> | null = null;
+  numbersElements: NodeListOf<Element> | null = null;
+  records: NodeListOf<Element> | null = null;
+  numbers: number[] = []; //NodeListOf<Element> | null = null;
+  hasButtons: boolean = false;
   buttonClean: HTMLElement | null = null;
   buttonOk: HTMLElement | null = null;
+  fieldValues: string[] = [];
 
-  constructor(dropdown: Element, hasButtons: boolean) {
-    this.it = dropdown;
-    this.field = getElementBySelector(dropdown, '.dropdown__field');
-    this.items = getElementBySelector(dropdown, '.dropdown__items');
-    this.incrementElements = this.items.querySelectorAll('.dropdown__number-change_incremented');
-    this.decrementElements = this.items.querySelectorAll('.dropdown__number-change_decremented');
-    this.lines = this.items.querySelectorAll('.dropdown__items-line');
-    this.records = this.items.querySelectorAll('.dropdown__record-name');
-    this.numbers = this.items.querySelectorAll('.dropdown__number');
-
-    this.hasButtons = hasButtons;
-    if (hasButtons) {
-      this.buttonClean = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_clean');
-      this.buttonOk = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_ok');
-    }
+  constructor(options: Options) {
+    this.opt = options;
+    this.init();
   }
 
   init() {
-    this.field.addEventListener('click', () => {
-      this.handleDropwownClick();
-    });
+    this.setValuesToField();
+    this.initStartStateNumbers();
 
-    this.decrementElements.forEach((item, i) => {
-      this.decrementElements[i].addEventListener('click', () => {
-        this.handleDropdownDecreaseValueClick(i, item);
+    if (this.it != null) {
+      this.field?.addEventListener('click', () => {
+        this.handleDropwownClick();
       });
-    });
 
-    this.incrementElements.forEach((item, i) => {
-      this.incrementElements[i].addEventListener('click', () => {
-        this.handleDropdownIncreaseValueClick(i);
+      this.decrementElements?.forEach((item, i) => {
+        this.decrementElements
+          ? this.decrementElements[i].addEventListener('click', () => {
+              this.handleDropdownDecreaseValueClick(i);
+            })
+          : 0;
       });
-    });
 
-    if (this.hasButtons == null) {
-      return;
+      this.incrementElements?.forEach((item, i) => {
+        this.incrementElements
+          ? this.incrementElements[i].addEventListener('click', () => {
+              this.handleDropdownIncreaseValueClick(i);
+            })
+          : 0;
+      });
+
+      if (this.hasButtons == null) {
+        return;
+      }
+
+      this.buttonOk?.addEventListener('click', (event) => {
+        this.handleDropdownOkClick(event);
+      });
+
+      this.buttonClean?.addEventListener('click', (event) => {
+        this.handleDropdownCleanClick(event);
+      });
     }
-
-    this.buttonOk?.addEventListener('click', (event) => {
-      this.handleDropdownOkClick(event);
-    });
-
-    this.buttonClean?.addEventListener('click', (event) => {
-      this.handleDropdownCleanClick(event);
-    });
   }
 
-  handleDropwownClick() {
-    this.items.classList.toggle('dropdown__items_hidden');
-    this.field.classList.toggle('dropdown__field_actived');
+  setValuesToField() {
+    if (this.opt.dropdown != null) {
+      this.it = this.opt.dropdown;
+      this.field = getElementBySelector(this.it, '.dropdown__field');
+      this.items = getElementBySelector(this.it, '.dropdown__items');
+
+      let items: Items[] = [];
+      for (let key in this.opt.items) {
+        items[key] = this.opt.items[key];
+      }
+
+      const numbers: number[] = [];
+      items.reverse().forEach((item) => {
+        this.prependItems(item);
+        numbers.unshift(item.number);
+      });
+      this.numbers = numbers;
+
+      this.incrementElements = this.items.querySelectorAll('.dropdown__number-change_incremented');
+      this.decrementElements = this.items.querySelectorAll('.dropdown__number-change_decremented');
+      this.records = this.items.querySelectorAll('.dropdown__record-name');
+      this.numbersElements = this.items.querySelectorAll('.dropdown__number');
+
+      this.hasButtons = this.opt.hasButtons;
+      if (this.hasButtons) {
+        this.buttonClean = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_clean');
+        this.buttonOk = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_ok');
+      }
+    }
   }
 
-  handleDropdownDecreaseValueClick(i: number, numberChange: Element) {
-    let number: number = 0;
-    let newNumber: number = 0;
-    const min: number = 0;
+  prependItems(item: Items) {
+    const line = document.createElement('div');
+    line.className = 'dropdown__items-line';
 
-    number = parseInt(this.numbers[i].innerHTML);
+    const name = document.createElement('h3');
+    name.className = 'dropdown__record-name';
+    name.innerHTML = `${item.text}`;
 
-    if (number > min) {
-      newNumber = number - 1;
-      this.numbers[i].textContent = newNumber.toString();
-    }
+    const changeBlock = document.createElement('div');
+    changeBlock.className = 'dropdown__number-change-block';
 
-    if (number == min + 1 || number == min) {
-      numberChange.classList.add('dropdown__number-change_disable');
-    }
+    const minus = document.createElement('div');
+    minus.className =
+      'dropdown__number-change dropdown__number-change_decremented js-dropdown__number-change_decremented';
+    minus.innerHTML = '-';
 
-    const plusList = this.incrementElements;
-    for (let i = 0; i < plusList.length; i++) {
-      plusList[i].classList.remove('dropdown__number-change_disable');
+    const number = document.createElement('span');
+    number.className = 'dropdown__number';
+    number.innerHTML = `${item.number}`;
+
+    const plus = document.createElement('div');
+    plus.className =
+      'dropdown__number-change dropdown__number-change_incremented js-dropdown__number-change_incremented';
+    plus.innerHTML = '+';
+
+    changeBlock.append(minus);
+    changeBlock.append(number);
+    changeBlock.append(plus);
+
+    line.append(name);
+    line.append(changeBlock);
+
+    this.items?.prepend(line);
+  }
+
+  initStartStateNumbers() {
+    let sum = 0;
+    let sumMoreThenMax = false;
+    this.numbers.forEach((num, i) => {
+      if (num == 0) {
+        this.decrementElements
+          ? this.decrementElements[i].classList.add('dropdown__number-change_disable')
+          : 0;
+      }
+
+      if (sumMoreThenMax) {
+        this.numbers[i] = 0;
+      }
+      if (sum + num > this.opt.maxSum && !sumMoreThenMax) {
+        this.numbers[i] = num - (sum + num - this.opt.maxSum);
+        sumMoreThenMax = true;
+      }
+
+      !sumMoreThenMax ? (sum = sum + num) : (sum = this.opt.maxSum);
+    });
+    this.updateNumbers();
+
+    if (sum == this.opt.maxSum) {
+      this.incrementElements?.forEach((item) => {
+        item.classList.add('dropdown__number-change_disable');
+      });
     }
 
     this.outputInDropdown();
 
+    if (this.countSumAll() == 0) {
+      this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
+    }
+  }
+
+  updateNumbers() {
+    this.numbers.forEach((num, i) => {
+      this.numbersElements ? (this.numbersElements[i].innerHTML = num.toString()) : 0;
+    });
+  }
+
+  handleDropwownClick() {
+    this.items?.classList.toggle('dropdown__items_hidden');
+    this.field?.classList.toggle('dropdown__field_actived');
+  }
+
+  handleDropdownDecreaseValueClick(iNumber: number) {
+    let number: number = this.numbers[iNumber];
+
+    const min: number = 0;
+
+    if (number > min) {
+      number--;
+    }
+
+    if (number == min) {
+      this.decrementElements
+        ? this.decrementElements[iNumber].classList.add('dropdown__number-change_disable')
+        : 0;
+    }
+
+    this.incrementElements?.forEach((item) => {
+      item.classList.remove('dropdown__number-change_disable');
+    });
+
+    this.numbers[iNumber] = number;
+    this.updateNumbers();
+
     if (this.hasButtons) {
       let allNumber: number = 0;
 
-      for (let i = 0; i < this.numbers.length; i++) {
-        allNumber = allNumber + parseInt(this.numbers[i].innerHTML);
-      }
+      this.numbers.forEach((item, i) => {
+        allNumber = allNumber + this.numbers[i];
+      });
 
       if (allNumber == 0) {
         this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
       }
     }
+
+    this.outputInDropdown();
   }
 
-  handleDropdownIncreaseValueClick(iRecord: number) {
-    let max: number;
-    this.it.getAttribute('name') == 'guests' ? (max = 10) : (max = 15);
+  handleDropdownIncreaseValueClick(iNumber: number) {
+    let max: number = this.opt.maxSum;
 
     let allNumber: number = 0;
-    for (let i = 0; i < this.numbers.length; i++) {
-      allNumber = allNumber + parseInt(this.numbers[i].innerHTML);
-    }
+    this.numbers.forEach((item, i) => {
+      allNumber = allNumber + this.numbers[i];
+    });
     allNumber++;
 
+    if (allNumber == max + 1) {
+      return;
+    }
+
     let newNumber: number = 0;
-    const number: number = parseInt(this.numbers[iRecord].innerHTML) || 0;
-    const numberElement: Element = this.numbers[iRecord];
+    const number: number = this.numbers[iNumber];
 
     if (allNumber <= max) {
       newNumber = number + 1;
-      numberElement.innerHTML = newNumber.toString();
+      this.numbersElements ? (this.numbersElements[iNumber].innerHTML = newNumber.toString()) : 0;
+
+      this.decrementElements
+        ? this.decrementElements[iNumber].classList.remove('dropdown__number-change_disable')
+        : 0;
     }
 
-    if (allNumber == max || allNumber - 1 == max) {
-      const plusList = this.incrementElements;
-      for (let i = 0; i < plusList.length; i++) {
-        plusList[i].classList.add('dropdown__number-change_disable');
-      }
-    } else {
-      const minus = this.decrementElements[iRecord];
-      minus.classList.remove('dropdown__number-change_disable');
+    if (allNumber == max) {
+      this.incrementElements?.forEach((item, i) => {
+        this.incrementElements
+          ? this.incrementElements[i].classList.add('dropdown__number-change_disable')
+          : 0;
+      });
     }
 
-    this.outputInDropdown();
+    this.numbers[iNumber] = newNumber;
+    this.updateNumbers();
 
     if (this.hasButtons) {
       this.buttonClean?.classList.remove('dropdown__btn-link_clean_hidden');
     }
+
+    this.outputInDropdown();
   }
 
   outputInDropdown() {
-    let str: string = '';
+    let sumAll: number = this.countSumAll();
+    let wordAll: string = '';
+    let outputPhrase = '';
 
-    switch (this.it.getAttribute('name')) {
-      case 'guests':
-        str = this.countQtyGuests();
-        break;
-      case 'room':
-        str = this.countQtyComfortRoom();
-        break;
-      default:
-        str = 'Тип элемента не определен';
+    if (this.opt.countSum) {
+      wordAll = this.declOfNum(sumAll, this.opt.wordsFormSum);
+      this.fieldValues[0] = `${sumAll} ${wordAll}`;
+
+      this.opt.items.forEach((item, i) => {
+        if (item.countAdditionally) {
+          this.fieldValues[i + 1] = this.setPhraseForField(i);
+        }
+      });
+    } else {
+      this.opt.items.forEach((item, i) => {
+        this.fieldValues[i] = this.setPhraseForField(i);
+      });
     }
 
-    this.field.innerHTML = str;
-  }
+    this.fieldValues.forEach((item, i) => {
+      if (item != '') {
+        outputPhrase == '' ? (outputPhrase = `${item}`) : (outputPhrase = `${outputPhrase}, ${item}`);
+      }
+    });
 
-  countQtyGuests(): string {
-    let sumGuests: number = 0;
-    let sumBaby: number = 0;
-
-    for (let i = 0; i < this.records.length; i++) {
-      const number: number = parseInt(this.numbers[i].innerHTML);
-      const record: string = this.records[i].innerHTML;
-
-      number > 0 && record != 'младенцы' ? (sumGuests = sumGuests + number) : (sumGuests = sumGuests);
-      number > 0 && record == 'младенцы' ? (sumBaby = sumBaby + number) : (sumBaby = sumBaby);
+    if (this.field != null) {
+      sumAll != 0
+        ? (this.field.innerHTML = `${outputPhrase}`)
+        : (this.field.innerHTML = this.opt.valueDefault);
     }
-
-    const textGuest: string = this.declensionWords('гостя', sumGuests);
-    const textBaby: string = this.declensionWords('младенца', sumBaby);
-    let str: string = '';
-
-    sumGuests == 0 ? (str = 'Сколько гостей') : (str = str);
-    sumGuests != 0 && sumBaby != 0
-      ? (str = `${sumGuests} ${textGuest}, ${sumBaby} ${textBaby}`)
-      : (str = str);
-    sumGuests != 0 && sumBaby == 0 ? (str = `${sumGuests} ${textGuest}`) : (str = str);
-
-    return str;
   }
 
-  countQtyComfortRoom(): string {
-    let str: string = '';
-    let textItem: string;
+  countSumAll(): number {
+    let sum: number = 0;
+    this.numbers.forEach((num) => {
+      sum = sum + num;
+    });
 
-    for (let i = 0; i < this.records.length; i++) {
-      const number: number = parseInt(this.numbers[i].innerHTML);
-      const record: string = this.records[i].innerHTML;
-
-      textItem = this.declensionWords(record, number);
-
-      number > 0 ? (str = `${str}${number} ${textItem}, `) : (str = str);
-    }
-
-    str = str.substr(0, str.length - 2);
-    str == '' ? (str = 'Выберите удобства') : (str = str);
-
-    return str;
+    return sum;
   }
 
-  declensionWords(item: string, number: number) {
-    let itemMas: string[] = [];
+  setPhraseForField(iNumber: number) {
+    let phrase = '';
+    const number: number = this.numbers[iNumber];
+    const word: string = this.declOfNum(number, this.opt.items[iNumber].wordsForm);
 
-    switch (item.toLowerCase()) {
-      case 'спальни':
-        itemMas = ['спальня', 'спальни', 'спален'];
-        break;
-      case 'кровати':
-        itemMas = ['кровать', 'кровати', 'кроватей'];
-        break;
-      case 'ванные комнаты':
-        itemMas = ['ванная комната', 'ванные комнаты', 'ванных комнат'];
-        break;
-      case 'гостя':
-        itemMas = ['гость', 'гостя', 'гостей'];
-        break;
-      case 'младенца':
-        itemMas = ['младенец', 'младенца', 'младенцев'];
-        break;
-      default:
-        itemMas = [
-          'Ошибка: не определена категория',
-          'Ошибка: не определена категория',
-          'Ошибка: не определена категория',
-        ];
-    }
+    number != 0 ? (phrase = `${number} ${word}`) : (phrase = '');
 
-    return this.declOfNum(number, itemMas);
+    return phrase;
   }
 
-  declOfNum(n: number, textForms: string[]) {
+  declOfNum(n: number, textForms: string[]): string {
     // взято https://realadmin.ru/coding/sklonenie-na-javascript.html
     n = Math.abs(n) % 100;
     const n1 = n % 10;
@@ -246,25 +337,25 @@ class Dropdown {
 
   handleDropdownOkClick(event: Event) {
     event.preventDefault();
-    this.field.click();
-    this.outputInDropdown();
+    this.field?.click();
   }
 
   handleDropdownCleanClick(event: Event) {
     event.preventDefault();
+    this.numbers.forEach((item, i) => {
+      this.numbers[i] = 0;
+      this.decrementElements ? this.decrementElements[i].classList.add('dropdown__number-change_disable') : 0;
+      this.incrementElements
+        ? this.incrementElements[i].classList.remove('dropdown__number-change_disable')
+        : 0;
+    });
 
-    for (let i = 0; i < this.numbers.length; i++) {
-      this.numbers[i].innerHTML = '0';
-      this.decrementElements[i].classList.add('dropdown__number-change_disable');
-      this.incrementElements[i].classList.remove('dropdown__number-change_disable');
-    }
-
-    this.outputInDropdown();
-
+    this.updateNumbers();
+    this.field ? (this.field.innerHTML = this.opt.valueDefault) : 0;
     this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
   }
 
-  hideDropdown(event: Event): void {
+  /*hideDropdown(event: Event): void {
     if (
       event.target instanceof Node &&
       (event.target == this.field || event.target == this.items || this.items.contains(event.target))
@@ -273,30 +364,13 @@ class Dropdown {
     }
     this.field.classList.remove('dropdown__field_actived');
     this.items.classList.add('dropdown__items_hidden');
-  }
+  }*/
 }
 
-const arrayDropdown: Dropdown[] = [];
-document.querySelectorAll('.js-dropdown').forEach((item: Element) => {
-  switch (item.getAttribute('name')) {
-    case 'date':
-      break;
-    default: {
-      if (item.querySelector('.dropdown__btns')) {
-        const dropdown = new Dropdown(item, true);
-        arrayDropdown.push(dropdown);
-        dropdown.init();
-      } else {
-        const dropdown = new Dropdown(item, false);
-        arrayDropdown.push(dropdown);
-        dropdown.init();
-      }
-    }
-  }
-});
-
-document.addEventListener('click', (event: Event) => {
+/*document.addEventListener('click', (event: Event) => {
   arrayDropdown.forEach((item: Dropdown) => {
     item.hideDropdown(event);
   });
-});
+});*/
+
+export { Dropdown };

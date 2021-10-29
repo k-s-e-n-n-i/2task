@@ -2,8 +2,8 @@ include ~@Blocks/link/link.pug
 include ~@Blocks/topic-label/topic-label.pug
 include ~@Blocks/calendar/calendar.pug
 
-mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', state = 'close', hasBtnClean = true, hasBtnOk = true, items = [] })
-  .dropdown.js-dropdown(name= name)
+mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText = 'Текст', id = '', state = 'close', hasBtns = true, items = [] })
+  .dropdown.js-dropdown(name= name id= id)
     +topicLabel({ topic : topic, label : label })
     - let dropdownOpenClass = ''
     - let dropdownItemsHiddenClass = ''
@@ -18,31 +18,9 @@ mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText
       div(class='dropdown__items ' + dropdownItemsHiddenClass)
         - const minNumber = 0
 
-        each item in items
-          .dropdown__items-line
-            h3.dropdown__record-name= item.text
-            .dropdown__number-change-block
-              - let minusDisabledClass = ''
-              - let plusDisabledClass = ''
-              - let count = item.number
-
-              if item.minus == "disable" || item.number == minNumber || item.number == undefined
-                - minusDisabledClass = 'dropdown__number-change_disable'
-                - count = minNumber
-              if item.plus == "disable"
-                - plusDisabledClass = 'dropdown__number-change_disable'
-
-              div(class='dropdown__number-change dropdown__number-change_decremented js-dropdown__number-change_decremented ' + minusDisabledClass)= "-"
-              span.dropdown__number= count
-              div(class='dropdown__number-change dropdown__number-change_incremented js-dropdown__number-change_incremented ' + plusDisabledClass)= "+" 
-
-        if hasBtnClean || hasBtnOk
-          - let btnCleanHiddenClass = ''
-          if !hasBtnClean
-            - btnCleanHiddenClass = 'dropdown__btn-link_clean_hidden'
-
+        if hasBtns
           .dropdown__btns.js-dropdown__btns
-            div(class='dropdown__btn-link dropdown__btn-link_clean ' + btnCleanHiddenClass)
+            .dropdown__btn-link.dropdown__btn-link_clean
               +link(
                 {
                   text : "Очистить",
