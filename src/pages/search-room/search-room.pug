@@ -14,22 +14,18 @@ block content
     .search-room__filters
       .search-room__filter-date
         +dropdown(
-          { 
+          {
             name : "date",
             topic : "даты пребывания в отеле",
             activeText : "19 авг - 23 авг",
-            hasBtnClean : false,
-            hasBtnOk : false
           }
         )
 
       .search-room__filter-guest
         +dropdown(
           { 
-            name : "guests",
             topic : "Гости",
-            activeText : "3 гостя, 1 младенец",
-            hasBtnClean : false,
+            id : 'dropdownSearchRoomGuests',
             items : [
               {
                 text : "взрослые",
@@ -102,12 +98,10 @@ block content
 
       .search-room__filter-comfort
         +dropdown(
-          { 
-            name : "room",
+          {
             topic : "удобства номера",
-            activeText : "2 спальни, 2 кровати...",
-            hasBtnClean : false,
-            hasBtnOk : false,
+            id : 'dropdownSearchRoomComfort',
+            hasBtns : false,
             items : [
               {
                 text : "спальни",
