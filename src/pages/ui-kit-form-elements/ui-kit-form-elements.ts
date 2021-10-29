@@ -26,3 +26,150 @@ import '@Blocks/calendar/calendar';
 
 import '@Pages/ui-kit-form-elements/ui-kit-form-elements.scss';
 import '@Pages/ui-kit-form-elements/range-slider';
+
+import { Dropdown } from '../../blocks/dropdown/dropdown';
+
+new Dropdown({
+  dropdown: document.getElementById('uiFormElem11'),
+  hasButtons: true,
+  valueDefault: 'Сколько гостей',
+  maxSum: 10,
+  countSum: true,
+  wordsFormSum: ['гость', 'гостя', 'гостей'],
+  items: [
+    {
+      text: 'взрослые',
+      number: 0,
+      countAdditionally: false,
+      wordsForm: ['взрослый', 'взрослых', 'взрослых'],
+    },
+    {
+      text: 'дети',
+      number: 0,
+      countAdditionally: false,
+      wordsForm: ['ребенок', 'ребенка', 'детей'],
+    },
+    {
+      text: 'младенцы',
+      number: 0,
+      countAdditionally: true,
+      wordsForm: ['младенец', 'младенца', 'младенцев'],
+    },
+  ],
+});
+
+new Dropdown({
+  dropdown: document.getElementById('uiFormElem121'),
+  hasButtons: false,
+  valueDefault: 'Сколько гостей',
+  maxSum: 15,
+  countSum: false,
+  wordsFormSum: [],
+  items: [
+    {
+      text: 'спальни',
+      number: 2,
+      countAdditionally: false,
+      wordsForm: ['спальня', 'спальни', 'спален'],
+    },
+    {
+      text: 'кровати',
+      number: 2,
+      countAdditionally: false,
+      wordsForm: ['кровать', 'кровати', 'кроватей'],
+    },
+    {
+      text: 'ванные комнаты',
+      number: 0,
+      countAdditionally: true,
+      wordsForm: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+    },
+  ],
+});
+
+new Dropdown({
+  dropdown: document.getElementById('uiFormElem12'),
+  hasButtons: false,
+  valueDefault: 'Сколько гостей',
+  maxSum: 15,
+  countSum: false,
+  wordsFormSum: [],
+  items: [
+    {
+      text: 'спальни',
+      number: 2,
+      countAdditionally: false,
+      wordsForm: ['спальня', 'спальни', 'спален'],
+    },
+    {
+      text: 'кровати',
+      number: 2,
+      countAdditionally: false,
+      wordsForm: ['кровать', 'кровати', 'кроватей'],
+    },
+    {
+      text: 'ванные комнаты',
+      number: 0,
+      countAdditionally: true,
+      wordsForm: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+    },
+  ],
+});
+
+new Dropdown({
+  dropdown: document.getElementById('uiFormElem22'),
+  hasButtons: true,
+  valueDefault: 'Сколько гостей',
+  maxSum: 10,
+  countSum: true,
+  wordsFormSum: ['гость', 'гостя', 'гостей'],
+  items: [
+    {
+      text: 'взрослые',
+      number: 0,
+      countAdditionally: false,
+      wordsForm: ['взрослый', 'взрослых', 'взрослых'],
+    },
+    {
+      text: 'дети',
+      number: 0,
+      countAdditionally: false,
+      wordsForm: ['ребенок', 'ребенка', 'детей'],
+    },
+    {
+      text: 'младенцы',
+      number: 0,
+      countAdditionally: true,
+      wordsForm: ['младенец', 'младенца', 'младенцев'],
+    },
+  ],
+});
+
+new Dropdown({
+  dropdown: document.getElementById('uiFormElem32'),
+  hasButtons: true,
+  valueDefault: 'Сколько гостей',
+  maxSum: 10,
+  countSum: true,
+  wordsFormSum: ['гость', 'гостя', 'гостей'],
+  items: [
+    {
+      text: 'взрослые',
+      number: 2,
+      countAdditionally: false,
+      wordsForm: ['взрослый', 'взрослых', 'взрослых'],
+    },
+    {
+      text: 'дети',
+      number: 1,
+      countAdditionally: false,
+      wordsForm: ['ребенок', 'ребенка', 'детей'],
+    },
+    {
+      text: 'младенцы',
+      number: 0,
+      countAdditionally: true,
+      wordsForm: ['младенец', 'младенца', 'младенцев'],
+    },
+  ],
+});

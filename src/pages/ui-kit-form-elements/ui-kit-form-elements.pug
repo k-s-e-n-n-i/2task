@@ -54,12 +54,9 @@ block content
 
         .ui-kit-form-elements__dropdown
           +dropdown(
-            { 
-              name : "guests",
+            {
               topic : "Dropdown",
-              activeText : "Сколько гостей",
-              hasBtnClean : false,
-              hasBtnOk : false,
+              id : 'uiFormElem11',
               items : [
                 {
                   text : "взрослые",
@@ -106,8 +103,7 @@ block content
                 name : "date",
                 topic : "filter date dropdown",
                 activeText : "19 авг - 23 авг",
-                hasBtnClean : false,
-                hasBtnOk : false
+                hasBtns : false
               }
             )
 
@@ -286,12 +282,10 @@ block content
         .ui-kit-form-elements__dropdown
           +dropdown(
             { 
-              name : "room",
               topic : "Dropdown",
               label : "Default",
-              activeText : "2 спальни, 2 кровати...",
-              hasBtnClean : false,
-              hasBtnOk : false,
+              id : 'uiFormElem121',
+              hasBtns : false,
               items : [
                 {
                   text : "спальни",
@@ -309,14 +303,12 @@ block content
           )
         .ui-kit-form-elements__dropdown
           +dropdown(
-            { 
-              name : "room",
+            {
               topic : "Dropdown",
               label : "expanded",
-              activeText : "2 спальни, 2 кровати...",
+              id : 'uiFormElem12',
               state : "open",
-              hasBtnClean : false,
-              hasBtnOk : false,
+              hasBtns : false,
               items : [
                 {
                   text : "спальни",
@@ -335,12 +327,10 @@ block content
 
       .ui-kit-form-elements__cell
         +dropdown(
-          { 
-            name : "guests",
+          {
             topic : "Dropdown",
-            activeText : "Сколько гостей",
+            id : 'uiFormElem22',
             state : "open",
-            hasBtnClean : false,
             items : [
               {
                 text : "взрослые",
@@ -357,10 +347,9 @@ block content
 
       .ui-kit-form-elements__cell
         +dropdown(
-          { 
-            name : "guests",
+          {
             topic : "Dropdown",
-            activeText : "3 гостя",
+            id : 'uiFormElem32',
             state : "open",
             items : [
               {
