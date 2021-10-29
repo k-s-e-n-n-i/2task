@@ -18,6 +18,7 @@ import '@Blocks/card-room/card-room';
 import '@Blocks/form-registration/form-registration.scss';
 import '@Blocks/form-reservation/form-reservation.scss';
 import '@Blocks/form-search-num/form-search-num.scss';
+import '@Blocks/form-search-num/form-search-num';
 import '@Blocks/form-sign-in/form-sign-in.scss';
 
 import '@Pages/ui-kit-cards/ui-kit-cards.scss';
