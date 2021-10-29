@@ -19,5 +19,6 @@ import '@Blocks/header/header.scss';
 import '@Blocks/header/header';
 import '@Blocks/calendar/calendar';
 import '@Blocks/form-reservation/form-reservation.scss';
+import '@Blocks/form-reservation/form-reservation';
 
 import '@Pages/details-room/details-room.scss';

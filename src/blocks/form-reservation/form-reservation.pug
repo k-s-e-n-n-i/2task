@@ -37,10 +37,9 @@ mixin formReservation({ number = 0, priceFrom = 0, priceFinal = 0 })
       ) 
 
     +dropdown(
-      { 
-        name : "guests",
+      {
         topic : "Гости",
-        activeText : "3 гостя",
+        id : 'dropdownFormReservation',
         items : [
           {
             text : "взрослые",
