@@ -3,7 +3,7 @@ import { Model } from '../../modules/plugin.slider/plugin.slider.model';
 
 import { getElementBySelector } from '../../blocks/layout/layout';
 
-export class View {
+class View {
   model: Model;
   dataSlider: object;
   thisSlider: HTMLElement;
@@ -212,3 +212,4 @@ export class View {
     return element;
   }
 }
+export { View };

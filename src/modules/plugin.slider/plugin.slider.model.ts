@@ -2,7 +2,7 @@ import { Options } from '../../modules/plugin.slider/plugin.slider';
 
 import { getElementBySelector } from '../../blocks/layout/layout';
 
-export class Model {
+class Model {
   thisSlider: HTMLElement;
   idElement: string;
   rangeSlider: HTMLElement;
@@ -47,3 +47,4 @@ export class Model {
     return parseInt(getComputedStyle(this.rangeRight).left);
   }
 }
+export { Model };

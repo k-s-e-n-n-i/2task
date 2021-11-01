@@ -9,7 +9,7 @@ interface Coords {
   left: number;
 }
 
-export class Controller {
+class Controller {
   model: Model;
   view: View;
   thisSlider: HTMLElement;
@@ -679,3 +679,4 @@ export class Controller {
     return element;
   }
 }
+export { Controller };

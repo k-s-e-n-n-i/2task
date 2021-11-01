@@ -2,7 +2,7 @@ import { Model } from '../../modules/plugin.slider/plugin.slider.model';
 import { View } from '../../modules/plugin.slider/plugin.slider.view';
 import { Controller } from '../../modules/plugin.slider/plugin.slider.controller';
 
-export interface Options {
+interface Options {
   element: HTMLElement;
   idElement: string;
   width: number;
@@ -82,3 +82,5 @@ export interface Options {
     },
   });
 })(jQuery);
+
+export { Options };

@@ -1,7 +1,7 @@
 import '../../../webpack/favicons';
 import '@Blocks/layout/layout.scss';
 
-export const getElementBySelector = (lineItem: Element, selector: string): HTMLElement => {
+const getElementBySelector = (lineItem: Element, selector: string): HTMLElement => {
   const element = lineItem.querySelector(selector);
 
   if (!(element instanceof HTMLElement)) {
@@ -12,3 +12,5 @@ export const getElementBySelector = (lineItem: Element, selector: string): HTMLE
 
   return element;
 };
+
+export { getElementBySelector };
