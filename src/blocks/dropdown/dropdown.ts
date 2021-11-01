@@ -29,9 +29,8 @@ const defaultOptions: Options = {
 
 class Dropdown {
   opt: Options = defaultOptions;
-  it: HTMLElement | null = null;
   field: HTMLElement | null = null;
-  items: HTMLElement | null = null;
+  itemsElement: HTMLElement | null = null;
   incrementElements: NodeListOf<Element> | null = null;
   decrementElements: NodeListOf<Element> | null = null;
   numbers: number[] = [];
@@ -49,71 +48,81 @@ class Dropdown {
     this.setValuesToField();
     this.initStartStateNumbers();
 
-    if (this.it != null) {
-      this.field?.addEventListener('click', () => {
+    const {
+      opt: { dropdown, hasButtons },
+      field,
+      decrementElements,
+      incrementElements,
+      buttonOk,
+      buttonClean,
+    } = this;
+
+    if (dropdown != null) {
+      field?.addEventListener('click', () => {
         this.handleDropwownClick();
       });
 
-      this.decrementElements?.forEach((item, i) => {
-        this.decrementElements
-          ? this.decrementElements[i].addEventListener('click', () => {
-              this.handleDropdownDecreaseValueClick(i);
-            })
-          : 0;
-      });
+      if (decrementElements) {
+        decrementElements.forEach((item, i) => {
+          decrementElements[i].addEventListener('click', () => {
+            this.handleDropdownDecreaseValueClick(i);
+          });
+        });
+      }
 
-      this.incrementElements?.forEach((item, i) => {
-        this.incrementElements
-          ? this.incrementElements[i].addEventListener('click', () => {
-              this.handleDropdownIncreaseValueClick(i);
-            })
-          : 0;
-      });
+      if (incrementElements) {
+        incrementElements.forEach((item, i) => {
+          incrementElements[i].addEventListener('click', () => {
+            this.handleDropdownIncreaseValueClick(i);
+          });
+        });
+      }
 
       document.addEventListener('click', (event: Event) => {
         event.target ? this.hideDropdown(event.target) : 0;
       });
 
-      if (this.opt.hasButtons == null) {
+      if (hasButtons == null) {
         return;
       }
 
-      this.buttonOk?.addEventListener('click', (event) => {
+      buttonOk?.addEventListener('click', (event) => {
         this.handleDropdownOkClick(event);
       });
 
-      this.buttonClean?.addEventListener('click', (event) => {
+      buttonClean?.addEventListener('click', (event) => {
         this.handleDropdownCleanClick(event);
       });
     }
   }
 
   setValuesToField() {
-    if (this.opt.dropdown != null) {
-      this.it = this.opt.dropdown;
-      this.field = getElementBySelector(this.it, '.dropdown__field');
-      this.items = getElementBySelector(this.it, '.dropdown__items');
+    const { dropdown, items, hasButtons } = this.opt;
 
-      let items: Items[] = [];
-      for (let key in this.opt.items) {
-        items[key] = this.opt.items[key];
+    if (dropdown != null) {
+      this.field = getElementBySelector(dropdown, '.dropdown__field');
+      this.itemsElement = getElementBySelector(dropdown, '.dropdown__items');
+
+      let itemsClone: Items[] = [];
+      for (let key in items) {
+        itemsClone[key] = items[key];
       }
 
       const numbers: number[] = [];
-      items.reverse().forEach((item) => {
+      itemsClone.reverse().forEach((item) => {
         this.prependItems(item);
         numbers.unshift(item.number);
       });
       this.numbers = numbers;
 
-      this.incrementElements = this.items.querySelectorAll('.dropdown__number-change_incremented');
-      this.decrementElements = this.items.querySelectorAll('.dropdown__number-change_decremented');
-      this.records = this.items.querySelectorAll('.dropdown__record-name');
-      this.numbersElements = this.items.querySelectorAll('.dropdown__number');
+      this.incrementElements = dropdown.querySelectorAll('.dropdown__number-change_incremented');
+      this.decrementElements = dropdown.querySelectorAll('.dropdown__number-change_decremented');
+      this.records = dropdown.querySelectorAll('.dropdown__record-name');
+      this.numbersElements = dropdown.querySelectorAll('.dropdown__number');
 
-      if (this.opt.hasButtons) {
-        this.buttonClean = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_clean');
-        this.buttonOk = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_ok');
+      if (hasButtons) {
+        this.buttonClean = getElementBySelector(dropdown, '.js-dropdown__btns .dropdown__btn-link_clean');
+        this.buttonOk = getElementBySelector(dropdown, '.js-dropdown__btns .dropdown__btn-link_ok');
       }
     }
   }
@@ -150,26 +159,31 @@ class Dropdown {
     line.append(name);
     line.append(changeBlock);
 
-    this.items?.prepend(line);
+    this.itemsElement?.prepend(line);
   }
 
   initStartStateNumbers() {
-    if (this.opt.maxSum) {
+    const {
+      opt: { maxSum },
+      numbers,
+      decrementElements,
+      incrementElements,
+      buttonClean,
+    } = this;
+
+    if (maxSum) {
       let sum = 0;
-      const maxSum: number = this.opt.maxSum;
       let sumMoreThenMax = false;
-      this.numbers.forEach((num, i) => {
-        if (num == 0) {
-          this.decrementElements
-            ? this.decrementElements[i].classList.add('dropdown__number-change_disable')
-            : 0;
+      numbers.forEach((num, i) => {
+        if (num == 0 && decrementElements) {
+          decrementElements[i].classList.add('dropdown__number-change_disable');
         }
 
         if (sumMoreThenMax) {
-          this.numbers[i] = 0;
+          numbers[i] = 0;
         }
         if (sum + num > maxSum && !sumMoreThenMax) {
-          this.numbers[i] = num - (sum + num - maxSum);
+          numbers[i] = num - (sum + num - maxSum);
           sumMoreThenMax = true;
         }
 
@@ -178,7 +192,7 @@ class Dropdown {
       this.updateNumbers();
 
       if (sum == maxSum) {
-        this.incrementElements?.forEach((item) => {
+        incrementElements?.forEach((item) => {
           item.classList.add('dropdown__number-change_disable');
         });
       }
@@ -187,52 +201,61 @@ class Dropdown {
     this.outputInDropdown();
 
     if (this.countSumAll() == 0) {
-      this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
+      buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
     }
   }
 
   updateNumbers() {
-    this.numbers.forEach((num, i) => {
-      this.numbersElements ? (this.numbersElements[i].innerHTML = num.toString()) : 0;
-    });
+    const { numbersElements, numbers } = this;
+    if (numbersElements) {
+      numbers.forEach((num, i) => {
+        numbersElements[i].innerHTML = num.toString();
+      });
+    }
   }
 
   handleDropwownClick() {
-    this.items?.classList.toggle('dropdown__items_hidden');
-    this.field?.classList.toggle('dropdown__field_actived');
+    const { itemsElement, field } = this;
+    itemsElement?.classList.toggle('dropdown__items_hidden');
+    field?.classList.toggle('dropdown__field_actived');
   }
 
   handleDropdownDecreaseValueClick(iNumber: number) {
-    let number: number = this.numbers[iNumber];
+    const {
+      opt: { hasButtons },
+      numbers,
+      decrementElements,
+      incrementElements,
+      buttonClean,
+    } = this;
 
+    let number: number = numbers[iNumber];
     const min: number = 0;
 
     if (number > min) {
       number--;
     }
 
-    if (number == min) {
-      this.decrementElements
-        ? this.decrementElements[iNumber].classList.add('dropdown__number-change_disable')
-        : 0;
+    if (number == min && decrementElements) {
+      decrementElements[iNumber].classList.add('dropdown__number-change_disable');
     }
 
-    this.incrementElements?.forEach((item) => {
+    incrementElements?.forEach((item) => {
       item.classList.remove('dropdown__number-change_disable');
     });
 
-    this.numbers[iNumber] = number;
+    numbers[iNumber] = number;
     this.updateNumbers();
 
-    if (this.opt.hasButtons) {
+    if (hasButtons) {
       let allNumber: number = 0;
 
-      this.numbers.forEach((item, i) => {
-        allNumber = allNumber + this.numbers[i];
+      numbers.forEach((item, i) => {
+        allNumber = allNumber + numbers[i];
       });
 
-      if (allNumber == 0) {
-        this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
+      if (allNumber == 0 && buttonClean) {
+        buttonClean.classList.add('dropdown__btn-link_clean_hidden');
       }
     }
 
@@ -240,12 +263,20 @@ class Dropdown {
   }
 
   handleDropdownIncreaseValueClick(iNumber: number) {
-    if (this.opt.maxSum) {
-      let max: number = this.opt.maxSum;
+    const {
+      opt: { maxSum, hasButtons },
+      numbers,
+      numbersElements,
+      decrementElements,
+      incrementElements,
+      buttonClean,
+    } = this;
 
+    if (maxSum) {
+      let max: number = maxSum;
       let allNumber: number = 0;
-      this.numbers.forEach((item, i) => {
-        allNumber = allNumber + this.numbers[i];
+      numbers.forEach((item, i) => {
+        allNumber = allNumber + numbers[i];
       });
       allNumber++;
 
@@ -254,53 +285,53 @@ class Dropdown {
       }
 
       let newNumber: number = 0;
-      const number: number = this.numbers[iNumber];
+      const number: number = numbers[iNumber];
 
-      if (allNumber <= max) {
+      if (allNumber <= max && numbersElements && decrementElements) {
         newNumber = number + 1;
-        this.numbersElements ? (this.numbersElements[iNumber].innerHTML = newNumber.toString()) : 0;
-
-        this.decrementElements
-          ? this.decrementElements[iNumber].classList.remove('dropdown__number-change_disable')
-          : 0;
+        numbersElements[iNumber].innerHTML = newNumber.toString();
+        decrementElements[iNumber].classList.remove('dropdown__number-change_disable');
       }
 
-      if (allNumber == max) {
-        this.incrementElements?.forEach((item, i) => {
-          this.incrementElements
-            ? this.incrementElements[i].classList.add('dropdown__number-change_disable')
-            : 0;
+      if (allNumber == max && incrementElements) {
+        incrementElements.forEach((item, i) => {
+          incrementElements[i].classList.add('dropdown__number-change_disable');
         });
       }
 
-      this.numbers[iNumber] = newNumber;
+      numbers[iNumber] = newNumber;
       this.updateNumbers();
     }
 
-    if (this.opt.hasButtons) {
-      this.buttonClean?.classList.remove('dropdown__btn-link_clean_hidden');
+    if (hasButtons && buttonClean) {
+      buttonClean.classList.remove('dropdown__btn-link_clean_hidden');
     }
 
     this.outputInDropdown();
   }
 
   outputInDropdown() {
+    const {
+      opt: { valueDefault, countSum, wordsFormSum, items },
+      field,
+    } = this;
+
     let sumAll: number = this.countSumAll();
     let wordAll: string = '';
     let outputPhrase = '';
     const fieldValues: string[] = [];
 
-    if (this.opt.countSum && this.opt.wordsFormSum) {
-      wordAll = this.declOfNum(sumAll, this.opt.wordsFormSum);
+    if (countSum && wordsFormSum) {
+      wordAll = this.declOfNum(sumAll, wordsFormSum);
       fieldValues[0] = `${sumAll} ${wordAll}`;
 
-      this.opt.items.forEach((item, i) => {
+      items.forEach((item, i) => {
         if (item.countAdditionally) {
           fieldValues[i + 1] = this.setPhraseForField(i);
         }
       });
     } else {
-      this.opt.items.forEach((item, i) => {
+      items.forEach((item, i) => {
         fieldValues[i] = this.setPhraseForField(i);
       });
     }
@@ -311,10 +342,8 @@ class Dropdown {
       }
     });
 
-    if (this.field != null) {
-      sumAll != 0
-        ? (this.field.innerHTML = `${outputPhrase}`)
-        : (this.field.innerHTML = this.opt.valueDefault);
+    if (field != null) {
+      sumAll != 0 ? (field.innerHTML = `${outputPhrase}`) : (field.innerHTML = valueDefault);
     }
   }
 
@@ -328,9 +357,14 @@ class Dropdown {
   }
 
   setPhraseForField(iNumber: number) {
+    const {
+      opt: { items },
+      numbers,
+    } = this;
+
     let phrase = '';
-    const number: number = this.numbers[iNumber];
-    const word: string = this.declOfNum(number, this.opt.items[iNumber].wordsForm);
+    const number: number = numbers[iNumber];
+    const word: string = this.declOfNum(number, items[iNumber].wordsForm);
 
     number != 0 ? (phrase = `${number} ${word}`) : (phrase = '');
 
@@ -359,27 +393,36 @@ class Dropdown {
   }
 
   handleDropdownCleanClick(event: Event) {
+    const {
+      opt: { valueDefault },
+      field,
+      numbers,
+      decrementElements,
+      incrementElements,
+      buttonClean,
+    } = this;
+
     event.preventDefault();
-    this.numbers.forEach((item, i) => {
-      this.numbers[i] = 0;
-      this.decrementElements ? this.decrementElements[i].classList.add('dropdown__number-change_disable') : 0;
-      this.incrementElements
-        ? this.incrementElements[i].classList.remove('dropdown__number-change_disable')
-        : 0;
+    numbers.forEach((item, i) => {
+      numbers[i] = 0;
+      decrementElements ? decrementElements[i].classList.add('dropdown__number-change_disable') : 0;
+      incrementElements ? incrementElements[i].classList.remove('dropdown__number-change_disable') : 0;
     });
 
     this.updateNumbers();
-    this.field ? (this.field.innerHTML = this.opt.valueDefault) : 0;
-    this.buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
+    field ? (field.innerHTML = valueDefault) : 0;
+    buttonClean?.classList.add('dropdown__btn-link_clean_hidden');
   }
 
   hideDropdown(eventTarget: EventTarget): void {
-    if (eventTarget instanceof Node && (eventTarget == this.field || this.items?.contains(eventTarget))) {
+    const { field, itemsElement } = this;
+
+    if (eventTarget instanceof Node && (eventTarget == field || itemsElement?.contains(eventTarget))) {
       return;
     }
 
-    this.field?.classList.remove('dropdown__field_actived');
-    this.items?.classList.add('dropdown__items_hidden');
+    field?.classList.remove('dropdown__field_actived');
+    itemsElement?.classList.add('dropdown__items_hidden');
   }
 }
 
