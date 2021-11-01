@@ -28,10 +28,7 @@ import { Dropdown } from '../../blocks/dropdown/dropdown';
 
 new Dropdown({
   dropdown: document.getElementById('dropdownSearchRoomGuests'),
-  hasButtons: true,
   valueDefault: 'Сколько гостей',
-  maxSum: 10,
-  countSum: true,
   wordsFormSum: ['гость', 'гостя', 'гостей'],
   items: [
     {
@@ -58,7 +55,7 @@ new Dropdown({
 new Dropdown({
   dropdown: document.getElementById('dropdownSearchRoomComfort'),
   hasButtons: false,
-  valueDefault: 'Сколько гостей',
+  valueDefault: 'Выберите удобства',
   maxSum: 15,
   countSum: false,
   wordsFormSum: [],

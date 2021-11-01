@@ -31,10 +31,7 @@ import { Dropdown } from '../../blocks/dropdown/dropdown';
 
 new Dropdown({
   dropdown: document.getElementById('uiFormElem11'),
-  hasButtons: true,
   valueDefault: 'Сколько гостей',
-  maxSum: 10,
-  countSum: true,
   wordsFormSum: ['гость', 'гостя', 'гостей'],
   items: [
     {
@@ -61,10 +58,9 @@ new Dropdown({
 new Dropdown({
   dropdown: document.getElementById('uiFormElem121'),
   hasButtons: false,
-  valueDefault: 'Сколько гостей',
+  valueDefault: 'Выберите удобства',
   maxSum: 15,
   countSum: false,
-  wordsFormSum: [],
   items: [
     {
       text: 'спальни',
@@ -90,7 +86,7 @@ new Dropdown({
 new Dropdown({
   dropdown: document.getElementById('uiFormElem12'),
   hasButtons: false,
-  valueDefault: 'Сколько гостей',
+  valueDefault: 'Выберите удобства',
   maxSum: 15,
   countSum: false,
   wordsFormSum: [],
@@ -118,10 +114,7 @@ new Dropdown({
 
 new Dropdown({
   dropdown: document.getElementById('uiFormElem22'),
-  hasButtons: true,
   valueDefault: 'Сколько гостей',
-  maxSum: 10,
-  countSum: true,
   wordsFormSum: ['гость', 'гостя', 'гостей'],
   items: [
     {
@@ -147,10 +140,7 @@ new Dropdown({
 
 new Dropdown({
   dropdown: document.getElementById('uiFormElem32'),
-  hasButtons: true,
   valueDefault: 'Сколько гостей',
-  maxSum: 10,
-  countSum: true,
   wordsFormSum: ['гость', 'гостя', 'гостей'],
   items: [
     {

@@ -2,10 +2,7 @@ import { Dropdown } from '../../blocks/dropdown/dropdown';
 
 new Dropdown({
   dropdown: document.getElementById('dropdownFormReservation'),
-  hasButtons: true,
   valueDefault: 'Сколько гостей',
-  maxSum: 10,
-  countSum: true,
   wordsFormSum: ['гость', 'гостя', 'гостей'],
   items: [
     {

@@ -1,23 +1,34 @@
 import { getElementBySelector } from '../layout/layout';
 
-export interface Options {
+interface Options {
   dropdown: HTMLElement | null;
-  hasButtons: boolean;
+  hasButtons?: boolean;
   valueDefault: string;
-  maxSum: number;
-  wordsFormSum: string[];
-  countSum: boolean;
+  maxSum?: number;
+  wordsFormSum?: string[];
+  countSum?: boolean;
   items: Items[];
 }
-export interface Items {
+
+interface Items {
   text: string;
   number: number;
   countAdditionally: boolean;
   wordsForm: string[];
 }
 
+const defaultOptions: Options = {
+  dropdown: null,
+  hasButtons: true,
+  valueDefault: 'Выбрать',
+  maxSum: 10,
+  wordsFormSum: [],
+  countSum: true,
+  items: [],
+};
+
 class Dropdown {
-  opt: Options;
+  opt: Options = defaultOptions;
   it: HTMLElement | null = null;
   field: HTMLElement | null = null;
   items: HTMLElement | null = null;
@@ -30,7 +41,7 @@ class Dropdown {
   buttonOk: HTMLElement | null = null;
 
   constructor(options: Options) {
-    this.opt = options;
+    this.opt = { ...defaultOptions, ...options };
     this.init();
   }
 
@@ -143,31 +154,34 @@ class Dropdown {
   }
 
   initStartStateNumbers() {
-    let sum = 0;
-    let sumMoreThenMax = false;
-    this.numbers.forEach((num, i) => {
-      if (num == 0) {
-        this.decrementElements
-          ? this.decrementElements[i].classList.add('dropdown__number-change_disable')
-          : 0;
-      }
+    if (this.opt.maxSum) {
+      let sum = 0;
+      const maxSum: number = this.opt.maxSum;
+      let sumMoreThenMax = false;
+      this.numbers.forEach((num, i) => {
+        if (num == 0) {
+          this.decrementElements
+            ? this.decrementElements[i].classList.add('dropdown__number-change_disable')
+            : 0;
+        }
 
-      if (sumMoreThenMax) {
-        this.numbers[i] = 0;
-      }
-      if (sum + num > this.opt.maxSum && !sumMoreThenMax) {
-        this.numbers[i] = num - (sum + num - this.opt.maxSum);
-        sumMoreThenMax = true;
-      }
+        if (sumMoreThenMax) {
+          this.numbers[i] = 0;
+        }
+        if (sum + num > maxSum && !sumMoreThenMax) {
+          this.numbers[i] = num - (sum + num - maxSum);
+          sumMoreThenMax = true;
+        }
 
-      !sumMoreThenMax ? (sum = sum + num) : (sum = this.opt.maxSum);
-    });
-    this.updateNumbers();
-
-    if (sum == this.opt.maxSum) {
-      this.incrementElements?.forEach((item) => {
-        item.classList.add('dropdown__number-change_disable');
+        !sumMoreThenMax ? (sum = sum + num) : (sum = maxSum);
       });
+      this.updateNumbers();
+
+      if (sum == maxSum) {
+        this.incrementElements?.forEach((item) => {
+          item.classList.add('dropdown__number-change_disable');
+        });
+      }
     }
 
     this.outputInDropdown();
@@ -226,40 +240,42 @@ class Dropdown {
   }
 
   handleDropdownIncreaseValueClick(iNumber: number) {
-    let max: number = this.opt.maxSum;
+    if (this.opt.maxSum) {
+      let max: number = this.opt.maxSum;
 
-    let allNumber: number = 0;
-    this.numbers.forEach((item, i) => {
-      allNumber = allNumber + this.numbers[i];
-    });
-    allNumber++;
-
-    if (allNumber == max + 1) {
-      return;
-    }
-
-    let newNumber: number = 0;
-    const number: number = this.numbers[iNumber];
-
-    if (allNumber <= max) {
-      newNumber = number + 1;
-      this.numbersElements ? (this.numbersElements[iNumber].innerHTML = newNumber.toString()) : 0;
-
-      this.decrementElements
-        ? this.decrementElements[iNumber].classList.remove('dropdown__number-change_disable')
-        : 0;
-    }
-
-    if (allNumber == max) {
-      this.incrementElements?.forEach((item, i) => {
-        this.incrementElements
-          ? this.incrementElements[i].classList.add('dropdown__number-change_disable')
-          : 0;
+      let allNumber: number = 0;
+      this.numbers.forEach((item, i) => {
+        allNumber = allNumber + this.numbers[i];
       });
-    }
+      allNumber++;
 
-    this.numbers[iNumber] = newNumber;
-    this.updateNumbers();
+      if (allNumber == max + 1) {
+        return;
+      }
+
+      let newNumber: number = 0;
+      const number: number = this.numbers[iNumber];
+
+      if (allNumber <= max) {
+        newNumber = number + 1;
+        this.numbersElements ? (this.numbersElements[iNumber].innerHTML = newNumber.toString()) : 0;
+
+        this.decrementElements
+          ? this.decrementElements[iNumber].classList.remove('dropdown__number-change_disable')
+          : 0;
+      }
+
+      if (allNumber == max) {
+        this.incrementElements?.forEach((item, i) => {
+          this.incrementElements
+            ? this.incrementElements[i].classList.add('dropdown__number-change_disable')
+            : 0;
+        });
+      }
+
+      this.numbers[iNumber] = newNumber;
+      this.updateNumbers();
+    }
 
     if (this.opt.hasButtons) {
       this.buttonClean?.classList.remove('dropdown__btn-link_clean_hidden');
@@ -274,13 +290,12 @@ class Dropdown {
     let outputPhrase = '';
     const fieldValues: string[] = [];
 
-    if (this.opt.countSum) {
+    if (this.opt.countSum && this.opt.wordsFormSum) {
       wordAll = this.declOfNum(sumAll, this.opt.wordsFormSum);
       fieldValues[0] = `${sumAll} ${wordAll}`;
 
       this.opt.items.forEach((item, i) => {
         if (item.countAdditionally) {
-          this.fieldValues[i + 1] = this.setPhraseForField(i);
           fieldValues[i + 1] = this.setPhraseForField(i);
         }
       });
