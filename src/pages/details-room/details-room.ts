@@ -17,6 +17,8 @@ import '@Blocks/social/social.scss';
 import '@Blocks/footer/footer.scss';
 import '@Blocks/header/header.scss';
 import '@Blocks/header/header';
+import '@Blocks/header/header-class.ItemMenuWithSubmenu';
+import '@Blocks/header/header-class.MenuMobile';
 import '@Blocks/calendar/calendar';
 import '@Blocks/form-reservation/form-reservation.scss';
 import '@Blocks/form-reservation/form-reservation';
