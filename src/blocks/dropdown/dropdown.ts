@@ -23,13 +23,11 @@ class Dropdown {
   items: HTMLElement | null = null;
   incrementElements: NodeListOf<Element> | null = null;
   decrementElements: NodeListOf<Element> | null = null;
-  numbersElements: NodeListOf<Element> | null = null;
+  numbers: number[] = [];
   records: NodeListOf<Element> | null = null;
-  numbers: number[] = []; //NodeListOf<Element> | null = null;
-  hasButtons: boolean = false;
+  numbersElements: NodeListOf<Element> | null = null;
   buttonClean: HTMLElement | null = null;
   buttonOk: HTMLElement | null = null;
-  fieldValues: string[] = [];
 
   constructor(options: Options) {
     this.opt = options;
@@ -61,11 +59,11 @@ class Dropdown {
           : 0;
       });
 
-      if (this.hasButtons == null) {
       document.addEventListener('click', (event: Event) => {
         event.target ? this.hideDropdown(event.target) : 0;
       });
 
+      if (this.opt.hasButtons == null) {
         return;
       }
 
@@ -102,8 +100,7 @@ class Dropdown {
       this.records = this.items.querySelectorAll('.dropdown__record-name');
       this.numbersElements = this.items.querySelectorAll('.dropdown__number');
 
-      this.hasButtons = this.opt.hasButtons;
-      if (this.hasButtons) {
+      if (this.opt.hasButtons) {
         this.buttonClean = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_clean');
         this.buttonOk = getElementBySelector(this.it, '.js-dropdown__btns .dropdown__btn-link_ok');
       }
@@ -213,7 +210,7 @@ class Dropdown {
     this.numbers[iNumber] = number;
     this.updateNumbers();
 
-    if (this.hasButtons) {
+    if (this.opt.hasButtons) {
       let allNumber: number = 0;
 
       this.numbers.forEach((item, i) => {
@@ -264,7 +261,7 @@ class Dropdown {
     this.numbers[iNumber] = newNumber;
     this.updateNumbers();
 
-    if (this.hasButtons) {
+    if (this.opt.hasButtons) {
       this.buttonClean?.classList.remove('dropdown__btn-link_clean_hidden');
     }
 
@@ -275,23 +272,25 @@ class Dropdown {
     let sumAll: number = this.countSumAll();
     let wordAll: string = '';
     let outputPhrase = '';
+    const fieldValues: string[] = [];
 
     if (this.opt.countSum) {
       wordAll = this.declOfNum(sumAll, this.opt.wordsFormSum);
-      this.fieldValues[0] = `${sumAll} ${wordAll}`;
+      fieldValues[0] = `${sumAll} ${wordAll}`;
 
       this.opt.items.forEach((item, i) => {
         if (item.countAdditionally) {
           this.fieldValues[i + 1] = this.setPhraseForField(i);
+          fieldValues[i + 1] = this.setPhraseForField(i);
         }
       });
     } else {
       this.opt.items.forEach((item, i) => {
-        this.fieldValues[i] = this.setPhraseForField(i);
+        fieldValues[i] = this.setPhraseForField(i);
       });
     }
 
-    this.fieldValues.forEach((item, i) => {
+    fieldValues.forEach((item, i) => {
       if (item != '') {
         outputPhrase == '' ? (outputPhrase = `${item}`) : (outputPhrase = `${outputPhrase}, ${item}`);
       }
