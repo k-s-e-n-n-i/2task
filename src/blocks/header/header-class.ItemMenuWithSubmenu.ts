@@ -18,29 +18,35 @@ class ItemMenuWithSubmenu {
     });
 
     document.addEventListener('click', (event: Event) => {
-      event.target ? this.hideSubmenu(event.target) : 0;
+      this.hideSubmenu(event);
     });
   }
 
-  handleItemMenuWithSubmenuClick(event: Event) {
+  handleItemMenuWithSubmenuClick(event: Event): void {
     const { submenu } = this;
 
     if (submenu) {
-      if (event.target instanceof Node && (event.target == this.submenu || submenu.contains(event.target))) {
+      if (this.hasContains(submenu, event)) {
         return;
       }
       submenu.classList.toggle('header__submenu_open');
     }
   }
 
-  hideSubmenu(eventTarget: EventTarget): void {
+  hideSubmenu(event: Event): void {
     const { submenu, itemMenu } = this;
 
-    if (submenu) {
-      if (eventTarget instanceof Node && (eventTarget == itemMenu || itemMenu.contains(eventTarget))) {
-        return;
-      }
-      submenu.classList.remove('header__submenu_open');
+    if (this.hasContains(itemMenu, event)) {
+      return;
+    }
+    submenu?.classList.remove('header__submenu_open');
+  }
+
+  hasContains(element: Element, event: Event): boolean {
+    if (event.target instanceof Node && element.contains(event.target)) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
