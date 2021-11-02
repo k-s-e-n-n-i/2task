@@ -10,7 +10,7 @@ class MenuMobile {
     this.init();
   }
 
-  init() {
+  init(): void {
     const { header } = this;
 
     this.menuMobile = getElementBySelector(header, '.js-header__menu-mobile');
@@ -21,7 +21,7 @@ class MenuMobile {
     });
   }
 
-  handleMenuMobileClick() {
+  handleMenuMobileClick(): void {
     const { headerNav, menuMobile } = this;
     headerNav?.classList.toggle('header__links_mobile');
     headerNav?.classList.toggle('header__links_hidden');

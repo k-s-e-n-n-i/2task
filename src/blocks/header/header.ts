@@ -1,5 +1,5 @@
-import { ItemMenuWithSubmenu } from './header-class.ItemMenuWithSubmenu';
-import { MenuMobile } from './header-class.MenuMobile';
+import { ItemMenuWithSubmenu } from './item-menu-with-submenu.class';
+import { MenuMobile } from './menu-mobile.class';
 
 document.querySelectorAll('.js-header__menu-li_expand').forEach((item) => {
   if (item.querySelector('.header__submenu')) {

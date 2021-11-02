@@ -20,8 +20,8 @@ import '@Blocks/card-room/card-room';
 import '@Blocks/footer/footer.scss';
 import '@Blocks/header/header.scss';
 import '@Blocks/header/header';
-import '@Blocks/header/header-class.ItemMenuWithSubmenu';
-import '@Blocks/header/header-class.MenuMobile';
+import '@Blocks/header/item-menu-with-submenu.class';
+import '@Blocks/header/menu-mobile.class';
 
 import '@Pages/search-room/search-room.scss';
 import '@Pages/search-room/range-slider';
