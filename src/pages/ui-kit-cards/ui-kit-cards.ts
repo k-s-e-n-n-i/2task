@@ -14,7 +14,6 @@ import '@Blocks/topic-label/topic-label.scss';
 
 import '@Blocks/calendar/calendar';
 import '@Blocks/card-room/card-room.scss';
-import '@Blocks/card-room/card-room';
 import '@Blocks/form-registration/form-registration.scss';
 import '@Blocks/form-reservation/form-reservation.scss';
 import '@Blocks/form-reservation/form-reservation';
@@ -23,3 +22,9 @@ import '@Blocks/form-search-num/form-search-num';
 import '@Blocks/form-sign-in/form-sign-in.scss';
 
 import '@Pages/ui-kit-cards/ui-kit-cards.scss';
+
+import { CardRoom } from '../../blocks/card-room/card-room';
+
+document.querySelectorAll('.js-card-room').forEach((item: Element) => {
+  new CardRoom(item);
+});

@@ -16,7 +16,6 @@ import '@Blocks/social/social.scss';
 
 import '@Blocks/calendar/calendar';
 import '@Blocks/card-room/card-room.scss';
-import '@Blocks/card-room/card-room';
 import '@Blocks/footer/footer.scss';
 import '@Blocks/header/header.scss';
 import '@Blocks/header/header';
@@ -27,6 +26,7 @@ import '@Pages/search-room/search-room.scss';
 import '@Pages/search-room/range-slider';
 
 import { Dropdown } from '../../blocks/dropdown/dropdown';
+import { CardRoom } from '../../blocks/card-room/card-room';
 
 new Dropdown({
   dropdown: document.getElementById('dropdownSearchRoomGuests'),
@@ -81,4 +81,8 @@ new Dropdown({
       wordsForm: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
     },
   ],
+});
+
+document.querySelectorAll('.js-card-room').forEach((item: Element) => {
+  new CardRoom(item);
 });
