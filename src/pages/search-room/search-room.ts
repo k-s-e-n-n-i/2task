@@ -3,7 +3,6 @@ import '@Blocks/checkbox-list/checkbox-list.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable';
 import '@Blocks/dropdown/dropdown.scss';
-import '@Blocks/dropdown/dropdown';
 import '@Blocks/dropdown-dates/dropdown-dates.scss';
 import '@Blocks/input-text/input-text.scss';
 import '@Blocks/link/link.scss';

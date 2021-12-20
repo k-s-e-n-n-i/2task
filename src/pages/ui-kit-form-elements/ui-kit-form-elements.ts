@@ -4,7 +4,6 @@ import '@Blocks/checkbox-list-expandable/checkbox-list-expandable.scss';
 import '@Blocks/checkbox-list-expandable/checkbox-list-expandable';
 import '@Blocks/comment-block/comment-block.scss';
 import '@Blocks/dropdown/dropdown.scss';
-import '@Blocks/dropdown/dropdown';
 import '@Blocks/dropdown-dates/dropdown-dates.scss';
 import '@Blocks/info-block/info-block.scss';
 import '@Blocks/input-text/input-text.scss';

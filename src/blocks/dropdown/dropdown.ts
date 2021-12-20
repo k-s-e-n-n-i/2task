@@ -44,7 +44,7 @@ class Dropdown {
     this.init();
   }
 
-  init() {
+  init(): void {
     this.setValuesToField();
     this.initStartStateNumbers();
 
@@ -96,7 +96,7 @@ class Dropdown {
     }
   }
 
-  setValuesToField() {
+  setValuesToField(): void {
     const { dropdown, items, hasButtons } = this.opt;
 
     if (dropdown != null) {
@@ -127,7 +127,7 @@ class Dropdown {
     }
   }
 
-  prependItems(item: Items) {
+  prependItems(item: Items): void {
     const line = document.createElement('div');
     line.className = 'dropdown__items-line';
 
@@ -162,7 +162,7 @@ class Dropdown {
     this.itemsElement?.prepend(line);
   }
 
-  initStartStateNumbers() {
+  initStartStateNumbers(): void {
     const {
       opt: { maxSum },
       numbers,
@@ -205,7 +205,7 @@ class Dropdown {
     }
   }
 
-  updateNumbers() {
+  updateNumbers(): void {
     const { numbersElements, numbers } = this;
     if (numbersElements) {
       numbers.forEach((num, i) => {
@@ -214,13 +214,13 @@ class Dropdown {
     }
   }
 
-  handleDropwownClick() {
+  handleDropwownClick(): void {
     const { itemsElement, field } = this;
     itemsElement?.classList.toggle('dropdown__items_hidden');
     field?.classList.toggle('dropdown__field_actived');
   }
 
-  handleDropdownDecreaseValueClick(iNumber: number) {
+  handleDropdownDecreaseValueClick(iNumber: number): void {
     const {
       opt: { hasButtons },
       numbers,
@@ -262,7 +262,7 @@ class Dropdown {
     this.outputInDropdown();
   }
 
-  handleDropdownIncreaseValueClick(iNumber: number) {
+  handleDropdownIncreaseValueClick(iNumber: number): void {
     const {
       opt: { maxSum, hasButtons },
       numbers,
@@ -310,7 +310,7 @@ class Dropdown {
     this.outputInDropdown();
   }
 
-  outputInDropdown() {
+  outputInDropdown(): void {
     const {
       opt: { valueDefault, countSum, wordsFormSum, items },
       field,
@@ -356,7 +356,7 @@ class Dropdown {
     return sum;
   }
 
-  setPhraseForField(iNumber: number) {
+  setPhraseForField(iNumber: number): string {
     const {
       opt: { items },
       numbers,
@@ -387,12 +387,12 @@ class Dropdown {
     return textForms[2];
   }
 
-  handleDropdownOkClick(event: Event) {
+  handleDropdownOkClick(event: Event): void {
     event.preventDefault();
     this.field?.click();
   }
 
-  handleDropdownCleanClick(event: Event) {
+  handleDropdownCleanClick(event: Event): void {
     const {
       opt: { valueDefault },
       field,
