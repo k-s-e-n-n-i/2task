@@ -1,3 +1,7 @@
+import '@Blocks/button/button.scss';
+import '@Blocks/input-text/input-text.scss';
+import '@Blocks/social/social.scss';
+
 import { ItemMenuWithSubmenu } from './item-menu-with-submenu.class';
 import { MenuMobile } from './menu-mobile.class';
 

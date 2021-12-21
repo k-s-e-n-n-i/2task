@@ -14,11 +14,6 @@ import '@Blocks/chart/chart.scss';
 import '@Blocks/chart/chart';
 import '@Blocks/social/social.scss';
 
-import '@Blocks/footer/footer.scss';
-import '@Blocks/header/header.scss';
-import '@Blocks/header/header';
-import '@Blocks/header/item-menu-with-submenu.class';
-import '@Blocks/header/menu-mobile.class';
 import '@Blocks/calendar/calendar';
 import '@Blocks/form-reservation/form-reservation.scss';
 import '@Blocks/form-reservation/form-reservation';
