@@ -2,7 +2,7 @@ import { Options } from '../../modules/plugin.slider/plugin.slider';
 import { Model } from '../../modules/plugin.slider/plugin.slider.model';
 import { View } from '../../modules/plugin.slider/plugin.slider.view';
 
-import { getElementBySelector } from '../../blocks/layout/layout';
+import { getElementBySelector } from '../../modules/functions/getElementBySelector.function';
 
 interface Coords {
   top: number;

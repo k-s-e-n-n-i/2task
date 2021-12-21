@@ -1,6 +1,6 @@
 import { Options } from '../../modules/plugin.slider/plugin.slider';
 
-import { getElementBySelector } from '../../blocks/layout/layout';
+import { getElementBySelector } from '../../modules/functions/getElementBySelector.function';
 
 class Model {
   thisSlider: HTMLElement;

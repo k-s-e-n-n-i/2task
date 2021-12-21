@@ -1,7 +1,7 @@
 import { Options } from '../../modules/plugin.slider/plugin.slider';
 import { Model } from '../../modules/plugin.slider/plugin.slider.model';
 
-import { getElementBySelector } from '../../blocks/layout/layout';
+import { getElementBySelector } from '../../modules/functions/getElementBySelector.function';
 
 class View {
   model: Model;

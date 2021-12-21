@@ -1,4 +1,4 @@
-import { getElementBySelector } from '../layout/layout';
+import { getElementBySelector } from '../../modules/functions/getElementBySelector.function';
 import * as Chart from 'chart.js';
 
 const getCanvasElement = (item: Element, selector: string): HTMLCanvasElement => {

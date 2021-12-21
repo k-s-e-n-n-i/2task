@@ -1,4 +1,4 @@
-import { getElementBySelector } from '../layout/layout';
+import { getElementBySelector } from '../../modules/functions/getElementBySelector.function';
 
 class ItemMenuWithSubmenu {
   itemMenu: Element;
