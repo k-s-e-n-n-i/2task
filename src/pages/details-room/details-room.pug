@@ -11,11 +11,9 @@ block links
 block content
   main.details-room
     .details-room__block-images
-      .details-room__blk-image-one
-        .details-room__image-one
-      .details-room__blk-image-two
-        .details-room__image-two.details-room__image-two_top
-        .details-room__image-two.details-room__image-two_bottom
+      img.details-room__image.details-room__image_one-column(src=require("@Pages/details-room/img/galery-photo-number-1.png").default alt="photo")
+      img.details-room__image.details-room__image_two-column(src=require("@Pages/details-room/img/galery-photo-number-2.png").default alt="photo")
+      img.details-room__image.details-room__image_two-column(src=require("@Pages/details-room/img/galery-photo-number-3.png").default alt="photo")
     .details-room__content-block
       .details-room__room-info
         .details-room__info-block
