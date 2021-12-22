@@ -1,7 +1,7 @@
 include ~@Blocks/link/link.pug
 include ~@Blocks/rate-btn/rate-btn.pug
 
-mixin cardRoom({ urlsImg = [], id, number, price, markLink = '', review = 0, rating = 0 })
+mixin cardRoom({ urlsImg = [], id, number, price, link='./link-stub', markLink = '', review = 0, rating = 0 })
   .card-room.js-card-room
     .card-room__image-block
       each url, index in urlsImg
@@ -9,8 +9,9 @@ mixin cardRoom({ urlsImg = [], id, number, price, markLink = '', review = 0, rat
           img.card-room__image.js-card-room__image.card-room__image_active(src=url)
         else
           img.card-room__image.js-card-room__image(src=url)
-      .card-room__arrows
+      .card-room__nav
         .card-room__arrow-left.js-card-room__arrow-left
+        a.card-room__image-link(href=link)
         .card-room__arrow-right.js-card-room__arrow-right
       .card-room__slider-pagination
         each url, index in urlsImg
@@ -20,7 +21,7 @@ mixin cardRoom({ urlsImg = [], id, number, price, markLink = '', review = 0, rat
             .card-room__slider-pagination-item
     .card-room__info-room
       .card-room__number-price.card-room__number-price_bottom-border
-        p.card-room__number
+        a.card-room__number(href=link)
           span= "№ "
           span= number
           if markLink != ""
