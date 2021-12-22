@@ -1,11 +1,16 @@
 mixin pagination({ text = '', max })
   .pagination
     .pagination__num-block
-      .pagination__num.pagination__num_active= 1
-      .pagination__num= 2
-      .pagination__num= 3
-      .pagination__num= "..."
-      .pagination__num= max
-      .pagination__num.pagination__num_next
-        .pagination__arrow.pagination__arrow_white
+      .pagination__num
+        a.pagination__num-link.pagination__num-link_active(href="./link-stub")= 1
+      .pagination__num
+        a.pagination__num-link(href="./link-stub")= 2
+      .pagination__num
+        a.pagination__num-link(href="./link-stub")= 3
+      .pagination__num
+        a.pagination__num-link(href="./link-stub")= "..."
+      .pagination__num
+        a.pagination__num-link(href="./link-stub")= max
+      .pagination__num
+        a.pagination__num-link.pagination__num-link_next(href="./link-stub")= '.'
     .pagination__label= text
