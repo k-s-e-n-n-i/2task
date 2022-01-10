@@ -28,6 +28,10 @@
     color: #fff;
   }
 
+  &__num-link_disabled {
+    cursor: default;
+  }
+
   &__num-link_prev,
   &__num-link_next {
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
