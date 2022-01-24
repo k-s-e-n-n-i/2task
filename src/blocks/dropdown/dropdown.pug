@@ -16,7 +16,6 @@ mixin dropdown({ name = '', topic = 'Заголовок', label = '', activeText
     if items.length != 0
       div(class='dropdown__field js-dropdown__field ' + dropdownOpenClass)= activeText
       div(class='dropdown__items ' + dropdownItemsHiddenClass)
-        - const minNumber = 0
 
         if hasBtns
           .dropdown__btns.js-dropdown__btns
