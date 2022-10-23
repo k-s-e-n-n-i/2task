@@ -2,7 +2,7 @@
 
 ## Github pages
 
-https://ksuvla.github.io/2task/
+https://k-s-e-n-n-i.github.io/2task/
 
 При запуске проекта отображается список ссылок на готовые страницы:
 
