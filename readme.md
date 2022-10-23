@@ -22,7 +22,7 @@ https://k-s-e-n-n-i.github.io/2task/
 
 ## Клонирование репозитория локально
 
-$ git clone https://github.com/KsuVla/2task
+$ git clone https://github.com/k-s-e-n-n-i/2task
 
 ## yarn команды для работы с проектом
 
